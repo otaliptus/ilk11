@@ -65,12 +65,27 @@ export function Jersey({ player, state, className, team }: JerseyProps) {
     }
 
     if (kind === "assists") {
-      // Blue ball with darker blue pentagons and seams
+      // White ball with blue pentagons and blue seams (tinted version of goal ball)
       return (
-        <g transform={`scale(${BALL_SCALE})`}>
-          <circle fill="#3b82f6" r="2376" stroke="#1d4ed8" strokeWidth="100" />
-          <path fill="none" stroke="#1d4ed8" strokeWidth="220" d={SEAMS_D} />
-          <path fill="#1d4ed8" d={PENTAGONS_D} />
+        <g>
+          <g transform={`scale(${BALL_SCALE})`}>
+            <circle fill="#fff" r="2376" stroke="#3b82f6" strokeWidth="100" />
+            <path fill="none" stroke="#3b82f6" strokeWidth="220" d={SEAMS_D} />
+            <path fill="#3b82f6" d={PENTAGONS_D} />
+          </g>
+          <text
+            x="9"
+            y="15"
+            fontSize="13"
+            fontWeight="bold"
+            fill="#1d4ed8"
+            stroke="#fff"
+            strokeWidth="2"
+            paintOrder="stroke"
+            textAnchor="middle"
+            dominantBaseline="auto"
+            style={{ fontFamily: "sans-serif", letterSpacing: "-0.5px" }}
+          >(A)</text>
         </g>
       )
     }
