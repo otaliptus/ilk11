@@ -28,6 +28,8 @@ type GameData = {
 
 const MS_PER_DAY = 1000 * 60 * 60 * 24
 const GAME_TIME_ZONE = "Europe/Istanbul"
+const EASY_MIN_YEAR = 2010
+const EASY_TEAMS = new Set(["Besiktas", "Trabzonspor", "Fenerbahce", "Galatasaray"])
 const BUILD_ID = process.env.NEXT_PUBLIC_BUILD_ID ?? "dev"
 const EASY_CSV_URL = `/easy.csv?v=${encodeURIComponent(BUILD_ID)}`
 const HARD_CSV_URL = `/hard.csv?v=${encodeURIComponent(BUILD_ID)}`
@@ -183,6 +185,14 @@ function mulberry32(seed: number): () => number {
   }
 }
 
+function extractGameYear(game: string): number | null {
+  const yearMatch = game.match(/(\d{4})\s*$/)
+  if (!yearMatch) return null
+
+  const year = Number(yearMatch[1])
+  return Number.isInteger(year) ? year : null
+}
+
 function parsePoolRows(csvText: string, expectedDifficulty: Difficulty): GameRow[] {
   const allLines = csvText.trim().split(/\r?\n/)
   if (allLines.length < 2) {
@@ -199,6 +209,13 @@ function parsePoolRows(csvText: string, expectedDifficulty: Difficulty): GameRow
 
     const diffToken = (parts[columnIndexes.difficulty]?.trim().toLowerCase() ?? "") as Difficulty
     if (diffToken && diffToken !== expectedDifficulty) return []
+    const game = parts[columnIndexes.game]?.trim() ?? ""
+    const team = parts[columnIndexes.team]?.trim() ?? ""
+    if (expectedDifficulty === "easy") {
+      const year = extractGameYear(game)
+      if (year === null || year < EASY_MIN_YEAR) return []
+      if (!EASY_TEAMS.has(team)) return []
+    }
 
     const lineupString = parts[columnIndexes.lineup]?.trim() ?? ""
     const lineup = lineupString ? lineupString.split(";").filter(Boolean) : []
@@ -236,8 +253,8 @@ function parsePoolRows(csvText: string, expectedDifficulty: Difficulty): GameRow
     const lineupSubstitutions = parseLineupStatCounts(lineupSubstitutionsRaw, lineup.length)
 
     return [{
-      game: parts[columnIndexes.game]?.trim() ?? "",
-      team: parts[columnIndexes.team]?.trim() ?? "",
+      game,
+      team,
       formation: parts[columnIndexes.formation]?.trim() ?? "",
       lineup,
       lineupNumbers,
