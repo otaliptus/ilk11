@@ -14,6 +14,7 @@ type GameData = {
   formation: string
   lineup: string[]
   lineupNumbers: Array<number | null>
+  lineupCaptains: number[]
   lineupGoals: number[]
   lineupAssists: number[]
   hasColoredCards: boolean
@@ -44,6 +45,7 @@ type CsvColumnIndexes = {
   formation: number
   lineup: number
   lineupNumbers: number
+  lineupCaptains: number
   lineupGoals: number
   lineupAssists: number
   lineupCards: number
@@ -59,6 +61,7 @@ type GameRow = {
   formation: string
   lineup: string[]
   lineupNumbers: Array<number | null>
+  lineupCaptains: number[]
   lineupGoals: number[]
   lineupAssists: number[]
   hasColoredCards: boolean
@@ -88,6 +91,7 @@ function getCsvColumnIndexes(headerLine: string): CsvColumnIndexes {
     formation: getIndex("formation", 3),
     lineup: getIndex("lineup", 4),
     lineupNumbers: getIndex("lineup_numbers", -1),
+    lineupCaptains: getIndex("lineup_captains", -1),
     lineupGoals: getIndex("lineup_goals", -1),
     lineupAssists: getIndex("lineup_assists", -1),
     lineupCards: getIndex("lineup_cards", -1),
@@ -119,6 +123,19 @@ function parseLineupStatCounts(raw: string, expectedLength: number): number[] {
     if (!trimmed) return 0
     const value = Number(trimmed)
     return Number.isInteger(value) && value >= 0 ? value : 0
+  })
+
+  return Array.from({ length: expectedLength }, (_, index) => parsed[index] ?? 0)
+}
+
+function parseLineupBinaryFlags(raw: string, expectedLength: number): number[] {
+  if (!raw) return Array.from({ length: expectedLength }, () => 0)
+
+  const parsed = raw.split(";").map((token) => {
+    const trimmed = token.trim()
+    if (!trimmed) return 0
+    const value = Number(trimmed)
+    return value > 0 ? 1 : 0
   })
 
   return Array.from({ length: expectedLength }, (_, index) => parsed[index] ?? 0)
@@ -190,6 +207,9 @@ function parsePoolRows(csvText: string, expectedDifficulty: Difficulty): GameRow
     const lineupNumbersRaw =
       columnIndexes.lineupNumbers >= 0 ? parts[columnIndexes.lineupNumbers]?.trim() ?? "" : ""
     const lineupNumbers = parseLineupNumbers(lineupNumbersRaw, lineup.length)
+    const lineupCaptainsRaw =
+      columnIndexes.lineupCaptains >= 0 ? parts[columnIndexes.lineupCaptains]?.trim() ?? "" : ""
+    const lineupCaptains = parseLineupBinaryFlags(lineupCaptainsRaw, lineup.length)
     const lineupGoalsRaw = columnIndexes.lineupGoals >= 0 ? parts[columnIndexes.lineupGoals]?.trim() ?? "" : ""
     const lineupAssistsRaw =
       columnIndexes.lineupAssists >= 0 ? parts[columnIndexes.lineupAssists]?.trim() ?? "" : ""
@@ -221,6 +241,7 @@ function parsePoolRows(csvText: string, expectedDifficulty: Difficulty): GameRow
       formation: parts[columnIndexes.formation]?.trim() ?? "",
       lineup,
       lineupNumbers,
+      lineupCaptains,
       lineupGoals,
       lineupAssists,
       hasColoredCards,
@@ -274,6 +295,7 @@ function getGameForDifficulty(pools: DailyPools, difficulty: Difficulty): GameDa
     formation: selected.formation,
     lineup: selected.lineup,
     lineupNumbers: selected.lineupNumbers,
+    lineupCaptains: selected.lineupCaptains,
     lineupGoals: selected.lineupGoals,
     lineupAssists: selected.lineupAssists,
     hasColoredCards: selected.hasColoredCards,
@@ -342,6 +364,7 @@ export default function Home() {
       gameData.formation,
       gameData.lineup,
       gameData.lineupNumbers,
+      gameData.lineupCaptains,
       gameData.lineupGoals,
       gameData.lineupAssists,
       gameData.hasColoredCards,

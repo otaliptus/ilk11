@@ -33,6 +33,21 @@ export function Jersey({ player, state, className, team }: JerseyProps) {
   
   const primaryColor = isGoalkeeper ? "#0EA5E9" : teamConfig.primary
   const secondaryColor = isGoalkeeper ? "#082F49" : teamConfig.secondary
+
+  // Determine if the jersey primary colour is perceptually dark
+  const isJerseyDark = (() => {
+    const hex = primaryColor.replace('#', '')
+    if (hex.length !== 6) return true
+    const r = parseInt(hex.slice(0, 2), 16)
+    const g = parseInt(hex.slice(2, 4), 16)
+    const b = parseInt(hex.slice(4, 6), 16)
+    const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255
+    return luminance < 0.5
+  })()
+  // Bright green on dark jerseys, dark blue on light jerseys
+  const armbandFill   = isJerseyDark ? "#22C55E" : "#1E3A8A"
+  const armbandStroke = isJerseyDark ? "#15803D" : "#172554"
+  const armbandLetter = isJerseyDark ? "#FFFFFF" : "#BFDBFE"
   const pattern = isGoalkeeper ? "solid" : (teamConfig.pattern ?? "solid")
   const hasColoredCardData = typeof player.yellowCards === "number" || typeof player.redCards === "number"
   const legacyCardCount = player.cards ?? 0
@@ -160,6 +175,13 @@ export function Jersey({ player, state, className, team }: JerseyProps) {
             <rect x="0" y="0" width="10" height="100" fill={primaryColor} />
             <rect x="10" y="0" width="10" height="100" fill={secondaryColor} />
           </pattern>
+
+          {/* Captain armband gradient */}
+          <linearGradient id="armband-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%"  stopColor="rgba(255,255,255,0.25)" />
+            <stop offset="50%" stopColor="rgba(255,255,255,0)" />
+            <stop offset="100%" stopColor="rgba(0,0,0,0.15)" />
+          </linearGradient>
         </defs>
 
         {/* Main Shirt Body */}
@@ -272,7 +294,7 @@ export function Jersey({ player, state, className, team }: JerseyProps) {
         {/* Stat badges: vertical stack on left shoulder with partial overlap */}
         {statBadges.map((badge, index) => {
           const x = 2
-          const y = 18 + index * 24
+          const y = 12 + index * 18
           const showCount = badge.value > 1
           return (
             <g key={badge.key} transform={`translate(${x} ${y})`}>
@@ -295,6 +317,53 @@ export function Jersey({ player, state, className, team }: JerseyProps) {
             </g>
           )
         })}
+
+        {/* Captain Armband – bottom-right of jersey, flush */}
+        {player.isCaptain && (
+          <g>
+            {/* Main band */}
+            <rect x="60" y="80" width="28" height="16" rx="1.5"
+              fill={armbandFill}
+              stroke={armbandStroke}
+              strokeWidth="1.2"
+            />
+            {/* Top highlight edge */}
+            <line x1="60" y1="80" x2="88" y2="80"
+              stroke="rgba(255,255,255,0.5)" strokeWidth="1.2"
+            />
+            {/* Bottom dark fold */}
+            <line x1="60" y1="96" x2="88" y2="96"
+              stroke={armbandStroke} strokeWidth="1" opacity="0.6"
+            />
+            {/* Fabric gradient overlay */}
+            <rect x="60" y="80" width="28" height="16" rx="1.5"
+              fill="url(#armband-grad)"
+            />
+            {/* Accent pinstripes */}
+            <line x1="60" y1="82" x2="88" y2="82"
+              stroke={armbandLetter} strokeWidth="0.7" opacity="0.3"
+            />
+            <line x1="60" y1="94" x2="88" y2="94"
+              stroke={armbandLetter} strokeWidth="0.7" opacity="0.3"
+            />
+            {/* Bold "C" */}
+            <text
+              x="74"
+              y="88.5"
+              textAnchor="middle"
+              dominantBaseline="middle"
+              fill={armbandLetter}
+              fontSize="12"
+              fontWeight="900"
+              stroke={armbandStroke}
+              strokeWidth="0.5"
+              paintOrder="stroke"
+              style={{ fontFamily: "system-ui, sans-serif" }}
+            >
+              C
+            </text>
+          </g>
+        )}
 
         {/* Number Badge (if attempts exist) */}
         {state?.guesses?.length ? (

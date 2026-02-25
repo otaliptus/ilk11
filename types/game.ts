@@ -4,6 +4,7 @@ export interface GameData {
   formation: string
   lineup: string[]
   lineupNumbers?: Array<number | null>
+  lineupCaptains?: number[]
   lineupGoals?: number[]
   lineupAssists?: number[]
   lineupCards?: number[]
@@ -18,6 +19,7 @@ export interface PlayerData {
   name: string
   position: string
   shirtNumber?: number | null
+  isCaptain?: boolean
   goals?: number
   assists?: number
   cards?: number
