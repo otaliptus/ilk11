@@ -28,7 +28,13 @@ export function WordleGrid({ word, guesses, currentGuess, maxGuesses = 8 }: Word
             : boxCount > 10
               ? { min: 22, vmin: 4.5, max: 34 }
               : { min: 24, vmin: 5.2, max: 38 }
-  const cellSize = `clamp(${sizeConfig.min}px, ${sizeConfig.vmin}vmin, ${sizeConfig.max}px)`
+  // Cap cell size to prevent horizontal overflow on long multi-word names
+  const spaceCount = displayBoxes.filter(b => b.isSpecial && b.char === ' ').length
+  const effectiveCols = (boxCount - spaceCount) + spaceCount * 0.4
+  const totalGapPx = (boxCount - 1) * gapPx
+  const baseClamp = `clamp(${sizeConfig.min}px, ${sizeConfig.vmin}vmin, ${sizeConfig.max}px)`
+  const containerMax = `calc((100cqi - ${totalGapPx}px) / ${effectiveCols})`
+  const cellSize = `min(${baseClamp}, ${containerMax})`
   const letterSizeClass = boxCount > 26
     ? "text-[clamp(0.55rem,1.8vw,0.9rem)]"
     : denseGrid
@@ -97,6 +103,7 @@ export function WordleGrid({ word, guesses, currentGuess, maxGuesses = 8 }: Word
   }
 
   return (
+    <div style={{ containerType: 'inline-size' } as CSSProperties}>
     <div className="grid" style={gridStyle}>
       {rows.map((_, rowIndex) => {
         const isCurrentRow = rowIndex === guesses.length
@@ -151,6 +158,7 @@ export function WordleGrid({ word, guesses, currentGuess, maxGuesses = 8 }: Word
           </div>
         )
       })}
+    </div>
     </div>
   )
 }
