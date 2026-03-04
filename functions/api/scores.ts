@@ -1,4 +1,20 @@
-import type { Env, ScoreRow } from "../types"
+interface Env {
+  DB: D1Database
+}
+
+interface ScoreRow {
+  id: number
+  nickname: string
+  game_date: string
+  difficulty: "easy" | "hard"
+  game_id: number
+  match_name: string
+  solved: number
+  total_attempts: number
+  failed: number
+  is_complete: number
+  submitted_at: string
+}
 
 interface ScoreBody {
   nickname: string
@@ -31,7 +47,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   let body: ScoreBody
   try {
     body = await context.request.json()
-  } catch {
+  } catch (_e) {
     return jsonError("Invalid JSON body", 400)
   }
 

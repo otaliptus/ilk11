@@ -38,6 +38,7 @@ next-env.d.ts
 
 .codex/
 .wrangler/
+wrangler.toml
 
 scripts/
 *.report.json
