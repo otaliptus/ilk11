@@ -337,17 +337,15 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
       >
         <Info className="h-4 w-4" />
       </Button>
-      {gameStats.isGameComplete && (
-        <Button
-          variant="outline"
-          size="icon"
-          className="glass border-white/20 text-white hover:bg-white/10 hover:border-white/30 transition-all duration-200 shadow-lg"
-          onClick={() => setShowLeaderboard(true)}
-          aria-label="Leaderboard"
-        >
-          <BarChart3 className="h-4 w-4" />
-        </Button>
-      )}
+      <Button
+        variant="outline"
+        size="icon"
+        className="glass border-white/20 text-white hover:bg-white/10 hover:border-white/30 transition-all duration-200 shadow-lg"
+        onClick={() => setShowLeaderboard(true)}
+        aria-label="Leaderboard"
+      >
+        <BarChart3 className="h-4 w-4" />
+      </Button>
     </div>
 
     {/* Share Button - Right */}
@@ -502,6 +500,7 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
       <LeaderboardModal
         open={showLeaderboard}
         onOpenChange={setShowLeaderboard}
+        isGameComplete={gameStats.isGameComplete}
       />
     </div>
   )

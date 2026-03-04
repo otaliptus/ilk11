@@ -10,9 +10,10 @@ import type { LeaderboardResponse } from "@/types/leaderboard"
 interface LeaderboardModalProps {
   open: boolean
   onOpenChange: (open: boolean) => void
+  isGameComplete: boolean
 }
 
-export function LeaderboardModal({ open, onOpenChange }: LeaderboardModalProps) {
+export function LeaderboardModal({ open, onOpenChange, isGameComplete }: LeaderboardModalProps) {
   const dates = getLastNDates(7)
   const [selectedDate, setSelectedDate] = useState(dates[0])
   const [data, setData] = useState<LeaderboardResponse | null>(null)
@@ -124,6 +125,9 @@ export function LeaderboardModal({ open, onOpenChange }: LeaderboardModalProps) 
                       ? "🥉"
                       : `${entry.rank}`
 
+              // Hide scores for today if the player hasn't finished their game
+              const hideScore = selectedDate === today && !isGameComplete
+
               return (
                 <div
                   key={`${entry.nickname}-${entry.difficulty}-${i}`}
@@ -133,7 +137,7 @@ export function LeaderboardModal({ open, onOpenChange }: LeaderboardModalProps) 
                 >
                   {/* Rank */}
                   <span className="w-8 text-center text-sm font-bold text-slate-400 flex-shrink-0">
-                    {rankDisplay}
+                    {hideScore ? "-" : rankDisplay}
                   </span>
 
                   {/* Nickname */}
@@ -154,7 +158,9 @@ export function LeaderboardModal({ open, onOpenChange }: LeaderboardModalProps) 
 
                   {/* Score */}
                   <span className="w-20 text-right text-sm flex-shrink-0">
-                    {entry.is_complete ? (
+                    {hideScore ? (
+                      <span className="text-slate-500">•••</span>
+                    ) : entry.is_complete ? (
                       <span className="text-emerald-300 font-bold">
                         {entry.solved}/11{" "}
                         <span className="text-slate-400 font-normal text-xs">
