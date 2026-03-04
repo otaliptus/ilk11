@@ -18,21 +18,21 @@ export function setStoredNickname(name: string): void {
   }
 }
 
-function submissionKey(gameId: number): string {
-  return `leaderboard_submitted_${gameId}`
+function submissionKey(gameId: number, difficulty: string): string {
+  return `leaderboard_submitted_${gameId}_${difficulty}`
 }
 
-export function isAlreadySubmitted(gameId: number): boolean {
+export function isAlreadySubmitted(gameId: number, difficulty: string): boolean {
   try {
-    return localStorage.getItem(submissionKey(gameId)) === "1"
+    return localStorage.getItem(submissionKey(gameId, difficulty)) === "1"
   } catch {
     return false
   }
 }
 
-export function markAsSubmitted(gameId: number): void {
+export function markAsSubmitted(gameId: number, difficulty: string): void {
   try {
-    localStorage.setItem(submissionKey(gameId), "1")
+    localStorage.setItem(submissionKey(gameId, difficulty), "1")
   } catch {
     // ignore storage errors
   }

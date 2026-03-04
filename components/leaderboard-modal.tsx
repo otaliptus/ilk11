@@ -43,7 +43,7 @@ export function LeaderboardModal({ open, onOpenChange }: LeaderboardModalProps) 
         </DialogHeader>
 
         {/* Day selector */}
-        <div className="flex gap-1.5 overflow-x-auto w-full py-1 px-1 scrollbar-hide">
+        <div className="grid grid-cols-7 gap-1 w-full py-1">
           {dates.map((date) => {
             const { dayName, dayNumber } = formatDateForDisplay(date)
             const isSelected = date === selectedDate
@@ -52,14 +52,16 @@ export function LeaderboardModal({ open, onOpenChange }: LeaderboardModalProps) 
               <button
                 key={date}
                 onClick={() => setSelectedDate(date)}
-                className={`flex-shrink-0 px-2.5 py-1.5 rounded-full text-xs font-bold transition-colors ${
+                className={`flex flex-col items-center py-1.5 rounded-lg text-xs font-bold transition-colors ${
                   isSelected
                     ? "bg-emerald-600 text-white"
-                    : "bg-slate-700/50 text-slate-300 hover:bg-slate-600/50"
+                    : isToday
+                      ? "bg-emerald-600/20 text-emerald-300 hover:bg-emerald-600/30"
+                      : "bg-slate-700/50 text-slate-300 hover:bg-slate-600/50"
                 }`}
               >
-                {dayName} {dayNumber}
-                {isToday && !isSelected ? " •" : ""}
+                <span className="text-[10px] leading-none">{dayName}</span>
+                <span className="text-sm leading-tight">{dayNumber}</span>
               </button>
             )
           })}

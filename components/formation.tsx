@@ -422,7 +422,7 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
 
       {/* Game Completion Modal */}
       <Dialog open={showCompletionModal} onOpenChange={setShowCompletionModal}>
-        <DialogContent className="font-mono sm:max-w-md glass rounded-2xl flex flex-col items-center">
+        <DialogContent className="font-mono sm:max-w-md glass rounded-2xl flex flex-col items-center max-h-[90vh] overflow-y-auto">
           <div className="pb-4 text-center">
             <CheckCircle2 className="h-14 w-14 text-emerald-400 mx-auto mb-3 drop-shadow-lg" />
             <h2 className="text-2xl font-bold text-white mb-1">Game Complete!</h2>

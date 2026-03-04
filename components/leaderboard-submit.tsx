@@ -32,7 +32,7 @@ export function LeaderboardSubmit({
   isComplete,
 }: LeaderboardSubmitProps) {
   const [nickname, setNickname] = useState(getStoredNickname() ?? "")
-  const [submitted, setSubmitted] = useState(isAlreadySubmitted(gameId))
+  const [submitted, setSubmitted] = useState(isAlreadySubmitted(gameId, difficulty))
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
@@ -59,7 +59,7 @@ export function LeaderboardSubmit({
         is_complete: isComplete,
       })
       setStoredNickname(trimmed)
-      markAsSubmitted(gameId)
+      markAsSubmitted(gameId, difficulty)
       setSubmitted(true)
     } catch (e) {
       setError(e instanceof Error ? e.message : "Gonderme hatasi")
