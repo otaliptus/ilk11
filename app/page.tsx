@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react"
 import { Formation } from "@/components/formation"
 import { DifficultySelectionModal } from "@/components/team-selection-modal"
 import { assignPositions } from "@/lib/api"
+import { GAME_TIME_ZONE, getTurkeyDayIndex, getTurkeyDateKey } from "@/lib/date"
 
 type Difficulty = "easy" | "hard"
 
@@ -26,19 +27,11 @@ type GameData = {
   gameId: number
 }
 
-const MS_PER_DAY = 1000 * 60 * 60 * 24
-const GAME_TIME_ZONE = "Europe/Istanbul"
 const EASY_MIN_YEAR = 2010
 const EASY_TEAMS = new Set(["Besiktas", "Trabzonspor", "Fenerbahce", "Galatasaray"])
 const BUILD_ID = process.env.NEXT_PUBLIC_BUILD_ID ?? "dev"
 const EASY_CSV_URL = `/easy.csv?v=${encodeURIComponent(BUILD_ID)}`
 const HARD_CSV_URL = `/hard.csv?v=${encodeURIComponent(BUILD_ID)}`
-const TURKEY_DATE_FORMATTER = new Intl.DateTimeFormat("en-US", {
-  timeZone: GAME_TIME_ZONE,
-  year: "numeric",
-  month: "2-digit",
-  day: "2-digit",
-})
 
 type CsvColumnIndexes = {
   game: number
@@ -143,28 +136,6 @@ function parseLineupBinaryFlags(raw: string, expectedLength: number): number[] {
   return Array.from({ length: expectedLength }, (_, index) => parsed[index] ?? 0)
 }
 
-function getTurkeyDateParts(date = new Date()): { year: number; month: number; day: number } {
-  const parts = TURKEY_DATE_FORMATTER.formatToParts(date)
-  const year = Number(parts.find((part) => part.type === "year")?.value ?? NaN)
-  const month = Number(parts.find((part) => part.type === "month")?.value ?? NaN)
-  const day = Number(parts.find((part) => part.type === "day")?.value ?? NaN)
-
-  if (!Number.isInteger(year) || !Number.isInteger(month) || !Number.isInteger(day)) {
-    throw new Error("Failed to resolve Turkey date parts")
-  }
-
-  return { year, month, day }
-}
-
-function getTurkeyDayIndex(date = new Date()): number {
-  const { year, month, day } = getTurkeyDateParts(date)
-  return Math.floor(Date.UTC(year, month - 1, day) / MS_PER_DAY)
-}
-
-function getTurkeyDateKey(date = new Date()): string {
-  const { year, month, day } = getTurkeyDateParts(date)
-  return `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`
-}
 
 function fnv1a32(input: string): number {
   let hash = 0x811c9dc5

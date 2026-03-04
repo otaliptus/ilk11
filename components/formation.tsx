@@ -7,7 +7,9 @@ import { parseFormation } from "@/lib/api"
 import type { PlayerData, PlayerState } from "@/types/game"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { Share2, Info, Trophy, CheckCircle2 } from "lucide-react"
+import { Share2, Info, Trophy, CheckCircle2, BarChart3 } from "lucide-react"
+import { LeaderboardSubmit } from "@/components/leaderboard-submit"
+import { LeaderboardModal } from "@/components/leaderboard-modal"
 
 interface FormationProps {
   formation: string
@@ -26,6 +28,7 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
   const [completionShown, setCompletionShown] = useState(false);
   const [copied, setCopied] = useState(false);
   const [currentUrl, setCurrentUrl] = useState("");
+  const [showLeaderboard, setShowLeaderboard] = useState(false);
 
   // Scoped per difficulty+day via gameId
   const storageKey = `playerStates_${gameId}`;
@@ -321,8 +324,8 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
       })}
     </div>
     <>
-    {/* Info Button - Left */}
-    <div className="absolute top-2 left-2 sm:top-4 sm:left-4 z-50">
+    {/* Info + Leaderboard Buttons - Left */}
+    <div className="absolute top-2 left-2 sm:top-4 sm:left-4 z-50 flex gap-1.5">
       <Button
         variant="outline"
         size="icon"
@@ -331,6 +334,15 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
         aria-label="Game info"
       >
         <Info className="h-4 w-4" />
+      </Button>
+      <Button
+        variant="outline"
+        size="icon"
+        className="glass border-white/20 text-white hover:bg-white/10 hover:border-white/30 transition-all duration-200 shadow-lg"
+        onClick={() => setShowLeaderboard(true)}
+        aria-label="Leaderboard"
+      >
+        <BarChart3 className="h-4 w-4" />
       </Button>
     </div>
 
@@ -431,7 +443,7 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
               </p>
             )}
           </div>
-          <Button 
+          <Button
             onClick={() => {
               setShowCompletionModal(false);
               setShowCopyModal(true);
@@ -441,8 +453,22 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
             <Share2 className="h-4 w-4 mr-2" />
             Share Results
           </Button>
+          <LeaderboardSubmit
+            gameId={gameId}
+            difficulty={difficulty}
+            matchName={game}
+            solved={gameStats.solved}
+            totalAttempts={gameStats.totalAttempts}
+            failed={gameStats.failed}
+            isComplete={gameStats.isGameComplete}
+          />
         </DialogContent>
       </Dialog>
+
+      <LeaderboardModal
+        open={showLeaderboard}
+        onOpenChange={setShowLeaderboard}
+      />
     </div>
   )
 }
