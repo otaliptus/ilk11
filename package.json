@@ -11,7 +11,10 @@
     "data:validate": "node scripts/validate-games.mjs",
     "data:merge": "node scripts/merge-games.mjs",
     "data:expand-names": "node scripts/expand-dotted-names.mjs",
-    "data:build-pools": "node scripts/build-pools.mjs"
+    "data:build-pools": "node scripts/build-pools.mjs",
+    "dev:api": "wrangler pages dev out --d1 DB=ilk11-leaderboard",
+    "db:migrate": "wrangler d1 execute ilk11-leaderboard --file=migrations/0001_create_scores.sql",
+    "db:migrate:local": "wrangler d1 execute ilk11-leaderboard --local --file=migrations/0001_create_scores.sql"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.4",
@@ -33,6 +36,7 @@
     "eslint-config-next": "14.2.16",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^3"
   }
 }
