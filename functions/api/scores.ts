@@ -44,6 +44,10 @@ function jsonError(message: string, status: number) {
 
 // POST /api/scores — submit a score
 export const onRequestPost: PagesFunction<Env> = async (context) => {
+  if (!context.env.DB) {
+    return jsonError("D1 database binding 'DB' is not configured. Add it in Cloudflare Pages → Settings → Functions → D1 database bindings.", 500)
+  }
+
   let body: ScoreBody
   try {
     body = await context.request.json()
@@ -108,13 +112,17 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
     return Response.json({ success: true })
   } catch (err) {
-    console.error("D1 insert error:", err)
-    return jsonError("Database error", 500)
+    const msg = err instanceof Error ? err.message : String(err)
+    console.error("D1 insert error:", msg)
+    return jsonError(`Database error: ${msg}`, 500)
   }
 }
 
 // GET /api/scores?date=YYYY-MM-DD — get leaderboard for a day
 export const onRequestGet: PagesFunction<Env> = async (context) => {
+  if (!context.env.DB) {
+    return jsonError("D1 database binding 'DB' is not configured. Add it in Cloudflare Pages → Settings → Functions → D1 database bindings.", 500)
+  }
   const url = new URL(context.request.url)
   const date = url.searchParams.get("date")
 
@@ -172,7 +180,8 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
       rankings,
     })
   } catch (err) {
-    console.error("D1 query error:", err)
-    return jsonError("Database error", 500)
+    const msg = err instanceof Error ? err.message : String(err)
+    console.error("D1 query error:", msg)
+    return jsonError(`Database error: ${msg}`, 500)
   }
 }
