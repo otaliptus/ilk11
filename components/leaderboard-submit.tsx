@@ -85,6 +85,11 @@ export function LeaderboardSubmit({
           type="text"
           value={nickname}
           onChange={(e) => setNickname(e.target.value)}
+          onFocus={(e) => {
+            // iOS: wait for keyboard animation then scroll input into view
+            const target = e.target
+            setTimeout(() => target.scrollIntoView({ behavior: "smooth", block: "center" }), 300)
+          }}
           placeholder="Rumuz"
           maxLength={20}
           className="flex-1 bg-slate-800/60 border border-white/10 rounded-lg px-3 py-1.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500/50"

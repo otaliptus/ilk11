@@ -393,7 +393,7 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
     </Dialog>
 
       <Dialog open={showCopyModal} onOpenChange={(open) => { setShowCopyModal(open); if (!open) setShowSubmitInShare(false); }}>
-        <DialogContent className="font-mono sm:max-w-md flex flex-col items-center glass rounded-2xl">
+        <DialogContent className="font-mono sm:max-w-md flex flex-col items-center glass rounded-2xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="text-white text-lg">Share Results</DialogTitle>
           </DialogHeader>
