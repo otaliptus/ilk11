@@ -118,7 +118,7 @@ export function LeaderboardModal({ open, onOpenChange, isGameComplete }: Leaderb
         {/* Match info */}
         {matchName && (
           <div className="w-full text-xs text-slate-300 px-1">
-            <span className="truncate block">{matchName}</span>
+            <span className="block break-words">{matchName}</span>
           </div>
         )}
 
