@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Trophy } from "lucide-react"
 import { fetchLeaderboard } from "@/lib/leaderboard"
@@ -16,6 +16,7 @@ interface LeaderboardModalProps {
 export function LeaderboardModal({ open, onOpenChange, isGameComplete }: LeaderboardModalProps) {
   const dates = getLastNDates(7)
   const [selectedDate, setSelectedDate] = useState(dates[0])
+  const [selectedDifficulty, setSelectedDifficulty] = useState<"easy" | "hard">("easy")
   const [data, setData] = useState<LeaderboardResponse | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -32,6 +33,28 @@ export function LeaderboardModal({ open, onOpenChange, isGameComplete }: Leaderb
   }, [open, selectedDate])
 
   const today = dates[0]
+
+  // Filter by difficulty and re-rank
+  const filteredRankings = useMemo(() => {
+    if (!data) return []
+    const filtered = data.rankings.filter((e) => e.difficulty === selectedDifficulty)
+
+    // Re-rank: complete games first sorted by solved DESC, attempts ASC
+    let rank = 1
+    return filtered.map((entry, i) => {
+      if (i > 0) {
+        const prev = filtered[i - 1]
+        const isTie =
+          (entry.is_complete === prev.is_complete) &&
+          entry.solved === prev.solved &&
+          entry.total_attempts === prev.total_attempts
+        if (!isTie) rank = i + 1
+      }
+      return { ...entry, rank }
+    })
+  }, [data, selectedDifficulty])
+
+  const matchName = data?.matches[selectedDifficulty] ?? null
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -68,25 +91,34 @@ export function LeaderboardModal({ open, onOpenChange, isGameComplete }: Leaderb
           })}
         </div>
 
+        {/* Difficulty toggle */}
+        <div className="flex gap-1 w-full">
+          <button
+            onClick={() => setSelectedDifficulty("easy")}
+            className={`flex-1 py-1.5 rounded-lg text-xs font-bold transition-colors ${
+              selectedDifficulty === "easy"
+                ? "bg-emerald-600 text-white"
+                : "bg-slate-700/50 text-slate-400 hover:bg-slate-600/50"
+            }`}
+          >
+            Easy
+          </button>
+          <button
+            onClick={() => setSelectedDifficulty("hard")}
+            className={`flex-1 py-1.5 rounded-lg text-xs font-bold transition-colors ${
+              selectedDifficulty === "hard"
+                ? "bg-red-600 text-white"
+                : "bg-slate-700/50 text-slate-400 hover:bg-slate-600/50"
+            }`}
+          >
+            Hard
+          </button>
+        </div>
+
         {/* Match info */}
-        {data && (data.matches.easy || data.matches.hard) && (
-          <div className="w-full text-xs text-slate-300 space-y-1 px-1">
-            {data.matches.easy && (
-              <div className="flex items-center gap-2">
-                <span className="bg-emerald-600/60 text-emerald-100 px-1.5 py-0.5 rounded text-[10px] font-bold flex-shrink-0">
-                  Easy
-                </span>
-                <span className="truncate">{data.matches.easy}</span>
-              </div>
-            )}
-            {data.matches.hard && (
-              <div className="flex items-center gap-2">
-                <span className="bg-red-700/60 text-red-100 px-1.5 py-0.5 rounded text-[10px] font-bold flex-shrink-0">
-                  Hard
-                </span>
-                <span className="truncate">{data.matches.hard}</span>
-              </div>
-            )}
+        {matchName && (
+          <div className="w-full text-xs text-slate-300 px-1">
+            <span className="truncate block">{matchName}</span>
           </div>
         )}
 
@@ -107,7 +139,7 @@ export function LeaderboardModal({ open, onOpenChange, isGameComplete }: Leaderb
             <div className="text-center py-8 text-sm text-red-400">{error}</div>
           )}
 
-          {!loading && !error && data?.rankings.length === 0 && (
+          {!loading && !error && filteredRankings.length === 0 && (
             <div className="text-center py-8 text-sm text-slate-400">
               Henuz skor yok
             </div>
@@ -115,7 +147,7 @@ export function LeaderboardModal({ open, onOpenChange, isGameComplete }: Leaderb
 
           {!loading &&
             !error &&
-            data?.rankings.map((entry, i) => {
+            filteredRankings.map((entry, i) => {
               const rankDisplay =
                 entry.rank === 1
                   ? "🥇"
@@ -130,7 +162,7 @@ export function LeaderboardModal({ open, onOpenChange, isGameComplete }: Leaderb
 
               return (
                 <div
-                  key={`${entry.nickname}-${entry.difficulty}-${i}`}
+                  key={`${entry.nickname}-${i}`}
                   className={`flex items-center gap-2 px-2 py-2 ${
                     i % 2 === 0 ? "bg-slate-800/20" : ""
                   } rounded-lg`}
@@ -143,17 +175,6 @@ export function LeaderboardModal({ open, onOpenChange, isGameComplete }: Leaderb
                   {/* Nickname */}
                   <span className="flex-1 text-sm text-white truncate font-medium">
                     {entry.nickname}
-                  </span>
-
-                  {/* Difficulty badge */}
-                  <span
-                    className={`text-[10px] font-bold px-1.5 py-0.5 rounded flex-shrink-0 ${
-                      entry.difficulty === "easy"
-                        ? "bg-emerald-600/40 text-emerald-200"
-                        : "bg-red-700/40 text-red-200"
-                    }`}
-                  >
-                    {entry.difficulty === "easy" ? "E" : "H"}
                   </span>
 
                   {/* Score */}
