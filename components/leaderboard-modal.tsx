@@ -34,7 +34,7 @@ export function LeaderboardModal({ open, onOpenChange }: LeaderboardModalProps) 
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="font-mono sm:max-w-md glass rounded-2xl flex flex-col items-center max-h-[85vh]">
+      <DialogContent className="font-mono sm:max-w-md glass rounded-2xl flex flex-col items-center min-h-[60vh] max-h-[85vh]">
         <DialogHeader className="w-full">
           <div className="flex items-center justify-center gap-2">
             <Trophy className="h-6 w-6 text-emerald-400" />

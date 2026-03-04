@@ -7,9 +7,10 @@ import { parseFormation } from "@/lib/api"
 import type { PlayerData, PlayerState } from "@/types/game"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { Share2, Info, Trophy, CheckCircle2, BarChart3 } from "lucide-react"
+import { Share2, Info, Trophy, CheckCircle2, BarChart3, Send } from "lucide-react"
 import { LeaderboardSubmit } from "@/components/leaderboard-submit"
 import { LeaderboardModal } from "@/components/leaderboard-modal"
+import { isAlreadySubmitted } from "@/lib/leaderboard"
 
 interface FormationProps {
   formation: string
@@ -29,6 +30,7 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
   const [copied, setCopied] = useState(false);
   const [currentUrl, setCurrentUrl] = useState("");
   const [showLeaderboard, setShowLeaderboard] = useState(false);
+  const [showSubmitInShare, setShowSubmitInShare] = useState(false);
 
   // Scoped per difficulty+day via gameId
   const storageKey = `playerStates_${gameId}`;
@@ -335,15 +337,17 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
       >
         <Info className="h-4 w-4" />
       </Button>
-      <Button
-        variant="outline"
-        size="icon"
-        className="glass border-white/20 text-white hover:bg-white/10 hover:border-white/30 transition-all duration-200 shadow-lg"
-        onClick={() => setShowLeaderboard(true)}
-        aria-label="Leaderboard"
-      >
-        <BarChart3 className="h-4 w-4" />
-      </Button>
+      {gameStats.isGameComplete && (
+        <Button
+          variant="outline"
+          size="icon"
+          className="glass border-white/20 text-white hover:bg-white/10 hover:border-white/30 transition-all duration-200 shadow-lg"
+          onClick={() => setShowLeaderboard(true)}
+          aria-label="Leaderboard"
+        >
+          <BarChart3 className="h-4 w-4" />
+        </Button>
+      )}
     </div>
 
     {/* Share Button - Right */}
@@ -388,7 +392,7 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
       </DialogContent>
     </Dialog>
 
-      <Dialog open={showCopyModal} onOpenChange={setShowCopyModal}>
+      <Dialog open={showCopyModal} onOpenChange={(open) => { setShowCopyModal(open); if (!open) setShowSubmitInShare(false); }}>
         <DialogContent className="font-mono sm:max-w-md flex flex-col items-center glass rounded-2xl">
           <DialogHeader>
             <DialogTitle className="text-white text-lg">Share Results</DialogTitle>
@@ -396,17 +400,47 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
           <pre className="whitespace-pre-wrap break-words text-sm text-center text-white/90 bg-slate-800/50 p-4 rounded-xl w-full border border-white/10">
             {generateCopyableTable()}
           </pre>
-          <Button 
-            onClick={copyTableToClipboard}
-            className={`${copied ? 'bg-emerald-600 hover:bg-emerald-600' : 'bg-emerald-600 hover:bg-emerald-500'} text-white min-w-[160px] rounded-xl transition-all duration-200 shadow-lg`}
-            disabled={copied}
-          >
-            {copied ? (
-              <><CheckCircle2 className="h-4 w-4 mr-2" />Copied!</>
-            ) : (
-              'Copy to Clipboard'
-            )}
-          </Button>
+          {showSubmitInShare ? (
+            <LeaderboardSubmit
+              gameId={gameId}
+              difficulty={difficulty}
+              matchName={game}
+              solved={gameStats.solved}
+              totalAttempts={gameStats.totalAttempts}
+              failed={gameStats.failed}
+              isComplete={gameStats.isGameComplete}
+            />
+          ) : (
+            <div className="flex gap-2 w-full">
+              <Button
+                onClick={copyTableToClipboard}
+                className={`${copied ? 'bg-emerald-600 hover:bg-emerald-600' : 'bg-emerald-600 hover:bg-emerald-500'} text-white rounded-xl transition-all duration-200 shadow-lg ${gameStats.isGameComplete ? 'flex-1' : 'w-full'}`}
+                disabled={copied}
+              >
+                {copied ? (
+                  <><CheckCircle2 className="h-4 w-4 mr-2" />Copied!</>
+                ) : (
+                  'Copy to Clipboard'
+                )}
+              </Button>
+              {gameStats.isGameComplete && (
+                isAlreadySubmitted(gameId, difficulty) ? (
+                  <div className="flex-1 flex items-center justify-center gap-1.5 text-emerald-400 text-sm">
+                    <CheckCircle2 className="h-4 w-4" />
+                    <span>Gonderildi</span>
+                  </div>
+                ) : (
+                  <Button
+                    onClick={() => setShowSubmitInShare(true)}
+                    className="flex-1 bg-slate-700 hover:bg-slate-600 text-white rounded-xl transition-all duration-200 shadow-lg"
+                  >
+                    <Send className="h-4 w-4 mr-1" />
+                    Skor Gonder
+                  </Button>
+                )
+              )}
+            </div>
+          )}
         </DialogContent>
       </Dialog>
 
