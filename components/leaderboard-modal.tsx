@@ -10,13 +10,16 @@ import type { LeaderboardResponse } from "@/types/leaderboard"
 interface LeaderboardModalProps {
   open: boolean
   onOpenChange: (open: boolean) => void
+  /** Whether the player has completed their current difficulty's game */
   isGameComplete: boolean
+  /** The difficulty the player is currently playing */
   difficulty: "easy" | "hard"
 }
 
 export function LeaderboardModal({ open, onOpenChange, isGameComplete, difficulty }: LeaderboardModalProps) {
   const dates = getLastNDates(7)
   const [selectedDate, setSelectedDate] = useState(dates[0])
+  const [selectedDifficulty, setSelectedDifficulty] = useState<"easy" | "hard">(difficulty)
   const [data, setData] = useState<LeaderboardResponse | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -34,10 +37,17 @@ export function LeaderboardModal({ open, onOpenChange, isGameComplete, difficult
 
   const today = dates[0]
 
+  // Scores are hidden for today when:
+  // - viewing your own difficulty and you haven't finished yet, OR
+  // - viewing the other difficulty (you can't spoil scores you haven't played)
+  const hideScores =
+    selectedDate === today &&
+    (selectedDifficulty === difficulty ? !isGameComplete : true)
+
   // Filter by difficulty and re-rank
   const filteredRankings = useMemo(() => {
     if (!data) return []
-    const filtered = data.rankings.filter((e) => e.difficulty === difficulty)
+    const filtered = data.rankings.filter((e) => e.difficulty === selectedDifficulty)
 
     // Re-rank: complete games first sorted by solved DESC, attempts ASC
     let rank = 1
@@ -52,9 +62,9 @@ export function LeaderboardModal({ open, onOpenChange, isGameComplete, difficult
       }
       return { ...entry, rank }
     })
-  }, [data, difficulty])
+  }, [data, selectedDifficulty])
 
-  const matchName = data?.matches[difficulty] ?? null
+  const matchName = data?.matches[selectedDifficulty] ?? null
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -91,15 +101,28 @@ export function LeaderboardModal({ open, onOpenChange, isGameComplete, difficult
           })}
         </div>
 
-        {/* Difficulty badge */}
-        <div className="w-full flex justify-center">
-          <span className={`text-xs font-bold px-3 py-1 rounded-full ${
-            difficulty === "easy"
-              ? "bg-emerald-600/80 text-emerald-100"
-              : "bg-red-700/80 text-red-100"
-          }`}>
-            {difficulty === "easy" ? "Easy" : "Hard"}
-          </span>
+        {/* Difficulty toggle */}
+        <div className="flex gap-1 w-full">
+          <button
+            onClick={() => setSelectedDifficulty("easy")}
+            className={`flex-1 py-1.5 rounded-lg text-xs font-bold transition-colors ${
+              selectedDifficulty === "easy"
+                ? "bg-emerald-600 text-white"
+                : "bg-slate-700/50 text-slate-400 hover:bg-slate-600/50"
+            }`}
+          >
+            Easy
+          </button>
+          <button
+            onClick={() => setSelectedDifficulty("hard")}
+            className={`flex-1 py-1.5 rounded-lg text-xs font-bold transition-colors ${
+              selectedDifficulty === "hard"
+                ? "bg-red-600 text-white"
+                : "bg-slate-700/50 text-slate-400 hover:bg-slate-600/50"
+            }`}
+          >
+            Hard
+          </button>
         </div>
 
         {/* Match info */}
@@ -144,9 +167,6 @@ export function LeaderboardModal({ open, onOpenChange, isGameComplete, difficult
                       ? "🥉"
                       : `${entry.rank}`
 
-              // Hide scores for today if the player hasn't finished their game
-              const hideScore = selectedDate === today && !isGameComplete
-
               return (
                 <div
                   key={`${entry.nickname}-${i}`}
@@ -156,7 +176,7 @@ export function LeaderboardModal({ open, onOpenChange, isGameComplete, difficult
                 >
                   {/* Rank */}
                   <span className="w-8 text-center text-sm font-bold text-slate-400 flex-shrink-0">
-                    {hideScore ? "-" : rankDisplay}
+                    {hideScores ? "-" : rankDisplay}
                   </span>
 
                   {/* Nickname */}
@@ -166,7 +186,7 @@ export function LeaderboardModal({ open, onOpenChange, isGameComplete, difficult
 
                   {/* Score */}
                   <span className="w-20 text-right text-sm flex-shrink-0">
-                    {hideScore ? (
+                    {hideScores ? (
                       <span className="text-slate-500">•••</span>
                     ) : entry.is_complete ? (
                       <span className="text-emerald-300 font-bold">
