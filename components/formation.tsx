@@ -501,6 +501,7 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
         open={showLeaderboard}
         onOpenChange={setShowLeaderboard}
         isGameComplete={gameStats.isGameComplete}
+        difficulty={difficulty}
       />
     </div>
   )
