@@ -4,6 +4,7 @@
 
 body {
   font-family: var(--font-geist-sans), system-ui, sans-serif;
+  background: #0f172a;
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
   padding-left: env(safe-area-inset-left);

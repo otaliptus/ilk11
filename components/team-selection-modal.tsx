@@ -1,52 +1,60 @@
 "use client"
 
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
 import { Trophy } from "lucide-react"
 
-interface DifficultySelectionModalProps {
-  open: boolean
+interface DifficultySelectionProps {
   onSelect: (difficulty: "easy" | "hard") => void
 }
 
-export function DifficultySelectionModal({ open, onSelect }: DifficultySelectionModalProps) {
+export function DifficultySelectionModal({ onSelect }: DifficultySelectionProps & { open?: boolean }) {
+  return <DifficultySelection onSelect={onSelect} />
+}
+
+export function DifficultySelection({ onSelect }: DifficultySelectionProps) {
   return (
-    <Dialog open={open}>
-      <DialogContent
-        className="font-mono sm:max-w-sm glass rounded-2xl flex flex-col items-center gap-0 [&>button]:hidden"
-        onInteractOutside={(e) => e.preventDefault()}
-        onEscapeKeyDown={(e) => e.preventDefault()}
-      >
-        <DialogHeader className="w-full flex flex-col items-center pb-4">
-          <Trophy className="h-10 w-10 text-emerald-400 mx-auto mb-2 drop-shadow-lg" />
-          <DialogTitle className="text-2xl font-extrabold text-white tracking-tight text-center">
+    <div className="flex-1 flex flex-col items-center justify-center px-4 py-8 animate-in fade-in duration-500">
+      {/* Pitch circle decoration */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+        <div className="w-[min(80vw,400px)] aspect-square rounded-full border border-white/[0.04]" />
+        <div className="absolute w-[min(40vw,200px)] aspect-square rounded-full border border-white/[0.03]" />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center gap-6 w-full max-w-xs">
+        {/* Logo area */}
+        <div className="flex flex-col items-center gap-3">
+          <div className="relative">
+            <Trophy className="h-12 w-12 text-emerald-400 drop-shadow-[0_0_12px_rgba(16,185,129,0.4)]" />
+          </div>
+          <h1 className="text-4xl font-extrabold text-white tracking-tight font-mono">
             İlk 11!
-          </DialogTitle>
-          <p className="text-slate-300 text-sm text-center mt-1">
+          </h1>
+          <p className="text-slate-400 text-sm tracking-wide">
             Zorluk seviyesi seç
           </p>
-        </DialogHeader>
-
-        <div className="flex gap-4 w-full mt-2">
-          <Button
-            onClick={() => onSelect("easy")}
-            className="flex-1 py-6 text-base font-bold rounded-xl bg-emerald-600/80 hover:bg-emerald-500 border border-emerald-400/40 text-white transition-all duration-150 flex flex-col gap-1 h-auto"
-          >
-            <span className="text-lg">🟢</span>
-            <span>Easy</span>
-            <span className="text-xs font-normal text-emerald-100/80">Büyük kulüpler</span>
-          </Button>
-
-          <Button
-            onClick={() => onSelect("hard")}
-            className="flex-1 py-6 text-base font-bold rounded-xl bg-red-700/70 hover:bg-red-600 border border-red-500/40 text-white transition-all duration-150 flex flex-col gap-1 h-auto"
-          >
-            <span className="text-lg">🔴</span>
-            <span>Hard</span>
-            <span className="text-xs font-normal text-red-100/80">Diğer takımlar</span>
-          </Button>
         </div>
-      </DialogContent>
-    </Dialog>
+
+        {/* Buttons */}
+        <div className="flex gap-3 w-full mt-2">
+          <button
+            onClick={() => onSelect("easy")}
+            className="flex-1 group relative py-5 rounded-xl bg-emerald-600/60 hover:bg-emerald-500/70 border border-emerald-400/30 hover:border-emerald-400/50 text-white transition-all duration-200 flex flex-col items-center gap-1.5 active:scale-[0.97]"
+          >
+            <span className="text-lg leading-none">🟢</span>
+            <span className="text-base font-bold tracking-wide">Easy</span>
+            <span className="text-[11px] font-normal text-emerald-200/70">Büyük kulüpler</span>
+          </button>
+
+          <button
+            onClick={() => onSelect("hard")}
+            className="flex-1 group relative py-5 rounded-xl bg-red-700/50 hover:bg-red-600/60 border border-red-500/30 hover:border-red-500/50 text-white transition-all duration-200 flex flex-col items-center gap-1.5 active:scale-[0.97]"
+          >
+            <span className="text-lg leading-none">🔴</span>
+            <span className="text-base font-bold tracking-wide">Hard</span>
+            <span className="text-[11px] font-normal text-red-200/70">Diğer takımlar</span>
+          </button>
+        </div>
+      </div>
+    </div>
   )
 }

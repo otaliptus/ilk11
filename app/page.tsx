@@ -379,13 +379,10 @@ export default function Home() {
   const showLoading = !!difficulty && !gameData
 
   return (
-    <main className="h-screen gradient-dark text-white p-1 sm:p-2 flex flex-col">
-      {/* Difficulty selection modal – shown until user picks easy/hard for today */}
-      <DifficultySelectionModal
-        open={showDifficultySelection}
-        onSelect={handleDifficultySelect}
-      />
-
+    <main className="min-h-screen h-screen gradient-dark text-white p-1 sm:p-2 flex flex-col overflow-hidden">
+      {showDifficultySelection ? (
+        <DifficultySelectionModal onSelect={handleDifficultySelect} />
+      ) : (
       <div className="h-full w-full min-h-0 flex-1 flex items-center justify-center">
         {showLoading && (
           <div className="glass rounded-2xl p-6 text-center">
@@ -409,6 +406,7 @@ export default function Home() {
           </div>
         )}
       </div>
+      )}
 
       <footer className="pt-2 pb-1 flex justify-center">
         <div className="flex items-center gap-4 rounded-full border border-white/15 bg-black/35 px-3 py-1.5 text-sm leading-none text-slate-200 backdrop-blur-sm">
