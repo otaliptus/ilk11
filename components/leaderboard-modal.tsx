@@ -11,12 +11,12 @@ interface LeaderboardModalProps {
   open: boolean
   onOpenChange: (open: boolean) => void
   isGameComplete: boolean
+  difficulty: "easy" | "hard"
 }
 
-export function LeaderboardModal({ open, onOpenChange, isGameComplete }: LeaderboardModalProps) {
+export function LeaderboardModal({ open, onOpenChange, isGameComplete, difficulty }: LeaderboardModalProps) {
   const dates = getLastNDates(7)
   const [selectedDate, setSelectedDate] = useState(dates[0])
-  const [selectedDifficulty, setSelectedDifficulty] = useState<"easy" | "hard">("easy")
   const [data, setData] = useState<LeaderboardResponse | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -37,7 +37,7 @@ export function LeaderboardModal({ open, onOpenChange, isGameComplete }: Leaderb
   // Filter by difficulty and re-rank
   const filteredRankings = useMemo(() => {
     if (!data) return []
-    const filtered = data.rankings.filter((e) => e.difficulty === selectedDifficulty)
+    const filtered = data.rankings.filter((e) => e.difficulty === difficulty)
 
     // Re-rank: complete games first sorted by solved DESC, attempts ASC
     let rank = 1
@@ -52,9 +52,9 @@ export function LeaderboardModal({ open, onOpenChange, isGameComplete }: Leaderb
       }
       return { ...entry, rank }
     })
-  }, [data, selectedDifficulty])
+  }, [data, difficulty])
 
-  const matchName = data?.matches[selectedDifficulty] ?? null
+  const matchName = data?.matches[difficulty] ?? null
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -91,28 +91,15 @@ export function LeaderboardModal({ open, onOpenChange, isGameComplete }: Leaderb
           })}
         </div>
 
-        {/* Difficulty toggle */}
-        <div className="flex gap-1 w-full">
-          <button
-            onClick={() => setSelectedDifficulty("easy")}
-            className={`flex-1 py-1.5 rounded-lg text-xs font-bold transition-colors ${
-              selectedDifficulty === "easy"
-                ? "bg-emerald-600 text-white"
-                : "bg-slate-700/50 text-slate-400 hover:bg-slate-600/50"
-            }`}
-          >
-            Easy
-          </button>
-          <button
-            onClick={() => setSelectedDifficulty("hard")}
-            className={`flex-1 py-1.5 rounded-lg text-xs font-bold transition-colors ${
-              selectedDifficulty === "hard"
-                ? "bg-red-600 text-white"
-                : "bg-slate-700/50 text-slate-400 hover:bg-slate-600/50"
-            }`}
-          >
-            Hard
-          </button>
+        {/* Difficulty badge */}
+        <div className="w-full flex justify-center">
+          <span className={`text-xs font-bold px-3 py-1 rounded-full ${
+            difficulty === "easy"
+              ? "bg-emerald-600/80 text-emerald-100"
+              : "bg-red-700/80 text-red-100"
+          }`}>
+            {difficulty === "easy" ? "Easy" : "Hard"}
+          </span>
         </div>
 
         {/* Match info */}
