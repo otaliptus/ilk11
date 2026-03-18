@@ -168,14 +168,35 @@ function extractGameYear(game: string): number | null {
   return Number.isInteger(year) ? year : null
 }
 
+const MONTH_NAMES: Record<string, number> = {
+  January: 1, February: 2, March: 3, April: 4, May: 5, June: 6,
+  July: 7, August: 8, September: 9, October: 10, November: 11, December: 12,
+}
+
+function getSeasonFromGame(game: string): string {
+  const year = extractGameYear(game)
+  if (year === null) return "unknown"
+
+  const monthMatch = game.match(/\b(January|February|March|April|May|June|July|August|September|October|November|December)\b/)
+  if (!monthMatch) return String(year)
+
+  const month = MONTH_NAMES[monthMatch[1]]
+  if (month >= 8) {
+    const shortNext = String(year + 1).slice(-2)
+    return `${year}-${shortNext}`
+  } else {
+    const shortCurr = String(year).slice(-2)
+    return `${year - 1}-${shortCurr}`
+  }
+}
+
 function dayIndexToDateKey(dayIndex: number): string {
   const d = new Date(dayIndex * MS_PER_DAY)
   return `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, "0")}-${String(d.getUTCDate()).padStart(2, "0")}`
 }
 
 function getTeamSeasonCombo(row: GameRow): string {
-  const year = extractGameYear(row.game)
-  return `${row.team}|${year ?? "unknown"}`
+  return `${row.team}|${getSeasonFromGame(row.game)}`
 }
 
 function pickWithDedup(pool: GameRow[], rng: () => number, recentCombos: Set<string>): GameRow {
