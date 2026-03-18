@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react"
 import { Formation } from "@/components/formation"
 import { DifficultySelectionModal } from "@/components/team-selection-modal"
 import { assignPositions } from "@/lib/api"
-import { GAME_TIME_ZONE, getTurkeyDayIndex, getTurkeyDateKey } from "@/lib/date"
+import { GAME_TIME_ZONE, getTurkeyDayIndex } from "@/lib/date"
 
 type Difficulty = "easy" | "hard"
 
@@ -32,6 +32,10 @@ const EASY_TEAMS = new Set(["Besiktas", "Trabzonspor", "Fenerbahce", "Galatasara
 const BUILD_ID = process.env.NEXT_PUBLIC_BUILD_ID ?? "dev"
 const EASY_CSV_URL = `/easy.csv?v=${encodeURIComponent(BUILD_ID)}`
 const HARD_CSV_URL = `/hard.csv?v=${encodeURIComponent(BUILD_ID)}`
+
+const MS_PER_DAY = 86_400_000
+const DEDUP_WINDOW = 30
+const DEDUP_EPOCH = "2026-03-18"
 
 type CsvColumnIndexes = {
   game: number
@@ -164,6 +168,29 @@ function extractGameYear(game: string): number | null {
   return Number.isInteger(year) ? year : null
 }
 
+function dayIndexToDateKey(dayIndex: number): string {
+  const d = new Date(dayIndex * MS_PER_DAY)
+  return `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, "0")}-${String(d.getUTCDate()).padStart(2, "0")}`
+}
+
+function getTeamSeasonCombo(row: GameRow): string {
+  const year = extractGameYear(row.game)
+  return `${row.team}|${year ?? "unknown"}`
+}
+
+function pickWithDedup(pool: GameRow[], rng: () => number, recentCombos: Set<string>): GameRow {
+  let firstCandidate: GameRow | null = null
+  for (let attempt = 0; attempt < pool.length; attempt++) {
+    const index = Math.floor(rng() * pool.length)
+    const candidate = pool[index]
+    if (!firstCandidate) firstCandidate = candidate
+    if (!recentCombos.has(getTeamSeasonCombo(candidate))) {
+      return candidate
+    }
+  }
+  return firstCandidate!
+}
+
 function parsePoolRows(csvText: string, expectedDifficulty: Difficulty): GameRow[] {
   const allLines = csvText.trim().split(/\r?\n/)
   if (allLines.length < 2) {
@@ -248,6 +275,18 @@ function parsePoolRows(csvText: string, expectedDifficulty: Difficulty): GameRow
   return rows
 }
 
+function pickDailyPairLegacy(pools: DailyPools, dayIndex: number): {
+  easyRow: GameRow
+  hardRow: GameRow
+} {
+  const dateKey = dayIndexToDateKey(dayIndex)
+  const seed = fnv1a32(`${GAME_TIME_ZONE}:${dateKey}:pair`)
+  const rng = mulberry32(seed)
+  const easyRow = pools.easy[Math.floor(rng() * pools.easy.length)]
+  const hardRow = pools.hard[Math.floor(rng() * pools.hard.length)]
+  return { easyRow, hardRow }
+}
+
 function pickDailyPair(pools: DailyPools, date = new Date()): {
   dayIndex: number
   easyRow: GameRow
@@ -257,16 +296,56 @@ function pickDailyPair(pools: DailyPools, date = new Date()): {
     throw new Error("Need at least one easy and one hard game row")
   }
 
-  // Daily rollover follows Turkey calendar day.
   const dayIndex = getTurkeyDayIndex(date)
-  const dateKey = getTurkeyDateKey(date)
-  const seed = fnv1a32(`${GAME_TIME_ZONE}:${dateKey}:pair`)
-  const rng = mulberry32(seed)
 
-  const easyIndex = Math.floor(rng() * pools.easy.length)
-  const hardIndex = Math.floor(rng() * pools.hard.length)
-  const easyRow = pools.easy[easyIndex]
-  const hardRow = pools.hard[hardIndex]
+  // Compute epoch day index
+  const [ey, em, ed] = DEDUP_EPOCH.split("-").map(Number)
+  const epochDayIndex = Math.floor(Date.UTC(ey, em - 1, ed) / MS_PER_DAY)
+
+  // Before epoch: use legacy (purely random) selection
+  if (dayIndex < epochDayIndex) {
+    const { easyRow, hardRow } = pickDailyPairLegacy(pools, dayIndex)
+    return { dayIndex, easyRow, hardRow }
+  }
+
+  // Build sliding-window dedup history.
+  // Seed with legacy picks for DEDUP_WINDOW days before epoch.
+  const easyHistory = new Map<number, string>()
+  const hardHistory = new Map<number, string>()
+
+  for (let di = epochDayIndex - DEDUP_WINDOW; di < epochDayIndex; di++) {
+    const { easyRow, hardRow } = pickDailyPairLegacy(pools, di)
+    easyHistory.set(di, getTeamSeasonCombo(easyRow))
+    hardHistory.set(di, getTeamSeasonCombo(hardRow))
+  }
+
+  // From epoch through target day, compute each day with dedup
+  let easyRow: GameRow = pools.easy[0]
+  let hardRow: GameRow = pools.hard[0]
+
+  for (let di = epochDayIndex; di <= dayIndex; di++) {
+    const dk = dayIndexToDateKey(di)
+
+    // Easy: collect recent combos and pick avoiding them
+    const recentEasy = new Set<string>()
+    for (let j = 1; j <= DEDUP_WINDOW; j++) {
+      const combo = easyHistory.get(di - j)
+      if (combo) recentEasy.add(combo)
+    }
+    const easyRng = mulberry32(fnv1a32(`${GAME_TIME_ZONE}:${dk}:v2:easy`))
+    easyRow = pickWithDedup(pools.easy, easyRng, recentEasy)
+    easyHistory.set(di, getTeamSeasonCombo(easyRow))
+
+    // Hard: collect recent combos and pick avoiding them
+    const recentHard = new Set<string>()
+    for (let j = 1; j <= DEDUP_WINDOW; j++) {
+      const combo = hardHistory.get(di - j)
+      if (combo) recentHard.add(combo)
+    }
+    const hardRng = mulberry32(fnv1a32(`${GAME_TIME_ZONE}:${dk}:v2:hard`))
+    hardRow = pickWithDedup(pools.hard, hardRng, recentHard)
+    hardHistory.set(di, getTeamSeasonCombo(hardRow))
+  }
 
   return { dayIndex, easyRow, hardRow }
 }
