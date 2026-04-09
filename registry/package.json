@@ -8,6 +8,7 @@
     "build:players:fbref": "node scripts/build-player-fbref-registry.mjs",
     "build:season-leaderboards:fbref": "node scripts/build-fbref-season-leaderboards.mjs",
     "build:players:transfermarkt": "node scripts/build-player-transfermarkt-registry.mjs",
+    "build:historical:transfermarkt": "node scripts/build-transfermarkt-historical-registry.mjs",
     "build:staff:transfermarkt": "node scripts/build-staff-transfermarkt-registries.mjs",
     "build:manual": "node scripts/build-manual-registries.mjs",
     "build:autocomplete": "node scripts/build-autocomplete-index.mjs",

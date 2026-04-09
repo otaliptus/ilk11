@@ -63,6 +63,19 @@ Notes:
 - without `--limit`, it attempts the full corpus referenced by root `data/games.csv`
 - the full run is much heavier than the bootstrap build
 
+Build a historical 1980+ Transfermarkt registry from league season pages, detailed squad pages, and club manager-history pages:
+
+```bash
+cd registry
+npm run build:historical:transfermarkt -- --from-season 1980
+```
+
+Notes:
+
+- this writes broad player and coach registries under `output/players.transfermarkt.historical.json` and `output/coaches.transfermarkt.historical.json`
+- it caches raw competition, squad, and staff-history pages under `output/cache/transfermarkt-historical/`
+- this is the right path for filling pre-2001 autocomplete gaps such as `Tanju Colak`
+
 Build manual coach and referee registries:
 
 ```bash
@@ -101,7 +114,9 @@ npm run summary
 
 - `output/players.bootstrap.json`
 - `output/players.transfermarkt.json`
+- `output/players.transfermarkt.historical.json`
 - `output/coaches.manual.json`
+- `output/coaches.transfermarkt.historical.json`
 - `output/referees.manual.json`
 - `output/autocomplete.json`
 - `output/summary.json`
