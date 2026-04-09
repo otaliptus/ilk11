@@ -600,7 +600,9 @@ export default function Ilk10Page() {
         <div className="glass rounded-2xl p-2 sm:p-3">
           <ul className="flex flex-col gap-2">
             {DAILY_QUESTION.answers.map((answer, index) => {
-              const revealed = foundSet.has(index) || (!solved && finished)
+              const found = foundSet.has(index)
+              const missedReveal = finished && !found
+              const revealed = found || missedReveal
               const waveDelay = `${(DAILY_QUESTION.answers.length - 1 - index) * 70}ms`
               const slotWaveActive = boardFx?.kind === "success"
               const slotHit = boardFx?.kind === "success" && boardFx.answerIndex === index
@@ -615,6 +617,8 @@ export default function Ilk10Page() {
                 slotColor = "bg-emerald-500/30 border-emerald-400/60 text-white"
               } else if (isScanTarget) {
                 slotColor = "bg-yellow-500/20 border-yellow-400/40 text-yellow-200"
+              } else if (missedReveal) {
+                slotColor = "bg-yellow-500/20 border-yellow-400/40 text-yellow-100"
               } else if (revealed) {
                 slotColor = "gradient-card-success border-emerald-400/30 text-white"
               } else {
@@ -631,8 +635,10 @@ export default function Ilk10Page() {
                     className={`flex h-8 w-8 items-center justify-center rounded-md font-mono text-sm font-bold transition-colors duration-150 ${
                       isScanHit
                         ? "bg-emerald-600/40 text-white"
-                        : isScanTarget
+                      : isScanTarget
                           ? "bg-yellow-500/30 text-yellow-100"
+                          : missedReveal
+                            ? "bg-yellow-500/30 text-yellow-100"
                           : revealed
                             ? "bg-black/25 text-emerald-100"
                             : "bg-slate-800/60 text-slate-500"
