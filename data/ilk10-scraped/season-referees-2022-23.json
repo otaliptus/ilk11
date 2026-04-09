@@ -1,0 +1,42 @@
+{
+  "id": "season-referees-2022-23",
+  "prompt": "Top 10 Super Lig referees by matches officiated in the 2022-23 season",
+  "shortLabel": "2022-23 Referees",
+  "entityType": "referee",
+  "category": "derby",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/super-lig/schiedsrichter/wettbewerb/TR1/saison_id/2022",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Abdulkadir Bitigen"
+    },
+    {
+      "value": "Ali Sansalan"
+    },
+    {
+      "value": "Zorbay Kucuk"
+    },
+    {
+      "value": "Arda Kardesler"
+    },
+    {
+      "value": "Umit Ozturk"
+    },
+    {
+      "value": "Kadir Saglam"
+    },
+    {
+      "value": "Mete Kalkavan"
+    },
+    {
+      "value": "Volkan Bayarslan"
+    },
+    {
+      "value": "Bahattin Simsek"
+    },
+    {
+      "value": "Halil Umut Meler"
+    }
+  ]
+}

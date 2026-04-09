@@ -1,0 +1,42 @@
+{
+  "id": "season-scorers-2017-18",
+  "prompt": "Top 10 Super Lig scorers of the 2017-18 season",
+  "shortLabel": "2017-18 Top Scorers",
+  "entityType": "player",
+  "category": "all-time",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/super-lig/torschuetzenliste/wettbewerb/TR1/saison_id/2017",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Bafetimbi Gomis"
+    },
+    {
+      "value": "Burak Yılmaz"
+    },
+    {
+      "value": "Adis Jahovic"
+    },
+    {
+      "value": "Emmanuel Adebayor"
+    },
+    {
+      "value": "Emre Akbaba"
+    },
+    {
+      "value": "Talisca"
+    },
+    {
+      "value": "Giuliano"
+    },
+    {
+      "value": "Umut Bulut"
+    },
+    {
+      "value": "Trezeguet"
+    },
+    {
+      "value": "Ryan Babel"
+    }
+  ]
+}

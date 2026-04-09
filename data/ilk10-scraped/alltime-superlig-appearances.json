@@ -1,0 +1,42 @@
+{
+  "id": "alltime-superlig-appearances",
+  "prompt": "Top 10 players with the most Super Lig appearances of all time",
+  "shortLabel": "Most Appearances",
+  "entityType": "player",
+  "category": "all-time",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/super-lig/rekordspieler/wettbewerb/TR1/plus/1",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Umut Bulut"
+    },
+    {
+      "value": "Hakan Sukur"
+    },
+    {
+      "value": "Hami Mandıralı"
+    },
+    {
+      "value": "Mehmet Nas"
+    },
+    {
+      "value": "Veysel Sarı"
+    },
+    {
+      "value": "Fernando Muslera"
+    },
+    {
+      "value": "Oguz Cetin"
+    },
+    {
+      "value": "Guray Vural"
+    },
+    {
+      "value": "Bulent Korkmaz"
+    },
+    {
+      "value": "Omer Catkıc"
+    }
+  ]
+}

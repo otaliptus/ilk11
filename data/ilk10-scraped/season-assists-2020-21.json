@@ -1,0 +1,42 @@
+{
+  "id": "season-assists-2020-21",
+  "prompt": "Top 10 Super Lig assist leaders of the 2020-21 season",
+  "shortLabel": "2020-21 Assist Leaders",
+  "entityType": "player",
+  "category": "all-time",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/super-lig/scorerliste/wettbewerb/TR1/saison_id/2020",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Rachid Ghezzal"
+    },
+    {
+      "value": "Max Gradel"
+    },
+    {
+      "value": "Halil Akbunar"
+    },
+    {
+      "value": "Atiba Hutchinson"
+    },
+    {
+      "value": "Ozan Tufan"
+    },
+    {
+      "value": "Alassane Ndao"
+    },
+    {
+      "value": "Edin Visca"
+    },
+    {
+      "value": "Dimitrios Pelkas"
+    },
+    {
+      "value": "Anthony Nwakaeme"
+    },
+    {
+      "value": "Emrah Bassan"
+    }
+  ]
+}

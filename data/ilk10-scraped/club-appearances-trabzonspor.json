@@ -1,0 +1,42 @@
+{
+  "id": "club-appearances-trabzonspor",
+  "prompt": "Top 10 players with the most Trabzonspor appearances",
+  "shortLabel": "TS Most Appearances",
+  "entityType": "player",
+  "category": "all-time",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/trabzonspor/rekordspieler/verein/449",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Hami Mandıralı"
+    },
+    {
+      "value": "Orhan Cıkırıkcı"
+    },
+    {
+      "value": "Kemal Serdar"
+    },
+    {
+      "value": "Lemi Celik"
+    },
+    {
+      "value": "Hamdi Aslan"
+    },
+    {
+      "value": "Ogun Temizkanoglu"
+    },
+    {
+      "value": "Huseyin Cimsir"
+    },
+    {
+      "value": "Abdullah Ercan"
+    },
+    {
+      "value": "Gokdeniz Karadeniz"
+    },
+    {
+      "value": "Ugurcan Cakır"
+    }
+  ]
+}

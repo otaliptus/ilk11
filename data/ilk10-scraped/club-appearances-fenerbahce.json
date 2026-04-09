@@ -1,0 +1,42 @@
+{
+  "id": "club-appearances-fenerbahce",
+  "prompt": "Top 10 players with the most Fenerbahce appearances",
+  "shortLabel": "FB Most Appearances",
+  "entityType": "player",
+  "category": "all-time",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/fenerbahce-istanbul/rekordspieler/verein/36",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Volkan Demirel"
+    },
+    {
+      "value": "Mujdat Yetkiner"
+    },
+    {
+      "value": "Rustu Recber"
+    },
+    {
+      "value": "Gokhan Gonul"
+    },
+    {
+      "value": "Alex"
+    },
+    {
+      "value": "Selcuk Sahin"
+    },
+    {
+      "value": "Mehmet Topal"
+    },
+    {
+      "value": "Oguz Cetin"
+    },
+    {
+      "value": "Semih Senturk"
+    },
+    {
+      "value": "Aykut Kocaman"
+    }
+  ]
+}

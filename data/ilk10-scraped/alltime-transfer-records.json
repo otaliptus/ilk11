@@ -1,0 +1,42 @@
+{
+  "id": "alltime-transfer-records",
+  "prompt": "Top 10 most expensive transfer signings in Super Lig history",
+  "shortLabel": "Transfer Records",
+  "entityType": "player",
+  "category": "all-time",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/super-lig/transferrekorde/wettbewerb/TR1",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Victor Osimhen"
+    },
+    {
+      "value": "Wilfried Singo"
+    },
+    {
+      "value": "Orkun Kokcu"
+    },
+    {
+      "value": "Ferdi Kadıoglu"
+    },
+    {
+      "value": "Sacha Boey"
+    },
+    {
+      "value": "Matteo Guendouzi"
+    },
+    {
+      "value": "Arda Guler"
+    },
+    {
+      "value": "Ugurcan Cakır"
+    },
+    {
+      "value": "Kerem Akturkoglu"
+    },
+    {
+      "value": "Cenk Tosun"
+    }
+  ]
+}

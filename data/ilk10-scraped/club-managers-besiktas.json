@@ -1,0 +1,42 @@
+{
+  "id": "club-managers-besiktas",
+  "prompt": "Top 10 managers by matches in charge at Besiktas",
+  "shortLabel": "BJK Managers",
+  "entityType": "coach",
+  "category": "title-race",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/besiktas-jk/mitarbeiterhistorie/verein/114",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Gordon Milne"
+    },
+    {
+      "value": "Slaven Bilic"
+    },
+    {
+      "value": "Mircea Lucescu"
+    },
+    {
+      "value": "Mustafa Denizli"
+    },
+    {
+      "value": "Jean Tigana"
+    },
+    {
+      "value": "John Toshack"
+    },
+    {
+      "value": "Ertugrul Saglam"
+    },
+    {
+      "value": "Branko Stankovic"
+    },
+    {
+      "value": "Christoph Daum"
+    },
+    {
+      "value": "Carlos Carvalhal"
+    }
+  ]
+}

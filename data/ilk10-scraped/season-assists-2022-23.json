@@ -1,0 +1,42 @@
+{
+  "id": "season-assists-2022-23",
+  "prompt": "Top 10 Super Lig assist leaders of the 2022-23 season",
+  "shortLabel": "2022-23 Assist Leaders",
+  "entityType": "player",
+  "category": "all-time",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/super-lig/scorerliste/wettbewerb/TR1/saison_id/2022",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Kerem Akturkoglu"
+    },
+    {
+      "value": "Fabio Borini"
+    },
+    {
+      "value": "Mauro Icardi"
+    },
+    {
+      "value": "Cenk Tosun"
+    },
+    {
+      "value": "Younes Belhanda"
+    },
+    {
+      "value": "Trezeguet"
+    },
+    {
+      "value": "Mbaye Diagne"
+    },
+    {
+      "value": "Mamadou Fall"
+    },
+    {
+      "value": "Max Gradel"
+    },
+    {
+      "value": "Miguel Cardoso"
+    }
+  ]
+}

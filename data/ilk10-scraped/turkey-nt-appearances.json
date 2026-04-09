@@ -1,0 +1,42 @@
+{
+  "id": "turkey-nt-appearances",
+  "prompt": "Top 10 most-capped Turkish national team players",
+  "shortLabel": "NT Most Capped",
+  "entityType": "player",
+  "category": "all-time",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/turkei/rekordnationalspieler/verein/3381",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Rustu Recber"
+    },
+    {
+      "value": "Hakan Sukur"
+    },
+    {
+      "value": "Hakan Calhanoglu"
+    },
+    {
+      "value": "Bulent Korkmaz"
+    },
+    {
+      "value": "Emre Belozoglu"
+    },
+    {
+      "value": "Arda Turan"
+    },
+    {
+      "value": "Tugay Kerimoglu"
+    },
+    {
+      "value": "Alpay Ozalan"
+    },
+    {
+      "value": "Hamit Altıntop"
+    },
+    {
+      "value": "Mehmet Topal"
+    }
+  ]
+}

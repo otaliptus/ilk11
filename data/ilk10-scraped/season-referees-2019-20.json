@@ -1,0 +1,42 @@
+{
+  "id": "season-referees-2019-20",
+  "prompt": "Top 10 Super Lig referees by matches officiated in the 2019-20 season",
+  "shortLabel": "2019-20 Referees",
+  "entityType": "referee",
+  "category": "derby",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/super-lig/schiedsrichter/wettbewerb/TR1/saison_id/2019",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Cuneyt Cakır"
+    },
+    {
+      "value": "Fırat Aydınus"
+    },
+    {
+      "value": "Halil Umut Meler"
+    },
+    {
+      "value": "Ali Sansalan"
+    },
+    {
+      "value": "Ali Palabıyık"
+    },
+    {
+      "value": "Mete Kalkavan"
+    },
+    {
+      "value": "Yasar Kemal Ugurlu"
+    },
+    {
+      "value": "Abdulkadir Bitigen"
+    },
+    {
+      "value": "Arda Kardesler"
+    },
+    {
+      "value": "Huseyin Gocek"
+    }
+  ]
+}

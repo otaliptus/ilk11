@@ -1,0 +1,42 @@
+{
+  "id": "season-transfers-2022-23",
+  "prompt": "Top 10 most expensive Super Lig transfers of the 2022-23 window",
+  "shortLabel": "2022-23 Top Transfers",
+  "entityType": "player",
+  "category": "all-time",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/super-lig/toptransfers/wettbewerb/TR1/saison_id/2022",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Nicolo Zaniolo"
+    },
+    {
+      "value": "Mauro Icardi"
+    },
+    {
+      "value": "Lucas Torreira"
+    },
+    {
+      "value": "Min-jae Kim"
+    },
+    {
+      "value": "Nathan Redmond"
+    },
+    {
+      "value": "Yusuf Yazıcı"
+    },
+    {
+      "value": "Gedson Fernandes"
+    },
+    {
+      "value": "Bertrand Traore"
+    },
+    {
+      "value": "Dele Alli"
+    },
+    {
+      "value": "Diego Rossi"
+    }
+  ]
+}

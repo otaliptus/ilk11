@@ -1,0 +1,42 @@
+{
+  "id": "season-scorers-2019-20",
+  "prompt": "Top 10 Super Lig scorers of the 2019-20 season",
+  "shortLabel": "2019-20 Top Scorers",
+  "entityType": "player",
+  "category": "all-time",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/super-lig/torschuetzenliste/wettbewerb/TR1/saison_id/2019",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Alexander Sørloth"
+    },
+    {
+      "value": "Papiss Demba Cisse"
+    },
+    {
+      "value": "Adis Jahovic"
+    },
+    {
+      "value": "Vedat Muriqi"
+    },
+    {
+      "value": "Bogdan Stancu"
+    },
+    {
+      "value": "Edin Visca"
+    },
+    {
+      "value": "Burak Yılmaz"
+    },
+    {
+      "value": "Demba Ba"
+    },
+    {
+      "value": "Mustapha Yatabare"
+    },
+    {
+      "value": "Fode Koita"
+    }
+  ]
+}

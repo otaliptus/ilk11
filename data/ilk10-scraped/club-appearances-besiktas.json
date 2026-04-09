@@ -1,0 +1,42 @@
+{
+  "id": "club-appearances-besiktas",
+  "prompt": "Top 10 players with the most Besiktas appearances",
+  "shortLabel": "BJK Most Appearances",
+  "entityType": "player",
+  "category": "all-time",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/besiktas-jk/rekordspieler/verein/114",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Mehmet Ozdilek"
+    },
+    {
+      "value": "Rıza Calımbay"
+    },
+    {
+      "value": "Necip Uysal"
+    },
+    {
+      "value": "Ibrahim Uzulmez"
+    },
+    {
+      "value": "Gokhan Keskin"
+    },
+    {
+      "value": "Ulvi Guveneroglu"
+    },
+    {
+      "value": "Feyyaz Ucar"
+    },
+    {
+      "value": "Metin Tekin"
+    },
+    {
+      "value": "Kadir Akbulut"
+    },
+    {
+      "value": "Recep Cetin"
+    }
+  ]
+}

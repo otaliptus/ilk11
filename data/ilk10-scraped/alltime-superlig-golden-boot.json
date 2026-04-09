@@ -1,0 +1,42 @@
+{
+  "id": "alltime-superlig-golden-boot",
+  "prompt": "Top 10 Super Lig golden boot winners by number of titles",
+  "shortLabel": "Golden Boot Winners",
+  "entityType": "player",
+  "category": "all-time",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/super-lig/torschuetzenkoenige/wettbewerb/TR1",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Victor Osimhen"
+    },
+    {
+      "value": "Mauro Icardi"
+    },
+    {
+      "value": "Enner Valencia"
+    },
+    {
+      "value": "Umut Bozok"
+    },
+    {
+      "value": "Aaron Boupendza"
+    },
+    {
+      "value": "Alexander Sørloth"
+    },
+    {
+      "value": "Mbaye Diagne"
+    },
+    {
+      "value": "Bafetimbi Gomis"
+    },
+    {
+      "value": "Vagner Love"
+    },
+    {
+      "value": "Mario Gomez"
+    }
+  ]
+}

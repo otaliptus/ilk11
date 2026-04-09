@@ -1,0 +1,42 @@
+{
+  "id": "season-transfers-2024-25",
+  "prompt": "Top 10 most expensive Super Lig transfers of the 2024-25 window",
+  "shortLabel": "2024-25 Top Transfers",
+  "entityType": "player",
+  "category": "all-time",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/super-lig/toptransfers/wettbewerb/TR1/saison_id/2024",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Victor Osimhen"
+    },
+    {
+      "value": "Ferdi Kadıoglu"
+    },
+    {
+      "value": "Sofyan Amrabat"
+    },
+    {
+      "value": "Nicolo Zaniolo"
+    },
+    {
+      "value": "Youssef En-Nesyri"
+    },
+    {
+      "value": "Allan Saint-Maximin"
+    },
+    {
+      "value": "Gabriel Sara"
+    },
+    {
+      "value": "Simon Banza"
+    },
+    {
+      "value": "Kerem Akturkoglu"
+    },
+    {
+      "value": "Roland Sallai"
+    }
+  ]
+}

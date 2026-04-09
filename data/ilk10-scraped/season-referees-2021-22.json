@@ -1,0 +1,42 @@
+{
+  "id": "season-referees-2021-22",
+  "prompt": "Top 10 Super Lig referees by matches officiated in the 2021-22 season",
+  "shortLabel": "2021-22 Referees",
+  "entityType": "referee",
+  "category": "derby",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/super-lig/schiedsrichter/wettbewerb/TR1/saison_id/2021",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Yasar Kemal Ugurlu"
+    },
+    {
+      "value": "Halil Umut Meler"
+    },
+    {
+      "value": "Atilla Karaoglan"
+    },
+    {
+      "value": "Arda Kardesler"
+    },
+    {
+      "value": "Erkan Ozdamar"
+    },
+    {
+      "value": "Cuneyt Cakır"
+    },
+    {
+      "value": "Sarper Barıs Saka"
+    },
+    {
+      "value": "Fırat Aydınus"
+    },
+    {
+      "value": "Volkan Bayarslan"
+    },
+    {
+      "value": "Umit Ozturk"
+    }
+  ]
+}

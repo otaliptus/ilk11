@@ -1,0 +1,42 @@
+{
+  "id": "alltime-superlig-scorers",
+  "prompt": "Top 10 all-time Super Lig scorers",
+  "shortLabel": "All-Time Top Scorers",
+  "entityType": "player",
+  "category": "all-time",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/super-lig/ewigetorschuetzen/wettbewerb/TR1",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Hakan Sukur"
+    },
+    {
+      "value": "Tanju Colak"
+    },
+    {
+      "value": "Hami Mandıralı"
+    },
+    {
+      "value": "Aykut Kocaman"
+    },
+    {
+      "value": "Serkan Aykut"
+    },
+    {
+      "value": "Burak Yılmaz"
+    },
+    {
+      "value": "Feyyaz Ucar"
+    },
+    {
+      "value": "Umut Bulut"
+    },
+    {
+      "value": "Necati Ates"
+    },
+    {
+      "value": "Cenk Isler"
+    }
+  ]
+}

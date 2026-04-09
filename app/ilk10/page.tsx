@@ -1,0 +1,501 @@
+"use client"
+
+import { useEffect, useMemo, useRef, useState } from "react"
+import { Button } from "@/components/ui/button"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog"
+import { ILK10_QUESTIONS } from "@/data/ilk10-questions"
+import AUTOCOMPLETE_DATA from "@/registry/output/autocomplete.json"
+import {
+  ILK10_MAX_LIVES,
+  applyIlk10Guess,
+  buildIlk10ShareText,
+  createInitialIlk10State,
+  getIlk10StatusMessage,
+  getIlk10StorageKey,
+  getRemainingLives,
+  isIlk10Finished,
+  isIlk10Solved,
+  normalizeIlk10Answer,
+  pickDailyIlk10Question,
+} from "@/lib/ilk10"
+import type { Ilk10EntityType, Ilk10StoredState } from "@/types/ilk10"
+import { Copy, Heart, Trophy } from "lucide-react"
+
+const LIVE_QUESTIONS = ILK10_QUESTIONS.filter((question) => !question.designExample)
+const DAILY_PICK = pickDailyIlk10Question(LIVE_QUESTIONS)
+const DAILY_QUESTION = DAILY_PICK.question
+const DAILY_STORAGE_KEY = getIlk10StorageKey(DAILY_QUESTION.id, DAILY_PICK.dateKey)
+const DAILY_GAME_NUMBER = DAILY_PICK.dayIndex
+const AUTOCOMPLETE_LIMIT = 8
+
+type AutocompleteSuggestion = {
+  id: string
+  entityType: Exclude<Ilk10EntityType, "team">
+  label: string
+  labelWithMeta: string
+  searchKey: string
+  aliases: string[]
+  provisional: boolean
+}
+
+type IndexedAutocompleteSuggestion = AutocompleteSuggestion & {
+  searchTerms: string[]
+}
+
+function getEntityTypeLabel(entityType: Ilk10EntityType): string {
+  switch (entityType) {
+    case "player":
+      return "player"
+    case "coach":
+      return "coach"
+    case "referee":
+      return "referee"
+    case "team":
+      return "team"
+    default:
+      return "name"
+  }
+}
+
+function getSearchTokens(input: string): string[] {
+  return String(input ?? "")
+    .split(/[\s\-'.’`]+/)
+    .map((token) => normalizeIlk10Answer(token))
+    .filter(Boolean)
+}
+
+function uniqueTerms(values: string[]): string[] {
+  return Array.from(new Set(values.filter(Boolean)))
+}
+
+const AUTOCOMPLETE_BY_ENTITY = Object.fromEntries(
+  Object.entries((AUTOCOMPLETE_DATA.byEntityType ?? {}) as Record<string, AutocompleteSuggestion[]>).map(
+    ([entityType, suggestions]) => [
+      entityType,
+      suggestions.map((suggestion) => ({
+        ...suggestion,
+        searchTerms: uniqueTerms([
+          suggestion.searchKey,
+          normalizeIlk10Answer(suggestion.label),
+          ...suggestion.aliases.map((alias) => normalizeIlk10Answer(alias)),
+          ...getSearchTokens(suggestion.label),
+          ...suggestion.aliases.flatMap((alias) => getSearchTokens(alias)),
+        ]),
+      })),
+    ]
+  )
+) as Record<Exclude<Ilk10EntityType, "team">, IndexedAutocompleteSuggestion[]>
+
+function loadStoredState(): Ilk10StoredState {
+  if (typeof window === "undefined") {
+    return createInitialIlk10State()
+  }
+
+  try {
+    const rawValue = localStorage.getItem(DAILY_STORAGE_KEY)
+    if (!rawValue) return createInitialIlk10State()
+
+    const parsed = JSON.parse(rawValue) as Partial<Ilk10StoredState>
+    return {
+      foundIndexes: Array.isArray(parsed.foundIndexes) ? parsed.foundIndexes : [],
+      missCount: typeof parsed.missCount === "number" ? parsed.missCount : 0,
+      guessEvents: Array.isArray(parsed.guessEvents) ? parsed.guessEvents : [],
+      completedAt: typeof parsed.completedAt === "string" ? parsed.completedAt : undefined,
+    }
+  } catch {
+    return createInitialIlk10State()
+  }
+}
+
+export default function Ilk10Page() {
+  const [gameState, setGameState] = useState<Ilk10StoredState>(createInitialIlk10State)
+  const [guess, setGuess] = useState("")
+  const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(-1)
+  const [feedback, setFeedback] = useState("")
+  const [showSummary, setShowSummary] = useState(false)
+  const [shareCopied, setShareCopied] = useState(false)
+  const [boardFx, setBoardFx] = useState<{ kind: "success" | "error"; key: number; answerIndex?: number } | null>(
+    null
+  )
+  const inputRef = useRef<HTMLInputElement | null>(null)
+  const boardFxTimeoutRef = useRef<number | null>(null)
+
+  useEffect(() => {
+    const storedState = loadStoredState()
+    setGameState(storedState)
+    if (isIlk10Finished(DAILY_QUESTION, storedState)) {
+      setShowSummary(true)
+    }
+    inputRef.current?.focus()
+  }, [])
+
+  useEffect(() => {
+    return () => {
+      if (boardFxTimeoutRef.current) {
+        window.clearTimeout(boardFxTimeoutRef.current)
+      }
+    }
+  }, [])
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(DAILY_STORAGE_KEY, JSON.stringify(gameState))
+    } catch {
+      // ignore storage errors
+    }
+  }, [gameState])
+
+  const remainingLives = getRemainingLives(gameState)
+  const solved = isIlk10Solved(DAILY_QUESTION, gameState)
+  const finished = isIlk10Finished(DAILY_QUESTION, gameState)
+  const interactionLocked = finished || Boolean(boardFx)
+
+  useEffect(() => {
+    if (finished) {
+      setShowSummary(true)
+    }
+  }, [finished])
+
+  const foundSet = useMemo(() => new Set(gameState.foundIndexes), [gameState.foundIndexes])
+  const wrongGuesses = useMemo(
+    () => gameState.guessEvents.filter((event) => !event.correct).map((event) => event.guess),
+    [gameState.guessEvents]
+  )
+  const entityAutocompletePool = useMemo(
+    () =>
+      DAILY_QUESTION.entityType === "team" ? [] : AUTOCOMPLETE_BY_ENTITY[DAILY_QUESTION.entityType] ?? [],
+    []
+  )
+  const autocompleteSuggestions = useMemo(() => {
+    const normalizedGuess = normalizeIlk10Answer(guess)
+    if (!normalizedGuess || finished || DAILY_QUESTION.entityType === "team") {
+      return []
+    }
+
+    const ranked = entityAutocompletePool
+      .map((suggestion) => {
+        const exactMatch = suggestion.searchTerms.some((term) => term === normalizedGuess)
+        const prefixMatch = suggestion.searchTerms.some((term) => term.startsWith(normalizedGuess))
+        const containsMatch = suggestion.searchTerms.some((term) => term.includes(normalizedGuess))
+        if (!exactMatch && !prefixMatch && !containsMatch) return null
+
+        return {
+          suggestion,
+          rank: exactMatch ? 0 : prefixMatch ? 1 : 2,
+        }
+      })
+      .filter((entry): entry is { suggestion: IndexedAutocompleteSuggestion; rank: number } => Boolean(entry))
+      .sort((left, right) => {
+        if (left.rank !== right.rank) return left.rank - right.rank
+        return left.suggestion.label.localeCompare(right.suggestion.label)
+      })
+
+    return ranked.slice(0, AUTOCOMPLETE_LIMIT).map((entry) => entry.suggestion)
+  }, [entityAutocompletePool, finished, guess])
+  const shareText = useMemo(
+    () => buildIlk10ShareText(DAILY_QUESTION, gameState, DAILY_GAME_NUMBER),
+    [gameState]
+  )
+
+  useEffect(() => {
+    setActiveSuggestionIndex(autocompleteSuggestions.length > 0 ? 0 : -1)
+  }, [autocompleteSuggestions])
+
+  const submitGuess = (rawGuess = guess) => {
+    if (interactionLocked) return
+    const outcome = applyIlk10Guess(DAILY_QUESTION, gameState, rawGuess)
+    setGameState(outcome.nextState)
+    setGuess("")
+    setActiveSuggestionIndex(-1)
+    setFeedback(getIlk10StatusMessage(outcome.status))
+    inputRef.current?.focus()
+
+    if (boardFxTimeoutRef.current) {
+      window.clearTimeout(boardFxTimeoutRef.current)
+    }
+
+    if (outcome.status === "correct" && outcome.guessEvent?.answerIndex !== undefined) {
+      setBoardFx({
+        kind: "success",
+        key: Date.now(),
+        answerIndex: outcome.guessEvent.answerIndex,
+      })
+      boardFxTimeoutRef.current = window.setTimeout(() => {
+        setBoardFx(null)
+        inputRef.current?.focus()
+      }, 1150)
+      return
+    }
+
+    if (outcome.status === "incorrect") {
+      setBoardFx({
+        kind: "error",
+        key: Date.now(),
+      })
+      boardFxTimeoutRef.current = window.setTimeout(() => {
+        setBoardFx(null)
+        inputRef.current?.focus()
+      }, 450)
+    }
+  }
+
+  const chooseSuggestion = (suggestion: IndexedAutocompleteSuggestion) => {
+    submitGuess(suggestion.label)
+  }
+
+  const copyShareText = async () => {
+    try {
+      await navigator.clipboard.writeText(shareText)
+      setShareCopied(true)
+      window.setTimeout(() => setShareCopied(false), 1800)
+    } catch {
+      setShareCopied(false)
+    }
+  }
+
+  return (
+    <main className="relative min-h-screen h-screen gradient-dark text-white p-2 sm:p-4 flex flex-col overflow-hidden">
+      {boardFx && (
+        <div
+          key={boardFx.key}
+          aria-hidden="true"
+          className={`pointer-events-none absolute inset-0 z-10 ${
+            boardFx.kind === "success" ? "ilk10-board-flash-success" : "ilk10-board-flash-error"
+          }`}
+        />
+      )}
+      <div className="flex-1 w-full max-w-md mx-auto flex flex-col min-h-0">
+        {/* Header */}
+        <header className="flex flex-col items-center gap-1.5 pt-1 pb-3">
+          <div className="flex items-center gap-2">
+            <Trophy className="h-7 w-7 text-emerald-400 drop-shadow-[0_0_12px_rgba(16,185,129,0.4)]" />
+            <h1 className="text-3xl font-extrabold text-white tracking-tight font-mono">
+              Top 10!
+            </h1>
+          </div>
+          <p className="text-slate-300 text-sm text-center px-2 leading-snug max-w-sm">
+            {DAILY_QUESTION.prompt}
+          </p>
+        </header>
+
+        {/* Progress + lives strip */}
+        <div className="glass rounded-xl px-4 py-2 flex items-center justify-between mb-2">
+          <span className="text-sm font-mono text-slate-200">
+            {gameState.foundIndexes.length}/10
+          </span>
+          <div className="flex items-center gap-1">
+            {Array.from({ length: ILK10_MAX_LIVES }, (_, index) => (
+              <Heart
+                key={index}
+                className={
+                  index < remainingLives
+                    ? "h-4 w-4 fill-red-500 text-red-500"
+                    : "h-4 w-4 text-slate-600"
+                }
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Answer slots */}
+        <div className="glass rounded-2xl p-2 flex-1 min-h-0 overflow-y-auto">
+          <ul className="flex flex-col gap-1.5">
+            {DAILY_QUESTION.answers.map((answer, index) => {
+              const revealed = foundSet.has(index) || (!solved && finished)
+              const waveDelay = `${(DAILY_QUESTION.answers.length - 1 - index) * 70}ms`
+              const slotWaveActive = boardFx?.kind === "success"
+              const slotHit = boardFx?.kind === "success" && boardFx.answerIndex === index
+              return (
+                <li
+                  key={answer.value}
+                  style={{ ["--ilk10-wave-delay" as string]: waveDelay }}
+                  className={`relative flex items-center gap-3 overflow-hidden rounded-lg px-3 py-2 border transition-all ${
+                    revealed
+                      ? "gradient-card-success border-emerald-400/30 text-white"
+                      : "bg-slate-900/40 border-white/5 text-slate-500"
+                  } ${slotWaveActive ? "ilk10-slot-wave" : ""} ${slotHit ? "ilk10-slot-hit" : ""}`}
+                >
+                  <span
+                    className={`flex h-7 w-7 items-center justify-center rounded-md font-mono text-xs font-bold ${
+                      revealed
+                        ? "bg-black/25 text-emerald-100"
+                        : "bg-slate-800/60 text-slate-500"
+                    }`}
+                  >
+                    {index + 1}
+                  </span>
+                  <span className="flex-1 text-sm font-semibold">
+                    {revealed ? answer.value : "• • •"}
+                  </span>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+
+        {/* Input area */}
+        <div className="mt-2 flex flex-col gap-1.5">
+          <div className="flex gap-2">
+            <input
+              ref={inputRef}
+              value={guess}
+              onChange={(event) => setGuess(event.target.value)}
+              onKeyDown={(event) => {
+                if (event.key === "ArrowDown" && autocompleteSuggestions.length > 0) {
+                  event.preventDefault()
+                  setActiveSuggestionIndex((current) => (current + 1) % autocompleteSuggestions.length)
+                  return
+                }
+
+                if (event.key === "ArrowUp" && autocompleteSuggestions.length > 0) {
+                  event.preventDefault()
+                  setActiveSuggestionIndex((current) =>
+                    current <= 0 ? autocompleteSuggestions.length - 1 : current - 1
+                  )
+                  return
+                }
+
+                if (
+                  event.key === "Enter" &&
+                  autocompleteSuggestions.length > 0 &&
+                  activeSuggestionIndex >= 0
+                ) {
+                  event.preventDefault()
+                  chooseSuggestion(autocompleteSuggestions[activeSuggestionIndex])
+                  return
+                }
+
+                if (event.key === "Enter") submitGuess()
+              }}
+              disabled={interactionLocked}
+              placeholder={`Type a ${getEntityTypeLabel(DAILY_QUESTION.entityType)}...`}
+              className="flex-1 h-11 rounded-xl glass px-4 text-sm text-white placeholder:text-slate-500 outline-none focus:ring-2 focus:ring-emerald-400/50 disabled:opacity-50"
+            />
+            <Button
+              onClick={() => submitGuess()}
+              disabled={interactionLocked}
+              className="h-11 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-5 text-sm font-bold text-white border border-emerald-400/30 active:scale-[0.97]"
+            >
+              Guess
+            </Button>
+          </div>
+          {autocompleteSuggestions.length > 0 && (
+            <div className="glass-light rounded-xl border border-white/10 p-1">
+              <ul className="flex max-h-44 flex-col gap-1 overflow-y-auto">
+                {autocompleteSuggestions.map((suggestion, index) => (
+                  <li key={suggestion.id}>
+                    <button
+                      type="button"
+                      onClick={() => chooseSuggestion(suggestion)}
+                      className={`w-full rounded-lg px-3 py-2 text-left text-sm transition-colors ${
+                        index === activeSuggestionIndex
+                          ? "bg-emerald-500/20 text-white"
+                          : "text-slate-200 hover:bg-white/5"
+                      }`}
+                    >
+                      {suggestion.labelWithMeta}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          <p className="text-xs text-center text-slate-400 min-h-[1rem]">{feedback}</p>
+          {wrongGuesses.length > 0 && (
+            <div className="flex flex-wrap gap-1 justify-center">
+              {wrongGuesses.map((wrongGuess) => (
+                <span
+                  key={wrongGuess}
+                  className="rounded-md bg-red-900/30 border border-red-500/30 px-2 py-0.5 text-[11px] text-red-300 line-through"
+                >
+                  {wrongGuess}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Footer - matches original game */}
+      <footer className="pt-2 pb-1 flex justify-center">
+        <div className="flex items-center gap-4 rounded-full border border-white/15 bg-black/35 px-3 py-1.5 text-sm leading-none text-slate-200 backdrop-blur-sm">
+          <a
+            href="https://github.com/otaliptus/ilk11"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 hover:text-white transition-colors"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 fill-current">
+              <path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2.2c-3.2.69-3.87-1.35-3.87-1.35-.52-1.32-1.28-1.67-1.28-1.67-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.72-1.54-2.56-.29-5.25-1.28-5.25-5.72 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11.02 11.02 0 0 1 5.77 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.24 2.76.12 3.05.73.81 1.17 1.84 1.17 3.1 0 4.45-2.69 5.43-5.26 5.72.41.36.78 1.06.78 2.14v3.17c0 .31.21.66.8.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
+            </svg>
+            GitHub
+          </a>
+          <a
+            href="https://x.com/otaliptus"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 hover:text-white transition-colors"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 fill-current">
+              <path d="M18.901 1.153h3.68l-8.04 9.188L24 22.847h-7.406l-5.8-7.584-6.639 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.933zM17.61 20.644h2.039L6.486 3.24H4.298l13.312 17.404z" />
+            </svg>
+            @otaliptus
+          </a>
+        </div>
+      </footer>
+
+      {/* Summary dialog */}
+      <Dialog open={showSummary} onOpenChange={setShowSummary}>
+        <DialogContent className="glass border-white/10 text-white sm:max-w-sm">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-extrabold font-mono text-center">
+              {solved ? "Solved!" : "Game over"}
+            </DialogTitle>
+            <DialogDescription className="text-sm text-slate-400 text-center">
+              {DAILY_QUESTION.prompt}
+            </DialogDescription>
+          </DialogHeader>
+
+          <div className="flex flex-col gap-3 mt-2">
+            <div className="grid grid-cols-3 gap-2 text-center">
+              <div className="glass-light rounded-lg p-2">
+                <p className="text-[10px] uppercase tracking-wider text-slate-400">Score</p>
+                <p className="text-xl font-bold font-mono text-emerald-400">
+                  {gameState.foundIndexes.length}/10
+                </p>
+              </div>
+              <div className="glass-light rounded-lg p-2">
+                <p className="text-[10px] uppercase tracking-wider text-slate-400">Lives</p>
+                <p className="text-xl font-bold font-mono text-red-400">{remainingLives}</p>
+              </div>
+              <div className="glass-light rounded-lg p-2">
+                <p className="text-[10px] uppercase tracking-wider text-slate-400">Guesses</p>
+                <p className="text-xl font-bold font-mono text-slate-200">
+                  {gameState.guessEvents.length}
+                </p>
+              </div>
+            </div>
+
+            <pre className="rounded-lg glass-light p-3 text-xs text-slate-200 font-mono whitespace-pre-wrap">
+              {shareText}
+            </pre>
+
+            <Button
+              onClick={copyShareText}
+              className="rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold h-11 border border-emerald-400/30"
+            >
+              <Copy className="h-4 w-4 mr-2" />
+              {shareCopied ? "Copied" : "Share"}
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+    </main>
+  )
+}

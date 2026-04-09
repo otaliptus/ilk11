@@ -1,0 +1,42 @@
+{
+  "id": "season-assists-2024-25",
+  "prompt": "Top 10 Super Lig assist leaders of the 2024-25 season",
+  "shortLabel": "2024-25 Assist Leaders",
+  "entityType": "player",
+  "category": "all-time",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/super-lig/scorerliste/wettbewerb/TR1/saison_id/2024",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Dusan Tadic"
+    },
+    {
+      "value": "Emre Kılınc"
+    },
+    {
+      "value": "Yunus Akgun"
+    },
+    {
+      "value": "Dries Mertens"
+    },
+    {
+      "value": "Muhammed Cham"
+    },
+    {
+      "value": "Romulo"
+    },
+    {
+      "value": "Mamadou Fall"
+    },
+    {
+      "value": "Haris Hajradinovic"
+    },
+    {
+      "value": "Miguel Cardoso"
+    },
+    {
+      "value": "David Tijanic"
+    }
+  ]
+}
