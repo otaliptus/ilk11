@@ -225,14 +225,38 @@ export function buildIlk10ShareText(
   const answerLine = question.answers
     .map((_, index) => (foundSet.has(index) ? slotEmojis[index] ?? "✅" : "❌"))
     .join("")
-  const livesLeft = "♥".repeat(getRemainingLives(state)) || "0"
+  const guessesLeft = getRemainingLives(state)
+  const expandedShortLabel = question.shortLabel.replace(
+    /^(\d{4})-(\d{2}|\d{4})\s+(.+)$/,
+    (_, startYearText: string, endYearText: string, suffix: string) => {
+      const startYear = Number(startYearText)
+      if (!Number.isInteger(startYear)) {
+        return question.shortLabel
+      }
+
+      let endYear = Number(endYearText)
+      if (!Number.isInteger(endYear)) {
+        return question.shortLabel
+      }
+
+      if (endYearText.length === 2) {
+        endYear += Math.floor(startYear / 100) * 100
+        if (endYear < startYear) {
+          endYear += 100
+        }
+      }
+
+      return `${startYear} - ${endYear} ${suffix}`
+    }
+  )
+  const shareUrl = /^https?:\/\//.test(ILK10_SHARE_DOMAIN) ? ILK10_SHARE_DOMAIN : `https://${ILK10_SHARE_DOMAIN}`
 
   return [
+    shareUrl,
     `Top10 #${gameNumber}`,
-    question.shortLabel,
-    `${state.foundIndexes.length}/10 • ${livesLeft}`,
+    expandedShortLabel,
+    `${state.foundIndexes.length}/10 correct - ${guessesLeft} ${guessesLeft === 1 ? "guess" : "guesses"} left`,
     answerLine,
-    ILK10_SHARE_DOMAIN,
   ].join("\n")
 }
 

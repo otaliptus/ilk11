@@ -35,6 +35,77 @@ function chooseBestStaffSource(primaryEntities, fallbackEntities) {
   return fallbackEntities;
 }
 
+function getNormalizedEntityName(entity) {
+  return normalizeSearchKey(entity.canonicalName ?? entity.displayName ?? "");
+}
+
+function getEntityBirthYear(entity) {
+  return Number.isInteger(entity.birthYear) ? entity.birthYear : null;
+}
+
+function getEntityAliasKeys(entity) {
+  return uniqueSorted(
+    [entity.displayName, entity.canonicalName, ...(entity.aliases ?? [])]
+      .map((value) => normalizeSearchKey(value))
+      .filter(Boolean)
+  );
+}
+
+function mergePlayerSources(...groups) {
+  const merged = [];
+  const seenTransfermarktIds = new Set();
+  const seenFbrefIds = new Set();
+  const seenNames = new Map();
+  const seenAliasKeys = new Set();
+
+  for (const entities of groups) {
+    for (const entity of entities) {
+      const transfermarktId = entity.sourceIds?.transfermarkt ? String(entity.sourceIds.transfermarkt) : null;
+      if (transfermarktId && seenTransfermarktIds.has(transfermarktId)) {
+        continue;
+      }
+
+      const fbrefId = entity.sourceIds?.fbref ? String(entity.sourceIds.fbref) : null;
+      if (fbrefId && seenFbrefIds.has(fbrefId)) {
+        continue;
+      }
+
+      const normalizedName = getNormalizedEntityName(entity);
+      const birthYear = getEntityBirthYear(entity);
+      const existingBirthYears = normalizedName ? seenNames.get(normalizedName) : null;
+      const hasCompatibleNameMatch =
+        Boolean(normalizedName) &&
+        birthYear !== null &&
+        Boolean(existingBirthYears) &&
+        existingBirthYears.has(birthYear);
+      const aliasKeys = getEntityAliasKeys(entity);
+      const hasAliasCoveredByExistingRichEntity =
+        Object.keys(entity.sourceIds ?? {}).length === 0 && aliasKeys.some((key) => seenAliasKeys.has(key));
+
+      if (hasCompatibleNameMatch || hasAliasCoveredByExistingRichEntity) {
+        continue;
+      }
+
+      merged.push(entity);
+
+      if (transfermarktId) seenTransfermarktIds.add(transfermarktId);
+      if (fbrefId) seenFbrefIds.add(fbrefId);
+      if (normalizedName) {
+        const nextBirthYears = seenNames.get(normalizedName) ?? new Set();
+        if (birthYear !== null) {
+          nextBirthYears.add(birthYear);
+        }
+        seenNames.set(normalizedName, nextBirthYears);
+      }
+      for (const key of aliasKeys) {
+        seenAliasKeys.add(key);
+      }
+    }
+  }
+
+  return merged;
+}
+
 function buildSuggestions(entities) {
   const suggestionMap = new Map();
   const duplicateCounts = new Map();
@@ -78,7 +149,12 @@ const refereesManual = await loadEntities("output/referees.manual.json");
 
 const players =
   playersTransfermarktHistorical.length > 0
-    ? playersTransfermarktHistorical
+    ? mergePlayerSources(
+        playersTransfermarktHistorical,
+        playersTransfermarkt,
+        playersFbref,
+        playersBootstrap
+      )
     : chooseBestPlayerSource(playersFbref, playersTransfermarkt, playersBootstrap);
 const coaches = chooseBestStaffSource(
   coachesTransfermarktHistorical,
@@ -101,7 +177,7 @@ await writeJson(outputPath, {
     generatedAt: new Date().toISOString(),
     playerSource:
       playersTransfermarktHistorical.length > 0
-        ? "players.transfermarkt.historical.json"
+        ? "merged(players.transfermarkt.historical.json, players.transfermarkt.json, players.fbref.json, players.bootstrap.json)"
         : playersFbref.length > 0
         ? "players.fbref.json"
         : playersTransfermarkt.length > 0
