@@ -1,2 +1,3 @@
 output/*
 !output/.gitkeep
+!output/autocomplete.json
