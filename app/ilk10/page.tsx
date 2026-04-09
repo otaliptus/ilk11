@@ -296,6 +296,17 @@ export default function Ilk10Page() {
 
   const submitGuess = (rawGuess = guess) => {
     if (interactionLocked) return
+
+    // Only allow guesses that match an autocomplete entry exactly
+    const normalizedRaw = normalizeIlk10Answer(rawGuess)
+    const isInPool = entityAutocompletePool.some(
+      (s) => s.searchTerms.some((term) => term === normalizedRaw)
+    )
+    if (!isInPool) {
+      setFeedback("Pick a name from the list")
+      return
+    }
+
     const outcome = applyIlk10Guess(DAILY_QUESTION, gameState, rawGuess)
 
     // For correct/incorrect guesses, start scan animation (delays state update)
