@@ -338,7 +338,7 @@ export default function Ilk10Page() {
   }
 
   return (
-    <main className="relative min-h-screen gradient-dark text-white p-2 sm:p-4 flex flex-col overflow-y-auto">
+    <main className="relative min-h-screen gradient-dark text-white p-3 sm:p-6 flex flex-col overflow-y-auto">
       {boardFx && (
         <div
           key={boardFx.key}
@@ -348,22 +348,22 @@ export default function Ilk10Page() {
           }`}
         />
       )}
-      <div className="w-full max-w-md mx-auto flex flex-col">
+      <div className="w-full max-w-md sm:max-w-lg mx-auto flex flex-col">
         {/* Hearts + title at top */}
-        <header className="flex flex-col items-center gap-1.5 pt-1 pb-3">
-          <div className="flex items-center gap-1.5">
+        <header className="flex flex-col items-center gap-2 pt-2 pb-4">
+          <div className="flex items-center gap-2">
             {Array.from({ length: ILK10_MAX_LIVES }, (_, index) => (
               <Heart
                 key={index}
                 className={
                   index < remainingLives
-                    ? "h-5 w-5 fill-red-500 text-red-500"
-                    : "h-5 w-5 text-slate-600"
+                    ? "h-6 w-6 fill-red-500 text-red-500"
+                    : "h-6 w-6 text-slate-600"
                 }
               />
             ))}
           </div>
-          <h1 className="text-2xl font-extrabold text-white tracking-tight font-mono uppercase">
+          <h1 className="text-3xl font-extrabold text-white tracking-tight font-mono uppercase">
             ilk10!
           </h1>
         </header>
@@ -383,8 +383,8 @@ export default function Ilk10Page() {
         )}
 
         {/* Answer slots */}
-        <div className="glass rounded-2xl p-2">
-          <ul className="flex flex-col gap-1.5">
+        <div className="glass rounded-2xl p-2 sm:p-3">
+          <ul className="flex flex-col gap-2">
             {DAILY_QUESTION.answers.map((answer, index) => {
               const revealed = foundSet.has(index) || (!solved && finished)
               const waveDelay = `${(DAILY_QUESTION.answers.length - 1 - index) * 70}ms`
@@ -411,10 +411,10 @@ export default function Ilk10Page() {
                 <li
                   key={answer.value}
                   style={{ ["--ilk10-wave-delay" as string]: waveDelay }}
-                  className={`relative flex items-center gap-3 overflow-hidden rounded-lg px-3 py-2 border transition-colors duration-150 ${slotColor} ${slotWaveActive ? "ilk10-slot-wave" : ""} ${slotHit ? "ilk10-slot-hit" : ""}`}
+                  className={`relative flex items-center gap-3 overflow-hidden rounded-lg px-4 py-3 border transition-colors duration-150 ${slotColor} ${slotWaveActive ? "ilk10-slot-wave" : ""} ${slotHit ? "ilk10-slot-hit" : ""}`}
                 >
                   <span
-                    className={`flex h-7 w-7 items-center justify-center rounded-md font-mono text-xs font-bold transition-colors duration-150 ${
+                    className={`flex h-8 w-8 items-center justify-center rounded-md font-mono text-sm font-bold transition-colors duration-150 ${
                       isScanHit
                         ? "bg-emerald-600/40 text-white"
                         : isScanTarget
@@ -426,7 +426,7 @@ export default function Ilk10Page() {
                   >
                     {index + 1}
                   </span>
-                  <span className={`flex-1 text-sm ${isScanHit ? "font-bold" : "font-semibold"}`}>
+                  <span className={`flex-1 text-base ${isScanHit ? "font-bold" : "font-semibold"}`}>
                     {revealed ? answer.value : "• • •"}
                   </span>
                 </li>
@@ -436,12 +436,12 @@ export default function Ilk10Page() {
         </div>
 
         {/* Prompt below board */}
-        <p className="text-slate-300 text-sm text-center px-2 leading-snug max-w-sm mx-auto pt-2">
+        <p className="text-slate-300 text-base text-center px-2 leading-snug mx-auto pt-3 pb-1">
           {DAILY_QUESTION.prompt}
         </p>
 
         {/* Input area */}
-        <div className="mt-2 flex flex-col gap-1.5">
+        <div className="mt-2 flex flex-col gap-2">
           <div className="flex gap-2">
             <input
               ref={inputRef}
@@ -476,25 +476,25 @@ export default function Ilk10Page() {
               }}
               disabled={interactionLocked}
               placeholder={`Type a ${getEntityTypeLabel(DAILY_QUESTION.entityType)}...`}
-              className="flex-1 h-11 rounded-xl glass px-4 text-sm text-white placeholder:text-slate-500 outline-none focus:ring-2 focus:ring-emerald-400/50 disabled:opacity-50"
+              className="flex-1 h-12 rounded-xl glass px-4 text-base text-white placeholder:text-slate-400 outline-none focus:ring-2 focus:ring-emerald-400/50 disabled:opacity-50"
             />
             <Button
               onClick={() => submitGuess()}
               disabled={interactionLocked}
-              className="h-11 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-5 text-sm font-bold text-white border border-emerald-400/30 active:scale-[0.97]"
+              className="h-12 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-6 text-base font-bold text-white border border-emerald-400/30 active:scale-[0.97]"
             >
               Guess
             </Button>
           </div>
           {autocompleteSuggestions.length > 0 && (
-            <div className="glass-light rounded-xl border border-white/10 p-1">
-              <ul className="flex max-h-44 flex-col gap-1 overflow-y-auto">
+            <div className="glass-light rounded-xl border border-white/10 p-1.5">
+              <ul className="flex max-h-52 flex-col gap-1 overflow-y-auto">
                 {autocompleteSuggestions.map((suggestion, index) => (
                   <li key={suggestion.id}>
                     <button
                       type="button"
                       onClick={() => chooseSuggestion(suggestion)}
-                      className={`w-full rounded-lg px-3 py-2 text-left text-sm transition-colors ${
+                      className={`w-full rounded-lg px-3 py-2.5 text-left text-base transition-colors ${
                         index === activeSuggestionIndex
                           ? "bg-emerald-500/20 text-white"
                           : "text-slate-200 hover:bg-white/5"
@@ -507,7 +507,7 @@ export default function Ilk10Page() {
               </ul>
             </div>
           )}
-          <p className="text-xs text-center text-slate-400 min-h-[1rem]">{feedback}</p>
+          <p className="text-sm text-center text-slate-400 min-h-[1.25rem]">{feedback}</p>
         </div>
       </div>
 
