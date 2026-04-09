@@ -10,7 +10,9 @@ export type Ilk10QuestionCategory =
 
 export interface Ilk10Answer {
   value: string
+  entityId?: string
   aliases?: string[]
+  sourceIds?: Record<string, string>
 }
 
 export interface Ilk10Question {
@@ -29,6 +31,7 @@ export interface Ilk10Question {
 export interface Ilk10GuessEvent {
   guess: string
   normalizedGuess: string
+  entityId?: string
   correct: boolean
   answerIndex?: number
   timestamp: string

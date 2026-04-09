@@ -25,14 +25,8 @@ import {
   pickDailyIlk10Question,
 } from "@/lib/ilk10"
 import { ILK11_PUBLIC_URL } from "@/lib/site"
-import type { Ilk10EntityType, Ilk10StoredState } from "@/types/ilk10"
+import type { Ilk10Answer, Ilk10EntityType, Ilk10StoredState } from "@/types/ilk10"
 import { Copy, Heart } from "lucide-react"
-
-const LIVE_QUESTIONS = ILK10_QUESTIONS.filter((question) => !question.designExample)
-const DAILY_PICK = pickDailyIlk10Question(LIVE_QUESTIONS)
-const DAILY_QUESTION = DAILY_PICK.question
-const DAILY_STORAGE_KEY = getIlk10StorageKey(DAILY_QUESTION.id, DAILY_PICK.dateKey)
-const DAILY_GAME_NUMBER = DAILY_PICK.dayIndex
 const AUTOCOMPLETE_LIMIT = 8
 
 function highlightMatch(text: string, query: string): React.ReactNode {
@@ -79,6 +73,7 @@ type AutocompleteSuggestion = {
   searchKey: string
   aliases: string[]
   provisional: boolean
+  resolvedEntityId?: string
 }
 
 type IndexedAutocompleteSuggestion = AutocompleteSuggestion & {
@@ -111,12 +106,116 @@ function uniqueTerms(values: string[]): string[] {
   return Array.from(new Set(values.filter(Boolean)))
 }
 
+function createSyntheticSuggestion(
+  id: string,
+  entityType: Exclude<Ilk10EntityType, "team">,
+  label: string,
+  aliases: string[] = [],
+  resolvedEntityId?: string
+): IndexedAutocompleteSuggestion {
+  return {
+    id,
+    entityType,
+    label,
+    labelWithMeta: label,
+    searchKey: normalizeIlk10Answer(label),
+    aliases,
+    provisional: false,
+    resolvedEntityId,
+    searchTerms: uniqueTerms([
+      normalizeIlk10Answer(label),
+      ...aliases.map((alias) => normalizeIlk10Answer(alias)),
+      ...getSearchTokens(label),
+      ...aliases.flatMap((alias) => getSearchTokens(alias)),
+    ]),
+  }
+}
+
+function getExactAnswerTerms(answer: Ilk10Answer): string[] {
+  return uniqueTerms(
+    [answer.value, ...(answer.aliases ?? [])].map((candidate) => normalizeIlk10Answer(candidate))
+  )
+}
+
+function getSuggestionResolvedEntityId(suggestion: IndexedAutocompleteSuggestion): string | undefined {
+  return suggestion.resolvedEntityId ?? suggestion.id
+}
+
+function getExactSuggestionTerms(suggestion: IndexedAutocompleteSuggestion): string[] {
+  return uniqueTerms([
+    normalizeIlk10Answer(suggestion.label),
+    ...suggestion.aliases.map((alias) => normalizeIlk10Answer(alias)),
+  ])
+}
+
+function getExactMatchingSuggestions(
+  suggestions: IndexedAutocompleteSuggestion[],
+  normalizedGuess: string
+): IndexedAutocompleteSuggestion[] {
+  return suggestions.filter((suggestion) => getExactSuggestionTerms(suggestion).includes(normalizedGuess))
+}
+
+function getExactUniqueSuggestionEntityId(
+  suggestions: IndexedAutocompleteSuggestion[],
+  normalizedGuess: string
+): string | undefined {
+  const uniqueEntityIds = Array.from(
+    new Set(
+      getExactMatchingSuggestions(suggestions, normalizedGuess)
+        .map((suggestion) => getSuggestionResolvedEntityId(suggestion))
+        .filter((entityId): entityId is string => Boolean(entityId))
+    )
+  )
+
+  return uniqueEntityIds.length === 1 ? uniqueEntityIds[0] : undefined
+}
+
+function getMatchingAnswerIndexesBySuggestion(
+  questionAnswers: Ilk10Answer[],
+  suggestion: IndexedAutocompleteSuggestion
+): number[] {
+  const suggestionEntityId = getSuggestionResolvedEntityId(suggestion)
+  if (suggestionEntityId) {
+    const entityMatches = questionAnswers.flatMap((answer, index) =>
+      answer.entityId === suggestionEntityId ? [index] : []
+    )
+    if (entityMatches.length > 0) {
+      return entityMatches
+    }
+  }
+
+  return questionAnswers.flatMap((answer, index) =>
+    getExactAnswerTerms(answer).some((candidate) => getExactSuggestionTerms(suggestion).includes(candidate))
+      ? [index]
+      : []
+  )
+}
+
+function resolveGuessToAnswerValue(questionAnswers: Ilk10Answer[], rawGuess: string): string {
+  const normalizedGuess = normalizeIlk10Answer(rawGuess)
+  if (!normalizedGuess) {
+    return rawGuess
+  }
+
+  const directMatchingAnswerIndexes = questionAnswers.flatMap((answer, index) =>
+    [answer.value, ...(answer.aliases ?? [])]
+      .map((candidate) => normalizeIlk10Answer(candidate))
+      .includes(normalizedGuess)
+      ? [index]
+      : []
+  )
+  return directMatchingAnswerIndexes.length === 1
+    ? questionAnswers[directMatchingAnswerIndexes[0]].value
+    : rawGuess
+}
+
 const AUTOCOMPLETE_BY_ENTITY = Object.fromEntries(
   Object.entries((AUTOCOMPLETE_DATA.byEntityType ?? {}) as Record<string, AutocompleteSuggestion[]>).map(
     ([entityType, suggestions]) => [
       entityType,
       suggestions.map((suggestion) => ({
         ...suggestion,
+        resolvedEntityId: suggestion.id,
         searchTerms: uniqueTerms([
           suggestion.searchKey,
           normalizeIlk10Answer(suggestion.label),
@@ -128,6 +227,44 @@ const AUTOCOMPLETE_BY_ENTITY = Object.fromEntries(
     ]
   )
 ) as Record<Exclude<Ilk10EntityType, "team">, IndexedAutocompleteSuggestion[]>
+
+function enrichQuestionsWithEntityIds(questions: typeof ILK10_QUESTIONS): typeof ILK10_QUESTIONS {
+  return questions.map((question) => {
+    if (question.entityType === "team") {
+      return question
+    }
+
+    const basePool = AUTOCOMPLETE_BY_ENTITY[question.entityType] ?? []
+    return {
+      ...question,
+      answers: question.answers.map((answer) => {
+        if (answer.entityId) {
+          return answer
+        }
+
+        const matchedEntityIds = Array.from(
+          new Set(
+            getExactAnswerTerms(answer)
+              .flatMap((term) => getExactMatchingSuggestions(basePool, term))
+              .map((suggestion) => getSuggestionResolvedEntityId(suggestion))
+              .filter((entityId): entityId is string => Boolean(entityId))
+          )
+        )
+
+        return matchedEntityIds.length === 1
+          ? { ...answer, entityId: matchedEntityIds[0] }
+          : answer
+      }),
+    }
+  })
+}
+
+const ENRICHED_QUESTIONS = enrichQuestionsWithEntityIds(ILK10_QUESTIONS)
+const LIVE_QUESTIONS = ENRICHED_QUESTIONS.filter((question) => !question.designExample)
+const DAILY_PICK = pickDailyIlk10Question(LIVE_QUESTIONS)
+const DAILY_QUESTION = DAILY_PICK.question
+const DAILY_STORAGE_KEY = getIlk10StorageKey(DAILY_QUESTION.id, DAILY_PICK.dateKey)
+const DAILY_GAME_NUMBER = DAILY_PICK.dayIndex
 
 function loadStoredState(): Ilk10StoredState {
   if (typeof window === "undefined") {
@@ -254,11 +391,38 @@ export default function Ilk10Page() {
     () => gameState.guessEvents.filter((event) => !event.correct).map((event) => event.guess),
     [gameState.guessEvents]
   )
-  const entityAutocompletePool = useMemo(
-    () =>
-      DAILY_QUESTION.entityType === "team" ? [] : AUTOCOMPLETE_BY_ENTITY[DAILY_QUESTION.entityType] ?? [],
-    []
-  )
+  const entityAutocompletePool = useMemo(() => {
+    if (DAILY_QUESTION.entityType === "team") {
+      return []
+    }
+
+    const entityType = DAILY_QUESTION.entityType
+    const basePool = AUTOCOMPLETE_BY_ENTITY[entityType] ?? []
+    const normalizedBaseLabels = new Set(
+      basePool.flatMap((suggestion) => [
+        normalizeIlk10Answer(suggestion.label),
+        ...suggestion.aliases.map((alias) => normalizeIlk10Answer(alias)),
+      ])
+    )
+    const syntheticSuggestions = DAILY_QUESTION.answers
+      .map((answer, index) => {
+        const normalizedValue = normalizeIlk10Answer(answer.value)
+        if (!normalizedValue || normalizedBaseLabels.has(normalizedValue)) {
+          return null
+        }
+
+        return createSyntheticSuggestion(
+          `answer:${DAILY_QUESTION.id}:${index}`,
+          entityType,
+          answer.value,
+          answer.aliases ?? [],
+          answer.entityId
+        )
+      })
+      .filter((suggestion): suggestion is IndexedAutocompleteSuggestion => Boolean(suggestion))
+
+    return [...syntheticSuggestions, ...basePool]
+  }, [])
   const autocompleteSuggestions = useMemo(() => {
     const normalizedGuess = normalizeIlk10Answer(guess)
     if (!normalizedGuess || finished || DAILY_QUESTION.entityType === "team") {
@@ -294,20 +458,22 @@ export default function Ilk10Page() {
     setActiveSuggestionIndex(autocompleteSuggestions.length > 0 ? 0 : -1)
   }, [autocompleteSuggestions])
 
-  const submitGuess = (rawGuess = guess) => {
+  const submitGuess = (rawGuess = guess, guessedEntityId?: string) => {
     if (interactionLocked) return
 
-    // Only allow guesses that match an autocomplete entry exactly
-    const normalizedRaw = normalizeIlk10Answer(rawGuess)
-    const isInPool = entityAutocompletePool.some(
-      (s) => s.searchTerms.some((term) => term === normalizedRaw)
+    const resolvedGuess = resolveGuessToAnswerValue(DAILY_QUESTION.answers, rawGuess)
+    const normalizedRaw = normalizeIlk10Answer(resolvedGuess)
+    const resolvedEntityId = guessedEntityId ?? getExactUniqueSuggestionEntityId(entityAutocompletePool, normalizedRaw)
+    const matchesAnswerDirectly = DAILY_QUESTION.answers.some((answer) =>
+      getExactAnswerTerms(answer).includes(normalizedRaw)
     )
-    if (!isInPool) {
+    const isInPool = getExactMatchingSuggestions(entityAutocompletePool, normalizedRaw).length > 0
+    if (!isInPool && !matchesAnswerDirectly) {
       setFeedback("Pick a name from the list")
       return
     }
 
-    const outcome = applyIlk10Guess(DAILY_QUESTION, gameState, rawGuess)
+    const outcome = applyIlk10Guess(DAILY_QUESTION, gameState, resolvedGuess, new Date(), resolvedEntityId)
 
     // For correct/incorrect guesses, start scan animation (delays state update)
     if (
@@ -335,7 +501,15 @@ export default function Ilk10Page() {
   }
 
   const chooseSuggestion = (suggestion: IndexedAutocompleteSuggestion) => {
-    submitGuess(suggestion.label)
+    const matchingAnswerIndexes = getMatchingAnswerIndexesBySuggestion(DAILY_QUESTION.answers, suggestion)
+    const suggestionEntityId = getSuggestionResolvedEntityId(suggestion)
+
+    if (matchingAnswerIndexes.length === 1) {
+      submitGuess(DAILY_QUESTION.answers[matchingAnswerIndexes[0]].value, suggestionEntityId)
+      return
+    }
+
+    submitGuess(suggestion.label, suggestionEntityId)
   }
 
   const copyShareText = async () => {

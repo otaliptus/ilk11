@@ -103,6 +103,19 @@ Notes:
 - use `--headed` when FBref triggers Cloudflare so you can solve the challenge in the browser window
 - add `--limit 3` to test only a few seasons before running the full range
 
+Build exact historical season leaderboard data from Transfermarkt player tables:
+
+```bash
+cd registry
+npm run build:season-leaderboards:transfermarkt -- --from-season 2001 --to-season 2021
+```
+
+Notes:
+
+- this writes exact full-season goals and assists tables under `output/transfermarkt-season-leaderboards/`
+- these files are used for pre-`2022-2023` cumulative `ilk10` range questions
+- unlike the FBref historical fallback, these are aggregated from full season tables rather than stored top-10 snapshots
+
 Build a compact `ilk10` question pack from the stored FBref season leaderboards:
 
 ```bash
@@ -113,8 +126,8 @@ npm run build:ilk10-pack:fbref
 Notes:
 
 - this writes a compact tracked question pack to `data/ilk10-fbref-season-questions.json`
-- it intentionally keeps only curated leaderboard types with exactly 10 stored entries
-- this avoids shipping the full raw FBref season blobs to the client
+- `2022-2023+` single-season questions come from stored FBref leaderboards
+- pre-`2022-2023` range questions come from exact Transfermarkt season tables for supported historical stats
 
 Print a compact summary of generated outputs:
 
@@ -135,6 +148,8 @@ npm run summary
 - `output/summary.json`
 - `output/fbref-season-leaderboards/index.json`
 - `output/fbref-season-leaderboards/seasons/*.json`
+- `output/transfermarkt-season-leaderboards/index.json`
+- `output/transfermarkt-season-leaderboards/seasons/*.json`
 
 ## FBref Note
 
@@ -143,7 +158,7 @@ The original goal for this project is to ingest richer historical data from FBre
 `https://fbref.com/en/comps/26/2001-2002/2001-2002-Super-Lig-Stats`
 
 From this environment, direct automated access to FBref is currently blocked by a Cloudflare verification challenge.
-That means the project can prepare for FBref ingestion, but the working automated path in this repo is currently Transfermarkt-backed.
+That means the working exact historical path in this repo is Transfermarkt-backed, with FBref still used for modern single-season prompts once data has been captured.
 
 ## Recommended Next Steps
 

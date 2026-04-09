@@ -113,7 +113,8 @@ export function isIlk10Finished(question: Ilk10Question, state: Ilk10StoredState
 export function matchIlk10Answer(
   question: Ilk10Question,
   rawGuess: string,
-  foundIndexes: number[]
+  foundIndexes: number[],
+  guessedEntityId?: string
 ): { answerIndex: number; normalizedGuess: string } | null {
   const normalizedGuess = normalizeIlk10Answer(rawGuess)
   if (!normalizedGuess) {
@@ -126,6 +127,9 @@ export function matchIlk10Answer(
     if (foundSet.has(answerIndex)) continue
 
     const answer = question.answers[answerIndex]
+    if (guessedEntityId && answer.entityId === guessedEntityId) {
+      return { answerIndex, normalizedGuess }
+    }
     const candidates = [answer.value, ...(answer.aliases ?? [])]
     if (candidates.some((candidate) => normalizeIlk10Answer(candidate) === normalizedGuess)) {
       return { answerIndex, normalizedGuess }
@@ -139,7 +143,8 @@ export function applyIlk10Guess(
   question: Ilk10Question,
   state: Ilk10StoredState,
   rawGuess: string,
-  date = new Date()
+  date = new Date(),
+  guessedEntityId?: string
 ): {
   nextState: Ilk10StoredState
   guessEvent: Ilk10GuessEvent | null
@@ -150,15 +155,20 @@ export function applyIlk10Guess(
     return { nextState: state, guessEvent: null, status: "empty" }
   }
 
-  const duplicateGuess = state.guessEvents.some((event) => event.normalizedGuess === normalizedGuess)
+  const duplicateGuess = state.guessEvents.some(
+    (event) =>
+      event.normalizedGuess === normalizedGuess ||
+      (Boolean(guessedEntityId) && Boolean(event.entityId) && event.entityId === guessedEntityId)
+  )
   if (duplicateGuess) {
     return { nextState: state, guessEvent: null, status: "duplicate" }
   }
 
-  const match = matchIlk10Answer(question, rawGuess, state.foundIndexes)
+  const match = matchIlk10Answer(question, rawGuess, state.foundIndexes, guessedEntityId)
   const guessEvent: Ilk10GuessEvent = {
     guess: rawGuess.trim(),
     normalizedGuess,
+    entityId: guessedEntityId,
     correct: Boolean(match),
     answerIndex: match?.answerIndex,
     timestamp: date.toISOString(),
