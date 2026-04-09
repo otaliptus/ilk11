@@ -86,8 +86,29 @@ export function pickDailyIlk10Question(
   }
 }
 
-export function getIlk10StorageKey(questionId: string, dateKey: string): string {
-  return `ilk10:${questionId}:${dateKey}`
+export function getIlk10QuestionCacheToken(question: Ilk10Question): string {
+  const fingerprint = [
+    question.id,
+    question.shortLabel,
+    question.prompt,
+    question.entityType,
+    question.category,
+    ...question.answers.map((answer) =>
+      [
+        answer.value,
+        answer.entityId ?? "",
+        ...(answer.aliases ?? []),
+      ].join("|")
+    ),
+  ].join("::")
+
+  return fnv1a32(fingerprint).toString(36)
+}
+
+export function getIlk10StorageKey(questionId: string, dateKey: string, cacheToken?: string): string {
+  return cacheToken
+    ? `ilk10:${questionId}:${dateKey}:${cacheToken}`
+    : `ilk10:${questionId}:${dateKey}`
 }
 
 export function createInitialIlk10State(): Ilk10StoredState {
@@ -200,8 +221,9 @@ export function buildIlk10ShareText(
   gameNumber: number
 ): string {
   const foundSet = new Set(state.foundIndexes)
+  const slotEmojis = ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣", "🔟"]
   const answerLine = question.answers
-    .map((_, index) => (foundSet.has(index) ? "🟩" : "⬛"))
+    .map((_, index) => (foundSet.has(index) ? slotEmojis[index] ?? "✅" : "❌"))
     .join("")
   const livesLeft = "♥".repeat(getRemainingLives(state)) || "0"
 

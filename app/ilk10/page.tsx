@@ -16,6 +16,7 @@ import {
   applyIlk10Guess,
   buildIlk10ShareText,
   createInitialIlk10State,
+  getIlk10QuestionCacheToken,
   getIlk10StatusMessage,
   getIlk10StorageKey,
   getRemainingLives,
@@ -24,6 +25,7 @@ import {
   normalizeIlk10Answer,
   pickDailyIlk10Question,
 } from "@/lib/ilk10"
+import { getTurkeyDateKey } from "@/lib/date"
 import { ILK11_PUBLIC_URL } from "@/lib/site"
 import type { Ilk10Answer, Ilk10EntityType, Ilk10StoredState } from "@/types/ilk10"
 import { Copy, Heart } from "lucide-react"
@@ -263,7 +265,8 @@ const ENRICHED_QUESTIONS = enrichQuestionsWithEntityIds(ILK10_QUESTIONS)
 const LIVE_QUESTIONS = ENRICHED_QUESTIONS.filter((question) => !question.designExample)
 const DAILY_PICK = pickDailyIlk10Question(LIVE_QUESTIONS)
 const DAILY_QUESTION = DAILY_PICK.question
-const DAILY_STORAGE_KEY = getIlk10StorageKey(DAILY_QUESTION.id, DAILY_PICK.dateKey)
+const DAILY_CACHE_TOKEN = getIlk10QuestionCacheToken(DAILY_QUESTION)
+const DAILY_STORAGE_KEY = getIlk10StorageKey(DAILY_QUESTION.id, DAILY_PICK.dateKey, DAILY_CACHE_TOKEN)
 const DAILY_GAME_NUMBER = DAILY_PICK.dayIndex
 
 function loadStoredState(): Ilk10StoredState {
@@ -364,6 +367,32 @@ export default function Ilk10Page() {
     return () => {
       if (boardFxTimeoutRef.current) window.clearTimeout(boardFxTimeoutRef.current)
       if (scanTimerRef.current) window.clearTimeout(scanTimerRef.current)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (typeof window === "undefined") return
+
+    const reloadIfDateChanged = () => {
+      if (getTurkeyDateKey(new Date()) !== DAILY_PICK.dateKey) {
+        window.location.reload()
+      }
+    }
+
+    const intervalId = window.setInterval(reloadIfDateChanged, 60_000)
+    const handleVisibilityChange = () => {
+      if (!document.hidden) {
+        reloadIfDateChanged()
+      }
+    }
+
+    document.addEventListener("visibilitychange", handleVisibilityChange)
+    window.addEventListener("focus", reloadIfDateChanged)
+
+    return () => {
+      window.clearInterval(intervalId)
+      document.removeEventListener("visibilitychange", handleVisibilityChange)
+      window.removeEventListener("focus", reloadIfDateChanged)
     }
   }, [])
 
