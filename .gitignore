@@ -12,6 +12,7 @@
 # next.js
 /.next/
 /out/
+/out-ilk10/
 /output/
 
 # production

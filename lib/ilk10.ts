@@ -1,5 +1,6 @@
 import type { Ilk10GuessEvent, Ilk10Question, Ilk10StoredState } from "@/types/ilk10"
 import { GAME_TIME_ZONE, getTurkeyDateKey, getTurkeyDayIndex } from "@/lib/date"
+import { ILK10_SHARE_DOMAIN } from "@/lib/site"
 
 const MAX_LIVES = 3
 
@@ -199,7 +200,7 @@ export function buildIlk10ShareText(
     question.shortLabel,
     `${state.foundIndexes.length}/10 • ${livesLeft}`,
     answerLine,
-    "ilk10.otalitpus.com",
+    ILK10_SHARE_DOMAIN,
   ].join("\n")
 }
 

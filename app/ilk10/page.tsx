@@ -24,8 +24,9 @@ import {
   normalizeIlk10Answer,
   pickDailyIlk10Question,
 } from "@/lib/ilk10"
+import { ILK11_PUBLIC_URL } from "@/lib/site"
 import type { Ilk10EntityType, Ilk10StoredState } from "@/types/ilk10"
-import { Copy, Heart, Trophy } from "lucide-react"
+import { Copy, Heart } from "lucide-react"
 
 const LIVE_QUESTIONS = ILK10_QUESTIONS.filter((question) => !question.designExample)
 const DAILY_PICK = pickDailyIlk10Question(LIVE_QUESTIONS)
@@ -33,6 +34,42 @@ const DAILY_QUESTION = DAILY_PICK.question
 const DAILY_STORAGE_KEY = getIlk10StorageKey(DAILY_QUESTION.id, DAILY_PICK.dateKey)
 const DAILY_GAME_NUMBER = DAILY_PICK.dayIndex
 const AUTOCOMPLETE_LIMIT = 8
+
+function highlightMatch(text: string, query: string): React.ReactNode {
+  if (!query) return text
+  const normalizedQuery = normalizeIlk10Answer(query)
+  if (!normalizedQuery) return text
+
+  // Build a mapping from normalized positions back to original positions.
+  // Each original char either maps to a normalized char or is skipped (spaces, hyphens, etc.)
+  const normToOrig: number[] = []
+  for (let i = 0; i < text.length; i++) {
+    const charNorm = normalizeIlk10Answer(text[i])
+    for (let j = 0; j < charNorm.length; j++) {
+      normToOrig.push(i)
+    }
+  }
+
+  const normalizedText = normalizeIlk10Answer(text)
+  const matchStart = normalizedText.indexOf(normalizedQuery)
+  if (matchStart === -1) return text
+
+  const matchEnd = matchStart + normalizedQuery.length - 1
+  const origStart = normToOrig[matchStart]
+  const origEnd = normToOrig[matchEnd]
+  if (origStart === undefined || origEnd === undefined) return text
+
+  const before = text.slice(0, origStart)
+  const match = text.slice(origStart, origEnd + 1)
+  const after = text.slice(origEnd + 1)
+  return (
+    <>
+      {before}
+      <span className="font-bold text-white">{match}</span>
+      {after}
+    </>
+  )
+}
 
 type AutocompleteSuggestion = {
   id: string
@@ -126,6 +163,57 @@ export default function Ilk10Page() {
   const inputRef = useRef<HTMLInputElement | null>(null)
   const boardFxTimeoutRef = useRef<number | null>(null)
 
+  // Scan animation: sweeps rows 9→0 (bottom to top) with yellow highlight
+  const SCAN_STEP_MS = 250
+  const [scanRow, setScanRow] = useState(-1) // -1 = inactive, 0-9 = current highlighted row
+  const scanDataRef = useRef<{
+    matchRow: number // answer index on hit, -1 on miss
+    outcome: ReturnType<typeof applyIlk10Guess>
+  } | null>(null)
+  const scanTimerRef = useRef<number | null>(null)
+
+  useEffect(() => {
+    if (scanRow < 0 || !scanDataRef.current) return
+
+    const { matchRow, outcome } = scanDataRef.current
+
+    // Hit: hold green on the matched row, then resolve
+    if (scanRow === matchRow) {
+      scanTimerRef.current = window.setTimeout(() => {
+        setScanRow(-1)
+        setGameState(outcome.nextState)
+        setFeedback(getIlk10StatusMessage(outcome.status))
+        scanDataRef.current = null
+        setBoardFx({ kind: "success", key: Date.now(), answerIndex: matchRow })
+        boardFxTimeoutRef.current = window.setTimeout(() => {
+          setBoardFx(null)
+          inputRef.current?.focus()
+        }, 600)
+      }, 400)
+      return () => { if (scanTimerRef.current) window.clearTimeout(scanTimerRef.current) }
+    }
+
+    // Advance to next row, or resolve miss if past row 0
+    scanTimerRef.current = window.setTimeout(() => {
+      const nextRow = scanRow - 1
+      if (nextRow < 0 && matchRow === -1) {
+        setScanRow(-1)
+        setGameState(outcome.nextState)
+        setFeedback(getIlk10StatusMessage(outcome.status))
+        scanDataRef.current = null
+        setBoardFx({ kind: "error", key: Date.now() })
+        boardFxTimeoutRef.current = window.setTimeout(() => {
+          setBoardFx(null)
+          inputRef.current?.focus()
+        }, 450)
+      } else {
+        setScanRow(nextRow)
+      }
+    }, SCAN_STEP_MS)
+
+    return () => { if (scanTimerRef.current) window.clearTimeout(scanTimerRef.current) }
+  }, [scanRow])
+
   useEffect(() => {
     const storedState = loadStoredState()
     setGameState(storedState)
@@ -137,9 +225,8 @@ export default function Ilk10Page() {
 
   useEffect(() => {
     return () => {
-      if (boardFxTimeoutRef.current) {
-        window.clearTimeout(boardFxTimeoutRef.current)
-      }
+      if (boardFxTimeoutRef.current) window.clearTimeout(boardFxTimeoutRef.current)
+      if (scanTimerRef.current) window.clearTimeout(scanTimerRef.current)
     }
   }, [])
 
@@ -154,7 +241,7 @@ export default function Ilk10Page() {
   const remainingLives = getRemainingLives(gameState)
   const solved = isIlk10Solved(DAILY_QUESTION, gameState)
   const finished = isIlk10Finished(DAILY_QUESTION, gameState)
-  const interactionLocked = finished || Boolean(boardFx)
+  const interactionLocked = finished || Boolean(boardFx) || scanRow >= 0
 
   useEffect(() => {
     if (finished) {
@@ -210,39 +297,30 @@ export default function Ilk10Page() {
   const submitGuess = (rawGuess = guess) => {
     if (interactionLocked) return
     const outcome = applyIlk10Guess(DAILY_QUESTION, gameState, rawGuess)
+
+    // For correct/incorrect guesses, start scan animation (delays state update)
+    if (
+      (outcome.status === "correct" && outcome.guessEvent?.answerIndex !== undefined) ||
+      outcome.status === "incorrect"
+    ) {
+      setGuess("")
+      setActiveSuggestionIndex(-1)
+      setFeedback("")
+      if (boardFxTimeoutRef.current) window.clearTimeout(boardFxTimeoutRef.current)
+
+      const matchRow =
+        outcome.status === "correct" ? (outcome.guessEvent!.answerIndex ?? -1) : -1
+      scanDataRef.current = { matchRow, outcome }
+      setScanRow(9) // start from bottom
+      return
+    }
+
+    // Other statuses (invalid, already_found, etc.) — apply immediately
     setGameState(outcome.nextState)
     setGuess("")
     setActiveSuggestionIndex(-1)
     setFeedback(getIlk10StatusMessage(outcome.status))
     inputRef.current?.focus()
-
-    if (boardFxTimeoutRef.current) {
-      window.clearTimeout(boardFxTimeoutRef.current)
-    }
-
-    if (outcome.status === "correct" && outcome.guessEvent?.answerIndex !== undefined) {
-      setBoardFx({
-        kind: "success",
-        key: Date.now(),
-        answerIndex: outcome.guessEvent.answerIndex,
-      })
-      boardFxTimeoutRef.current = window.setTimeout(() => {
-        setBoardFx(null)
-        inputRef.current?.focus()
-      }, 1150)
-      return
-    }
-
-    if (outcome.status === "incorrect") {
-      setBoardFx({
-        kind: "error",
-        key: Date.now(),
-      })
-      boardFxTimeoutRef.current = window.setTimeout(() => {
-        setBoardFx(null)
-        inputRef.current?.focus()
-      }, 450)
-    }
   }
 
   const chooseSuggestion = (suggestion: IndexedAutocompleteSuggestion) => {
@@ -260,7 +338,7 @@ export default function Ilk10Page() {
   }
 
   return (
-    <main className="relative min-h-screen h-screen gradient-dark text-white p-2 sm:p-4 flex flex-col overflow-hidden">
+    <main className="relative min-h-screen gradient-dark text-white p-2 sm:p-4 flex flex-col overflow-y-auto">
       {boardFx && (
         <div
           key={boardFx.key}
@@ -270,67 +348,85 @@ export default function Ilk10Page() {
           }`}
         />
       )}
-      <div className="flex-1 w-full max-w-md mx-auto flex flex-col min-h-0">
-        {/* Header */}
+      <div className="w-full max-w-md mx-auto flex flex-col">
+        {/* Hearts + title at top */}
         <header className="flex flex-col items-center gap-1.5 pt-1 pb-3">
-          <div className="flex items-center gap-2">
-            <Trophy className="h-7 w-7 text-emerald-400 drop-shadow-[0_0_12px_rgba(16,185,129,0.4)]" />
-            <h1 className="text-3xl font-extrabold text-white tracking-tight font-mono">
-              Top 10!
-            </h1>
-          </div>
-          <p className="text-slate-300 text-sm text-center px-2 leading-snug max-w-sm">
-            {DAILY_QUESTION.prompt}
-          </p>
-        </header>
-
-        {/* Progress + lives strip */}
-        <div className="glass rounded-xl px-4 py-2 flex items-center justify-between mb-2">
-          <span className="text-sm font-mono text-slate-200">
-            {gameState.foundIndexes.length}/10
-          </span>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1.5">
             {Array.from({ length: ILK10_MAX_LIVES }, (_, index) => (
               <Heart
                 key={index}
                 className={
                   index < remainingLives
-                    ? "h-4 w-4 fill-red-500 text-red-500"
-                    : "h-4 w-4 text-slate-600"
+                    ? "h-5 w-5 fill-red-500 text-red-500"
+                    : "h-5 w-5 text-slate-600"
                 }
               />
             ))}
           </div>
-        </div>
+          <h1 className="text-2xl font-extrabold text-white tracking-tight font-mono uppercase">
+            ilk10!
+          </h1>
+        </header>
+
+        {/* Wrong guesses */}
+        {wrongGuesses.length > 0 && (
+          <div className="flex flex-wrap gap-1.5 justify-center mb-2">
+            {wrongGuesses.map((wrongGuess) => (
+              <span
+                key={wrongGuess}
+                className="rounded-lg bg-red-900/30 border border-red-500/30 px-3 py-1 text-sm text-red-300 line-through"
+              >
+                {wrongGuess}
+              </span>
+            ))}
+          </div>
+        )}
 
         {/* Answer slots */}
-        <div className="glass rounded-2xl p-2 flex-1 min-h-0 overflow-y-auto">
+        <div className="glass rounded-2xl p-2">
           <ul className="flex flex-col gap-1.5">
             {DAILY_QUESTION.answers.map((answer, index) => {
               const revealed = foundSet.has(index) || (!solved && finished)
               const waveDelay = `${(DAILY_QUESTION.answers.length - 1 - index) * 70}ms`
               const slotWaveActive = boardFx?.kind === "success"
               const slotHit = boardFx?.kind === "success" && boardFx.answerIndex === index
+
+              // Scan animation states
+              const isScanTarget = scanRow === index
+              const isScanHit = isScanTarget && scanDataRef.current?.matchRow === index
+
+              // Slot color: scan states take priority
+              let slotColor: string
+              if (isScanHit) {
+                slotColor = "bg-emerald-500/30 border-emerald-400/60 text-white"
+              } else if (isScanTarget) {
+                slotColor = "bg-yellow-500/20 border-yellow-400/40 text-yellow-200"
+              } else if (revealed) {
+                slotColor = "gradient-card-success border-emerald-400/30 text-white"
+              } else {
+                slotColor = "bg-slate-900/40 border-white/5 text-slate-500"
+              }
+
               return (
                 <li
                   key={answer.value}
                   style={{ ["--ilk10-wave-delay" as string]: waveDelay }}
-                  className={`relative flex items-center gap-3 overflow-hidden rounded-lg px-3 py-2 border transition-all ${
-                    revealed
-                      ? "gradient-card-success border-emerald-400/30 text-white"
-                      : "bg-slate-900/40 border-white/5 text-slate-500"
-                  } ${slotWaveActive ? "ilk10-slot-wave" : ""} ${slotHit ? "ilk10-slot-hit" : ""}`}
+                  className={`relative flex items-center gap-3 overflow-hidden rounded-lg px-3 py-2 border transition-colors duration-150 ${slotColor} ${slotWaveActive ? "ilk10-slot-wave" : ""} ${slotHit ? "ilk10-slot-hit" : ""}`}
                 >
                   <span
-                    className={`flex h-7 w-7 items-center justify-center rounded-md font-mono text-xs font-bold ${
-                      revealed
-                        ? "bg-black/25 text-emerald-100"
-                        : "bg-slate-800/60 text-slate-500"
+                    className={`flex h-7 w-7 items-center justify-center rounded-md font-mono text-xs font-bold transition-colors duration-150 ${
+                      isScanHit
+                        ? "bg-emerald-600/40 text-white"
+                        : isScanTarget
+                          ? "bg-yellow-500/30 text-yellow-100"
+                          : revealed
+                            ? "bg-black/25 text-emerald-100"
+                            : "bg-slate-800/60 text-slate-500"
                     }`}
                   >
                     {index + 1}
                   </span>
-                  <span className="flex-1 text-sm font-semibold">
+                  <span className={`flex-1 text-sm ${isScanHit ? "font-bold" : "font-semibold"}`}>
                     {revealed ? answer.value : "• • •"}
                   </span>
                 </li>
@@ -338,6 +434,11 @@ export default function Ilk10Page() {
             })}
           </ul>
         </div>
+
+        {/* Prompt below board */}
+        <p className="text-slate-300 text-sm text-center px-2 leading-snug max-w-sm mx-auto pt-2">
+          {DAILY_QUESTION.prompt}
+        </p>
 
         {/* Input area */}
         <div className="mt-2 flex flex-col gap-1.5">
@@ -399,7 +500,7 @@ export default function Ilk10Page() {
                           : "text-slate-200 hover:bg-white/5"
                       }`}
                     >
-                      {suggestion.labelWithMeta}
+                      {highlightMatch(suggestion.labelWithMeta, guess)}
                     </button>
                   </li>
                 ))}
@@ -407,24 +508,21 @@ export default function Ilk10Page() {
             </div>
           )}
           <p className="text-xs text-center text-slate-400 min-h-[1rem]">{feedback}</p>
-          {wrongGuesses.length > 0 && (
-            <div className="flex flex-wrap gap-1 justify-center">
-              {wrongGuesses.map((wrongGuess) => (
-                <span
-                  key={wrongGuess}
-                  className="rounded-md bg-red-900/30 border border-red-500/30 px-2 py-0.5 text-[11px] text-red-300 line-through"
-                >
-                  {wrongGuess}
-                </span>
-              ))}
-            </div>
-          )}
         </div>
       </div>
 
       {/* Footer - matches original game */}
       <footer className="pt-2 pb-1 flex justify-center">
         <div className="flex items-center gap-4 rounded-full border border-white/15 bg-black/35 px-3 py-1.5 text-sm leading-none text-slate-200 backdrop-blur-sm">
+          <a
+            href={ILK11_PUBLIC_URL}
+            className="inline-flex items-center gap-1.5 hover:text-white transition-colors"
+          >
+            <span className="inline-flex h-4 w-4 items-center justify-center rounded-full border border-sky-400/50 text-[10px] font-bold text-sky-300">
+              11
+            </span>
+            İlk11
+          </a>
           <a
             href="https://github.com/otaliptus/ilk11"
             target="_blank"

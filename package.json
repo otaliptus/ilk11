@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:ilk10-subdomain": "node cloudflare/prepare-ilk10-subdomain.mjs",
     "start": "next start",
     "lint": "next lint",
     "data:fetch-season": "node scripts/fetch-season.mjs",
