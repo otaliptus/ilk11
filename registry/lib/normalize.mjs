@@ -1,20 +1,20 @@
 const CHARACTER_MAP = {
   Ç: "C",
-  ç: "C",
+  ç: "c",
   Ğ: "G",
-  ğ: "G",
+  ğ: "g",
   İ: "I",
-  ı: "I",
+  ı: "i",
   Ö: "O",
-  ö: "O",
+  ö: "o",
   Ş: "S",
-  ş: "S",
+  ş: "s",
   Ü: "U",
-  ü: "U",
+  ü: "u",
   Ø: "O",
-  ø: "O",
+  ø: "o",
   Ł: "L",
-  ł: "L",
+  ł: "l",
 };
 
 export function decodeHtmlEntities(text) {

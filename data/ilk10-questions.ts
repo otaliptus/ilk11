@@ -1,10 +1,11 @@
 import type { Ilk10Question } from "@/types/ilk10"
+import FBREF_SEASON_QUESTIONS from "@/data/ilk10-fbref-season-questions.json"
 
-export const ILK10_QUESTIONS: Ilk10Question[] = [
+const MANUAL_ILK10_QUESTIONS: Ilk10Question[] = [
   {
     id: "gs-fb-overlap-example",
     shortLabel: "GS x FB Crossovers",
-    prompt: "Example question type for players who wore both Galatasaray and Fenerbahce jerseys",
+    prompt: "Top 10 players who played for both Galatasaray and Fenerbahce",
     entityType: "player",
     category: "club-overlap",
     sourceLabel: "FBref-style query example",
@@ -50,7 +51,7 @@ export const ILK10_QUESTIONS: Ilk10Question[] = [
   {
     id: "turkish-clubs-europe-nights",
     shortLabel: "European Nights",
-    prompt: "Top 10 Turkish clubs that made the biggest mark in European competitions",
+    prompt: "Top 10 Turkish clubs by European competition appearances",
     entityType: "team",
     category: "europe",
     sourceLabel: "Hand-curated beta question pack",
@@ -71,7 +72,7 @@ export const ILK10_QUESTIONS: Ilk10Question[] = [
   {
     id: "turkish-icons-total-goals",
     shortLabel: "Goal Machines",
-    prompt: "10 names that belong in Turkish football's all-time scorer conversation",
+    prompt: "Top 10 all-time Super Lig scorers by career goals",
     entityType: "player",
     category: "all-time",
     sourceLabel: "Hand-curated beta question pack",
@@ -92,7 +93,7 @@ export const ILK10_QUESTIONS: Ilk10Question[] = [
   {
     id: "turkish-derby-referees",
     shortLabel: "Derby Referees",
-    prompt: "10 Turkish referees synonymous with the big-three derbies",
+    prompt: "Top 10 referees by big-three derby matches officiated",
     entityType: "referee",
     category: "derby",
     sourceLabel: "Hand-curated beta question pack",
@@ -113,7 +114,7 @@ export const ILK10_QUESTIONS: Ilk10Question[] = [
   {
     id: "big-four-bench-travelers",
     shortLabel: "Big Four Benches",
-    prompt: "10 coaches who worked across the big-four clubs in Turkish football",
+    prompt: "Top 10 coaches who managed at least 2 of the Turkish big four",
     entityType: "coach",
     category: "club-overlap",
     sourceLabel: "Hand-curated beta question pack",
@@ -131,4 +132,9 @@ export const ILK10_QUESTIONS: Ilk10Question[] = [
       { value: "Sergen Yalcin" },
     ],
   },
+]
+
+export const ILK10_QUESTIONS: Ilk10Question[] = [
+  ...MANUAL_ILK10_QUESTIONS,
+  ...(FBREF_SEASON_QUESTIONS as Ilk10Question[]),
 ]

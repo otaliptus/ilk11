@@ -103,6 +103,19 @@ Notes:
 - use `--headed` when FBref triggers Cloudflare so you can solve the challenge in the browser window
 - add `--limit 3` to test only a few seasons before running the full range
 
+Build a compact `ilk10` question pack from the stored FBref season leaderboards:
+
+```bash
+cd registry
+npm run build:ilk10-pack:fbref
+```
+
+Notes:
+
+- this writes a compact tracked question pack to `data/ilk10-fbref-season-questions.json`
+- it intentionally keeps only curated leaderboard types with exactly 10 stored entries
+- this avoids shipping the full raw FBref season blobs to the client
+
 Print a compact summary of generated outputs:
 
 ```bash

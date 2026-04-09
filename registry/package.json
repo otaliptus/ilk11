@@ -7,6 +7,7 @@
     "build:players:bootstrap": "node scripts/build-player-bootstrap.mjs",
     "build:players:fbref": "node scripts/build-player-fbref-registry.mjs",
     "build:season-leaderboards:fbref": "node scripts/build-fbref-season-leaderboards.mjs",
+    "build:ilk10-pack:fbref": "node scripts/build-ilk10-fbref-question-pack.mjs",
     "build:players:transfermarkt": "node scripts/build-player-transfermarkt-registry.mjs",
     "build:historical:transfermarkt": "node scripts/build-transfermarkt-historical-registry.mjs",
     "build:staff:transfermarkt": "node scripts/build-staff-transfermarkt-registries.mjs",

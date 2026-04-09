@@ -6,6 +6,7 @@ export type Ilk10QuestionCategory =
   | "derby"
   | "title-race"
   | "europe"
+  | "season-stats"
 
 export interface Ilk10Answer {
   value: string
