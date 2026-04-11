@@ -261,9 +261,27 @@ function enrichQuestionsWithEntityIds(questions: typeof ILK10_QUESTIONS): typeof
   })
 }
 
+function isAllowedLiveQuestion(question: (typeof ILK10_QUESTIONS)[number]): boolean {
+  if (question.entityType === "coach" || question.entityType === "referee") {
+    return true
+  }
+
+  const searchableText = `${question.shortLabel} ${question.prompt}`
+  return /\bGoals\b/i.test(searchableText) ||
+    /\bAssists\b/i.test(searchableText) ||
+    /\bOn Target\b/i.test(searchableText) ||
+    /\bxG\b/i.test(searchableText)
+}
+
 const ENRICHED_QUESTIONS = enrichQuestionsWithEntityIds(ILK10_QUESTIONS)
-const LIVE_QUESTIONS = ENRICHED_QUESTIONS.filter((question) => !question.designExample)
-const DAILY_PICK = pickDailyIlk10Question(LIVE_QUESTIONS)
+const LIVE_QUESTIONS = ENRICHED_QUESTIONS.filter(
+  (question) => !question.designExample && isAllowedLiveQuestion(question)
+)
+const ILK10_DATE_OVERRIDES: Record<string, string> = {
+  "2026-04-12": "super-lig-title-coaches",
+  "2026-04-19": "turkish-super-cup-winning-coaches",
+}
+const DAILY_PICK = pickDailyIlk10Question(LIVE_QUESTIONS, new Date(), ILK10_DATE_OVERRIDES)
 const DAILY_QUESTION = DAILY_PICK.question
 const DAILY_CACHE_TOKEN = getIlk10QuestionCacheToken(DAILY_QUESTION)
 const DAILY_STORAGE_KEY = getIlk10StorageKey(DAILY_QUESTION.id, DAILY_PICK.dateKey, DAILY_CACHE_TOKEN)

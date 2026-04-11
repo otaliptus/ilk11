@@ -3,6 +3,7 @@ import { GAME_TIME_ZONE, getTurkeyDateKey, getTurkeyDayIndex } from "@/lib/date"
 import { ILK10_SHARE_DOMAIN } from "@/lib/site"
 
 const MAX_LIVES = 3
+const GOALKEEPER_DEDUP_EPOCH = "2026-04-11"
 
 const CHARACTER_MAP: Record<string, string> = {
   C: "C",
@@ -65,9 +66,51 @@ function mulberry32(seed: number): () => number {
   }
 }
 
+function dayIndexToDateKey(dayIndex: number): string {
+  const date = new Date(dayIndex * 86_400_000)
+  return `${date.getUTCFullYear()}-${String(date.getUTCMonth() + 1).padStart(2, "0")}-${String(date.getUTCDate()).padStart(2, "0")}`
+}
+
+function buildQuestionOrder(questions: Ilk10Question[], rng: () => number): Ilk10Question[] {
+  const orderedQuestions = [...questions]
+  for (let index = orderedQuestions.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(rng() * (index + 1))
+    ;[orderedQuestions[index], orderedQuestions[swapIndex]] = [orderedQuestions[swapIndex], orderedQuestions[index]]
+  }
+  return orderedQuestions
+}
+
+function isGoalkeeperQuestion(question: Ilk10Question): boolean {
+  return question.id.includes("-gk-") || /\bgoalkeepers?\b/i.test(question.prompt)
+}
+
+function pickLegacyIlk10Question(questions: Ilk10Question[], dateKey: string): Ilk10Question {
+  const seed = fnv1a32(`${GAME_TIME_ZONE}:${dateKey}:ilk10`)
+  const rng = mulberry32(seed)
+  return questions[Math.floor(rng() * questions.length)]
+}
+
+function pickGoalkeeperSafeIlk10Question(
+  questions: Ilk10Question[],
+  dateKey: string,
+  previousQuestion: Ilk10Question | null
+): Ilk10Question {
+  const orderedQuestions = buildQuestionOrder(
+    questions,
+    mulberry32(fnv1a32(`${GAME_TIME_ZONE}:${dateKey}:ilk10:v2`))
+  )
+
+  if (!previousQuestion || !isGoalkeeperQuestion(previousQuestion)) {
+    return orderedQuestions[0]
+  }
+
+  return orderedQuestions.find((question) => !isGoalkeeperQuestion(question)) ?? orderedQuestions[0]
+}
+
 export function pickDailyIlk10Question(
   questions: Ilk10Question[],
-  date = new Date()
+  date = new Date(),
+  questionIdOverrides: Record<string, string> = {}
 ): { question: Ilk10Question; dayIndex: number; dateKey: string } {
   if (questions.length === 0) {
     throw new Error("No ilk10 questions configured")
@@ -75,12 +118,38 @@ export function pickDailyIlk10Question(
 
   const dayIndex = getTurkeyDayIndex(date)
   const dateKey = getTurkeyDateKey(date)
-  const seed = fnv1a32(`${GAME_TIME_ZONE}:${dateKey}:ilk10`)
-  const rng = mulberry32(seed)
-  const questionIndex = Math.floor(rng() * questions.length)
+  const overrideQuestionId = questionIdOverrides[dateKey]
+  if (overrideQuestionId) {
+    const overriddenQuestion = questions.find((question) => question.id === overrideQuestionId)
+    if (overriddenQuestion) {
+      return {
+        question: overriddenQuestion,
+        dayIndex,
+        dateKey,
+      }
+    }
+  }
+
+  const [epochYear, epochMonth, epochDay] = GOALKEEPER_DEDUP_EPOCH.split("-").map(Number)
+  const epochDayIndex = Math.floor(Date.UTC(epochYear, epochMonth - 1, epochDay) / 86_400_000)
+
+  let question: Ilk10Question
+
+  if (dayIndex < epochDayIndex) {
+    question = pickLegacyIlk10Question(questions, dateKey)
+  } else {
+    let previousQuestion = pickLegacyIlk10Question(questions, dayIndexToDateKey(epochDayIndex - 1))
+    question = previousQuestion
+
+    for (let currentDayIndex = epochDayIndex; currentDayIndex <= dayIndex; currentDayIndex += 1) {
+      const currentDateKey = dayIndexToDateKey(currentDayIndex)
+      question = pickGoalkeeperSafeIlk10Question(questions, currentDateKey, previousQuestion)
+      previousQuestion = question
+    }
+  }
 
   return {
-    question: questions[questionIndex],
+    question,
     dayIndex,
     dateKey,
   }

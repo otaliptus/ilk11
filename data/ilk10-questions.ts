@@ -1,6 +1,20 @@
 import type { Ilk10Question } from "@/types/ilk10"
 import FBREF_SEASON_QUESTIONS from "@/data/ilk10-fbref-season-questions.json"
 
+const TITLE_WINNING_COACHES_CUTOFF_ALIASES = [
+  "Gunduz Kilic",
+  "Ljubisa Spajic",
+  "Ignac Molnar",
+  "Brian Birch",
+  "Didi",
+  "Tomislav Kaloperovic",
+  "Ozkan Sumer",
+  "Branko Stankovic",
+  "Todor Veselinovic",
+  "Mircea Lucescu",
+  "Senol Gunes",
+]
+
 const MANUAL_ILK10_QUESTIONS: Ilk10Question[] = [
   {
     id: "gs-fb-overlap-example",
@@ -33,19 +47,20 @@ const MANUAL_ILK10_QUESTIONS: Ilk10Question[] = [
     prompt: "Top 10 Super Lig coaches ranked by championship count",
     entityType: "coach",
     category: "title-race",
-    sourceLabel: "Hand-curated beta question pack",
-    note: "Starter data pack. Replace with a verified table before going live.",
+    sourceLabel: "Wikipedia: Football records and statistics in Turkey",
+    sourceUrl: "https://en.wikipedia.org/wiki/Football_records_and_statistics_in_Turkey",
+    note: "Ordered to match the current 'Most championships by manager' table for the Super Lig. Any coach tied on the 2-title cutoff is accepted as a correct guess for the final slots.",
     answers: [
       { value: "Fatih Terim" },
-      { value: "Brian Birch" },
       { value: "Ahmet Suat Ozyazici" },
-      { value: "Mustafa Denizli" },
-      { value: "Gordon Milne" },
-      { value: "Senol Gunes" },
-      { value: "Christoph Daum" },
       { value: "Okan Buruk" },
-      { value: "Jupp Derwall" },
-      { value: "Mircea Lucescu" },
+      { value: "Gordon Milne" },
+      { value: "Mustafa Denizli" },
+      { value: "Christoph Daum" },
+      { value: "Gunduz Kilic", aliases: TITLE_WINNING_COACHES_CUTOFF_ALIASES },
+      { value: "Ljubisa Spajic", aliases: TITLE_WINNING_COACHES_CUTOFF_ALIASES },
+      { value: "Ignac Molnar", aliases: TITLE_WINNING_COACHES_CUTOFF_ALIASES },
+      { value: "Brian Birch", aliases: TITLE_WINNING_COACHES_CUTOFF_ALIASES },
     ],
   },
   {
@@ -130,6 +145,28 @@ const MANUAL_ILK10_QUESTIONS: Ilk10Question[] = [
       { value: "Fatih Terim" },
       { value: "Okan Buruk" },
       { value: "Sergen Yalcin" },
+    ],
+  },
+  {
+    id: "turkish-super-cup-winning-coaches",
+    shortLabel: "Super Cup Coaches",
+    prompt: "Top 10 coaches by Turkish Super Cup titles",
+    entityType: "coach",
+    category: "title-race",
+    sourceLabel: "Transfermarkt: TFF Super Kupa records",
+    sourceUrl: "https://www.transfermarkt.com/tff-super-kupa/erfolge/pokalwettbewerb/TRS",
+    note: "Ordered to match the current Transfermarkt 'Victory coaches' table, where the cutoff falls cleanly at 2 titles.",
+    answers: [
+      { value: "Ahmet Suat Ozyazici", aliases: ["Ahmet Suat Ozyazici"] },
+      { value: "Fatih Terim" },
+      { value: "Abdullah Avci" },
+      { value: "Senol Gunes" },
+      { value: "Christoph Daum" },
+      { value: "Gordon Milne" },
+      { value: "Mustafa Denizli" },
+      { value: "Branko Stankovic" },
+      { value: "Ozkan Sumer" },
+      { value: "Didi" },
     ],
   },
 ]
