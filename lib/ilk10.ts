@@ -2,7 +2,7 @@ import type { Ilk10GuessEvent, Ilk10Question, Ilk10StoredState } from "@/types/i
 import { GAME_TIME_ZONE, getTurkeyDateKey, getTurkeyDayIndex } from "@/lib/date"
 import { ILK10_SHARE_DOMAIN } from "@/lib/site"
 
-const MAX_LIVES = 3
+const MAX_LIVES = 5
 const GOALKEEPER_DEDUP_EPOCH = "2026-04-11"
 
 const CHARACTER_MAP: Record<string, string> = {
