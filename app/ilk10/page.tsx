@@ -438,6 +438,14 @@ export default function Ilk10Page() {
     () => gameState.guessEvents.filter((event) => !event.correct).map((event) => event.guess),
     [gameState.guessEvents]
   )
+  const revealedAnswerLabels = useMemo(() => {
+    const labels = new Map<number, string>()
+    for (const event of gameState.guessEvents) {
+      if (!event.correct || event.answerIndex === undefined) continue
+      labels.set(event.answerIndex, event.guess)
+    }
+    return labels
+  }, [gameState.guessEvents])
   const entityAutocompletePool = useMemo(() => {
     if (DAILY_QUESTION.entityType === "team") {
       return []
@@ -665,7 +673,11 @@ export default function Ilk10Page() {
                     {index + 1}
                   </span>
                   <span className={`flex-1 text-base ${isScanHit ? "font-bold" : "font-semibold"}`}>
-                    {revealed ? answer.value : "• • •"}
+                    {revealed
+                      ? found
+                        ? (revealedAnswerLabels.get(index) ?? answer.value)
+                        : answer.value
+                      : "• • •"}
                   </span>
                 </li>
               )
