@@ -405,6 +405,9 @@ export default function Home() {
 
   // Load easy/hard pools once
   useEffect(() => {
+    try {
+      localStorage.setItem("last_played_game", "ilk11")
+    } catch {}
     let isMounted = true
     const load = async () => {
       try {

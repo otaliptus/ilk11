@@ -373,6 +373,9 @@ export default function Ilk10Page() {
   }, [scanRow])
 
   useEffect(() => {
+    try {
+      localStorage.setItem("last_played_game", "ilk10")
+    } catch {}
     const storedState = loadStoredState()
     setGameState(storedState)
     if (isIlk10Finished(DAILY_QUESTION, storedState)) {
