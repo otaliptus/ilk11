@@ -11,6 +11,7 @@ export type Ilk10QuestionCategory =
 export interface Ilk10Answer {
   value: string
   displayValue?: string
+  scoreLabel?: string
   entityId?: string
   aliases?: string[]
   sourceIds?: Record<string, string>

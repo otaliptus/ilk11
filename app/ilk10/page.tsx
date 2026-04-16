@@ -699,6 +699,7 @@ export default function Ilk10Page() {
               const found = foundSet.has(index)
               const missedReveal = finished && !found
               const revealed = found || missedReveal
+              const revealedScoreLabel = revealed ? answer.scoreLabel : undefined
               const waveDelay = `${(dailyQuestion.answers.length - 1 - index) * 70}ms`
               const slotWaveActive = boardFx?.kind === "success"
               const slotHit = boardFx?.kind === "success" && boardFx.answerIndex === index
@@ -749,6 +750,17 @@ export default function Ilk10Page() {
                         : (answer.displayValue ?? answer.value)
                       : "• • •"}
                   </span>
+                  {revealedScoreLabel && (
+                    <span
+                      className={`shrink-0 rounded-md border px-2 py-1 font-mono text-xs font-bold ${
+                        missedReveal
+                          ? "border-yellow-300/50 bg-yellow-500/20 text-yellow-100"
+                          : "border-emerald-300/35 bg-black/25 text-emerald-100"
+                      }`}
+                    >
+                      {revealedScoreLabel}
+                    </span>
+                  )}
                 </li>
               )
             })}
