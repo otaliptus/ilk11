@@ -11,28 +11,26 @@ import {
   markAsSubmitted,
 } from "@/lib/leaderboard"
 import { getTurkeyDateKey } from "@/lib/date"
+import type { Ilk10ScoreSubmission, Ilk11ScoreSubmission } from "@/types/leaderboard"
 
-interface LeaderboardSubmitProps {
-  gameId: number
-  difficulty: "easy" | "hard"
-  matchName: string
-  solved: number
-  totalAttempts: number
-  failed: number
-  isComplete: boolean
+type Ilk11Props = {
+  game: "ilk11"
+  submissionKey: string
+  payload: Omit<Ilk11ScoreSubmission, "game" | "nickname" | "game_date">
 }
 
-export function LeaderboardSubmit({
-  gameId,
-  difficulty,
-  matchName,
-  solved,
-  totalAttempts,
-  failed,
-  isComplete,
-}: LeaderboardSubmitProps) {
+type Ilk10Props = {
+  game: "ilk10"
+  submissionKey: string
+  payload: Omit<Ilk10ScoreSubmission, "game" | "nickname" | "game_date">
+}
+
+type LeaderboardSubmitProps = Ilk11Props | Ilk10Props
+
+export function LeaderboardSubmit(props: LeaderboardSubmitProps) {
+  const { game, submissionKey } = props
   const [nickname, setNickname] = useState(getStoredNickname() ?? "")
-  const [submitted, setSubmitted] = useState(isAlreadySubmitted(gameId, difficulty))
+  const [submitted, setSubmitted] = useState(isAlreadySubmitted(game, submissionKey))
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
@@ -47,19 +45,23 @@ export function LeaderboardSubmit({
     setError(null)
 
     try {
-      await submitScore({
-        nickname: trimmed,
-        game_date: getTurkeyDateKey(),
-        difficulty,
-        game_id: gameId,
-        match_name: matchName,
-        solved,
-        total_attempts: totalAttempts,
-        failed,
-        is_complete: isComplete,
-      })
+      if (props.game === "ilk11") {
+        await submitScore({
+          game: "ilk11",
+          nickname: trimmed,
+          game_date: getTurkeyDateKey(),
+          ...props.payload,
+        })
+      } else {
+        await submitScore({
+          game: "ilk10",
+          nickname: trimmed,
+          game_date: getTurkeyDateKey(),
+          ...props.payload,
+        })
+      }
       setStoredNickname(trimmed)
-      markAsSubmitted(gameId, difficulty)
+      markAsSubmitted(game, submissionKey)
       setSubmitted(true)
     } catch (e) {
       setError(e instanceof Error ? e.message : "Gonderme hatasi")
@@ -86,7 +88,6 @@ export function LeaderboardSubmit({
           value={nickname}
           onChange={(e) => setNickname(e.target.value)}
           onFocus={(e) => {
-            // iOS: wait for keyboard animation then scroll input into view
             const target = e.target
             setTimeout(() => target.scrollIntoView({ behavior: "smooth", block: "center" }), 300)
           }}

@@ -400,13 +400,17 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
           </pre>
           {showSubmitInShare ? (
             <LeaderboardSubmit
-              gameId={gameId}
-              difficulty={difficulty}
-              matchName={game}
-              solved={gameStats.solved}
-              totalAttempts={gameStats.totalAttempts}
-              failed={gameStats.failed}
-              isComplete={gameStats.isGameComplete}
+              game="ilk11"
+              submissionKey={`${gameId}_${difficulty}`}
+              payload={{
+                difficulty: difficulty,
+                game_id: gameId,
+                match_name: game,
+                solved: gameStats.solved,
+                total_attempts: gameStats.totalAttempts,
+                failed: gameStats.failed,
+                is_complete: gameStats.isGameComplete,
+              }}
             />
           ) : (
             <div className="flex gap-2 w-full">
@@ -422,7 +426,7 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
                 )}
               </Button>
               {gameStats.isGameComplete && (
-                isAlreadySubmitted(gameId, difficulty) ? (
+                isAlreadySubmitted("ilk11", `${gameId}_${difficulty}`) ? (
                   <div className="flex-1 flex items-center justify-center gap-1.5 text-emerald-400 text-sm">
                     <CheckCircle2 className="h-4 w-4" />
                     <span>Gonderildi</span>
@@ -486,13 +490,17 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
             Share Results
           </Button>
           <LeaderboardSubmit
-            gameId={gameId}
-            difficulty={difficulty}
-            matchName={game}
-            solved={gameStats.solved}
-            totalAttempts={gameStats.totalAttempts}
-            failed={gameStats.failed}
-            isComplete={gameStats.isGameComplete}
+            game="ilk11"
+            submissionKey={`${gameId}_${difficulty}`}
+            payload={{
+              difficulty: difficulty,
+              game_id: gameId,
+              match_name: game,
+              solved: gameStats.solved,
+              total_attempts: gameStats.totalAttempts,
+              failed: gameStats.failed,
+              is_complete: gameStats.isGameComplete,
+            }}
           />
         </DialogContent>
       </Dialog>
