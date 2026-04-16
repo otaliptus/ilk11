@@ -10,6 +10,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog"
 import { ILK10_QUESTIONS } from "@/data/ilk10-questions"
+import { ILK11_TEAM_AUTOCOMPLETE } from "@/data/ilk11-team-autocomplete"
 import AUTOCOMPLETE_DATA from "@/registry/output/autocomplete.json"
 import {
   ILK10_MAX_LIVES,
@@ -234,6 +235,32 @@ function buildTeamAutocompleteSuggestions(
   questions: typeof ILK10_QUESTIONS
 ): IndexedAutocompleteSuggestion[] {
   const suggestions = new Map<string, AutocompleteSuggestion>()
+  const addCandidate = (candidate: string, aliases: string[] = []) => {
+    const normalizedCandidate = normalizeIlk10Answer(candidate)
+    if (!normalizedCandidate) {
+      return
+    }
+
+    const existing = suggestions.get(normalizedCandidate)
+    if (existing) {
+      existing.aliases = uniqueTerms([...existing.aliases, ...aliases])
+      return
+    }
+
+    suggestions.set(normalizedCandidate, {
+      id: `team:${normalizedCandidate}`,
+      entityType: "team",
+      label: candidate,
+      labelWithMeta: candidate,
+      searchKey: normalizedCandidate,
+      aliases: uniqueTerms(aliases),
+      provisional: false,
+    })
+  }
+
+  for (const seed of ILK11_TEAM_AUTOCOMPLETE) {
+    addCandidate(seed.label, seed.aliases ?? [])
+  }
 
   for (const question of questions) {
     if (question.entityType !== "team") {
@@ -243,27 +270,8 @@ function buildTeamAutocompleteSuggestions(
     for (const answer of question.answers) {
       const candidates = uniqueTerms([answer.value, ...(answer.aliases ?? [])])
       for (const candidate of candidates) {
-        const normalizedCandidate = normalizeIlk10Answer(candidate)
-        if (!normalizedCandidate) {
-          continue
-        }
-
-        const existing = suggestions.get(normalizedCandidate)
         const aliases = candidates.filter((value) => value !== candidate)
-        if (existing) {
-          existing.aliases = uniqueTerms([...existing.aliases, ...aliases])
-          continue
-        }
-
-        suggestions.set(normalizedCandidate, {
-          id: `team:${normalizedCandidate}`,
-          entityType: "team",
-          label: candidate,
-          labelWithMeta: candidate,
-          searchKey: normalizedCandidate,
-          aliases,
-          provisional: false,
-        })
+        addCandidate(candidate, aliases)
       }
     }
   }
