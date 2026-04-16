@@ -28,7 +28,9 @@ import {
 import { getTurkeyDateKey } from "@/lib/date"
 import { ILK11_PATH } from "@/lib/routes"
 import type { Ilk10Answer, Ilk10EntityType, Ilk10StoredState } from "@/types/ilk10"
-import { Copy, Heart } from "lucide-react"
+import { LeaderboardModal } from "@/components/leaderboard-modal"
+import { LeaderboardSubmit } from "@/components/leaderboard-submit"
+import { Copy, Heart, Trophy } from "lucide-react"
 const AUTOCOMPLETE_LIMIT = 8
 
 function highlightMatch(text: string, query: string): React.ReactNode {
@@ -313,6 +315,7 @@ export default function Ilk10Page() {
   const [guess, setGuess] = useState("")
   const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(-1)
   const [feedback, setFeedback] = useState("")
+  const [showLeaderboard, setShowLeaderboard] = useState(false)
   const [showSummary, setShowSummary] = useState(false)
   const [shareCopied, setShareCopied] = useState(false)
   const [boardFx, setBoardFx] = useState<{ kind: "success" | "error"; key: number; answerIndex?: number } | null>(
@@ -594,17 +597,27 @@ export default function Ilk10Page() {
       <div className="w-full max-w-md sm:max-w-lg mx-auto flex flex-col">
         {/* Hearts + title at top */}
         <header className="flex flex-col items-center gap-2 pt-2 pb-4">
-          <div className="flex items-center gap-2">
-            {Array.from({ length: ILK10_MAX_LIVES }, (_, index) => (
-              <Heart
-                key={index}
-                className={
-                  index < remainingLives
-                    ? "h-6 w-6 fill-red-500 text-red-500"
-                    : "h-6 w-6 text-slate-600"
-                }
-              />
-            ))}
+          <div className="flex w-full items-center justify-between">
+            <div className="flex items-center gap-2">
+              {Array.from({ length: ILK10_MAX_LIVES }, (_, index) => (
+                <Heart
+                  key={index}
+                  className={
+                    index < remainingLives
+                      ? "h-6 w-6 fill-red-500 text-red-500"
+                      : "h-6 w-6 text-slate-600"
+                  }
+                />
+              ))}
+            </div>
+            <Button
+              onClick={() => setShowLeaderboard(true)}
+              className="bg-slate-800/70 hover:bg-slate-700 border border-white/10 text-white rounded-xl text-sm"
+              size="sm"
+            >
+              <Trophy className="h-4 w-4 mr-2 text-emerald-400" />
+              Skor Tablosu
+            </Button>
           </div>
           <h1 className="text-3xl font-extrabold text-white tracking-tight font-mono uppercase">
             ilk10!
@@ -844,9 +857,26 @@ export default function Ilk10Page() {
               <Copy className="h-4 w-4 mr-2" />
               {shareCopied ? "Copied" : "Share"}
             </Button>
+            <LeaderboardSubmit
+              game="ilk10"
+              submissionKey={`${DAILY_QUESTION.id}_${DAILY_PICK.dateKey}`}
+              payload={{
+                question_id: DAILY_QUESTION.id,
+                question_label: DAILY_QUESTION.shortLabel,
+                found: gameState.foundIndexes.length,
+                lives_used: gameState.missCount,
+                is_complete: isIlk10Solved(DAILY_QUESTION, gameState),
+              }}
+            />
           </div>
         </DialogContent>
       </Dialog>
+      <LeaderboardModal
+        open={showLeaderboard}
+        onOpenChange={setShowLeaderboard}
+        activeGame="ilk10"
+        isGameComplete={isIlk10Finished(DAILY_QUESTION, gameState)}
+      />
     </main>
   )
 }
