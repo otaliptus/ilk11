@@ -468,7 +468,7 @@ export function buildIlk10ShareText(
     shareUrl,
     `Top10 #${gameNumber}`,
     expandedShortLabel,
-    `${state.foundIndexes.length}/10 bulundu - ${guessesLeft} hak kaldı`,
+    `Skor: ${state.foundIndexes.length}/10 - ${guessesLeft} hak kaldı`,
     answerLine,
   ].join("\n")
 }

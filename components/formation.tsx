@@ -164,7 +164,7 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
     let table = `İlk 11! #${gameId}\n`;
     if (currentUrl) table += `${currentUrl}\n`;
     table += `${gameData.game}\n${gameData.team} • ${gameData.formation}\n\n`;
-    table += `✅ Bulundu: ${solved}/11\n`;
+    table += `✅ Skor: ${solved}/11\n`;
     table += `🎯 Tahmin: ${totalAttempts}\n`;
     if (failed > 0) {
       table += `❌ Hatalı: ${failed}\n`;
