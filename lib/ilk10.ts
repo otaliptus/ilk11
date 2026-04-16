@@ -5,6 +5,11 @@ import { ILK10_SHARE_DOMAIN } from "@/lib/routes"
 const MAX_LIVES = 5
 const NON_REPEATING_ROTATION_EPOCH = "2026-04-13"
 
+export const ILK10_DATE_OVERRIDES: Record<string, string> = {
+  "2026-04-12": "super-lig-title-coaches",
+  "2026-04-19": "turkish-super-cup-winning-coaches",
+}
+
 const CHARACTER_MAP: Record<string, string> = {
   C: "C",
   c: "C",
@@ -39,6 +44,24 @@ function normalizeCharacters(input: string): string {
     .split("")
     .map((character) => CHARACTER_MAP[character] ?? character)
     .join("")
+}
+
+export function isAllowedLiveQuestion(question: Ilk10Question): boolean {
+  if (question.entityType === "coach" || question.entityType === "referee") {
+    return true
+  }
+
+  // The generated FBref pack is stored as Turkish-labeled season-stats questions.
+  // Allow the whole category instead of relying on English keywords in the label.
+  if (question.category === "season-stats") {
+    return true
+  }
+
+  const searchableText = `${question.shortLabel} ${question.prompt}`
+  return /\bGoals\b/i.test(searchableText) ||
+    /\bAssists\b/i.test(searchableText) ||
+    /\bOn Target\b/i.test(searchableText) ||
+    /\bxG\b/i.test(searchableText)
 }
 
 export function normalizeIlk10Answer(input: string): string {

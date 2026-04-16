@@ -4,13 +4,17 @@ import { Trophy } from "lucide-react"
 
 interface DifficultySelectionProps {
   onSelect: (difficulty: "easy" | "hard") => void
+  descriptions?: {
+    easy: string
+    hard: string
+  } | null
 }
 
-export function DifficultySelectionModal({ onSelect }: DifficultySelectionProps & { open?: boolean }) {
-  return <DifficultySelection onSelect={onSelect} />
+export function DifficultySelectionModal({ onSelect, descriptions }: DifficultySelectionProps & { open?: boolean }) {
+  return <DifficultySelection onSelect={onSelect} descriptions={descriptions} />
 }
 
-export function DifficultySelection({ onSelect }: DifficultySelectionProps) {
+export function DifficultySelection({ onSelect, descriptions }: DifficultySelectionProps) {
   return (
     <div className="flex-1 flex flex-col items-center justify-center px-4 py-8 animate-in fade-in duration-500">
       {/* Pitch circle decoration */}
@@ -43,6 +47,12 @@ export function DifficultySelection({ onSelect }: DifficultySelectionProps) {
           <p className="text-slate-400 text-sm tracking-wide">
             Zorluk seviyesi seç
           </p>
+          {descriptions && (
+            <div className="flex flex-col items-center gap-1 text-center text-[11px] text-slate-300/90">
+              <span>Kolay: {descriptions.easy}</span>
+              <span>Zor: {descriptions.hard}</span>
+            </div>
+          )}
         </div>
 
         {/* Buttons */}

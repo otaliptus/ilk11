@@ -7,15 +7,15 @@ import { Trophy } from "lucide-react"
 import { LeaderboardModal } from "@/components/leaderboard-modal"
 import { ILK10_PATH, ILK11_PATH } from "@/lib/routes"
 import { ILK10_QUESTIONS } from "@/data/ilk10-questions"
-import { pickDailyIlk10Question } from "@/lib/ilk10"
+import { ILK10_DATE_OVERRIDES, isAllowedLiveQuestion, pickDailyIlk10Question } from "@/lib/ilk10"
+import { formatIlk11MatchLabel, getGameForDifficulty, parsePoolRows } from "@/lib/ilk11"
 
-const ILK10_DATE_OVERRIDES: Record<string, string> = {
-  "2026-04-12": "super-lig-title-coaches",
-  "2026-04-19": "turkish-super-cup-winning-coaches",
-}
+const BUILD_ID = process.env.NEXT_PUBLIC_BUILD_ID ?? "dev"
+const EASY_CSV_URL = `/easy.csv?v=${encodeURIComponent(BUILD_ID)}`
+const HARD_CSV_URL = `/hard.csv?v=${encodeURIComponent(BUILD_ID)}`
 
 function getIlk10TodayTeaser(): string {
-  const live = ILK10_QUESTIONS.filter((q) => !q.designExample)
+  const live = ILK10_QUESTIONS.filter((question) => !question.designExample && isAllowedLiveQuestion(question))
   const pick = pickDailyIlk10Question(live, new Date(), ILK10_DATE_OVERRIDES)
   return pick.question.shortLabel
 }
@@ -23,9 +23,40 @@ function getIlk10TodayTeaser(): string {
 export default function LandingPage() {
   const [showLeaderboard, setShowLeaderboard] = useState(false)
   const [ilk10Teaser, setIlk10Teaser] = useState<string | null>(null)
+  const [ilk11Descriptions, setIlk11Descriptions] = useState<{ easy: string; hard: string } | null>(null)
 
   useEffect(() => {
     setIlk10Teaser(getIlk10TodayTeaser())
+
+    let cancelled = false
+    const loadIlk11Descriptions = async () => {
+      try {
+        const [easyRes, hardRes] = await Promise.all([
+          fetch(EASY_CSV_URL),
+          fetch(HARD_CSV_URL),
+        ])
+        if (!easyRes.ok || !hardRes.ok) return
+
+        const [easyCsvText, hardCsvText] = await Promise.all([easyRes.text(), hardRes.text()])
+        const pools = {
+          easy: parsePoolRows(easyCsvText, "easy"),
+          hard: parsePoolRows(hardCsvText, "hard"),
+        }
+
+        if (cancelled) return
+        setIlk11Descriptions({
+          easy: formatIlk11MatchLabel(getGameForDifficulty(pools, "easy")),
+          hard: formatIlk11MatchLabel(getGameForDifficulty(pools, "hard")),
+        })
+      } catch {
+        if (!cancelled) {
+          setIlk11Descriptions(null)
+        }
+      }
+    }
+
+    loadIlk11Descriptions()
+    return () => { cancelled = true }
   }, [])
 
   return (
@@ -51,9 +82,15 @@ export default function LandingPage() {
         <section className="flex-1 flex flex-col justify-center gap-3 py-8">
           <Link
             href={ILK11_PATH}
-            className="group relative py-6 rounded-xl bg-sky-700/50 hover:bg-sky-600/60 border border-sky-500/30 hover:border-sky-500/50 text-white transition-all duration-200 flex flex-col items-center gap-1.5 active:scale-[0.97]"
+            className="group relative py-6 rounded-xl bg-sky-700/50 hover:bg-sky-600/60 border border-sky-500/30 hover:border-sky-500/50 text-white transition-all duration-200 flex flex-col items-center gap-2 active:scale-[0.97]"
           >
             <span className="text-2xl font-extrabold font-mono tracking-wide">İlk 11</span>
+            {ilk11Descriptions && (
+              <span className="flex flex-col items-center text-center text-[11px] font-normal text-sky-100/85">
+                <span>Kolay: {ilk11Descriptions.easy}</span>
+                <span>Zor: {ilk11Descriptions.hard}</span>
+              </span>
+            )}
           </Link>
 
           <Link

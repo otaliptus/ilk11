@@ -13,6 +13,7 @@ import { ILK10_QUESTIONS } from "@/data/ilk10-questions"
 import AUTOCOMPLETE_DATA from "@/registry/output/autocomplete.json"
 import {
   ILK10_MAX_LIVES,
+  ILK10_DATE_OVERRIDES,
   applyIlk10Guess,
   buildIlk10ShareText,
   createInitialIlk10State,
@@ -20,6 +21,7 @@ import {
   getIlk10StatusMessage,
   getIlk10StorageKey,
   getRemainingLives,
+  isAllowedLiveQuestion,
   isIlk10Finished,
   isIlk10Solved,
   normalizeIlk10Answer,
@@ -263,26 +265,10 @@ function enrichQuestionsWithEntityIds(questions: typeof ILK10_QUESTIONS): typeof
   })
 }
 
-function isAllowedLiveQuestion(question: (typeof ILK10_QUESTIONS)[number]): boolean {
-  if (question.entityType === "coach" || question.entityType === "referee") {
-    return true
-  }
-
-  const searchableText = `${question.shortLabel} ${question.prompt}`
-  return /\bGoals\b/i.test(searchableText) ||
-    /\bAssists\b/i.test(searchableText) ||
-    /\bOn Target\b/i.test(searchableText) ||
-    /\bxG\b/i.test(searchableText)
-}
-
 const ENRICHED_QUESTIONS = enrichQuestionsWithEntityIds(ILK10_QUESTIONS)
 const LIVE_QUESTIONS = ENRICHED_QUESTIONS.filter(
   (question) => !question.designExample && isAllowedLiveQuestion(question)
 )
-const ILK10_DATE_OVERRIDES: Record<string, string> = {
-  "2026-04-12": "super-lig-title-coaches",
-  "2026-04-19": "turkish-super-cup-winning-coaches",
-}
 const DAILY_PICK = pickDailyIlk10Question(LIVE_QUESTIONS, new Date(), ILK10_DATE_OVERRIDES)
 const DAILY_QUESTION = DAILY_PICK.question
 const DAILY_CACHE_TOKEN = getIlk10QuestionCacheToken(DAILY_QUESTION)
