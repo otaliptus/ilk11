@@ -191,6 +191,8 @@ const MANUAL_ILK10_QUESTIONS: Ilk10Question[] = [
       { value: "Goztepe" },
       {
         value: "Sivasspor",
+        displayValue:
+          "Sivasspor (1), Akhisarspor (1), Konyaspor (1), Kayserispor (1), Sakaryaspor (1), Bursaspor (1), Eskisehirspor (1)",
         aliases: [
           "Akhisarspor",
           "Konyaspor",

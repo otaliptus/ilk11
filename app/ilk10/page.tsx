@@ -553,6 +553,14 @@ export default function Ilk10Page() {
     [dailyGameNumber, dailyQuestion, gameState]
   )
 
+  const getRevealedAnswerLabel = (answer: Ilk10Answer, index: number) => {
+    if (answer.displayValue) {
+      return answer.displayValue
+    }
+
+    return revealedAnswerLabels.get(index) ?? answer.value
+  }
+
   useEffect(() => {
     setActiveSuggestionIndex(autocompleteSuggestions.length > 0 ? 0 : -1)
   }, [autocompleteSuggestions])
@@ -729,8 +737,8 @@ export default function Ilk10Page() {
                   <span className={`flex-1 text-base ${isScanHit ? "font-bold" : "font-semibold"}`}>
                     {revealed
                       ? found
-                        ? (revealedAnswerLabels.get(index) ?? answer.value)
-                        : answer.value
+                        ? getRevealedAnswerLabel(answer, index)
+                        : (answer.displayValue ?? answer.value)
                       : "• • •"}
                   </span>
                 </li>
