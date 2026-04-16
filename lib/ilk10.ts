@@ -7,9 +7,7 @@ const NON_REPEATING_ROTATION_EPOCH = "2026-04-13"
 
 export const ILK10_DATE_OVERRIDES: Record<string, string> = {
   "2026-04-12": "super-lig-title-coaches",
-  "2026-04-17": "fbref-range-2011-2016-assists",
-  "2026-04-18": "fbref-range-2011-2016-goals",
-  "2026-04-19": "turkish-super-cup-winning-coaches",
+  "2026-04-16": "fbref-range-2016-2022-goals",
 }
 
 const ILK10_LIVE_QUESTION_IDS = new Set([
@@ -20,12 +18,14 @@ const ILK10_LIVE_QUESTION_IDS = new Set([
   "turkish-super-cup-winning-coaches",
 ])
 
-const ILK10_LIVE_STAT_SUFFIXES = [
-  "-assists",
-  "-goals",
-  "-shots-on-target",
-  "-xg",
-]
+const ILK10_EXCLUDED_LIVE_QUESTION_IDS = new Set([
+  "fbref-range-2001-2006-assists",
+  "fbref-range-2001-2006-goals",
+])
+
+const ILK10_LIVE_STAT_SUFFIXES = ["-assists", "-goals"]
+
+type Ilk10CycleBucket = "manual" | "goals" | "assists" | "other"
 
 const CHARACTER_MAP: Record<string, string> = {
   C: "C",
@@ -64,6 +64,10 @@ function normalizeCharacters(input: string): string {
 }
 
 export function isAllowedLiveQuestion(question: Ilk10Question): boolean {
+  if (ILK10_EXCLUDED_LIVE_QUESTION_IDS.has(question.id)) {
+    return false
+  }
+
   if (ILK10_LIVE_QUESTION_IDS.has(question.id)) {
     return true
   }
@@ -77,9 +81,7 @@ export function isAllowedLiveQuestion(question: Ilk10Question): boolean {
 
   const searchableText = `${question.shortLabel} ${question.prompt}`
   return /\bGoals\b/i.test(searchableText) ||
-    /\bAssists\b/i.test(searchableText) ||
-    /\bOn Target\b/i.test(searchableText) ||
-    /\bxG\b/i.test(searchableText)
+    /\bAssists\b/i.test(searchableText)
 }
 
 export function normalizeIlk10Answer(input: string): string {
@@ -116,6 +118,22 @@ function buildQuestionOrder(questions: Ilk10Question[], rng: () => number): Ilk1
   return orderedQuestions
 }
 
+function getIlk10CycleBucket(question: Ilk10Question): Ilk10CycleBucket {
+  if (ILK10_LIVE_QUESTION_IDS.has(question.id)) {
+    return "manual"
+  }
+
+  if (question.id.endsWith("-goals")) {
+    return "goals"
+  }
+
+  if (question.id.endsWith("-assists")) {
+    return "assists"
+  }
+
+  return "other"
+}
+
 function parseEpochDayIndex(epochDateKey: string): number {
   const [epochYear, epochMonth, epochDay] = epochDateKey.split("-").map(Number)
   return Math.floor(Date.UTC(epochYear, epochMonth - 1, epochDay) / 86_400_000)
@@ -128,7 +146,71 @@ function pickLegacyIlk10Question(questions: Ilk10Question[], dateKey: string): I
 }
 
 function buildCycleQuestionOrder(questions: Ilk10Question[], cycleIndex: number): Ilk10Question[] {
-  return buildQuestionOrder(questions, mulberry32(fnv1a32(`${GAME_TIME_ZONE}:ilk10:cycle:${cycleIndex}`)))
+  const rng = mulberry32(fnv1a32(`${GAME_TIME_ZONE}:ilk10:cycle:${cycleIndex}`))
+  const bucketQueues: Record<Exclude<Ilk10CycleBucket, "other">, Ilk10Question[]> = {
+    manual: buildQuestionOrder(
+      questions.filter((question) => getIlk10CycleBucket(question) === "manual"),
+      rng
+    ),
+    goals: buildQuestionOrder(
+      questions.filter((question) => getIlk10CycleBucket(question) === "goals"),
+      rng
+    ),
+    assists: buildQuestionOrder(
+      questions.filter((question) => getIlk10CycleBucket(question) === "assists"),
+      rng
+    ),
+  }
+
+  const fallbackQuestions = buildQuestionOrder(
+    questions.filter((question) => getIlk10CycleBucket(question) === "other"),
+    rng
+  )
+
+  const pattern: Array<keyof typeof bucketQueues> = ["goals", "manual", "assists"]
+  const orderedQuestions: Ilk10Question[] = []
+  let previousBucket: keyof typeof bucketQueues | null = null
+  let patternCursor = 0
+
+  while (
+    bucketQueues.manual.length > 0 ||
+    bucketQueues.goals.length > 0 ||
+    bucketQueues.assists.length > 0
+  ) {
+    let nextBucket: keyof typeof bucketQueues | null = null
+
+    for (let offset = 0; offset < pattern.length; offset += 1) {
+      const candidateBucket = pattern[(patternCursor + offset) % pattern.length]
+      if (bucketQueues[candidateBucket].length === 0) {
+        continue
+      }
+      if (candidateBucket === previousBucket) {
+        continue
+      }
+
+      nextBucket = candidateBucket
+      patternCursor = (patternCursor + offset + 1) % pattern.length
+      break
+    }
+
+    if (!nextBucket) {
+      nextBucket = pattern.find((candidateBucket) => bucketQueues[candidateBucket].length > 0) ?? null
+      if (!nextBucket) {
+        break
+      }
+      patternCursor = (pattern.indexOf(nextBucket) + 1) % pattern.length
+    }
+
+    const nextQuestion = bucketQueues[nextBucket].shift()
+    if (!nextQuestion) {
+      continue
+    }
+
+    orderedQuestions.push(nextQuestion)
+    previousBucket = nextBucket
+  }
+
+  return [...orderedQuestions, ...fallbackQuestions]
 }
 
 function avoidCycleBoundaryRepeat(
