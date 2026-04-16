@@ -259,13 +259,11 @@ export function LeaderboardModal({
                   <span className="w-20 text-right text-sm flex-shrink-0">
                     {hideScores ? (
                       <span className="text-slate-500">•••</span>
-                    ) : entry.is_complete ? (
-                      <span className="text-emerald-300 font-bold">
+                    ) : (
+                      <span className={`${entry.is_complete ? "text-emerald-300" : "text-slate-200"} font-bold`}>
                         {entry.found}/10{" "}
                         <span className="text-slate-400 font-normal text-xs">(-{entry.lives_used}♥)</span>
                       </span>
-                    ) : (
-                      <span className="text-red-400">❌</span>
                     )}
                   </span>
                 </div>
