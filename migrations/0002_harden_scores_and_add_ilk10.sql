@@ -1,7 +1,8 @@
 -- Hardens the ilk11 scores table with upper-bound CHECKs and adds ilk10_scores.
 -- SQLite doesn't support ALTER TABLE ADD CHECK, so we recreate `scores`.
-
-BEGIN TRANSACTION;
+-- No explicit BEGIN/COMMIT: D1 rejects SQL-level transaction statements and
+-- instead wraps `wrangler d1 execute --file` submissions in a single atomic
+-- batch on the server.
 
 CREATE TABLE scores_new (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -44,5 +45,3 @@ CREATE TABLE IF NOT EXISTS ilk10_scores (
 );
 
 CREATE INDEX IF NOT EXISTS idx_ilk10_scores_date ON ilk10_scores(game_date);
-
-COMMIT;
