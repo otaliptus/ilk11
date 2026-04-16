@@ -50,31 +50,19 @@ export default function LandingPage() {
 
         <section className="flex-1 flex flex-col justify-center gap-3 py-8">
           <Link
-            href={`${ILK11_PATH}?d=easy`}
-            className="group relative py-5 rounded-xl bg-emerald-600/60 hover:bg-emerald-500/70 border border-emerald-400/30 hover:border-emerald-400/50 text-white transition-all duration-200 flex flex-col items-center gap-1.5 active:scale-[0.97]"
+            href={ILK11_PATH}
+            className="group relative py-6 rounded-xl bg-sky-700/50 hover:bg-sky-600/60 border border-sky-500/30 hover:border-sky-500/50 text-white transition-all duration-200 flex flex-col items-center gap-1.5 active:scale-[0.97]"
           >
-            <span className="text-lg leading-none">🟢</span>
-            <span className="text-base font-bold tracking-wide">İlk 11 · Kolay</span>
-            <span className="text-[11px] font-normal text-emerald-100/70">Büyük kulüpler</span>
-          </Link>
-
-          <Link
-            href={`${ILK11_PATH}?d=hard`}
-            className="group relative py-5 rounded-xl bg-red-700/50 hover:bg-red-600/60 border border-red-500/30 hover:border-red-500/50 text-white transition-all duration-200 flex flex-col items-center gap-1.5 active:scale-[0.97]"
-          >
-            <span className="text-lg leading-none">🔴</span>
-            <span className="text-base font-bold tracking-wide">İlk 11 · Zor</span>
-            <span className="text-[11px] font-normal text-red-100/70">Diğer takımlar</span>
+            <span className="text-2xl font-extrabold font-mono tracking-wide">İlk 11</span>
           </Link>
 
           <Link
             href={ILK10_PATH}
-            className="group relative py-5 rounded-xl bg-sky-700/50 hover:bg-sky-600/60 border border-sky-500/30 hover:border-sky-500/50 text-white transition-all duration-200 flex flex-col items-center gap-1.5 active:scale-[0.97]"
+            className="group relative py-6 rounded-xl bg-emerald-600/60 hover:bg-emerald-500/70 border border-emerald-400/30 hover:border-emerald-400/50 text-white transition-all duration-200 flex flex-col items-center gap-1.5 active:scale-[0.97]"
           >
-            <span className="text-lg leading-none">🔟</span>
-            <span className="text-base font-bold tracking-wide">İlk 10</span>
+            <span className="text-2xl font-extrabold font-mono tracking-wide">İlk 10</span>
             {ilk10Teaser && (
-              <span className="text-[11px] font-normal text-sky-100/70">Bugün · {ilk10Teaser}</span>
+              <span className="text-[11px] font-normal text-emerald-100/80">Bugün · {ilk10Teaser}</span>
             )}
           </Link>
         </section>

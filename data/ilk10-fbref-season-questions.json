@@ -2,7 +2,7 @@
   {
     "id": "fbref-2022-2023-assists",
     "shortLabel": "2022-23 Asist",
-    "prompt": "2022-23 Süper Lig asist krallığı (ilk 10)",
+    "prompt": "2022-23 Süper Lig asist krallığı",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2022-2023 Super Lig leaderboard",
@@ -93,7 +93,7 @@
   {
     "id": "fbref-2022-2023-cards-red",
     "shortLabel": "2022-23 Kırmızı Kart",
-    "prompt": "2022-23 Süper Lig en çok kırmızı kart gören oyuncular (ilk 10)",
+    "prompt": "2022-23 Süper Lig en çok kırmızı kart gören oyuncular",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2022-2023 Super Lig leaderboard",
@@ -185,7 +185,7 @@
   {
     "id": "fbref-2022-2023-cards-yellow",
     "shortLabel": "2022-23 Sarı Kart",
-    "prompt": "2022-23 Süper Lig en çok sarı kart gören oyuncular (ilk 10)",
+    "prompt": "2022-23 Süper Lig en çok sarı kart gören oyuncular",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2022-2023 Super Lig leaderboard",
@@ -276,8 +276,8 @@
   },
   {
     "id": "fbref-2022-2023-gk-clean-sheets",
-    "shortLabel": "2022-23 Gol Yemedi",
-    "prompt": "2022-23 Süper Lig en çok gol yemeyen kaleciler (ilk 10)",
+    "shortLabel": "2022-23 Gol Yemeden",
+    "prompt": "2022-23 Süper Lig en çok maçı gol yemeden tamamlayan kaleciler",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2022-2023 Super Lig leaderboard",
@@ -369,7 +369,7 @@
   {
     "id": "fbref-2022-2023-gk-saves",
     "shortLabel": "2022-23 Kurtarış",
-    "prompt": "2022-23 Süper Lig en çok kurtarış yapan kaleciler (ilk 10)",
+    "prompt": "2022-23 Süper Lig en çok kurtarış yapan kaleciler",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2022-2023 Super Lig leaderboard",
@@ -461,7 +461,7 @@
   {
     "id": "fbref-2022-2023-goals",
     "shortLabel": "2022-23 Gol",
-    "prompt": "2022-23 Süper Lig gol krallığı (ilk 10)",
+    "prompt": "2022-23 Süper Lig gol krallığı",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2022-2023 Super Lig leaderboard",
@@ -553,7 +553,7 @@
   {
     "id": "fbref-2022-2023-minutes",
     "shortLabel": "2022-23 Dakika",
-    "prompt": "2022-23 Süper Lig en çok dakika oynayan oyuncular (ilk 10)",
+    "prompt": "2022-23 Süper Lig en çok dakika oynayan oyuncular",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2022-2023 Super Lig leaderboard",
@@ -644,7 +644,7 @@
   {
     "id": "fbref-2022-2023-pens-made",
     "shortLabel": "2022-23 Penaltı",
-    "prompt": "2022-23 Süper Lig penaltı gol krallığı (ilk 10)",
+    "prompt": "2022-23 Süper Lig'de en çok penaltı golü atan oyuncular",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2022-2023 Super Lig leaderboard",
@@ -736,7 +736,7 @@
   {
     "id": "fbref-2022-2023-shots-on-target",
     "shortLabel": "2022-23 İsabetli Şut",
-    "prompt": "2022-23 Süper Lig en çok isabetli şut atan oyuncular (ilk 10)",
+    "prompt": "2022-23 Süper Lig en çok isabetli şut atan oyuncular",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2022-2023 Super Lig leaderboard",
@@ -828,7 +828,7 @@
   {
     "id": "fbref-2023-2024-assists",
     "shortLabel": "2023-24 Asist",
-    "prompt": "2023-24 Süper Lig asist krallığı (ilk 10)",
+    "prompt": "2023-24 Süper Lig asist krallığı",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2023-2024 Super Lig leaderboard",
@@ -920,7 +920,7 @@
   {
     "id": "fbref-2023-2024-cards-red",
     "shortLabel": "2023-24 Kırmızı Kart",
-    "prompt": "2023-24 Süper Lig en çok kırmızı kart gören oyuncular (ilk 10)",
+    "prompt": "2023-24 Süper Lig en çok kırmızı kart gören oyuncular",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2023-2024 Super Lig leaderboard",
@@ -1012,7 +1012,7 @@
   {
     "id": "fbref-2023-2024-cards-yellow",
     "shortLabel": "2023-24 Sarı Kart",
-    "prompt": "2023-24 Süper Lig en çok sarı kart gören oyuncular (ilk 10)",
+    "prompt": "2023-24 Süper Lig en çok sarı kart gören oyuncular",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2023-2024 Super Lig leaderboard",
@@ -1103,8 +1103,8 @@
   },
   {
     "id": "fbref-2023-2024-gk-clean-sheets",
-    "shortLabel": "2023-24 Gol Yemedi",
-    "prompt": "2023-24 Süper Lig en çok gol yemeyen kaleciler (ilk 10)",
+    "shortLabel": "2023-24 Gol Yemeden",
+    "prompt": "2023-24 Süper Lig en çok maçı gol yemeden tamamlayan kaleciler",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2023-2024 Super Lig leaderboard",
@@ -1196,7 +1196,7 @@
   {
     "id": "fbref-2023-2024-gk-saves",
     "shortLabel": "2023-24 Kurtarış",
-    "prompt": "2023-24 Süper Lig en çok kurtarış yapan kaleciler (ilk 10)",
+    "prompt": "2023-24 Süper Lig en çok kurtarış yapan kaleciler",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2023-2024 Super Lig leaderboard",
@@ -1288,7 +1288,7 @@
   {
     "id": "fbref-2023-2024-goals",
     "shortLabel": "2023-24 Gol",
-    "prompt": "2023-24 Süper Lig gol krallığı (ilk 10)",
+    "prompt": "2023-24 Süper Lig gol krallığı",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2023-2024 Super Lig leaderboard",
@@ -1380,7 +1380,7 @@
   {
     "id": "fbref-2023-2024-minutes",
     "shortLabel": "2023-24 Dakika",
-    "prompt": "2023-24 Süper Lig en çok dakika oynayan oyuncular (ilk 10)",
+    "prompt": "2023-24 Süper Lig en çok dakika oynayan oyuncular",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2023-2024 Super Lig leaderboard",
@@ -1471,7 +1471,7 @@
   {
     "id": "fbref-2023-2024-pens-made",
     "shortLabel": "2023-24 Penaltı",
-    "prompt": "2023-24 Süper Lig penaltı gol krallığı (ilk 10)",
+    "prompt": "2023-24 Süper Lig'de en çok penaltı golü atan oyuncular",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2023-2024 Super Lig leaderboard",
@@ -1563,7 +1563,7 @@
   {
     "id": "fbref-2023-2024-shots-on-target",
     "shortLabel": "2023-24 İsabetli Şut",
-    "prompt": "2023-24 Süper Lig en çok isabetli şut atan oyuncular (ilk 10)",
+    "prompt": "2023-24 Süper Lig en çok isabetli şut atan oyuncular",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2023-2024 Super Lig leaderboard",
@@ -1655,7 +1655,7 @@
   {
     "id": "fbref-2024-2025-assists",
     "shortLabel": "2024-25 Asist",
-    "prompt": "2024-25 Süper Lig asist krallığı (ilk 10)",
+    "prompt": "2024-25 Süper Lig asist krallığı",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2024-2025 Super Lig leaderboard",
@@ -1747,7 +1747,7 @@
   {
     "id": "fbref-2024-2025-cards-red",
     "shortLabel": "2024-25 Kırmızı Kart",
-    "prompt": "2024-25 Süper Lig en çok kırmızı kart gören oyuncular (ilk 10)",
+    "prompt": "2024-25 Süper Lig en çok kırmızı kart gören oyuncular",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2024-2025 Super Lig leaderboard",
@@ -1839,7 +1839,7 @@
   {
     "id": "fbref-2024-2025-cards-yellow",
     "shortLabel": "2024-25 Sarı Kart",
-    "prompt": "2024-25 Süper Lig en çok sarı kart gören oyuncular (ilk 10)",
+    "prompt": "2024-25 Süper Lig en çok sarı kart gören oyuncular",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2024-2025 Super Lig leaderboard",
@@ -1929,8 +1929,8 @@
   },
   {
     "id": "fbref-2024-2025-gk-clean-sheets",
-    "shortLabel": "2024-25 Gol Yemedi",
-    "prompt": "2024-25 Süper Lig en çok gol yemeyen kaleciler (ilk 10)",
+    "shortLabel": "2024-25 Gol Yemeden",
+    "prompt": "2024-25 Süper Lig en çok maçı gol yemeden tamamlayan kaleciler",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2024-2025 Super Lig leaderboard",
@@ -2022,7 +2022,7 @@
   {
     "id": "fbref-2024-2025-gk-saves",
     "shortLabel": "2024-25 Kurtarış",
-    "prompt": "2024-25 Süper Lig en çok kurtarış yapan kaleciler (ilk 10)",
+    "prompt": "2024-25 Süper Lig en çok kurtarış yapan kaleciler",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2024-2025 Super Lig leaderboard",
@@ -2114,7 +2114,7 @@
   {
     "id": "fbref-2024-2025-goals",
     "shortLabel": "2024-25 Gol",
-    "prompt": "2024-25 Süper Lig gol krallığı (ilk 10)",
+    "prompt": "2024-25 Süper Lig gol krallığı",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2024-2025 Super Lig leaderboard",
@@ -2206,7 +2206,7 @@
   {
     "id": "fbref-2024-2025-minutes",
     "shortLabel": "2024-25 Dakika",
-    "prompt": "2024-25 Süper Lig en çok dakika oynayan oyuncular (ilk 10)",
+    "prompt": "2024-25 Süper Lig en çok dakika oynayan oyuncular",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2024-2025 Super Lig leaderboard",
@@ -2297,7 +2297,7 @@
   {
     "id": "fbref-2024-2025-pens-made",
     "shortLabel": "2024-25 Penaltı",
-    "prompt": "2024-25 Süper Lig penaltı gol krallığı (ilk 10)",
+    "prompt": "2024-25 Süper Lig'de en çok penaltı golü atan oyuncular",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2024-2025 Super Lig leaderboard",
@@ -2389,7 +2389,7 @@
   {
     "id": "fbref-2024-2025-shots-on-target",
     "shortLabel": "2024-25 İsabetli Şut",
-    "prompt": "2024-25 Süper Lig en çok isabetli şut atan oyuncular (ilk 10)",
+    "prompt": "2024-25 Süper Lig en çok isabetli şut atan oyuncular",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2024-2025 Super Lig leaderboard",
@@ -2481,7 +2481,7 @@
   {
     "id": "fbref-2025-2026-assists",
     "shortLabel": "2025-26 Asist",
-    "prompt": "2025-26 Süper Lig asist krallığı (ilk 10)",
+    "prompt": "2025-26 Süper Lig asist krallığı",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2025-2026 Super Lig leaderboard",
@@ -2573,7 +2573,7 @@
   {
     "id": "fbref-2025-2026-cards-red",
     "shortLabel": "2025-26 Kırmızı Kart",
-    "prompt": "2025-26 Süper Lig en çok kırmızı kart gören oyuncular (ilk 10)",
+    "prompt": "2025-26 Süper Lig en çok kırmızı kart gören oyuncular",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2025-2026 Super Lig leaderboard",
@@ -2664,7 +2664,7 @@
   {
     "id": "fbref-2025-2026-cards-yellow",
     "shortLabel": "2025-26 Sarı Kart",
-    "prompt": "2025-26 Süper Lig en çok sarı kart gören oyuncular (ilk 10)",
+    "prompt": "2025-26 Süper Lig en çok sarı kart gören oyuncular",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2025-2026 Super Lig leaderboard",
@@ -2755,8 +2755,8 @@
   },
   {
     "id": "fbref-2025-2026-gk-clean-sheets",
-    "shortLabel": "2025-26 Gol Yemedi",
-    "prompt": "2025-26 Süper Lig en çok gol yemeyen kaleciler (ilk 10)",
+    "shortLabel": "2025-26 Gol Yemeden",
+    "prompt": "2025-26 Süper Lig en çok maçı gol yemeden tamamlayan kaleciler",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2025-2026 Super Lig leaderboard",
@@ -2848,7 +2848,7 @@
   {
     "id": "fbref-2025-2026-gk-saves",
     "shortLabel": "2025-26 Kurtarış",
-    "prompt": "2025-26 Süper Lig en çok kurtarış yapan kaleciler (ilk 10)",
+    "prompt": "2025-26 Süper Lig en çok kurtarış yapan kaleciler",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2025-2026 Super Lig leaderboard",
@@ -2940,7 +2940,7 @@
   {
     "id": "fbref-2025-2026-goals",
     "shortLabel": "2025-26 Gol",
-    "prompt": "2025-26 Süper Lig gol krallığı (ilk 10)",
+    "prompt": "2025-26 Süper Lig gol krallığı",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2025-2026 Super Lig leaderboard",
@@ -3032,7 +3032,7 @@
   {
     "id": "fbref-2025-2026-minutes",
     "shortLabel": "2025-26 Dakika",
-    "prompt": "2025-26 Süper Lig en çok dakika oynayan oyuncular (ilk 10)",
+    "prompt": "2025-26 Süper Lig en çok dakika oynayan oyuncular",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2025-2026 Super Lig leaderboard",
@@ -3123,7 +3123,7 @@
   {
     "id": "fbref-2025-2026-pens-made",
     "shortLabel": "2025-26 Penaltı",
-    "prompt": "2025-26 Süper Lig penaltı gol krallığı (ilk 10)",
+    "prompt": "2025-26 Süper Lig'de en çok penaltı golü atan oyuncular",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2025-2026 Super Lig leaderboard",
@@ -3215,7 +3215,7 @@
   {
     "id": "fbref-2025-2026-shots-on-target",
     "shortLabel": "2025-26 İsabetli Şut",
-    "prompt": "2025-26 Süper Lig en çok isabetli şut atan oyuncular (ilk 10)",
+    "prompt": "2025-26 Süper Lig en çok isabetli şut atan oyuncular",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2025-2026 Super Lig leaderboard",
@@ -3307,7 +3307,7 @@
   {
     "id": "fbref-range-2001-2006-assists",
     "shortLabel": "2001-06 Asist",
-    "prompt": "2001-2006 Süper Lig asist krallığı (ilk 10)",
+    "prompt": "2001-2006 Süper Lig asist krallığı",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "Transfermarkt 2001-2006 cumulative leaderboard",
@@ -3389,7 +3389,7 @@
   {
     "id": "fbref-range-2001-2006-goals",
     "shortLabel": "2001-06 Gol",
-    "prompt": "2001-2006 Süper Lig gol krallığı (ilk 10)",
+    "prompt": "2001-2006 Süper Lig gol krallığı",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "Transfermarkt 2001-2006 cumulative leaderboard",
@@ -3471,7 +3471,7 @@
   {
     "id": "fbref-range-2006-2011-assists",
     "shortLabel": "2006-11 Asist",
-    "prompt": "2006-2011 Süper Lig asist krallığı (ilk 10)",
+    "prompt": "2006-2011 Süper Lig asist krallığı",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "Transfermarkt 2006-2011 cumulative leaderboard",
@@ -3553,7 +3553,7 @@
   {
     "id": "fbref-range-2006-2011-goals",
     "shortLabel": "2006-11 Gol",
-    "prompt": "2006-2011 Süper Lig gol krallığı (ilk 10)",
+    "prompt": "2006-2011 Süper Lig gol krallığı",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "Transfermarkt 2006-2011 cumulative leaderboard",
@@ -3635,7 +3635,7 @@
   {
     "id": "fbref-range-2011-2016-assists",
     "shortLabel": "2011-16 Asist",
-    "prompt": "2011-2016 Süper Lig asist krallığı (ilk 10)",
+    "prompt": "2011-2016 Süper Lig asist krallığı",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "Transfermarkt 2011-2016 cumulative leaderboard",
@@ -3717,7 +3717,7 @@
   {
     "id": "fbref-range-2011-2016-goals",
     "shortLabel": "2011-16 Gol",
-    "prompt": "2011-2016 Süper Lig gol krallığı (ilk 10)",
+    "prompt": "2011-2016 Süper Lig gol krallığı",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "Transfermarkt 2011-2016 cumulative leaderboard",
@@ -3799,7 +3799,7 @@
   {
     "id": "fbref-range-2016-2022-assists",
     "shortLabel": "2016-22 Asist",
-    "prompt": "2016-2022 Süper Lig asist krallığı (ilk 10)",
+    "prompt": "2016-2022 Süper Lig asist krallığı",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "Transfermarkt 2016-2022 cumulative leaderboard",
@@ -3881,7 +3881,7 @@
   {
     "id": "fbref-range-2016-2022-goals",
     "shortLabel": "2016-22 Gol",
-    "prompt": "2016-2022 Süper Lig gol krallığı (ilk 10)",
+    "prompt": "2016-2022 Süper Lig gol krallığı",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "Transfermarkt 2016-2022 cumulative leaderboard",

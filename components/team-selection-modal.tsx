@@ -19,6 +19,17 @@ export function DifficultySelection({ onSelect }: DifficultySelectionProps) {
         <div className="absolute w-[min(40vw,200px)] aspect-square rounded-full border border-white/[0.03]" />
       </div>
 
+      <a
+        href="/"
+        className="absolute top-3 left-3 z-20 inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-black/35 px-3 py-1.5 text-xs text-slate-200 backdrop-blur-sm hover:text-white transition-colors"
+        aria-label="Ana sayfaya dön"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true" className="h-3.5 w-3.5 fill-current">
+          <path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+        Ana Sayfa
+      </a>
+
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center gap-6 w-full max-w-xs">
         {/* Logo area */}
