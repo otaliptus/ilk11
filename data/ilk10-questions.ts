@@ -170,6 +170,38 @@ const MANUAL_ILK10_QUESTIONS: Ilk10Question[] = [
       { value: "Didi" },
     ],
   },
+  {
+    id: "turkish-super-cup-winning-teams",
+    shortLabel: "Süper Kupa Şampiyonu Takımlar",
+    prompt: "En çok Türkiye Süper Kupası kazanan takımlar",
+    entityType: "team",
+    category: "title-race",
+    sourceLabel: "Wikipedia: Süper Kupa",
+    sourceUrl: "https://tr.wikipedia.org/wiki/S%C3%BCper_Kupa",
+    note: "Ordered by total Türkiye Süper Kupası titles. The 10th slot accepts any one-title club from the source table.",
+    answers: [
+      { value: "Galatasaray", aliases: ["Galatasaray SK"] },
+      { value: "Besiktas", aliases: ["Besiktas JK"] },
+      { value: "Trabzonspor" },
+      { value: "Fenerbahce", aliases: ["Fenerbahce SK"] },
+      { value: "Kocaelispor" },
+      { value: "Genclerbirligi", aliases: ["Genclerbirligi SK"] },
+      { value: "Ankaragucu" },
+      { value: "Altay", aliases: ["Altay SK"] },
+      { value: "Goztepe" },
+      {
+        value: "Sivasspor",
+        aliases: [
+          "Akhisarspor",
+          "Konyaspor",
+          "Kayserispor",
+          "Sakaryaspor",
+          "Bursaspor",
+          "Eskisehirspor",
+        ],
+      },
+    ],
+  },
 ]
 
 export const ILK10_QUESTIONS: Ilk10Question[] = [
