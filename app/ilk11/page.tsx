@@ -432,15 +432,6 @@ export default function Home() {
     return () => { isMounted = false }
   }, [])
 
-  // Allow pre-selecting difficulty via ?d=easy or ?d=hard (set by the picker on /).
-  useEffect(() => {
-    if (typeof window === "undefined") return
-    const param = new URLSearchParams(window.location.search).get("d")
-    if (param === "easy" || param === "hard") {
-      setDifficulty(param)
-    }
-  }, [])
-
   const handleDifficultySelect = (d: Difficulty) => {
     setDifficulty(d)
   }
