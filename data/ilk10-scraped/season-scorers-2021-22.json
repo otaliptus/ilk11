@@ -1,0 +1,42 @@
+{
+  "id": "season-scorers-2021-22",
+  "prompt": "Top 10 Super Lig scorers of the 2021-22 season",
+  "shortLabel": "2021-22 Top Scorers",
+  "entityType": "player",
+  "category": "all-time",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/super-lig/torschuetzenliste/wettbewerb/TR1/saison_id/2021",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Umut Bozok"
+    },
+    {
+      "value": "Mario Balotelli"
+    },
+    {
+      "value": "Ayoub El Kaabi"
+    },
+    {
+      "value": "Joel Pohjanpalo"
+    },
+    {
+      "value": "Andreas Cornelius"
+    },
+    {
+      "value": "Serdar Dursun"
+    },
+    {
+      "value": "Alexandru Maxim"
+    },
+    {
+      "value": "Michy Batshuayi"
+    },
+    {
+      "value": "Aleksandar Pesic"
+    },
+    {
+      "value": "Haji Wright"
+    }
+  ]
+}

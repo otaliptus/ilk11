@@ -1,0 +1,42 @@
+{
+  "id": "club-managers-trabzonspor",
+  "prompt": "Top 10 managers by matches in charge at Trabzonspor",
+  "shortLabel": "TS Managers",
+  "entityType": "coach",
+  "category": "title-race",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/trabzonspor/mitarbeiterhistorie/verein/449",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Unal Karaman"
+    },
+    {
+      "value": "Samet Aybaba"
+    },
+    {
+      "value": "Ziya Dogan"
+    },
+    {
+      "value": "Ersun Yanal"
+    },
+    {
+      "value": "Fatih Tekke"
+    },
+    {
+      "value": "Abdullah Avcı"
+    },
+    {
+      "value": "Georges Leekens"
+    },
+    {
+      "value": "Giray Bulak"
+    },
+    {
+      "value": "Urbain Braems"
+    },
+    {
+      "value": "Gordon Milne"
+    }
+  ]
+}

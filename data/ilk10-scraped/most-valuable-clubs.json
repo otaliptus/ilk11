@@ -1,0 +1,42 @@
+{
+  "id": "most-valuable-clubs",
+  "prompt": "Top 10 most valuable Super Lig clubs by squad market value",
+  "shortLabel": "Most Valuable Clubs",
+  "entityType": "team",
+  "category": "all-time",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/super-lig/marktwerteverein/wettbewerb/TR1",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Galatasaray"
+    },
+    {
+      "value": "Fenerbahce"
+    },
+    {
+      "value": "Besiktas JK"
+    },
+    {
+      "value": "Trabzonspor"
+    },
+    {
+      "value": "Basaksehir FK"
+    },
+    {
+      "value": "Goztepe"
+    },
+    {
+      "value": "Samsunspor"
+    },
+    {
+      "value": "Caykur Rizespor"
+    },
+    {
+      "value": "Konyaspor"
+    },
+    {
+      "value": "Alanyaspor"
+    }
+  ]
+}

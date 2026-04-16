@@ -1,0 +1,42 @@
+{
+  "id": "season-scorers-2020-21",
+  "prompt": "Top 10 Super Lig scorers of the 2020-21 season",
+  "shortLabel": "2020-21 Top Scorers",
+  "entityType": "player",
+  "category": "all-time",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/super-lig/torschuetzenliste/wettbewerb/TR1/saison_id/2020",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Aaron Boupendza"
+    },
+    {
+      "value": "Cyle Larin"
+    },
+    {
+      "value": "Mame Diouf"
+    },
+    {
+      "value": "Adem Buyuk"
+    },
+    {
+      "value": "Muhammet Demir"
+    },
+    {
+      "value": "Vincent Aboubakar"
+    },
+    {
+      "value": "Alexandru Maxim"
+    },
+    {
+      "value": "Hugo Rodallega"
+    },
+    {
+      "value": "Anastasios Bakasetas"
+    },
+    {
+      "value": "Enner Valencia"
+    }
+  ]
+}

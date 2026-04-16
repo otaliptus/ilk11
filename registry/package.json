@@ -1,0 +1,19 @@
+{
+  "name": "ilk10-registry",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "npm run build:players:bootstrap && npm run build:manual",
+    "build:players:bootstrap": "node scripts/build-player-bootstrap.mjs",
+    "build:players:fbref": "node scripts/build-player-fbref-registry.mjs",
+    "build:season-leaderboards:fbref": "node scripts/build-fbref-season-leaderboards.mjs",
+    "build:season-leaderboards:transfermarkt": "node scripts/build-transfermarkt-season-leaderboards.mjs",
+    "build:ilk10-pack:fbref": "node scripts/build-ilk10-fbref-question-pack.mjs",
+    "build:players:transfermarkt": "node scripts/build-player-transfermarkt-registry.mjs",
+    "build:historical:transfermarkt": "node scripts/build-transfermarkt-historical-registry.mjs",
+    "build:staff:transfermarkt": "node scripts/build-staff-transfermarkt-registries.mjs",
+    "build:manual": "node scripts/build-manual-registries.mjs",
+    "build:autocomplete": "node scripts/build-autocomplete-index.mjs",
+    "summary": "node scripts/print-summary.mjs"
+  }
+}

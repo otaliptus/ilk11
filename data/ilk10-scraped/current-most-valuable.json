@@ -1,0 +1,42 @@
+{
+  "id": "current-most-valuable",
+  "prompt": "Top 10 most valuable players in the Super Lig right now",
+  "shortLabel": "Most Valuable",
+  "entityType": "player",
+  "category": "all-time",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/super-lig/marktwerte/wettbewerb/TR1",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Victor Osimhen"
+    },
+    {
+      "value": "Matteo Guendouzi"
+    },
+    {
+      "value": "Barıs Alper Yılmaz"
+    },
+    {
+      "value": "Orkun Kokcu"
+    },
+    {
+      "value": "Wilfried Singo"
+    },
+    {
+      "value": "Noa Lang"
+    },
+    {
+      "value": "Kerem Akturkoglu"
+    },
+    {
+      "value": "Gabriel Sara"
+    },
+    {
+      "value": "Leroy Sane"
+    },
+    {
+      "value": "Edson Alvarez"
+    }
+  ]
+}

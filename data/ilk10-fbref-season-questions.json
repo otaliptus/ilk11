@@ -1,0 +1,3963 @@
+[
+  {
+    "id": "fbref-2022-2023-assists",
+    "shortLabel": "2022-23 Asist",
+    "prompt": "2022-23 Süper Lig asist krallığı (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2022-2023 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2022-2023/2022-2023-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Assists\".",
+    "answers": [
+      {
+        "value": "Kerem Akturkoglu",
+        "entityId": "player:tm-historical-382528-kerem-akturkoglu",
+        "sourceIds": {
+          "fbref": "f28659fb",
+          "transfermarkt": "382528"
+        }
+      },
+      {
+        "value": "Guilherme Sitya",
+        "entityId": "player:fbref-8377c51d-guilherme-sitya",
+        "sourceIds": {
+          "fbref": "8377c51d"
+        }
+      },
+      {
+        "value": "Fabio Borini",
+        "entityId": "player:tm-96754-fabio-borini",
+        "sourceIds": {
+          "fbref": "ef5b337e",
+          "transfermarkt": "96754"
+        }
+      },
+      {
+        "value": "Caner Erkin",
+        "entityId": "player:tm-39333-caner-erkin",
+        "sourceIds": {
+          "fbref": "15b6e8d7",
+          "transfermarkt": "39333"
+        }
+      },
+      {
+        "value": "Mauro Icardi",
+        "entityId": "player:tm-68863-mauro-icardi",
+        "sourceIds": {
+          "fbref": "43b78598",
+          "transfermarkt": "68863"
+        }
+      },
+      {
+        "value": "Younes Belhanda",
+        "entityId": "player:tm-historical-118022-younes-belhanda",
+        "sourceIds": {
+          "fbref": "e204ec12",
+          "transfermarkt": "118022"
+        }
+      },
+      {
+        "value": "Efecan Karaca",
+        "entityId": "player:tm-50655-efecan-karaca",
+        "sourceIds": {
+          "fbref": "10c5ea2c",
+          "transfermarkt": "50655"
+        }
+      },
+      {
+        "value": "Lincoln",
+        "entityId": "player:tm-historical-351738-lincoln",
+        "sourceIds": {
+          "fbref": "27504df8",
+          "transfermarkt": "351738"
+        }
+      },
+      {
+        "value": "Arthur Masuaku",
+        "entityId": "player:tm-historical-181380-arthur-masuaku",
+        "sourceIds": {
+          "fbref": "57df7a11",
+          "transfermarkt": "181380"
+        }
+      },
+      {
+        "value": "Milot Rashica",
+        "entityId": "player:tm-historical-291739-milot-rashica",
+        "sourceIds": {
+          "fbref": "6c6a3300",
+          "transfermarkt": "291739"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2022-2023-cards-red",
+    "shortLabel": "2022-23 Kırmızı Kart",
+    "prompt": "2022-23 Süper Lig en çok kırmızı kart gören oyuncular (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2022-2023 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2022-2023/2022-2023-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Red Cards\".",
+    "answers": [
+      {
+        "value": "Mahmut Tekdemir",
+        "entityId": "player:tm-historical-54177-mahmut-tekdemir",
+        "sourceIds": {
+          "fbref": "bfe272bd",
+          "transfermarkt": "54177"
+        }
+      },
+      {
+        "value": "Yaroslav Rakitskiy",
+        "entityId": "player:tm-historical-89222-yaroslav-rakitskyi",
+        "sourceIds": {
+          "fbref": "47fd5136",
+          "transfermarkt": "89222"
+        }
+      },
+      {
+        "value": "Abdulkerim Bardakci",
+        "entityId": "player:tm-historical-199316-abdulkerim-bardakci",
+        "sourceIds": {
+          "fbref": "5d9cff53",
+          "transfermarkt": "199316"
+        }
+      },
+      {
+        "value": "Irfan Kahveci",
+        "entityId": "player:tm-historical-216603-irfan-can-kahveci",
+        "sourceIds": {
+          "fbref": "d2800f47",
+          "transfermarkt": "216603"
+        }
+      },
+      {
+        "value": "Younes Belhanda",
+        "entityId": "player:tm-historical-118022-younes-belhanda",
+        "sourceIds": {
+          "fbref": "e204ec12",
+          "transfermarkt": "118022"
+        }
+      },
+      {
+        "value": "Umut Gunes",
+        "entityId": "player:tm-historical-422203-umut-gunes",
+        "sourceIds": {
+          "fbref": "b40fec30",
+          "transfermarkt": "422203"
+        }
+      },
+      {
+        "value": "Ebrima Colley",
+        "entityId": "player:tm-567217-ebrima-colley",
+        "sourceIds": {
+          "fbref": "bf356094",
+          "transfermarkt": "567217"
+        }
+      },
+      {
+        "value": "Naci Unuvar",
+        "entityId": "player:tm-historical-508639-naci-unuvar",
+        "sourceIds": {
+          "fbref": "bf25cb29",
+          "transfermarkt": "508639"
+        }
+      },
+      {
+        "value": "Shoya Nakajima",
+        "entityId": "player:tm-historical-188911-shoya-nakajima",
+        "sourceIds": {
+          "fbref": "be60b6f4",
+          "transfermarkt": "188911"
+        }
+      },
+      {
+        "value": "Onur Atasayar",
+        "entityId": "player:tm-historical-287925-onur-atasayar",
+        "sourceIds": {
+          "fbref": "bc0b091a",
+          "transfermarkt": "287925"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2022-2023-cards-yellow",
+    "shortLabel": "2022-23 Sarı Kart",
+    "prompt": "2022-23 Süper Lig en çok sarı kart gören oyuncular (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2022-2023 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2022-2023/2022-2023-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Yellow Cards\".",
+    "answers": [
+      {
+        "value": "Francisco Calvo",
+        "entityId": "player:tm-historical-188470-francisco-calvo",
+        "sourceIds": {
+          "fbref": "706bd23f",
+          "transfermarkt": "188470"
+        }
+      },
+      {
+        "value": "Borja Sainz",
+        "entityId": "player:tm-historical-634461-borja-sainz",
+        "sourceIds": {
+          "fbref": "1b40049a",
+          "transfermarkt": "634461"
+        }
+      },
+      {
+        "value": "Otabek Shukurov",
+        "entityId": "player:tm-294525-otabek-shukurov",
+        "sourceIds": {
+          "fbref": "62032a56",
+          "transfermarkt": "294525"
+        }
+      },
+      {
+        "value": "Adil Demirbag",
+        "entityId": "player:tm-354173-adil-demirbag",
+        "sourceIds": {
+          "fbref": "e43a256f",
+          "transfermarkt": "354173"
+        }
+      },
+      {
+        "value": "Papy Djilobodji",
+        "entityId": "player:tm-136610-papy-djilobodji",
+        "sourceIds": {
+          "fbref": "083525e5",
+          "transfermarkt": "136610"
+        }
+      },
+      {
+        "value": "Fernando",
+        "entityId": "player:tm-historical-105456-fernando",
+        "sourceIds": {
+          "fbref": "34c3ec17",
+          "transfermarkt": "105456"
+        }
+      },
+      {
+        "value": "Eduard Rroca",
+        "entityId": "player:tm-historical-289228-eduart-rroca",
+        "sourceIds": {
+          "fbref": "3fd41369",
+          "transfermarkt": "289228"
+        }
+      },
+      {
+        "value": "Stelios Kitsiou",
+        "entityId": "player:tm-historical-189151-stelios-kitsiou",
+        "sourceIds": {
+          "fbref": "8982de23",
+          "transfermarkt": "189151"
+        }
+      },
+      {
+        "value": "Ramon Arias",
+        "entityId": "player:tm-historical-131095-ramon-arias",
+        "sourceIds": {
+          "fbref": "8b6d7b27",
+          "transfermarkt": "131095"
+        }
+      },
+      {
+        "value": "Valentin Eysseric",
+        "entityId": "player:tm-historical-126687-valentin-eysseric",
+        "sourceIds": {
+          "fbref": "ae82fa48",
+          "transfermarkt": "126687"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2022-2023-gk-clean-sheets",
+    "shortLabel": "2022-23 Gol Yemedi",
+    "prompt": "2022-23 Süper Lig en çok gol yemeyen kaleciler (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2022-2023 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2022-2023/2022-2023-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Clean Sheets\".",
+    "answers": [
+      {
+        "value": "Fernando Muslera",
+        "entityId": "player:tm-historical-58088-fernando-muslera",
+        "sourceIds": {
+          "fbref": "a2abe631",
+          "transfermarkt": "58088"
+        }
+      },
+      {
+        "value": "Ugurcan Cakir",
+        "entityId": "player:tm-historical-292199-ugurcan-cakir",
+        "sourceIds": {
+          "fbref": "f63a8347",
+          "transfermarkt": "292199"
+        }
+      },
+      {
+        "value": "Altay Bayindir",
+        "entityId": "player:tm-historical-336077-altay-bayindir",
+        "sourceIds": {
+          "fbref": "072e68ed",
+          "transfermarkt": "336077"
+        }
+      },
+      {
+        "value": "Ertac Ozbir",
+        "entityId": "player:tm-historical-159079-ertac-ozbir",
+        "sourceIds": {
+          "fbref": "1234bedf",
+          "transfermarkt": "159079"
+        }
+      },
+      {
+        "value": "Volkan Babacan",
+        "entityId": "player:tm-historical-52261-volkan-babacan",
+        "sourceIds": {
+          "fbref": "6e905b8d",
+          "transfermarkt": "52261"
+        }
+      },
+      {
+        "value": "Ibrahim Sehic",
+        "entityId": "player:tm-historical-46252-ibrahim-sehic",
+        "sourceIds": {
+          "fbref": "56bf1cc0",
+          "transfermarkt": "46252"
+        }
+      },
+      {
+        "value": "Bilal Bayazit",
+        "entityId": "player:tm-historical-361032-bilal-bayazit",
+        "sourceIds": {
+          "fbref": "f0a63d14",
+          "transfermarkt": "361032"
+        }
+      },
+      {
+        "value": "Ali Sasal Vural",
+        "entityId": "player:tm-157178-ali-sasal-vural",
+        "sourceIds": {
+          "fbref": "cead8fc6",
+          "transfermarkt": "157178"
+        }
+      },
+      {
+        "value": "David Jensen",
+        "entityId": "player:tm-historical-78819-david-jensen",
+        "sourceIds": {
+          "fbref": "1739b660",
+          "transfermarkt": "78819"
+        }
+      },
+      {
+        "value": "Mert Gunok",
+        "entityId": "player:tm-historical-51894-mert-gunok",
+        "sourceIds": {
+          "fbref": "b583aef5",
+          "transfermarkt": "51894"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2022-2023-gk-saves",
+    "shortLabel": "2022-23 Kurtarış",
+    "prompt": "2022-23 Süper Lig en çok kurtarış yapan kaleciler (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2022-2023 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2022-2023/2022-2023-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Saves\".",
+    "answers": [
+      {
+        "value": "David Jensen",
+        "entityId": "player:tm-historical-78819-david-jensen",
+        "sourceIds": {
+          "fbref": "1739b660",
+          "transfermarkt": "78819"
+        }
+      },
+      {
+        "value": "Runar Alex Runarsson",
+        "entityId": "player:tm-historical-205657-runar-alex-runarsson",
+        "sourceIds": {
+          "fbref": "8fa8f8d2",
+          "transfermarkt": "205657"
+        }
+      },
+      {
+        "value": "Ertac Ozbir",
+        "entityId": "player:tm-historical-159079-ertac-ozbir",
+        "sourceIds": {
+          "fbref": "1234bedf",
+          "transfermarkt": "159079"
+        }
+      },
+      {
+        "value": "Bilal Bayazit",
+        "entityId": "player:tm-historical-361032-bilal-bayazit",
+        "sourceIds": {
+          "fbref": "f0a63d14",
+          "transfermarkt": "361032"
+        }
+      },
+      {
+        "value": "Gunay Guvenc",
+        "entityId": "player:tm-historical-114422-gunay-guvenc",
+        "sourceIds": {
+          "fbref": "04c20fef",
+          "transfermarkt": "114422"
+        }
+      },
+      {
+        "value": "Gokhan Akkan",
+        "entityId": "player:tm-historical-223025-gokhan-akkan",
+        "sourceIds": {
+          "fbref": "3587cb86",
+          "transfermarkt": "223025"
+        }
+      },
+      {
+        "value": "Ugurcan Cakir",
+        "entityId": "player:tm-historical-292199-ugurcan-cakir",
+        "sourceIds": {
+          "fbref": "f63a8347",
+          "transfermarkt": "292199"
+        }
+      },
+      {
+        "value": "Fernando Muslera",
+        "entityId": "player:tm-historical-58088-fernando-muslera",
+        "sourceIds": {
+          "fbref": "a2abe631",
+          "transfermarkt": "58088"
+        }
+      },
+      {
+        "value": "Erce Kardesler",
+        "entityId": "player:tm-historical-291548-erce-kardesler",
+        "sourceIds": {
+          "fbref": "94b3ccdb",
+          "transfermarkt": "291548"
+        }
+      },
+      {
+        "value": "Ibrahim Sehic",
+        "entityId": "player:tm-historical-46252-ibrahim-sehic",
+        "sourceIds": {
+          "fbref": "56bf1cc0",
+          "transfermarkt": "46252"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2022-2023-goals",
+    "shortLabel": "2022-23 Gol",
+    "prompt": "2022-23 Süper Lig gol krallığı (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2022-2023 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2022-2023/2022-2023-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Goals\".",
+    "answers": [
+      {
+        "value": "Enner Valencia",
+        "entityId": "player:tm-historical-139503-enner-valencia",
+        "sourceIds": {
+          "fbref": "fb485406",
+          "transfermarkt": "139503"
+        }
+      },
+      {
+        "value": "Mbaye Diagne",
+        "entityId": "player:tm-271966-mbaye-diagne",
+        "sourceIds": {
+          "fbref": "dda3969e",
+          "transfermarkt": "271966"
+        }
+      },
+      {
+        "value": "Mauro Icardi",
+        "entityId": "player:tm-68863-mauro-icardi",
+        "sourceIds": {
+          "fbref": "43b78598",
+          "transfermarkt": "68863"
+        }
+      },
+      {
+        "value": "Fabio Borini",
+        "entityId": "player:tm-96754-fabio-borini",
+        "sourceIds": {
+          "fbref": "ef5b337e",
+          "transfermarkt": "96754"
+        }
+      },
+      {
+        "value": "Umut Nayir",
+        "entityId": "player:tm-historical-248271-umut-nayir",
+        "sourceIds": {
+          "fbref": "fc4ab056",
+          "transfermarkt": "248271"
+        }
+      },
+      {
+        "value": "Haji Wright",
+        "entityId": "player:tm-315291-haji-wright",
+        "sourceIds": {
+          "fbref": "91cd37b7",
+          "transfermarkt": "315291"
+        }
+      },
+      {
+        "value": "Cenk Tosun",
+        "entityId": "player:tm-historical-45671-cenk-tosun",
+        "sourceIds": {
+          "fbref": "9a104dee",
+          "transfermarkt": "45671"
+        }
+      },
+      {
+        "value": "Riad Bajic",
+        "entityId": "player:tm-historical-263267-riad-bajic",
+        "sourceIds": {
+          "fbref": "49d399d5",
+          "transfermarkt": "263267"
+        }
+      },
+      {
+        "value": "Vincent Aboubakar",
+        "entityId": "player:tm-historical-147487-vincent-aboubakar",
+        "sourceIds": {
+          "fbref": "8637e09a",
+          "transfermarkt": "147487"
+        }
+      },
+      {
+        "value": "Michy Batshuayi",
+        "entityId": "player:tm-179184-michy-batshuayi",
+        "sourceIds": {
+          "fbref": "2973d8ff",
+          "transfermarkt": "179184"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2022-2023-minutes",
+    "shortLabel": "2022-23 Dakika",
+    "prompt": "2022-23 Süper Lig en çok dakika oynayan oyuncular (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2022-2023 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2022-2023/2022-2023-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Minutes\".",
+    "answers": [
+      {
+        "value": "Guilherme Sitya",
+        "entityId": "player:fbref-8377c51d-guilherme-sitya",
+        "sourceIds": {
+          "fbref": "8377c51d"
+        }
+      },
+      {
+        "value": "Fernando Muslera",
+        "entityId": "player:tm-historical-58088-fernando-muslera",
+        "sourceIds": {
+          "fbref": "a2abe631",
+          "transfermarkt": "58088"
+        }
+      },
+      {
+        "value": "Victor Nelsson",
+        "entityId": "player:tm-historical-422951-victor-nelsson",
+        "sourceIds": {
+          "fbref": "e53b5534",
+          "transfermarkt": "422951"
+        }
+      },
+      {
+        "value": "Mamadou Fall",
+        "entityId": "player:tm-historical-289713-mamadou-fall",
+        "sourceIds": {
+          "fbref": "1524bd4c",
+          "transfermarkt": "289713"
+        }
+      },
+      {
+        "value": "Samet Akaydin",
+        "entityId": "player:tm-295024-samet-akaydin",
+        "sourceIds": {
+          "fbref": "7328bee5",
+          "transfermarkt": "295024"
+        }
+      },
+      {
+        "value": "Ertac Ozbir",
+        "entityId": "player:tm-historical-159079-ertac-ozbir",
+        "sourceIds": {
+          "fbref": "1234bedf",
+          "transfermarkt": "159079"
+        }
+      },
+      {
+        "value": "David Jensen",
+        "entityId": "player:tm-historical-78819-david-jensen",
+        "sourceIds": {
+          "fbref": "1739b660",
+          "transfermarkt": "78819"
+        }
+      },
+      {
+        "value": "Attila Szalai",
+        "entityId": "player:tm-historical-263380-attila-szalai",
+        "sourceIds": {
+          "fbref": "50ff205b",
+          "transfermarkt": "263380"
+        }
+      },
+      {
+        "value": "Ibrahim Dresevic",
+        "entityId": "player:tm-321135-ibrahim-dresevic",
+        "sourceIds": {
+          "fbref": "811ca2d3",
+          "transfermarkt": "321135"
+        }
+      },
+      {
+        "value": "Nihad Mujakic",
+        "entityId": "player:tm-historical-380919-nihad-mujakic",
+        "sourceIds": {
+          "fbref": "8eff6286",
+          "transfermarkt": "380919"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2022-2023-pens-made",
+    "shortLabel": "2022-23 Penaltı",
+    "prompt": "2022-23 Süper Lig penaltı gol krallığı (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2022-2023 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2022-2023/2022-2023-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Penalty Kicks Made\".",
+    "answers": [
+      {
+        "value": "Enner Valencia",
+        "entityId": "player:tm-historical-139503-enner-valencia",
+        "sourceIds": {
+          "fbref": "fb485406",
+          "transfermarkt": "139503"
+        }
+      },
+      {
+        "value": "Fabio Borini",
+        "entityId": "player:tm-96754-fabio-borini",
+        "sourceIds": {
+          "fbref": "ef5b337e",
+          "transfermarkt": "96754"
+        }
+      },
+      {
+        "value": "Mauro Icardi",
+        "entityId": "player:tm-68863-mauro-icardi",
+        "sourceIds": {
+          "fbref": "43b78598",
+          "transfermarkt": "68863"
+        }
+      },
+      {
+        "value": "Umut Nayir",
+        "entityId": "player:tm-historical-248271-umut-nayir",
+        "sourceIds": {
+          "fbref": "fc4ab056",
+          "transfermarkt": "248271"
+        }
+      },
+      {
+        "value": "Anastasios Bakasetas",
+        "entityId": "player:tm-historical-162571-anastasios-bakasetas",
+        "sourceIds": {
+          "fbref": "dead55e5",
+          "transfermarkt": "162571"
+        }
+      },
+      {
+        "value": "Antonio Mrsic",
+        "entityId": "player:tm-historical-59483-antonio-mrsic",
+        "sourceIds": {
+          "fbref": "0ba0af80",
+          "transfermarkt": "59483"
+        }
+      },
+      {
+        "value": "Deniz Turuc",
+        "entityId": "player:tm-historical-216662-deniz-turuc",
+        "sourceIds": {
+          "fbref": "ed140063",
+          "transfermarkt": "216662"
+        }
+      },
+      {
+        "value": "Max Gradel",
+        "entityId": "player:tm-historical-28140-max-gradel",
+        "sourceIds": {
+          "fbref": "c5a500ca",
+          "transfermarkt": "28140"
+        }
+      },
+      {
+        "value": "Bernard Mensah",
+        "entityId": "player:tm-historical-324321-bernard-mensah",
+        "sourceIds": {
+          "fbref": "91947112",
+          "transfermarkt": "324321"
+        }
+      },
+      {
+        "value": "Riad Bajic",
+        "entityId": "player:tm-historical-263267-riad-bajic",
+        "sourceIds": {
+          "fbref": "49d399d5",
+          "transfermarkt": "263267"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2022-2023-shots-on-target",
+    "shortLabel": "2022-23 İsabetli Şut",
+    "prompt": "2022-23 Süper Lig en çok isabetli şut atan oyuncular (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2022-2023 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2022-2023/2022-2023-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Shots on Target\".",
+    "answers": [
+      {
+        "value": "Enner Valencia",
+        "entityId": "player:tm-historical-139503-enner-valencia",
+        "sourceIds": {
+          "fbref": "fb485406",
+          "transfermarkt": "139503"
+        }
+      },
+      {
+        "value": "Mauro Icardi",
+        "entityId": "player:tm-68863-mauro-icardi",
+        "sourceIds": {
+          "fbref": "43b78598",
+          "transfermarkt": "68863"
+        }
+      },
+      {
+        "value": "Mbaye Diagne",
+        "entityId": "player:tm-271966-mbaye-diagne",
+        "sourceIds": {
+          "fbref": "dda3969e",
+          "transfermarkt": "271966"
+        }
+      },
+      {
+        "value": "Riad Bajic",
+        "entityId": "player:tm-historical-263267-riad-bajic",
+        "sourceIds": {
+          "fbref": "49d399d5",
+          "transfermarkt": "263267"
+        }
+      },
+      {
+        "value": "Trezeguet",
+        "entityId": "player:tm-historical-234189-trezeguet",
+        "sourceIds": {
+          "fbref": "3ae14ed1",
+          "transfermarkt": "234189"
+        }
+      },
+      {
+        "value": "Dries Mertens",
+        "entityId": "player:tm-historical-56416-dries-mertens",
+        "sourceIds": {
+          "fbref": "89b2c8a9",
+          "transfermarkt": "56416"
+        }
+      },
+      {
+        "value": "Cenk Tosun",
+        "entityId": "player:tm-historical-45671-cenk-tosun",
+        "sourceIds": {
+          "fbref": "9a104dee",
+          "transfermarkt": "45671"
+        }
+      },
+      {
+        "value": "Younes Belhanda",
+        "entityId": "player:tm-historical-118022-younes-belhanda",
+        "sourceIds": {
+          "fbref": "e204ec12",
+          "transfermarkt": "118022"
+        }
+      },
+      {
+        "value": "Haji Wright",
+        "entityId": "player:tm-315291-haji-wright",
+        "sourceIds": {
+          "fbref": "91cd37b7",
+          "transfermarkt": "315291"
+        }
+      },
+      {
+        "value": "Yusuf Sari",
+        "entityId": "player:tm-historical-517376-yusuf-sari",
+        "sourceIds": {
+          "fbref": "a2da58b1",
+          "transfermarkt": "517376"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2023-2024-assists",
+    "shortLabel": "2023-24 Asist",
+    "prompt": "2023-24 Süper Lig asist krallığı (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2023-2024 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2023-2024/2023-2024-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Assists\".",
+    "answers": [
+      {
+        "value": "Dries Mertens",
+        "entityId": "player:tm-historical-56416-dries-mertens",
+        "sourceIds": {
+          "fbref": "89b2c8a9",
+          "transfermarkt": "56416"
+        }
+      },
+      {
+        "value": "Dusan Tadic",
+        "entityId": "player:tm-historical-36139-dusan-tadic",
+        "sourceIds": {
+          "fbref": "2475dcc6",
+          "transfermarkt": "36139"
+        }
+      },
+      {
+        "value": "Haris Hajradinovic",
+        "entityId": "player:tm-215592-haris-hajradinovic",
+        "sourceIds": {
+          "fbref": "4e07366b",
+          "transfermarkt": "215592"
+        }
+      },
+      {
+        "value": "Deniz Turuc",
+        "entityId": "player:tm-historical-216662-deniz-turuc",
+        "sourceIds": {
+          "fbref": "ed140063",
+          "transfermarkt": "216662"
+        }
+      },
+      {
+        "value": "Sebastian Szymanski",
+        "entityId": "player:tm-historical-320748-sebastian-szymanski",
+        "sourceIds": {
+          "fbref": "bb718263",
+          "transfermarkt": "320748"
+        }
+      },
+      {
+        "value": "Edin Visca",
+        "entityId": "player:tm-109217-edin-visca",
+        "sourceIds": {
+          "fbref": "da1185fc",
+          "transfermarkt": "109217"
+        }
+      },
+      {
+        "value": "Mauro Icardi",
+        "entityId": "player:tm-68863-mauro-icardi",
+        "sourceIds": {
+          "fbref": "43b78598",
+          "transfermarkt": "68863"
+        }
+      },
+      {
+        "value": "Alexandru Maxim",
+        "entityId": "player:tm-historical-129513-alexandru-maxim",
+        "sourceIds": {
+          "fbref": "61fc9685",
+          "transfermarkt": "129513"
+        }
+      },
+      {
+        "value": "Oguz Aydin",
+        "entityId": "player:tm-historical-563749-oguz-aydin",
+        "sourceIds": {
+          "fbref": "a7b98226",
+          "transfermarkt": "563749"
+        }
+      },
+      {
+        "value": "Ramzi Safouri",
+        "entityId": "player:tm-historical-204116-ramzi-safuri",
+        "sourceIds": {
+          "fbref": "dde7068b",
+          "transfermarkt": "204116"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2023-2024-cards-red",
+    "shortLabel": "2023-24 Kırmızı Kart",
+    "prompt": "2023-24 Süper Lig en çok kırmızı kart gören oyuncular (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2023-2024 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2023-2024/2023-2024-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Red Cards\".",
+    "answers": [
+      {
+        "value": "Welinton",
+        "entityId": "player:tm-historical-95152-welinton",
+        "sourceIds": {
+          "fbref": "292f1130",
+          "transfermarkt": "95152"
+        }
+      },
+      {
+        "value": "Alexandru Maxim",
+        "entityId": "player:tm-historical-129513-alexandru-maxim",
+        "sourceIds": {
+          "fbref": "61fc9685",
+          "transfermarkt": "129513"
+        }
+      },
+      {
+        "value": "Joao Figueiredo",
+        "entityId": "player:tm-439343-joao-figueiredo",
+        "sourceIds": {
+          "fbref": "804f159a",
+          "transfermarkt": "439343"
+        }
+      },
+      {
+        "value": "Ertac Ozbir",
+        "entityId": "player:tm-historical-159079-ertac-ozbir",
+        "sourceIds": {
+          "fbref": "1234bedf",
+          "transfermarkt": "159079"
+        }
+      },
+      {
+        "value": "Ryan Mendes",
+        "entityId": "player:tm-111627-ryan-mendes",
+        "sourceIds": {
+          "fbref": "ba6e01ab",
+          "transfermarkt": "111627"
+        }
+      },
+      {
+        "value": "Ismail Yuksek",
+        "entityId": "player:tm-historical-613725-ismail-yuksek",
+        "sourceIds": {
+          "fbref": "6c5af908",
+          "transfermarkt": "613725"
+        }
+      },
+      {
+        "value": "Leroy Fer",
+        "entityId": "player:tm-historical-63342-leroy-fer",
+        "sourceIds": {
+          "fbref": "3cefa66a",
+          "transfermarkt": "63342"
+        }
+      },
+      {
+        "value": "Federico Ceccherini",
+        "entityId": "player:tm-163639-federico-ceccherini",
+        "sourceIds": {
+          "fbref": "d9624b51",
+          "transfermarkt": "163639"
+        }
+      },
+      {
+        "value": "Attila Mocsi",
+        "entityId": "player:tm-historical-496996-attila-mocsi",
+        "sourceIds": {
+          "fbref": "c9019400",
+          "transfermarkt": "496996"
+        }
+      },
+      {
+        "value": "Al-Musrati",
+        "entityId": "player:tm-377641-moatasem-al-musrati",
+        "sourceIds": {
+          "fbref": "cd6a1a59",
+          "transfermarkt": "377641"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2023-2024-cards-yellow",
+    "shortLabel": "2023-24 Sarı Kart",
+    "prompt": "2023-24 Süper Lig en çok sarı kart gören oyuncular (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2023-2024 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2023-2024/2023-2024-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Yellow Cards\".",
+    "answers": [
+      {
+        "value": "Emir Topcu",
+        "entityId": "player:tm-historical-531332-emirhan-topcu",
+        "sourceIds": {
+          "fbref": "1828145a",
+          "transfermarkt": "531332"
+        }
+      },
+      {
+        "value": "Bright Osayi-Samuel",
+        "entityId": "player:tm-historical-358948-bright-osayi-samuel",
+        "sourceIds": {
+          "fbref": "03b6afa9",
+          "transfermarkt": "358948"
+        }
+      },
+      {
+        "value": "Veysel Sari",
+        "entityId": "player:tm-88374-veysel-sari",
+        "sourceIds": {
+          "fbref": "494d18b6",
+          "transfermarkt": "88374"
+        }
+      },
+      {
+        "value": "Rey Manaj",
+        "entityId": "player:tm-308278-rey-manaj",
+        "sourceIds": {
+          "fbref": "7703afb6",
+          "transfermarkt": "308278"
+        }
+      },
+      {
+        "value": "Richard",
+        "entityId": "player:tm-530737-richard",
+        "sourceIds": {
+          "fbref": "e90aa5da",
+          "transfermarkt": "530737"
+        }
+      },
+      {
+        "value": "Deniz Turuc",
+        "entityId": "player:tm-historical-216662-deniz-turuc",
+        "sourceIds": {
+          "fbref": "ed140063",
+          "transfermarkt": "216662"
+        }
+      },
+      {
+        "value": "Welinton",
+        "entityId": "player:tm-historical-95152-welinton",
+        "sourceIds": {
+          "fbref": "292f1130",
+          "transfermarkt": "95152"
+        }
+      },
+      {
+        "value": "Florian Loshaj",
+        "entityId": "player:tm-242040-florian-loshaj",
+        "sourceIds": {
+          "fbref": "5d52e1dc",
+          "transfermarkt": "242040"
+        }
+      },
+      {
+        "value": "Mehmet Yesil",
+        "entityId": "player:tm-historical-381689-mehmet-yesil",
+        "sourceIds": {
+          "fbref": "98c2d5b2",
+          "transfermarkt": "381689"
+        }
+      },
+      {
+        "value": "Ugur Ciftci",
+        "entityId": "player:tm-172163-ugur-ciftci",
+        "sourceIds": {
+          "fbref": "e111bf12",
+          "transfermarkt": "172163"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2023-2024-gk-clean-sheets",
+    "shortLabel": "2023-24 Gol Yemedi",
+    "prompt": "2023-24 Süper Lig en çok gol yemeyen kaleciler (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2023-2024 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2023-2024/2023-2024-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Clean Sheets\".",
+    "answers": [
+      {
+        "value": "Fernando Muslera",
+        "entityId": "player:tm-historical-58088-fernando-muslera",
+        "sourceIds": {
+          "fbref": "a2abe631",
+          "transfermarkt": "58088"
+        }
+      },
+      {
+        "value": "Dominik Livakovic",
+        "entityId": "player:tm-historical-205927-dominik-livakovic",
+        "sourceIds": {
+          "fbref": "58f077c0",
+          "transfermarkt": "205927"
+        }
+      },
+      {
+        "value": "Gokhan Akkan",
+        "entityId": "player:tm-historical-223025-gokhan-akkan",
+        "sourceIds": {
+          "fbref": "3587cb86",
+          "transfermarkt": "223025"
+        }
+      },
+      {
+        "value": "Ugurcan Cakir",
+        "entityId": "player:tm-historical-292199-ugurcan-cakir",
+        "sourceIds": {
+          "fbref": "f63a8347",
+          "transfermarkt": "292199"
+        }
+      },
+      {
+        "value": "Mert Gunok",
+        "entityId": "player:tm-historical-51894-mert-gunok",
+        "sourceIds": {
+          "fbref": "b583aef5",
+          "transfermarkt": "51894"
+        }
+      },
+      {
+        "value": "Ertugrul Taskiran",
+        "entityId": "player:tm-historical-91945-ertugrul-taskiran",
+        "sourceIds": {
+          "fbref": "cf8c553e",
+          "transfermarkt": "91945"
+        }
+      },
+      {
+        "value": "Erce Kardesler",
+        "entityId": "player:tm-historical-291548-erce-kardesler",
+        "sourceIds": {
+          "fbref": "94b3ccdb",
+          "transfermarkt": "291548"
+        }
+      },
+      {
+        "value": "Andreas Gianniotis",
+        "entityId": "player:tm-historical-226802-andreas-gianniotis",
+        "sourceIds": {
+          "fbref": "8ae07c1c",
+          "transfermarkt": "226802"
+        }
+      },
+      {
+        "value": "Volkan Babacan",
+        "entityId": "player:tm-historical-52261-volkan-babacan",
+        "sourceIds": {
+          "fbref": "6e905b8d",
+          "transfermarkt": "52261"
+        }
+      },
+      {
+        "value": "Florin Nita",
+        "entityId": "player:tm-historical-200475-florin-nita",
+        "sourceIds": {
+          "fbref": "a9a3b55d",
+          "transfermarkt": "200475"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2023-2024-gk-saves",
+    "shortLabel": "2023-24 Kurtarış",
+    "prompt": "2023-24 Süper Lig en çok kurtarış yapan kaleciler (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2023-2024 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2023-2024/2023-2024-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Saves\".",
+    "answers": [
+      {
+        "value": "Bilal Bayazit",
+        "entityId": "player:tm-historical-361032-bilal-bayazit",
+        "sourceIds": {
+          "fbref": "f0a63d14",
+          "transfermarkt": "361032"
+        }
+      },
+      {
+        "value": "Helton Leite",
+        "entityId": "player:tm-historical-175383-helton-leite",
+        "sourceIds": {
+          "fbref": "e8918589",
+          "transfermarkt": "175383"
+        }
+      },
+      {
+        "value": "Ali Sasal Vural",
+        "entityId": "player:tm-157178-ali-sasal-vural",
+        "sourceIds": {
+          "fbref": "cead8fc6",
+          "transfermarkt": "157178"
+        }
+      },
+      {
+        "value": "Gokhan Akkan",
+        "entityId": "player:tm-historical-223025-gokhan-akkan",
+        "sourceIds": {
+          "fbref": "3587cb86",
+          "transfermarkt": "223025"
+        }
+      },
+      {
+        "value": "Florin Nita",
+        "entityId": "player:tm-historical-200475-florin-nita",
+        "sourceIds": {
+          "fbref": "a9a3b55d",
+          "transfermarkt": "200475"
+        }
+      },
+      {
+        "value": "Erce Kardesler",
+        "entityId": "player:tm-historical-291548-erce-kardesler",
+        "sourceIds": {
+          "fbref": "94b3ccdb",
+          "transfermarkt": "291548"
+        }
+      },
+      {
+        "value": "Erdem Canpolat",
+        "entityId": "player:tm-historical-521956-erdem-canpolat",
+        "sourceIds": {
+          "fbref": "1ec7078a",
+          "transfermarkt": "521956"
+        }
+      },
+      {
+        "value": "Ugurcan Cakir",
+        "entityId": "player:tm-historical-292199-ugurcan-cakir",
+        "sourceIds": {
+          "fbref": "f63a8347",
+          "transfermarkt": "292199"
+        }
+      },
+      {
+        "value": "Ertugrul Taskiran",
+        "entityId": "player:tm-historical-91945-ertugrul-taskiran",
+        "sourceIds": {
+          "fbref": "cf8c553e",
+          "transfermarkt": "91945"
+        }
+      },
+      {
+        "value": "Fernando Muslera",
+        "entityId": "player:tm-historical-58088-fernando-muslera",
+        "sourceIds": {
+          "fbref": "a2abe631",
+          "transfermarkt": "58088"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2023-2024-goals",
+    "shortLabel": "2023-24 Gol",
+    "prompt": "2023-24 Süper Lig gol krallığı (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2023-2024 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2023-2024/2023-2024-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Goals\".",
+    "answers": [
+      {
+        "value": "Mauro Icardi",
+        "entityId": "player:tm-68863-mauro-icardi",
+        "sourceIds": {
+          "fbref": "43b78598",
+          "transfermarkt": "68863"
+        }
+      },
+      {
+        "value": "Edin Dzeko",
+        "entityId": "player:tm-28396-edin-dzeko",
+        "sourceIds": {
+          "fbref": "3bb7f478",
+          "transfermarkt": "28396"
+        }
+      },
+      {
+        "value": "Rey Manaj",
+        "entityId": "player:tm-308278-rey-manaj",
+        "sourceIds": {
+          "fbref": "7703afb6",
+          "transfermarkt": "308278"
+        }
+      },
+      {
+        "value": "Krzysztof Piatek",
+        "entityId": "player:tm-historical-327757-krzysztof-piatek",
+        "sourceIds": {
+          "fbref": "17f3620a",
+          "transfermarkt": "327757"
+        }
+      },
+      {
+        "value": "Mame Baba Thiam",
+        "entityId": "player:tm-historical-163053-mame-thiam",
+        "sourceIds": {
+          "fbref": "ec304819",
+          "transfermarkt": "163053"
+        }
+      },
+      {
+        "value": "Adam Buksa",
+        "entityId": "player:tm-267160-adam-buksa",
+        "sourceIds": {
+          "fbref": "3b676989",
+          "transfermarkt": "267160"
+        }
+      },
+      {
+        "value": "Paul Onuachu",
+        "entityId": "player:tm-historical-272855-paul-onuachu",
+        "sourceIds": {
+          "fbref": "c06d1086",
+          "transfermarkt": "272855"
+        }
+      },
+      {
+        "value": "Denis Dragus",
+        "entityId": "player:tm-historical-405399-denis-dragus",
+        "sourceIds": {
+          "fbref": "0e490f6e",
+          "transfermarkt": "405399"
+        }
+      },
+      {
+        "value": "Nuno da Costa",
+        "entityId": "player:tm-historical-306166-nuno-da-costa",
+        "sourceIds": {
+          "fbref": "909222de",
+          "transfermarkt": "306166"
+        }
+      },
+      {
+        "value": "Aytac Kara",
+        "entityId": "player:tm-historical-159908-aytac-kara",
+        "sourceIds": {
+          "fbref": "94c79a82",
+          "transfermarkt": "159908"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2023-2024-minutes",
+    "shortLabel": "2023-24 Dakika",
+    "prompt": "2023-24 Süper Lig en çok dakika oynayan oyuncular (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2023-2024 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2023-2024/2023-2024-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Minutes\".",
+    "answers": [
+      {
+        "value": "Ferdi Kadioglu",
+        "entityId": "player:tm-historical-369316-ferdi-kadioglu",
+        "sourceIds": {
+          "fbref": "66c52a77",
+          "transfermarkt": "369316"
+        }
+      },
+      {
+        "value": "Fernando Muslera",
+        "entityId": "player:tm-historical-58088-fernando-muslera",
+        "sourceIds": {
+          "fbref": "a2abe631",
+          "transfermarkt": "58088"
+        }
+      },
+      {
+        "value": "Haris Hajradinovic",
+        "entityId": "player:tm-215592-haris-hajradinovic",
+        "sourceIds": {
+          "fbref": "4e07366b",
+          "transfermarkt": "215592"
+        }
+      },
+      {
+        "value": "Guilherme Sitya",
+        "entityId": "player:fbref-8377c51d-guilherme-sitya",
+        "sourceIds": {
+          "fbref": "8377c51d"
+        }
+      },
+      {
+        "value": "Aytac Kara",
+        "entityId": "player:tm-historical-159908-aytac-kara",
+        "sourceIds": {
+          "fbref": "94c79a82",
+          "transfermarkt": "159908"
+        }
+      },
+      {
+        "value": "Okan Kocuk",
+        "entityId": "player:tm-historical-204189-okan-kocuk",
+        "sourceIds": {
+          "fbref": "7e9fd9b9",
+          "transfermarkt": "204189"
+        }
+      },
+      {
+        "value": "Soner Dikmen",
+        "entityId": "player:tm-historical-291750-soner-dikmen",
+        "sourceIds": {
+          "fbref": "9b00a9bd",
+          "transfermarkt": "291750"
+        }
+      },
+      {
+        "value": "Ugur Ciftci",
+        "entityId": "player:tm-172163-ugur-ciftci",
+        "sourceIds": {
+          "fbref": "e111bf12",
+          "transfermarkt": "172163"
+        }
+      },
+      {
+        "value": "Nihad Mujakic",
+        "entityId": "player:tm-historical-380919-nihad-mujakic",
+        "sourceIds": {
+          "fbref": "8eff6286",
+          "transfermarkt": "380919"
+        }
+      },
+      {
+        "value": "Mame Baba Thiam",
+        "entityId": "player:tm-historical-163053-mame-thiam",
+        "sourceIds": {
+          "fbref": "ec304819",
+          "transfermarkt": "163053"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2023-2024-pens-made",
+    "shortLabel": "2023-24 Penaltı",
+    "prompt": "2023-24 Süper Lig penaltı gol krallığı (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2023-2024 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2023-2024/2023-2024-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Penalty Kicks Made\".",
+    "answers": [
+      {
+        "value": "Sokol Cikalleshi",
+        "entityId": "player:tm-historical-99047-sokol-cikalleshi",
+        "sourceIds": {
+          "fbref": "29306e58",
+          "transfermarkt": "99047"
+        }
+      },
+      {
+        "value": "Mauro Icardi",
+        "entityId": "player:tm-68863-mauro-icardi",
+        "sourceIds": {
+          "fbref": "43b78598",
+          "transfermarkt": "68863"
+        }
+      },
+      {
+        "value": "Dusan Tadic",
+        "entityId": "player:tm-historical-36139-dusan-tadic",
+        "sourceIds": {
+          "fbref": "2475dcc6",
+          "transfermarkt": "36139"
+        }
+      },
+      {
+        "value": "Mame Baba Thiam",
+        "entityId": "player:tm-historical-163053-mame-thiam",
+        "sourceIds": {
+          "fbref": "ec304819",
+          "transfermarkt": "163053"
+        }
+      },
+      {
+        "value": "Krzysztof Piatek",
+        "entityId": "player:tm-historical-327757-krzysztof-piatek",
+        "sourceIds": {
+          "fbref": "17f3620a",
+          "transfermarkt": "327757"
+        }
+      },
+      {
+        "value": "M'Baye Niang",
+        "entityId": "player:tm-historical-157501-m-baye-niang",
+        "sourceIds": {
+          "fbref": "2054d037",
+          "transfermarkt": "157501"
+        }
+      },
+      {
+        "value": "Olivier Ntcham",
+        "entityId": "player:tm-historical-224088-olivier-ntcham",
+        "sourceIds": {
+          "fbref": "6554bb97",
+          "transfermarkt": "224088"
+        }
+      },
+      {
+        "value": "Michy Batshuayi",
+        "entityId": "player:tm-179184-michy-batshuayi",
+        "sourceIds": {
+          "fbref": "2973d8ff",
+          "transfermarkt": "179184"
+        }
+      },
+      {
+        "value": "Rey Manaj",
+        "entityId": "player:tm-308278-rey-manaj",
+        "sourceIds": {
+          "fbref": "7703afb6",
+          "transfermarkt": "308278"
+        }
+      },
+      {
+        "value": "Adam Buksa",
+        "entityId": "player:tm-267160-adam-buksa",
+        "sourceIds": {
+          "fbref": "3b676989",
+          "transfermarkt": "267160"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2023-2024-shots-on-target",
+    "shortLabel": "2023-24 İsabetli Şut",
+    "prompt": "2023-24 Süper Lig en çok isabetli şut atan oyuncular (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2023-2024 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2023-2024/2023-2024-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Shots on Target\".",
+    "answers": [
+      {
+        "value": "Edin Dzeko",
+        "entityId": "player:tm-28396-edin-dzeko",
+        "sourceIds": {
+          "fbref": "3bb7f478",
+          "transfermarkt": "28396"
+        }
+      },
+      {
+        "value": "Mauro Icardi",
+        "entityId": "player:tm-68863-mauro-icardi",
+        "sourceIds": {
+          "fbref": "43b78598",
+          "transfermarkt": "68863"
+        }
+      },
+      {
+        "value": "Krzysztof Piatek",
+        "entityId": "player:tm-historical-327757-krzysztof-piatek",
+        "sourceIds": {
+          "fbref": "17f3620a",
+          "transfermarkt": "327757"
+        }
+      },
+      {
+        "value": "Rey Manaj",
+        "entityId": "player:tm-308278-rey-manaj",
+        "sourceIds": {
+          "fbref": "7703afb6",
+          "transfermarkt": "308278"
+        }
+      },
+      {
+        "value": "Denis Dragus",
+        "entityId": "player:tm-historical-405399-denis-dragus",
+        "sourceIds": {
+          "fbref": "0e490f6e",
+          "transfermarkt": "405399"
+        }
+      },
+      {
+        "value": "Adam Buksa",
+        "entityId": "player:tm-267160-adam-buksa",
+        "sourceIds": {
+          "fbref": "3b676989",
+          "transfermarkt": "267160"
+        }
+      },
+      {
+        "value": "Aytac Kara",
+        "entityId": "player:tm-historical-159908-aytac-kara",
+        "sourceIds": {
+          "fbref": "94c79a82",
+          "transfermarkt": "159908"
+        }
+      },
+      {
+        "value": "Dries Mertens",
+        "entityId": "player:tm-historical-56416-dries-mertens",
+        "sourceIds": {
+          "fbref": "89b2c8a9",
+          "transfermarkt": "56416"
+        }
+      },
+      {
+        "value": "Mame Baba Thiam",
+        "entityId": "player:tm-historical-163053-mame-thiam",
+        "sourceIds": {
+          "fbref": "ec304819",
+          "transfermarkt": "163053"
+        }
+      },
+      {
+        "value": "Sebastian Szymanski",
+        "entityId": "player:tm-historical-320748-sebastian-szymanski",
+        "sourceIds": {
+          "fbref": "bb718263",
+          "transfermarkt": "320748"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2024-2025-assists",
+    "shortLabel": "2024-25 Asist",
+    "prompt": "2024-25 Süper Lig asist krallığı (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2024-2025 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2024-2025/2024-2025-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Assists\".",
+    "answers": [
+      {
+        "value": "Dusan Tadic",
+        "entityId": "player:tm-historical-36139-dusan-tadic",
+        "sourceIds": {
+          "fbref": "2475dcc6",
+          "transfermarkt": "36139"
+        }
+      },
+      {
+        "value": "Emre Kilinc",
+        "entityId": "player:tm-208848-emre-kilinc",
+        "sourceIds": {
+          "fbref": "bab440b1",
+          "transfermarkt": "208848"
+        }
+      },
+      {
+        "value": "Yunus Akgun",
+        "entityId": "player:tm-historical-396908-yunus-akgun",
+        "sourceIds": {
+          "fbref": "1453e3cf",
+          "transfermarkt": "396908"
+        }
+      },
+      {
+        "value": "Muhammed Cham",
+        "entityId": "player:tm-historical-422281-muhammed-cham",
+        "sourceIds": {
+          "fbref": "f527a32c",
+          "transfermarkt": "422281"
+        }
+      },
+      {
+        "value": "Romulo",
+        "entityId": "player:tm-historical-957874-romulo",
+        "sourceIds": {
+          "fbref": "03dd053e",
+          "transfermarkt": "957874"
+        }
+      },
+      {
+        "value": "Gorkem Saglam",
+        "entityId": "player:tm-historical-251345-gorkem-saglam",
+        "sourceIds": {
+          "fbref": "651d9f0a",
+          "transfermarkt": "251345"
+        }
+      },
+      {
+        "value": "David Tijanic",
+        "entityId": "player:tm-historical-351792-david-tijanic",
+        "sourceIds": {
+          "fbref": "6acda5fe",
+          "transfermarkt": "351792"
+        }
+      },
+      {
+        "value": "Claudio Winck",
+        "entityId": "player:tm-historical-181783-claudio-winck",
+        "sourceIds": {
+          "fbref": "a71dc814",
+          "transfermarkt": "181783"
+        }
+      },
+      {
+        "value": "Gabriel Sara",
+        "entityId": "player:tm-historical-553469-gabriel-sara",
+        "sourceIds": {
+          "fbref": "135d500d",
+          "transfermarkt": "553469"
+        }
+      },
+      {
+        "value": "Olivier Kemen",
+        "entityId": "player:tm-historical-243725-olivier-kemen",
+        "sourceIds": {
+          "fbref": "22f1de6c",
+          "transfermarkt": "243725"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2024-2025-cards-red",
+    "shortLabel": "2024-25 Kırmızı Kart",
+    "prompt": "2024-25 Süper Lig en çok kırmızı kart gören oyuncular (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2024-2025 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2024-2025/2024-2025-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Red Cards\".",
+    "answers": [
+      {
+        "value": "Uros Radakovic",
+        "entityId": "player:tm-historical-169511-uros-radakovic",
+        "sourceIds": {
+          "fbref": "ebbd1336",
+          "transfermarkt": "169511"
+        }
+      },
+      {
+        "value": "Bruno Viana",
+        "entityId": "player:tm-historical-411838-bruno-viana",
+        "sourceIds": {
+          "fbref": "c5ea2dab",
+          "transfermarkt": "411838"
+        }
+      },
+      {
+        "value": "Gokhan Sazdagi",
+        "entityId": "player:tm-historical-257785-gokhan-sazdagi",
+        "sourceIds": {
+          "fbref": "01fed96a",
+          "transfermarkt": "257785"
+        }
+      },
+      {
+        "value": "Joseph Larweh Attamah",
+        "entityId": "player:tm-historical-263546-joseph-attamah",
+        "sourceIds": {
+          "fbref": "958aba30",
+          "transfermarkt": "263546"
+        }
+      },
+      {
+        "value": "Stephane Bahoken",
+        "entityId": "player:tm-historical-170953-stephane-bahoken",
+        "sourceIds": {
+          "fbref": "5046b7d4",
+          "transfermarkt": "170953"
+        }
+      },
+      {
+        "value": "Tayyib Talha Sanuc",
+        "entityId": "player:tm-historical-462772-tayyip-talha-sanuc",
+        "sourceIds": {
+          "fbref": "7d4f9ee6",
+          "transfermarkt": "462772"
+        }
+      },
+      {
+        "value": "Ugur Ciftci",
+        "entityId": "player:tm-172163-ugur-ciftci",
+        "sourceIds": {
+          "fbref": "e111bf12",
+          "transfermarkt": "172163"
+        }
+      },
+      {
+        "value": "Murat Paluli",
+        "entityId": "player:tm-historical-288858-murat-paluli",
+        "sourceIds": {
+          "fbref": "2f5b4f08",
+          "transfermarkt": "288858"
+        }
+      },
+      {
+        "value": "Francisco Calvo",
+        "entityId": "player:tm-historical-188470-francisco-calvo",
+        "sourceIds": {
+          "fbref": "706bd23f",
+          "transfermarkt": "188470"
+        }
+      },
+      {
+        "value": "Quentin Daubin",
+        "entityId": "player:tm-historical-407624-quentin-daubin",
+        "sourceIds": {
+          "fbref": "d51c34f0",
+          "transfermarkt": "407624"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2024-2025-cards-yellow",
+    "shortLabel": "2024-25 Sarı Kart",
+    "prompt": "2024-25 Süper Lig en çok sarı kart gören oyuncular (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2024-2025 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2024-2025/2024-2025-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Yellow Cards\".",
+    "answers": [
+      {
+        "value": "Nuno Lima",
+        "entityId": "player:tm-historical-836336-nuno-lima",
+        "sourceIds": {
+          "fbref": "a70b0a9f",
+          "transfermarkt": "836336"
+        }
+      },
+      {
+        "value": "Richard",
+        "entityId": "player:tm-530737-richard",
+        "sourceIds": {
+          "fbref": "e90aa5da",
+          "transfermarkt": "530737"
+        }
+      },
+      {
+        "value": "Badou Ndiaye",
+        "entityId": "player:tm-historical-211325-badou-ndiaye",
+        "sourceIds": {
+          "fbref": "960acc0a",
+          "transfermarkt": "211325"
+        }
+      },
+      {
+        "value": "Nicholas Opoku",
+        "entityId": "player:tm-historical-396516-nicholas-opoku",
+        "sourceIds": {
+          "fbref": "b871bf55",
+          "transfermarkt": "396516"
+        }
+      },
+      {
+        "value": "Rick van Drongelen",
+        "entityId": "player:tm-historical-354340-rick-van-drongelen",
+        "sourceIds": {
+          "fbref": "f0797d57",
+          "transfermarkt": "354340"
+        }
+      },
+      {
+        "value": "Gokhan Sazdagi",
+        "entityId": "player:tm-historical-257785-gokhan-sazdagi",
+        "sourceIds": {
+          "fbref": "01fed96a",
+          "transfermarkt": "257785"
+        }
+      },
+      {
+        "value": "Mortadha Ben Ouanes",
+        "entityId": "player:tm-historical-230921-mortadha-ben-ouanes",
+        "sourceIds": {
+          "fbref": "1798891a",
+          "transfermarkt": "230921"
+        }
+      },
+      {
+        "value": "Thalisson Kelven",
+        "entityId": "player:tm-historical-323876-thalisson",
+        "sourceIds": {
+          "fbref": "18e87471",
+          "transfermarkt": "323876"
+        }
+      },
+      {
+        "value": "Kacper Kozlowski",
+        "entityId": "player:tm-historical-554284-kacper-kozlowski",
+        "sourceIds": {
+          "fbref": "3ece036c",
+          "transfermarkt": "554284"
+        }
+      },
+      {
+        "value": "Recep Yilmaz",
+        "entityId": "player:fbref-4295453f-recep-yilmaz",
+        "sourceIds": {
+          "fbref": "4295453f"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2024-2025-gk-clean-sheets",
+    "shortLabel": "2024-25 Gol Yemedi",
+    "prompt": "2024-25 Süper Lig en çok gol yemeyen kaleciler (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2024-2025 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2024-2025/2024-2025-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Clean Sheets\".",
+    "answers": [
+      {
+        "value": "Okan Kocuk",
+        "entityId": "player:tm-historical-204189-okan-kocuk",
+        "sourceIds": {
+          "fbref": "7e9fd9b9",
+          "transfermarkt": "204189"
+        }
+      },
+      {
+        "value": "Ugurcan Cakir",
+        "entityId": "player:tm-historical-292199-ugurcan-cakir",
+        "sourceIds": {
+          "fbref": "f63a8347",
+          "transfermarkt": "292199"
+        }
+      },
+      {
+        "value": "Fernando Muslera",
+        "entityId": "player:tm-historical-58088-fernando-muslera",
+        "sourceIds": {
+          "fbref": "a2abe631",
+          "transfermarkt": "58088"
+        }
+      },
+      {
+        "value": "Diogo Fesnard Sousa",
+        "entityId": "player:tm-historical-461895-diogo-sousa",
+        "sourceIds": {
+          "fbref": "408f410d",
+          "transfermarkt": "461895"
+        }
+      },
+      {
+        "value": "Mert Gunok",
+        "entityId": "player:tm-historical-51894-mert-gunok",
+        "sourceIds": {
+          "fbref": "b583aef5",
+          "transfermarkt": "51894"
+        }
+      },
+      {
+        "value": "Berke Ozer",
+        "entityId": "player:tm-historical-361256-berke-ozer",
+        "sourceIds": {
+          "fbref": "0743d0ec",
+          "transfermarkt": "361256"
+        }
+      },
+      {
+        "value": "Muhammed Sengezer",
+        "entityId": "player:tm-historical-330871-muhammed-sengezer",
+        "sourceIds": {
+          "fbref": "fa71b998",
+          "transfermarkt": "330871"
+        }
+      },
+      {
+        "value": "Bilal Bayazit",
+        "entityId": "player:tm-historical-361032-bilal-bayazit",
+        "sourceIds": {
+          "fbref": "f0a63d14",
+          "transfermarkt": "361032"
+        }
+      },
+      {
+        "value": "Ertugrul Taskiran",
+        "entityId": "player:tm-historical-91945-ertugrul-taskiran",
+        "sourceIds": {
+          "fbref": "cf8c553e",
+          "transfermarkt": "91945"
+        }
+      },
+      {
+        "value": "Dominik Livakovic",
+        "entityId": "player:tm-historical-205927-dominik-livakovic",
+        "sourceIds": {
+          "fbref": "58f077c0",
+          "transfermarkt": "205927"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2024-2025-gk-saves",
+    "shortLabel": "2024-25 Kurtarış",
+    "prompt": "2024-25 Süper Lig en çok kurtarış yapan kaleciler (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2024-2025 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2024-2025/2024-2025-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Saves\".",
+    "answers": [
+      {
+        "value": "Berke Ozer",
+        "entityId": "player:tm-historical-361256-berke-ozer",
+        "sourceIds": {
+          "fbref": "0743d0ec",
+          "transfermarkt": "361256"
+        }
+      },
+      {
+        "value": "Ugurcan Cakir",
+        "entityId": "player:tm-historical-292199-ugurcan-cakir",
+        "sourceIds": {
+          "fbref": "f63a8347",
+          "transfermarkt": "292199"
+        }
+      },
+      {
+        "value": "Ali Sasal Vural",
+        "entityId": "player:tm-157178-ali-sasal-vural",
+        "sourceIds": {
+          "fbref": "cead8fc6",
+          "transfermarkt": "157178"
+        }
+      },
+      {
+        "value": "Ertugrul Taskiran",
+        "entityId": "player:tm-historical-91945-ertugrul-taskiran",
+        "sourceIds": {
+          "fbref": "cf8c553e",
+          "transfermarkt": "91945"
+        }
+      },
+      {
+        "value": "Mert Gunok",
+        "entityId": "player:tm-historical-51894-mert-gunok",
+        "sourceIds": {
+          "fbref": "b583aef5",
+          "transfermarkt": "51894"
+        }
+      },
+      {
+        "value": "Muhammed Sengezer",
+        "entityId": "player:tm-historical-330871-muhammed-sengezer",
+        "sourceIds": {
+          "fbref": "fa71b998",
+          "transfermarkt": "330871"
+        }
+      },
+      {
+        "value": "Okan Kocuk",
+        "entityId": "player:tm-historical-204189-okan-kocuk",
+        "sourceIds": {
+          "fbref": "7e9fd9b9",
+          "transfermarkt": "204189"
+        }
+      },
+      {
+        "value": "Diogo Fesnard Sousa",
+        "entityId": "player:tm-historical-461895-diogo-sousa",
+        "sourceIds": {
+          "fbref": "408f410d",
+          "transfermarkt": "461895"
+        }
+      },
+      {
+        "value": "Kenan Piric",
+        "entityId": "player:tm-historical-231712-kenan-piric",
+        "sourceIds": {
+          "fbref": "00b86f5e",
+          "transfermarkt": "231712"
+        }
+      },
+      {
+        "value": "Fernando Muslera",
+        "entityId": "player:tm-historical-58088-fernando-muslera",
+        "sourceIds": {
+          "fbref": "a2abe631",
+          "transfermarkt": "58088"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2024-2025-goals",
+    "shortLabel": "2024-25 Gol",
+    "prompt": "2024-25 Süper Lig gol krallığı (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2024-2025 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2024-2025/2024-2025-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Goals\".",
+    "answers": [
+      {
+        "value": "Victor Osimhen",
+        "entityId": "player:tm-401923-victor-osimhen",
+        "sourceIds": {
+          "fbref": "8c90fd7a",
+          "transfermarkt": "401923"
+        }
+      },
+      {
+        "value": "Krzysztof Piatek",
+        "entityId": "player:tm-historical-327757-krzysztof-piatek",
+        "sourceIds": {
+          "fbref": "17f3620a",
+          "transfermarkt": "327757"
+        }
+      },
+      {
+        "value": "Youssef En-Nesyri",
+        "entityId": "player:tm-historical-433049-youssef-en-nesyri",
+        "sourceIds": {
+          "fbref": "04e17fd5",
+          "transfermarkt": "433049"
+        }
+      },
+      {
+        "value": "Ali Sowe",
+        "entityId": "player:tm-historical-229817-ali-sowe",
+        "sourceIds": {
+          "fbref": "84e5adcd",
+          "transfermarkt": "229817"
+        }
+      },
+      {
+        "value": "Simon Banza",
+        "entityId": "player:tm-historical-344869-simon-banza",
+        "sourceIds": {
+          "fbref": "be47b750",
+          "transfermarkt": "344869"
+        }
+      },
+      {
+        "value": "Ciro Immobile",
+        "entityId": "player:tm-historical-105521-ciro-immobile",
+        "sourceIds": {
+          "fbref": "4431aed2",
+          "transfermarkt": "105521"
+        }
+      },
+      {
+        "value": "Mame Baba Thiam",
+        "entityId": "player:tm-historical-163053-mame-thiam",
+        "sourceIds": {
+          "fbref": "ec304819",
+          "transfermarkt": "163053"
+        }
+      },
+      {
+        "value": "Edin Dzeko",
+        "entityId": "player:tm-28396-edin-dzeko",
+        "sourceIds": {
+          "fbref": "3bb7f478",
+          "transfermarkt": "28396"
+        }
+      },
+      {
+        "value": "Romulo",
+        "entityId": "player:tm-historical-957874-romulo",
+        "sourceIds": {
+          "fbref": "03dd053e",
+          "transfermarkt": "957874"
+        }
+      },
+      {
+        "value": "Nuno da Costa",
+        "entityId": "player:tm-historical-306166-nuno-da-costa",
+        "sourceIds": {
+          "fbref": "909222de",
+          "transfermarkt": "306166"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2024-2025-minutes",
+    "shortLabel": "2024-25 Dakika",
+    "prompt": "2024-25 Süper Lig en çok dakika oynayan oyuncular (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2024-2025 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2024-2025/2024-2025-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Minutes\".",
+    "answers": [
+      {
+        "value": "Okan Kocuk",
+        "entityId": "player:tm-historical-204189-okan-kocuk",
+        "sourceIds": {
+          "fbref": "7e9fd9b9",
+          "transfermarkt": "204189"
+        }
+      },
+      {
+        "value": "Rafa Silva",
+        "entityId": "player:tm-historical-238055-rafa-silva",
+        "sourceIds": {
+          "fbref": "70cf63ca",
+          "transfermarkt": "238055"
+        }
+      },
+      {
+        "value": "Mert Gunok",
+        "entityId": "player:tm-historical-51894-mert-gunok",
+        "sourceIds": {
+          "fbref": "b583aef5",
+          "transfermarkt": "51894"
+        }
+      },
+      {
+        "value": "Ertugrul Taskiran",
+        "entityId": "player:tm-historical-91945-ertugrul-taskiran",
+        "sourceIds": {
+          "fbref": "cf8c553e",
+          "transfermarkt": "91945"
+        }
+      },
+      {
+        "value": "Muhammed Sengezer",
+        "entityId": "player:tm-historical-330871-muhammed-sengezer",
+        "sourceIds": {
+          "fbref": "fa71b998",
+          "transfermarkt": "330871"
+        }
+      },
+      {
+        "value": "Fernando Muslera",
+        "entityId": "player:tm-historical-58088-fernando-muslera",
+        "sourceIds": {
+          "fbref": "a2abe631",
+          "transfermarkt": "58088"
+        }
+      },
+      {
+        "value": "Fidan Aliti",
+        "entityId": "player:tm-historical-182870-fidan-aliti",
+        "sourceIds": {
+          "fbref": "5c46e908",
+          "transfermarkt": "182870"
+        }
+      },
+      {
+        "value": "Mamadou Fall",
+        "entityId": "player:tm-historical-289713-mamadou-fall",
+        "sourceIds": {
+          "fbref": "1524bd4c",
+          "transfermarkt": "289713"
+        }
+      },
+      {
+        "value": "Berke Ozer",
+        "entityId": "player:tm-historical-361256-berke-ozer",
+        "sourceIds": {
+          "fbref": "0743d0ec",
+          "transfermarkt": "361256"
+        }
+      },
+      {
+        "value": "Guilherme Sitya",
+        "entityId": "player:fbref-8377c51d-guilherme-sitya",
+        "sourceIds": {
+          "fbref": "8377c51d"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2024-2025-pens-made",
+    "shortLabel": "2024-25 Penaltı",
+    "prompt": "2024-25 Süper Lig penaltı gol krallığı (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2024-2025 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2024-2025/2024-2025-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Penalty Kicks Made\".",
+    "answers": [
+      {
+        "value": "Ciro Immobile",
+        "entityId": "player:tm-historical-105521-ciro-immobile",
+        "sourceIds": {
+          "fbref": "4431aed2",
+          "transfermarkt": "105521"
+        }
+      },
+      {
+        "value": "Haris Hajradinovic",
+        "entityId": "player:tm-215592-haris-hajradinovic",
+        "sourceIds": {
+          "fbref": "4e07366b",
+          "transfermarkt": "215592"
+        }
+      },
+      {
+        "value": "Victor Osimhen",
+        "entityId": "player:tm-401923-victor-osimhen",
+        "sourceIds": {
+          "fbref": "8c90fd7a",
+          "transfermarkt": "401923"
+        }
+      },
+      {
+        "value": "Krzysztof Piatek",
+        "entityId": "player:tm-historical-327757-krzysztof-piatek",
+        "sourceIds": {
+          "fbref": "17f3620a",
+          "transfermarkt": "327757"
+        }
+      },
+      {
+        "value": "Romulo",
+        "entityId": "player:tm-historical-957874-romulo",
+        "sourceIds": {
+          "fbref": "03dd053e",
+          "transfermarkt": "957874"
+        }
+      },
+      {
+        "value": "Simon Banza",
+        "entityId": "player:tm-historical-344869-simon-banza",
+        "sourceIds": {
+          "fbref": "be47b750",
+          "transfermarkt": "344869"
+        }
+      },
+      {
+        "value": "Alexandru Maxim",
+        "entityId": "player:tm-historical-129513-alexandru-maxim",
+        "sourceIds": {
+          "fbref": "61fc9685",
+          "transfermarkt": "129513"
+        }
+      },
+      {
+        "value": "Talisca",
+        "entityId": "player:tm-historical-258626-talisca",
+        "sourceIds": {
+          "fbref": "5c4f4e43",
+          "transfermarkt": "258626"
+        }
+      },
+      {
+        "value": "Florent Hadergjonaj",
+        "entityId": "player:tm-238809-florent-hadergjonaj",
+        "sourceIds": {
+          "fbref": "9aa186b2",
+          "transfermarkt": "238809"
+        }
+      },
+      {
+        "value": "George Puscas",
+        "entityId": "player:tm-historical-208690-george-puscas",
+        "sourceIds": {
+          "fbref": "c23c8e0d",
+          "transfermarkt": "208690"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2024-2025-shots-on-target",
+    "shortLabel": "2024-25 İsabetli Şut",
+    "prompt": "2024-25 Süper Lig en çok isabetli şut atan oyuncular (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2024-2025 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2024-2025/2024-2025-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Shots on Target\".",
+    "answers": [
+      {
+        "value": "Victor Osimhen",
+        "entityId": "player:tm-401923-victor-osimhen",
+        "sourceIds": {
+          "fbref": "8c90fd7a",
+          "transfermarkt": "401923"
+        }
+      },
+      {
+        "value": "Krzysztof Piatek",
+        "entityId": "player:tm-historical-327757-krzysztof-piatek",
+        "sourceIds": {
+          "fbref": "17f3620a",
+          "transfermarkt": "327757"
+        }
+      },
+      {
+        "value": "Edin Dzeko",
+        "entityId": "player:tm-28396-edin-dzeko",
+        "sourceIds": {
+          "fbref": "3bb7f478",
+          "transfermarkt": "28396"
+        }
+      },
+      {
+        "value": "Youssef En-Nesyri",
+        "entityId": "player:tm-historical-433049-youssef-en-nesyri",
+        "sourceIds": {
+          "fbref": "04e17fd5",
+          "transfermarkt": "433049"
+        }
+      },
+      {
+        "value": "Rafa Silva",
+        "entityId": "player:tm-historical-238055-rafa-silva",
+        "sourceIds": {
+          "fbref": "70cf63ca",
+          "transfermarkt": "238055"
+        }
+      },
+      {
+        "value": "Romulo",
+        "entityId": "player:tm-historical-957874-romulo",
+        "sourceIds": {
+          "fbref": "03dd053e",
+          "transfermarkt": "957874"
+        }
+      },
+      {
+        "value": "Ali Sowe",
+        "entityId": "player:tm-historical-229817-ali-sowe",
+        "sourceIds": {
+          "fbref": "84e5adcd",
+          "transfermarkt": "229817"
+        }
+      },
+      {
+        "value": "Mame Baba Thiam",
+        "entityId": "player:tm-historical-163053-mame-thiam",
+        "sourceIds": {
+          "fbref": "ec304819",
+          "transfermarkt": "163053"
+        }
+      },
+      {
+        "value": "Simon Banza",
+        "entityId": "player:tm-historical-344869-simon-banza",
+        "sourceIds": {
+          "fbref": "be47b750",
+          "transfermarkt": "344869"
+        }
+      },
+      {
+        "value": "Nuno da Costa",
+        "entityId": "player:tm-historical-306166-nuno-da-costa",
+        "sourceIds": {
+          "fbref": "909222de",
+          "transfermarkt": "306166"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2025-2026-assists",
+    "shortLabel": "2025-26 Asist",
+    "prompt": "2025-26 Süper Lig asist krallığı (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2025-2026 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2025-2026/2025-2026-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Assists\".",
+    "answers": [
+      {
+        "value": "Marco Asensio",
+        "entityId": "player:tm-296622-marco-asensio",
+        "sourceIds": {
+          "fbref": "45af8a54",
+          "transfermarkt": "296622"
+        }
+      },
+      {
+        "value": "Baris Alper Yilmaz",
+        "entityId": "player:tm-historical-541537-baris-alper-yilmaz",
+        "sourceIds": {
+          "fbref": "414b2ce4",
+          "transfermarkt": "541537"
+        }
+      },
+      {
+        "value": "Yunus Akgun",
+        "entityId": "player:tm-historical-396908-yunus-akgun",
+        "sourceIds": {
+          "fbref": "1453e3cf",
+          "transfermarkt": "396908"
+        }
+      },
+      {
+        "value": "Vaclav Cerny",
+        "entityId": "player:tm-historical-242063-vaclav-cerny",
+        "sourceIds": {
+          "fbref": "bb1cf301",
+          "transfermarkt": "242063"
+        }
+      },
+      {
+        "value": "Alexandru Maxim",
+        "entityId": "player:tm-historical-129513-alexandru-maxim",
+        "sourceIds": {
+          "fbref": "61fc9685",
+          "transfermarkt": "129513"
+        }
+      },
+      {
+        "value": "Florent Hadergjonaj",
+        "entityId": "player:tm-238809-florent-hadergjonaj",
+        "sourceIds": {
+          "fbref": "9aa186b2",
+          "transfermarkt": "238809"
+        }
+      },
+      {
+        "value": "Drissa Camara",
+        "entityId": "player:tm-historical-614742-drissa-camara",
+        "sourceIds": {
+          "fbref": "543d9d2b",
+          "transfermarkt": "614742"
+        }
+      },
+      {
+        "value": "Orkun Kokcu",
+        "entityId": "player:tm-454567-orkun-kokcu",
+        "sourceIds": {
+          "fbref": "9bf914b4",
+          "transfermarkt": "454567"
+        }
+      },
+      {
+        "value": "Hwang Ui-jo",
+        "entityId": "player:tm-historical-260166-ui-jo-hwang",
+        "sourceIds": {
+          "fbref": "a2d873dd",
+          "transfermarkt": "260166"
+        }
+      },
+      {
+        "value": "Oleksandr Zubkov",
+        "entityId": "player:tm-historical-289075-oleksandr-zubkov",
+        "sourceIds": {
+          "fbref": "adfbe1f5",
+          "transfermarkt": "289075"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2025-2026-cards-red",
+    "shortLabel": "2025-26 Kırmızı Kart",
+    "prompt": "2025-26 Süper Lig en çok kırmızı kart gören oyuncular (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2025-2026 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2025-2026/2025-2026-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Red Cards\".",
+    "answers": [
+      {
+        "value": "Orkun Kokcu",
+        "entityId": "player:tm-454567-orkun-kokcu",
+        "sourceIds": {
+          "fbref": "9bf914b4",
+          "transfermarkt": "454567"
+        }
+      },
+      {
+        "value": "Thalisson Kelven",
+        "entityId": "player:tm-historical-323876-thalisson",
+        "sourceIds": {
+          "fbref": "18e87471",
+          "transfermarkt": "323876"
+        }
+      },
+      {
+        "value": "Cafu",
+        "entityId": "player:tm-203655-cafu",
+        "sourceIds": {
+          "fbref": "85322440",
+          "transfermarkt": "203655"
+        }
+      },
+      {
+        "value": "Sekou Koita",
+        "entityId": "player:tm-historical-402010-sekou-koita",
+        "sourceIds": {
+          "fbref": "6747869d",
+          "transfermarkt": "402010"
+        }
+      },
+      {
+        "value": "Festy Ebosele",
+        "entityId": "player:tm-historical-586756-festy-ebosele",
+        "sourceIds": {
+          "fbref": "dbfa4f16",
+          "transfermarkt": "586756"
+        }
+      },
+      {
+        "value": "Bedirhan Ozyurt",
+        "entityId": "player:tm-710051-bedirhan-ozyurt",
+        "sourceIds": {
+          "fbref": "d6584270",
+          "transfermarkt": "710051"
+        }
+      },
+      {
+        "value": "Enis Bardhi",
+        "entityId": "player:tm-historical-245014-enis-bardhi",
+        "sourceIds": {
+          "fbref": "cac2537b",
+          "transfermarkt": "245014"
+        }
+      },
+      {
+        "value": "Wagner Pina",
+        "entityId": "player:tm-historical-1072017-wagner-pina",
+        "sourceIds": {
+          "fbref": "9bf22b95",
+          "transfermarkt": "1072017"
+        }
+      },
+      {
+        "value": "Maestro",
+        "entityId": "player:tm-historical-666551-maestro",
+        "sourceIds": {
+          "fbref": "a990d452",
+          "transfermarkt": "666551"
+        }
+      },
+      {
+        "value": "Juan Santos",
+        "entityId": "player:fbref-ad89aa96-juan-santos",
+        "sourceIds": {
+          "fbref": "ad89aa96"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2025-2026-cards-yellow",
+    "shortLabel": "2025-26 Sarı Kart",
+    "prompt": "2025-26 Süper Lig en çok sarı kart gören oyuncular (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2025-2026 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2025-2026/2025-2026-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Yellow Cards\".",
+    "answers": [
+      {
+        "value": "Pedro Pereira",
+        "entityId": "player:tm-historical-314965-pedro-pereira",
+        "sourceIds": {
+          "fbref": "c77be0cf",
+          "transfermarkt": "314965"
+        }
+      },
+      {
+        "value": "Malcom Bokele",
+        "entityId": "player:tm-historical-647787-malcom-bokele",
+        "sourceIds": {
+          "fbref": "51af19f7",
+          "transfermarkt": "647787"
+        }
+      },
+      {
+        "value": "Fidan Aliti",
+        "entityId": "player:tm-historical-182870-fidan-aliti",
+        "sourceIds": {
+          "fbref": "5c46e908",
+          "transfermarkt": "182870"
+        }
+      },
+      {
+        "value": "Ugurcan Yazgili",
+        "entityId": "player:tm-historical-295955-ugurcan-yazgili",
+        "sourceIds": {
+          "fbref": "0caa0427",
+          "transfermarkt": "295955"
+        }
+      },
+      {
+        "value": "Jayden Oosterwolde",
+        "entityId": "player:tm-historical-591361-jayden-oosterwolde",
+        "sourceIds": {
+          "fbref": "34abb664",
+          "transfermarkt": "591361"
+        }
+      },
+      {
+        "value": "Arda Kizildag",
+        "entityId": "player:tm-historical-532905-arda-kizildag",
+        "sourceIds": {
+          "fbref": "035379ae",
+          "transfermarkt": "532905"
+        }
+      },
+      {
+        "value": "Christ Inao Oulai",
+        "entityId": "player:tm-historical-1279526-christ-inao-oulai",
+        "sourceIds": {
+          "fbref": "62709ee4",
+          "transfermarkt": "1279526"
+        }
+      },
+      {
+        "value": "Samet Akaydin",
+        "entityId": "player:tm-295024-samet-akaydin",
+        "sourceIds": {
+          "fbref": "7328bee5",
+          "transfermarkt": "295024"
+        }
+      },
+      {
+        "value": "Ahmet Oguz",
+        "entityId": "player:tm-historical-291758-ahmet-oguz",
+        "sourceIds": {
+          "fbref": "a84d1dc0",
+          "transfermarkt": "291758"
+        }
+      },
+      {
+        "value": "Show",
+        "entityId": "player:tm-historical-568216-show",
+        "sourceIds": {
+          "fbref": "b9392438",
+          "transfermarkt": "568216"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2025-2026-gk-clean-sheets",
+    "shortLabel": "2025-26 Gol Yemedi",
+    "prompt": "2025-26 Süper Lig en çok gol yemeyen kaleciler (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2025-2026 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2025-2026/2025-2026-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Clean Sheets\".",
+    "answers": [
+      {
+        "value": "Mateusz Lis",
+        "entityId": "player:tm-historical-345437-mateusz-lis",
+        "sourceIds": {
+          "fbref": "fd78b105",
+          "transfermarkt": "345437"
+        }
+      },
+      {
+        "value": "Ugurcan Cakir",
+        "entityId": "player:tm-historical-292199-ugurcan-cakir",
+        "sourceIds": {
+          "fbref": "f63a8347",
+          "transfermarkt": "292199"
+        }
+      },
+      {
+        "value": "Muhammed Sengezer",
+        "entityId": "player:tm-historical-330871-muhammed-sengezer",
+        "sourceIds": {
+          "fbref": "fa71b998",
+          "transfermarkt": "330871"
+        }
+      },
+      {
+        "value": "Okan Kocuk",
+        "entityId": "player:tm-historical-204189-okan-kocuk",
+        "sourceIds": {
+          "fbref": "7e9fd9b9",
+          "transfermarkt": "204189"
+        }
+      },
+      {
+        "value": "Andreas Gianniotis",
+        "entityId": "player:tm-historical-226802-andreas-gianniotis",
+        "sourceIds": {
+          "fbref": "8ae07c1c",
+          "transfermarkt": "226802"
+        }
+      },
+      {
+        "value": "Ertugrul Taskiran",
+        "entityId": "player:tm-historical-91945-ertugrul-taskiran",
+        "sourceIds": {
+          "fbref": "cf8c553e",
+          "transfermarkt": "91945"
+        }
+      },
+      {
+        "value": "Ersin Destanoglu",
+        "entityId": "player:tm-historical-500091-ersin-destanoglu",
+        "sourceIds": {
+          "fbref": "52b3c895",
+          "transfermarkt": "500091"
+        }
+      },
+      {
+        "value": "Ederson",
+        "entityId": "player:tm-historical-238223-ederson",
+        "sourceIds": {
+          "fbref": "3bb7b8b4",
+          "transfermarkt": "238223"
+        }
+      },
+      {
+        "value": "Aleksandar Jovanovic",
+        "entityId": "player:tm-256567-aleksandar-jovanovic",
+        "sourceIds": {
+          "fbref": "129dd8e7",
+          "transfermarkt": "256567"
+        }
+      },
+      {
+        "value": "Bilal Bayazit",
+        "entityId": "player:tm-historical-361032-bilal-bayazit",
+        "sourceIds": {
+          "fbref": "f0a63d14",
+          "transfermarkt": "361032"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2025-2026-gk-saves",
+    "shortLabel": "2025-26 Kurtarış",
+    "prompt": "2025-26 Süper Lig en çok kurtarış yapan kaleciler (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2025-2026 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2025-2026/2025-2026-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Saves\".",
+    "answers": [
+      {
+        "value": "Ivo Grbic",
+        "entityId": "player:tm-226073-ivo-grbic",
+        "sourceIds": {
+          "fbref": "3f034750",
+          "transfermarkt": "226073"
+        }
+      },
+      {
+        "value": "Muhammed Sengezer",
+        "entityId": "player:tm-historical-330871-muhammed-sengezer",
+        "sourceIds": {
+          "fbref": "fa71b998",
+          "transfermarkt": "330871"
+        }
+      },
+      {
+        "value": "Bilal Bayazit",
+        "entityId": "player:tm-historical-361032-bilal-bayazit",
+        "sourceIds": {
+          "fbref": "f0a63d14",
+          "transfermarkt": "361032"
+        }
+      },
+      {
+        "value": "Mateusz Lis",
+        "entityId": "player:tm-historical-345437-mateusz-lis",
+        "sourceIds": {
+          "fbref": "fd78b105",
+          "transfermarkt": "345437"
+        }
+      },
+      {
+        "value": "Andreas Gianniotis",
+        "entityId": "player:tm-historical-226802-andreas-gianniotis",
+        "sourceIds": {
+          "fbref": "8ae07c1c",
+          "transfermarkt": "226802"
+        }
+      },
+      {
+        "value": "Ugurcan Cakir",
+        "entityId": "player:tm-historical-292199-ugurcan-cakir",
+        "sourceIds": {
+          "fbref": "f63a8347",
+          "transfermarkt": "292199"
+        }
+      },
+      {
+        "value": "Andre Onana",
+        "entityId": "player:tm-historical-234509-andre-onana",
+        "sourceIds": {
+          "fbref": "e9c0c1b2",
+          "transfermarkt": "234509"
+        }
+      },
+      {
+        "value": "Yahia Fofana",
+        "entityId": "player:tm-historical-418651-yahia-fofana",
+        "sourceIds": {
+          "fbref": "9d420dad",
+          "transfermarkt": "418651"
+        }
+      },
+      {
+        "value": "Ricardo Velho",
+        "entityId": "player:tm-historical-527026-ricardo-velho",
+        "sourceIds": {
+          "fbref": "23d16052",
+          "transfermarkt": "527026"
+        }
+      },
+      {
+        "value": "Julian Cuesta",
+        "entityId": "player:tm-historical-176936-julian-cuesta",
+        "sourceIds": {
+          "fbref": "c7b52b90",
+          "transfermarkt": "176936"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2025-2026-goals",
+    "shortLabel": "2025-26 Gol",
+    "prompt": "2025-26 Süper Lig gol krallığı (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2025-2026 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2025-2026/2025-2026-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Goals\".",
+    "answers": [
+      {
+        "value": "Paul Onuachu",
+        "entityId": "player:tm-historical-272855-paul-onuachu",
+        "sourceIds": {
+          "fbref": "c06d1086",
+          "transfermarkt": "272855"
+        }
+      },
+      {
+        "value": "Eldor Shomurodov",
+        "entityId": "player:tm-historical-358166-eldor-shomurodov",
+        "sourceIds": {
+          "fbref": "57469b2d",
+          "transfermarkt": "358166"
+        }
+      },
+      {
+        "value": "Mauro Icardi",
+        "entityId": "player:tm-68863-mauro-icardi",
+        "sourceIds": {
+          "fbref": "43b78598",
+          "transfermarkt": "68863"
+        }
+      },
+      {
+        "value": "Talisca",
+        "entityId": "player:tm-historical-258626-talisca",
+        "sourceIds": {
+          "fbref": "5c4f4e43",
+          "transfermarkt": "258626"
+        }
+      },
+      {
+        "value": "Mohamed Lamine Bayo",
+        "entityId": "player:tm-historical-594991-mohamed-bayo",
+        "sourceIds": {
+          "fbref": "01870104",
+          "transfermarkt": "594991"
+        }
+      },
+      {
+        "value": "Victor Osimhen",
+        "entityId": "player:tm-401923-victor-osimhen",
+        "sourceIds": {
+          "fbref": "8c90fd7a",
+          "transfermarkt": "401923"
+        }
+      },
+      {
+        "value": "Felipe Augusto",
+        "entityId": "player:tm-historical-834899-felipe-augusto",
+        "sourceIds": {
+          "fbref": "1f9cbd0b",
+          "transfermarkt": "834899"
+        }
+      },
+      {
+        "value": "Marco Asensio",
+        "entityId": "player:tm-296622-marco-asensio",
+        "sourceIds": {
+          "fbref": "45af8a54",
+          "transfermarkt": "296622"
+        }
+      },
+      {
+        "value": "Ernest Muci",
+        "entityId": "player:tm-583917-ernest-muci",
+        "sourceIds": {
+          "fbref": "1f1229a9",
+          "transfermarkt": "583917"
+        }
+      },
+      {
+        "value": "German Onugkha",
+        "entityId": "player:tm-historical-568318-german-onugkha",
+        "sourceIds": {
+          "fbref": "03e561d1",
+          "transfermarkt": "568318"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2025-2026-minutes",
+    "shortLabel": "2025-26 Dakika",
+    "prompt": "2025-26 Süper Lig en çok dakika oynayan oyuncular (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2025-2026 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2025-2026/2025-2026-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Minutes\".",
+    "answers": [
+      {
+        "value": "Ivo Grbic",
+        "entityId": "player:tm-226073-ivo-grbic",
+        "sourceIds": {
+          "fbref": "3f034750",
+          "transfermarkt": "226073"
+        }
+      },
+      {
+        "value": "Andreas Gianniotis",
+        "entityId": "player:tm-historical-226802-andreas-gianniotis",
+        "sourceIds": {
+          "fbref": "8ae07c1c",
+          "transfermarkt": "226802"
+        }
+      },
+      {
+        "value": "Mateusz Lis",
+        "entityId": "player:tm-historical-345437-mateusz-lis",
+        "sourceIds": {
+          "fbref": "fd78b105",
+          "transfermarkt": "345437"
+        }
+      },
+      {
+        "value": "Amine Cherni",
+        "entityId": "player:tm-historical-782935-amin-cherni",
+        "sourceIds": {
+          "fbref": "88b540f7",
+          "transfermarkt": "782935"
+        }
+      },
+      {
+        "value": "Dimitris Goutas",
+        "entityId": "player:fbref-56f5e78f-dimitris-goutas",
+        "sourceIds": {
+          "fbref": "56f5e78f"
+        }
+      },
+      {
+        "value": "Heliton",
+        "entityId": "player:tm-historical-676115-heliton",
+        "sourceIds": {
+          "fbref": "a64b3679",
+          "transfermarkt": "676115"
+        }
+      },
+      {
+        "value": "Muhammed Sengezer",
+        "entityId": "player:tm-historical-330871-muhammed-sengezer",
+        "sourceIds": {
+          "fbref": "fa71b998",
+          "transfermarkt": "330871"
+        }
+      },
+      {
+        "value": "Kenneth Paal",
+        "entityId": "player:tm-historical-247596-kenneth-paal",
+        "sourceIds": {
+          "fbref": "d8faef3e",
+          "transfermarkt": "247596"
+        }
+      },
+      {
+        "value": "Eldor Shomurodov",
+        "entityId": "player:tm-historical-358166-eldor-shomurodov",
+        "sourceIds": {
+          "fbref": "57469b2d",
+          "transfermarkt": "358166"
+        }
+      },
+      {
+        "value": "Stefano Denswil",
+        "entityId": "player:tm-historical-182923-stefano-denswil",
+        "sourceIds": {
+          "fbref": "5832ebfe",
+          "transfermarkt": "182923"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2025-2026-pens-made",
+    "shortLabel": "2025-26 Penaltı",
+    "prompt": "2025-26 Süper Lig penaltı gol krallığı (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2025-2026 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2025-2026/2025-2026-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Penalty Kicks Made\".",
+    "answers": [
+      {
+        "value": "Paul Onuachu",
+        "entityId": "player:tm-historical-272855-paul-onuachu",
+        "sourceIds": {
+          "fbref": "c06d1086",
+          "transfermarkt": "272855"
+        }
+      },
+      {
+        "value": "Alexandru Maxim",
+        "entityId": "player:tm-historical-129513-alexandru-maxim",
+        "sourceIds": {
+          "fbref": "61fc9685",
+          "transfermarkt": "129513"
+        }
+      },
+      {
+        "value": "Talisca",
+        "entityId": "player:tm-historical-258626-talisca",
+        "sourceIds": {
+          "fbref": "5c4f4e43",
+          "transfermarkt": "258626"
+        }
+      },
+      {
+        "value": "Qazim Laci",
+        "entityId": "player:tm-historical-290552-qazim-laci",
+        "sourceIds": {
+          "fbref": "eb0db257",
+          "transfermarkt": "290552"
+        }
+      },
+      {
+        "value": "Baris Alper Yilmaz",
+        "entityId": "player:tm-historical-541537-baris-alper-yilmaz",
+        "sourceIds": {
+          "fbref": "414b2ce4",
+          "transfermarkt": "541537"
+        }
+      },
+      {
+        "value": "Florent Hadergjonaj",
+        "entityId": "player:tm-238809-florent-hadergjonaj",
+        "sourceIds": {
+          "fbref": "9aa186b2",
+          "transfermarkt": "238809"
+        }
+      },
+      {
+        "value": "Eldor Shomurodov",
+        "entityId": "player:tm-historical-358166-eldor-shomurodov",
+        "sourceIds": {
+          "fbref": "57469b2d",
+          "transfermarkt": "358166"
+        }
+      },
+      {
+        "value": "Adrian Benedyczak",
+        "entityId": "player:tm-historical-454386-adrian-benedyczak",
+        "sourceIds": {
+          "fbref": "3f448184",
+          "transfermarkt": "454386"
+        }
+      },
+      {
+        "value": "Enis Bardhi",
+        "entityId": "player:tm-historical-245014-enis-bardhi",
+        "sourceIds": {
+          "fbref": "cac2537b",
+          "transfermarkt": "245014"
+        }
+      },
+      {
+        "value": "Bruno Petkovic",
+        "entityId": "player:tm-historical-256358-bruno-petkovic",
+        "sourceIds": {
+          "fbref": "24228180",
+          "transfermarkt": "256358"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-2025-2026-shots-on-target",
+    "shortLabel": "2025-26 İsabetli Şut",
+    "prompt": "2025-26 Süper Lig en çok isabetli şut atan oyuncular (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "FBref 2025-2026 Super Lig leaderboard",
+    "sourceUrl": "https://fbref.com/en/comps/26/2025-2026/2025-2026-Super-Lig-Stats",
+    "note": "Generated from stored FBref season leaderboard \"Shots on Target\".",
+    "answers": [
+      {
+        "value": "Eldor Shomurodov",
+        "entityId": "player:tm-historical-358166-eldor-shomurodov",
+        "sourceIds": {
+          "fbref": "57469b2d",
+          "transfermarkt": "358166"
+        }
+      },
+      {
+        "value": "Paul Onuachu",
+        "entityId": "player:tm-historical-272855-paul-onuachu",
+        "sourceIds": {
+          "fbref": "c06d1086",
+          "transfermarkt": "272855"
+        }
+      },
+      {
+        "value": "Talisca",
+        "entityId": "player:tm-historical-258626-talisca",
+        "sourceIds": {
+          "fbref": "5c4f4e43",
+          "transfermarkt": "258626"
+        }
+      },
+      {
+        "value": "Victor Osimhen",
+        "entityId": "player:tm-401923-victor-osimhen",
+        "sourceIds": {
+          "fbref": "8c90fd7a",
+          "transfermarkt": "401923"
+        }
+      },
+      {
+        "value": "Felipe Augusto",
+        "entityId": "player:tm-historical-834899-felipe-augusto",
+        "sourceIds": {
+          "fbref": "1f9cbd0b",
+          "transfermarkt": "834899"
+        }
+      },
+      {
+        "value": "Orkun Kokcu",
+        "entityId": "player:tm-454567-orkun-kokcu",
+        "sourceIds": {
+          "fbref": "9bf914b4",
+          "transfermarkt": "454567"
+        }
+      },
+      {
+        "value": "Mohamed Lamine Bayo",
+        "entityId": "player:tm-historical-594991-mohamed-bayo",
+        "sourceIds": {
+          "fbref": "01870104",
+          "transfermarkt": "594991"
+        }
+      },
+      {
+        "value": "Ernest Muci",
+        "entityId": "player:tm-583917-ernest-muci",
+        "sourceIds": {
+          "fbref": "1f1229a9",
+          "transfermarkt": "583917"
+        }
+      },
+      {
+        "value": "Marco Asensio",
+        "entityId": "player:tm-296622-marco-asensio",
+        "sourceIds": {
+          "fbref": "45af8a54",
+          "transfermarkt": "296622"
+        }
+      },
+      {
+        "value": "Mauro Icardi",
+        "entityId": "player:tm-68863-mauro-icardi",
+        "sourceIds": {
+          "fbref": "43b78598",
+          "transfermarkt": "68863"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-range-2001-2006-assists",
+    "shortLabel": "2001-06 Asist",
+    "prompt": "2001-2006 Süper Lig asist krallığı (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Transfermarkt 2001-2006 cumulative leaderboard",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/scorerliste/wettbewerb/TR1/saison_id/2001",
+    "note": "Aggregated exactly from full Transfermarkt season tables from 2001-2002 through 2005-2006.",
+    "answers": [
+      {
+        "value": "Timucin Bayazit",
+        "entityId": "player:tm-22962-timucin-bayazit",
+        "sourceIds": {
+          "transfermarkt": "22962"
+        }
+      },
+      {
+        "value": "Ibrahim Yattara",
+        "entityId": "player:tm-6917-ibrahim-yattara",
+        "sourceIds": {
+          "transfermarkt": "6917"
+        }
+      },
+      {
+        "value": "Alex",
+        "entityId": "player:tm-18537-alex",
+        "sourceIds": {
+          "transfermarkt": "18537"
+        }
+      },
+      {
+        "value": "Hasan Sas",
+        "entityId": "player:tm-6102-hasan-sas",
+        "sourceIds": {
+          "transfermarkt": "6102"
+        }
+      },
+      {
+        "value": "Tumer Metin",
+        "entityId": "player:tm-6879-tumer-metin",
+        "sourceIds": {
+          "transfermarkt": "6879"
+        }
+      },
+      {
+        "value": "Ali Tandogan",
+        "entityId": "player:tm-7054-ali-tandogan",
+        "sourceIds": {
+          "transfermarkt": "7054"
+        }
+      },
+      {
+        "value": "Gokdeniz Karadeniz",
+        "entityId": "player:tm-6871-gokdeniz-karadeniz",
+        "sourceIds": {
+          "transfermarkt": "6871"
+        }
+      },
+      {
+        "value": "Sergen Yalcin",
+        "entityId": "player:tm-6904-sergen-yalcin",
+        "sourceIds": {
+          "transfermarkt": "6904"
+        }
+      },
+      {
+        "value": "Aleksandar Aleksandrov",
+        "entityId": "player:tm-14958-aleksandar-aleksandrov",
+        "sourceIds": {
+          "transfermarkt": "14958"
+        }
+      },
+      {
+        "value": "Zdravko Lazarov",
+        "entityId": "player:tm-10126-zdravko-lazarov",
+        "sourceIds": {
+          "transfermarkt": "10126"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-range-2001-2006-goals",
+    "shortLabel": "2001-06 Gol",
+    "prompt": "2001-2006 Süper Lig gol krallığı (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Transfermarkt 2001-2006 cumulative leaderboard",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/torschuetzenliste/wettbewerb/TR1/saison_id/2001",
+    "note": "Aggregated exactly from full Transfermarkt season tables from 2001-2002 through 2005-2006.",
+    "answers": [
+      {
+        "value": "Fatih Tekke",
+        "entityId": "player:tm-6924-fatih-tekke",
+        "sourceIds": {
+          "transfermarkt": "6924"
+        }
+      },
+      {
+        "value": "Necati Ates",
+        "entityId": "player:tm-6949-necati-ates",
+        "sourceIds": {
+          "transfermarkt": "6949"
+        }
+      },
+      {
+        "value": "Cenk Isler",
+        "entityId": "player:tm-1294-cenk-isler",
+        "sourceIds": {
+          "transfermarkt": "1294"
+        }
+      },
+      {
+        "value": "Okan Yilmaz",
+        "entityId": "player:tm-6113-okan-yilmaz",
+        "sourceIds": {
+          "transfermarkt": "6113"
+        }
+      },
+      {
+        "value": "Serkan Aykut",
+        "entityId": "player:tm-7142-serkan-aykut",
+        "sourceIds": {
+          "transfermarkt": "7142"
+        }
+      },
+      {
+        "value": "Zafer Biryol",
+        "entityId": "player:tm-7388-zafer-biryol",
+        "sourceIds": {
+          "transfermarkt": "7388"
+        }
+      },
+      {
+        "value": "Ahmed Hassan",
+        "entityId": "player:tm-6878-ahmed-hassan",
+        "sourceIds": {
+          "transfermarkt": "6878"
+        }
+      },
+      {
+        "value": "Zdravko Lazarov",
+        "entityId": "player:tm-10126-zdravko-lazarov",
+        "sourceIds": {
+          "transfermarkt": "10126"
+        }
+      },
+      {
+        "value": "Souleymane Youla",
+        "entityId": "player:tm-1081-souleymane-youla",
+        "sourceIds": {
+          "transfermarkt": "1081"
+        }
+      },
+      {
+        "value": "Tuncay Sanli",
+        "entityId": "player:tm-6934-tuncay-sanli",
+        "sourceIds": {
+          "transfermarkt": "6934"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-range-2006-2011-assists",
+    "shortLabel": "2006-11 Asist",
+    "prompt": "2006-2011 Süper Lig asist krallığı (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Transfermarkt 2006-2011 cumulative leaderboard",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/scorerliste/wettbewerb/TR1/saison_id/2006",
+    "note": "Aggregated exactly from full Transfermarkt season tables from 2006-2007 through 2010-2011.",
+    "answers": [
+      {
+        "value": "Alex",
+        "entityId": "player:tm-18537-alex",
+        "sourceIds": {
+          "transfermarkt": "18537"
+        }
+      },
+      {
+        "value": "Arda Turan",
+        "entityId": "player:tm-21369-arda-turan",
+        "sourceIds": {
+          "transfermarkt": "21369"
+        }
+      },
+      {
+        "value": "Rodrigo Tello",
+        "entityId": "player:tm-3413-rodrigo-tello",
+        "sourceIds": {
+          "transfermarkt": "3413"
+        }
+      },
+      {
+        "value": "Ceyhun Eris",
+        "entityId": "player:tm-7064-ceyhun-eris",
+        "sourceIds": {
+          "transfermarkt": "7064"
+        }
+      },
+      {
+        "value": "Selcuk Inan",
+        "entityId": "player:tm-35026-selcuk-inan",
+        "sourceIds": {
+          "transfermarkt": "35026"
+        }
+      },
+      {
+        "value": "Mehmet Topuz",
+        "entityId": "player:tm-17140-mehmet-topuz",
+        "sourceIds": {
+          "transfermarkt": "17140"
+        }
+      },
+      {
+        "value": "Mehmet Yildiz",
+        "entityId": "player:tm-33570-mehmet-yildiz",
+        "sourceIds": {
+          "transfermarkt": "33570"
+        }
+      },
+      {
+        "value": "Gustavo Colman",
+        "entityId": "player:tm-40500-gustavo-colman",
+        "sourceIds": {
+          "transfermarkt": "40500"
+        }
+      },
+      {
+        "value": "Ibrahim Yattara",
+        "entityId": "player:tm-6917-ibrahim-yattara",
+        "sourceIds": {
+          "transfermarkt": "6917"
+        }
+      },
+      {
+        "value": "Ali Tandogan",
+        "entityId": "player:tm-7054-ali-tandogan",
+        "sourceIds": {
+          "transfermarkt": "7054"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-range-2006-2011-goals",
+    "shortLabel": "2006-11 Gol",
+    "prompt": "2006-2011 Süper Lig gol krallığı (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Transfermarkt 2006-2011 cumulative leaderboard",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/torschuetzenliste/wettbewerb/TR1/saison_id/2006",
+    "note": "Aggregated exactly from full Transfermarkt season tables from 2006-2007 through 2010-2011.",
+    "answers": [
+      {
+        "value": "Alex",
+        "entityId": "player:tm-18537-alex",
+        "sourceIds": {
+          "transfermarkt": "18537"
+        }
+      },
+      {
+        "value": "Umut Bulut",
+        "entityId": "player:tm-10143-umut-bulut",
+        "sourceIds": {
+          "transfermarkt": "10143"
+        }
+      },
+      {
+        "value": "Bobo",
+        "entityId": "player:tm-37944-bobo",
+        "sourceIds": {
+          "transfermarkt": "37944"
+        }
+      },
+      {
+        "value": "Gokhan Unal",
+        "entityId": "player:tm-7394-gokhan-unal",
+        "sourceIds": {
+          "transfermarkt": "7394"
+        }
+      },
+      {
+        "value": "Filip Holosko",
+        "entityId": "player:tm-21245-filip-holosko",
+        "sourceIds": {
+          "transfermarkt": "21245"
+        }
+      },
+      {
+        "value": "Mehmet Yildiz",
+        "entityId": "player:tm-33570-mehmet-yildiz",
+        "sourceIds": {
+          "transfermarkt": "33570"
+        }
+      },
+      {
+        "value": "Necati Ates",
+        "entityId": "player:tm-6949-necati-ates",
+        "sourceIds": {
+          "transfermarkt": "6949"
+        }
+      },
+      {
+        "value": "Semih Senturk",
+        "entityId": "player:tm-7043-semih-senturk",
+        "sourceIds": {
+          "transfermarkt": "7043"
+        }
+      },
+      {
+        "value": "Milan Baros",
+        "entityId": "player:tm-3216-milan-baros",
+        "sourceIds": {
+          "transfermarkt": "3216"
+        }
+      },
+      {
+        "value": "Umit Karan",
+        "entityId": "player:tm-3378-umit-karan",
+        "sourceIds": {
+          "transfermarkt": "3378"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-range-2011-2016-assists",
+    "shortLabel": "2011-16 Asist",
+    "prompt": "2011-2016 Süper Lig asist krallığı (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Transfermarkt 2011-2016 cumulative leaderboard",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/scorerliste/wettbewerb/TR1/saison_id/2011",
+    "note": "Aggregated exactly from full Transfermarkt season tables from 2011-2012 through 2015-2016.",
+    "answers": [
+      {
+        "value": "Selcuk Inan",
+        "entityId": "player:tm-35026-selcuk-inan",
+        "sourceIds": {
+          "transfermarkt": "35026"
+        }
+      },
+      {
+        "value": "Pablo Batalla",
+        "entityId": "player:tm-26432-pablo-batalla",
+        "sourceIds": {
+          "transfermarkt": "26432"
+        }
+      },
+      {
+        "value": "Caner Erkin",
+        "entityId": "player:tm-39333-caner-erkin",
+        "sourceIds": {
+          "transfermarkt": "39333"
+        }
+      },
+      {
+        "value": "Cicinho",
+        "entityId": "player:tm-26101-cicinho",
+        "sourceIds": {
+          "transfermarkt": "26101"
+        }
+      },
+      {
+        "value": "Burhan Eser",
+        "entityId": "player:tm-33958-burhan-eser",
+        "sourceIds": {
+          "transfermarkt": "33958"
+        }
+      },
+      {
+        "value": "Manuel Fernandes",
+        "entityId": "player:tm-16791-manuel-fernandes",
+        "sourceIds": {
+          "transfermarkt": "16791"
+        }
+      },
+      {
+        "value": "Yasin Oztekin",
+        "entityId": "player:tm-31867-yasin-oztekin",
+        "sourceIds": {
+          "transfermarkt": "31867"
+        }
+      },
+      {
+        "value": "Olcan Adin",
+        "entityId": "player:tm-8491-olcan-adin",
+        "sourceIds": {
+          "transfermarkt": "8491"
+        }
+      },
+      {
+        "value": "Olcay Sahan",
+        "entityId": "player:tm-36200-olcay-sahan",
+        "sourceIds": {
+          "transfermarkt": "36200"
+        }
+      },
+      {
+        "value": "Erman Kilic",
+        "entityId": "player:tm-53556-erman-kilic",
+        "sourceIds": {
+          "transfermarkt": "53556"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-range-2011-2016-goals",
+    "shortLabel": "2011-16 Gol",
+    "prompt": "2011-2016 Süper Lig gol krallığı (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Transfermarkt 2011-2016 cumulative leaderboard",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/torschuetzenliste/wettbewerb/TR1/saison_id/2011",
+    "note": "Aggregated exactly from full Transfermarkt season tables from 2011-2012 through 2015-2016.",
+    "answers": [
+      {
+        "value": "Burak Yilmaz",
+        "entityId": "player:tm-34987-burak-yilmaz",
+        "sourceIds": {
+          "transfermarkt": "34987"
+        }
+      },
+      {
+        "value": "Bogdan Stancu",
+        "entityId": "player:tm-46658-bogdan-stancu",
+        "sourceIds": {
+          "transfermarkt": "46658"
+        }
+      },
+      {
+        "value": "Pierre Webo",
+        "entityId": "player:tm-16589-pierre-webo",
+        "sourceIds": {
+          "transfermarkt": "16589"
+        }
+      },
+      {
+        "value": "Moussa Sow",
+        "entityId": "player:tm-22382-moussa-sow",
+        "sourceIds": {
+          "transfermarkt": "22382"
+        }
+      },
+      {
+        "value": "Theofanis Gekas",
+        "entityId": "player:tm-16402-theofanis-gekas",
+        "sourceIds": {
+          "transfermarkt": "16402"
+        }
+      },
+      {
+        "value": "Aatif Chahechouhe",
+        "entityId": "player:tm-73480-aatif-chahechouhe",
+        "sourceIds": {
+          "transfermarkt": "73480"
+        }
+      },
+      {
+        "value": "Fernandao",
+        "entityId": "player:tm-83886-fernandao",
+        "sourceIds": {
+          "transfermarkt": "83886"
+        }
+      },
+      {
+        "value": "Cenk Tosun",
+        "entityId": "player:tm-45671-cenk-tosun",
+        "sourceIds": {
+          "transfermarkt": "45671"
+        }
+      },
+      {
+        "value": "Oscar Scarione",
+        "entityId": "player:tm-47011-oscar-scarione",
+        "sourceIds": {
+          "transfermarkt": "47011"
+        }
+      },
+      {
+        "value": "Selcuk Inan",
+        "entityId": "player:tm-35026-selcuk-inan",
+        "sourceIds": {
+          "transfermarkt": "35026"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-range-2016-2022-assists",
+    "shortLabel": "2016-22 Asist",
+    "prompt": "2016-2022 Süper Lig asist krallığı (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Transfermarkt 2016-2022 cumulative leaderboard",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/scorerliste/wettbewerb/TR1/saison_id/2016",
+    "note": "Aggregated exactly from full Transfermarkt season tables from 2016-2017 through 2021-2022.",
+    "answers": [
+      {
+        "value": "Edin Visca",
+        "entityId": "player:tm-109217-edin-visca",
+        "sourceIds": {
+          "transfermarkt": "109217"
+        }
+      },
+      {
+        "value": "Efecan Karaca",
+        "entityId": "player:tm-50655-efecan-karaca",
+        "sourceIds": {
+          "transfermarkt": "50655"
+        }
+      },
+      {
+        "value": "Anthony Nwakaeme",
+        "entityId": "player:tm-175988-anthony-nwakaeme",
+        "sourceIds": {
+          "transfermarkt": "175988"
+        }
+      },
+      {
+        "value": "Caner Erkin",
+        "entityId": "player:tm-39333-caner-erkin",
+        "sourceIds": {
+          "transfermarkt": "39333"
+        }
+      },
+      {
+        "value": "Ricardo Quaresma",
+        "entityId": "player:tm-4188-ricardo-quaresma",
+        "sourceIds": {
+          "transfermarkt": "4188"
+        }
+      },
+      {
+        "value": "Halil Akbunar",
+        "entityId": "player:tm-212229-halil-akbunar",
+        "sourceIds": {
+          "transfermarkt": "212229"
+        }
+      },
+      {
+        "value": "Soner Aydogdu",
+        "entityId": "player:tm-85291-soner-aydogdu",
+        "sourceIds": {
+          "transfermarkt": "85291"
+        }
+      },
+      {
+        "value": "Atiba Hutchinson",
+        "entityId": "player:tm-16101-atiba-hutchinson",
+        "sourceIds": {
+          "transfermarkt": "16101"
+        }
+      },
+      {
+        "value": "Sofiane Feghouli",
+        "entityId": "player:tm-57162-sofiane-feghouli",
+        "sourceIds": {
+          "transfermarkt": "57162"
+        }
+      },
+      {
+        "value": "Deniz Turuc",
+        "entityId": "player:tm-216662-deniz-turuc",
+        "sourceIds": {
+          "transfermarkt": "216662"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbref-range-2016-2022-goals",
+    "shortLabel": "2016-22 Gol",
+    "prompt": "2016-2022 Süper Lig gol krallığı (ilk 10)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Transfermarkt 2016-2022 cumulative leaderboard",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/torschuetzenliste/wettbewerb/TR1/saison_id/2016",
+    "note": "Aggregated exactly from full Transfermarkt season tables from 2016-2017 through 2021-2022.",
+    "answers": [
+      {
+        "value": "Edin Visca",
+        "entityId": "player:tm-109217-edin-visca",
+        "sourceIds": {
+          "transfermarkt": "109217"
+        }
+      },
+      {
+        "value": "Adis Jahovic",
+        "entityId": "player:tm-98536-adis-jahovic",
+        "sourceIds": {
+          "transfermarkt": "98536"
+        }
+      },
+      {
+        "value": "Mbaye Diagne",
+        "entityId": "player:tm-271966-mbaye-diagne",
+        "sourceIds": {
+          "transfermarkt": "271966"
+        }
+      },
+      {
+        "value": "Burak Yilmaz",
+        "entityId": "player:tm-34987-burak-yilmaz",
+        "sourceIds": {
+          "transfermarkt": "34987"
+        }
+      },
+      {
+        "value": "Hugo Rodallega",
+        "entityId": "player:tm-37934-hugo-rodallega",
+        "sourceIds": {
+          "transfermarkt": "37934"
+        }
+      },
+      {
+        "value": "Mustapha Yatabare",
+        "entityId": "player:tm-76386-mustapha-yatabare",
+        "sourceIds": {
+          "transfermarkt": "76386"
+        }
+      },
+      {
+        "value": "Adem Buyuk",
+        "entityId": "player:tm-54148-adem-buyuk",
+        "sourceIds": {
+          "transfermarkt": "54148"
+        }
+      },
+      {
+        "value": "Papiss Demba Cisse",
+        "entityId": "player:tm-33952-papiss-demba-cisse",
+        "sourceIds": {
+          "transfermarkt": "33952"
+        }
+      },
+      {
+        "value": "Anthony Nwakaeme",
+        "entityId": "player:tm-175988-anthony-nwakaeme",
+        "sourceIds": {
+          "transfermarkt": "175988"
+        }
+      },
+      {
+        "value": "Emre Akbaba",
+        "entityId": "player:tm-278654-emre-akbaba",
+        "sourceIds": {
+          "transfermarkt": "278654"
+        }
+      }
+    ]
+  }
+]

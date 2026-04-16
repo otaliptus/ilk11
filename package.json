@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:ilk10-subdomain": "node cloudflare/prepare-ilk10-subdomain.mjs",
+    "build:ilk11-subdomain": "node cloudflare/prepare-ilk11-subdomain.mjs",
     "start": "next start",
     "lint": "next lint",
     "data:fetch-season": "node scripts/fetch-season.mjs",
@@ -14,7 +16,9 @@
     "data:build-pools": "node scripts/build-pools.mjs",
     "dev:api": "wrangler pages dev out --d1 DB=ilk11-leaderboard",
     "db:migrate": "wrangler d1 execute ilk11-leaderboard --file=migrations/0001_create_scores.sql",
-    "db:migrate:local": "wrangler d1 execute ilk11-leaderboard --local --file=migrations/0001_create_scores.sql"
+    "db:migrate:local": "wrangler d1 execute ilk11-leaderboard --local --file=migrations/0001_create_scores.sql",
+    "db:migrate:0002": "wrangler d1 execute ilk11-leaderboard --file=migrations/0002_harden_scores_and_add_ilk10.sql",
+    "db:migrate:0002:local": "wrangler d1 execute ilk11-leaderboard --local --file=migrations/0002_harden_scores_and_add_ilk10.sql"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.4",
@@ -32,8 +36,10 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "cheerio": "^1.2.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.16",
+    "playwright-core": "^1.59.1",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5",

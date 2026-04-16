@@ -1,0 +1,42 @@
+{
+  "id": "season-referees-2024-25",
+  "prompt": "Top 10 Super Lig referees by matches officiated in the 2024-25 season",
+  "shortLabel": "2024-25 Referees",
+  "entityType": "referee",
+  "category": "derby",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/super-lig/schiedsrichter/wettbewerb/TR1/saison_id/2024",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Cihan Aydın"
+    },
+    {
+      "value": "Ali Sansalan"
+    },
+    {
+      "value": "Ozan Ergun"
+    },
+    {
+      "value": "Mehmet Turkmen"
+    },
+    {
+      "value": "Atilla Karaoglan"
+    },
+    {
+      "value": "Oguzhan Cakır"
+    },
+    {
+      "value": "Zorbay Kucuk"
+    },
+    {
+      "value": "Kadir Saglam"
+    },
+    {
+      "value": "Yasin Kol"
+    },
+    {
+      "value": "Halil Umut Meler"
+    }
+  ]
+}

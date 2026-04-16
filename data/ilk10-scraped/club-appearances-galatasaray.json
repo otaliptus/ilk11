@@ -1,0 +1,42 @@
+{
+  "id": "club-appearances-galatasaray",
+  "prompt": "Top 10 players with the most Galatasaray appearances",
+  "shortLabel": "GS Most Appearances",
+  "entityType": "player",
+  "category": "all-time",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/galatasaray-istanbul/rekordspieler/verein/141",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Bulent Korkmaz"
+    },
+    {
+      "value": "Fernando Muslera"
+    },
+    {
+      "value": "Hakan Sukur"
+    },
+    {
+      "value": "Arif Erdem"
+    },
+    {
+      "value": "Sabri Sarıoglu"
+    },
+    {
+      "value": "Ergun Penbe"
+    },
+    {
+      "value": "Tugay Kerimoglu"
+    },
+    {
+      "value": "Hasan Sas"
+    },
+    {
+      "value": "Suat Kaya"
+    },
+    {
+      "value": "Hakan Balta"
+    }
+  ]
+}

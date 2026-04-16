@@ -12,6 +12,8 @@
 # next.js
 /.next/
 /out/
+/out-ilk10/
+/out-ilk11/
 /output/
 
 # production
@@ -45,6 +47,8 @@ scripts/
 *.log
 reorder-*
 _backup-*/
+/backups/
+/.playwright-cli/
 *.bak
 
 progress.md

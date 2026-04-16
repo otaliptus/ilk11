@@ -1,0 +1,42 @@
+{
+  "id": "season-assists-2023-24",
+  "prompt": "Top 10 Super Lig assist leaders of the 2023-24 season",
+  "shortLabel": "2023-24 Assist Leaders",
+  "entityType": "player",
+  "category": "all-time",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/super-lig/scorerliste/wettbewerb/TR1/saison_id/2023",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Dries Mertens"
+    },
+    {
+      "value": "Haris Hajradinovic"
+    },
+    {
+      "value": "Dusan Tadic"
+    },
+    {
+      "value": "Sebastian Szymanski"
+    },
+    {
+      "value": "Edin Visca"
+    },
+    {
+      "value": "Deniz Turuc"
+    },
+    {
+      "value": "Mauro Icardi"
+    },
+    {
+      "value": "Irfan Can Kahveci"
+    },
+    {
+      "value": "Mame Thiam"
+    },
+    {
+      "value": "Oguz Aydın"
+    }
+  ]
+}

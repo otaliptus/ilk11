@@ -1,0 +1,42 @@
+{
+  "id": "club-managers-fenerbahce",
+  "prompt": "Top 10 managers by matches in charge at Fenerbahce",
+  "shortLabel": "FB Managers",
+  "entityType": "coach",
+  "category": "title-race",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/fenerbahce-istanbul/mitarbeiterhistorie/verein/36",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Zico"
+    },
+    {
+      "value": "Laszlo Szekely"
+    },
+    {
+      "value": "Jozef Venglos"
+    },
+    {
+      "value": "Mustafa Denizli"
+    },
+    {
+      "value": "Jose Mourinho"
+    },
+    {
+      "value": "Ismail Kartal"
+    },
+    {
+      "value": "Ersun Yanal"
+    },
+    {
+      "value": "Christoph Daum"
+    },
+    {
+      "value": "Dick Advocaat"
+    },
+    {
+      "value": "Holger Osieck"
+    }
+  ]
+}

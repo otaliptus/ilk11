@@ -1,0 +1,42 @@
+{
+  "id": "season-referees-2018-19",
+  "prompt": "Top 10 Super Lig referees by matches officiated in the 2018-19 season",
+  "shortLabel": "2018-19 Referees",
+  "entityType": "referee",
+  "category": "derby",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/super-lig/schiedsrichter/wettbewerb/TR1/saison_id/2018",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Cuneyt Cakır"
+    },
+    {
+      "value": "Mete Kalkavan"
+    },
+    {
+      "value": "Fırat Aydınus"
+    },
+    {
+      "value": "Halis Ozkahya"
+    },
+    {
+      "value": "Bulent Yıldırım"
+    },
+    {
+      "value": "Ali Palabıyık"
+    },
+    {
+      "value": "Halil Umut Meler"
+    },
+    {
+      "value": "Huseyin Gocek"
+    },
+    {
+      "value": "Suat Arslanboga"
+    },
+    {
+      "value": "Yasar Kemal Ugurlu"
+    }
+  ]
+}

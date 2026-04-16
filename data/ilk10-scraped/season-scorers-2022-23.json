@@ -1,0 +1,42 @@
+{
+  "id": "season-scorers-2022-23",
+  "prompt": "Top 10 Super Lig scorers of the 2022-23 season",
+  "shortLabel": "2022-23 Top Scorers",
+  "entityType": "player",
+  "category": "all-time",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/super-lig/torschuetzenliste/wettbewerb/TR1/saison_id/2022",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Enner Valencia"
+    },
+    {
+      "value": "Mbaye Diagne"
+    },
+    {
+      "value": "Mauro Icardi"
+    },
+    {
+      "value": "Fabio Borini"
+    },
+    {
+      "value": "Umut Nayir"
+    },
+    {
+      "value": "Cenk Tosun"
+    },
+    {
+      "value": "Haji Wright"
+    },
+    {
+      "value": "Riad Bajic"
+    },
+    {
+      "value": "Vincent Aboubakar"
+    },
+    {
+      "value": "Younes Belhanda"
+    }
+  ]
+}

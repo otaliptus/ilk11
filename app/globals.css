@@ -132,6 +132,77 @@ body {
     50% { filter: brightness(1.4); }
     100% { filter: brightness(1); }
   }
+
+  .ilk10-board-flash-success {
+    background:
+      radial-gradient(circle at 50% 28%, rgba(74, 222, 128, 0.22), transparent 42%),
+      linear-gradient(180deg, rgba(16, 185, 129, 0.18), rgba(16, 185, 129, 0.02));
+    animation: ilk10-board-flash-success 1.05s ease-out forwards;
+  }
+
+  .ilk10-board-flash-error {
+    background:
+      radial-gradient(circle at 50% 40%, rgba(248, 113, 113, 0.24), transparent 38%),
+      linear-gradient(180deg, rgba(239, 68, 68, 0.22), rgba(127, 29, 29, 0.08));
+    animation: ilk10-board-flash-error 0.42s ease-out forwards;
+  }
+
+  .ilk10-slot-wave::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(16, 185, 129, 0) 0%, rgba(52, 211, 153, 0.42) 50%, rgba(16, 185, 129, 0) 100%);
+    opacity: 0;
+    transform: translateX(-16%);
+    animation: ilk10-slot-wave 0.46s ease-out forwards;
+    animation-delay: var(--ilk10-wave-delay, 0ms);
+  }
+
+  .ilk10-slot-hit {
+    animation: ilk10-slot-hit 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    animation-delay: calc(var(--ilk10-wave-delay, 0ms) + 110ms);
+  }
+
+  @keyframes ilk10-board-flash-success {
+    0% { opacity: 0; }
+    15% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+  @keyframes ilk10-board-flash-error {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+  @keyframes ilk10-slot-wave {
+    0% {
+      opacity: 0;
+      transform: translateX(-24%);
+    }
+    25% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(18%);
+    }
+  }
+
+  @keyframes ilk10-slot-hit {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 rgba(16, 185, 129, 0);
+    }
+    40% {
+      transform: scale(1.02);
+      box-shadow: 0 0 0 1px rgba(110, 231, 183, 0.55), 0 0 30px rgba(52, 211, 153, 0.35);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 rgba(16, 185, 129, 0);
+    }
+  }
 }
 
 @layer base {

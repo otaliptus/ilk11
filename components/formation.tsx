@@ -164,10 +164,10 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
     let table = `İlk 11! #${gameId}\n`;
     if (currentUrl) table += `${currentUrl}\n`;
     table += `${gameData.game}\n${gameData.team} • ${gameData.formation}\n\n`;
-    table += `✅ Solved: ${solved}/11\n`;
-    table += `🎯 Attempts: ${totalAttempts}\n`;
+    table += `✅ Bulundu: ${solved}/11\n`;
+    table += `🎯 Tahmin: ${totalAttempts}\n`;
     if (failed > 0) {
-      table += `❌ Failed: ${failed}\n`;
+      table += `❌ Hatalı: ${failed}\n`;
     }
     table += `\n`;
 
@@ -333,7 +333,7 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
         size="icon"
         className="glass border-white/20 text-white hover:bg-white/10 hover:border-white/30 transition-all duration-200 shadow-lg"
         onClick={() => setShowModal(true)}
-        aria-label="Game info"
+        aria-label="Maç bilgisi"
       >
         <Info className="h-4 w-4" />
       </Button>
@@ -342,7 +342,7 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
         size="icon"
         className="glass border-white/20 text-white hover:bg-white/10 hover:border-white/30 transition-all duration-200 shadow-lg"
         onClick={() => setShowLeaderboard(true)}
-        aria-label="Leaderboard"
+        aria-label="Skor tablosu"
       >
         <BarChart3 className="h-4 w-4" />
       </Button>
@@ -355,7 +355,7 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
         size="icon"
         className="glass border-white/20 text-white hover:bg-white/10 hover:border-white/30 transition-all duration-200 shadow-lg"
         onClick={() => setShowCopyModal(true)}
-        aria-label="Share results"
+        aria-label="Sonuçları paylaş"
       >
         <Share2 className="h-4 w-4" />
       </Button>
@@ -376,7 +376,7 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
                     : "bg-red-700/80 text-red-100"
                 }`}
               >
-                {difficulty === "easy" ? "Easy" : "Hard"}
+                {difficulty === "easy" ? "Kolay" : "Zor"}
               </span>
             </div>
             <p className="text-sm text-slate-300 mt-1">
@@ -393,20 +393,24 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
       <Dialog open={showCopyModal} onOpenChange={(open) => { setShowCopyModal(open); if (!open) setShowSubmitInShare(false); }}>
         <DialogContent className="font-mono sm:max-w-md flex flex-col items-center glass rounded-2xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle className="text-white text-lg">Share Results</DialogTitle>
+            <DialogTitle className="text-white text-lg">Sonuçları Paylaş</DialogTitle>
           </DialogHeader>
           <pre className="whitespace-pre-wrap break-words text-sm text-center text-white/90 bg-slate-800/50 p-4 rounded-xl w-full border border-white/10">
             {generateCopyableTable()}
           </pre>
           {showSubmitInShare ? (
             <LeaderboardSubmit
-              gameId={gameId}
-              difficulty={difficulty}
-              matchName={game}
-              solved={gameStats.solved}
-              totalAttempts={gameStats.totalAttempts}
-              failed={gameStats.failed}
-              isComplete={gameStats.isGameComplete}
+              game="ilk11"
+              submissionKey={`${gameId}_${difficulty}`}
+              payload={{
+                difficulty: difficulty,
+                game_id: gameId,
+                match_name: game,
+                solved: gameStats.solved,
+                total_attempts: gameStats.totalAttempts,
+                failed: gameStats.failed,
+                is_complete: gameStats.isGameComplete,
+              }}
             />
           ) : (
             <div className="flex gap-2 w-full">
@@ -416,16 +420,16 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
                 disabled={copied}
               >
                 {copied ? (
-                  <><CheckCircle2 className="h-4 w-4 mr-2" />Copied!</>
+                  <><CheckCircle2 className="h-4 w-4 mr-2" />Kopyalandı!</>
                 ) : (
-                  'Copy to Clipboard'
+                  'Panoya Kopyala'
                 )}
               </Button>
               {gameStats.isGameComplete && (
-                isAlreadySubmitted(gameId, difficulty) ? (
+                isAlreadySubmitted("ilk11", `${gameId}_${difficulty}`) ? (
                   <div className="flex-1 flex items-center justify-center gap-1.5 text-emerald-400 text-sm">
                     <CheckCircle2 className="h-4 w-4" />
-                    <span>Gonderildi</span>
+                    <span>Gönderildi</span>
                   </div>
                 ) : (
                   <Button
@@ -433,7 +437,7 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
                     className="flex-1 bg-slate-700 hover:bg-slate-600 text-white rounded-xl transition-all duration-200 shadow-lg"
                   >
                     <Send className="h-4 w-4 mr-1" />
-                    Skor Gonder
+                    Skoru Gönder
                   </Button>
                 )
               )}
@@ -457,21 +461,21 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
         <DialogContent className="font-mono sm:max-w-md glass rounded-2xl flex flex-col items-center max-h-[90vh] overflow-y-auto">
           <div className="pb-4 text-center">
             <CheckCircle2 className="h-14 w-14 text-emerald-400 mx-auto mb-3 drop-shadow-lg" />
-            <h2 className="text-2xl font-bold text-white mb-1">Game Complete!</h2>
+            <h2 className="text-2xl font-bold text-white mb-1">Oyun Tamamlandı!</h2>
             <p className="text-slate-300 text-sm">
               İlk 11! #{gameId}
             </p>
           </div>
           <div className="text-center space-y-2 mb-4">
             <p className="text-xl">
-              <span className="text-emerald-400 font-bold">✅ {gameStats.solved}</span> / 11 Solved
+              <span className="text-emerald-400 font-bold">✅ {gameStats.solved}</span> / 11 Bulundu
             </p>
             <p className="text-sm text-slate-300">
-              🎯 {gameStats.totalAttempts} Total Attempts
+              🎯 {gameStats.totalAttempts} Toplam Tahmin
             </p>
             {gameStats.failed > 0 && (
               <p className="text-sm text-red-400">
-                ❌ {gameStats.failed} Failed
+                ❌ {gameStats.failed} Hatalı
               </p>
             )}
           </div>
@@ -483,16 +487,20 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
             className="bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl transition-all duration-200 shadow-lg"
           >
             <Share2 className="h-4 w-4 mr-2" />
-            Share Results
+            Sonuçları Paylaş
           </Button>
           <LeaderboardSubmit
-            gameId={gameId}
-            difficulty={difficulty}
-            matchName={game}
-            solved={gameStats.solved}
-            totalAttempts={gameStats.totalAttempts}
-            failed={gameStats.failed}
-            isComplete={gameStats.isGameComplete}
+            game="ilk11"
+            submissionKey={`${gameId}_${difficulty}`}
+            payload={{
+              difficulty: difficulty,
+              game_id: gameId,
+              match_name: game,
+              solved: gameStats.solved,
+              total_attempts: gameStats.totalAttempts,
+              failed: gameStats.failed,
+              is_complete: gameStats.isGameComplete,
+            }}
           />
         </DialogContent>
       </Dialog>
@@ -500,8 +508,9 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
       <LeaderboardModal
         open={showLeaderboard}
         onOpenChange={setShowLeaderboard}
+        activeGame="ilk11"
         isGameComplete={gameStats.isGameComplete}
-        difficulty={difficulty}
+        ilk11Difficulty={difficulty}
       />
     </div>
   )

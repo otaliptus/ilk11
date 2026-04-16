@@ -1,0 +1,42 @@
+{
+  "id": "season-scorers-2016-17",
+  "prompt": "Top 10 Super Lig scorers of the 2016-17 season",
+  "shortLabel": "2016-17 Top Scorers",
+  "entityType": "player",
+  "category": "all-time",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/super-lig/torschuetzenliste/wettbewerb/TR1/saison_id/2016",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Vagner Love"
+    },
+    {
+      "value": "Cenk Tosun"
+    },
+    {
+      "value": "Samuel Eto'o"
+    },
+    {
+      "value": "Riad Bajic"
+    },
+    {
+      "value": "Leonard Kweuke"
+    },
+    {
+      "value": "Serdar Gurler"
+    },
+    {
+      "value": "Talisca"
+    },
+    {
+      "value": "Vincent Aboubakar"
+    },
+    {
+      "value": "Welliton"
+    },
+    {
+      "value": "Moussa Sow"
+    }
+  ]
+}

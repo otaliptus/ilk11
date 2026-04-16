@@ -1,0 +1,42 @@
+{
+  "id": "season-referees-2023-24",
+  "prompt": "Top 10 Super Lig referees by matches officiated in the 2023-24 season",
+  "shortLabel": "2023-24 Referees",
+  "entityType": "referee",
+  "category": "derby",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/super-lig/schiedsrichter/wettbewerb/TR1/saison_id/2023",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Bahattin Simsek"
+    },
+    {
+      "value": "Arda Kardesler"
+    },
+    {
+      "value": "Tugay Kaan Numanoglu"
+    },
+    {
+      "value": "Ali Sansalan"
+    },
+    {
+      "value": "Abdulkadir Bitigen"
+    },
+    {
+      "value": "Volkan Bayarslan"
+    },
+    {
+      "value": "Umit Ozturk"
+    },
+    {
+      "value": "Halil Umut Meler"
+    },
+    {
+      "value": "Cihan Aydın"
+    },
+    {
+      "value": "Zorbay Kucuk"
+    }
+  ]
+}

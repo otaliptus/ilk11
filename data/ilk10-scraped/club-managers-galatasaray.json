@@ -1,0 +1,42 @@
+{
+  "id": "club-managers-galatasaray",
+  "prompt": "Top 10 managers by matches in charge at Galatasaray",
+  "shortLabel": "GS Managers",
+  "entityType": "coach",
+  "category": "title-race",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/galatasaray-istanbul/mitarbeiterhistorie/verein/141",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Fatih Terim"
+    },
+    {
+      "value": "Okan Buruk"
+    },
+    {
+      "value": "Jupp Derwall"
+    },
+    {
+      "value": "Mircea Lucescu"
+    },
+    {
+      "value": "Eric Gerets"
+    },
+    {
+      "value": "Frank Rijkaard"
+    },
+    {
+      "value": "Hamza Hamzaoglu"
+    },
+    {
+      "value": "Reiner Hollmann"
+    },
+    {
+      "value": "Roberto Mancini"
+    },
+    {
+      "value": "Karl-Heinz Feldkamp"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "season-assists-2021-22",
+  "prompt": "Top 10 Super Lig assist leaders of the 2021-22 season",
+  "shortLabel": "2021-22 Assist Leaders",
+  "entityType": "player",
+  "category": "all-time",
+  "sourceLabel": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/super-lig/scorerliste/wettbewerb/TR1/saison_id/2021",
+  "note": "Scraped on 2026-04-09. Verify before going live.",
+  "answers": [
+    {
+      "value": "Edin Visca"
+    },
+    {
+      "value": "Efecan Karaca"
+    },
+    {
+      "value": "Matias Vargas"
+    },
+    {
+      "value": "Yunus Akgun"
+    },
+    {
+      "value": "Anthony Nwakaeme"
+    },
+    {
+      "value": "Kerem Akturkoglu"
+    },
+    {
+      "value": "Serdar Gurler"
+    },
+    {
+      "value": "Diego Rossi"
+    },
+    {
+      "value": "Saba Lobjanidze"
+    },
+    {
+      "value": "Umut Bozok"
+    }
+  ]
+}
