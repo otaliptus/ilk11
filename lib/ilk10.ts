@@ -3,7 +3,7 @@ import { GAME_TIME_ZONE, getTurkeyDateKey, getTurkeyDayIndex } from "@/lib/date"
 import { ILK10_SHARE_DOMAIN } from "@/lib/site"
 
 const MAX_LIVES = 5
-const GOALKEEPER_DEDUP_EPOCH = "2026-04-11"
+const NON_REPEATING_ROTATION_EPOCH = "2026-04-13"
 
 const CHARACTER_MAP: Record<string, string> = {
   C: "C",
@@ -66,11 +66,6 @@ function mulberry32(seed: number): () => number {
   }
 }
 
-function dayIndexToDateKey(dayIndex: number): string {
-  const date = new Date(dayIndex * 86_400_000)
-  return `${date.getUTCFullYear()}-${String(date.getUTCMonth() + 1).padStart(2, "0")}-${String(date.getUTCDate()).padStart(2, "0")}`
-}
-
 function buildQuestionOrder(questions: Ilk10Question[], rng: () => number): Ilk10Question[] {
   const orderedQuestions = [...questions]
   for (let index = orderedQuestions.length - 1; index > 0; index -= 1) {
@@ -80,8 +75,9 @@ function buildQuestionOrder(questions: Ilk10Question[], rng: () => number): Ilk1
   return orderedQuestions
 }
 
-function isGoalkeeperQuestion(question: Ilk10Question): boolean {
-  return question.id.includes("-gk-") || /\bgoalkeepers?\b/i.test(question.prompt)
+function parseEpochDayIndex(epochDateKey: string): number {
+  const [epochYear, epochMonth, epochDay] = epochDateKey.split("-").map(Number)
+  return Math.floor(Date.UTC(epochYear, epochMonth - 1, epochDay) / 86_400_000)
 }
 
 function pickLegacyIlk10Question(questions: Ilk10Question[], dateKey: string): Ilk10Question {
@@ -90,21 +86,54 @@ function pickLegacyIlk10Question(questions: Ilk10Question[], dateKey: string): I
   return questions[Math.floor(rng() * questions.length)]
 }
 
-function pickGoalkeeperSafeIlk10Question(
-  questions: Ilk10Question[],
-  dateKey: string,
-  previousQuestion: Ilk10Question | null
-): Ilk10Question {
-  const orderedQuestions = buildQuestionOrder(
-    questions,
-    mulberry32(fnv1a32(`${GAME_TIME_ZONE}:${dateKey}:ilk10:v2`))
-  )
+function buildCycleQuestionOrder(questions: Ilk10Question[], cycleIndex: number): Ilk10Question[] {
+  return buildQuestionOrder(questions, mulberry32(fnv1a32(`${GAME_TIME_ZONE}:ilk10:cycle:${cycleIndex}`)))
+}
 
-  if (!previousQuestion || !isGoalkeeperQuestion(previousQuestion)) {
-    return orderedQuestions[0]
+function avoidCycleBoundaryRepeat(
+  cycleQuestions: Ilk10Question[],
+  previousCycleQuestions: Ilk10Question[]
+): Ilk10Question[] {
+  if (cycleQuestions.length <= 1 || previousCycleQuestions.length === 0) {
+    return cycleQuestions
   }
 
-  return orderedQuestions.find((question) => !isGoalkeeperQuestion(question)) ?? orderedQuestions[0]
+  const previousCycleLastId = previousCycleQuestions[previousCycleQuestions.length - 1].id
+  if (cycleQuestions[0].id !== previousCycleLastId) {
+    return cycleQuestions
+  }
+
+  const swapIndex = cycleQuestions.findIndex((question) => question.id !== previousCycleLastId)
+  if (swapIndex <= 0) {
+    return cycleQuestions
+  }
+
+  const adjusted = [...cycleQuestions]
+  ;[adjusted[0], adjusted[swapIndex]] = [adjusted[swapIndex], adjusted[0]]
+  return adjusted
+}
+
+function pickNonRepeatingIlk10Question(
+  questions: Ilk10Question[],
+  dayIndex: number,
+  epochDayIndex: number
+): Ilk10Question {
+  if (questions.length === 1) {
+    return questions[0]
+  }
+
+  const rotationDay = dayIndex - epochDayIndex
+  const cycleLength = questions.length
+  const cycleIndex = Math.floor(rotationDay / cycleLength)
+  const indexInCycle = rotationDay % cycleLength
+
+  let cycleQuestions = buildCycleQuestionOrder(questions, cycleIndex)
+  if (indexInCycle === 0 && cycleIndex > 0) {
+    const previousCycleQuestions = buildCycleQuestionOrder(questions, cycleIndex - 1)
+    cycleQuestions = avoidCycleBoundaryRepeat(cycleQuestions, previousCycleQuestions)
+  }
+
+  return cycleQuestions[indexInCycle]
 }
 
 export function pickDailyIlk10Question(
@@ -130,22 +159,14 @@ export function pickDailyIlk10Question(
     }
   }
 
-  const [epochYear, epochMonth, epochDay] = GOALKEEPER_DEDUP_EPOCH.split("-").map(Number)
-  const epochDayIndex = Math.floor(Date.UTC(epochYear, epochMonth - 1, epochDay) / 86_400_000)
+  const epochDayIndex = parseEpochDayIndex(NON_REPEATING_ROTATION_EPOCH)
 
   let question: Ilk10Question
 
   if (dayIndex < epochDayIndex) {
     question = pickLegacyIlk10Question(questions, dateKey)
   } else {
-    let previousQuestion = pickLegacyIlk10Question(questions, dayIndexToDateKey(epochDayIndex - 1))
-    question = previousQuestion
-
-    for (let currentDayIndex = epochDayIndex; currentDayIndex <= dayIndex; currentDayIndex += 1) {
-      const currentDateKey = dayIndexToDateKey(currentDayIndex)
-      question = pickGoalkeeperSafeIlk10Question(questions, currentDateKey, previousQuestion)
-      previousQuestion = question
-    }
+    question = pickNonRepeatingIlk10Question(questions, dayIndex, epochDayIndex)
   }
 
   return {
