@@ -3,7 +3,7 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { readJson, writeJson } from "../lib/io.mjs";
-import { normalizeSearchKey, uniqueSorted } from "../lib/normalize.mjs";
+import { normalizeAsciiText, normalizeSearchKey, uniqueSorted } from "../lib/normalize.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectDir = path.resolve(__dirname, "..");
@@ -35,75 +35,250 @@ function chooseBestStaffSource(primaryEntities, fallbackEntities) {
   return fallbackEntities;
 }
 
-function getNormalizedEntityName(entity) {
-  return normalizeSearchKey(entity.canonicalName ?? entity.displayName ?? "");
+function getNormalizedEntityName(entityLike) {
+  return normalizeSearchKey(entityLike.canonicalName ?? entityLike.displayName ?? "");
 }
 
-function getEntityBirthYear(entity) {
-  return Number.isInteger(entity.birthYear) ? entity.birthYear : null;
+function getEntityBirthYear(entityLike) {
+  return Number.isInteger(entityLike.birthYear) ? entityLike.birthYear : null;
 }
 
-function getEntityAliasKeys(entity) {
+function getEntityAliasKeys(entityLike) {
   return uniqueSorted(
-    [entity.displayName, entity.canonicalName, ...(entity.aliases ?? [])]
+    [entityLike.displayName, entityLike.canonicalName, ...(entityLike.aliases ?? [])]
       .map((value) => normalizeSearchKey(value))
       .filter(Boolean)
   );
 }
 
+function normalizeTeamKey(team) {
+  return normalizeSearchKey(normalizeAsciiText(team));
+}
+
+function toSeasonStartYear(value) {
+  if (Number.isInteger(value)) return value;
+  const text = String(value ?? "");
+  const match = text.match(/^(\d{4})(?:-(\d{2}|\d{4}))?$/);
+  return match ? Number(match[1]) : null;
+}
+
+function getEntitySeasonYears(entityLike) {
+  const seasons = Array.isArray(entityLike.seasons) ? entityLike.seasons : [];
+  const years = seasons.map((season) => toSeasonStartYear(season)).filter((year) => Number.isInteger(year));
+  if (years.length > 0) {
+    return uniqueSorted(years.map(String)).map(Number);
+  }
+
+  const rangeYears = [];
+  if (Number.isInteger(entityLike.firstSeason)) rangeYears.push(entityLike.firstSeason);
+  if (Number.isInteger(entityLike.lastSeason)) rangeYears.push(entityLike.lastSeason);
+  return uniqueSorted(rangeYears.map(String)).map(Number);
+}
+
+function getEntityTeamKeys(entityLike) {
+  return uniqueSorted(
+    (Array.isArray(entityLike.teams) ? entityLike.teams : [])
+      .map((teamEntry) => normalizeTeamKey(teamEntry?.team))
+      .filter(Boolean)
+  );
+}
+
+function hasIntersection(leftValues, rightValues) {
+  if (leftValues.length === 0 || rightValues.length === 0) return false;
+  const rightSet = new Set(rightValues);
+  return leftValues.some((value) => rightSet.has(value));
+}
+
+function canLinkPlayerEntity(entity, canonical) {
+  const transfermarktId = entity.sourceIds?.transfermarkt ? String(entity.sourceIds.transfermarkt) : null;
+  const canonicalTransfermarktId = canonical.sourceIds?.transfermarkt
+    ? String(canonical.sourceIds.transfermarkt)
+    : null;
+  if (transfermarktId && canonicalTransfermarktId && transfermarktId === canonicalTransfermarktId) {
+    return true;
+  }
+
+  const fbrefId = entity.sourceIds?.fbref ? String(entity.sourceIds.fbref) : null;
+  const canonicalFbrefId = canonical.sourceIds?.fbref ? String(canonical.sourceIds.fbref) : null;
+  if (fbrefId && canonicalFbrefId && fbrefId === canonicalFbrefId) {
+    return true;
+  }
+
+  const normalizedName = getNormalizedEntityName(entity);
+  if (!normalizedName || normalizedName !== getNormalizedEntityName(canonical)) {
+    return false;
+  }
+
+  const birthYear = getEntityBirthYear(entity);
+  const canonicalBirthYear = getEntityBirthYear(canonical);
+  if (birthYear !== null && canonicalBirthYear !== null) {
+    return birthYear === canonicalBirthYear;
+  }
+
+  return (
+    hasIntersection(getEntitySeasonYears(entity), canonical._seasonYears ?? []) &&
+    hasIntersection(getEntityTeamKeys(entity), canonical._teamKeys ?? [])
+  );
+}
+
+function mergeEntityTeams(leftTeams = [], rightTeams = []) {
+  const byKey = new Map();
+  for (const teamEntry of [...leftTeams, ...rightTeams]) {
+    if (!teamEntry?.team) continue;
+    const key = normalizeTeamKey(teamEntry.team);
+    const existing = byKey.get(key);
+    if (!existing) {
+      byKey.set(key, { ...teamEntry });
+      continue;
+    }
+
+    const merged = { ...existing };
+    for (const [field, value] of Object.entries(teamEntry)) {
+      if (field === "team") continue;
+      if (typeof value === "number") {
+        merged[field] = Math.max(typeof merged[field] === "number" ? merged[field] : 0, value);
+      } else if ((merged[field] === undefined || merged[field] === null) && value !== undefined) {
+        merged[field] = value;
+      }
+    }
+    if (String(teamEntry.team).length > String(merged.team).length) {
+      merged.team = teamEntry.team;
+    }
+    byKey.set(key, merged);
+  }
+
+  return [...byKey.values()].sort((left, right) => String(left.team).localeCompare(String(right.team)));
+}
+
+function mergePrimitiveLists(...groups) {
+  return uniqueSorted(groups.flat().filter(Boolean).map((value) => String(value)));
+}
+
 function mergePlayerSources(...groups) {
-  const merged = [];
-  const seenTransfermarktIds = new Set();
-  const seenFbrefIds = new Set();
-  const seenNames = new Map();
-  const seenAliasKeys = new Set();
+  const canonicalPlayers = [];
+  const canonicalByTransfermarktId = new Map();
+  const canonicalByFbrefId = new Map();
+  const canonicalByName = new Map();
+  const richAliasKeys = new Set();
 
-  for (const entities of groups) {
-    for (const entity of entities) {
-      const transfermarktId = entity.sourceIds?.transfermarkt ? String(entity.sourceIds.transfermarkt) : null;
-      if (transfermarktId && seenTransfermarktIds.has(transfermarktId)) {
-        continue;
-      }
+  function registerCanonical(canonical) {
+    const transfermarktId = canonical.sourceIds?.transfermarkt ? String(canonical.sourceIds.transfermarkt) : null;
+    if (transfermarktId) {
+      canonicalByTransfermarktId.set(transfermarktId, canonical);
+    }
 
-      const fbrefId = entity.sourceIds?.fbref ? String(entity.sourceIds.fbref) : null;
-      if (fbrefId && seenFbrefIds.has(fbrefId)) {
-        continue;
-      }
+    const fbrefId = canonical.sourceIds?.fbref ? String(canonical.sourceIds.fbref) : null;
+    if (fbrefId) {
+      canonicalByFbrefId.set(fbrefId, canonical);
+    }
 
-      const normalizedName = getNormalizedEntityName(entity);
-      const birthYear = getEntityBirthYear(entity);
-      const existingBirthYears = normalizedName ? seenNames.get(normalizedName) : null;
-      const hasCompatibleNameMatch =
-        Boolean(normalizedName) &&
-        birthYear !== null &&
-        Boolean(existingBirthYears) &&
-        existingBirthYears.has(birthYear);
-      const aliasKeys = getEntityAliasKeys(entity);
-      const hasAliasCoveredByExistingRichEntity =
-        Object.keys(entity.sourceIds ?? {}).length === 0 && aliasKeys.some((key) => seenAliasKeys.has(key));
-
-      if (hasCompatibleNameMatch || hasAliasCoveredByExistingRichEntity) {
-        continue;
-      }
-
-      merged.push(entity);
-
-      if (transfermarktId) seenTransfermarktIds.add(transfermarktId);
-      if (fbrefId) seenFbrefIds.add(fbrefId);
-      if (normalizedName) {
-        const nextBirthYears = seenNames.get(normalizedName) ?? new Set();
-        if (birthYear !== null) {
-          nextBirthYears.add(birthYear);
-        }
-        seenNames.set(normalizedName, nextBirthYears);
-      }
-      for (const key of aliasKeys) {
-        seenAliasKeys.add(key);
+    const normalizedName = getNormalizedEntityName(canonical);
+    if (normalizedName) {
+      const entries = canonicalByName.get(normalizedName) ?? [];
+      if (!entries.includes(canonical)) {
+        entries.push(canonical);
+        canonicalByName.set(normalizedName, entries);
       }
     }
   }
 
-  return merged;
+  for (const entity of groups.flat()) {
+    const aliasKeys = getEntityAliasKeys(entity);
+    const hasRichSourceIds = Object.keys(entity.sourceIds ?? {}).length > 0;
+    const candidateCanonicals = [];
+    const transfermarktId = entity.sourceIds?.transfermarkt ? String(entity.sourceIds.transfermarkt) : null;
+    if (transfermarktId && canonicalByTransfermarktId.has(transfermarktId)) {
+      candidateCanonicals.push(canonicalByTransfermarktId.get(transfermarktId));
+    }
+
+    const fbrefId = entity.sourceIds?.fbref ? String(entity.sourceIds.fbref) : null;
+    if (fbrefId && canonicalByFbrefId.has(fbrefId)) {
+      candidateCanonicals.push(canonicalByFbrefId.get(fbrefId));
+    }
+
+    const normalizedName = getNormalizedEntityName(entity);
+    for (const canonical of canonicalByName.get(normalizedName) ?? []) {
+      if (!candidateCanonicals.includes(canonical)) {
+        candidateCanonicals.push(canonical);
+      }
+    }
+
+    const matchedCanonical = candidateCanonicals.find((canonical) => canLinkPlayerEntity(entity, canonical)) ?? null;
+
+    if (!matchedCanonical) {
+      if (
+        !hasRichSourceIds &&
+        aliasKeys.some((key) => richAliasKeys.has(key))
+      ) {
+        continue;
+      }
+
+      const canonical = {
+        ...entity,
+        aliases: uniqueSorted([entity.displayName, entity.canonicalName, ...(entity.aliases ?? [])]),
+        sourceIds: { ...(entity.sourceIds ?? {}) },
+        sourceUrls: uniqueSorted(entity.sourceUrls ?? []),
+        birthYear: getEntityBirthYear(entity),
+        birthYears: mergePrimitiveLists(entity.birthYears ?? [], getEntityBirthYear(entity) ?? []),
+        teams: mergeEntityTeams(entity.teams ?? []),
+        seasons: mergePrimitiveLists(entity.seasons ?? []),
+        _aliasKeys: aliasKeys,
+        _teamKeys: getEntityTeamKeys(entity),
+        _seasonYears: getEntitySeasonYears(entity),
+      };
+      canonicalPlayers.push(canonical);
+      registerCanonical(canonical);
+      if (hasRichSourceIds) {
+        for (const key of aliasKeys) {
+          richAliasKeys.add(key);
+        }
+      }
+      continue;
+    }
+
+    const canonical = matchedCanonical;
+    canonical.aliases = uniqueSorted([
+      canonical.displayName,
+      canonical.canonicalName,
+      ...(canonical.aliases ?? []),
+      entity.displayName,
+      entity.canonicalName,
+      ...(entity.aliases ?? []),
+    ]);
+    canonical.sourceIds = { ...(canonical.sourceIds ?? {}), ...(entity.sourceIds ?? {}) };
+    canonical.sourceUrls = uniqueSorted([...(canonical.sourceUrls ?? []), ...(entity.sourceUrls ?? [])]);
+    canonical.provisional = Boolean(canonical.provisional && entity.provisional);
+    canonical.teams = mergeEntityTeams(canonical.teams ?? [], entity.teams ?? []);
+    canonical.seasons = mergePrimitiveLists(canonical.seasons ?? [], entity.seasons ?? []);
+
+    const canonicalBirthYears = mergePrimitiveLists(
+      canonical.birthYears ?? [],
+      entity.birthYears ?? [],
+      getEntityBirthYear(canonical) ?? [],
+      getEntityBirthYear(entity) ?? []
+    );
+    canonical.birthYears = canonicalBirthYears;
+    if (canonical.birthYear === null) {
+      canonical.birthYear = getEntityBirthYear(entity);
+    }
+
+    canonical._aliasKeys = uniqueSorted([...(canonical._aliasKeys ?? []), ...aliasKeys]);
+    canonical._teamKeys = uniqueSorted([...(canonical._teamKeys ?? []), ...getEntityTeamKeys(entity)]);
+    canonical._seasonYears = uniqueSorted(
+      [...(canonical._seasonYears ?? []).map(String), ...getEntitySeasonYears(entity).map(String)]
+    ).map(Number);
+    registerCanonical(canonical);
+    if (Object.keys(canonical.sourceIds ?? {}).length > 0) {
+      for (const key of canonical._aliasKeys) {
+        richAliasKeys.add(key);
+      }
+    }
+  }
+
+  return canonicalPlayers.map((entity) => {
+    const { _aliasKeys, _teamKeys, _seasonYears, ...publicEntity } = entity;
+    return publicEntity;
+  });
 }
 
 function buildSuggestions(entities) {
