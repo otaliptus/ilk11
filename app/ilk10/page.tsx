@@ -72,7 +72,7 @@ function highlightMatch(text: string, query: string): React.ReactNode {
 
 type AutocompleteSuggestion = {
   id: string
-  entityType: Exclude<Ilk10EntityType, "team">
+  entityType: Ilk10EntityType
   label: string
   labelWithMeta: string
   searchKey: string
@@ -113,7 +113,7 @@ function uniqueTerms(values: string[]): string[] {
 
 function createSyntheticSuggestion(
   id: string,
-  entityType: Exclude<Ilk10EntityType, "team">,
+  entityType: Ilk10EntityType,
   label: string,
   aliases: string[] = [],
   resolvedEntityId?: string
@@ -214,31 +214,80 @@ function resolveGuessToAnswerValue(questionAnswers: Ilk10Answer[], rawGuess: str
     : rawGuess
 }
 
-const AUTOCOMPLETE_BY_ENTITY = Object.fromEntries(
-  Object.entries((AUTOCOMPLETE_DATA.byEntityType ?? {}) as Record<string, AutocompleteSuggestion[]>).map(
-    ([entityType, suggestions]) => [
-      entityType,
-      suggestions.map((suggestion) => ({
-        ...suggestion,
-        resolvedEntityId: suggestion.id,
-        searchTerms: uniqueTerms([
-          suggestion.searchKey,
-          normalizeIlk10Answer(suggestion.label),
-          ...suggestion.aliases.map((alias) => normalizeIlk10Answer(alias)),
-          ...getSearchTokens(suggestion.label),
-          ...suggestion.aliases.flatMap((alias) => getSearchTokens(alias)),
-        ]),
-      })),
-    ]
+function indexAutocompleteSuggestions(
+  suggestions: AutocompleteSuggestion[]
+): IndexedAutocompleteSuggestion[] {
+  return suggestions.map((suggestion) => ({
+    ...suggestion,
+    resolvedEntityId: suggestion.resolvedEntityId ?? suggestion.id,
+    searchTerms: uniqueTerms([
+      suggestion.searchKey,
+      normalizeIlk10Answer(suggestion.label),
+      ...suggestion.aliases.map((alias) => normalizeIlk10Answer(alias)),
+      ...getSearchTokens(suggestion.label),
+      ...suggestion.aliases.flatMap((alias) => getSearchTokens(alias)),
+    ]),
+  }))
+}
+
+function buildTeamAutocompleteSuggestions(
+  questions: typeof ILK10_QUESTIONS
+): IndexedAutocompleteSuggestion[] {
+  const suggestions = new Map<string, AutocompleteSuggestion>()
+
+  for (const question of questions) {
+    if (question.entityType !== "team") {
+      continue
+    }
+
+    for (const answer of question.answers) {
+      const candidates = uniqueTerms([answer.value, ...(answer.aliases ?? [])])
+      for (const candidate of candidates) {
+        const normalizedCandidate = normalizeIlk10Answer(candidate)
+        if (!normalizedCandidate) {
+          continue
+        }
+
+        const existing = suggestions.get(normalizedCandidate)
+        const aliases = candidates.filter((value) => value !== candidate)
+        if (existing) {
+          existing.aliases = uniqueTerms([...existing.aliases, ...aliases])
+          continue
+        }
+
+        suggestions.set(normalizedCandidate, {
+          id: `team:${normalizedCandidate}`,
+          entityType: "team",
+          label: candidate,
+          labelWithMeta: candidate,
+          searchKey: normalizedCandidate,
+          aliases,
+          provisional: false,
+        })
+      }
+    }
+  }
+
+  return indexAutocompleteSuggestions(Array.from(suggestions.values())).sort((left, right) =>
+    left.label.localeCompare(right.label)
   )
-) as Record<Exclude<Ilk10EntityType, "team">, IndexedAutocompleteSuggestion[]>
+}
+
+const baseAutocompleteByEntity = Object.fromEntries(
+  Object.entries((AUTOCOMPLETE_DATA.byEntityType ?? {}) as Record<string, AutocompleteSuggestion[]>).map(
+    ([entityType, suggestions]) => [entityType, indexAutocompleteSuggestions(suggestions)]
+  )
+) as Partial<Record<Ilk10EntityType, IndexedAutocompleteSuggestion[]>>
+
+const AUTOCOMPLETE_BY_ENTITY: Record<Ilk10EntityType, IndexedAutocompleteSuggestion[]> = {
+  player: baseAutocompleteByEntity.player ?? [],
+  coach: baseAutocompleteByEntity.coach ?? [],
+  referee: baseAutocompleteByEntity.referee ?? [],
+  team: buildTeamAutocompleteSuggestions(ILK10_QUESTIONS),
+}
 
 function enrichQuestionsWithEntityIds(questions: typeof ILK10_QUESTIONS): typeof ILK10_QUESTIONS {
   return questions.map((question) => {
-    if (question.entityType === "team") {
-      return question
-    }
-
     const basePool = AUTOCOMPLETE_BY_ENTITY[question.entityType] ?? []
     return {
       ...question,
@@ -446,10 +495,6 @@ export default function Ilk10Page() {
     return labels
   }, [gameState.guessEvents])
   const entityAutocompletePool = useMemo(() => {
-    if (dailyQuestion.entityType === "team") {
-      return []
-    }
-
     const entityType = dailyQuestion.entityType
     const basePool = AUTOCOMPLETE_BY_ENTITY[entityType] ?? []
     const normalizedBaseLabels = new Set(
@@ -479,7 +524,7 @@ export default function Ilk10Page() {
   }, [dailyQuestion])
   const autocompleteSuggestions = useMemo(() => {
     const normalizedGuess = normalizeIlk10Answer(guess)
-    if (!normalizedGuess || finished || dailyQuestion.entityType === "team") {
+    if (!normalizedGuess || finished) {
       return []
     }
 
@@ -502,7 +547,7 @@ export default function Ilk10Page() {
       })
 
     return ranked.slice(0, AUTOCOMPLETE_LIMIT).map((entry) => entry.suggestion)
-  }, [dailyQuestion.entityType, entityAutocompletePool, finished, guess])
+  }, [entityAutocompletePool, finished, guess])
   const shareText = useMemo(
     () => buildIlk10ShareText(dailyQuestion, gameState, dailyGameNumber),
     [dailyGameNumber, dailyQuestion, gameState]
