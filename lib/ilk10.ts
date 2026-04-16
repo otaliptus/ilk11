@@ -10,6 +10,21 @@ export const ILK10_DATE_OVERRIDES: Record<string, string> = {
   "2026-04-19": "turkish-super-cup-winning-coaches",
 }
 
+const ILK10_LIVE_QUESTION_IDS = new Set([
+  "super-lig-title-coaches",
+  "turkish-icons-total-goals",
+  "turkish-derby-referees",
+  "big-four-bench-travelers",
+  "turkish-super-cup-winning-coaches",
+])
+
+const ILK10_LIVE_STAT_SUFFIXES = [
+  "-assists",
+  "-goals",
+  "-shots-on-target",
+  "-xg",
+]
+
 const CHARACTER_MAP: Record<string, string> = {
   C: "C",
   c: "C",
@@ -47,13 +62,14 @@ function normalizeCharacters(input: string): string {
 }
 
 export function isAllowedLiveQuestion(question: Ilk10Question): boolean {
-  if (question.entityType === "coach" || question.entityType === "referee") {
+  if (ILK10_LIVE_QUESTION_IDS.has(question.id)) {
     return true
   }
 
-  // The generated FBref pack is stored as Turkish-labeled season-stats questions.
-  // Allow the whole category instead of relying on English keywords in the label.
-  if (question.category === "season-stats") {
+  if (
+    question.category === "season-stats" &&
+    ILK10_LIVE_STAT_SUFFIXES.some((suffix) => question.id.endsWith(suffix))
+  ) {
     return true
   }
 
