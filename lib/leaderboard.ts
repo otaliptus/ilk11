@@ -1,4 +1,10 @@
-import type { ScoreSubmission, LeaderboardResponse } from "@/types/leaderboard"
+import type {
+  GameKey,
+  Ilk10ScoreSubmission,
+  Ilk11ScoreSubmission,
+  LeaderboardResponse,
+  ScoreSubmission,
+} from "@/types/leaderboard"
 
 const NICKNAME_KEY = "leaderboard_nickname"
 
@@ -18,21 +24,21 @@ export function setStoredNickname(name: string): void {
   }
 }
 
-function submissionKey(gameId: number, difficulty: string): string {
-  return `leaderboard_submitted_${gameId}_${difficulty}`
+function submissionKey(game: GameKey, key: string): string {
+  return `leaderboard_submitted_${game}_${key}`
 }
 
-export function isAlreadySubmitted(gameId: number, difficulty: string): boolean {
+export function isAlreadySubmitted(game: GameKey, key: string): boolean {
   try {
-    return localStorage.getItem(submissionKey(gameId, difficulty)) === "1"
+    return localStorage.getItem(submissionKey(game, key)) === "1"
   } catch {
     return false
   }
 }
 
-export function markAsSubmitted(gameId: number, difficulty: string): void {
+export function markAsSubmitted(game: GameKey, key: string): void {
   try {
-    localStorage.setItem(submissionKey(gameId, difficulty), "1")
+    localStorage.setItem(submissionKey(game, key), "1")
   } catch {
     // ignore storage errors
   }
@@ -51,10 +57,23 @@ export async function submitScore(data: ScoreSubmission): Promise<{ success: boo
   return res.json()
 }
 
-export async function fetchLeaderboard(date: string): Promise<LeaderboardResponse> {
-  const res = await fetch(`/api/scores?date=${encodeURIComponent(date)}`)
+export async function fetchLeaderboard(game: GameKey, date: string): Promise<LeaderboardResponse> {
+  const url = `/api/scores?date=${encodeURIComponent(date)}&game=${encodeURIComponent(game)}`
+  const res = await fetch(url)
   if (!res.ok) {
     throw new Error(`Failed to load leaderboard (${res.status})`)
   }
   return res.json()
+}
+
+// Narrow helper types for callers that already know their game.
+export type Ilk11SubmissionInput = Omit<Ilk11ScoreSubmission, "game">
+export type Ilk10SubmissionInput = Omit<Ilk10ScoreSubmission, "game">
+
+export function submitIlk11Score(input: Ilk11SubmissionInput) {
+  return submitScore({ game: "ilk11", ...input })
+}
+
+export function submitIlk10Score(input: Ilk10SubmissionInput) {
+  return submitScore({ game: "ilk10", ...input })
 }
