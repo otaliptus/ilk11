@@ -12,11 +12,9 @@ jobs:
     env:
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CF_PAGES_PROJECT_PLAY: ${{ vars.CF_PAGES_PROJECT_PLAY || 'play' }}
       CF_PAGES_PROJECT_ILK11: ${{ vars.CF_PAGES_PROJECT_ILK11 || 'missing-eleven-tr' }}
       CF_PAGES_PROJECT_ILK10: ${{ vars.CF_PAGES_PROJECT_ILK10 || 'ilk10' }}
-      NEXT_PUBLIC_ILK11_URL: ${{ vars.NEXT_PUBLIC_ILK11_URL || 'https://ilk11.otaliptus.com' }}
-      NEXT_PUBLIC_ILK10_URL: ${{ vars.NEXT_PUBLIC_ILK10_URL || 'https://ilk10.otaliptus.com' }}
-      NEXT_PUBLIC_ILK10_SHARE_DOMAIN: ${{ vars.NEXT_PUBLIC_ILK10_SHARE_DOMAIN || 'ilk10.otaliptus.com' }}
 
     steps:
       - name: Checkout
@@ -37,15 +35,32 @@ jobs:
       - name: Prepare ilk10 subdomain bundle
         run: node cloudflare/prepare-ilk10-subdomain.mjs
 
+      - name: Prepare ilk11 subdomain bundle
+        run: node cloudflare/prepare-ilk11-subdomain.mjs
+
+      - name: Ensure play Pages project exists
+        run: |
+          if ! npx wrangler pages project list | grep -q "^│ ${CF_PAGES_PROJECT_PLAY} "; then
+            npx wrangler pages project create "${CF_PAGES_PROJECT_PLAY}" --production-branch main
+          fi
+
       - name: Ensure ilk10 Pages project exists
         run: |
           if ! npx wrangler pages project list | grep -q "^│ ${CF_PAGES_PROJECT_ILK10} "; then
             npx wrangler pages project create "${CF_PAGES_PROJECT_ILK10}" --production-branch main
           fi
 
-      - name: Deploy ilk11 Pages project
+      - name: Deploy play Pages project
         run: >
           npx wrangler pages deploy out
+          --project-name="${CF_PAGES_PROJECT_PLAY}"
+          --branch=main
+          --commit-hash="${GITHUB_SHA}"
+          --commit-message="${GITHUB_SHA}"
+
+      - name: Deploy ilk11 Pages project
+        run: >
+          npx wrangler pages deploy out-ilk11
           --project-name="${CF_PAGES_PROJECT_ILK11}"
           --branch=main
           --commit-hash="${GITHUB_SHA}"
