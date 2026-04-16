@@ -7,6 +7,8 @@ const NON_REPEATING_ROTATION_EPOCH = "2026-04-13"
 
 export const ILK10_DATE_OVERRIDES: Record<string, string> = {
   "2026-04-12": "super-lig-title-coaches",
+  "2026-04-17": "fbref-range-2011-2016-assists",
+  "2026-04-18": "fbref-range-2011-2016-goals",
   "2026-04-19": "turkish-super-cup-winning-coaches",
 }
 
