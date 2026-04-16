@@ -47,6 +47,8 @@ scripts/
 *.log
 reorder-*
 _backup-*/
+/backups/
+/.playwright-cli/
 *.bak
 
 progress.md
