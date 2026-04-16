@@ -18,7 +18,9 @@ export const metadata: Metadata = {
   description: "Futbol ilk 11 tahmin oyunu: Trendyol Süper Lig",
   manifest: "/manifest.json",
   icons: {
-    icon: "/favicon.ico"
+    icon: "/new_ball.svg",
+    shortcut: "/new_ball.svg",
+    apple: "/new_ball.svg",
   },
 };
 

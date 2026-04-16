@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Trophy } from "lucide-react"
 import { LeaderboardModal } from "@/components/leaderboard-modal"
@@ -65,10 +66,20 @@ export default function LandingPage() {
 
       <div className="relative mx-auto w-full max-w-md sm:max-w-lg px-5 pt-8 sm:pt-12 pb-6 flex-1 flex flex-col">
         <header className="flex items-center justify-between">
-          <h1 className="text-lg sm:text-xl font-extrabold font-mono tracking-tight">
-            <span className="text-emerald-400">otaliptus</span>
-            <span className="text-slate-400"> · play</span>
-          </h1>
+          <div className="flex items-center gap-3">
+            <Image
+              src="/new_ball.svg"
+              alt="otaliptus play"
+              width={36}
+              height={36}
+              className="h-9 w-9 rounded-md shadow-[0_0_24px_rgba(33,168,156,0.18)]"
+              priority
+            />
+            <h1 className="text-lg sm:text-xl font-extrabold font-mono tracking-tight">
+              <span className="text-emerald-400">otaliptus</span>
+              <span className="text-slate-400"> · play</span>
+            </h1>
+          </div>
           <Button
             onClick={() => setShowLeaderboard(true)}
             className="bg-slate-800/70 hover:bg-slate-700 active:bg-slate-800 border border-white/10 text-white rounded-full text-sm h-9 px-3"

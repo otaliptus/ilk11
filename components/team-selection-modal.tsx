@@ -1,6 +1,6 @@
 "use client"
 
-import { Trophy } from "lucide-react"
+import Image from "next/image"
 
 interface DifficultySelectionProps {
   onSelect: (difficulty: "easy" | "hard") => void
@@ -39,7 +39,14 @@ export function DifficultySelection({ onSelect, descriptions }: DifficultySelect
         {/* Logo area */}
         <div className="flex flex-col items-center gap-3">
           <div className="relative">
-            <Trophy className="h-12 w-12 text-emerald-400 drop-shadow-[0_0_12px_rgba(16,185,129,0.4)]" />
+            <Image
+              src="/new_ball.svg"
+              alt="İlk 11"
+              width={56}
+              height={56}
+              className="h-14 w-14 rounded-lg drop-shadow-[0_0_12px_rgba(33,168,156,0.35)]"
+              priority
+            />
           </div>
           <h1 className="text-4xl font-extrabold text-white tracking-tight font-mono">
             İlk 11!
