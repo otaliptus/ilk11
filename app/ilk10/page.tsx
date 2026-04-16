@@ -781,6 +781,16 @@ export default function Ilk10Page() {
       <footer className="pt-2 pb-1 flex justify-center">
         <div className="flex items-center gap-4 rounded-full border border-white/15 bg-black/35 px-3 py-1.5 text-sm leading-none text-slate-200 backdrop-blur-sm">
           <a
+            href="/"
+            className="inline-flex items-center gap-1.5 hover:text-white transition-colors"
+            aria-label="Ana sayfaya dön"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 fill-current">
+              <path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z" />
+            </svg>
+            Ana Sayfa
+          </a>
+          <a
             href={ILK11_PATH}
             className="inline-flex items-center gap-1.5 hover:text-white transition-colors"
           >
