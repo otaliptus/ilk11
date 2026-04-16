@@ -508,8 +508,9 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
       <LeaderboardModal
         open={showLeaderboard}
         onOpenChange={setShowLeaderboard}
+        activeGame="ilk11"
         isGameComplete={gameStats.isGameComplete}
-        difficulty={difficulty}
+        ilk11Difficulty={difficulty}
       />
     </div>
   )
