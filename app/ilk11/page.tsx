@@ -415,8 +415,8 @@ export default function Home() {
           fetch(EASY_CSV_URL),
           fetch(HARD_CSV_URL),
         ])
-        if (!easyRes.ok) throw new Error(`Failed to load easy.csv (${easyRes.status})`)
-        if (!hardRes.ok) throw new Error(`Failed to load hard.csv (${hardRes.status})`)
+        if (!easyRes.ok) throw new Error(`easy.csv yüklenemedi (${easyRes.status})`)
+        if (!hardRes.ok) throw new Error(`hard.csv yüklenemedi (${hardRes.status})`)
 
         const [easyCsvText, hardCsvText] = await Promise.all([easyRes.text(), hardRes.text()])
         const easyRows = parsePoolRows(easyCsvText, "easy")
@@ -472,7 +472,7 @@ export default function Home() {
       <main className="min-h-screen gradient-dark text-white p-2 sm:p-4">
         <div className="container mx-auto flex flex-col items-center justify-center h-[calc(100vh-1rem)] sm:h-[calc(100vh-2rem)]">
           <div className="glass rounded-2xl p-6 text-center">
-            <p className="text-red-400 font-medium">Failed to load game: {error}</p>
+            <p className="text-red-400 font-medium">Oyun yüklenemedi: {error}</p>
           </div>
         </div>
       </main>
@@ -492,7 +492,7 @@ export default function Home() {
           <div className="glass rounded-2xl p-6 text-center">
             <div className="animate-pulse flex flex-col items-center gap-3">
               <div className="h-8 w-8 rounded-full bg-emerald-500/30" />
-              <p className="text-slate-300">Loading game...</p>
+              <p className="text-slate-300">Oyun yükleniyor...</p>
             </div>
           </div>
         )}

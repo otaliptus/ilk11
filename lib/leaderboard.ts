@@ -52,7 +52,7 @@ export async function submitScore(data: ScoreSubmission): Promise<{ success: boo
   })
   if (!res.ok) {
     const body = await res.json().catch(() => ({}))
-    throw new Error((body as { error?: string }).error ?? `Submit failed (${res.status})`)
+    throw new Error((body as { error?: string }).error ?? `Gönderme başarısız (${res.status})`)
   }
   return res.json()
 }
@@ -61,7 +61,7 @@ export async function fetchLeaderboard(game: GameKey, date: string): Promise<Lea
   const url = `/api/scores?date=${encodeURIComponent(date)}&game=${encodeURIComponent(game)}`
   const res = await fetch(url)
   if (!res.ok) {
-    throw new Error(`Failed to load leaderboard (${res.status})`)
+    throw new Error(`Skor tablosu yüklenemedi (${res.status})`)
   }
   return res.json()
 }

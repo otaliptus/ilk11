@@ -345,7 +345,7 @@ export function buildIlk10ShareText(
     shareUrl,
     `Top10 #${gameNumber}`,
     expandedShortLabel,
-    `${state.foundIndexes.length}/10 correct - ${guessesLeft} ${guessesLeft === 1 ? "guess" : "guesses"} left`,
+    `${state.foundIndexes.length}/10 bulundu - ${guessesLeft} hak kaldı`,
     answerLine,
   ].join("\n")
 }
@@ -353,13 +353,13 @@ export function buildIlk10ShareText(
 export function getIlk10StatusMessage(status: "empty" | "duplicate" | "correct" | "incorrect"): string {
   switch (status) {
     case "empty":
-      return "Enter a guess."
+      return "Bir tahmin yaz."
     case "duplicate":
-      return "Already tried that."
+      return "Bu tahmini daha önce yaptın."
     case "correct":
-      return "Correct!"
+      return "Doğru!"
     case "incorrect":
-      return "Not on the list."
+      return "Listede yok."
     default:
       return ""
   }

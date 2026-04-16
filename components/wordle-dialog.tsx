@@ -227,7 +227,7 @@ export function WordleDialog({
           {!isGameOver && (
             <div className="flex items-center justify-center gap-1.5 text-xs text-slate-400 flex-shrink-0">
               <span className="font-bold text-white text-sm">{remainingGuesses}</span>
-              <span>/ {MAX_GUESSES} attempts left</span>
+              <span>/ {MAX_GUESSES} hak kaldı</span>
             </div>
           )}
 
@@ -243,7 +243,7 @@ export function WordleDialog({
 
           {guesses.length >= MAX_GUESSES && !state?.isComplete && (
             <div className="text-red-400 font-bold text-sm text-center bg-red-500/10 py-1.5 rounded-xl border border-red-500/20 break-words flex-shrink-0">
-              Correct answer: {player.name}
+              Doğru cevap: {player.name}
             </div>
           )}
 

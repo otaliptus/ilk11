@@ -37,7 +37,7 @@ export function LeaderboardSubmit(props: LeaderboardSubmitProps) {
   const handleSubmit = async () => {
     const trimmed = nickname.trim()
     if (!trimmed || trimmed.length > 20) {
-      setError("Rumuz 1-20 karakter olmali")
+      setError("Rumuz 1-20 karakter olmalı")
       return
     }
 
@@ -64,7 +64,7 @@ export function LeaderboardSubmit(props: LeaderboardSubmitProps) {
       markAsSubmitted(game, submissionKey)
       setSubmitted(true)
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Gonderme hatasi")
+      setError(e instanceof Error ? e.message : "Gönderme hatası")
     } finally {
       setSubmitting(false)
     }
@@ -74,7 +74,7 @@ export function LeaderboardSubmit(props: LeaderboardSubmitProps) {
     return (
       <div className="flex items-center justify-center gap-2 text-emerald-400 text-sm mt-3">
         <CheckCircle2 className="h-4 w-4" />
-        <span>Skor gonderildi!</span>
+        <span>Skor gönderildi!</span>
       </div>
     )
   }
@@ -106,7 +106,7 @@ export function LeaderboardSubmit(props: LeaderboardSubmitProps) {
           ) : (
             <>
               <Send className="h-3.5 w-3.5 mr-1" />
-              Gonder
+              Gönder
             </>
           )}
         </Button>

@@ -41,7 +41,7 @@ export function DifficultySelection({ onSelect }: DifficultySelectionProps) {
             className="flex-1 group relative py-5 rounded-xl bg-emerald-600/60 hover:bg-emerald-500/70 border border-emerald-400/30 hover:border-emerald-400/50 text-white transition-all duration-200 flex flex-col items-center gap-1.5 active:scale-[0.97]"
           >
             <span className="text-lg leading-none">🟢</span>
-            <span className="text-base font-bold tracking-wide">Easy</span>
+            <span className="text-base font-bold tracking-wide">Kolay</span>
             <span className="text-[11px] font-normal text-emerald-200/70">Büyük kulüpler</span>
           </button>
 
@@ -50,7 +50,7 @@ export function DifficultySelection({ onSelect }: DifficultySelectionProps) {
             className="flex-1 group relative py-5 rounded-xl bg-red-700/50 hover:bg-red-600/60 border border-red-500/30 hover:border-red-500/50 text-white transition-all duration-200 flex flex-col items-center gap-1.5 active:scale-[0.97]"
           >
             <span className="text-lg leading-none">🔴</span>
-            <span className="text-base font-bold tracking-wide">Hard</span>
+            <span className="text-base font-bold tracking-wide">Zor</span>
             <span className="text-[11px] font-normal text-red-200/70">Diğer takımlar</span>
           </button>
         </div>

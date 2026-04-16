@@ -60,30 +60,30 @@ function validateGameKey(value: unknown): GameKey | null {
 
 async function handleIlk11Post(context: { env: Env }, body: Record<string, unknown>): Promise<Response> {
   const nickname = validateNickname(body.nickname)
-  if (!nickname) return jsonError("Nickname must be 1-20 characters", 400)
+  if (!nickname) return jsonError("Rumuz 1-20 karakter olmalı", 400)
 
   const gameDate = validateGameDate(body.game_date)
-  if (!gameDate) return jsonError("Invalid game_date format", 400)
+  if (!gameDate) return jsonError("Geçersiz oyun tarihi", 400)
 
   const difficulty = body.difficulty === "easy" || body.difficulty === "hard" ? body.difficulty : null
-  if (!difficulty) return jsonError("Difficulty must be 'easy' or 'hard'", 400)
+  if (!difficulty) return jsonError("Zorluk 'easy' veya 'hard' olmalı", 400)
 
   const gameId = validateIntInRange(body.game_id, 0, Number.MAX_SAFE_INTEGER)
-  if (gameId === null) return jsonError("Invalid game_id", 400)
+  if (gameId === null) return jsonError("Geçersiz oyun numarası", 400)
 
   const matchNameRaw = typeof body.match_name === "string" ? body.match_name.trim() : ""
   if (matchNameRaw.length < 1 || matchNameRaw.length > 120) {
-    return jsonError("match_name must be 1-120 characters", 400)
+    return jsonError("Maç adı 1-120 karakter olmalı", 400)
   }
 
   const solved = validateIntInRange(body.solved, 0, 11)
-  if (solved === null) return jsonError("solved must be 0-11", 400)
+  if (solved === null) return jsonError("Çözüm sayısı 0-11 olmalı", 400)
 
   const totalAttempts = validateIntInRange(body.total_attempts, 0, 200)
-  if (totalAttempts === null) return jsonError("total_attempts must be 0-200", 400)
+  if (totalAttempts === null) return jsonError("Toplam tahmin 0-200 olmalı", 400)
 
   const failed = validateIntInRange(body.failed, 0, 100)
-  if (failed === null) return jsonError("failed must be 0-100", 400)
+  if (failed === null) return jsonError("Hatalı tahmin 0-100 olmalı", 400)
 
   const isComplete = Boolean(body.is_complete)
 
@@ -159,26 +159,26 @@ async function handleIlk11Get(context: { env: Env }, date: string): Promise<Resp
 
 async function handleIlk10Post(context: { env: Env }, body: Record<string, unknown>): Promise<Response> {
   const nickname = validateNickname(body.nickname)
-  if (!nickname) return jsonError("Nickname must be 1-20 characters", 400)
+  if (!nickname) return jsonError("Rumuz 1-20 karakter olmalı", 400)
 
   const gameDate = validateGameDate(body.game_date)
-  if (!gameDate) return jsonError("Invalid game_date format", 400)
+  if (!gameDate) return jsonError("Geçersiz oyun tarihi", 400)
 
   const questionIdRaw = typeof body.question_id === "string" ? body.question_id.trim() : ""
   if (questionIdRaw.length < 1 || questionIdRaw.length > 120) {
-    return jsonError("question_id must be 1-120 characters", 400)
+    return jsonError("Soru ID 1-120 karakter olmalı", 400)
   }
 
   const questionLabelRaw = typeof body.question_label === "string" ? body.question_label.trim() : ""
   if (questionLabelRaw.length < 1 || questionLabelRaw.length > 120) {
-    return jsonError("question_label must be 1-120 characters", 400)
+    return jsonError("Soru başlığı 1-120 karakter olmalı", 400)
   }
 
   const found = validateIntInRange(body.found, 0, 10)
-  if (found === null) return jsonError("found must be 0-10", 400)
+  if (found === null) return jsonError("Bulunan sayısı 0-10 olmalı", 400)
 
   const livesUsed = validateIntInRange(body.lives_used, 0, 5)
-  if (livesUsed === null) return jsonError("lives_used must be 0-5", 400)
+  if (livesUsed === null) return jsonError("Kullanılan can 0-5 olmalı", 400)
 
   const isComplete = Boolean(body.is_complete)
 
@@ -254,11 +254,11 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   try {
     body = (await context.request.json()) as Record<string, unknown>
   } catch {
-    return jsonError("Invalid JSON body", 400)
+    return jsonError("Geçersiz istek içeriği", 400)
   }
 
   const game = validateGameKey(body.game)
-  if (!game) return jsonError("game must be 'ilk10' or 'ilk11'", 400)
+  if (!game) return jsonError("Oyun 'ilk10' veya 'ilk11' olmalı", 400)
 
   try {
     return game === "ilk11"
@@ -267,7 +267,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err)
     console.error("D1 insert error:", msg)
-    return jsonError(`Database error: ${msg}`, 500)
+    return jsonError(`Veritabanı hatası: ${msg}`, 500)
   }
 }
 
@@ -279,12 +279,12 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
   const url = new URL(context.request.url)
   const date = url.searchParams.get("date")
   if (!date || !/^\d{4}-\d{2}-\d{2}$/.test(date)) {
-    return jsonError("date parameter required (YYYY-MM-DD)", 400)
+    return jsonError("date parametresi gerekli (YYYY-AA-GG)", 400)
   }
 
   const gameParam = url.searchParams.get("game")
   const game = validateGameKey(gameParam)
-  if (!game) return jsonError("game must be 'ilk10' or 'ilk11'", 400)
+  if (!game) return jsonError("Oyun 'ilk10' veya 'ilk11' olmalı", 400)
 
   try {
     return game === "ilk11"
@@ -293,6 +293,6 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err)
     console.error("D1 query error:", msg)
-    return jsonError(`Database error: ${msg}`, 500)
+    return jsonError(`Veritabanı hatası: ${msg}`, 500)
   }
 }

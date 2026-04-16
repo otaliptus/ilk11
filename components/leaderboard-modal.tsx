@@ -54,7 +54,7 @@ export function LeaderboardModal({
     setError(null)
     fetchLeaderboard(selectedGame, selectedDate)
       .then(setData)
-      .catch((e) => setError(e instanceof Error ? e.message : "Yukleme hatasi"))
+      .catch((e) => setError(e instanceof Error ? e.message : "Yükleme hatası"))
       .finally(() => setLoading(false))
   }, [open, selectedDate, selectedGame])
 
@@ -165,7 +165,7 @@ export function LeaderboardModal({
                   : "bg-slate-700/50 text-slate-400 hover:bg-slate-600/50"
               }`}
             >
-              Easy
+              Kolay
             </button>
             <button
               onClick={() => setSelectedDifficulty("hard")}
@@ -175,7 +175,7 @@ export function LeaderboardModal({
                   : "bg-slate-700/50 text-slate-400 hover:bg-slate-600/50"
               }`}
             >
-              Hard
+              Zor
             </button>
           </div>
         )}
@@ -207,10 +207,10 @@ export function LeaderboardModal({
           )}
 
           {!loading && !error && selectedGame === "ilk11" && ilk11Rankings.length === 0 && (
-            <div className="text-center py-8 text-sm text-slate-400">Henuz skor yok</div>
+            <div className="text-center py-8 text-sm text-slate-400">Henüz skor yok</div>
           )}
           {!loading && !error && selectedGame === "ilk10" && ilk10Rankings.length === 0 && (
-            <div className="text-center py-8 text-sm text-slate-400">Henuz skor yok</div>
+            <div className="text-center py-8 text-sm text-slate-400">Henüz skor yok</div>
           )}
 
           {!loading && !error && selectedGame === "ilk11" &&

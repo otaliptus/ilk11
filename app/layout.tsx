@@ -15,7 +15,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "İlk 11!",
-  description: "Football lineup guessing game: Trendyol Süper Lig Edition",
+  description: "Futbol ilk 11 tahmin oyunu: Trendyol Süper Lig",
   manifest: "/manifest.json",
   icons: {
     icon: "/favicon.ico"
@@ -35,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="tr">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

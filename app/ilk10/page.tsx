@@ -87,15 +87,15 @@ type IndexedAutocompleteSuggestion = AutocompleteSuggestion & {
 function getEntityTypeLabel(entityType: Ilk10EntityType): string {
   switch (entityType) {
     case "player":
-      return "player"
+      return "oyuncu"
     case "coach":
-      return "coach"
+      return "teknik direktör"
     case "referee":
-      return "referee"
+      return "hakem"
     case "team":
-      return "team"
+      return "takım"
     default:
-      return "name"
+      return "isim"
   }
 }
 
@@ -530,7 +530,7 @@ export default function Ilk10Page() {
     )
     const isInPool = getExactMatchingSuggestions(entityAutocompletePool, normalizedRaw).length > 0
     if (!isInPool && !matchesAnswerDirectly) {
-      setFeedback("Pick a name from the list")
+      setFeedback("Listeden bir isim seç")
       return
     }
 
@@ -741,7 +741,7 @@ export default function Ilk10Page() {
                 if (event.key === "Enter") submitGuess()
               }}
               disabled={interactionLocked}
-              placeholder={`Type a ${getEntityTypeLabel(DAILY_QUESTION.entityType)}...`}
+              placeholder={`${getEntityTypeLabel(DAILY_QUESTION.entityType)} ara...`}
               className="flex-1 h-12 rounded-xl glass px-4 text-base text-white placeholder:text-slate-400 outline-none focus:ring-2 focus:ring-emerald-400/50 disabled:opacity-50"
             />
             <Button
@@ -749,7 +749,7 @@ export default function Ilk10Page() {
               disabled={interactionLocked}
               className="h-12 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-6 text-base font-bold text-white border border-emerald-400/30 active:scale-[0.97]"
             >
-              Guess
+              Tahmin
             </Button>
           </div>
           {autocompleteSuggestions.length > 0 && (
@@ -829,7 +829,7 @@ export default function Ilk10Page() {
         <DialogContent className="glass border-white/10 text-white sm:max-w-sm">
           <DialogHeader>
             <DialogTitle className="text-2xl font-extrabold font-mono text-center">
-              {solved ? "Solved!" : "Game over"}
+              {solved ? "Çözüldü!" : "Oyun bitti"}
             </DialogTitle>
             <DialogDescription className="text-sm text-slate-400 text-center">
               {DAILY_QUESTION.prompt}
@@ -839,17 +839,17 @@ export default function Ilk10Page() {
           <div className="flex flex-col gap-3 mt-2">
             <div className="grid grid-cols-3 gap-2 text-center">
               <div className="glass-light rounded-lg p-2">
-                <p className="text-[10px] uppercase tracking-wider text-slate-400">Score</p>
+                <p className="text-[10px] uppercase tracking-wider text-slate-400">Skor</p>
                 <p className="text-xl font-bold font-mono text-emerald-400">
                   {gameState.foundIndexes.length}/10
                 </p>
               </div>
               <div className="glass-light rounded-lg p-2">
-                <p className="text-[10px] uppercase tracking-wider text-slate-400">Lives</p>
+                <p className="text-[10px] uppercase tracking-wider text-slate-400">Can</p>
                 <p className="text-xl font-bold font-mono text-red-400">{remainingLives}</p>
               </div>
               <div className="glass-light rounded-lg p-2">
-                <p className="text-[10px] uppercase tracking-wider text-slate-400">Guesses</p>
+                <p className="text-[10px] uppercase tracking-wider text-slate-400">Tahmin</p>
                 <p className="text-xl font-bold font-mono text-slate-200">
                   {gameState.guessEvents.length}
                 </p>
@@ -865,7 +865,7 @@ export default function Ilk10Page() {
               className="rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold h-11 border border-emerald-400/30"
             >
               <Copy className="h-4 w-4 mr-2" />
-              {shareCopied ? "Copied" : "Share"}
+              {shareCopied ? "Kopyalandı" : "Paylaş"}
             </Button>
             <LeaderboardSubmit
               game="ilk10"
