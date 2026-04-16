@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useMemo, useRef, useState } from "react"
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -27,7 +27,6 @@ import {
   normalizeIlk10Answer,
   pickDailyIlk10Question,
 } from "@/lib/ilk10"
-import { getTurkeyDateKey } from "@/lib/date"
 import { ILK11_PATH } from "@/lib/routes"
 import type { Ilk10Answer, Ilk10EntityType, Ilk10StoredState } from "@/types/ilk10"
 import { LeaderboardModal } from "@/components/leaderboard-modal"
@@ -269,19 +268,14 @@ const ENRICHED_QUESTIONS = enrichQuestionsWithEntityIds(ILK10_QUESTIONS)
 const LIVE_QUESTIONS = ENRICHED_QUESTIONS.filter(
   (question) => !question.designExample && isAllowedLiveQuestion(question)
 )
-const DAILY_PICK = pickDailyIlk10Question(LIVE_QUESTIONS, new Date(), ILK10_DATE_OVERRIDES)
-const DAILY_QUESTION = DAILY_PICK.question
-const DAILY_CACHE_TOKEN = getIlk10QuestionCacheToken(DAILY_QUESTION)
-const DAILY_STORAGE_KEY = getIlk10StorageKey(DAILY_QUESTION.id, DAILY_PICK.dateKey, DAILY_CACHE_TOKEN)
-const DAILY_GAME_NUMBER = DAILY_PICK.dayIndex
 
-function loadStoredState(): Ilk10StoredState {
+function loadStoredState(storageKey: string): Ilk10StoredState {
   if (typeof window === "undefined") {
     return createInitialIlk10State()
   }
 
   try {
-    const rawValue = localStorage.getItem(DAILY_STORAGE_KEY)
+    const rawValue = localStorage.getItem(storageKey)
     if (!rawValue) return createInitialIlk10State()
 
     const parsed = JSON.parse(rawValue) as Partial<Ilk10StoredState>
@@ -297,7 +291,23 @@ function loadStoredState(): Ilk10StoredState {
 }
 
 export default function Ilk10Page() {
+  const [currentDate, setCurrentDate] = useState(() => new Date())
+  const dailyPick = useMemo(
+    () => pickDailyIlk10Question(LIVE_QUESTIONS, currentDate, ILK10_DATE_OVERRIDES),
+    [currentDate]
+  )
+  const dailyQuestion = dailyPick.question
+  const dailyCacheToken = useMemo(
+    () => getIlk10QuestionCacheToken(dailyQuestion),
+    [dailyQuestion]
+  )
+  const dailyStorageKey = useMemo(
+    () => getIlk10StorageKey(dailyQuestion.id, dailyPick.dateKey, dailyCacheToken),
+    [dailyCacheToken, dailyPick.dateKey, dailyQuestion.id]
+  )
+  const dailyGameNumber = dailyPick.dayIndex
   const [gameState, setGameState] = useState<Ilk10StoredState>(createInitialIlk10State)
+  const [loadedStorageKey, setLoadedStorageKey] = useState<string | null>(null)
   const [guess, setGuess] = useState("")
   const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(-1)
   const [feedback, setFeedback] = useState("")
@@ -361,14 +371,16 @@ export default function Ilk10Page() {
     return () => { if (scanTimerRef.current) window.clearTimeout(scanTimerRef.current) }
   }, [scanRow])
 
-  useEffect(() => {
-    const storedState = loadStoredState()
+  useLayoutEffect(() => {
+    const storedState = loadStoredState(dailyStorageKey)
     setGameState(storedState)
-    if (isIlk10Finished(DAILY_QUESTION, storedState)) {
-      setShowSummary(true)
-    }
+    setLoadedStorageKey(dailyStorageKey)
+    setShowSummary(isIlk10Finished(dailyQuestion, storedState))
+    setGuess("")
+    setFeedback("")
+    setShareCopied(false)
     inputRef.current?.focus()
-  }, [])
+  }, [dailyQuestion, dailyStorageKey])
 
   useEffect(() => {
     return () => {
@@ -380,40 +392,38 @@ export default function Ilk10Page() {
   useEffect(() => {
     if (typeof window === "undefined") return
 
-    const reloadIfDateChanged = () => {
-      if (getTurkeyDateKey(new Date()) !== DAILY_PICK.dateKey) {
-        window.location.reload()
-      }
-    }
+    const refreshCurrentDate = () => setCurrentDate(new Date())
 
-    const intervalId = window.setInterval(reloadIfDateChanged, 60_000)
+    const intervalId = window.setInterval(refreshCurrentDate, 60_000)
     const handleVisibilityChange = () => {
       if (!document.hidden) {
-        reloadIfDateChanged()
+        refreshCurrentDate()
       }
     }
 
     document.addEventListener("visibilitychange", handleVisibilityChange)
-    window.addEventListener("focus", reloadIfDateChanged)
+    window.addEventListener("focus", refreshCurrentDate)
 
     return () => {
       window.clearInterval(intervalId)
       document.removeEventListener("visibilitychange", handleVisibilityChange)
-      window.removeEventListener("focus", reloadIfDateChanged)
+      window.removeEventListener("focus", refreshCurrentDate)
     }
   }, [])
 
   useEffect(() => {
+    if (loadedStorageKey !== dailyStorageKey) return
+
     try {
-      localStorage.setItem(DAILY_STORAGE_KEY, JSON.stringify(gameState))
+      localStorage.setItem(dailyStorageKey, JSON.stringify(gameState))
     } catch {
       // ignore storage errors
     }
-  }, [gameState])
+  }, [dailyStorageKey, gameState, loadedStorageKey])
 
   const remainingLives = getRemainingLives(gameState)
-  const solved = isIlk10Solved(DAILY_QUESTION, gameState)
-  const finished = isIlk10Finished(DAILY_QUESTION, gameState)
+  const solved = isIlk10Solved(dailyQuestion, gameState)
+  const finished = isIlk10Finished(dailyQuestion, gameState)
   const interactionLocked = finished || Boolean(boardFx) || scanRow >= 0
 
   useEffect(() => {
@@ -436,11 +446,11 @@ export default function Ilk10Page() {
     return labels
   }, [gameState.guessEvents])
   const entityAutocompletePool = useMemo(() => {
-    if (DAILY_QUESTION.entityType === "team") {
+    if (dailyQuestion.entityType === "team") {
       return []
     }
 
-    const entityType = DAILY_QUESTION.entityType
+    const entityType = dailyQuestion.entityType
     const basePool = AUTOCOMPLETE_BY_ENTITY[entityType] ?? []
     const normalizedBaseLabels = new Set(
       basePool.flatMap((suggestion) => [
@@ -448,7 +458,7 @@ export default function Ilk10Page() {
         ...suggestion.aliases.map((alias) => normalizeIlk10Answer(alias)),
       ])
     )
-    const syntheticSuggestions = DAILY_QUESTION.answers
+    const syntheticSuggestions = dailyQuestion.answers
       .map((answer, index) => {
         const normalizedValue = normalizeIlk10Answer(answer.value)
         if (!normalizedValue || normalizedBaseLabels.has(normalizedValue)) {
@@ -456,7 +466,7 @@ export default function Ilk10Page() {
         }
 
         return createSyntheticSuggestion(
-          `answer:${DAILY_QUESTION.id}:${index}`,
+          `answer:${dailyQuestion.id}:${index}`,
           entityType,
           answer.value,
           answer.aliases ?? [],
@@ -466,10 +476,10 @@ export default function Ilk10Page() {
       .filter((suggestion): suggestion is IndexedAutocompleteSuggestion => Boolean(suggestion))
 
     return [...syntheticSuggestions, ...basePool]
-  }, [])
+  }, [dailyQuestion])
   const autocompleteSuggestions = useMemo(() => {
     const normalizedGuess = normalizeIlk10Answer(guess)
-    if (!normalizedGuess || finished || DAILY_QUESTION.entityType === "team") {
+    if (!normalizedGuess || finished || dailyQuestion.entityType === "team") {
       return []
     }
 
@@ -492,10 +502,10 @@ export default function Ilk10Page() {
       })
 
     return ranked.slice(0, AUTOCOMPLETE_LIMIT).map((entry) => entry.suggestion)
-  }, [entityAutocompletePool, finished, guess])
+  }, [dailyQuestion.entityType, entityAutocompletePool, finished, guess])
   const shareText = useMemo(
-    () => buildIlk10ShareText(DAILY_QUESTION, gameState, DAILY_GAME_NUMBER),
-    [gameState]
+    () => buildIlk10ShareText(dailyQuestion, gameState, dailyGameNumber),
+    [dailyGameNumber, dailyQuestion, gameState]
   )
 
   useEffect(() => {
@@ -505,10 +515,10 @@ export default function Ilk10Page() {
   const submitGuess = (rawGuess = guess, guessedEntityId?: string) => {
     if (interactionLocked) return
 
-    const resolvedGuess = resolveGuessToAnswerValue(DAILY_QUESTION.answers, rawGuess)
+    const resolvedGuess = resolveGuessToAnswerValue(dailyQuestion.answers, rawGuess)
     const normalizedRaw = normalizeIlk10Answer(resolvedGuess)
     const resolvedEntityId = guessedEntityId ?? getExactUniqueSuggestionEntityId(entityAutocompletePool, normalizedRaw)
-    const matchesAnswerDirectly = DAILY_QUESTION.answers.some((answer) =>
+    const matchesAnswerDirectly = dailyQuestion.answers.some((answer) =>
       getExactAnswerTerms(answer).includes(normalizedRaw)
     )
     const isInPool = getExactMatchingSuggestions(entityAutocompletePool, normalizedRaw).length > 0
@@ -517,7 +527,7 @@ export default function Ilk10Page() {
       return
     }
 
-    const outcome = applyIlk10Guess(DAILY_QUESTION, gameState, resolvedGuess, new Date(), resolvedEntityId)
+    const outcome = applyIlk10Guess(dailyQuestion, gameState, resolvedGuess, new Date(), resolvedEntityId)
 
     // For correct/incorrect guesses, start scan animation (delays state update)
     if (
@@ -545,11 +555,11 @@ export default function Ilk10Page() {
   }
 
   const chooseSuggestion = (suggestion: IndexedAutocompleteSuggestion) => {
-    const matchingAnswerIndexes = getMatchingAnswerIndexesBySuggestion(DAILY_QUESTION.answers, suggestion)
+    const matchingAnswerIndexes = getMatchingAnswerIndexesBySuggestion(dailyQuestion.answers, suggestion)
     const suggestionEntityId = getSuggestionResolvedEntityId(suggestion)
 
     if (matchingAnswerIndexes.length === 1) {
-      submitGuess(DAILY_QUESTION.answers[matchingAnswerIndexes[0]].value, suggestionEntityId)
+      submitGuess(dailyQuestion.answers[matchingAnswerIndexes[0]].value, suggestionEntityId)
       return
     }
 
@@ -624,11 +634,11 @@ export default function Ilk10Page() {
         {/* Answer slots */}
         <div className="glass rounded-2xl p-2 sm:p-3">
           <ul className="flex flex-col gap-2">
-            {DAILY_QUESTION.answers.map((answer, index) => {
+            {dailyQuestion.answers.map((answer, index) => {
               const found = foundSet.has(index)
               const missedReveal = finished && !found
               const revealed = found || missedReveal
-              const waveDelay = `${(DAILY_QUESTION.answers.length - 1 - index) * 70}ms`
+              const waveDelay = `${(dailyQuestion.answers.length - 1 - index) * 70}ms`
               const slotWaveActive = boardFx?.kind === "success"
               const slotHit = boardFx?.kind === "success" && boardFx.answerIndex === index
 
@@ -686,7 +696,7 @@ export default function Ilk10Page() {
 
         {/* Prompt below board */}
         <p className="text-slate-300 text-base text-center px-2 leading-snug mx-auto pt-3 pb-1">
-          {DAILY_QUESTION.prompt}
+          {dailyQuestion.prompt}
         </p>
 
         {/* Input area */}
@@ -724,7 +734,7 @@ export default function Ilk10Page() {
                 if (event.key === "Enter") submitGuess()
               }}
               disabled={interactionLocked}
-              placeholder={`${getEntityTypeLabel(DAILY_QUESTION.entityType)} ara...`}
+              placeholder={`${getEntityTypeLabel(dailyQuestion.entityType)} ara...`}
               className="flex-1 h-12 rounded-xl glass px-4 text-base text-white placeholder:text-slate-400 outline-none focus:ring-2 focus:ring-emerald-400/50 disabled:opacity-50"
             />
             <Button
@@ -815,7 +825,7 @@ export default function Ilk10Page() {
               {solved ? "Çözüldü!" : "Oyun bitti"}
             </DialogTitle>
             <DialogDescription className="text-sm text-slate-400 text-center">
-              {DAILY_QUESTION.prompt}
+              {dailyQuestion.prompt}
             </DialogDescription>
           </DialogHeader>
 
@@ -852,13 +862,13 @@ export default function Ilk10Page() {
             </Button>
             <LeaderboardSubmit
               game="ilk10"
-              submissionKey={`${DAILY_QUESTION.id}_${DAILY_PICK.dateKey}`}
+              submissionKey={`${dailyQuestion.id}_${dailyPick.dateKey}`}
               payload={{
-                question_id: DAILY_QUESTION.id,
-                question_label: DAILY_QUESTION.shortLabel,
+                question_id: dailyQuestion.id,
+                question_label: dailyQuestion.shortLabel,
                 found: gameState.foundIndexes.length,
                 lives_used: gameState.missCount,
-                is_complete: isIlk10Solved(DAILY_QUESTION, gameState),
+                is_complete: isIlk10Solved(dailyQuestion, gameState),
               }}
             />
           </div>
@@ -868,7 +878,7 @@ export default function Ilk10Page() {
         open={showLeaderboard}
         onOpenChange={setShowLeaderboard}
         activeGame="ilk10"
-        isGameComplete={isIlk10Finished(DAILY_QUESTION, gameState)}
+        isGameComplete={isIlk10Finished(dailyQuestion, gameState)}
       />
     </main>
   )
