@@ -5,7 +5,7 @@ import { Formation } from "@/components/formation"
 import { DifficultySelectionModal } from "@/components/team-selection-modal"
 import { assignPositions } from "@/lib/api"
 import { GAME_TIME_ZONE, getTurkeyDayIndex } from "@/lib/date"
-import { ILK10_PUBLIC_URL } from "@/lib/site"
+import { ILK10_PATH } from "@/lib/routes"
 
 type Difficulty = "easy" | "hard"
 
@@ -512,7 +512,7 @@ export default function Home() {
       <footer className="pt-2 pb-1 flex justify-center">
         <div className="flex items-center gap-4 rounded-full border border-white/15 bg-black/35 px-3 py-1.5 text-sm leading-none text-slate-200 backdrop-blur-sm">
           <a
-            href={ILK10_PUBLIC_URL}
+            href={ILK10_PATH}
             className="inline-flex items-center gap-1.5 hover:text-white transition-colors"
           >
             <span className="inline-flex h-4 w-4 items-center justify-center rounded-full border border-emerald-400/50 text-[10px] font-bold text-emerald-300">

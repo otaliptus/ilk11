@@ -26,7 +26,7 @@ import {
   pickDailyIlk10Question,
 } from "@/lib/ilk10"
 import { getTurkeyDateKey } from "@/lib/date"
-import { ILK11_PUBLIC_URL } from "@/lib/site"
+import { ILK11_PATH } from "@/lib/routes"
 import type { Ilk10Answer, Ilk10EntityType, Ilk10StoredState } from "@/types/ilk10"
 import { Copy, Heart } from "lucide-react"
 const AUTOCOMPLETE_LIMIT = 8
@@ -765,7 +765,7 @@ export default function Ilk10Page() {
       <footer className="pt-2 pb-1 flex justify-center">
         <div className="flex items-center gap-4 rounded-full border border-white/15 bg-black/35 px-3 py-1.5 text-sm leading-none text-slate-200 backdrop-blur-sm">
           <a
-            href={ILK11_PUBLIC_URL}
+            href={ILK11_PATH}
             className="inline-flex items-center gap-1.5 hover:text-white transition-colors"
           >
             <span className="inline-flex h-4 w-4 items-center justify-center rounded-full border border-sky-400/50 text-[10px] font-bold text-sky-300">

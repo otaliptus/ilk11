@@ -1,6 +1,6 @@
 import type { Ilk10GuessEvent, Ilk10Question, Ilk10StoredState } from "@/types/ilk10"
 import { GAME_TIME_ZONE, getTurkeyDateKey, getTurkeyDayIndex } from "@/lib/date"
-import { ILK10_SHARE_DOMAIN } from "@/lib/site"
+import { ILK10_SHARE_DOMAIN } from "@/lib/routes"
 
 const MAX_LIVES = 5
 const NON_REPEATING_ROTATION_EPOCH = "2026-04-13"
