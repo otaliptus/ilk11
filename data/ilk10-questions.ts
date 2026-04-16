@@ -18,8 +18,8 @@ const TITLE_WINNING_COACHES_CUTOFF_ALIASES = [
 const MANUAL_ILK10_QUESTIONS: Ilk10Question[] = [
   {
     id: "gs-fb-overlap-example",
-    shortLabel: "GS x FB Crossovers",
-    prompt: "Top 10 players who played for both Galatasaray and Fenerbahce",
+    shortLabel: "GS x FB Ortak Oyuncular",
+    prompt: "Hem Galatasaray hem Fenerbahçe'de oynamış oyuncular (ilk 10)",
     entityType: "player",
     category: "club-overlap",
     sourceLabel: "FBref-style query example",
@@ -43,8 +43,8 @@ const MANUAL_ILK10_QUESTIONS: Ilk10Question[] = [
   },
   {
     id: "super-lig-title-coaches",
-    shortLabel: "Title-Winning Coaches",
-    prompt: "Top 10 Super Lig coaches ranked by championship count",
+    shortLabel: "Şampiyon Teknik Direktörler",
+    prompt: "En çok Süper Lig şampiyonluğu kazanan teknik direktörler (ilk 10)",
     entityType: "coach",
     category: "title-race",
     sourceLabel: "Wikipedia: Football records and statistics in Turkey",
@@ -65,8 +65,8 @@ const MANUAL_ILK10_QUESTIONS: Ilk10Question[] = [
   },
   {
     id: "turkish-clubs-europe-nights",
-    shortLabel: "European Nights",
-    prompt: "Top 10 Turkish clubs by European competition appearances",
+    shortLabel: "Avrupa Geceleri",
+    prompt: "Avrupa kupalarına en çok katılan Türk kulüpleri (ilk 10)",
     entityType: "team",
     category: "europe",
     sourceLabel: "Hand-curated beta question pack",
@@ -86,8 +86,8 @@ const MANUAL_ILK10_QUESTIONS: Ilk10Question[] = [
   },
   {
     id: "turkish-icons-total-goals",
-    shortLabel: "Goal Machines",
-    prompt: "Top 10 all-time Super Lig scorers by career goals",
+    shortLabel: "Gol Makineleri",
+    prompt: "Süper Lig tarihinin en golcü oyuncuları (ilk 10)",
     entityType: "player",
     category: "all-time",
     sourceLabel: "Transfermarkt",
@@ -108,8 +108,8 @@ const MANUAL_ILK10_QUESTIONS: Ilk10Question[] = [
   },
   {
     id: "turkish-derby-referees",
-    shortLabel: "Derby Referees",
-    prompt: "Top 10 referees by big-three derby matches officiated",
+    shortLabel: "Derbi Hakemleri",
+    prompt: "En çok büyük 3'lü derbisi yöneten hakemler (ilk 10)",
     entityType: "referee",
     category: "derby",
     sourceLabel: "Hand-curated beta question pack",
@@ -129,8 +129,8 @@ const MANUAL_ILK10_QUESTIONS: Ilk10Question[] = [
   },
   {
     id: "big-four-bench-travelers",
-    shortLabel: "Big Four Benches",
-    prompt: "Top 10 coaches who managed at least 2 of the Turkish big four",
+    shortLabel: "Büyük 4 Teknik Direktörleri",
+    prompt: "Türk büyük 4'ünün en az 2'sini çalıştıran teknik direktörler (ilk 10)",
     entityType: "coach",
     category: "club-overlap",
     sourceLabel: "Hand-curated beta question pack",
@@ -150,8 +150,8 @@ const MANUAL_ILK10_QUESTIONS: Ilk10Question[] = [
   },
   {
     id: "turkish-super-cup-winning-coaches",
-    shortLabel: "Super Cup Coaches",
-    prompt: "Top 10 coaches by Turkish Super Cup titles",
+    shortLabel: "Süper Kupa Şampiyonu Teknik Direktörler",
+    prompt: "En çok Türkiye Süper Kupası kazanan teknik direktörler (ilk 10)",
     entityType: "coach",
     category: "title-race",
     sourceLabel: "Transfermarkt: TFF Super Kupa records",

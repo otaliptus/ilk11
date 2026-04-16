@@ -405,9 +405,6 @@ export default function Home() {
 
   // Load easy/hard pools once
   useEffect(() => {
-    try {
-      localStorage.setItem("last_played_game", "ilk11")
-    } catch {}
     let isMounted = true
     const load = async () => {
       try {
@@ -428,11 +425,20 @@ export default function Home() {
         }
       } catch (err) {
         if (!isMounted) return
-        setError(err instanceof Error ? err.message : "Unknown error")
+        setError(err instanceof Error ? err.message : "Bilinmeyen hata")
       }
     }
     load()
     return () => { isMounted = false }
+  }, [])
+
+  // Allow pre-selecting difficulty via ?d=easy or ?d=hard (set by the picker on /).
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    const param = new URLSearchParams(window.location.search).get("d")
+    if (param === "easy" || param === "hard") {
+      setDifficulty(param)
+    }
   }, [])
 
   const handleDifficultySelect = (d: Difficulty) => {
@@ -446,7 +452,7 @@ export default function Home() {
       const data = getGameForDifficulty(dailyPools, difficulty)
       setGameData(data)
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Unknown error")
+      setError(err instanceof Error ? err.message : "Bilinmeyen hata")
     }
   }, [dailyPools, difficulty])
 
@@ -542,7 +548,7 @@ export default function Home() {
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 fill-current">
               <path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2.2c-3.2.69-3.87-1.35-3.87-1.35-.52-1.32-1.28-1.67-1.28-1.67-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.72-1.54-2.56-.29-5.25-1.28-5.25-5.72 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11.02 11.02 0 0 1 5.77 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.24 2.76.12 3.05.73.81 1.17 1.84 1.17 3.1 0 4.45-2.69 5.43-5.26 5.72.41.36.78 1.06.78 2.14v3.17c0 .31.21.66.8.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
             </svg>
-            GitHub
+            otaliptus/ilk11
           </a>
           <a
             href="https://x.com/otaliptus"
