@@ -42,9 +42,14 @@ export function getLastNDates(n: number): string[] {
   return dates
 }
 
-export function formatDateForDisplay(dateStr: string): { dayName: string; dayNumber: number } {
+export function formatDateForDisplay(dateStr: string): {
+  dayName: string
+  dayNumber: number
+  monthLabel: string
+} {
   const [y, m, d] = dateStr.split("-").map(Number)
   const date = new Date(y, m - 1, d)
   const dayName = new Intl.DateTimeFormat("tr-TR", { weekday: "short" }).format(date)
-  return { dayName, dayNumber: d }
+  const monthLabel = new Intl.DateTimeFormat("tr-TR", { month: "short" }).format(date)
+  return { dayName, dayNumber: d, monthLabel }
 }

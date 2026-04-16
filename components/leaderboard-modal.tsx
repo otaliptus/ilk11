@@ -132,7 +132,7 @@ export function LeaderboardModal({
         {/* Day selector */}
         <div className="grid grid-cols-7 gap-1 w-full py-1">
           {dates.map((date) => {
-            const { dayName, dayNumber } = formatDateForDisplay(date)
+            const { dayName, dayNumber, monthLabel } = formatDateForDisplay(date)
             const isSelected = date === selectedDate
             const isToday = date === today
             return (
@@ -149,6 +149,7 @@ export function LeaderboardModal({
               >
                 <span className="text-[10px] leading-none">{dayName}</span>
                 <span className="text-sm leading-tight">{dayNumber}</span>
+                <span className="text-[9px] leading-none uppercase">{monthLabel}</span>
               </button>
             )
           })}
