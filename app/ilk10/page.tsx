@@ -177,6 +177,31 @@ function getExactUniqueSuggestionEntityId(
   return uniqueEntityIds.length === 1 ? uniqueEntityIds[0] : undefined
 }
 
+function getSuggestionMatchRank(
+  suggestion: IndexedAutocompleteSuggestion,
+  normalizedGuess: string
+): number | null {
+  const normalizedLabel = normalizeIlk10Answer(suggestion.label)
+  const normalizedAliases = suggestion.aliases.map((alias) => normalizeIlk10Answer(alias))
+  const labelTokens = getSearchTokens(suggestion.label)
+  const aliasTokens = suggestion.aliases.flatMap((alias) => getSearchTokens(alias))
+
+  if (normalizedLabel === normalizedGuess) return 0
+  if (normalizedAliases.includes(normalizedGuess)) return 1
+  if (labelTokens.includes(normalizedGuess)) return 2
+  if (aliasTokens.includes(normalizedGuess)) return 3
+  if (normalizedLabel.startsWith(normalizedGuess)) return 4
+  if (normalizedAliases.some((alias) => alias.startsWith(normalizedGuess))) return 5
+  if (labelTokens.some((token) => token.startsWith(normalizedGuess))) return 6
+  if (aliasTokens.some((token) => token.startsWith(normalizedGuess))) return 7
+  if (normalizedLabel.includes(normalizedGuess)) return 8
+  if (normalizedAliases.some((alias) => alias.includes(normalizedGuess))) return 9
+  if (labelTokens.some((token) => token.includes(normalizedGuess))) return 10
+  if (aliasTokens.some((token) => token.includes(normalizedGuess))) return 11
+
+  return null
+}
+
 function getMatchingAnswerIndexesBySuggestion(
   questionAnswers: Ilk10Answer[],
   suggestion: IndexedAutocompleteSuggestion
@@ -539,19 +564,20 @@ export default function Ilk10Page() {
 
     const ranked = entityAutocompletePool
       .map((suggestion) => {
-        const exactMatch = suggestion.searchTerms.some((term) => term === normalizedGuess)
-        const prefixMatch = suggestion.searchTerms.some((term) => term.startsWith(normalizedGuess))
-        const containsMatch = suggestion.searchTerms.some((term) => term.includes(normalizedGuess))
-        if (!exactMatch && !prefixMatch && !containsMatch) return null
+        const rank = getSuggestionMatchRank(suggestion, normalizedGuess)
+        if (rank === null) return null
 
         return {
           suggestion,
-          rank: exactMatch ? 0 : prefixMatch ? 1 : 2,
+          rank,
         }
       })
       .filter((entry): entry is { suggestion: IndexedAutocompleteSuggestion; rank: number } => Boolean(entry))
       .sort((left, right) => {
         if (left.rank !== right.rank) return left.rank - right.rank
+        if (left.suggestion.label.length !== right.suggestion.label.length) {
+          return left.suggestion.label.length - right.suggestion.label.length
+        }
         return left.suggestion.label.localeCompare(right.suggestion.label)
       })
 
