@@ -221,7 +221,7 @@ const MANUAL_ILK10_QUESTIONS: Ilk10Question[] = [
       { value: "Sivasspor", scoreLabel: "11" },
       { value: "Goztepe", scoreLabel: "11" },
       { value: "Alanyaspor", scoreLabel: "9" },
-      { value: "Basaksehir", scoreLabel: "8", aliases: ["Istanbul Basaksehir"] },
+      { value: "Istanbul Basaksehir", scoreLabel: "8", aliases: ["Basaksehir"] },
       { value: "Samsunspor", scoreLabel: "8" },
       {
         value: "Fatih Karagumruk",
