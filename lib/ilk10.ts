@@ -8,7 +8,11 @@ const NON_REPEATING_ROTATION_EPOCH = "2026-04-13"
 export const ILK10_DATE_OVERRIDES: Record<string, string> = {
   "2026-04-12": "super-lig-title-coaches",
   "2026-04-16": "fbref-range-2016-2022-goals",
-  "2026-04-17": "fenerbahce-most-points-dropped-since-2020",
+  "2026-04-17": "turkish-cup-winning-teams",
+}
+
+export const ILK10_DATE_INSERTIONS: Record<string, string> = {
+  "2026-04-18": "fenerbahce-most-points-dropped-since-2020",
 }
 
 const ILK10_LIVE_QUESTION_IDS = new Set([
@@ -142,6 +146,13 @@ function parseEpochDayIndex(epochDateKey: string): number {
   return Math.floor(Date.UTC(epochYear, epochMonth - 1, epochDay) / 86_400_000)
 }
 
+function countInsertionsBeforeDate(
+  dateKey: string,
+  questionIdInsertions: Record<string, string>
+): number {
+  return Object.keys(questionIdInsertions).filter((insertionDateKey) => insertionDateKey < dateKey).length
+}
+
 function pickLegacyIlk10Question(questions: Ilk10Question[], dateKey: string): Ilk10Question {
   const seed = fnv1a32(`${GAME_TIME_ZONE}:${dateKey}:ilk10`)
   const rng = mulberry32(seed)
@@ -265,7 +276,8 @@ function pickNonRepeatingIlk10Question(
 export function pickDailyIlk10Question(
   questions: Ilk10Question[],
   date = new Date(),
-  questionIdOverrides: Record<string, string> = {}
+  questionIdOverrides: Record<string, string> = {},
+  questionIdInsertions: Record<string, string> = {}
 ): { question: Ilk10Question; dayIndex: number; dateKey: string } {
   if (questions.length === 0) {
     throw new Error("No ilk10 questions configured")
@@ -285,14 +297,27 @@ export function pickDailyIlk10Question(
     }
   }
 
+  const insertionQuestionId = questionIdInsertions[dateKey]
+  if (insertionQuestionId) {
+    const insertedQuestion = questions.find((question) => question.id === insertionQuestionId)
+    if (insertedQuestion) {
+      return {
+        question: insertedQuestion,
+        dayIndex,
+        dateKey,
+      }
+    }
+  }
+
   const epochDayIndex = parseEpochDayIndex(NON_REPEATING_ROTATION_EPOCH)
+  const shiftedDayIndex = dayIndex - countInsertionsBeforeDate(dateKey, questionIdInsertions)
 
   let question: Ilk10Question
 
-  if (dayIndex < epochDayIndex) {
+  if (shiftedDayIndex < epochDayIndex) {
     question = pickLegacyIlk10Question(questions, dateKey)
   } else {
-    question = pickNonRepeatingIlk10Question(questions, dayIndex, epochDayIndex)
+    question = pickNonRepeatingIlk10Question(questions, shiftedDayIndex, epochDayIndex)
   }
 
   return {
@@ -312,6 +337,8 @@ export function getIlk10QuestionCacheToken(question: Ilk10Question): string {
     ...question.answers.map((answer) =>
       [
         answer.value,
+        answer.displayValue ?? "",
+        answer.scoreLabel ?? "",
         answer.entityId ?? "",
         ...(answer.aliases ?? []),
       ].join("|")

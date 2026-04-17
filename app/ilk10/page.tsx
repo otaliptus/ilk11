@@ -14,6 +14,7 @@ import { ILK11_TEAM_AUTOCOMPLETE } from "@/data/ilk11-team-autocomplete"
 import AUTOCOMPLETE_DATA from "@/registry/output/autocomplete.json"
 import {
   ILK10_MAX_LIVES,
+  ILK10_DATE_INSERTIONS,
   ILK10_DATE_OVERRIDES,
   applyIlk10Guess,
   buildIlk10ShareText,
@@ -350,7 +351,7 @@ function loadStoredState(storageKey: string): Ilk10StoredState {
 export default function Ilk10Page() {
   const [currentDate, setCurrentDate] = useState(() => new Date())
   const dailyPick = useMemo(
-    () => pickDailyIlk10Question(LIVE_QUESTIONS, currentDate, ILK10_DATE_OVERRIDES),
+    () => pickDailyIlk10Question(LIVE_QUESTIONS, currentDate, ILK10_DATE_OVERRIDES, ILK10_DATE_INSERTIONS),
     [currentDate]
   )
   const dailyQuestion = dailyPick.question
