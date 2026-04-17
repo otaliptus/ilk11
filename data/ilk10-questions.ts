@@ -204,6 +204,33 @@ const MANUAL_ILK10_QUESTIONS: Ilk10Question[] = [
       },
     ],
   },
+  {
+    id: "fenerbahce-most-points-dropped-since-2020",
+    shortLabel: "FB 20/21+ Puan Kayıpları",
+    prompt: "2020-21'den beri Fenerbahçe'nin Süper Lig'de en çok puan kaybettiği takımlar",
+    entityType: "team",
+    category: "title-race",
+    sourceLabel: "Transfermarkt: Fenerbahce bilanz vs clubs",
+    sourceUrl: "https://www.transfermarkt.com/fenerbahce/bilanz/verein/36/plus/0?saison_id=2020&wettbewerb_id=TR1",
+    note: "Ordered by dropped points since the 2020-21 Super Lig season, computed as 3 * matches - points won by Fenerbahce. The 10th slot accepts both Karagümrük and Adana Demirspor because they are tied on 7 dropped points.",
+    answers: [
+      { value: "Besiktas", scoreLabel: "20", aliases: ["Besiktas JK"] },
+      { value: "Galatasaray", scoreLabel: "20", aliases: ["Galatasaray SK"] },
+      { value: "Trabzonspor", scoreLabel: "11" },
+      { value: "Konyaspor", scoreLabel: "11" },
+      { value: "Sivasspor", scoreLabel: "11" },
+      { value: "Goztepe", scoreLabel: "11" },
+      { value: "Alanyaspor", scoreLabel: "9" },
+      { value: "Basaksehir", scoreLabel: "8", aliases: ["Istanbul Basaksehir"] },
+      { value: "Samsunspor", scoreLabel: "8" },
+      {
+        value: "Fatih Karagumruk",
+        displayValue: "Fatih Karagümrük / Adana Demirspor",
+        scoreLabel: "7",
+        aliases: ["Karagumruk", "Karagümrük", "Adana Demirspor"],
+      },
+    ],
+  },
 ]
 
 export const ILK10_QUESTIONS: Ilk10Question[] = [

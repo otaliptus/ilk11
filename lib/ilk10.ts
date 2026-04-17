@@ -8,7 +8,7 @@ const NON_REPEATING_ROTATION_EPOCH = "2026-04-13"
 export const ILK10_DATE_OVERRIDES: Record<string, string> = {
   "2026-04-12": "super-lig-title-coaches",
   "2026-04-16": "fbref-range-2016-2022-goals",
-  "2026-04-17": "turkish-cup-winning-teams",
+  "2026-04-17": "fenerbahce-most-points-dropped-since-2020",
 }
 
 const ILK10_LIVE_QUESTION_IDS = new Set([
@@ -18,6 +18,7 @@ const ILK10_LIVE_QUESTION_IDS = new Set([
   "big-four-bench-travelers",
   "turkish-super-cup-winning-coaches",
   "turkish-cup-winning-teams",
+  "fenerbahce-most-points-dropped-since-2020",
 ])
 
 const ILK10_EXCLUDED_LIVE_QUESTION_IDS = new Set([
