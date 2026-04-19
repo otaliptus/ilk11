@@ -233,8 +233,8 @@ const MANUAL_ILK10_QUESTIONS: Ilk10Question[] = [
   },
   {
     id: "burak-yilmaz-most-played-teammates",
-    shortLabel: "Burak'ın En Çok Oynadığı Takım Arkadaşları",
-    prompt: "Burak Yılmaz'ın en çok maça çıktığı takım arkadaşları",
+    shortLabel: "Burak'ın Beraber En Çok Maça Çıktıkları",
+    prompt: "Burak Yılmaz'ın beraber en çok maça çıktığı oyuncular",
     entityType: "player",
     category: "club-overlap",
     sourceLabel: "Transfermarkt: Burak Yılmaz teammates",
