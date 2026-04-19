@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { CheckCircle2, Send } from "lucide-react"
 import {
@@ -16,12 +16,14 @@ import type { Ilk10ScoreSubmission, Ilk11ScoreSubmission } from "@/types/leaderb
 type Ilk11Props = {
   game: "ilk11"
   submissionKey: string
+  gameDate?: string
   payload: Omit<Ilk11ScoreSubmission, "game" | "nickname" | "game_date">
 }
 
 type Ilk10Props = {
   game: "ilk10"
   submissionKey: string
+  gameDate?: string
   payload: Omit<Ilk10ScoreSubmission, "game" | "nickname" | "game_date">
 }
 
@@ -33,6 +35,12 @@ export function LeaderboardSubmit(props: LeaderboardSubmitProps) {
   const [submitted, setSubmitted] = useState(isAlreadySubmitted(game, submissionKey))
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const gameDate = props.gameDate ?? getTurkeyDateKey()
+
+  useEffect(() => {
+    setSubmitted(isAlreadySubmitted(game, submissionKey))
+    setError(null)
+  }, [game, submissionKey])
 
   const handleSubmit = async () => {
     const trimmed = nickname.trim()
@@ -49,14 +57,14 @@ export function LeaderboardSubmit(props: LeaderboardSubmitProps) {
         await submitScore({
           game: "ilk11",
           nickname: trimmed,
-          game_date: getTurkeyDateKey(),
+          game_date: gameDate,
           ...props.payload,
         })
       } else {
         await submitScore({
           game: "ilk10",
           nickname: trimmed,
-          game_date: getTurkeyDateKey(),
+          game_date: gameDate,
           ...props.payload,
         })
       }

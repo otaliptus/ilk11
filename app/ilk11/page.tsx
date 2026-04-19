@@ -133,6 +133,7 @@ export default function Home() {
                 game={gameData.game}
                 team={gameData.team}
                 gameId={gameData.gameId}
+                gameDate={gameData.dateKey}
                 difficulty={difficulty}
               />
             </div>

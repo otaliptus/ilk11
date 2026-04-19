@@ -45,6 +45,7 @@ export type Ilk11GameData = {
   game: string
   team: string
   difficulty: string
+  dateKey: string
   formation: string
   lineup: string[]
   lineupNumbers: Array<number | null>
@@ -362,6 +363,7 @@ export function getGameForDifficulty(pools: DailyPools, difficulty: Difficulty, 
     game: selected.game,
     team: selected.team,
     difficulty,
+    dateKey: dayIndexToDateKey(dayIndex),
     formation: selected.formation,
     lineup: selected.lineup,
     lineupNumbers: selected.lineupNumbers,

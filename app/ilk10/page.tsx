@@ -30,7 +30,7 @@ import {
   pickDailyIlk10Question,
 } from "@/lib/ilk10"
 import { ILK11_PATH } from "@/lib/routes"
-import type { Ilk10Answer, Ilk10EntityType, Ilk10StoredState } from "@/types/ilk10"
+import type { Ilk10Answer, Ilk10EntityType, Ilk10Question, Ilk10StoredState } from "@/types/ilk10"
 import { LeaderboardModal } from "@/components/leaderboard-modal"
 import { LeaderboardSubmit } from "@/components/leaderboard-submit"
 import { Copy, Heart, Trophy } from "lucide-react"
@@ -352,14 +352,9 @@ const LIVE_QUESTIONS = ENRICHED_QUESTIONS.filter(
   (question) => !question.designExample && isAllowedLiveQuestion(question)
 )
 
-function loadStoredState(storageKey: string): Ilk10StoredState {
-  if (typeof window === "undefined") {
-    return createInitialIlk10State()
-  }
-
+function parseStoredState(rawValue: string | null): Ilk10StoredState | null {
   try {
-    const rawValue = localStorage.getItem(storageKey)
-    if (!rawValue) return createInitialIlk10State()
+    if (!rawValue) return null
 
     const parsed = JSON.parse(rawValue) as Partial<Ilk10StoredState>
     return {
@@ -369,8 +364,93 @@ function loadStoredState(storageKey: string): Ilk10StoredState {
       completedAt: typeof parsed.completedAt === "string" ? parsed.completedAt : undefined,
     }
   } catch {
+    return null
+  }
+}
+
+function rehydrateStoredState(question: Ilk10Question, storedState: Ilk10StoredState): Ilk10StoredState {
+  let nextState = createInitialIlk10State()
+
+  for (const event of storedState.guessEvents) {
+    const outcome = applyIlk10Guess(
+      question,
+      nextState,
+      event.guess,
+      event.timestamp ? new Date(event.timestamp) : new Date(),
+      event.entityId
+    )
+
+    if (outcome.status === "correct" || outcome.status === "incorrect") {
+      nextState = outcome.nextState
+    }
+  }
+
+  if (!nextState.completedAt && storedState.completedAt && isIlk10Finished(question, nextState)) {
+    nextState.completedAt = storedState.completedAt
+  }
+
+  return nextState
+}
+
+function compareStoredStates(
+  question: Ilk10Question,
+  left: Ilk10StoredState,
+  right: Ilk10StoredState
+): number {
+  const leftFinished = Number(isIlk10Finished(question, left))
+  const rightFinished = Number(isIlk10Finished(question, right))
+  if (leftFinished !== rightFinished) return leftFinished - rightFinished
+
+  if (left.foundIndexes.length !== right.foundIndexes.length) {
+    return left.foundIndexes.length - right.foundIndexes.length
+  }
+
+  if (left.guessEvents.length !== right.guessEvents.length) {
+    return left.guessEvents.length - right.guessEvents.length
+  }
+
+  if (left.missCount !== right.missCount) {
+    return right.missCount - left.missCount
+  }
+
+  return (Date.parse(left.completedAt ?? "") || 0) - (Date.parse(right.completedAt ?? "") || 0)
+}
+
+function loadStoredState(
+  question: Ilk10Question,
+  questionId: string,
+  dateKey: string,
+  storageKey: string
+): Ilk10StoredState {
+  if (typeof window === "undefined") {
     return createInitialIlk10State()
   }
+
+  const legacyStorageKey = getIlk10StorageKey(questionId, dateKey)
+  const candidateKeys = new Set<string>([storageKey, legacyStorageKey])
+  const versionedPrefix = `ilk10:${questionId}:${dateKey}:`
+
+  for (let index = 0; index < localStorage.length; index += 1) {
+    const key = localStorage.key(index)
+    if (!key) continue
+    if (key === storageKey || key === legacyStorageKey || key.startsWith(versionedPrefix)) {
+      candidateKeys.add(key)
+    }
+  }
+
+  let bestState: Ilk10StoredState | null = null
+
+  for (const candidateKey of Array.from(candidateKeys)) {
+    const parsed = parseStoredState(localStorage.getItem(candidateKey))
+    if (!parsed) continue
+
+    const rehydrated = rehydrateStoredState(question, parsed)
+    if (!bestState || compareStoredStates(question, rehydrated, bestState) > 0) {
+      bestState = rehydrated
+    }
+  }
+
+  return bestState ?? createInitialIlk10State()
 }
 
 export default function Ilk10Page() {
@@ -455,7 +535,7 @@ export default function Ilk10Page() {
   }, [scanRow])
 
   useLayoutEffect(() => {
-    const storedState = loadStoredState(dailyStorageKey)
+    const storedState = loadStoredState(dailyQuestion, dailyQuestion.id, dailyPick.dateKey, dailyStorageKey)
     setGameState(storedState)
     setLoadedStorageKey(dailyStorageKey)
     setShowSummary(isIlk10Finished(dailyQuestion, storedState))
@@ -463,7 +543,7 @@ export default function Ilk10Page() {
     setFeedback("")
     setShareCopied(false)
     inputRef.current?.focus()
-  }, [dailyQuestion, dailyStorageKey])
+  }, [dailyPick.dateKey, dailyQuestion, dailyStorageKey])
 
   useEffect(() => {
     return () => {
@@ -963,6 +1043,7 @@ export default function Ilk10Page() {
             <LeaderboardSubmit
               game="ilk10"
               submissionKey={`${dailyQuestion.id}_${dailyPick.dateKey}`}
+              gameDate={dailyPick.dateKey}
               payload={{
                 question_id: dailyQuestion.id,
                 question_label: dailyQuestion.shortLabel,

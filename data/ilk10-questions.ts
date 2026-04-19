@@ -231,6 +231,27 @@ const MANUAL_ILK10_QUESTIONS: Ilk10Question[] = [
       },
     ],
   },
+  {
+    id: "burak-yilmaz-most-played-teammates",
+    shortLabel: "Burak'ın En Çok Oynadığı Takım Arkadaşları",
+    prompt: "Burak Yılmaz'ın en çok maça çıktığı takım arkadaşları",
+    entityType: "player",
+    category: "club-overlap",
+    sourceLabel: "Transfermarkt: Burak Yılmaz teammates",
+    note: "Ordered from the top-10 teammate table provided for Burak Yılmaz. Only the final top-10 rows are used.",
+    answers: [
+      { value: "Selcuk Inan", scoreLabel: "244" },
+      { value: "Umut Bulut", scoreLabel: "159" },
+      { value: "Fernando Muslera", scoreLabel: "126" },
+      { value: "Semih Kaya", scoreLabel: "124" },
+      { value: "Wesley Sneijder", scoreLabel: "102" },
+      { value: "Felipe Melo", scoreLabel: "98" },
+      { value: "Olcan Adin", scoreLabel: "98" },
+      { value: "Hakan Balta", scoreLabel: "97" },
+      { value: "Sabri Sarioglu", scoreLabel: "91" },
+      { value: "Serkan Balci", scoreLabel: "88" },
+    ],
+  },
 ]
 
 export const ILK10_QUESTIONS: Ilk10Question[] = [

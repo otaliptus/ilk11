@@ -18,10 +18,11 @@ interface FormationProps {
   game: string
   team: string
   gameId: number
+  gameDate: string
   difficulty: "easy" | "hard"
 }
 
-export function Formation({ formation, players, game, team, gameId, difficulty }: FormationProps) {
+export function Formation({ formation, players, game, team, gameId, gameDate, difficulty }: FormationProps) {
   const [selectedPlayer, setSelectedPlayer] = useState<PlayerData | null>(null)
   const [playerStates, setPlayerStates] = useState<Record<number, PlayerState>>({});
   const [showModal, setShowModal] = useState(true);
@@ -402,6 +403,7 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
             <LeaderboardSubmit
               game="ilk11"
               submissionKey={`${gameId}_${difficulty}`}
+              gameDate={gameDate}
               payload={{
                 difficulty: difficulty,
                 game_id: gameId,
@@ -492,6 +494,7 @@ export function Formation({ formation, players, game, team, gameId, difficulty }
           <LeaderboardSubmit
             game="ilk11"
             submissionKey={`${gameId}_${difficulty}`}
+            gameDate={gameDate}
             payload={{
               difficulty: difficulty,
               game_id: gameId,

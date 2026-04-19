@@ -13,6 +13,7 @@ export const ILK10_DATE_OVERRIDES: Record<string, string> = {
 
 export const ILK10_DATE_INSERTIONS: Record<string, string> = {
   "2026-04-18": "fenerbahce-most-points-dropped-since-2020",
+  "2026-04-20": "burak-yilmaz-most-played-teammates",
 }
 
 const ILK10_LIVE_QUESTION_IDS = new Set([
@@ -23,6 +24,7 @@ const ILK10_LIVE_QUESTION_IDS = new Set([
   "turkish-super-cup-winning-coaches",
   "turkish-cup-winning-teams",
   "fenerbahce-most-points-dropped-since-2020",
+  "burak-yilmaz-most-played-teammates",
 ])
 
 const ILK10_EXCLUDED_LIVE_QUESTION_IDS = new Set([
