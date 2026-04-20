@@ -34,7 +34,7 @@ import { ILK11_PATH } from "@/lib/routes"
 import type { Ilk10Answer, Ilk10EntityType, Ilk10Question, Ilk10StoredState } from "@/types/ilk10"
 import { LeaderboardModal } from "@/components/leaderboard-modal"
 import { LeaderboardSubmit } from "@/components/leaderboard-submit"
-import { Copy, Heart, Trophy } from "lucide-react"
+import { Copy, Heart, Share2, Trophy } from "lucide-react"
 
 const AUTOCOMPLETE_LIMIT = 8
 const ADMIN_STORAGE_PREFIX = "staging-admin:"
@@ -879,8 +879,8 @@ export function Ilk10GamePage({
         )}
         {/* Hearts + title at top */}
         <header className="flex flex-col items-center gap-2 pt-2 pb-4">
-          <div className="flex w-full items-center justify-between">
-            <div className="flex items-center gap-2">
+          <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-center justify-center gap-2 sm:justify-start">
               {Array.from({ length: ILK10_MAX_LIVES }, (_, index) => (
                 <Heart
                   key={index}
@@ -893,14 +893,26 @@ export function Ilk10GamePage({
               ))}
             </div>
             {!adminMode && (
-              <Button
-                onClick={() => setShowLeaderboard(true)}
-                className="bg-slate-800/70 hover:bg-slate-700 border border-white/10 text-white rounded-xl text-sm"
-                size="sm"
-              >
-                <Trophy className="h-4 w-4 mr-2 text-emerald-400" />
-                Skor Tablosu
-              </Button>
+              <div className="flex w-full flex-wrap items-center justify-center gap-2 sm:w-auto sm:justify-end">
+                <Button
+                  onClick={() => setShowLeaderboard(true)}
+                  className="flex-1 bg-slate-800/70 hover:bg-slate-700 border border-white/10 text-white rounded-xl text-sm sm:flex-none"
+                  size="sm"
+                >
+                  <Trophy className="h-4 w-4 mr-2 text-emerald-400" />
+                  Skor Tablosu
+                </Button>
+                {finished && (
+                  <Button
+                    onClick={() => setShowSummary(true)}
+                    className="flex-1 bg-emerald-700/80 hover:bg-emerald-600 border border-emerald-400/20 text-white rounded-xl text-sm sm:flex-none"
+                    size="sm"
+                  >
+                    <Share2 className="h-4 w-4 mr-2" />
+                    Paylaş
+                  </Button>
+                )}
+              </div>
             )}
           </div>
           <h1 className="text-3xl font-extrabold text-white tracking-tight font-mono uppercase">
