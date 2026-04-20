@@ -9,16 +9,6 @@ export const ILK10_DATE_OVERRIDES: Record<string, string> = {
   "2026-04-12": "super-lig-title-coaches",
   "2026-04-16": "fbref-range-2016-2022-goals",
   "2026-04-17": "turkish-cup-winning-teams",
-  "2026-04-22": "galatasaray-most-points-dropped-alltime",
-  "2026-04-23": "alex-most-played-teammates",
-  "2026-04-24": "fenerbahce-most-points-dropped-alltime",
-  "2026-04-25": "muslera-most-conceded-teams",
-  "2026-04-26": "quaresma-most-played-teammates",
-  "2026-04-27": "besiktas-most-points-dropped-alltime",
-  "2026-04-28": "volkan-demirel-most-conceded-teams",
-  "2026-04-29": "fenerbahce-besiktas-overlap-players",
-  "2026-04-30": "super-lig-all-time-topscorers",
-  "2026-05-01": "fenerbahce-most-points-dropped-since-2020",
 }
 
 export const ILK10_DATE_INSERTIONS: Record<string, string> = {
@@ -35,15 +25,6 @@ const ILK10_LIVE_QUESTION_IDS = new Set([
   "turkish-cup-winning-teams",
   "fenerbahce-most-points-dropped-since-2020",
   "burak-yilmaz-most-played-teammates",
-  "galatasaray-most-points-dropped-alltime",
-  "alex-most-played-teammates",
-  "fenerbahce-most-points-dropped-alltime",
-  "muslera-most-conceded-teams",
-  "quaresma-most-played-teammates",
-  "besiktas-most-points-dropped-alltime",
-  "volkan-demirel-most-conceded-teams",
-  "fenerbahce-besiktas-overlap-players",
-  "super-lig-all-time-topscorers",
 ])
 
 const ILK10_EXCLUDED_LIVE_QUESTION_IDS = new Set([
