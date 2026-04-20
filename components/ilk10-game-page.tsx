@@ -22,8 +22,8 @@ import {
   getIlk10QuestionCacheToken,
   getIlk10StatusMessage,
   getIlk10StorageKey,
+  getLiveIlk10QuestionsForDate,
   getRemainingLives,
-  isAllowedLiveQuestion,
   isIlk10Finished,
   isIlk10Solved,
   normalizeIlk10Answer,
@@ -357,9 +357,6 @@ function enrichQuestionsWithEntityIds(questions: typeof ILK10_QUESTIONS): typeof
 }
 
 const ENRICHED_QUESTIONS = enrichQuestionsWithEntityIds(ILK10_QUESTIONS)
-const LIVE_QUESTIONS = ENRICHED_QUESTIONS.filter(
-  (question) => !question.designExample && isAllowedLiveQuestion(question)
-)
 
 function parseStoredState(rawValue: string | null): Ilk10StoredState | null {
   try {
@@ -497,9 +494,13 @@ export function Ilk10GamePage({
     () => (adminMode ? parseDateKeyInput(forcedDateKey) ?? currentDate : currentDate),
     [adminMode, currentDate, forcedDateKey]
   )
-  const dailyPick = useMemo(
-    () => pickDailyIlk10Question(LIVE_QUESTIONS, selectedDate, ILK10_DATE_OVERRIDES, ILK10_DATE_INSERTIONS),
+  const liveQuestions = useMemo(
+    () => getLiveIlk10QuestionsForDate(ENRICHED_QUESTIONS, selectedDate),
     [selectedDate]
+  )
+  const dailyPick = useMemo(
+    () => pickDailyIlk10Question(liveQuestions, selectedDate, ILK10_DATE_OVERRIDES, ILK10_DATE_INSERTIONS),
+    [liveQuestions, selectedDate]
   )
   const dailyQuestion = dailyPick.question
   const dailyCacheToken = useMemo(

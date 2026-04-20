@@ -1,5 +1,6 @@
 import type { Ilk10Question } from "@/types/ilk10"
 import FBREF_SEASON_QUESTIONS from "@/data/ilk10-fbref-season-questions.json"
+import RESEARCH_VERIFIED_QUESTIONS from "@/data/ilk10-research-verified-questions.json"
 
 const TITLE_WINNING_COACHES_CUTOFF_ALIASES = [
   "Gunduz Kilic",
@@ -257,4 +258,5 @@ const MANUAL_ILK10_QUESTIONS: Ilk10Question[] = [
 export const ILK10_QUESTIONS: Ilk10Question[] = [
   ...MANUAL_ILK10_QUESTIONS,
   ...(FBREF_SEASON_QUESTIONS as Ilk10Question[]),
+  ...(RESEARCH_VERIFIED_QUESTIONS as Ilk10Question[]),
 ]

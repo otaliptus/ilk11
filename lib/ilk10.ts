@@ -4,6 +4,7 @@ import { ILK10_SHARE_DOMAIN } from "@/lib/routes"
 
 const MAX_LIVES = 5
 const NON_REPEATING_ROTATION_EPOCH = "2026-04-13"
+const VERIFIED_RESEARCH_ROLLOUT_DATE = "2026-04-22"
 
 export const ILK10_DATE_OVERRIDES: Record<string, string> = {
   "2026-04-12": "super-lig-title-coaches",
@@ -72,12 +73,20 @@ function normalizeCharacters(input: string): string {
     .join("")
 }
 
+function isResearchVerifiedQuestion(question: Ilk10Question): boolean {
+  return /^Research verified/i.test(question.sourceLabel)
+}
+
 export function isAllowedLiveQuestion(question: Ilk10Question): boolean {
   if (ILK10_EXCLUDED_LIVE_QUESTION_IDS.has(question.id)) {
     return false
   }
 
   if (ILK10_LIVE_QUESTION_IDS.has(question.id)) {
+    return true
+  }
+
+  if (isResearchVerifiedQuestion(question)) {
     return true
   }
 
@@ -91,6 +100,26 @@ export function isAllowedLiveQuestion(question: Ilk10Question): boolean {
   const searchableText = `${question.shortLabel} ${question.prompt}`
   return /\bGoals\b/i.test(searchableText) ||
     /\bAssists\b/i.test(searchableText)
+}
+
+export function getLiveIlk10QuestionsForDate(
+  questions: Ilk10Question[],
+  date: Date = new Date()
+): Ilk10Question[] {
+  const dateKey = getTurkeyDateKey(date)
+  const includeResearch = dateKey >= VERIFIED_RESEARCH_ROLLOUT_DATE
+
+  return questions.filter((question) => {
+    if (question.designExample || !isAllowedLiveQuestion(question)) {
+      return false
+    }
+
+    if (!includeResearch && isResearchVerifiedQuestion(question)) {
+      return false
+    }
+
+    return true
+  })
 }
 
 export function normalizeIlk10Answer(input: string): string {
@@ -128,6 +157,10 @@ function buildQuestionOrder(questions: Ilk10Question[], rng: () => number): Ilk1
 }
 
 function getIlk10CycleBucket(question: Ilk10Question): Ilk10CycleBucket {
+  if (isResearchVerifiedQuestion(question)) {
+    return "manual"
+  }
+
   if (ILK10_LIVE_QUESTION_IDS.has(question.id)) {
     return "manual"
   }

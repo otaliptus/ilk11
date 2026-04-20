@@ -8,7 +8,7 @@ import { Trophy } from "lucide-react"
 import { LeaderboardModal } from "@/components/leaderboard-modal"
 import { ILK10_PATH, ILK11_PATH } from "@/lib/routes"
 import { ILK10_QUESTIONS } from "@/data/ilk10-questions"
-import { ILK10_DATE_INSERTIONS, ILK10_DATE_OVERRIDES, isAllowedLiveQuestion, pickDailyIlk10Question } from "@/lib/ilk10"
+import { ILK10_DATE_INSERTIONS, ILK10_DATE_OVERRIDES, getLiveIlk10QuestionsForDate, pickDailyIlk10Question } from "@/lib/ilk10"
 import { formatIlk11MatchLabel, getGameForDifficulty, parsePoolRows } from "@/lib/ilk11"
 
 const BUILD_ID = process.env.NEXT_PUBLIC_BUILD_ID ?? "dev"
@@ -16,7 +16,7 @@ const EASY_CSV_URL = `/easy.csv?v=${encodeURIComponent(BUILD_ID)}`
 const HARD_CSV_URL = `/hard.csv?v=${encodeURIComponent(BUILD_ID)}`
 
 function getIlk10TodayTeaser(): string {
-  const live = ILK10_QUESTIONS.filter((question) => !question.designExample && isAllowedLiveQuestion(question))
+  const live = getLiveIlk10QuestionsForDate(ILK10_QUESTIONS, new Date())
   const pick = pickDailyIlk10Question(live, new Date(), ILK10_DATE_OVERRIDES, ILK10_DATE_INSERTIONS)
   return pick.question.shortLabel
 }

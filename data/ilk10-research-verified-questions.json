@@ -1,0 +1,3160 @@
+[
+  {
+    "id": "verified-club-legends-alltime-sl-most-apps",
+    "shortLabel": "Süper Lig Tarihinin En Çok Maça Çıkan Futbolcuları (All-Time)",
+    "prompt": "Süper Lig Tarihinin En Çok Maça Çıkan Futbolcuları (All-Time)",
+    "entityType": "player",
+    "category": "title-race",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.worldfootball.net/competition/co116/turkey-sueperlig/records-all-time-appearances/",
+    "note": "Imported from ilk10-research/questions/club-legends/alltime-sl-most-apps.md",
+    "answers": [
+      {
+        "value": "Umut Bulut"
+      },
+      {
+        "value": "Mehmet Nas"
+      },
+      {
+        "value": "Veysel Sarı"
+      },
+      {
+        "value": "Fernando Muslera"
+      },
+      {
+        "value": "Güray Vural"
+      },
+      {
+        "value": "Ömer Çatkıç"
+      },
+      {
+        "value": "Serkan Balcı"
+      },
+      {
+        "value": "Caner Erkin"
+      },
+      {
+        "value": "Edin Višća"
+      },
+      {
+        "value": "Gökhan Gönül"
+      }
+    ]
+  },
+  {
+    "id": "verified-club-legends-alltime-sl-topscorers",
+    "shortLabel": "Süper Lig Tarihinin En Çok Gol Atan Futbolcuları (All-Time)",
+    "prompt": "Süper Lig Tarihinin En Çok Gol Atan Futbolcuları (All-Time)",
+    "entityType": "player",
+    "category": "title-race",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.worldfootball.net/competition/co116/turkey-sueperlig/records-all-time-goals/",
+    "note": "Imported from ilk10-research/questions/club-legends/alltime-sl-topscorers.md",
+    "answers": [
+      {
+        "value": "Hakan Sukur"
+      },
+      {
+        "value": "Burak Yılmaz"
+      },
+      {
+        "value": "Serkan Aykut"
+      },
+      {
+        "value": "Umut Bulut"
+      },
+      {
+        "value": "Necati Ates"
+      },
+      {
+        "value": "Cenk Isler"
+      },
+      {
+        "value": "Ümit Karan"
+      },
+      {
+        "value": "Alex de Souza"
+      },
+      {
+        "value": "Fatih Tekke"
+      },
+      {
+        "value": "Hami Mandıralı"
+      }
+    ]
+  },
+  {
+    "id": "verified-club-legends-gs-15y-topscorers",
+    "shortLabel": "Son 15 senede Galatasaray'da en çok gol atmış futbolcular",
+    "prompt": "Son 15 senede Galatasaray'da en çok gol atmış futbolcular",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Research verified-aggregated",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Mauro_Icardi",
+    "note": "Imported from ilk10-research/questions/club-legends/gs-15y-topscorers.md",
+    "answers": [
+      {
+        "value": "Mauro Icardi"
+      },
+      {
+        "value": "Burak Yilmaz"
+      },
+      {
+        "value": "Kerem Akturkoglu"
+      },
+      {
+        "value": "Bafetimbi Gomis"
+      },
+      {
+        "value": "Victor Osimhen"
+      },
+      {
+        "value": "Wesley Sneijder"
+      },
+      {
+        "value": "Mbaye Diagne"
+      },
+      {
+        "value": "Umut Bulut"
+      },
+      {
+        "value": "Dries Mertens"
+      },
+      {
+        "value": "Didier Drogba"
+      }
+    ]
+  },
+  {
+    "id": "verified-club-vs-opp-bjk-points-dropped",
+    "shortLabel": "Beşiktaş'ın En Çok Puan Kaybettiği Takımlar",
+    "prompt": "Beşiktaş'ın En Çok Puan Kaybettiği Takımlar",
+    "entityType": "team",
+    "category": "title-race",
+    "sourceLabel": "Research verified-aggregated",
+    "sourceUrl": "https://www.worldfootball.net/teams/te221/besiktas/record-opponent/",
+    "note": "Imported from ilk10-research/questions/club-vs-opp/bjk-points-dropped.md",
+    "answers": [
+      {
+        "value": "Fenerbahçe"
+      },
+      {
+        "value": "Galatasaray"
+      },
+      {
+        "value": "Trabzonspor"
+      },
+      {
+        "value": "Kayserispor"
+      },
+      {
+        "value": "Gençlerbirliği"
+      },
+      {
+        "value": "Sivasspor"
+      },
+      {
+        "value": "Konyaspor"
+      },
+      {
+        "value": "Kasımpaşa"
+      },
+      {
+        "value": "Rizespor"
+      },
+      {
+        "value": "Gaziantepspor"
+      }
+    ]
+  },
+  {
+    "id": "verified-club-vs-opp-fb-points-dropped",
+    "shortLabel": "Fenerbahçe'nin En Çok Puan Kaybettiği Takımlar",
+    "prompt": "Fenerbahçe'nin En Çok Puan Kaybettiği Takımlar",
+    "entityType": "team",
+    "category": "title-race",
+    "sourceLabel": "Research verified-aggregated",
+    "sourceUrl": "https://www.worldfootball.net/teams/te735/fenerbahce/record-opponent/",
+    "note": "Imported from ilk10-research/questions/club-vs-opp/fb-points-dropped.md",
+    "answers": [
+      {
+        "value": "Beşiktaş"
+      },
+      {
+        "value": "Galatasaray"
+      },
+      {
+        "value": "Trabzonspor"
+      },
+      {
+        "value": "Sivasspor"
+      },
+      {
+        "value": "Bursaspor"
+      },
+      {
+        "value": "Antalyaspor"
+      },
+      {
+        "value": "Konyaspor"
+      },
+      {
+        "value": "Gençlerbirliği"
+      },
+      {
+        "value": "Kayserispor"
+      },
+      {
+        "value": "Rizespor"
+      }
+    ]
+  },
+  {
+    "id": "verified-club-vs-opp-gs-points-dropped",
+    "shortLabel": "Galatasaray'ın En Çok Puan Kaybettiği Takımlar",
+    "prompt": "Galatasaray'ın En Çok Puan Kaybettiği Takımlar",
+    "entityType": "team",
+    "category": "title-race",
+    "sourceLabel": "Research verified-aggregated",
+    "sourceUrl": "https://www.worldfootball.net/teams/te853/galatasaray/record-opponent/",
+    "note": "Imported from ilk10-research/questions/club-vs-opp/gs-points-dropped.md",
+    "answers": [
+      {
+        "value": "Fenerbahçe"
+      },
+      {
+        "value": "Beşiktaş"
+      },
+      {
+        "value": "Trabzonspor"
+      },
+      {
+        "value": "Gençlerbirliği"
+      },
+      {
+        "value": "Antalyaspor"
+      },
+      {
+        "value": "Bursaspor"
+      },
+      {
+        "value": "Ankaragücü"
+      },
+      {
+        "value": "Kayserispor"
+      },
+      {
+        "value": "Sivasspor"
+      },
+      {
+        "value": "Kasımpaşa"
+      }
+    ]
+  },
+  {
+    "id": "verified-coach-achievements-big4-most-matches-coach",
+    "shortLabel": "Dört Büyüklerde En Çok Maça Çıkan Teknik Direktörler",
+    "prompt": "Dört Büyüklerde En Çok Maça Çıkan Teknik Direktörler",
+    "entityType": "coach",
+    "category": "all-time",
+    "sourceLabel": "Research verified-aggregated",
+    "sourceUrl": "https://www.transfermarkt.com/galatasaray-istanbul/mitarbeiterhistorie/verein/141",
+    "note": "Imported from ilk10-research/questions/coach-achievements/big4-most-matches-coach.md",
+    "answers": [
+      {
+        "value": "Şenol Güneş"
+      },
+      {
+        "value": "Fatih Terim"
+      },
+      {
+        "value": "Mustafa Denizli"
+      },
+      {
+        "value": "Christoph Daum"
+      },
+      {
+        "value": "Gordon Milne"
+      },
+      {
+        "value": "Ersun Yanal"
+      },
+      {
+        "value": "Okan Buruk"
+      },
+      {
+        "value": "Mircea Lucescu"
+      },
+      {
+        "value": "Aykut Kocaman"
+      },
+      {
+        "value": "Abdullah Avcı"
+      }
+    ]
+  },
+  {
+    "id": "verified-coach-achievements-cups-2-clubs",
+    "shortLabel": "İki Farklı Kulüple En Çok Kupa Kazanmış Hocalar",
+    "prompt": "İki Farklı Kulüple En Çok Kupa Kazanmış Hocalar",
+    "entityType": "coach",
+    "category": "title-race",
+    "sourceLabel": "Research verified-aggregated",
+    "sourceUrl": "https://tr.wikipedia.org/wiki/T%C3%BCrkiye_Kupas%C4%B1_kazanan_teknik_direkt%C3%B6rler_listesi",
+    "note": "Imported from ilk10-research/questions/coach-achievements/cups-2-clubs.md",
+    "answers": [
+      {
+        "value": "Aykut Kocaman"
+      },
+      {
+        "value": "Mustafa Denizli"
+      },
+      {
+        "value": "Okan Buruk"
+      },
+      {
+        "value": "Samet Aybaba"
+      },
+      {
+        "value": "Rıza Çalımbay"
+      },
+      {
+        "value": "Serdar Topraktepe"
+      },
+      {
+        "value": "Coaches with cups at 3+ clubs:"
+      },
+      {
+        "value": "Coaches with cups at exactly 2 clubs:"
+      },
+      {
+        "value": "Coaches with multiple cups at 1 club (for completeness):"
+      },
+      {
+        "value": "Coaches with cups at only 1 club (for completeness):"
+      }
+    ]
+  },
+  {
+    "id": "verified-coach-achievements-longest-big3-tenures",
+    "shortLabel": "Üç Büyüklerde En Uzun Süre Hocalık Yapmış",
+    "prompt": "Üç Büyüklerde En Uzun Süre Hocalık Yapmış",
+    "entityType": "coach",
+    "category": "all-time",
+    "sourceLabel": "Research verified-aggregated",
+    "sourceUrl": "https://www.transfermarkt.com/galatasaray-istanbul/mitarbeiterhistorie/verein/141",
+    "note": "Imported from ilk10-research/questions/coach-achievements/longest-big3-tenures.md",
+    "answers": [
+      {
+        "value": "Fatih Terim"
+      },
+      {
+        "value": "Mustafa Denizli"
+      },
+      {
+        "value": "Christoph Daum"
+      },
+      {
+        "value": "Gordon Milne"
+      },
+      {
+        "value": "Şenol Güneş"
+      },
+      {
+        "value": "Aykut Kocaman"
+      },
+      {
+        "value": "Okan Buruk"
+      },
+      {
+        "value": "Mircea Lucescu"
+      },
+      {
+        "value": "Branko Stankovic"
+      },
+      {
+        "value": "Jupp Derwall"
+      }
+    ]
+  },
+  {
+    "id": "verified-coach-achievements-shortest-big3-tenures",
+    "shortLabel": "Üç Büyüklerde En Kısa Süre Hocalık Yapmış (≥5 Maç, 1-2 Maçlık Yardımcıla",
+    "prompt": "Üç Büyüklerde En Kısa Süre Hocalık Yapmış (≥5 Maç, 1-2 Maçlık Yardımcılar Hariç)",
+    "entityType": "coach",
+    "category": "all-time",
+    "sourceLabel": "Research verified-aggregated",
+    "sourceUrl": "https://www.transfermarkt.com/galatasaray-istanbul/mitarbeiterhistorie/verein/141",
+    "note": "Imported from ilk10-research/questions/coach-achievements/shortest-big3-tenures.md",
+    "answers": [
+      {
+        "value": "Burak Yılmaz"
+      },
+      {
+        "value": "Önder Karaveli"
+      },
+      {
+        "value": "Ziya Taner"
+      },
+      {
+        "value": "Cevat Güler"
+      },
+      {
+        "value": "Tınaz Tırpan"
+      },
+      {
+        "value": "Yılmaz Yücetürk"
+      },
+      {
+        "value": "İsmet Arıkan"
+      },
+      {
+        "value": "Turgay Şeren"
+      },
+      {
+        "value": "Coşkun Özarı"
+      },
+      {
+        "value": "Ziya Şengül"
+      }
+    ]
+  },
+  {
+    "id": "verified-coach-lists-last-10-gs-managers",
+    "shortLabel": "Son 10 Galatasaray Hocası",
+    "prompt": "Son 10 Galatasaray Hocası",
+    "entityType": "coach",
+    "category": "season-stats",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/galatasaray-istanbul/mitarbeiterhistorie/verein/141",
+    "note": "Imported from ilk10-research/questions/coach-lists/last-10-gs-managers.md",
+    "answers": [
+      {
+        "value": "Okan Buruk"
+      },
+      {
+        "value": "Domènec Torrent"
+      },
+      {
+        "value": "Fatih Terim"
+      },
+      {
+        "value": "Igor Tudor"
+      },
+      {
+        "value": "Jan Olde Riekerink"
+      },
+      {
+        "value": "Orhan Atik"
+      },
+      {
+        "value": "Mustafa Denizli"
+      },
+      {
+        "value": "Claudio Taffarel"
+      },
+      {
+        "value": "Hamza Hamzaoğlu"
+      },
+      {
+        "value": "Cesare Prandelli"
+      }
+    ]
+  },
+  {
+    "id": "verified-coach-lists-last-10-ibb-managers",
+    "shortLabel": "Son 10 Başakşehir Hocası",
+    "prompt": "Son 10 Başakşehir Hocası",
+    "entityType": "coach",
+    "category": "season-stats",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/istanbul-basaksehir-fk/mitarbeiterhistorie/verein/6890",
+    "note": "Imported from ilk10-research/questions/coach-lists/last-10-ibb-managers.md",
+    "answers": [
+      {
+        "value": "Nuri Şahin"
+      },
+      {
+        "value": "Çağdaş Atan"
+      },
+      {
+        "value": "Emre Belözoğlu"
+      },
+      {
+        "value": "Aykut Kocaman"
+      },
+      {
+        "value": "Okan Buruk"
+      },
+      {
+        "value": "Abdullah Avcı"
+      },
+      {
+        "value": "Cihat Arslan"
+      },
+      {
+        "value": "Bülent Korkmaz"
+      },
+      {
+        "value": "Carlos Carvalhal"
+      },
+      {
+        "value": "Arif Erdem"
+      }
+    ]
+  },
+  {
+    "id": "verified-era-windows-assists-5y",
+    "shortLabel": "Son 5 yılın en çok asist yapan topçuları",
+    "prompt": "Son 5 yılın en çok asist yapan topçuları",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Research verified-aggregated",
+    "note": "Imported from ilk10-research/questions/era-windows/assists-5y.md",
+    "answers": [
+      {
+        "value": "Edin Visca"
+      },
+      {
+        "value": "Alexandru Maxim"
+      },
+      {
+        "value": "Max Gradel"
+      },
+      {
+        "value": "Haris Hajradinovic"
+      },
+      {
+        "value": "Guilherme"
+      },
+      {
+        "value": "Kerem Aktürkoğlu"
+      },
+      {
+        "value": "Dries Mertens"
+      },
+      {
+        "value": "Miguel Cardoso"
+      },
+      {
+        "value": "Aykut Akgün"
+      },
+      {
+        "value": "Rachid Ghezzal"
+      }
+    ]
+  },
+  {
+    "id": "verified-era-windows-clean-sheets-15y",
+    "shortLabel": "Son 15 yılın en çok maçta kalesini gole kapatan kalecileri",
+    "prompt": "Son 15 yılın en çok maçta kalesini gole kapatan kalecileri",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Research verified-aggregated",
+    "note": "Imported from ilk10-research/questions/era-windows/clean-sheets-15y.md",
+    "answers": [
+      {
+        "value": "Fernando Muslera"
+      },
+      {
+        "value": "Volkan Demirel"
+      },
+      {
+        "value": "Volkan Babacan"
+      },
+      {
+        "value": "Uğurcan Çakır"
+      },
+      {
+        "value": "Erkan Taşkıran"
+      },
+      {
+        "value": "Žydrunas Karčemarskas"
+      },
+      {
+        "value": "Onur Kıvrak"
+      },
+      {
+        "value": "Serkan Kırıntılı"
+      },
+      {
+        "value": "Altay Bayındır"
+      },
+      {
+        "value": "Cenk Güvenç"
+      }
+    ]
+  },
+  {
+    "id": "verified-era-windows-clean-sheets-25y",
+    "shortLabel": "Son 25 yılın en çok maçta kalesini gole kapatan kalecileri",
+    "prompt": "Son 25 yılın en çok maçta kalesini gole kapatan kalecileri",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Research verified-aggregated",
+    "note": "Imported from ilk10-research/questions/era-windows/clean-sheets-25y.md",
+    "answers": [
+      {
+        "value": "Volkan Demirel"
+      },
+      {
+        "value": "Fernando Muslera"
+      },
+      {
+        "value": "Ömer Catkıç"
+      },
+      {
+        "value": "Serkan Kırıntılı"
+      },
+      {
+        "value": "Volkan Babacan"
+      },
+      {
+        "value": "Ognjen Petković"
+      },
+      {
+        "value": "Uğurcan Çakır"
+      },
+      {
+        "value": "Žydrunas Karčemarskas"
+      },
+      {
+        "value": "Erkan Taşkıran"
+      },
+      {
+        "value": "Rüştü Reçber"
+      }
+    ]
+  },
+  {
+    "id": "verified-era-windows-clean-sheets-5y",
+    "shortLabel": "Son 5 yılın en çok maçta kalesini gole kapatan kalecileri",
+    "prompt": "Son 5 yılın en çok maçta kalesini gole kapatan kalecileri",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Research verified-aggregated",
+    "note": "Imported from ilk10-research/questions/era-windows/clean-sheets-5y.md",
+    "answers": [
+      {
+        "value": "Uğurcan Çakır"
+      },
+      {
+        "value": "Fernando Muslera"
+      },
+      {
+        "value": "Erkan Taşkıran"
+      },
+      {
+        "value": "Volkan Babacan"
+      },
+      {
+        "value": "Altay Bayındır"
+      },
+      {
+        "value": "Okan Koçuk"
+      },
+      {
+        "value": "Cenk Güvenç"
+      },
+      {
+        "value": "Andreas Gianniotis"
+      },
+      {
+        "value": "Mateusz Lis"
+      },
+      {
+        "value": "Erce Kardeşler"
+      }
+    ]
+  },
+  {
+    "id": "verified-era-windows-topscorers-5y",
+    "shortLabel": "Son 5 yılın en skorer topçuları",
+    "prompt": "Son 5 yılın en skorer topçuları",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Research verified-aggregated",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/torschuetzenliste/wettbewerb/TR1/saison_id/2021",
+    "note": "Imported from ilk10-research/questions/era-windows/topscorers-5y.md",
+    "answers": [
+      {
+        "value": "Mauro Icardi"
+      },
+      {
+        "value": "Mame Thiam"
+      },
+      {
+        "value": "Michy Batshuayi"
+      },
+      {
+        "value": "Krzysztof Piątek"
+      },
+      {
+        "value": "Victor Osimhen"
+      },
+      {
+        "value": "Paul Onuachu"
+      },
+      {
+        "value": "Edin Džeko"
+      },
+      {
+        "value": "Kerem Aktürkoğlu"
+      },
+      {
+        "value": "Ali Sowe"
+      },
+      {
+        "value": "Rey Manaj"
+      }
+    ]
+  },
+  {
+    "id": "verified-european-ucl-apps-at-tr-clubs",
+    "shortLabel": "Türk takımlarında oynarken Şampiyonlar Ligi'nde en çok maça çıkan futbol",
+    "prompt": "Türk takımlarında oynarken Şampiyonlar Ligi'nde en çok maça çıkan futbolcular",
+    "entityType": "player",
+    "category": "europe",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.statbunker.com/alltimestats/AllTimeAppearances?club_id=119&comp_code=UCL",
+    "note": "Imported from ilk10-research/questions/european/ucl-apps-at-tr-clubs.md",
+    "answers": [
+      {
+        "value": "Ergun Penbe"
+      },
+      {
+        "value": "Arif Erdem"
+      },
+      {
+        "value": "Bulent Korkmaz"
+      },
+      {
+        "value": "Hasan Sas"
+      },
+      {
+        "value": "Fernando Muslera"
+      },
+      {
+        "value": "Hakan Sukur"
+      },
+      {
+        "value": "Hakan Unsal"
+      },
+      {
+        "value": "Suat Kaya"
+      },
+      {
+        "value": "Umit Davala"
+      },
+      {
+        "value": "Selcuk Inan"
+      }
+    ]
+  },
+  {
+    "id": "verified-european-ucl-assists-at-tr-clubs",
+    "shortLabel": "Türk takımlarında oynarken Şampiyonlar Ligi'nde en çok asist yapan futbo",
+    "prompt": "Türk takımlarında oynarken Şampiyonlar Ligi'nde en çok asist yapan futbolcular",
+    "entityType": "player",
+    "category": "europe",
+    "sourceLabel": "Research verified-aggregated",
+    "sourceUrl": "https://m.statbunker.com/alltimestats/AllTimeCompetitionMostAssists?club_id=119&comp_code=UCL",
+    "note": "Imported from ilk10-research/questions/european/ucl-assists-at-tr-clubs.md",
+    "answers": [
+      {
+        "value": "Ricardo Quaresma"
+      },
+      {
+        "value": "Alex Souza"
+      },
+      {
+        "value": "Wesley Sneijder"
+      },
+      {
+        "value": "Nordin Amrabat"
+      },
+      {
+        "value": "Selcuk Inan"
+      },
+      {
+        "value": "Didier Drogba"
+      },
+      {
+        "value": "Hamit Altintop"
+      },
+      {
+        "value": "Aurelien Chedjou"
+      },
+      {
+        "value": "Emmanuel Eboue"
+      },
+      {
+        "value": "Hakan Unsal"
+      }
+    ]
+  },
+  {
+    "id": "verified-goals-vs-club-goals-vs-bjk",
+    "shortLabel": "Beşiktaş'a en çok gol atan futbolcular",
+    "prompt": "Beşiktaş'a en çok gol atan futbolcular",
+    "entityType": "player",
+    "category": "title-race",
+    "sourceLabel": "Research verified-aggregated",
+    "note": "Imported from ilk10-research/questions/goals-vs-club/goals-vs-bjk.md",
+    "answers": [
+      {
+        "value": "Alex de Souza"
+      },
+      {
+        "value": "AKIN"
+      },
+      {
+        "value": "Hugo Rodallega"
+      },
+      {
+        "value": "Zafer Biryol"
+      },
+      {
+        "value": "DA COSTA"
+      },
+      {
+        "value": "KARAN"
+      },
+      {
+        "value": "Milan Baroš"
+      },
+      {
+        "value": "Mauro Icardi"
+      },
+      {
+        "value": "YILMAZ"
+      },
+      {
+        "value": "BULUT"
+      }
+    ]
+  },
+  {
+    "id": "verified-goals-vs-club-goals-vs-fb",
+    "shortLabel": "Fenerbahçe'ye en çok gol atan futbolcular",
+    "prompt": "Fenerbahçe'ye en çok gol atan futbolcular",
+    "entityType": "player",
+    "category": "title-race",
+    "sourceLabel": "Research verified-aggregated",
+    "note": "Imported from ilk10-research/questions/goals-vs-club/goals-vs-fb.md",
+    "answers": [
+      {
+        "value": "YILMAZ"
+      },
+      {
+        "value": "Fatih Tekke"
+      },
+      {
+        "value": "Theofanis Gekas"
+      },
+      {
+        "value": "ISLER"
+      },
+      {
+        "value": "BULUT"
+      },
+      {
+        "value": "ERIS"
+      },
+      {
+        "value": "KALOGLU"
+      },
+      {
+        "value": "VURAL"
+      },
+      {
+        "value": "PROMISE"
+      },
+      {
+        "value": "MAXIM"
+      }
+    ]
+  },
+  {
+    "id": "verified-goals-vs-club-goals-vs-gs",
+    "shortLabel": "Galatasaray'a en çok gol atan futbolcular",
+    "prompt": "Galatasaray'a en çok gol atan futbolcular",
+    "entityType": "player",
+    "category": "title-race",
+    "sourceLabel": "Research verified-aggregated",
+    "note": "Imported from ilk10-research/questions/goals-vs-club/goals-vs-gs.md",
+    "answers": [
+      {
+        "value": "YILMAZ"
+      },
+      {
+        "value": "Alex de Souza"
+      },
+      {
+        "value": "Emmanuel Adebayor"
+      },
+      {
+        "value": "Mert Nobre"
+      },
+      {
+        "value": "Filip Holosko"
+      },
+      {
+        "value": "AKYUZ"
+      },
+      {
+        "value": "Pierre Webo"
+      },
+      {
+        "value": "Taner Gülleri"
+      },
+      {
+        "value": "BULUT"
+      },
+      {
+        "value": "AKIN"
+      }
+    ]
+  },
+  {
+    "id": "verified-goals-vs-club-goals-vs-ts",
+    "shortLabel": "Trabzonspor'a en çok gol atan futbolcular",
+    "prompt": "Trabzonspor'a en çok gol atan futbolcular",
+    "entityType": "player",
+    "category": "title-race",
+    "sourceLabel": "Research verified-aggregated",
+    "note": "Imported from ilk10-research/questions/goals-vs-club/goals-vs-ts.md",
+    "answers": [
+      {
+        "value": "YILMAZ"
+      },
+      {
+        "value": "Mert Nobre"
+      },
+      {
+        "value": "Zafer Biryol"
+      },
+      {
+        "value": "Edin Višća"
+      },
+      {
+        "value": "Arda Turan"
+      },
+      {
+        "value": "Umut Şanlı"
+      },
+      {
+        "value": "TRAORE"
+      },
+      {
+        "value": "SISMANOGLU"
+      },
+      {
+        "value": "Selçuk İnan"
+      },
+      {
+        "value": "Pablo Batalla"
+      }
+    ]
+  },
+  {
+    "id": "verified-historical-closest-title-races",
+    "shortLabel": "1980'den Sonra En Az Puan Farkıyla Biten Süper Lig Sezonları",
+    "prompt": "1980'den Sonra En Az Puan Farkıyla Biten Süper Lig Sezonları",
+    "entityType": "team",
+    "category": "season-stats",
+    "sourceLabel": "Research verified-aggregated",
+    "sourceUrl": "https://tr.wikipedia.org/wiki/S%C3%BCper_Lig_sezonlar%C4%B1_listesi",
+    "note": "Imported from ilk10-research/questions/historical/closest-title-races.md",
+    "answers": [
+      {
+        "value": "1992-93"
+      },
+      {
+        "value": "2010-11"
+      },
+      {
+        "value": "2020-21"
+      },
+      {
+        "value": "1993-94"
+      },
+      {
+        "value": "1998-99"
+      },
+      {
+        "value": "2009-10"
+      },
+      {
+        "value": "2011-12"
+      },
+      {
+        "value": "1995-96"
+      },
+      {
+        "value": "2005-06"
+      },
+      {
+        "value": "2018-19"
+      }
+    ]
+  },
+  {
+    "id": "verified-historical-golden-boot-archive",
+    "shortLabel": "Süper Lig Gol Kralı Arşivi (1959–2025)",
+    "prompt": "Süper Lig Gol Kralı Arşivi (1959–2025)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.tff.org/default.aspx?pageID=545",
+    "note": "Imported from ilk10-research/questions/historical/golden-boot-archive.md",
+    "answers": [
+      {
+        "value": "Metin Oktay"
+      },
+      {
+        "value": "Tanju Çolak"
+      },
+      {
+        "value": "Hakan Şükür"
+      },
+      {
+        "value": "Aykut Kocaman"
+      },
+      {
+        "value": "Alex de Souza"
+      },
+      {
+        "value": "Cemil Turan"
+      },
+      {
+        "value": "Ertan Adatepe"
+      },
+      {
+        "value": "Fethi Heper"
+      },
+      {
+        "value": "Okan Yılmaz"
+      },
+      {
+        "value": "Selçuk Yula"
+      }
+    ]
+  },
+  {
+    "id": "verified-keeper-conceded-muslera-by-team",
+    "shortLabel": "Muslera'nın en çok gol yediği takımlar",
+    "prompt": "Muslera'nın en çok gol yediği takımlar",
+    "entityType": "team",
+    "category": "title-race",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/fernando-muslera/bilanz/spieler/58088",
+    "note": "Imported from ilk10-research/questions/keeper-conceded/muslera-by-team.md",
+    "answers": [
+      {
+        "value": "Kasımpaşa"
+      },
+      {
+        "value": "Trabzonspor"
+      },
+      {
+        "value": "Beşiktaş"
+      },
+      {
+        "value": "Sivasspor"
+      },
+      {
+        "value": "Fenerbahçe"
+      },
+      {
+        "value": "Çaykur Rizespor"
+      },
+      {
+        "value": "Kayserispor"
+      },
+      {
+        "value": "Başakşehir"
+      },
+      {
+        "value": "Antalyaspor"
+      },
+      {
+        "value": "Bursaspor"
+      }
+    ]
+  },
+  {
+    "id": "verified-keeper-conceded-volkan-by-team",
+    "shortLabel": "Volkan Demirel'in en çok gol yediği takımlar",
+    "prompt": "Volkan Demirel'in en çok gol yediği takımlar",
+    "entityType": "team",
+    "category": "title-race",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/volkan-demirel/bilanz/spieler/7079",
+    "note": "Imported from ilk10-research/questions/keeper-conceded/volkan-by-team.md",
+    "answers": [
+      {
+        "value": "Beşiktaş"
+      },
+      {
+        "value": "Sivasspor"
+      },
+      {
+        "value": "Bursaspor"
+      },
+      {
+        "value": "Konyaspor"
+      },
+      {
+        "value": "Galatasaray"
+      },
+      {
+        "value": "Antalyaspor"
+      },
+      {
+        "value": "Gaziantepspor"
+      },
+      {
+        "value": "Kayserispor"
+      },
+      {
+        "value": "Gençlerbirliği"
+      },
+      {
+        "value": "Eskişehirspor"
+      }
+    ]
+  },
+  {
+    "id": "verified-longevity-longest-single-club-stints",
+    "shortLabel": "Aynı Kulüpte En Uzun Süre Oynamış Futbolcular (Süper Lig)",
+    "prompt": "Aynı Kulüpte En Uzun Süre Oynamış Futbolcular (Süper Lig)",
+    "entityType": "player",
+    "category": "title-race",
+    "sourceLabel": "Research verified-aggregated",
+    "note": "Imported from ilk10-research/questions/longevity/longest-single-club-stints.md",
+    "answers": [
+      {
+        "value": "Volkan Demirel"
+      },
+      {
+        "value": "Necip Uysal"
+      },
+      {
+        "value": "Sabri Sarıoğlu"
+      },
+      {
+        "value": "Fernando Muslera"
+      },
+      {
+        "value": "İbrahim Üzülmez"
+      },
+      {
+        "value": "[AKMAN]"
+      },
+      {
+        "value": "Efecan Karaca"
+      },
+      {
+        "value": "Hakan Balta"
+      },
+      {
+        "value": "Mahmut Tekdemir"
+      },
+      {
+        "value": "Oğuzhan Özyakup"
+      }
+    ]
+  },
+  {
+    "id": "verified-multi-club-dual-fb-bjk",
+    "shortLabel": "2000 yılından bu yana hem Fener hem JK'de (Beşiktaş) oynamış futbolcular",
+    "prompt": "2000 yılından bu yana hem Fener hem JK'de (Beşiktaş) oynamış futbolcular",
+    "entityType": "player",
+    "category": "club-overlap",
+    "sourceLabel": "Research verified-aggregated",
+    "note": "Imported from ilk10-research/questions/multi-club/dual-fb-bjk.md",
+    "answers": [
+      {
+        "value": "Gökhan Gönül"
+      },
+      {
+        "value": "Rüştü Reçber"
+      },
+      {
+        "value": "Caner Erkin"
+      },
+      {
+        "value": "Mehmet Aurélio"
+      },
+      {
+        "value": "Mert Nobre"
+      },
+      {
+        "value": "Josef de Souza"
+      },
+      {
+        "value": "Tümer Metin"
+      },
+      {
+        "value": "Mert Günok"
+      },
+      {
+        "value": "Anderson Talisca"
+      },
+      {
+        "value": "Uğur Boral"
+      }
+    ]
+  },
+  {
+    "id": "verified-multi-club-dual-gs-bjk",
+    "shortLabel": "2000 yılından bu yana hem GS hem JK'de (Beşiktaş) oynamış futbolcular",
+    "prompt": "2000 yılından bu yana hem GS hem JK'de (Beşiktaş) oynamış futbolcular",
+    "entityType": "player",
+    "category": "club-overlap",
+    "sourceLabel": "Research verified-aggregated",
+    "note": "Imported from ilk10-research/questions/multi-club/dual-gs-bjk.md",
+    "answers": [
+      {
+        "value": "Ayhan Akman"
+      },
+      {
+        "value": "Ryan Babel"
+      },
+      {
+        "value": "Gökhan Zan"
+      },
+      {
+        "value": "Emre Aşık"
+      },
+      {
+        "value": "Caner Erkin"
+      },
+      {
+        "value": "Okan Buruk"
+      },
+      {
+        "value": "Milot Rashica"
+      },
+      {
+        "value": "Leo Franco"
+      },
+      {
+        "value": "Michy Batshuayi"
+      },
+      {
+        "value": "Dany Nounkeu"
+      }
+    ]
+  },
+  {
+    "id": "verified-multi-club-dual-gs-fb",
+    "shortLabel": "2000 yılından bu yana hem GS hem FB'de oynamış futbolcular",
+    "prompt": "2000 yılından bu yana hem GS hem FB'de oynamış futbolcular",
+    "entityType": "player",
+    "category": "club-overlap",
+    "sourceLabel": "Research verified-aggregated",
+    "note": "Imported from ilk10-research/questions/multi-club/dual-gs-fb.md",
+    "answers": [
+      {
+        "value": "Emre Belözoğlu"
+      },
+      {
+        "value": "Kerem Aktürkoğlu"
+      },
+      {
+        "value": "Serdar Aziz"
+      },
+      {
+        "value": "Caner Erkin"
+      },
+      {
+        "value": "Stjepan Tomas"
+      },
+      {
+        "value": "Şener Özbayraklı"
+      },
+      {
+        "value": "Haim Revivo"
+      },
+      {
+        "value": "Fatih Akyel"
+      },
+      {
+        "value": "Tolga Ciğerci"
+      },
+      {
+        "value": "Colin Kazım-Richards"
+      }
+    ]
+  },
+  {
+    "id": "verified-multi-club-scored-fb-bjk",
+    "shortLabel": "2000 yılından bu yana hem FB hem JK'de (Beşiktaş) oynayıp gol atmış futb",
+    "prompt": "2000 yılından bu yana hem FB hem JK'de (Beşiktaş) oynayıp gol atmış futbolcular",
+    "entityType": "player",
+    "category": "club-overlap",
+    "sourceLabel": "Research verified-aggregated",
+    "note": "Imported from ilk10-research/questions/multi-club/scored-fb-bjk.md",
+    "answers": [
+      {
+        "value": "Mert Nobre"
+      },
+      {
+        "value": "Anderson Talisca"
+      },
+      {
+        "value": "Tümer Metin"
+      },
+      {
+        "value": "Michy Batshuayi"
+      },
+      {
+        "value": "M'Baye Niang"
+      },
+      {
+        "value": "Gökhan Gönül"
+      },
+      {
+        "value": "Mehmet Aurélio"
+      },
+      {
+        "value": "Josef de Souza"
+      },
+      {
+        "value": "Caner Erkin"
+      },
+      {
+        "value": "Cengiz Ünder"
+      }
+    ]
+  },
+  {
+    "id": "verified-national-team-turkey-most-caps",
+    "shortLabel": "En çok milli takım forması giyen futbolcular (Türkiye)",
+    "prompt": "En çok milli takım forması giyen futbolcular (Türkiye)",
+    "entityType": "player",
+    "category": "title-race",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.tff.org/default.aspx?pageID=319",
+    "note": "Imported from ilk10-research/questions/national-team/turkey-most-caps.md",
+    "answers": [
+      {
+        "value": "Rustu Recber"
+      },
+      {
+        "value": "Hakan Sukur"
+      },
+      {
+        "value": "Hakan Çalhanoğlu"
+      },
+      {
+        "value": "Bulent Korkmaz"
+      },
+      {
+        "value": "Emre Belozoglu"
+      },
+      {
+        "value": "Arda Turan"
+      },
+      {
+        "value": "Tugay Kerimoglu"
+      },
+      {
+        "value": "Alpay Ozalan"
+      },
+      {
+        "value": "Hamit Altintop"
+      },
+      {
+        "value": "Mehmet Topal"
+      }
+    ]
+  },
+  {
+    "id": "verified-national-team-turkey-top-scorers",
+    "shortLabel": "Milli takım gol rekortmenleri (Türkiye)",
+    "prompt": "Milli takım gol rekortmenleri (Türkiye)",
+    "entityType": "player",
+    "category": "title-race",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.tff.org/default.aspx?pageID=320",
+    "note": "Imported from ilk10-research/questions/national-team/turkey-top-scorers.md",
+    "answers": [
+      {
+        "value": "Hakan Sukur"
+      },
+      {
+        "value": "Burak Yilmaz"
+      },
+      {
+        "value": "Tuncay Sanli"
+      },
+      {
+        "value": "Hakan Çalhanoğlu"
+      },
+      {
+        "value": "Lefter Küçükandonyadis"
+      },
+      {
+        "value": "Cenk Tosun"
+      },
+      {
+        "value": "Metin Oktay"
+      },
+      {
+        "value": "Cemil Turan"
+      },
+      {
+        "value": "Nihat Kahveci"
+      },
+      {
+        "value": "Arda Turan"
+      }
+    ]
+  },
+  {
+    "id": "verified-never-big4-never-big4-topscorers",
+    "shortLabel": "Dört büyüklerde oynamamış en çok gol atan futbolcular",
+    "prompt": "Dört büyüklerde oynamamış en çok gol atan futbolcular",
+    "entityType": "player",
+    "category": "all-time",
+    "sourceLabel": "Research verified-aggregated",
+    "note": "Imported from ilk10-research/questions/never-big4/never-big4-topscorers.md",
+    "answers": [
+      {
+        "value": "Cenk İşler"
+      },
+      {
+        "value": "Zafer Biryol"
+      },
+      {
+        "value": "Zdravko Lazarov"
+      },
+      {
+        "value": "TITA"
+      },
+      {
+        "value": "Pablo Batalla"
+      },
+      {
+        "value": "Samuel Eto'o"
+      },
+      {
+        "value": "Adis Jahovic"
+      },
+      {
+        "value": "BAJIC"
+      },
+      {
+        "value": "Theofanis Gekas"
+      },
+      {
+        "value": "Hervé Tum"
+      }
+    ]
+  },
+  {
+    "id": "verified-outlast-coach-bjk-outlast",
+    "shortLabel": "Beşiktaş Tarihinde En Çok Teknik Direktör Eskiten Futbolcular",
+    "prompt": "Beşiktaş Tarihinde En Çok Teknik Direktör Eskiten Futbolcular",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Research verified-aggregated",
+    "note": "Imported from ilk10-research/questions/outlast-coach/bjk-outlast.md",
+    "answers": [
+      {
+        "value": "Sahin"
+      },
+      {
+        "value": "Burak Yılmaz"
+      },
+      {
+        "value": "Ömer Faruk Uysal"
+      },
+      {
+        "value": "Gökhan Töre",
+        "aliases": [
+          "Fernandes"
+        ]
+      },
+      {
+        "value": "Serdar Kurtulus",
+        "aliases": [
+          "Yalcin"
+        ]
+      },
+      {
+        "value": "Ersin Destanoğlu"
+      },
+      {
+        "value": "Mert Günok"
+      },
+      {
+        "value": "İlkay Üçan"
+      },
+      {
+        "value": "Cenk Tosun"
+      },
+      {
+        "value": "Ismail Toraman"
+      }
+    ]
+  },
+  {
+    "id": "verified-outlast-coach-fb-outlast",
+    "shortLabel": "Fenerbahçe Tarihinde En Çok Teknik Direktör Eskiten Futbolcular",
+    "prompt": "Fenerbahçe Tarihinde En Çok Teknik Direktör Eskiten Futbolcular",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Research verified-aggregated",
+    "note": "Imported from ilk10-research/questions/outlast-coach/fb-outlast.md",
+    "answers": [
+      {
+        "value": "Cetin"
+      },
+      {
+        "value": "Gökhan Gönül"
+      },
+      {
+        "value": "Volkan Demirel"
+      },
+      {
+        "value": "Emre Belözoğlu"
+      },
+      {
+        "value": "Caner Erkin"
+      },
+      {
+        "value": "Hasan Ali Kaldırım",
+        "aliases": [
+          "Tufan"
+        ]
+      },
+      {
+        "value": "Altay Bayındır"
+      },
+      {
+        "value": "Ferdi Kadıoğlu"
+      },
+      {
+        "value": "Ozan Tufan",
+        "aliases": [
+          "Aziz"
+        ]
+      },
+      {
+        "value": "Irfan Can Kahveci"
+      }
+    ]
+  },
+  {
+    "id": "verified-outlast-coach-gs-outlast",
+    "shortLabel": "Galatasaray Tarihinde En Çok Teknik Direktör Eskiten Futbolcular",
+    "prompt": "Galatasaray Tarihinde En Çok Teknik Direktör Eskiten Futbolcular",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Research verified-aggregated",
+    "note": "Imported from ilk10-research/questions/outlast-coach/gs-outlast.md",
+    "answers": [
+      {
+        "value": "Sébastien Kaya"
+      },
+      {
+        "value": "Selcuk İnan"
+      },
+      {
+        "value": "Burak Yılmaz"
+      },
+      {
+        "value": "Yekta Kurtuluş Ayhan"
+      },
+      {
+        "value": "Ümit Arslan"
+      },
+      {
+        "value": "Yusuf Sarıoğlu"
+      },
+      {
+        "value": "Arda Turan"
+      },
+      {
+        "value": "Ahmet Çalık"
+      },
+      {
+        "value": "Serdar Balta"
+      },
+      {
+        "value": "Unsal"
+      }
+    ]
+  },
+  {
+    "id": "verified-penalty-most-pen-scored-5y",
+    "shortLabel": "Son 5 Sezonda En Çok Penaltı Atan Futbolcular (Süper Lig)",
+    "prompt": "Son 5 Sezonda En Çok Penaltı Atan Futbolcular (Süper Lig)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Research verified-aggregated",
+    "sourceUrl": "https://www.worldfootball.net/competition/co116/turkey-sueperlig/se39354/2021-2022/statistics-goals/",
+    "note": "Imported from ilk10-research/questions/penalty/most-pen-scored-5y.md",
+    "answers": [
+      {
+        "value": "Alexandru Maxim"
+      },
+      {
+        "value": "Mauro Icardi"
+      },
+      {
+        "value": "Enner Valencia"
+      },
+      {
+        "value": "Michy Batshuayi"
+      },
+      {
+        "value": "Haris Hajradinovic"
+      },
+      {
+        "value": "Mame Thiam"
+      },
+      {
+        "value": "Anastasios Bakasetas"
+      },
+      {
+        "value": "Dusan Tadic"
+      },
+      {
+        "value": "Florent Hadergjonaj"
+      },
+      {
+        "value": "Krzysztof Piatek"
+      }
+    ]
+  },
+  {
+    "id": "verified-season-records-double-digit-ga",
+    "shortLabel": "Aynı Sezonda Hem Gol Hem Asistte Çift Haneye Çıkan Futbolcular",
+    "prompt": "Aynı Sezonda Hem Gol Hem Asistte Çift Haneye Çıkan Futbolcular",
+    "entityType": "player",
+    "category": "club-overlap",
+    "sourceLabel": "Research verified-aggregated",
+    "note": "Imported from ilk10-research/questions/season-records/double-digit-ga.md",
+    "answers": [
+      {
+        "value": "Burak Yılmaz"
+      },
+      {
+        "value": "Fatih Tekke"
+      },
+      {
+        "value": "Alex de Souza"
+      },
+      {
+        "value": "Julio Batalla"
+      },
+      {
+        "value": "Pierre van Hooijdonk"
+      },
+      {
+        "value": "Fabio Borini"
+      },
+      {
+        "value": "34G + 13A = 47"
+      },
+      {
+        "value": "33G + 15A = 48"
+      },
+      {
+        "value": "27G + 11A = 38"
+      },
+      {
+        "value": "31G + 12A = 43"
+      }
+    ]
+  },
+  {
+    "id": "verified-season-records-most-own-goals",
+    "shortLabel": "Süper Lig'de En Çok Kendi Kalesine Gol Atan Futbolcular (All-Time)",
+    "prompt": "Süper Lig'de En Çok Kendi Kalesine Gol Atan Futbolcular (All-Time)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.worldfootball.net/competition/co116/turkey-sueperlig/records-all-time-own-goals/",
+    "note": "Imported from ilk10-research/questions/season-records/most-own-goals.md",
+    "answers": [
+      {
+        "value": "Gökmen Baris"
+      },
+      {
+        "value": "Abdel-Zaher El Saqqa"
+      },
+      {
+        "value": "Cihat Arslan"
+      },
+      {
+        "value": "Berkan Emir"
+      },
+      {
+        "value": "Ercan Koloğlu"
+      },
+      {
+        "value": "Burak Özsaraç"
+      },
+      {
+        "value": "Kenan Arayıcı"
+      },
+      {
+        "value": "Emre Aşık"
+      },
+      {
+        "value": "Serdar Aziz"
+      },
+      {
+        "value": "Steven Caulker"
+      }
+    ]
+  },
+  {
+    "id": "verified-seasonal-np-topscorers-2021-22",
+    "shortLabel": "Penaltılar Hariç 2021-22 Süper Lig Gol Krallığı",
+    "prompt": "Penaltılar Hariç 2021-22 Süper Lig Gol Krallığı",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/torschuetzenliste/wettbewerb/TR1/saison_id/2021",
+    "note": "Imported from ilk10-research/questions/seasonal/np-topscorers-2021-22.md",
+    "answers": [
+      {
+        "value": "Ayoub El Kaabi"
+      },
+      {
+        "value": "Umut Bozok"
+      },
+      {
+        "value": "Andreas Cornelius"
+      },
+      {
+        "value": "Mario Balotelli"
+      },
+      {
+        "value": "Aleksandar Pesic"
+      },
+      {
+        "value": "Jackson Muleka"
+      },
+      {
+        "value": "Stefano Okaka"
+      },
+      {
+        "value": "Joel Pohjanpalo"
+      },
+      {
+        "value": "Serdar Dursun"
+      },
+      {
+        "value": "Haji Wright"
+      }
+    ]
+  },
+  {
+    "id": "verified-seasonal-np-topscorers-2022-23",
+    "shortLabel": "Penaltılar Hariç 2022-23 Süper Lig Gol Krallığı",
+    "prompt": "Penaltılar Hariç 2022-23 Süper Lig Gol Krallığı",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.worldfootball.net/competition/co116/turkey-sueperlig/se45827/2022-2023/statistics-goals/",
+    "note": "Imported from ilk10-research/questions/seasonal/np-topscorers-2022-23.md",
+    "answers": [
+      {
+        "value": "Mbaye Diagne"
+      },
+      {
+        "value": "Enner Valencia"
+      },
+      {
+        "value": "Mauro Icardi"
+      },
+      {
+        "value": "Fabio Borini"
+      },
+      {
+        "value": "Haji Wright"
+      },
+      {
+        "value": "Umut Nayir"
+      },
+      {
+        "value": "Cenk Tosun"
+      },
+      {
+        "value": "Ali Sowe"
+      },
+      {
+        "value": "Rijad Bajić"
+      },
+      {
+        "value": "Vincent Aboubakar"
+      }
+    ]
+  },
+  {
+    "id": "verified-seasonal-np-topscorers-2023-24",
+    "shortLabel": "Penaltılar Hariç 2023-24 Süper Lig Gol Krallığı",
+    "prompt": "Penaltılar Hariç 2023-24 Süper Lig Gol Krallığı",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.worldfootball.net/competition/co116/turkey-sueperlig/se54197/2023-2024/statistics-goals/",
+    "note": "Imported from ilk10-research/questions/seasonal/np-topscorers-2023-24.md",
+    "answers": [
+      {
+        "value": "Mauro Icardi"
+      },
+      {
+        "value": "Edin Džeko"
+      },
+      {
+        "value": "Paul Onuachu"
+      },
+      {
+        "value": "Rey Manaj"
+      },
+      {
+        "value": "Nuno Da Costa"
+      },
+      {
+        "value": "Krzysztof Piątek"
+      },
+      {
+        "value": "Denis Drăguș"
+      },
+      {
+        "value": "Mame Thiam"
+      },
+      {
+        "value": "Adam Buksa"
+      },
+      {
+        "value": "Aytaç Kara"
+      }
+    ]
+  },
+  {
+    "id": "verified-seasonal-np-topscorers-2024-25",
+    "shortLabel": "Penaltılar Hariç 2024-25 Süper Lig Gol Krallığı",
+    "prompt": "Penaltılar Hariç 2024-25 Süper Lig Gol Krallığı",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.worldfootball.net/competition/co116/turkey-sueperlig/se75059/2024-2025/statistics-goals/",
+    "note": "Imported from ilk10-research/questions/seasonal/np-topscorers-2024-25.md",
+    "answers": [
+      {
+        "value": "Victor Osimhen"
+      },
+      {
+        "value": "Youssef En-Nesyri"
+      },
+      {
+        "value": "Ali Sowe"
+      },
+      {
+        "value": "Krzysztof Piątek"
+      },
+      {
+        "value": "Simon Banza"
+      },
+      {
+        "value": "Mame Thiam"
+      },
+      {
+        "value": "Nuno Da Costa"
+      },
+      {
+        "value": "Rafa Silva"
+      },
+      {
+        "value": "Barış Alper Yılmaz"
+      },
+      {
+        "value": "Edin Džeko"
+      }
+    ]
+  },
+  {
+    "id": "verified-seasonal-np-topscorers-2025-26",
+    "shortLabel": "Penaltılar Hariç 2025-26 Süper Lig Gol Krallığı (devam eden sezon)",
+    "prompt": "Penaltılar Hariç 2025-26 Süper Lig Gol Krallığı (devam eden sezon)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/torschuetzenliste/wettbewerb/TR1/saison_id/2025",
+    "note": "Imported from ilk10-research/questions/seasonal/np-topscorers-2025-26.md",
+    "answers": [
+      {
+        "value": "Paul Onuachu"
+      },
+      {
+        "value": "Eldor Shomurodov"
+      },
+      {
+        "value": "Mauro Icardi"
+      },
+      {
+        "value": "Mohamed Bayo"
+      },
+      {
+        "value": "Felipe Augusto"
+      },
+      {
+        "value": "Talisca"
+      },
+      {
+        "value": "Victor Osimhen"
+      },
+      {
+        "value": "Marco Asensio"
+      },
+      {
+        "value": "Dorgeles Nene"
+      },
+      {
+        "value": "Ernest Muci"
+      }
+    ]
+  },
+  {
+    "id": "verified-seasonal-topscorers-2021-22",
+    "shortLabel": "2021-22 Süper Lig Gol Krallığı (toplam gol)",
+    "prompt": "2021-22 Süper Lig Gol Krallığı (toplam gol)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/torschuetzenliste/wettbewerb/TR1/saison_id/2021",
+    "note": "Imported from ilk10-research/questions/seasonal/topscorers-2021-22.md",
+    "answers": [
+      {
+        "value": "Umut Bozok"
+      },
+      {
+        "value": "Mario Balotelli"
+      },
+      {
+        "value": "Ayoub El Kaabi"
+      },
+      {
+        "value": "Joel Pohjanpalo"
+      },
+      {
+        "value": "Andreas Cornelius"
+      },
+      {
+        "value": "Serdar Dursun"
+      },
+      {
+        "value": "Alexandru Maxim"
+      },
+      {
+        "value": "Michy Batshuayi"
+      },
+      {
+        "value": "Aleksandar Pesic"
+      },
+      {
+        "value": "Haji Wright"
+      }
+    ]
+  },
+  {
+    "id": "verified-seasonal-topscorers-2022-23",
+    "shortLabel": "2022-23 Süper Lig Gol Krallığı (toplam gol)",
+    "prompt": "2022-23 Süper Lig Gol Krallığı (toplam gol)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/torschuetzenliste/wettbewerb/TR1/saison_id/2022",
+    "note": "Imported from ilk10-research/questions/seasonal/topscorers-2022-23.md",
+    "answers": [
+      {
+        "value": "Enner Valencia"
+      },
+      {
+        "value": "Mbaye Diagne"
+      },
+      {
+        "value": "Mauro Icardi"
+      },
+      {
+        "value": "Fabio Borini"
+      },
+      {
+        "value": "Umut Nayir"
+      },
+      {
+        "value": "Cenk Tosun"
+      },
+      {
+        "value": "Haji Wright"
+      },
+      {
+        "value": "Riad Bajic"
+      },
+      {
+        "value": "Vincent Aboubakar"
+      },
+      {
+        "value": "Younès Belhanda"
+      }
+    ]
+  },
+  {
+    "id": "verified-seasonal-topscorers-2023-24",
+    "shortLabel": "2023-24 Süper Lig Gol Krallığı (toplam gol)",
+    "prompt": "2023-24 Süper Lig Gol Krallığı (toplam gol)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/torschuetzenliste/wettbewerb/TR1/saison_id/2023",
+    "note": "Imported from ilk10-research/questions/seasonal/topscorers-2023-24.md",
+    "answers": [
+      {
+        "value": "Mauro Icardi"
+      },
+      {
+        "value": "Edin Džeko"
+      },
+      {
+        "value": "Rey Manaj"
+      },
+      {
+        "value": "Mame Thiam"
+      },
+      {
+        "value": "Krzysztof Piątek"
+      },
+      {
+        "value": "Adam Buksa"
+      },
+      {
+        "value": "Paul Onuachu"
+      },
+      {
+        "value": "Nuno Da Costa"
+      },
+      {
+        "value": "Aytaç Kara"
+      },
+      {
+        "value": "Denis Drăguș"
+      }
+    ]
+  },
+  {
+    "id": "verified-seasonal-topscorers-2024-25",
+    "shortLabel": "2024-25 Süper Lig Gol Krallığı (toplam gol)",
+    "prompt": "2024-25 Süper Lig Gol Krallığı (toplam gol)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/torschuetzenliste/wettbewerb/TR1/saison_id/2024",
+    "note": "Imported from ilk10-research/questions/seasonal/topscorers-2024-25.md",
+    "answers": [
+      {
+        "value": "Victor Osimhen"
+      },
+      {
+        "value": "Krzysztof Piątek"
+      },
+      {
+        "value": "Youssef En-Nesyri"
+      },
+      {
+        "value": "Simon Banza"
+      },
+      {
+        "value": "Ali Sowe"
+      },
+      {
+        "value": "Ciro Immobile"
+      },
+      {
+        "value": "Mame Thiam"
+      },
+      {
+        "value": "Edin Džeko"
+      },
+      {
+        "value": "Rômulo"
+      },
+      {
+        "value": "Nuno Da Costa"
+      }
+    ]
+  },
+  {
+    "id": "verified-seasonal-topscorers-2025-26",
+    "shortLabel": "2025-26 Süper Lig Gol Krallığı — devam eden sezon (toplam gol)",
+    "prompt": "2025-26 Süper Lig Gol Krallığı — devam eden sezon (toplam gol)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/torschuetzenliste/wettbewerb/TR1/saison_id/2025",
+    "note": "Imported from ilk10-research/questions/seasonal/topscorers-2025-26.md",
+    "answers": [
+      {
+        "value": "Paul Onuachu"
+      },
+      {
+        "value": "Eldor Shomurodov"
+      },
+      {
+        "value": "Talisca"
+      },
+      {
+        "value": "Mauro Icardi"
+      },
+      {
+        "value": "Mohamed Bayo"
+      },
+      {
+        "value": "Victor Osimhen"
+      },
+      {
+        "value": "Felipe Augusto"
+      },
+      {
+        "value": "Marco Asensio"
+      },
+      {
+        "value": "Dorgeles Nene"
+      },
+      {
+        "value": "Ernest Muci"
+      }
+    ]
+  },
+  {
+    "id": "verified-teammate-of-teammates-alex",
+    "shortLabel": "Alex de Souza ile En Çok Maça Çıkan Futbolcular",
+    "prompt": "Alex de Souza ile En Çok Maça Çıkan Futbolcular",
+    "entityType": "player",
+    "category": "club-overlap",
+    "sourceLabel": "Research verified-aggregated",
+    "sourceUrl": "https://www.transfermarkt.co.uk/alex/gemeinsamespiele/spieler/15420",
+    "note": "Imported from ilk10-research/questions/teammate-of/teammates-alex.md",
+    "answers": [
+      {
+        "value": "Volkan Demirel"
+      },
+      {
+        "value": "Gökhan Gönül"
+      },
+      {
+        "value": "Diego Lugano"
+      },
+      {
+        "value": "Mehmet Aurélio"
+      },
+      {
+        "value": "Önder Turacı"
+      },
+      {
+        "value": "Selçuk Şahin"
+      },
+      {
+        "value": "Ümit Özat"
+      },
+      {
+        "value": "Tuncay Şanlı"
+      },
+      {
+        "value": "Mehmet Topuz"
+      },
+      {
+        "value": "Emre Belözoğlu"
+      }
+    ]
+  },
+  {
+    "id": "verified-teammate-of-teammates-atiba",
+    "shortLabel": "Atiba Hutchinson ile En Çok Maça Çıkan Futbolcular (Süper Lig)",
+    "prompt": "Atiba Hutchinson ile En Çok Maça Çıkan Futbolcular (Süper Lig)",
+    "entityType": "player",
+    "category": "club-overlap",
+    "sourceLabel": "Research verified-aggregated",
+    "note": "Imported from ilk10-research/questions/teammate-of/teammates-atiba.md",
+    "answers": [
+      {
+        "value": "Oğuzhan Özyakup"
+      },
+      {
+        "value": "Domagoj Vida"
+      },
+      {
+        "value": "Gökhan Gönül"
+      },
+      {
+        "value": "Dusko Tosic",
+        "aliases": [
+          "Sahan"
+        ]
+      },
+      {
+        "value": "Ricardo Quaresma"
+      },
+      {
+        "value": "Aziz Behich",
+        "aliases": [
+          "Zengin"
+        ]
+      },
+      {
+        "value": "Gökhan Töre",
+        "aliases": [
+          "Tore"
+        ]
+      },
+      {
+        "value": "Burak Yılmaz"
+      },
+      {
+        "value": "Ömer Faruk Uysal"
+      },
+      {
+        "value": "Zdenko Tosic"
+      }
+    ]
+  },
+  {
+    "id": "verified-teammate-of-teammates-quaresma",
+    "shortLabel": "Ricardo Quaresma ile En Çok Maça Çıkan Futbolcular",
+    "prompt": "Ricardo Quaresma ile En Çok Maça Çıkan Futbolcular",
+    "entityType": "player",
+    "category": "club-overlap",
+    "sourceLabel": "Research verified-aggregated",
+    "sourceUrl": "https://www.transfermarkt.com/ricardo-quaresma/gemeinsamespiele/spieler/4188",
+    "note": "Imported from ilk10-research/questions/teammate-of/teammates-quaresma.md",
+    "answers": [
+      {
+        "value": "Atiba Hutchinson"
+      },
+      {
+        "value": "Oğuzhan Özyakup"
+      },
+      {
+        "value": "Adriano"
+      },
+      {
+        "value": "Gökhan Gönül"
+      },
+      {
+        "value": "Fabri"
+      },
+      {
+        "value": "Duško Tošić"
+      },
+      {
+        "value": "İsmail Köybaşı"
+      },
+      {
+        "value": "Ryan Babel"
+      },
+      {
+        "value": "Necip Uysal"
+      },
+      {
+        "value": "Anderson Talisca"
+      }
+    ]
+  },
+  {
+    "id": "verified-teammate-of-teammates-selcuk",
+    "shortLabel": "Selçuk İnan ile En Çok Maça Çıkan Futbolcular (Süper Lig)",
+    "prompt": "Selçuk İnan ile En Çok Maça Çıkan Futbolcular (Süper Lig)",
+    "entityType": "player",
+    "category": "club-overlap",
+    "sourceLabel": "Research verified-aggregated",
+    "note": "Imported from ilk10-research/questions/teammate-of/teammates-selcuk.md",
+    "answers": [
+      {
+        "value": "Fernando Muslera"
+      },
+      {
+        "value": "Serdar Balta"
+      },
+      {
+        "value": "Burak Yılmaz"
+      },
+      {
+        "value": "Umut Bulut"
+      },
+      {
+        "value": "Sébastien Kaya"
+      },
+      {
+        "value": "Hakan Balta",
+        "aliases": [
+          "Korkmaz"
+        ]
+      },
+      {
+        "value": "Wesley Sneijder"
+      },
+      {
+        "value": "Yusuf Sarioğlu",
+        "aliases": [
+          "Sarioglu"
+        ]
+      },
+      {
+        "value": "Felipe Melo"
+      },
+      {
+        "value": "Izet Hajrović",
+        "aliases": [
+          "Colman"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "verified-titles-most-runner-up-foreign",
+    "shortLabel": "En çok ikincilik yaşamış yabancı futbolcular (Süper Lig)",
+    "prompt": "En çok ikincilik yaşamış yabancı futbolcular (Süper Lig)",
+    "entityType": "player",
+    "category": "title-race",
+    "sourceLabel": "Research verified-aggregated",
+    "note": "Imported from ilk10-research/questions/titles/most-runner-up-foreign.md",
+    "answers": [
+      {
+        "value": "Fernando Muslera"
+      },
+      {
+        "value": "Faryd Mondragón"
+      },
+      {
+        "value": "Alex de Souza"
+      },
+      {
+        "value": "Rigobert Song"
+      },
+      {
+        "value": "Ibrahim Yattara"
+      },
+      {
+        "value": "Aurélien Chedjou"
+      },
+      {
+        "value": "Talisca"
+      },
+      {
+        "value": "Sebastian Szymański"
+      },
+      {
+        "value": "Felipe Melo"
+      },
+      {
+        "value": "Wesley Sneijder"
+      }
+    ]
+  },
+  {
+    "id": "verified-titles-most-runner-up-turkish",
+    "shortLabel": "En çok ikincilik yaşamış yerli futbolcular (Süper Lig)",
+    "prompt": "En çok ikincilik yaşamış yerli futbolcular (Süper Lig)",
+    "entityType": "player",
+    "category": "title-race",
+    "sourceLabel": "Research verified-aggregated",
+    "note": "Imported from ilk10-research/questions/titles/most-runner-up-turkish.md",
+    "answers": [
+      {
+        "value": "Burak Yılmaz"
+      },
+      {
+        "value": "Selçuk İnan"
+      },
+      {
+        "value": "İrfan Can Kahveci"
+      },
+      {
+        "value": "Sabri Sarıoğlu"
+      },
+      {
+        "value": "Bülent Korkmaz"
+      },
+      {
+        "value": "Gökhan Gönül"
+      },
+      {
+        "value": "Hakan Şaş"
+      },
+      {
+        "value": "Ümit Karan"
+      },
+      {
+        "value": "Umut Bulut"
+      },
+      {
+        "value": "Volkan Demirel"
+      }
+    ]
+  },
+  {
+    "id": "verified-titles-most-titles-foreign",
+    "shortLabel": "En çok şampiyonluk yaşamış yabancı futbolcular (Süper Lig)",
+    "prompt": "En çok şampiyonluk yaşamış yabancı futbolcular (Süper Lig)",
+    "entityType": "player",
+    "category": "title-race",
+    "sourceLabel": "Research verified-aggregated",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Fernando_Muslera",
+    "note": "Imported from ilk10-research/questions/titles/most-titles-foreign.md",
+    "answers": [
+      {
+        "value": "Fernando Muslera"
+      },
+      {
+        "value": "Gheorghe Popescu"
+      },
+      {
+        "value": "Felipe Melo"
+      },
+      {
+        "value": "Alex de Souza"
+      },
+      {
+        "value": "Atiba Hutchinson"
+      },
+      {
+        "value": "Mauro Icardi"
+      },
+      {
+        "value": "Dries Mertens"
+      },
+      {
+        "value": "Wesley Sneijder"
+      },
+      {
+        "value": "Roberto Carlos"
+      },
+      {
+        "value": "Ricardo Quaresma"
+      }
+    ]
+  },
+  {
+    "id": "verified-transfers-bjk-record-sales",
+    "shortLabel": "Beşiktaş'ın en kârlı satışları",
+    "prompt": "Beşiktaş'ın en kârlı satışları",
+    "entityType": "player",
+    "category": "all-time",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/besiktas-jk/rekordabgaenge/verein/114",
+    "note": "Imported from ilk10-research/questions/transfers/bjk-record-sales.md",
+    "answers": [
+      {
+        "value": "Cenk Tosun"
+      },
+      {
+        "value": "Tammy Abraham"
+      },
+      {
+        "value": "Gedson Fernandes"
+      },
+      {
+        "value": "Demba Ba"
+      },
+      {
+        "value": "Keny Arroyo"
+      },
+      {
+        "value": "John Carew"
+      },
+      {
+        "value": "José Sosa"
+      },
+      {
+        "value": "Marcelo"
+      },
+      {
+        "value": "Sergen Yalçın"
+      },
+      {
+        "value": "Demir Ege Tıknaz"
+      }
+    ]
+  },
+  {
+    "id": "verified-transfers-bjk-record-signings",
+    "shortLabel": "Beşiktaş'ın en pahalı transferleri",
+    "prompt": "Beşiktaş'ın en pahalı transferleri",
+    "entityType": "player",
+    "category": "all-time",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/besiktas-jk/transferrekorde/verein/114",
+    "note": "Imported from ilk10-research/questions/transfers/bjk-record-signings.md",
+    "answers": [
+      {
+        "value": "Orkun Kökçü"
+      },
+      {
+        "value": "Emmanuel Agbadou"
+      },
+      {
+        "value": "Gedson Fernandes"
+      },
+      {
+        "value": "Tammy Abraham"
+      },
+      {
+        "value": "Hyeon-gyu Oh"
+      },
+      {
+        "value": "Moatasem Al-Musrati"
+      },
+      {
+        "value": "Ernest Muci"
+      },
+      {
+        "value": "Wilfred Ndidi"
+      },
+      {
+        "value": "Rodrigo Tabata"
+      },
+      {
+        "value": "Ricardo Quaresma"
+      }
+    ]
+  },
+  {
+    "id": "verified-transfers-fb-record-sales",
+    "shortLabel": "Fenerbahçe'nin en kârlı satışları",
+    "prompt": "Fenerbahçe'nin en kârlı satışları",
+    "entityType": "player",
+    "category": "all-time",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/fenerbahce-sk/rekordabgaenge/verein/36",
+    "note": "Imported from ilk10-research/questions/transfers/fb-record-sales.md",
+    "answers": [
+      {
+        "value": "Ferdi Kadıoğlu"
+      },
+      {
+        "value": "Arda Güler"
+      },
+      {
+        "value": "Yusuf Akçiçek"
+      },
+      {
+        "value": "Vedat Muriqi"
+      },
+      {
+        "value": "Elvir Baljic"
+      },
+      {
+        "value": "Min-jae Kim"
+      },
+      {
+        "value": "Eljif Elmas"
+      },
+      {
+        "value": "Moussa Sow"
+      },
+      {
+        "value": "Youssef En-Nesyri"
+      },
+      {
+        "value": "Simon Kjaer"
+      }
+    ]
+  },
+  {
+    "id": "verified-transfers-fb-record-signings",
+    "shortLabel": "Fenerbahçe'nin en pahalı transferleri",
+    "prompt": "Fenerbahçe'nin en pahalı transferleri",
+    "entityType": "player",
+    "category": "all-time",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/fenerbahce-sk/transferrekorde/verein/36",
+    "note": "Imported from ilk10-research/questions/transfers/fb-record-signings.md",
+    "answers": [
+      {
+        "value": "Mattéo Guendouzi"
+      },
+      {
+        "value": "Kerem Aktürkoğlu"
+      },
+      {
+        "value": "Youssef En-Nesyri"
+      },
+      {
+        "value": "Sidiki Chérif"
+      },
+      {
+        "value": "Dorgeles Nene"
+      },
+      {
+        "value": "Cengiz Ünder"
+      },
+      {
+        "value": "Dani Güiza"
+      },
+      {
+        "value": "Emmanuel Emenike"
+      },
+      {
+        "value": "Sofyan Amrabat"
+      },
+      {
+        "value": "Diego Carlos"
+      }
+    ]
+  },
+  {
+    "id": "verified-transfers-gs-record-sales",
+    "shortLabel": "Galatasaray'ın en kârlı satışları",
+    "prompt": "Galatasaray'ın en kârlı satışları",
+    "entityType": "player",
+    "category": "all-time",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/galatasaray-istanbul/rekordabgaenge/verein/141",
+    "note": "Imported from ilk10-research/questions/transfers/gs-record-sales.md",
+    "answers": [
+      {
+        "value": "Sacha Boey"
+      },
+      {
+        "value": "Badou Ndiaye"
+      },
+      {
+        "value": "Bruma"
+      },
+      {
+        "value": "Kerem Aktürkoğlu"
+      },
+      {
+        "value": "Arda Turan"
+      },
+      {
+        "value": "Marcão"
+      },
+      {
+        "value": "Ozan Kabak"
+      },
+      {
+        "value": "Garry Rodrigues"
+      },
+      {
+        "value": "Abdul Kader Keita"
+      },
+      {
+        "value": "Burak Yılmaz"
+      }
+    ]
+  },
+  {
+    "id": "verified-transfers-gs-record-sales-profit",
+    "shortLabel": "Galatasaray'ın En Kârlı Satışları (Satış Fiyatı − Alış Fiyatı)",
+    "prompt": "Galatasaray'ın En Kârlı Satışları (Satış Fiyatı − Alış Fiyatı)",
+    "entityType": "player",
+    "category": "all-time",
+    "sourceLabel": "Research verified-aggregated",
+    "sourceUrl": "https://www.transfermarkt.com/galatasaray-istanbul/rekordabgaenge/verein/141",
+    "note": "Imported from ilk10-research/questions/transfers/gs-record-sales-profit.md",
+    "answers": [
+      {
+        "value": "Sacha Boey"
+      },
+      {
+        "value": "Kerem Aktürkoğlu"
+      },
+      {
+        "value": "Arda Turan"
+      },
+      {
+        "value": "Ozan Kabak"
+      },
+      {
+        "value": "Badou Ndiaye"
+      },
+      {
+        "value": "Garry Rodrigues"
+      },
+      {
+        "value": "Bruma"
+      },
+      {
+        "value": "Burak Yılmaz"
+      },
+      {
+        "value": "Abdul Kader Keita"
+      },
+      {
+        "value": "Marcão"
+      }
+    ]
+  },
+  {
+    "id": "verified-transfers-gs-record-signings",
+    "shortLabel": "Galatasaray'ın en pahalı transferleri",
+    "prompt": "Galatasaray'ın en pahalı transferleri",
+    "entityType": "player",
+    "category": "all-time",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/galatasaray-istanbul/transferrekorde/verein/141",
+    "note": "Imported from ilk10-research/questions/transfers/gs-record-signings.md",
+    "answers": [
+      {
+        "value": "Victor Osimhen"
+      },
+      {
+        "value": "Wilfried Singo"
+      },
+      {
+        "value": "Uğurcan Çakır"
+      },
+      {
+        "value": "Gabriel Sara"
+      },
+      {
+        "value": "Jardel"
+      },
+      {
+        "value": "Nicolò Zaniolo"
+      },
+      {
+        "value": "Mbaye Diagne"
+      },
+      {
+        "value": "Bruma"
+      },
+      {
+        "value": "Mauro Icardi"
+      },
+      {
+        "value": "Younès Belhanda"
+      }
+    ]
+  },
+  {
+    "id": "verified-transfers-transfers-summer-2021",
+    "shortLabel": "2021 Yazı En Pahalı Transferleri (Süper Lig'e Gelenler)",
+    "prompt": "2021 Yazı En Pahalı Transferleri (Süper Lig'e Gelenler)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/transfers/wettbewerb/TR1/saison_id/2021/s_w/s",
+    "note": "Imported from ilk10-research/questions/transfers/transfers-summer-2021.md",
+    "answers": [
+      {
+        "value": "Victor Nelsson"
+      },
+      {
+        "value": "Alexandru Cicâldău"
+      },
+      {
+        "value": "Ally Samatta"
+      },
+      {
+        "value": "Sacha Boey"
+      },
+      {
+        "value": "Andreas Cornelius"
+      },
+      {
+        "value": "Mergim Berisha"
+      },
+      {
+        "value": "Aaron Boupendza"
+      },
+      {
+        "value": "Olimpiu Moruțan"
+      },
+      {
+        "value": "Berkan Kutlu"
+      },
+      {
+        "value": "Doğan Alemdar"
+      }
+    ]
+  },
+  {
+    "id": "verified-transfers-transfers-summer-2025",
+    "shortLabel": "2025 Yazı En Pahalı Transferleri (Süper Lig'e Gelenler)",
+    "prompt": "2025 Yazı En Pahalı Transferleri (Süper Lig'e Gelenler)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/transfers/wettbewerb/TR1",
+    "note": "Imported from ilk10-research/questions/transfers/transfers-summer-2025.md",
+    "answers": [
+      {
+        "value": "Victor Osimhen"
+      },
+      {
+        "value": "Wilfried Singo"
+      },
+      {
+        "value": "Mattéo Guendouzi"
+      },
+      {
+        "value": "Uğurcan Çakır"
+      },
+      {
+        "value": "Kerem Aktürkoğlu"
+      },
+      {
+        "value": "Emmanuel Agbadou"
+      },
+      {
+        "value": "Dorgeles Nene"
+      },
+      {
+        "value": "Tammy Abraham"
+      },
+      {
+        "value": "Hyeon-gyu Oh"
+      },
+      {
+        "value": "Sofyan Amrabat"
+      }
+    ]
+  },
+  {
+    "id": "verified-under-coach-apps-under-kartal",
+    "shortLabel": "İsmail Kartal Altında En Çok Maça Çıkan Futbolcular",
+    "prompt": "İsmail Kartal Altında En Çok Maça Çıkan Futbolcular",
+    "entityType": "player",
+    "category": "all-time",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/ismail-kartal/eingesetzteSpieler/trainer/6366/plus/1",
+    "note": "Imported from ilk10-research/questions/under-coach/apps-under-kartal.md",
+    "answers": [
+      {
+        "value": "Ferdi Kadıoğlu"
+      },
+      {
+        "value": "İrfan Can Kahveci"
+      },
+      {
+        "value": "Bright Osayi-Samuel"
+      },
+      {
+        "value": "İlhan Parlak"
+      },
+      {
+        "value": "Dušan Tadić"
+      },
+      {
+        "value": "Sebastian Szymański"
+      },
+      {
+        "value": "Anton Putilo"
+      },
+      {
+        "value": "İsmail Yüksek"
+      },
+      {
+        "value": "Serdar Dursun"
+      },
+      {
+        "value": "Erdem Özgenç"
+      }
+    ]
+  },
+  {
+    "id": "verified-under-coach-apps-under-terim",
+    "shortLabel": "Fatih Terim Altında En Çok Maça Çıkan Futbolcular",
+    "prompt": "Fatih Terim Altında En Çok Maça Çıkan Futbolcular",
+    "entityType": "player",
+    "category": "all-time",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/fatih-terim/eingesetzteSpieler/trainer/253/plus/1",
+    "note": "Imported from ilk10-research/questions/under-coach/apps-under-terim.md",
+    "answers": [
+      {
+        "value": "Hakan Şükür"
+      },
+      {
+        "value": "Ergün Penbe"
+      },
+      {
+        "value": "Arif Erdem"
+      },
+      {
+        "value": "Bülent Korkmaz"
+      },
+      {
+        "value": "Fernando Muslera"
+      },
+      {
+        "value": "Hakan Ünsal"
+      },
+      {
+        "value": "Selçuk İnan"
+      },
+      {
+        "value": "Ümit Davala"
+      },
+      {
+        "value": "Tugay Kerimoğlu"
+      },
+      {
+        "value": "Okan Buruk"
+      }
+    ]
+  },
+  {
+    "id": "verified-under-coach-goals-under-avci",
+    "shortLabel": "Abdullah Avcı Altında Süper Lig'de En Çok Gol Atan Futbolcular",
+    "prompt": "Abdullah Avcı Altında Süper Lig'de En Çok Gol Atan Futbolcular",
+    "entityType": "player",
+    "category": "all-time",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/abdullah-avci/eingesetzteSpieler/trainer/5078/plus/1",
+    "note": "Imported from ilk10-research/questions/under-coach/goals-under-avci.md",
+    "answers": [
+      {
+        "value": "Edin Visca"
+      },
+      {
+        "value": "Anastasios Bakasetas"
+      },
+      {
+        "value": "İbrahim Akın"
+      },
+      {
+        "value": "Márcio Mossoró"
+      },
+      {
+        "value": "Emre Belözoğlu"
+      },
+      {
+        "value": "Doka Madureira"
+      },
+      {
+        "value": "Alexandru Epureanu"
+      },
+      {
+        "value": "Efe İnanç"
+      },
+      {
+        "value": "Yalçın Ayhan"
+      },
+      {
+        "value": "Mahmut Tekdemir"
+      }
+    ]
+  },
+  {
+    "id": "verified-under-coach-goals-under-buruk",
+    "shortLabel": "Okan Buruk Altında Süper Lig'de En Çok Gol Atan Futbolcular",
+    "prompt": "Okan Buruk Altında Süper Lig'de En Çok Gol Atan Futbolcular",
+    "entityType": "player",
+    "category": "all-time",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/okan-buruk/eingesetzteSpieler/trainer/23531/plus/1",
+    "note": "Imported from ilk10-research/questions/under-coach/goals-under-buruk.md",
+    "answers": [
+      {
+        "value": "Mauro Icardi"
+      },
+      {
+        "value": "Victor Osimhen"
+      },
+      {
+        "value": "Barış Alper Yılmaz"
+      },
+      {
+        "value": "Kerem Aktürkoğlu"
+      },
+      {
+        "value": "Dries Mertens"
+      },
+      {
+        "value": "Edin Visca"
+      },
+      {
+        "value": "Yunus Akgün"
+      },
+      {
+        "value": "Demba Ba"
+      },
+      {
+        "value": "Abdülkerim Bardakcı"
+      },
+      {
+        "value": "Enzo Crivelli"
+      }
+    ]
+  },
+  {
+    "id": "verified-under-coach-goals-under-gunes",
+    "shortLabel": "Şenol Güneş Altında Süper Lig'de En Çok Gol Atan Futbolcular",
+    "prompt": "Şenol Güneş Altında Süper Lig'de En Çok Gol Atan Futbolcular",
+    "entityType": "player",
+    "category": "all-time",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/senol-gunes/eingesetzteSpieler/trainer/2332/plus/1",
+    "note": "Imported from ilk10-research/questions/under-coach/goals-under-gunes.md",
+    "answers": [
+      {
+        "value": "Hami Mandıralı"
+      },
+      {
+        "value": "Cenk Tosun"
+      },
+      {
+        "value": "Burak Yılmaz"
+      },
+      {
+        "value": "Shota Arveladze"
+      },
+      {
+        "value": "Ünal Karaman"
+      },
+      {
+        "value": "Ricardo Quaresma"
+      },
+      {
+        "value": "Oğuzhan Özyakup"
+      },
+      {
+        "value": "Tolunay Kafkas"
+      },
+      {
+        "value": "Ogün Temizkanoğlu"
+      },
+      {
+        "value": "Atiba Hutchinson"
+      }
+    ]
+  },
+  {
+    "id": "verified-under-coach-goals-under-kartal",
+    "shortLabel": "İsmail Kartal Altında Süper Lig'de En Çok Gol Atan Futbolcular",
+    "prompt": "İsmail Kartal Altında Süper Lig'de En Çok Gol Atan Futbolcular",
+    "entityType": "player",
+    "category": "all-time",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/ismail-kartal/eingesetzteSpieler/trainer/6366/plus/1",
+    "note": "Imported from ilk10-research/questions/under-coach/goals-under-kartal.md",
+    "answers": [
+      {
+        "value": "Edin Džeko"
+      },
+      {
+        "value": "İrfan Can Kahveci"
+      },
+      {
+        "value": "Serdar Dursun"
+      },
+      {
+        "value": "Dušan Tadić"
+      },
+      {
+        "value": "Moussa Sow"
+      },
+      {
+        "value": "Sebastian Szymański"
+      },
+      {
+        "value": "İlhan Parlak"
+      },
+      {
+        "value": "Dirk Kuyt"
+      },
+      {
+        "value": "Alihan Kubalas"
+      },
+      {
+        "value": "Anton Putilo"
+      }
+    ]
+  },
+  {
+    "id": "verified-under-coach-goals-under-kocaman",
+    "shortLabel": "Aykut Kocaman Altında Süper Lig'de En Çok Gol Atan Futbolcular",
+    "prompt": "Aykut Kocaman Altında Süper Lig'de En Çok Gol Atan Futbolcular",
+    "entityType": "player",
+    "category": "all-time",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/aykut-kocaman/eingesetzteSpieler/trainer/1061/plus/1",
+    "note": "Imported from ilk10-research/questions/under-coach/goals-under-kocaman.md",
+    "answers": [
+      {
+        "value": "Alex de Souza"
+      },
+      {
+        "value": "Riad Bajic"
+      },
+      {
+        "value": "Cristian"
+      },
+      {
+        "value": "Ömer Ali Şahiner"
+      },
+      {
+        "value": "Jagos Vukovic"
+      },
+      {
+        "value": "Selçuk Şahin"
+      },
+      {
+        "value": "Özer Hurmacı"
+      },
+      {
+        "value": "Gökhan Gönül"
+      },
+      {
+        "value": "Caner Erkin"
+      },
+      {
+        "value": "Alioum Saidou"
+      }
+    ]
+  },
+  {
+    "id": "verified-under-coach-goals-under-terim",
+    "shortLabel": "Fatih Terim Altında Süper Lig'de En Çok Gol Atan Futbolcular",
+    "prompt": "Fatih Terim Altında Süper Lig'de En Çok Gol Atan Futbolcular",
+    "entityType": "player",
+    "category": "all-time",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/fatih-terim/eingesetzteSpieler/trainer/253/plus/1",
+    "note": "Imported from ilk10-research/questions/under-coach/goals-under-terim.md",
+    "answers": [
+      {
+        "value": "Hakan Şükür"
+      },
+      {
+        "value": "Arif Erdem"
+      },
+      {
+        "value": "Gheorghe Hagi"
+      },
+      {
+        "value": "Okan Buruk"
+      },
+      {
+        "value": "Sofiane Feghouli"
+      },
+      {
+        "value": "Selçuk İnan"
+      },
+      {
+        "value": "Younès Belhanda"
+      },
+      {
+        "value": "Ümit Davala"
+      },
+      {
+        "value": "Tugay Kerimoğlu"
+      },
+      {
+        "value": "Hakan Ünsal"
+      }
+    ]
+  }
+]
