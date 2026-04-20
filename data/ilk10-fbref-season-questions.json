@@ -2940,12 +2940,12 @@
   {
     "id": "fbref-2025-2026-goals",
     "shortLabel": "2025-26 Gol",
-    "prompt": "2025-26 Süper Lig gol krallığı",
+    "prompt": "25/26 Süper Lig şu ana kadarki gol krallığı",
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "FBref 2025-2026 Super Lig leaderboard",
     "sourceUrl": "https://fbref.com/en/comps/26/2025-2026/2025-2026-Super-Lig-Stats",
-    "note": "Generated from stored FBref season leaderboard \"Goals\".",
+    "note": "25/26 sezonu için şu ana kadarki güncel gol krallığı sıralaması.",
     "answers": [
       {
         "value": "Paul Onuachu",
@@ -2964,14 +2964,6 @@
         }
       },
       {
-        "value": "Mauro Icardi",
-        "entityId": "player:tm-68863-mauro-icardi",
-        "sourceIds": {
-          "fbref": "43b78598",
-          "transfermarkt": "68863"
-        }
-      },
-      {
         "value": "Talisca",
         "entityId": "player:tm-historical-258626-talisca",
         "sourceIds": {
@@ -2980,11 +2972,22 @@
         }
       },
       {
-        "value": "Mohamed Lamine Bayo",
+        "value": "Mohamed Bayo",
+        "aliases": [
+          "Mohamed Lamine Bayo"
+        ],
         "entityId": "player:tm-historical-594991-mohamed-bayo",
         "sourceIds": {
           "fbref": "01870104",
           "transfermarkt": "594991"
+        }
+      },
+      {
+        "value": "Mauro Icardi",
+        "entityId": "player:tm-68863-mauro-icardi",
+        "sourceIds": {
+          "fbref": "43b78598",
+          "transfermarkt": "68863"
         }
       },
       {
@@ -3012,19 +3015,14 @@
         }
       },
       {
+        "value": "Dorgeles Nene"
+      },
+      {
         "value": "Ernest Muci",
         "entityId": "player:tm-583917-ernest-muci",
         "sourceIds": {
           "fbref": "1f1229a9",
           "transfermarkt": "583917"
-        }
-      },
-      {
-        "value": "German Onugkha",
-        "entityId": "player:tm-historical-568318-german-onugkha",
-        "sourceIds": {
-          "fbref": "03e561d1",
-          "transfermarkt": "568318"
         }
       }
     ]
