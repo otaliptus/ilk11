@@ -7,86 +7,37 @@
     "category": "season-stats",
     "sourceLabel": "FBref 2022-2023 Super Lig leaderboard",
     "sourceUrl": "https://fbref.com/en/comps/26/2022-2023/2022-2023-Super-Lig-Stats",
-    "note": "Generated from stored FBref season leaderboard \"Assists\".",
+    "note": "Transfermarkt assist table cross-check (checked 2026-04-21).",
     "answers": [
       {
-        "value": "Kerem Akturkoglu",
-        "entityId": "player:tm-historical-382528-kerem-akturkoglu",
-        "sourceIds": {
-          "fbref": "f28659fb",
-          "transfermarkt": "382528"
-        }
+        "value": "Kerem Akturkoglu"
       },
       {
-        "value": "Guilherme Sitya",
-        "entityId": "player:fbref-8377c51d-guilherme-sitya",
-        "sourceIds": {
-          "fbref": "8377c51d"
-        }
+        "value": "Fabio Borini"
       },
       {
-        "value": "Fabio Borini",
-        "entityId": "player:tm-96754-fabio-borini",
-        "sourceIds": {
-          "fbref": "ef5b337e",
-          "transfermarkt": "96754"
-        }
+        "value": "Guilherme"
       },
       {
-        "value": "Caner Erkin",
-        "entityId": "player:tm-39333-caner-erkin",
-        "sourceIds": {
-          "fbref": "15b6e8d7",
-          "transfermarkt": "39333"
-        }
+        "value": "Salih Ucan"
       },
       {
-        "value": "Mauro Icardi",
-        "entityId": "player:tm-68863-mauro-icardi",
-        "sourceIds": {
-          "fbref": "43b78598",
-          "transfermarkt": "68863"
-        }
+        "value": "Caner Erkin"
       },
       {
-        "value": "Younes Belhanda",
-        "entityId": "player:tm-historical-118022-younes-belhanda",
-        "sourceIds": {
-          "fbref": "e204ec12",
-          "transfermarkt": "118022"
-        }
+        "value": "Mauro Icardi"
       },
       {
-        "value": "Efecan Karaca",
-        "entityId": "player:tm-50655-efecan-karaca",
-        "sourceIds": {
-          "fbref": "10c5ea2c",
-          "transfermarkt": "50655"
-        }
+        "value": "Furkan Soyalp"
       },
       {
-        "value": "Lincoln",
-        "entityId": "player:tm-historical-351738-lincoln",
-        "sourceIds": {
-          "fbref": "27504df8",
-          "transfermarkt": "351738"
-        }
+        "value": "Milot Rashica"
       },
       {
-        "value": "Arthur Masuaku",
-        "entityId": "player:tm-historical-181380-arthur-masuaku",
-        "sourceIds": {
-          "fbref": "57df7a11",
-          "transfermarkt": "181380"
-        }
+        "value": "Ebrima Colley"
       },
       {
-        "value": "Milot Rashica",
-        "entityId": "player:tm-historical-291739-milot-rashica",
-        "sourceIds": {
-          "fbref": "6c6a3300",
-          "transfermarkt": "291739"
-        }
+        "value": "Trezeguet"
       }
     ]
   },
@@ -466,87 +417,37 @@
     "category": "season-stats",
     "sourceLabel": "FBref 2022-2023 Super Lig leaderboard",
     "sourceUrl": "https://fbref.com/en/comps/26/2022-2023/2022-2023-Super-Lig-Stats",
-    "note": "Generated from stored FBref season leaderboard \"Goals\".",
+    "note": "Transfermarkt goal table cross-check (checked 2026-04-21).",
     "answers": [
       {
-        "value": "Enner Valencia",
-        "entityId": "player:tm-historical-139503-enner-valencia",
-        "sourceIds": {
-          "fbref": "fb485406",
-          "transfermarkt": "139503"
-        }
+        "value": "Enner Valencia"
       },
       {
-        "value": "Mbaye Diagne",
-        "entityId": "player:tm-271966-mbaye-diagne",
-        "sourceIds": {
-          "fbref": "dda3969e",
-          "transfermarkt": "271966"
-        }
+        "value": "Mbaye Diagne"
       },
       {
-        "value": "Mauro Icardi",
-        "entityId": "player:tm-68863-mauro-icardi",
-        "sourceIds": {
-          "fbref": "43b78598",
-          "transfermarkt": "68863"
-        }
+        "value": "Mauro Icardi"
       },
       {
-        "value": "Fabio Borini",
-        "entityId": "player:tm-96754-fabio-borini",
-        "sourceIds": {
-          "fbref": "ef5b337e",
-          "transfermarkt": "96754"
-        }
+        "value": "Fabio Borini"
       },
       {
-        "value": "Umut Nayir",
-        "entityId": "player:tm-historical-248271-umut-nayir",
-        "sourceIds": {
-          "fbref": "fc4ab056",
-          "transfermarkt": "248271"
-        }
+        "value": "Umut Nayir"
       },
       {
-        "value": "Haji Wright",
-        "entityId": "player:tm-315291-haji-wright",
-        "sourceIds": {
-          "fbref": "91cd37b7",
-          "transfermarkt": "315291"
-        }
+        "value": "Cenk Tosun"
       },
       {
-        "value": "Cenk Tosun",
-        "entityId": "player:tm-historical-45671-cenk-tosun",
-        "sourceIds": {
-          "fbref": "9a104dee",
-          "transfermarkt": "45671"
-        }
+        "value": "Haji Wright"
       },
       {
-        "value": "Riad Bajic",
-        "entityId": "player:tm-historical-263267-riad-bajic",
-        "sourceIds": {
-          "fbref": "49d399d5",
-          "transfermarkt": "263267"
-        }
+        "value": "Riad Bajic"
       },
       {
-        "value": "Vincent Aboubakar",
-        "entityId": "player:tm-historical-147487-vincent-aboubakar",
-        "sourceIds": {
-          "fbref": "8637e09a",
-          "transfermarkt": "147487"
-        }
+        "value": "Vincent Aboubakar"
       },
       {
-        "value": "Michy Batshuayi",
-        "entityId": "player:tm-179184-michy-batshuayi",
-        "sourceIds": {
-          "fbref": "2973d8ff",
-          "transfermarkt": "179184"
-        }
+        "value": "Younes Belhanda"
       }
     ]
   },
@@ -833,87 +734,37 @@
     "category": "season-stats",
     "sourceLabel": "FBref 2023-2024 Super Lig leaderboard",
     "sourceUrl": "https://fbref.com/en/comps/26/2023-2024/2023-2024-Super-Lig-Stats",
-    "note": "Generated from stored FBref season leaderboard \"Assists\".",
+    "note": "Transfermarkt assist table cross-check (checked 2026-04-21).",
     "answers": [
       {
-        "value": "Dries Mertens",
-        "entityId": "player:tm-historical-56416-dries-mertens",
-        "sourceIds": {
-          "fbref": "89b2c8a9",
-          "transfermarkt": "56416"
-        }
+        "value": "Dries Mertens"
       },
       {
-        "value": "Dusan Tadic",
-        "entityId": "player:tm-historical-36139-dusan-tadic",
-        "sourceIds": {
-          "fbref": "2475dcc6",
-          "transfermarkt": "36139"
-        }
+        "value": "Haris Hajradinovic"
       },
       {
-        "value": "Haris Hajradinovic",
-        "entityId": "player:tm-215592-haris-hajradinovic",
-        "sourceIds": {
-          "fbref": "4e07366b",
-          "transfermarkt": "215592"
-        }
+        "value": "Dusan Tadic"
       },
       {
-        "value": "Deniz Turuc",
-        "entityId": "player:tm-historical-216662-deniz-turuc",
-        "sourceIds": {
-          "fbref": "ed140063",
-          "transfermarkt": "216662"
-        }
+        "value": "Deniz Turuc"
       },
       {
-        "value": "Sebastian Szymanski",
-        "entityId": "player:tm-historical-320748-sebastian-szymanski",
-        "sourceIds": {
-          "fbref": "bb718263",
-          "transfermarkt": "320748"
-        }
+        "value": "Edin Visca"
       },
       {
-        "value": "Edin Visca",
-        "entityId": "player:tm-109217-edin-visca",
-        "sourceIds": {
-          "fbref": "da1185fc",
-          "transfermarkt": "109217"
-        }
+        "value": "Sebastian Szymanski"
       },
       {
-        "value": "Mauro Icardi",
-        "entityId": "player:tm-68863-mauro-icardi",
-        "sourceIds": {
-          "fbref": "43b78598",
-          "transfermarkt": "68863"
-        }
+        "value": "Ramzi Safuri"
       },
       {
-        "value": "Alexandru Maxim",
-        "entityId": "player:tm-historical-129513-alexandru-maxim",
-        "sourceIds": {
-          "fbref": "61fc9685",
-          "transfermarkt": "129513"
-        }
+        "value": "Irfan Can Kahveci"
       },
       {
-        "value": "Oguz Aydin",
-        "entityId": "player:tm-historical-563749-oguz-aydin",
-        "sourceIds": {
-          "fbref": "a7b98226",
-          "transfermarkt": "563749"
-        }
+        "value": "Mauro Icardi"
       },
       {
-        "value": "Ramzi Safouri",
-        "entityId": "player:tm-historical-204116-ramzi-safuri",
-        "sourceIds": {
-          "fbref": "dde7068b",
-          "transfermarkt": "204116"
-        }
+        "value": "Alexandru Maxim"
       }
     ]
   },
@@ -1293,87 +1144,37 @@
     "category": "season-stats",
     "sourceLabel": "FBref 2023-2024 Super Lig leaderboard",
     "sourceUrl": "https://fbref.com/en/comps/26/2023-2024/2023-2024-Super-Lig-Stats",
-    "note": "Generated from stored FBref season leaderboard \"Goals\".",
+    "note": "Transfermarkt goal table cross-check (checked 2026-04-21).",
     "answers": [
       {
-        "value": "Mauro Icardi",
-        "entityId": "player:tm-68863-mauro-icardi",
-        "sourceIds": {
-          "fbref": "43b78598",
-          "transfermarkt": "68863"
-        }
+        "value": "Mauro Icardi"
       },
       {
-        "value": "Edin Dzeko",
-        "entityId": "player:tm-28396-edin-dzeko",
-        "sourceIds": {
-          "fbref": "3bb7f478",
-          "transfermarkt": "28396"
-        }
+        "value": "Edin Dzeko"
       },
       {
-        "value": "Rey Manaj",
-        "entityId": "player:tm-308278-rey-manaj",
-        "sourceIds": {
-          "fbref": "7703afb6",
-          "transfermarkt": "308278"
-        }
+        "value": "Rey Manaj"
       },
       {
-        "value": "Krzysztof Piatek",
-        "entityId": "player:tm-historical-327757-krzysztof-piatek",
-        "sourceIds": {
-          "fbref": "17f3620a",
-          "transfermarkt": "327757"
-        }
+        "value": "Mame Thiam"
       },
       {
-        "value": "Mame Baba Thiam",
-        "entityId": "player:tm-historical-163053-mame-thiam",
-        "sourceIds": {
-          "fbref": "ec304819",
-          "transfermarkt": "163053"
-        }
+        "value": "Krzysztof Piatek"
       },
       {
-        "value": "Adam Buksa",
-        "entityId": "player:tm-267160-adam-buksa",
-        "sourceIds": {
-          "fbref": "3b676989",
-          "transfermarkt": "267160"
-        }
+        "value": "Adam Buksa"
       },
       {
-        "value": "Paul Onuachu",
-        "entityId": "player:tm-historical-272855-paul-onuachu",
-        "sourceIds": {
-          "fbref": "c06d1086",
-          "transfermarkt": "272855"
-        }
+        "value": "Paul Onuachu"
       },
       {
-        "value": "Denis Dragus",
-        "entityId": "player:tm-historical-405399-denis-dragus",
-        "sourceIds": {
-          "fbref": "0e490f6e",
-          "transfermarkt": "405399"
-        }
+        "value": "Nuno Da Costa"
       },
       {
-        "value": "Nuno da Costa",
-        "entityId": "player:tm-historical-306166-nuno-da-costa",
-        "sourceIds": {
-          "fbref": "909222de",
-          "transfermarkt": "306166"
-        }
+        "value": "Aytac Kara"
       },
       {
-        "value": "Aytac Kara",
-        "entityId": "player:tm-historical-159908-aytac-kara",
-        "sourceIds": {
-          "fbref": "94c79a82",
-          "transfermarkt": "159908"
-        }
+        "value": "Denis Dragus"
       }
     ]
   },
@@ -1660,87 +1461,37 @@
     "category": "season-stats",
     "sourceLabel": "FBref 2024-2025 Super Lig leaderboard",
     "sourceUrl": "https://fbref.com/en/comps/26/2024-2025/2024-2025-Super-Lig-Stats",
-    "note": "Generated from stored FBref season leaderboard \"Assists\".",
+    "note": "Transfermarkt assist table cross-check (checked 2026-04-21).",
     "answers": [
       {
-        "value": "Dusan Tadic",
-        "entityId": "player:tm-historical-36139-dusan-tadic",
-        "sourceIds": {
-          "fbref": "2475dcc6",
-          "transfermarkt": "36139"
-        }
+        "value": "Dusan Tadic"
       },
       {
-        "value": "Emre Kilinc",
-        "entityId": "player:tm-208848-emre-kilinc",
-        "sourceIds": {
-          "fbref": "bab440b1",
-          "transfermarkt": "208848"
-        }
+        "value": "Emre Kilinc"
       },
       {
-        "value": "Yunus Akgun",
-        "entityId": "player:tm-historical-396908-yunus-akgun",
-        "sourceIds": {
-          "fbref": "1453e3cf",
-          "transfermarkt": "396908"
-        }
+        "value": "Yunus Akgun"
       },
       {
-        "value": "Muhammed Cham",
-        "entityId": "player:tm-historical-422281-muhammed-cham",
-        "sourceIds": {
-          "fbref": "f527a32c",
-          "transfermarkt": "422281"
-        }
+        "value": "Claudio Winck"
       },
       {
-        "value": "Romulo",
-        "entityId": "player:tm-historical-957874-romulo",
-        "sourceIds": {
-          "fbref": "03dd053e",
-          "transfermarkt": "957874"
-        }
+        "value": "David Tijanic"
       },
       {
-        "value": "Gorkem Saglam",
-        "entityId": "player:tm-historical-251345-gorkem-saglam",
-        "sourceIds": {
-          "fbref": "651d9f0a",
-          "transfermarkt": "251345"
-        }
+        "value": "Muhammed Cham"
       },
       {
-        "value": "David Tijanic",
-        "entityId": "player:tm-historical-351792-david-tijanic",
-        "sourceIds": {
-          "fbref": "6acda5fe",
-          "transfermarkt": "351792"
-        }
+        "value": "Romulo"
       },
       {
-        "value": "Claudio Winck",
-        "entityId": "player:tm-historical-181783-claudio-winck",
-        "sourceIds": {
-          "fbref": "a71dc814",
-          "transfermarkt": "181783"
-        }
+        "value": "Gorkem Saglam"
       },
       {
-        "value": "Gabriel Sara",
-        "entityId": "player:tm-historical-553469-gabriel-sara",
-        "sourceIds": {
-          "fbref": "135d500d",
-          "transfermarkt": "553469"
-        }
+        "value": "Gabriel Sara"
       },
       {
-        "value": "Olivier Kemen",
-        "entityId": "player:tm-historical-243725-olivier-kemen",
-        "sourceIds": {
-          "fbref": "22f1de6c",
-          "transfermarkt": "243725"
-        }
+        "value": "Miguel Cardoso"
       }
     ]
   },
@@ -2119,87 +1870,37 @@
     "category": "season-stats",
     "sourceLabel": "FBref 2024-2025 Super Lig leaderboard",
     "sourceUrl": "https://fbref.com/en/comps/26/2024-2025/2024-2025-Super-Lig-Stats",
-    "note": "Generated from stored FBref season leaderboard \"Goals\".",
+    "note": "Transfermarkt goal table cross-check (checked 2026-04-21).",
     "answers": [
       {
-        "value": "Victor Osimhen",
-        "entityId": "player:tm-401923-victor-osimhen",
-        "sourceIds": {
-          "fbref": "8c90fd7a",
-          "transfermarkt": "401923"
-        }
+        "value": "Victor Osimhen"
       },
       {
-        "value": "Krzysztof Piatek",
-        "entityId": "player:tm-historical-327757-krzysztof-piatek",
-        "sourceIds": {
-          "fbref": "17f3620a",
-          "transfermarkt": "327757"
-        }
+        "value": "Krzysztof Piatek"
       },
       {
-        "value": "Youssef En-Nesyri",
-        "entityId": "player:tm-historical-433049-youssef-en-nesyri",
-        "sourceIds": {
-          "fbref": "04e17fd5",
-          "transfermarkt": "433049"
-        }
+        "value": "Youssef En-Nesyri"
       },
       {
-        "value": "Ali Sowe",
-        "entityId": "player:tm-historical-229817-ali-sowe",
-        "sourceIds": {
-          "fbref": "84e5adcd",
-          "transfermarkt": "229817"
-        }
+        "value": "Simon Banza"
       },
       {
-        "value": "Simon Banza",
-        "entityId": "player:tm-historical-344869-simon-banza",
-        "sourceIds": {
-          "fbref": "be47b750",
-          "transfermarkt": "344869"
-        }
+        "value": "Ali Sowe"
       },
       {
-        "value": "Ciro Immobile",
-        "entityId": "player:tm-historical-105521-ciro-immobile",
-        "sourceIds": {
-          "fbref": "4431aed2",
-          "transfermarkt": "105521"
-        }
+        "value": "Ciro Immobile"
       },
       {
-        "value": "Mame Baba Thiam",
-        "entityId": "player:tm-historical-163053-mame-thiam",
-        "sourceIds": {
-          "fbref": "ec304819",
-          "transfermarkt": "163053"
-        }
+        "value": "Mame Thiam"
       },
       {
-        "value": "Edin Dzeko",
-        "entityId": "player:tm-28396-edin-dzeko",
-        "sourceIds": {
-          "fbref": "3bb7f478",
-          "transfermarkt": "28396"
-        }
+        "value": "Edin Dzeko"
       },
       {
-        "value": "Romulo",
-        "entityId": "player:tm-historical-957874-romulo",
-        "sourceIds": {
-          "fbref": "03dd053e",
-          "transfermarkt": "957874"
-        }
+        "value": "Romulo"
       },
       {
-        "value": "Nuno da Costa",
-        "entityId": "player:tm-historical-306166-nuno-da-costa",
-        "sourceIds": {
-          "fbref": "909222de",
-          "transfermarkt": "306166"
-        }
+        "value": "Nuno Da Costa"
       }
     ]
   },
@@ -2486,87 +2187,37 @@
     "category": "season-stats",
     "sourceLabel": "FBref 2025-2026 Super Lig leaderboard",
     "sourceUrl": "https://fbref.com/en/comps/26/2025-2026/2025-2026-Super-Lig-Stats",
-    "note": "Generated from stored FBref season leaderboard \"Assists\".",
+    "note": "Transfermarkt assist table cross-check (checked 2026-04-21).",
     "answers": [
       {
-        "value": "Marco Asensio",
-        "entityId": "player:tm-296622-marco-asensio",
-        "sourceIds": {
-          "fbref": "45af8a54",
-          "transfermarkt": "296622"
-        }
+        "value": "Baris Alper Yilmaz"
       },
       {
-        "value": "Baris Alper Yilmaz",
-        "entityId": "player:tm-historical-541537-baris-alper-yilmaz",
-        "sourceIds": {
-          "fbref": "414b2ce4",
-          "transfermarkt": "541537"
-        }
+        "value": "Drissa Camara"
       },
       {
-        "value": "Yunus Akgun",
-        "entityId": "player:tm-historical-396908-yunus-akgun",
-        "sourceIds": {
-          "fbref": "1453e3cf",
-          "transfermarkt": "396908"
-        }
+        "value": "Oleksandr Zubkov"
       },
       {
-        "value": "Vaclav Cerny",
-        "entityId": "player:tm-historical-242063-vaclav-cerny",
-        "sourceIds": {
-          "fbref": "bb1cf301",
-          "transfermarkt": "242063"
-        }
+        "value": "Vaclav Cerny"
       },
       {
-        "value": "Alexandru Maxim",
-        "entityId": "player:tm-historical-129513-alexandru-maxim",
-        "sourceIds": {
-          "fbref": "61fc9685",
-          "transfermarkt": "129513"
-        }
+        "value": "Yunus Akgun"
       },
       {
-        "value": "Florent Hadergjonaj",
-        "entityId": "player:tm-238809-florent-hadergjonaj",
-        "sourceIds": {
-          "fbref": "9aa186b2",
-          "transfermarkt": "238809"
-        }
+        "value": "Alexandru Maxim"
       },
       {
-        "value": "Drissa Camara",
-        "entityId": "player:tm-historical-614742-drissa-camara",
-        "sourceIds": {
-          "fbref": "543d9d2b",
-          "transfermarkt": "614742"
-        }
+        "value": "Goktan Gurpuz"
       },
       {
-        "value": "Orkun Kokcu",
-        "entityId": "player:tm-454567-orkun-kokcu",
-        "sourceIds": {
-          "fbref": "9bf914b4",
-          "transfermarkt": "454567"
-        }
+        "value": "Dorgeles Nene"
       },
       {
-        "value": "Hwang Ui-jo",
-        "entityId": "player:tm-historical-260166-ui-jo-hwang",
-        "sourceIds": {
-          "fbref": "a2d873dd",
-          "transfermarkt": "260166"
-        }
+        "value": "El Bilal Toure"
       },
       {
-        "value": "Oleksandr Zubkov",
-        "entityId": "player:tm-historical-289075-oleksandr-zubkov",
-        "sourceIds": {
-          "fbref": "adfbe1f5",
-          "transfermarkt": "289075"
-        }
+        "value": "Marco Asensio"
       }
     ]
   },

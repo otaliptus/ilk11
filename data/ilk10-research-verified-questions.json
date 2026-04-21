@@ -6,38 +6,38 @@
     "entityType": "player",
     "category": "title-race",
     "sourceLabel": "Research verified",
-    "sourceUrl": "https://www.worldfootball.net/competition/co116/turkey-sueperlig/records-all-time-appearances/",
-    "note": "Imported from ilk10-research/questions/club-legends/alltime-sl-most-apps.md",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/rekordspieler/wettbewerb/TR1",
+    "note": "Aligned to Transfermarkt all-time appearance table (checked 2026-04-21).",
     "answers": [
       {
         "value": "Umut Bulut"
       },
       {
+        "value": "Hakan Sukur"
+      },
+      {
+        "value": "Hami Mandirali"
+      },
+      {
         "value": "Mehmet Nas"
       },
       {
-        "value": "Veysel Sarı"
+        "value": "Veysel Sari"
       },
       {
         "value": "Fernando Muslera"
       },
       {
-        "value": "Güray Vural"
+        "value": "Guray Vural"
       },
       {
-        "value": "Ömer Çatkıç"
+        "value": "Bulent Korkmaz"
       },
       {
-        "value": "Serkan Balcı"
+        "value": "Omer Catkic"
       },
       {
-        "value": "Caner Erkin"
-      },
-      {
-        "value": "Edin Višća"
-      },
-      {
-        "value": "Gökhan Gönül"
+        "value": "Oguz Cetin"
       }
     ]
   },
@@ -48,17 +48,29 @@
     "entityType": "player",
     "category": "title-race",
     "sourceLabel": "Research verified",
-    "sourceUrl": "https://www.worldfootball.net/competition/co116/turkey-sueperlig/records-all-time-goals/",
-    "note": "Imported from ilk10-research/questions/club-legends/alltime-sl-topscorers.md",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/ewigetorschuetzen/wettbewerb/TR1",
+    "note": "Aligned to Transfermarkt all-time top-scorer table (checked 2026-04-21).",
     "answers": [
       {
         "value": "Hakan Sukur"
       },
       {
-        "value": "Burak Yılmaz"
+        "value": "Tanju Colak"
+      },
+      {
+        "value": "Hami Mandirali"
+      },
+      {
+        "value": "Aykut Kocaman"
       },
       {
         "value": "Serkan Aykut"
+      },
+      {
+        "value": "Burak Yilmaz"
+      },
+      {
+        "value": "Feyyaz Ucar"
       },
       {
         "value": "Umut Bulut"
@@ -68,18 +80,6 @@
       },
       {
         "value": "Cenk Isler"
-      },
-      {
-        "value": "Ümit Karan"
-      },
-      {
-        "value": "Alex de Souza"
-      },
-      {
-        "value": "Fatih Tekke"
-      },
-      {
-        "value": "Hami Mandıralı"
       }
     ]
   },
@@ -295,8 +295,8 @@
   },
   {
     "id": "verified-coach-achievements-cups-2-clubs",
-    "shortLabel": "İki Farklı Kulüple En Çok Kupa Kazanmış Hocalar",
-    "prompt": "İki Farklı Kulüple En Çok Kupa Kazanmış Hocalar",
+    "shortLabel": "Türkiye Kupası'nı En Çok Kazanan Hocalar",
+    "prompt": "Türkiye Kupası'nı en çok kazanan teknik direktörler",
     "entityType": "coach",
     "category": "title-race",
     "sourceLabel": "Research verified-aggregated",
@@ -305,6 +305,15 @@
     "answers": [
       {
         "value": "Aykut Kocaman"
+      },
+      {
+        "value": "Fatih Terim"
+      },
+      {
+        "value": "Gunduz Kilic"
+      },
+      {
+        "value": "Ahmet Suat Ozyazici"
       },
       {
         "value": "Mustafa Denizli"
@@ -316,22 +325,13 @@
         "value": "Samet Aybaba"
       },
       {
-        "value": "Rıza Çalımbay"
+        "value": "Necdet Nis"
       },
       {
-        "value": "Serdar Topraktepe"
+        "value": "Gordon Milne"
       },
       {
-        "value": "Coaches with cups at 3+ clubs:"
-      },
-      {
-        "value": "Coaches with cups at exactly 2 clubs:"
-      },
-      {
-        "value": "Coaches with multiple cups at 1 club (for completeness):"
-      },
-      {
-        "value": "Coaches with cups at only 1 club (for completeness):"
+        "value": "Senol Gunes"
       }
     ]
   },
