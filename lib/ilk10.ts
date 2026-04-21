@@ -33,6 +33,12 @@ const ILK10_EXCLUDED_LIVE_QUESTION_IDS = new Set([
   "fbref-range-2001-2006-goals",
 ])
 
+const ILK10_POST_ROLLOUT_EXCLUDED_QUESTION_IDS = new Set([
+  "fbref-2023-2024-assists",
+  "fbref-range-2016-2022-goals",
+  "fbref-2025-2026-goals",
+])
+
 const ILK10_LIVE_STAT_SUFFIXES = ["-assists", "-goals"]
 
 type Ilk10CycleBucket = "manual" | "goals" | "assists" | "other"
@@ -108,6 +114,7 @@ export function getLiveIlk10QuestionsForDate(
 ): Ilk10Question[] {
   const dateKey = getTurkeyDateKey(date)
   const includeResearch = dateKey >= VERIFIED_RESEARCH_ROLLOUT_DATE
+  const excludeRecurringIds = dateKey >= VERIFIED_RESEARCH_ROLLOUT_DATE
 
   return questions.filter((question) => {
     if (question.designExample || !isAllowedLiveQuestion(question)) {
@@ -115,6 +122,10 @@ export function getLiveIlk10QuestionsForDate(
     }
 
     if (!includeResearch && isResearchVerifiedQuestion(question)) {
+      return false
+    }
+
+    if (excludeRecurringIds && ILK10_POST_ROLLOUT_EXCLUDED_QUESTION_IDS.has(question.id)) {
       return false
     }
 
