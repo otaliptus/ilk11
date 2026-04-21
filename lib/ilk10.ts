@@ -205,8 +205,11 @@ function pickLegacyIlk10Question(questions: Ilk10Question[], dateKey: string): I
   return questions[Math.floor(rng() * questions.length)]
 }
 
+const POST_ROLLOUT_SHUFFLE_SALT = "v2"
+
 function buildCycleQuestionOrder(questions: Ilk10Question[], cycleIndex: number): Ilk10Question[] {
-  const rng = mulberry32(fnv1a32(`${GAME_TIME_ZONE}:ilk10:cycle:${cycleIndex}`))
+  const saltSuffix = questions.some(isResearchVerifiedQuestion) ? `:${POST_ROLLOUT_SHUFFLE_SALT}` : ""
+  const rng = mulberry32(fnv1a32(`${GAME_TIME_ZONE}:ilk10:cycle:${cycleIndex}${saltSuffix}`))
   const bucketQueues: Record<Exclude<Ilk10CycleBucket, "other">, Ilk10Question[]> = {
     manual: buildQuestionOrder(
       questions.filter((question) => getIlk10CycleBucket(question) === "manual"),

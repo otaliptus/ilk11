@@ -3156,5 +3156,203 @@
         "value": "Hakan Ünsal"
       }
     ]
+  },
+  {
+    "id": "verified-coach-lists-last-10-nt-managers",
+    "shortLabel": "Son 10 Milli Takım Hocası",
+    "prompt": "Son 10 Milli Takım Hocası (farklı isimler)",
+    "entityType": "coach",
+    "category": "season-stats",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.tff.org/default.aspx?pageID=321",
+    "note": "TFF canonical list (accessed 2026-04-20). Deduplicated to distinct names: Fatih Terim'in 2. dönemi (2005–2009) ile 3. dönemi (2013–2017) aynı isme denk geldiği için 10. sıraya Mustafa Denizli (1996–2000) alındı.",
+    "answers": [
+      { "value": "Vincenzo Montella" },
+      { "value": "Stefan Kuntz" },
+      { "value": "Şenol Güneş" },
+      { "value": "Mircea Lucescu" },
+      { "value": "Fatih Terim" },
+      { "value": "Abdullah Avcı" },
+      { "value": "Guus Hiddink" },
+      { "value": "Oğuz Çetin" },
+      { "value": "Ersun Yanal" },
+      { "value": "Mustafa Denizli" }
+    ]
+  },
+  {
+    "id": "verified-coach-lists-last-10-fb-managers",
+    "shortLabel": "Son 10 Fenerbahçe Hocası",
+    "prompt": "Son 10 Fenerbahçe Hocası (farklı isimler)",
+    "entityType": "coach",
+    "category": "season-stats",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/fenerbahce-sk/mitarbeiterhistorie/verein/36",
+    "note": "Transfermarkt Mitarbeiterhistorie (accessed 2026-04-20). İsmail Kartal ve Zeki Murat Göle'nin birden fazla dönemi olduğundan listeyi 10 farklı isme tamamlamak için Tahir Karapınar (2020) ve Ersun Yanal (2018–20) eklendi.",
+    "answers": [
+      { "value": "Domenico Tedesco" },
+      { "value": "Zeki Murat Göle" },
+      { "value": "José Mourinho", "aliases": ["Jose Mourinho"] },
+      { "value": "İsmail Kartal", "aliases": ["Ismail Kartal"] },
+      { "value": "Jorge Jesus" },
+      { "value": "Vítor Pereira", "aliases": ["Vitor Pereira"] },
+      { "value": "Emre Belözoğlu", "aliases": ["Emre Belozoglu"] },
+      { "value": "Erol Bulut" },
+      { "value": "Tahir Karapınar", "aliases": ["Tahir Karapinar"] },
+      { "value": "Ersun Yanal" }
+    ]
+  },
+  {
+    "id": "verified-coach-lists-last-10-bjk-managers",
+    "shortLabel": "Son 10 Beşiktaş Hocası",
+    "prompt": "Son 10 Beşiktaş Hocası (farklı isimler)",
+    "entityType": "coach",
+    "category": "season-stats",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/besiktas-jk/mitarbeiterhistorie/verein/114",
+    "note": "Transfermarkt Mitarbeiterhistorie (accessed 2026-04-20). Serdar Topraktepe üç kez tekrarladığı için 10 farklı isme ulaşmak amacıyla Valérien Ismaël (2022) ve Önder Karaveli (2021–22) eklendi.",
+    "answers": [
+      { "value": "Sergen Yalçın", "aliases": ["Sergen Yalcin"] },
+      { "value": "Ole Gunnar Solskjær", "aliases": ["Ole Gunnar Solskjaer"] },
+      { "value": "Serdar Topraktepe" },
+      { "value": "Giovanni van Bronckhorst" },
+      { "value": "Fernando Santos" },
+      { "value": "Rıza Çalımbay", "aliases": ["Riza Calimbay"] },
+      { "value": "Burak Yılmaz", "aliases": ["Burak Yilmaz"] },
+      { "value": "Şenol Güneş", "aliases": ["Senol Gunes"] },
+      { "value": "Valérien Ismaël", "aliases": ["Valerien Ismael"] },
+      { "value": "Önder Karaveli", "aliases": ["Onder Karaveli"] }
+    ]
+  },
+  {
+    "id": "verified-coach-lists-last-10-ts-managers",
+    "shortLabel": "Son 10 Trabzonspor Hocası",
+    "prompt": "Son 10 Trabzonspor Hocası (farklı isimler)",
+    "entityType": "coach",
+    "category": "season-stats",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/trabzonspor/mitarbeiterhistorie/verein/449",
+    "note": "Transfermarkt Mitarbeiterhistorie (accessed 2026-04-20). İhsan Derelioğlu üç, Abdullah Avcı iki kez tekrarladığı için 10 farklı isme ulaşmak amacıyla Hüseyin Çimşir, Ünal Karaman ve Rıza Çalımbay eklendi.",
+    "answers": [
+      { "value": "Fatih Tekke" },
+      { "value": "Şenol Güneş", "aliases": ["Senol Gunes"] },
+      { "value": "İhsan Derelioğlu", "aliases": ["Ihsan Derelioglu"] },
+      { "value": "Abdullah Avcı", "aliases": ["Abdullah Avci"] },
+      { "value": "Nenad Bjelica" },
+      { "value": "Orhan Ak" },
+      { "value": "Eddie Newton" },
+      { "value": "Hüseyin Çimşir", "aliases": ["Huseyin Cimsir"] },
+      { "value": "Ünal Karaman", "aliases": ["Unal Karaman"] },
+      { "value": "Rıza Çalımbay", "aliases": ["Riza Calimbay"] }
+    ]
+  },
+  {
+    "id": "verified-transfers-bjk-record-sales-profit",
+    "shortLabel": "Beşiktaş'ın En Kârlı Satışları (Kâr Bazlı)",
+    "prompt": "Beşiktaş'ın En Kârlı Satışları (Satış Fiyatı − Alış Fiyatı)",
+    "entityType": "player",
+    "category": "title-race",
+    "sourceLabel": "Research verified-aggregated",
+    "sourceUrl": "https://www.transfermarkt.com/besiktas-jk/rekordabgaenge/verein/114",
+    "note": "Kârlı satış = satış fiyatı − alış fiyatı. Akademi ürünleri: alış fiyatı = €0. Alış fiyatları Wikipedia (Cenk Tosun, Demir Ege Tıknaz, Sosa, Sergen Yalçın) veya basın toplu kaynaklarından (Carew, Marcelo, Arroyo) derlendi.",
+    "answers": [
+      { "value": "Cenk Tosun", "scoreLabel": "€22m" },
+      { "value": "Sergen Yalçın", "scoreLabel": "€7.27m", "aliases": ["Sergen Yalcin"] },
+      { "value": "Demba Ba", "scoreLabel": "€7m" },
+      { "value": "Demir Ege Tıknaz", "scoreLabel": "€7m", "aliases": ["Demir Ege Tiknaz"] },
+      { "value": "Tammy Abraham", "scoreLabel": "€6m" },
+      { "value": "Marcelo", "displayValue": "Marcelo (Brezilyalı stoper)", "scoreLabel": "€5.5m" },
+      { "value": "Gedson Fernandes", "scoreLabel": "€4.78m" },
+      { "value": "José Sosa", "scoreLabel": "€4.1m", "aliases": ["Jose Sosa"] },
+      { "value": "John Carew", "scoreLabel": "€4.1m" },
+      { "value": "Keny Arroyo", "scoreLabel": "€3.5m" }
+    ]
+  },
+  {
+    "id": "verified-club-legends-fb-15y-topscorers",
+    "shortLabel": "Son 15 senede Fenerbahçe'de en çok gol atmış futbolcular",
+    "prompt": "Son 15 senede Fenerbahçe'de en çok gol atmış futbolcular (Süper Lig)",
+    "entityType": "player",
+    "category": "title-race",
+    "sourceLabel": "Research verified-aggregated",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Moussa_Sow",
+    "note": "Pencere: 2011-12 – 2025-26 sezonları. Sadece Fenerbahçe formasıyla atılan Süper Lig golleri. Wikipedia oyuncu-bazlı sezon istatistiklerinden derlendi (2026-04-21).",
+    "answers": [
+      { "value": "Moussa Sow", "scoreLabel": "64" },
+      { "value": "Enner Valencia", "scoreLabel": "48" },
+      { "value": "Edin Džeko", "scoreLabel": "35", "aliases": ["Edin Dzeko"] },
+      { "value": "Youssef En-Nesyri", "scoreLabel": "27", "aliases": ["Youssef En Nesyri", "En-Nesyri"] },
+      { "value": "Dirk Kuyt", "scoreLabel": "26" },
+      { "value": "Fernandão", "scoreLabel": "26", "aliases": ["Fernandao"] },
+      { "value": "Robin van Persie", "scoreLabel": "25" },
+      { "value": "Michy Batshuayi", "scoreLabel": "24" },
+      { "value": "Anderson Talisca", "scoreLabel": "24", "aliases": ["Talisca"] },
+      { "value": "Pierre Webó", "scoreLabel": "24", "aliases": ["Pierre Webo", "Webó", "Webo"] }
+    ]
+  },
+  {
+    "id": "verified-club-legends-bjk-15y-topscorers",
+    "shortLabel": "Son 15 senede Beşiktaş'ta en çok gol atmış futbolcular",
+    "prompt": "Son 15 senede Beşiktaş'ta en çok gol atmış futbolcular (Süper Lig)",
+    "entityType": "player",
+    "category": "title-race",
+    "sourceLabel": "Research verified-aggregated",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Cenk_Tosun",
+    "note": "Pencere: 2011-12 – 2025-26 sezonları. Sadece Beşiktaş formasıyla atılan Süper Lig golleri. Wikipedia oyuncu-bazlı sezon istatistiklerinden derlendi (2026-04-21). Aboubakar'ın toplamı 45 olarak netleştirildi (önceki '68' rakamı yanlış toplamaydı).",
+    "answers": [
+      { "value": "Cenk Tosun", "scoreLabel": "65" },
+      { "value": "Vincent Aboubakar", "scoreLabel": "45" },
+      { "value": "Hugo Almeida", "scoreLabel": "32" },
+      { "value": "Cyle Larin", "scoreLabel": "31" },
+      { "value": "Oğuzhan Özyakup", "scoreLabel": "29", "aliases": ["Oguzhan Ozyakup"] },
+      { "value": "Anderson Talisca", "scoreLabel": "27", "aliases": ["Talisca"] },
+      { "value": "Mario Gómez", "scoreLabel": "26", "aliases": ["Mario Gomez"] },
+      { "value": "Burak Yılmaz", "scoreLabel": "24", "aliases": ["Burak Yilmaz"] },
+      { "value": "Mustafa Pektemek", "scoreLabel": "23" },
+      { "value": "Ryan Babel", "scoreLabel": "22" }
+    ]
+  },
+  {
+    "id": "verified-titles-most-titles-turkish",
+    "shortLabel": "En çok şampiyonluk yaşamış yerli futbolcular",
+    "prompt": "En çok şampiyonluk yaşamış yerli futbolcular (Süper Lig)",
+    "entityType": "player",
+    "category": "title-race",
+    "sourceLabel": "Research verified-aggregated",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Bülent_Korkmaz",
+    "note": "Sadece Süper Lig şampiyonlukları sayıldı (kupa/süper kupa/UEFA hariç). 6 şampiyonlukta 6'lı eşitlik var (Tugay, Emre Belözoğlu, Ergün Penbe, Şenol Güneş, Turgay Semercioğlu, Sabri Sarıoğlu) — slot sınırı gereği Turgay Semercioğlu listeye alınmadı. Wikipedia onur bölümlerinden derlendi (2026-04-21).",
+    "answers": [
+      { "value": "Bülent Korkmaz", "scoreLabel": "8", "aliases": ["Bulent Korkmaz"] },
+      { "value": "Hakan Şükür", "scoreLabel": "8", "aliases": ["Hakan Sukur"] },
+      { "value": "Suat Kaya", "scoreLabel": "8" },
+      { "value": "Arif Erdem", "scoreLabel": "7" },
+      { "value": "Okan Buruk", "scoreLabel": "7" },
+      { "value": "Tugay Kerimoğlu", "scoreLabel": "6", "aliases": ["Tugay Kerimoglu", "Tugay"] },
+      { "value": "Emre Belözoğlu", "scoreLabel": "6", "aliases": ["Emre Belozoglu", "Emre"] },
+      { "value": "Ergün Penbe", "scoreLabel": "6", "aliases": ["Ergun Penbe"] },
+      { "value": "Şenol Güneş", "scoreLabel": "6", "aliases": ["Senol Gunes"] },
+      { "value": "Sabri Sarıoğlu", "scoreLabel": "6", "aliases": ["Sabri Sarioglu", "Sabri"] }
+    ]
+  },
+  {
+    "id": "verified-european-tr-clubs-euro-apps",
+    "shortLabel": "Avrupa'da en çok maça çıkan Türk takımları",
+    "prompt": "Avrupa'da en çok maça çıkan Türk takımları",
+    "entityType": "team",
+    "category": "europe",
+    "sourceLabel": "Research verified-aggregated",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Galatasaray_S.K._in_European_football",
+    "note": "UEFA maçları (CL, EL/UC, UECL, CWC, Intertoto, Süper Kupa). Inter-Cities Fairs Cup ve Balkan Kupası hariç. 9. sırada Gençlerbirliği ve Gaziantepspor 20 maçla eşit. Tarih varyansı: GS/FB/BJK/TS sayıları 2024-2026 arası farklı tarihlerde güncellenmiş (2026-04-17).",
+    "answers": [
+      { "value": "Galatasaray", "scoreLabel": "340" },
+      { "value": "Fenerbahçe", "scoreLabel": "300", "aliases": ["Fenerbahce"] },
+      { "value": "Beşiktaş", "scoreLabel": "257", "aliases": ["Besiktas"] },
+      { "value": "Trabzonspor", "scoreLabel": "155" },
+      { "value": "İstanbul Başakşehir", "scoreLabel": "68", "aliases": ["Istanbul Basaksehir", "Başakşehir", "Basaksehir", "İstanbul Başakşehir FK"] },
+      { "value": "Bursaspor", "scoreLabel": "32" },
+      { "value": "Sivasspor", "scoreLabel": "~30" },
+      { "value": "Samsunspor", "scoreLabel": "22" },
+      { "value": "Gençlerbirliği", "scoreLabel": "20", "aliases": ["Genclerbirligi"] },
+      { "value": "Gaziantepspor", "scoreLabel": "20" }
+    ]
   }
 ]
