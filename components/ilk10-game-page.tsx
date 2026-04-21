@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/dialog"
 import { ILK10_QUESTIONS } from "@/data/ilk10-questions"
 import { ILK11_TEAM_AUTOCOMPLETE } from "@/data/ilk11-team-autocomplete"
-import AUTOCOMPLETE_DATA from "@/registry/output/autocomplete.json"
+import AUTOCOMPLETE_DATA from "@/registry/output/autocomplete-runtime.json"
 import {
   ILK10_MAX_LIVES,
   ILK10_DATE_INSERTIONS,
@@ -93,7 +93,10 @@ type AutocompleteSuggestion = {
 }
 
 type IndexedAutocompleteSuggestion = AutocompleteSuggestion & {
-  searchTerms: string[]
+  normalizedLabel: string
+  normalizedAliases: string[]
+  labelTokens: string[]
+  aliasTokens: string[]
 }
 
 function getEntityTypeLabel(entityType: Ilk10EntityType): string {
@@ -122,6 +125,22 @@ function uniqueTerms(values: string[]): string[] {
   return Array.from(new Set(values.filter(Boolean)))
 }
 
+function toIndexedSuggestion(suggestion: AutocompleteSuggestion): IndexedAutocompleteSuggestion {
+  const normalizedLabel = normalizeIlk10Answer(suggestion.label)
+  const normalizedAliases = suggestion.aliases.map((alias) => normalizeIlk10Answer(alias))
+  const labelTokens = getSearchTokens(suggestion.label)
+  const aliasTokens = suggestion.aliases.flatMap((alias) => getSearchTokens(alias))
+
+  return {
+    ...suggestion,
+    resolvedEntityId: suggestion.resolvedEntityId ?? suggestion.id,
+    normalizedLabel,
+    normalizedAliases,
+    labelTokens,
+    aliasTokens,
+  }
+}
+
 function createSyntheticSuggestion(
   id: string,
   entityType: Ilk10EntityType,
@@ -129,7 +148,7 @@ function createSyntheticSuggestion(
   aliases: string[] = [],
   resolvedEntityId?: string
 ): IndexedAutocompleteSuggestion {
-  return {
+  return toIndexedSuggestion({
     id,
     entityType,
     label,
@@ -138,13 +157,7 @@ function createSyntheticSuggestion(
     aliases,
     provisional: false,
     resolvedEntityId,
-    searchTerms: uniqueTerms([
-      normalizeIlk10Answer(label),
-      ...aliases.map((alias) => normalizeIlk10Answer(alias)),
-      ...getSearchTokens(label),
-      ...aliases.flatMap((alias) => getSearchTokens(alias)),
-    ]),
-  }
+  })
 }
 
 function getExactAnswerTerms(answer: Ilk10Answer): string[] {
@@ -158,10 +171,7 @@ function getSuggestionResolvedEntityId(suggestion: IndexedAutocompleteSuggestion
 }
 
 function getExactSuggestionTerms(suggestion: IndexedAutocompleteSuggestion): string[] {
-  return uniqueTerms([
-    normalizeIlk10Answer(suggestion.label),
-    ...suggestion.aliases.map((alias) => normalizeIlk10Answer(alias)),
-  ])
+  return uniqueTerms([suggestion.normalizedLabel, ...suggestion.normalizedAliases])
 }
 
 function getExactMatchingSuggestions(
@@ -190,10 +200,7 @@ function getSuggestionMatchRank(
   suggestion: IndexedAutocompleteSuggestion,
   normalizedGuess: string
 ): number | null {
-  const normalizedLabel = normalizeIlk10Answer(suggestion.label)
-  const normalizedAliases = suggestion.aliases.map((alias) => normalizeIlk10Answer(alias))
-  const labelTokens = getSearchTokens(suggestion.label)
-  const aliasTokens = suggestion.aliases.flatMap((alias) => getSearchTokens(alias))
+  const { normalizedLabel, normalizedAliases, labelTokens, aliasTokens } = suggestion
 
   if (normalizedLabel === normalizedGuess) return 0
   if (normalizedAliases.includes(normalizedGuess)) return 1
@@ -253,17 +260,7 @@ function resolveGuessToAnswerValue(questionAnswers: Ilk10Answer[], rawGuess: str
 function indexAutocompleteSuggestions(
   suggestions: AutocompleteSuggestion[]
 ): IndexedAutocompleteSuggestion[] {
-  return suggestions.map((suggestion) => ({
-    ...suggestion,
-    resolvedEntityId: suggestion.resolvedEntityId ?? suggestion.id,
-    searchTerms: uniqueTerms([
-      suggestion.searchKey,
-      normalizeIlk10Answer(suggestion.label),
-      ...suggestion.aliases.map((alias) => normalizeIlk10Answer(alias)),
-      ...getSearchTokens(suggestion.label),
-      ...suggestion.aliases.flatMap((alias) => getSearchTokens(alias)),
-    ]),
-  }))
+  return suggestions.map((suggestion) => toIndexedSuggestion(suggestion))
 }
 
 function buildTeamAutocompleteSuggestions(
@@ -329,9 +326,38 @@ const AUTOCOMPLETE_BY_ENTITY: Record<Ilk10EntityType, IndexedAutocompleteSuggest
   team: buildTeamAutocompleteSuggestions(ILK10_QUESTIONS),
 }
 
+function buildExactTermToEntityIdMap(
+  suggestions: IndexedAutocompleteSuggestion[]
+): Map<string, Set<string>> {
+  const termMap = new Map<string, Set<string>>()
+  for (const suggestion of suggestions) {
+    const entityId = getSuggestionResolvedEntityId(suggestion)
+    if (!entityId) continue
+
+    for (const term of getExactSuggestionTerms(suggestion)) {
+      if (!term) continue
+      const existing = termMap.get(term)
+      if (existing) {
+        existing.add(entityId)
+      } else {
+        termMap.set(term, new Set([entityId]))
+      }
+    }
+  }
+
+  return termMap
+}
+
+const ENTITY_LOOKUP_BY_TERM: Record<Ilk10EntityType, Map<string, Set<string>>> = {
+  player: buildExactTermToEntityIdMap(AUTOCOMPLETE_BY_ENTITY.player),
+  coach: buildExactTermToEntityIdMap(AUTOCOMPLETE_BY_ENTITY.coach),
+  referee: buildExactTermToEntityIdMap(AUTOCOMPLETE_BY_ENTITY.referee),
+  team: buildExactTermToEntityIdMap(AUTOCOMPLETE_BY_ENTITY.team),
+}
+
 function enrichQuestionsWithEntityIds(questions: typeof ILK10_QUESTIONS): typeof ILK10_QUESTIONS {
   return questions.map((question) => {
-    const basePool = AUTOCOMPLETE_BY_ENTITY[question.entityType] ?? []
+    const termLookup = ENTITY_LOOKUP_BY_TERM[question.entityType]
     return {
       ...question,
       answers: question.answers.map((answer) => {
@@ -339,17 +365,18 @@ function enrichQuestionsWithEntityIds(questions: typeof ILK10_QUESTIONS): typeof
           return answer
         }
 
-        const matchedEntityIds = Array.from(
-          new Set(
-            getExactAnswerTerms(answer)
-              .flatMap((term) => getExactMatchingSuggestions(basePool, term))
-              .map((suggestion) => getSuggestionResolvedEntityId(suggestion))
-              .filter((entityId): entityId is string => Boolean(entityId))
-          )
-        )
+        const matchedEntityIds = new Set<string>()
+        for (const term of getExactAnswerTerms(answer)) {
+          const entityIdsForTerm = termLookup.get(term)
+          if (!entityIdsForTerm) continue
+          for (const entityId of Array.from(entityIdsForTerm)) {
+            matchedEntityIds.add(entityId)
+          }
+        }
 
-        return matchedEntityIds.length === 1
-          ? { ...answer, entityId: matchedEntityIds[0] }
+        const matchedEntityIdList = Array.from(matchedEntityIds)
+        return matchedEntityIdList.length === 1
+          ? { ...answer, entityId: matchedEntityIdList[0] }
           : answer
       }),
     }
@@ -434,26 +461,34 @@ function loadStoredState(
   }
 
   const legacyStorageKey = `${storagePrefix}${getIlk10StorageKey(questionId, dateKey)}`
-  const candidateKeys = new Set<string>([storageKey, legacyStorageKey])
   const versionedPrefix = `${storagePrefix}ilk10:${questionId}:${dateKey}:`
-
-  for (let index = 0; index < localStorage.length; index += 1) {
-    const key = localStorage.key(index)
-    if (!key) continue
-    if (key === storageKey || key === legacyStorageKey || key.startsWith(versionedPrefix)) {
-      candidateKeys.add(key)
-    }
-  }
+  const directCandidateKeys = uniqueTerms([storageKey, legacyStorageKey])
 
   let bestState: Ilk10StoredState | null = null
-
-  for (const candidateKey of Array.from(candidateKeys)) {
+  const considerCandidate = (candidateKey: string) => {
     const parsed = parseStoredState(localStorage.getItem(candidateKey))
-    if (!parsed) continue
+    if (!parsed) return
 
     const rehydrated = rehydrateStoredState(question, parsed)
     if (!bestState || compareStoredStates(question, rehydrated, bestState) > 0) {
       bestState = rehydrated
+    }
+  }
+
+  for (const candidateKey of directCandidateKeys) {
+    considerCandidate(candidateKey)
+  }
+
+  // Fast path: if we have data under the active key (or legacy key), avoid scanning all localStorage keys.
+  if (bestState) {
+    return bestState
+  }
+
+  for (let index = 0; index < localStorage.length; index += 1) {
+    const key = localStorage.key(index)
+    if (!key) continue
+    if (key.startsWith(versionedPrefix)) {
+      considerCandidate(key)
     }
   }
 
@@ -515,6 +550,7 @@ export function Ilk10GamePage({
   const dailyGameNumber = dailyPick.dayIndex
   const [gameState, setGameState] = useState<Ilk10StoredState>(createInitialIlk10State)
   const [loadedStorageKey, setLoadedStorageKey] = useState<string | null>(null)
+  const [isHydratingState, setIsHydratingState] = useState(true)
   const [guess, setGuess] = useState("")
   const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(-1)
   const [feedback, setFeedback] = useState("")
@@ -578,7 +614,8 @@ export function Ilk10GamePage({
     return () => { if (scanTimerRef.current) window.clearTimeout(scanTimerRef.current) }
   }, [scanRow])
 
-  useLayoutEffect(() => {
+  useEffect(() => {
+    setIsHydratingState(true)
     const storedState = loadStoredState(
       dailyQuestion,
       dailyQuestion.id,
@@ -592,6 +629,7 @@ export function Ilk10GamePage({
     setGuess("")
     setFeedback("")
     setShareCopied(false)
+    setIsHydratingState(false)
     inputRef.current?.focus()
   }, [dailyPick.dateKey, dailyQuestion, dailyStorageKey, storagePrefix])
 
@@ -638,7 +676,7 @@ export function Ilk10GamePage({
   const remainingLives = getRemainingLives(gameState)
   const solved = isIlk10Solved(dailyQuestion, gameState)
   const finished = isIlk10Finished(dailyQuestion, gameState)
-  const interactionLocked = finished || Boolean(boardFx) || scanRow >= 0
+  const interactionLocked = isHydratingState || finished || Boolean(boardFx) || scanRow >= 0
 
   useEffect(() => {
     if (finished) {
@@ -718,6 +756,7 @@ export function Ilk10GamePage({
     () => buildIlk10ShareText(dailyQuestion, gameState, dailyGameNumber),
     [dailyGameNumber, dailyQuestion, gameState]
   )
+  const feedbackText = isHydratingState ? "Kayitli ilerleme yukleniyor..." : feedback
   const adminDateValue = forcedDateKey ?? dailyPick.dateKey
 
   const getRevealedAnswerLabel = (answer: Ilk10Answer, index: number) => {
@@ -1082,7 +1121,7 @@ export function Ilk10GamePage({
               </ul>
             </div>
           )}
-          <p className="text-sm text-center text-slate-400 min-h-[1.25rem]">{feedback}</p>
+          <p className="text-sm text-center text-slate-400 min-h-[1.25rem]">{feedbackText}</p>
         </div>
       </div>
 
