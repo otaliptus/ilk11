@@ -253,6 +253,27 @@ const MANUAL_ILK10_QUESTIONS: Ilk10Question[] = [
       { value: "Serkan Balci", scoreLabel: "88" },
     ],
   },
+  {
+    id: "current-club-longest-serving-players",
+    shortLabel: "Takımında En Uzun Süre",
+    prompt: "Şu anki takımlarında en uzun süredir oynayan oyuncular",
+    entityType: "player",
+    category: "all-time",
+    sourceLabel: "User curated",
+    note: "Manual top-10 list provided by owner on 2026-04-21.",
+    answers: [
+      { value: "Necip Uysal" },
+      { value: "Efecan Karaca" },
+      { value: "Volkan Babacan" },
+      { value: "Ersin Destanoglu", aliases: ["Ersin Destanoğlu"] },
+      { value: "Bahadir Ozturk", aliases: ["Bahadır Öztürk"] },
+      { value: "Mustafa Burak Bozan" },
+      { value: "Yunus Akgun", aliases: ["Yunus Akgün"] },
+      { value: "Haris Hajradinovic", aliases: ["Hajradinovic", "Haris Hajradinović"] },
+      { value: "Nurettin Korkmaz" },
+      { value: "Bunyamin Balci", aliases: ["Bünyamin Balcı"] },
+    ],
+  },
 ]
 
 export const ILK10_QUESTIONS: Ilk10Question[] = [

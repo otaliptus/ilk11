@@ -10,6 +10,7 @@ export const ILK10_DATE_OVERRIDES: Record<string, string> = {
   "2026-04-12": "super-lig-title-coaches",
   "2026-04-16": "fbref-range-2016-2022-goals",
   "2026-04-17": "turkish-cup-winning-teams",
+  "2026-04-22": "current-club-longest-serving-players",
 }
 
 export const ILK10_DATE_INSERTIONS: Record<string, string> = {
@@ -26,6 +27,7 @@ const ILK10_LIVE_QUESTION_IDS = new Set([
   "turkish-cup-winning-teams",
   "fenerbahce-most-points-dropped-since-2020",
   "burak-yilmaz-most-played-teammates",
+  "current-club-longest-serving-players",
 ])
 
 const ILK10_EXCLUDED_LIVE_QUESTION_IDS = new Set([
