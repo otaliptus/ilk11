@@ -17,6 +17,7 @@
     "data:validate:all": "npm run data:validate:source && npm run data:validate:pools && npm run data:validate:runtime",
     "data:merge": "node scripts/merge-games.mjs",
     "data:expand-names": "node scripts/expand-dotted-names.mjs",
+    "data:build-ilk10": "node scripts/build-ilk10-canonical-json.mjs",
     "data:build-pools": "node scripts/build-pools.mjs && node scripts/build-ilk11-runtime-json.mjs && node scripts/build-ilk11-daily-json.mjs",
     "data:build-ilk11-json": "node scripts/build-ilk11-runtime-json.mjs",
     "data:build-daily": "node scripts/build-ilk11-daily-json.mjs",

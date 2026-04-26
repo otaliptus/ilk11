@@ -2,7 +2,8 @@
 
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { readJson, writeJson } from "../lib/io.mjs";
+import fs from "node:fs/promises";
+import { ensureDir, readJson, writeJson } from "../lib/io.mjs";
 import { normalizeAsciiText, normalizeSearchKey, uniqueSorted } from "../lib/normalize.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -18,6 +19,8 @@ function getOption(name, fallback = null) {
 }
 
 const outputPath = path.resolve(projectDir, getOption("--out", "output/autocomplete.json"));
+const runtimeOutputPath = path.resolve(projectDir, getOption("--runtime-out", "output/autocomplete-runtime.json"));
+const rootDir = path.resolve(projectDir, "..");
 
 async function loadEntities(relativePath) {
   const payload = await readJson(path.resolve(projectDir, relativePath), null);
@@ -312,6 +315,108 @@ function buildSuggestions(entities) {
   return [...suggestionMap.values()].sort((left, right) => left.labelWithMeta.localeCompare(right.labelWithMeta));
 }
 
+async function loadIlk10AnswerReferenceScores() {
+  const payload = await readJson(path.resolve(rootDir, "data/ilk10/questions.json"), []);
+  const questions = Array.isArray(payload) ? payload : [];
+  const entityIds = new Set();
+  const sourceIdsByProvider = new Map();
+  const answerLabels = new Set();
+
+  for (const question of questions) {
+    for (const answer of question.answers ?? []) {
+      if (typeof answer.entityId === "string" && answer.entityId) {
+        entityIds.add(answer.entityId);
+      }
+
+      for (const [provider, sourceId] of Object.entries(answer.sourceIds ?? {})) {
+        if (!sourceId) continue;
+        const key = `${provider}:${sourceId}`;
+        sourceIdsByProvider.set(key, (sourceIdsByProvider.get(key) ?? 0) + 1);
+      }
+
+      for (const value of [answer.value, ...(answer.aliases ?? [])]) {
+        const labelKey = normalizeSearchKey(value);
+        if (labelKey) answerLabels.add(labelKey);
+      }
+    }
+  }
+
+  return { entityIds, sourceIdsByProvider, answerLabels };
+}
+
+function scoreSuggestionForDedup(suggestion, answerReferenceScores) {
+  let score = 0;
+
+  if (answerReferenceScores.entityIds.has(suggestion.id)) {
+    score += 10_000;
+  }
+
+  for (const [provider, sourceId] of Object.entries(suggestion.sourceIds ?? {})) {
+    score += (answerReferenceScores.sourceIdsByProvider.get(`${provider}:${sourceId}`) ?? 0) * 1_000;
+  }
+
+  if (answerReferenceScores.answerLabels.has(normalizeSearchKey(suggestion.label))) {
+    score += 100;
+  }
+
+  if (suggestion.sourceIds?.transfermarkt) score += 30;
+  if (suggestion.sourceIds?.fbref) score += 20;
+  if (!suggestion.provisional) score += 10;
+  if (!String(suggestion.id).includes(":fbref-")) score += 3;
+  if (!String(suggestion.id).includes(":tm-historical-")) score += 2;
+  if (suggestion.labelWithMeta === suggestion.label) score += 1;
+
+  const yearMatch = String(suggestion.labelWithMeta ?? "").match(/\((\d{4})\)$/);
+  const birthYear = yearMatch ? Number(yearMatch[1]) : null;
+
+  return { score, birthYear };
+}
+
+function dedupePlayerSuggestionsByLabel(suggestions, answerReferenceScores) {
+  const selected = new Map();
+  let removed = 0;
+
+  for (const suggestion of suggestions) {
+    if (suggestion.entityType !== "player") {
+      selected.set(`${suggestion.entityType}:${suggestion.id}`, suggestion);
+      continue;
+    }
+
+    const key = `player:${normalizeSearchKey(suggestion.label)}`;
+    const existing = selected.get(key);
+    if (!existing) {
+      selected.set(key, suggestion);
+      continue;
+    }
+
+    const left = scoreSuggestionForDedup(existing, answerReferenceScores);
+    const right = scoreSuggestionForDedup(suggestion, answerReferenceScores);
+    const shouldReplace =
+      right.score > left.score ||
+      (right.score === left.score &&
+        (right.birthYear ?? Number.POSITIVE_INFINITY) < (left.birthYear ?? Number.POSITIVE_INFINITY)) ||
+      (right.score === left.score &&
+        right.birthYear === left.birthYear &&
+        suggestion.id.localeCompare(existing.id) < 0);
+
+    if (shouldReplace) {
+      selected.set(key, suggestion);
+    }
+    removed += 1;
+  }
+
+  return {
+    suggestions: [...selected.values()]
+      .map((suggestion) =>
+        suggestion.entityType === "player"
+          ? { ...suggestion, labelWithMeta: suggestion.label }
+          : suggestion
+      )
+      .sort((left, right) => left.labelWithMeta.localeCompare(right.labelWithMeta)),
+    removed,
+  };
+}
+
 const playersBootstrap = await loadEntities("output/players.bootstrap.json");
 const playersFbref = await loadEntities("output/players.fbref.json");
 const playersTransfermarkt = await loadEntities("output/players.transfermarkt.json");
@@ -337,7 +442,12 @@ const coaches = chooseBestStaffSource(
 );
 const referees = refereesTransfermarkt.length > 0 ? refereesTransfermarkt : refereesManual;
 const all = [...players, ...coaches, ...referees];
-const suggestions = buildSuggestions(all);
+const rawSuggestions = buildSuggestions(all);
+const answerReferenceScores = await loadIlk10AnswerReferenceScores();
+const { suggestions, removed: duplicatePlayerSuggestionsRemoved } = dedupePlayerSuggestionsByLabel(
+  rawSuggestions,
+  answerReferenceScores
+);
 
 const byEntityType = {
   player: suggestions.filter((entry) => entry.entityType === "player"),
@@ -370,13 +480,35 @@ await writeJson(outputPath, {
     playerSuggestions: byEntityType.player.length,
     coachSuggestions: byEntityType.coach.length,
     refereeSuggestions: byEntityType.referee.length,
+    duplicatePlayerSuggestionsRemoved,
   },
   suggestions,
   byEntityType,
 });
 
+function stripRuntimeSuggestion(entry) {
+  const { sourceIds, ...runtimeEntry } = entry;
+  return runtimeEntry;
+}
+
+await ensureDir(path.dirname(runtimeOutputPath));
+await fs.writeFile(
+  runtimeOutputPath,
+  `${JSON.stringify({
+    byEntityType: Object.fromEntries(
+      Object.entries(byEntityType).map(([entityType, entries]) => [
+        entityType,
+        entries.map(stripRuntimeSuggestion),
+      ])
+    ),
+  })}\n`,
+  "utf8"
+);
+
 console.log(`[registry] autocomplete total=${suggestions.length}`);
 console.log(`[registry] autocomplete players=${byEntityType.player.length}`);
 console.log(`[registry] autocomplete coaches=${byEntityType.coach.length}`);
 console.log(`[registry] autocomplete referees=${byEntityType.referee.length}`);
+console.log(`[registry] autocomplete duplicate_player_suggestions_removed=${duplicatePlayerSuggestionsRemoved}`);
 console.log(`[registry] autocomplete out=${outputPath}`);
+console.log(`[registry] autocomplete runtime_out=${runtimeOutputPath}`);

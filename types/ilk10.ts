@@ -1,4 +1,5 @@
 export type Ilk10EntityType = "player" | "coach" | "referee" | "team"
+export type Ilk10QuestionStatus = "live" | "draft" | "retired"
 
 export type Ilk10QuestionCategory =
   | "club-overlap"
@@ -19,6 +20,7 @@ export interface Ilk10Answer {
 
 export interface Ilk10Question {
   id: string
+  status?: Ilk10QuestionStatus
   prompt: string
   shortLabel: string
   entityType: Ilk10EntityType

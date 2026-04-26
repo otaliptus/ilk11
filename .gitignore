@@ -49,6 +49,7 @@ scripts/lib/*
 !scripts/lib/ilk11-runtime.mjs
 !scripts/build-pools.mjs
 !scripts/validate-games.mjs
+!scripts/build-ilk10-canonical-json.mjs
 !scripts/build-ilk11-runtime-json.mjs
 !scripts/build-ilk11-daily-json.mjs
 !scripts/validate-ilk11-runtime.mjs

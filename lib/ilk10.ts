@@ -5,6 +5,7 @@ import { ILK10_SHARE_DOMAIN } from "@/lib/routes"
 const MAX_LIVES = 5
 const NON_REPEATING_ROTATION_EPOCH = "2026-04-13"
 const VERIFIED_RESEARCH_ROLLOUT_DATE = "2026-04-22"
+const ILK10_STATUS_ROLLOUT_DATE = "2026-04-28"
 
 export const ILK10_DATE_OVERRIDES: Record<string, string> = {
   "2026-04-12": "super-lig-title-coaches",
@@ -119,8 +120,13 @@ export function getLiveIlk10QuestionsForDate(
   const insertedQuestionId = ILK10_DATE_INSERTIONS[dateKey]
   const includeResearch = dateKey >= VERIFIED_RESEARCH_ROLLOUT_DATE
   const excludeRecurringIds = dateKey >= VERIFIED_RESEARCH_ROLLOUT_DATE
+  const enforceQuestionStatus = dateKey >= ILK10_STATUS_ROLLOUT_DATE
 
   return questions.filter((question) => {
+    if (enforceQuestionStatus && (question.status ?? "live") !== "live") {
+      return false
+    }
+
     if (insertedQuestionId && question.id === insertedQuestionId && !question.designExample) {
       return true
     }
