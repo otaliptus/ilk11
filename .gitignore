@@ -44,6 +44,7 @@ wrangler.toml
 
 scripts/*
 !scripts/lib/
+scripts/lib/*
 !scripts/lib/games-csv.mjs
 !scripts/lib/ilk11-runtime.mjs
 !scripts/build-pools.mjs
