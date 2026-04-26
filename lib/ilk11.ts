@@ -41,6 +41,30 @@ export type DailyPools = {
   hard: Ilk11GameRow[]
 }
 
+type CompactIlk11GameRow = [
+  string,
+  string,
+  string,
+  string[],
+  Array<number | null>,
+  number[],
+  number[],
+  number[],
+  boolean,
+  number[],
+  number[],
+  number[],
+  number[],
+  string,
+]
+
+export type Ilk11RuntimePoolFile = {
+  v?: number
+  d?: Difficulty
+  r?: CompactIlk11GameRow[]
+  rows?: Ilk11GameRow[]
+}
+
 export type Ilk11GameData = {
   game: string
   team: string
@@ -284,6 +308,55 @@ export function parsePoolRows(csvText: string, expectedDifficulty: Difficulty): 
   }
 
   return rows
+}
+
+function isIlk11RuntimeRow(row: unknown): row is Ilk11GameRow {
+  return Boolean(
+    row &&
+    typeof row === "object" &&
+    Array.isArray((row as Ilk11GameRow).lineup) &&
+    (row as Ilk11GameRow).lineup.length === 11
+  )
+}
+
+function decodeCompactRuntimeRow(row: CompactIlk11GameRow): Ilk11GameRow {
+  return {
+    game: row[0],
+    team: row[1],
+    formation: row[2],
+    lineup: row[3],
+    lineupNumbers: row[4],
+    lineupCaptains: row[5],
+    lineupGoals: row[6],
+    lineupAssists: row[7],
+    hasColoredCards: row[8],
+    lineupCards: row[9],
+    lineupYellowCards: row[10],
+    lineupRedCards: row[11],
+    lineupSubstitutions: row[12],
+    sourceMatchId: row[13],
+  }
+}
+
+export function decodeIlk11RuntimePool(
+  payload: Ilk11RuntimePoolFile,
+  expectedDifficulty: Difficulty
+): Ilk11GameRow[] {
+  if (payload.d && payload.d !== expectedDifficulty) {
+    throw new Error(`${expectedDifficulty}.json has difficulty "${payload.d}"`)
+  }
+
+  if (Array.isArray(payload.r)) {
+    const rows = payload.r.map(decodeCompactRuntimeRow).filter(isIlk11RuntimeRow)
+    if (rows.length > 0) return rows
+  }
+
+  if (Array.isArray(payload.rows)) {
+    const rows = payload.rows.filter(isIlk11RuntimeRow)
+    if (rows.length > 0) return rows
+  }
+
+  throw new Error(`${expectedDifficulty}.json has no valid rows`)
 }
 
 function pickDailyPairLegacy(pools: DailyPools, dayIndex: number): {

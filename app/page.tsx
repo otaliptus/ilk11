@@ -9,11 +9,11 @@ import { LeaderboardModal } from "@/components/leaderboard-modal"
 import { ILK10_PATH, ILK11_PATH } from "@/lib/routes"
 import { ILK10_QUESTIONS } from "@/data/ilk10-questions"
 import { ILK10_DATE_INSERTIONS, ILK10_DATE_OVERRIDES, getLiveIlk10QuestionsForDate, pickDailyIlk10Question } from "@/lib/ilk10"
-import { formatIlk11MatchLabel, getGameForDifficulty, parsePoolRows } from "@/lib/ilk11"
+import { type Ilk11RuntimePoolFile, decodeIlk11RuntimePool, formatIlk11MatchLabel, getGameForDifficulty } from "@/lib/ilk11"
 
 const BUILD_ID = process.env.NEXT_PUBLIC_BUILD_ID ?? "dev"
-const EASY_CSV_URL = `/easy.csv?v=${encodeURIComponent(BUILD_ID)}`
-const HARD_CSV_URL = `/hard.csv?v=${encodeURIComponent(BUILD_ID)}`
+const EASY_POOL_URL = `/data/ilk11/easy.json?v=${encodeURIComponent(BUILD_ID)}`
+const HARD_POOL_URL = `/data/ilk11/hard.json?v=${encodeURIComponent(BUILD_ID)}`
 
 function getIlk10TodayTeaser(): string {
   const live = getLiveIlk10QuestionsForDate(ILK10_QUESTIONS, new Date())
@@ -33,15 +33,18 @@ export default function LandingPage() {
     const loadIlk11Descriptions = async () => {
       try {
         const [easyRes, hardRes] = await Promise.all([
-          fetch(EASY_CSV_URL),
-          fetch(HARD_CSV_URL),
+          fetch(EASY_POOL_URL),
+          fetch(HARD_POOL_URL),
         ])
         if (!easyRes.ok || !hardRes.ok) return
 
-        const [easyCsvText, hardCsvText] = await Promise.all([easyRes.text(), hardRes.text()])
+        const [easyPool, hardPool] = await Promise.all([
+          easyRes.json() as Promise<Ilk11RuntimePoolFile>,
+          hardRes.json() as Promise<Ilk11RuntimePoolFile>,
+        ])
         const pools = {
-          easy: parsePoolRows(easyCsvText, "easy"),
-          hard: parsePoolRows(hardCsvText, "hard"),
+          easy: decodeIlk11RuntimePool(easyPool, "easy"),
+          hard: decodeIlk11RuntimePool(hardPool, "hard"),
         }
 
         if (cancelled) return

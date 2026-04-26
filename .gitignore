@@ -42,7 +42,9 @@ next-env.d.ts
 .wrangler/
 wrangler.toml
 
-scripts/
+scripts/*
+!scripts/build-ilk11-runtime-json.mjs
+!scripts/DATA-README.md
 *.report.json
 *.log
 reorder-*

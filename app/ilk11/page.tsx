@@ -7,16 +7,17 @@ import { assignPositions } from "@/lib/api"
 import {
   type DailyPools,
   type Difficulty,
+  type Ilk11RuntimePoolFile,
   type Ilk11GameData,
+  decodeIlk11RuntimePool,
   formatIlk11MatchLabel,
   getGameForDifficulty,
-  parsePoolRows,
 } from "@/lib/ilk11"
 import { ILK10_PATH } from "@/lib/routes"
 
 const BUILD_ID = process.env.NEXT_PUBLIC_BUILD_ID ?? "dev"
-const EASY_CSV_URL = `/easy.csv?v=${encodeURIComponent(BUILD_ID)}`
-const HARD_CSV_URL = `/hard.csv?v=${encodeURIComponent(BUILD_ID)}`
+const EASY_POOL_URL = `/data/ilk11/easy.json?v=${encodeURIComponent(BUILD_ID)}`
+const HARD_POOL_URL = `/data/ilk11/hard.json?v=${encodeURIComponent(BUILD_ID)}`
 
 export default function Home() {
   const [dailyPools, setDailyPools] = useState<DailyPools | null>(null)
@@ -29,15 +30,18 @@ export default function Home() {
     const load = async () => {
       try {
         const [easyRes, hardRes] = await Promise.all([
-          fetch(EASY_CSV_URL),
-          fetch(HARD_CSV_URL),
+          fetch(EASY_POOL_URL),
+          fetch(HARD_POOL_URL),
         ])
-        if (!easyRes.ok) throw new Error(`easy.csv yüklenemedi (${easyRes.status})`)
-        if (!hardRes.ok) throw new Error(`hard.csv yüklenemedi (${hardRes.status})`)
+        if (!easyRes.ok) throw new Error(`easy.json yüklenemedi (${easyRes.status})`)
+        if (!hardRes.ok) throw new Error(`hard.json yüklenemedi (${hardRes.status})`)
 
-        const [easyCsvText, hardCsvText] = await Promise.all([easyRes.text(), hardRes.text()])
-        const easyRows = parsePoolRows(easyCsvText, "easy")
-        const hardRows = parsePoolRows(hardCsvText, "hard")
+        const [easyPool, hardPool] = await Promise.all([
+          easyRes.json() as Promise<Ilk11RuntimePoolFile>,
+          hardRes.json() as Promise<Ilk11RuntimePoolFile>,
+        ])
+        const easyRows = decodeIlk11RuntimePool(easyPool, "easy")
+        const hardRows = decodeIlk11RuntimePool(hardPool, "hard")
 
         if (isMounted) {
           setDailyPools({ easy: easyRows, hard: hardRows })
