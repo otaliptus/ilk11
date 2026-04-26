@@ -85,6 +85,15 @@ export type Ilk11GameData = {
   gameId: number
 }
 
+export type Ilk11DailyPayload = {
+  v?: number
+  dateKey: string
+  ilk11: {
+    easy: Ilk11GameData
+    hard: Ilk11GameData
+  }
+}
+
 const EASY_MIN_YEAR = 2010
 const EASY_TEAMS = new Set(["Besiktas", "Trabzonspor", "Fenerbahce", "Galatasaray"])
 const MS_PER_DAY = 86_400_000
@@ -357,6 +366,42 @@ export function decodeIlk11RuntimePool(
   }
 
   throw new Error(`${expectedDifficulty}.json has no valid rows`)
+}
+
+function isIlk11GameData(value: unknown, difficulty: Difficulty, dateKey: string): value is Ilk11GameData {
+  const game = value as Ilk11GameData
+  return Boolean(
+    game &&
+    typeof game === "object" &&
+    game.difficulty === difficulty &&
+    game.dateKey === dateKey &&
+    typeof game.game === "string" &&
+    typeof game.team === "string" &&
+    typeof game.formation === "string" &&
+    Array.isArray(game.lineup) &&
+    game.lineup.length === 11 &&
+    Number.isInteger(game.gameId)
+  )
+}
+
+export function decodeIlk11DailyPayload(payload: unknown, expectedDateKey: string): Ilk11DailyPayload {
+  const daily = payload as Ilk11DailyPayload
+  if (!daily || typeof daily !== "object") {
+    throw new Error("daily payload is invalid")
+  }
+
+  if (daily.dateKey !== expectedDateKey) {
+    throw new Error(`daily payload date is "${daily.dateKey}"`)
+  }
+
+  if (
+    !isIlk11GameData(daily.ilk11?.easy, "easy", expectedDateKey) ||
+    !isIlk11GameData(daily.ilk11?.hard, "hard", expectedDateKey)
+  ) {
+    throw new Error(`${expectedDateKey}.json has no valid ilk11 games`)
+  }
+
+  return daily
 }
 
 function pickDailyPairLegacy(pools: DailyPools, dayIndex: number): {

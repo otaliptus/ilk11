@@ -9,11 +9,22 @@ import { LeaderboardModal } from "@/components/leaderboard-modal"
 import { ILK10_PATH, ILK11_PATH } from "@/lib/routes"
 import { ILK10_QUESTIONS } from "@/data/ilk10-questions"
 import { ILK10_DATE_INSERTIONS, ILK10_DATE_OVERRIDES, getLiveIlk10QuestionsForDate, pickDailyIlk10Question } from "@/lib/ilk10"
-import { type Ilk11RuntimePoolFile, decodeIlk11RuntimePool, formatIlk11MatchLabel, getGameForDifficulty } from "@/lib/ilk11"
+import { getTurkeyDateKey } from "@/lib/date"
+import {
+  type Ilk11RuntimePoolFile,
+  decodeIlk11DailyPayload,
+  decodeIlk11RuntimePool,
+  formatIlk11MatchLabel,
+  getGameForDifficulty,
+} from "@/lib/ilk11"
 
 const BUILD_ID = process.env.NEXT_PUBLIC_BUILD_ID ?? "dev"
 const EASY_POOL_URL = `/data/ilk11/easy.json?v=${encodeURIComponent(BUILD_ID)}`
 const HARD_POOL_URL = `/data/ilk11/hard.json?v=${encodeURIComponent(BUILD_ID)}`
+
+function dailyUrl(dateKey: string) {
+  return `/data/daily/${dateKey}.json?v=${encodeURIComponent(BUILD_ID)}`
+}
 
 function getIlk10TodayTeaser(): string {
   const live = getLiveIlk10QuestionsForDate(ILK10_QUESTIONS, new Date())
@@ -32,6 +43,18 @@ export default function LandingPage() {
     let cancelled = false
     const loadIlk11Descriptions = async () => {
       try {
+        const today = getTurkeyDateKey(new Date())
+        const dailyRes = await fetch(dailyUrl(today))
+        if (dailyRes.ok) {
+          const daily = decodeIlk11DailyPayload(await dailyRes.json(), today)
+          if (cancelled) return
+          setIlk11Descriptions({
+            easy: formatIlk11MatchLabel(daily.ilk11.easy),
+            hard: formatIlk11MatchLabel(daily.ilk11.hard),
+          })
+          return
+        }
+
         const [easyRes, hardRes] = await Promise.all([
           fetch(EASY_POOL_URL),
           fetch(HARD_POOL_URL),

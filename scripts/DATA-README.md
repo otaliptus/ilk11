@@ -74,13 +74,12 @@ This writes:
 - `public/hard.csv`
 - `public/data/ilk11/easy.json`
 - `public/data/ilk11/hard.json`
+- `public/data/daily/YYYY-MM-DD.json` files for the next 400 days
 
 Then validate final files:
 
 ```bash
-npm run data:validate -- --file data/games.csv
-npm run data:validate -- --file public/easy.csv
-npm run data:validate -- --file public/hard.csv
+npm run data:validate:all
 ```
 
 ### 5) Build runtime JSON only
@@ -97,3 +96,28 @@ This writes:
 - `public/data/ilk11/hard.json`
 
 Keep the CSV files as the source of truth. `npm run data:build-pools` already rebuilds these JSON files; use `npm run data:build-ilk11-json` only when the public CSVs already exist and you only need to refresh the runtime JSON.
+
+### 6) Build daily payloads
+
+The app first tries to load a small daily payload:
+
+```bash
+npm run data:build-daily
+```
+
+This writes ignored build artifacts under `public/data/daily/`. If a daily file is missing, the browser falls back to the full runtime pools and computes the same game locally.
+
+Daily payloads are generated from `public/data/ilk11/easy.json` and `public/data/ilk11/hard.json`, using the same deterministic picker. They are regenerated automatically before `npm run build`.
+
+### 7) Runtime validation
+
+```bash
+npm run data:validate:runtime
+```
+
+This checks:
+
+- runtime JSON row counts match the CSV-derived pools
+- runtime JSON rows match the CSV-derived pools
+- daily payloads match the deterministic picker for the validation window
+- today's easy/hard source match ids are printed for a quick sanity check

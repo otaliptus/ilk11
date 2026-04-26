@@ -7,19 +7,27 @@ import { assignPositions } from "@/lib/api"
 import {
   type DailyPools,
   type Difficulty,
+  type Ilk11DailyPayload,
   type Ilk11RuntimePoolFile,
   type Ilk11GameData,
+  decodeIlk11DailyPayload,
   decodeIlk11RuntimePool,
   formatIlk11MatchLabel,
   getGameForDifficulty,
 } from "@/lib/ilk11"
+import { getTurkeyDateKey } from "@/lib/date"
 import { ILK10_PATH } from "@/lib/routes"
 
 const BUILD_ID = process.env.NEXT_PUBLIC_BUILD_ID ?? "dev"
 const EASY_POOL_URL = `/data/ilk11/easy.json?v=${encodeURIComponent(BUILD_ID)}`
 const HARD_POOL_URL = `/data/ilk11/hard.json?v=${encodeURIComponent(BUILD_ID)}`
 
+function dailyUrl(dateKey: string) {
+  return `/data/daily/${dateKey}.json?v=${encodeURIComponent(BUILD_ID)}`
+}
+
 export default function Home() {
+  const [dailyPayload, setDailyPayload] = useState<Ilk11DailyPayload | null>(null)
   const [dailyPools, setDailyPools] = useState<DailyPools | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [difficulty, setDifficulty] = useState<Difficulty | null>(null)
@@ -29,6 +37,18 @@ export default function Home() {
     let isMounted = true
     const load = async () => {
       try {
+        const today = getTurkeyDateKey(new Date())
+        const dailyRes = await fetch(dailyUrl(today))
+        if (dailyRes.ok) {
+          const daily = decodeIlk11DailyPayload(await dailyRes.json(), today)
+          if (isMounted) {
+            setDailyPayload(daily)
+            setDailyPools(null)
+            setError(null)
+          }
+          return
+        }
+
         const [easyRes, hardRes] = await Promise.all([
           fetch(EASY_POOL_URL),
           fetch(HARD_POOL_URL),
@@ -44,6 +64,7 @@ export default function Home() {
         const hardRows = decodeIlk11RuntimePool(hardPool, "hard")
 
         if (isMounted) {
+          setDailyPayload(null)
           setDailyPools({ easy: easyRows, hard: hardRows })
           setError(null)
         }
@@ -57,16 +78,28 @@ export default function Home() {
   }, [])
 
   useEffect(() => {
-    if (!dailyPools || !difficulty) return
+    if (!difficulty) return
+    if (dailyPayload) {
+      setGameData(dailyPayload.ilk11[difficulty])
+      return
+    }
+    if (!dailyPools) return
     try {
       const data = getGameForDifficulty(dailyPools, difficulty)
       setGameData(data)
     } catch (err) {
       setError(err instanceof Error ? err.message : "Bilinmeyen hata")
     }
-  }, [dailyPools, difficulty])
+  }, [dailyPayload, dailyPools, difficulty])
 
   const selectionDescriptions = useMemo(() => {
+    if (dailyPayload) {
+      return {
+        easy: formatIlk11MatchLabel(dailyPayload.ilk11.easy),
+        hard: formatIlk11MatchLabel(dailyPayload.ilk11.hard),
+      }
+    }
+
     if (!dailyPools) return null
 
     try {
@@ -77,7 +110,7 @@ export default function Home() {
     } catch {
       return null
     }
-  }, [dailyPools])
+  }, [dailyPayload, dailyPools])
 
   const players = useMemo(() => {
     if (!gameData) return []
