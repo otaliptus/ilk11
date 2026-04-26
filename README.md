@@ -8,6 +8,10 @@ I've built this as a fun game to play with friends as there was no version of th
 
 Feel free to submit a PR with any improvements.
 
+## Operations
+
+For data/build/deploy notes, see [docs/operations.md](docs/operations.md).
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.

@@ -30,6 +30,9 @@ interface Ilk10ScoreRow {
 
 type GameKey = "ilk10" | "ilk11"
 
+const MAX_REQUEST_BYTES = 8_192
+const LEADERBOARD_LIMIT = 100
+
 function jsonError(message: string, status: number) {
   return Response.json({ error: message }, { status })
 }
@@ -54,6 +57,13 @@ function validateIntInRange(value: unknown, min: number, max: number): number | 
 
 function validateGameKey(value: unknown): GameKey | null {
   return value === "ilk10" || value === "ilk11" ? value : null
+}
+
+function getRequestSize(request: Request): number | null {
+  const raw = request.headers.get("content-length")
+  if (!raw) return null
+  const parsed = Number(raw)
+  return Number.isFinite(parsed) && parsed >= 0 ? parsed : null
 }
 
 // ---- ilk11 ----
@@ -107,11 +117,33 @@ async function handleIlk11Post(context: { env: Env }, body: Record<string, unkno
 }
 
 async function handleIlk11Get(context: { env: Env }, date: string): Promise<Response> {
-  const { results } = await context.env.DB.prepare(`
-    SELECT * FROM scores
-    WHERE game_date = ?
+  const getDifficultyRows = async (difficulty: "easy" | "hard") => {
+    const { results } = await context.env.DB.prepare(`
+    SELECT
+      id,
+      nickname,
+      game_date,
+      difficulty,
+      game_id,
+      match_name,
+      solved,
+      total_attempts,
+      failed,
+      is_complete,
+      submitted_at
+    FROM scores
+    WHERE game_date = ? AND difficulty = ?
     ORDER BY is_complete DESC, solved DESC, total_attempts ASC, submitted_at ASC
-  `).bind(date).all<Ilk11ScoreRow>()
+    LIMIT ?
+  `).bind(date, difficulty, LEADERBOARD_LIMIT).all<Ilk11ScoreRow>()
+    return results
+  }
+
+  const [easyRows, hardRows] = await Promise.all([
+    getDifficultyRows("easy"),
+    getDifficultyRows("hard"),
+  ])
+  const results = [...easyRows, ...hardRows]
 
   const matches: { easy: string | null; hard: string | null } = { easy: null, hard: null }
   for (const row of results) {
@@ -201,10 +233,21 @@ async function handleIlk10Post(context: { env: Env }, body: Record<string, unkno
 
 async function handleIlk10Get(context: { env: Env }, date: string): Promise<Response> {
   const { results } = await context.env.DB.prepare(`
-    SELECT * FROM ilk10_scores
+    SELECT
+      id,
+      nickname,
+      game_date,
+      question_id,
+      question_label,
+      found,
+      lives_used,
+      is_complete,
+      submitted_at
+    FROM ilk10_scores
     WHERE game_date = ?
     ORDER BY is_complete DESC, found DESC, lives_used ASC, submitted_at ASC
-  `).bind(date).all<Ilk10ScoreRow>()
+    LIMIT ?
+  `).bind(date, LEADERBOARD_LIMIT).all<Ilk10ScoreRow>()
 
   let questionLabel: string | null = null
   for (const row of results) {
@@ -248,6 +291,11 @@ async function handleIlk10Get(context: { env: Env }, date: string): Promise<Resp
 export const onRequestPost: PagesFunction<Env> = async (context) => {
   if (!context.env.DB) {
     return jsonError("D1 binding 'DB' not configured. Bind it in Cloudflare Pages → Settings → Functions → D1.", 500)
+  }
+
+  const requestSize = getRequestSize(context.request)
+  if (requestSize !== null && requestSize > MAX_REQUEST_BYTES) {
+    return jsonError("İstek çok büyük", 413)
   }
 
   let body: Record<string, unknown>

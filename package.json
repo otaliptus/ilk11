@@ -21,10 +21,12 @@
     "data:build-ilk11-json": "node scripts/build-ilk11-runtime-json.mjs",
     "data:build-daily": "node scripts/build-ilk11-daily-json.mjs",
     "dev:api": "wrangler pages dev out --d1 DB=ilk11-leaderboard",
-    "db:migrate": "wrangler d1 execute ilk11-leaderboard --file=migrations/0001_create_scores.sql",
+    "db:migrate": "wrangler d1 execute ilk11-leaderboard --remote --file=migrations/0001_create_scores.sql",
     "db:migrate:local": "wrangler d1 execute ilk11-leaderboard --local --file=migrations/0001_create_scores.sql",
-    "db:migrate:0002": "wrangler d1 execute ilk11-leaderboard --file=migrations/0002_harden_scores_and_add_ilk10.sql",
-    "db:migrate:0002:local": "wrangler d1 execute ilk11-leaderboard --local --file=migrations/0002_harden_scores_and_add_ilk10.sql"
+    "db:migrate:0002": "wrangler d1 execute ilk11-leaderboard --remote --file=migrations/0002_harden_scores_and_add_ilk10.sql",
+    "db:migrate:0002:local": "wrangler d1 execute ilk11-leaderboard --local --file=migrations/0002_harden_scores_and_add_ilk10.sql",
+    "db:migrate:0003": "wrangler d1 execute ilk11-leaderboard --remote --file=migrations/0003_add_leaderboard_order_indexes.sql",
+    "db:migrate:0003:local": "wrangler d1 execute ilk11-leaderboard --local --file=migrations/0003_add_leaderboard_order_indexes.sql"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.4",
