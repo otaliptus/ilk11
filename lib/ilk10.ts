@@ -23,7 +23,6 @@ const ILK10_LIVE_QUESTION_IDS = new Set([
   "super-lig-title-coaches",
   "turkish-icons-total-goals",
   "turkish-derby-referees",
-  "fb-gs-derby-scorers-since-2000",
   "big-four-bench-travelers",
   "turkish-super-cup-winning-coaches",
   "turkish-cup-winning-teams",
@@ -117,10 +116,15 @@ export function getLiveIlk10QuestionsForDate(
   date: Date = new Date()
 ): Ilk10Question[] {
   const dateKey = getTurkeyDateKey(date)
+  const insertedQuestionId = ILK10_DATE_INSERTIONS[dateKey]
   const includeResearch = dateKey >= VERIFIED_RESEARCH_ROLLOUT_DATE
   const excludeRecurringIds = dateKey >= VERIFIED_RESEARCH_ROLLOUT_DATE
 
   return questions.filter((question) => {
+    if (insertedQuestionId && question.id === insertedQuestionId && !question.designExample) {
+      return true
+    }
+
     if (question.designExample || !isAllowedLiveQuestion(question)) {
       return false
     }
