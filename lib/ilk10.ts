@@ -7,6 +7,8 @@ const NON_REPEATING_ROTATION_EPOCH = "2026-04-13"
 const VERIFIED_RESEARCH_ROLLOUT_DATE = "2026-04-22"
 const ILK10_STATUS_ROLLOUT_DATE = "2026-04-28"
 const ILK10_RECENT_PLAY_EXCLUSION_DATE = "2026-04-28"
+const ILK10_ROLLING_REPEAT_AVOIDANCE_DATE = "2026-04-28"
+const ILK10_ROLLING_REPEAT_WINDOW_DAYS = 30
 
 export const ILK10_DATE_OVERRIDES: Record<string, string> = {
   "2026-04-12": "super-lig-title-coaches",
@@ -61,11 +63,29 @@ const ILK10_RECENTLY_PLAYED_QUESTION_IDS = new Set([
   "fbref-range-2016-2022-goals",
   "current-club-longest-serving-players",
   "verified-transfers-bjk-record-sales",
+  "verified-transfers-bjk-record-sales-profit",
   "fbref-range-2006-2011-assists",
   "fb-gs-derby-scorers-since-2000",
+  "turkish-derby-referees",
 ])
 
 const ILK10_RECENT_TOPIC_EXCLUDED_QUESTION_IDS = new Set([
+  "verified-national-team-turkey-top-scorers",
+  "verified-era-windows-topscorers-5y",
+  "verified-era-windows-assists-5y",
+  "verified-club-legends-alltime-sl-topscorers",
+  "verified-club-legends-gs-15y-topscorers",
+  "verified-club-legends-fb-15y-topscorers",
+  "verified-club-legends-bjk-15y-topscorers",
+  "verified-never-big4-never-big4-topscorers",
+  "verified-under-coach-goals-under-avci",
+  "verified-under-coach-goals-under-buruk",
+  "verified-under-coach-goals-under-gunes",
+  "verified-under-coach-goals-under-kartal",
+  "verified-under-coach-goals-under-kocaman",
+  "verified-under-coach-goals-under-terim",
+  "fbref-range-2006-2011-goals",
+  "fbref-range-2011-2016-goals",
   "verified-seasonal-topscorers-2021-22",
   "verified-seasonal-topscorers-2022-23",
   "verified-seasonal-topscorers-2023-24",
@@ -250,6 +270,15 @@ function parseEpochDayIndex(epochDateKey: string): number {
   return Math.floor(Date.UTC(epochYear, epochMonth - 1, epochDay) / 86_400_000)
 }
 
+function getDateKeyFromDayIndex(dayIndex: number): string {
+  const date = new Date(dayIndex * 86_400_000)
+  return date.toISOString().slice(0, 10)
+}
+
+function getDateFromTurkeyDateKey(dateKey: string): Date {
+  return new Date(`${dateKey}T12:00:00+03:00`)
+}
+
 function countInsertionsBeforeDate(
   dateKey: string,
   questionIdInsertions: Record<string, string>
@@ -380,16 +409,35 @@ function pickNonRepeatingIlk10Question(
   return cycleQuestions[indexInCycle]
 }
 
-export function pickDailyIlk10Question(
+function buildNonRepeatingIlk10CandidateOrder(
   questions: Ilk10Question[],
-  date = new Date(),
-  questionIdOverrides: Record<string, string> = {},
-  questionIdInsertions: Record<string, string> = {}
-): { question: Ilk10Question; dayIndex: number; dateKey: string } {
-  if (questions.length === 0) {
-    throw new Error("No ilk10 questions configured")
+  dayIndex: number,
+  epochDayIndex: number
+): Ilk10Question[] {
+  if (questions.length <= 1) {
+    return questions
   }
 
+  const rotationDay = dayIndex - epochDayIndex
+  const cycleLength = questions.length
+  const cycleIndex = Math.floor(rotationDay / cycleLength)
+  const indexInCycle = rotationDay % cycleLength
+
+  let cycleQuestions = buildCycleQuestionOrder(questions, cycleIndex)
+  if (indexInCycle === 0 && cycleIndex > 0) {
+    const previousCycleQuestions = buildCycleQuestionOrder(questions, cycleIndex - 1)
+    cycleQuestions = avoidCycleBoundaryRepeat(cycleQuestions, previousCycleQuestions)
+  }
+
+  return [...cycleQuestions.slice(indexInCycle), ...cycleQuestions.slice(0, indexInCycle)]
+}
+
+function pickBaseDailyIlk10Question(
+  questions: Ilk10Question[],
+  date: Date,
+  questionIdOverrides: Record<string, string>,
+  questionIdInsertions: Record<string, string>
+): { question: Ilk10Question; dayIndex: number; dateKey: string; insertedOrOverridden: boolean } {
   const dayIndex = getTurkeyDayIndex(date)
   const dateKey = getTurkeyDateKey(date)
   const overrideQuestionId = questionIdOverrides[dateKey]
@@ -400,6 +448,7 @@ export function pickDailyIlk10Question(
         question: overriddenQuestion,
         dayIndex,
         dateKey,
+        insertedOrOverridden: true,
       }
     }
   }
@@ -412,6 +461,7 @@ export function pickDailyIlk10Question(
         question: insertedQuestion,
         dayIndex,
         dateKey,
+        insertedOrOverridden: true,
       }
     }
   }
@@ -431,7 +481,106 @@ export function pickDailyIlk10Question(
     question,
     dayIndex,
     dateKey,
+    insertedOrOverridden: false,
   }
+}
+
+function getRecentRollingIlk10QuestionIds(
+  questions: Ilk10Question[],
+  dayIndex: number,
+  questionIdOverrides: Record<string, string>,
+  questionIdInsertions: Record<string, string>,
+  rollingPickCache: Map<string, { question: Ilk10Question; dayIndex: number; dateKey: string }>
+): Set<string> {
+  const recentQuestionIds = new Set<string>()
+
+  for (let daysBack = 1; daysBack <= ILK10_ROLLING_REPEAT_WINDOW_DAYS; daysBack += 1) {
+    const previousDateKey = getDateKeyFromDayIndex(dayIndex - daysBack)
+    const previousPick = pickDailyIlk10QuestionInternal(
+      questions,
+      getDateFromTurkeyDateKey(previousDateKey),
+      questionIdOverrides,
+      questionIdInsertions,
+      rollingPickCache
+    )
+    recentQuestionIds.add(previousPick.question.id)
+  }
+
+  return recentQuestionIds
+}
+
+function pickDailyIlk10QuestionInternal(
+  questions: Ilk10Question[],
+  date: Date,
+  questionIdOverrides: Record<string, string>,
+  questionIdInsertions: Record<string, string>,
+  rollingPickCache: Map<string, { question: Ilk10Question; dayIndex: number; dateKey: string }>
+): { question: Ilk10Question; dayIndex: number; dateKey: string } {
+  if (questions.length === 0) {
+    throw new Error("No ilk10 questions configured")
+  }
+
+  const cacheDateKey = getTurkeyDateKey(date)
+  const cachedPick = rollingPickCache.get(cacheDateKey)
+  if (cachedPick) {
+    return cachedPick
+  }
+
+  const basePick = pickBaseDailyIlk10Question(
+    questions,
+    date,
+    questionIdOverrides,
+    questionIdInsertions
+  )
+
+  if (basePick.insertedOrOverridden || basePick.dateKey < ILK10_ROLLING_REPEAT_AVOIDANCE_DATE) {
+    const pinnedPick = {
+      question: basePick.question,
+      dayIndex: basePick.dayIndex,
+      dateKey: basePick.dateKey,
+    }
+    rollingPickCache.set(basePick.dateKey, pinnedPick)
+    return pinnedPick
+  }
+
+  const epochDayIndex = parseEpochDayIndex(NON_REPEATING_ROTATION_EPOCH)
+  const shiftedDayIndex =
+    basePick.dayIndex - countInsertionsBeforeDate(basePick.dateKey, questionIdInsertions)
+  const candidateQuestions =
+    shiftedDayIndex < epochDayIndex
+      ? questions
+      : buildNonRepeatingIlk10CandidateOrder(questions, shiftedDayIndex, epochDayIndex)
+  const recentQuestionIds = getRecentRollingIlk10QuestionIds(
+    questions,
+    basePick.dayIndex,
+    questionIdOverrides,
+    questionIdInsertions,
+    rollingPickCache
+  )
+  const fallbackQuestion = candidateQuestions.find((question) => !recentQuestionIds.has(question.id))
+
+  const pick = {
+    question: fallbackQuestion ?? basePick.question,
+    dayIndex: basePick.dayIndex,
+    dateKey: basePick.dateKey,
+  }
+  rollingPickCache.set(basePick.dateKey, pick)
+  return pick
+}
+
+export function pickDailyIlk10Question(
+  questions: Ilk10Question[],
+  date = new Date(),
+  questionIdOverrides: Record<string, string> = {},
+  questionIdInsertions: Record<string, string> = {}
+): { question: Ilk10Question; dayIndex: number; dateKey: string } {
+  return pickDailyIlk10QuestionInternal(
+    questions,
+    date,
+    questionIdOverrides,
+    questionIdInsertions,
+    new Map()
+  )
 }
 
 export function getIlk10QuestionCacheToken(question: Ilk10Question): string {
