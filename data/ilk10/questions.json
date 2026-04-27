@@ -5171,7 +5171,7 @@
     "entityType": "player",
     "category": "title-race",
     "sourceLabel": "Research verified-aggregated",
-    "note": "Imported from ilk10-research/questions/goals-vs-club/goals-vs-bjk.md",
+    "note": "Draft only. Current source is starter-only games.csv and aggregates surname tokens, so YILMAZ/BULUT/AKIN/KARAN/DA COSTA are not reliably individual players. Needs Transfermarkt or another player-level source before going live.",
     "answers": [
       {
         "value": "Alex de Souza"
@@ -5213,7 +5213,7 @@
     "entityType": "player",
     "category": "title-race",
     "sourceLabel": "Research verified-aggregated",
-    "note": "Imported from ilk10-research/questions/goals-vs-club/goals-vs-fb.md",
+    "note": "Draft only. Current source is starter-only games.csv and aggregates surname tokens; only a few rows are confidently individual players. Needs Transfermarkt or another player-level source before going live.",
     "answers": [
       {
         "value": "YILMAZ"
@@ -5255,7 +5255,7 @@
     "entityType": "player",
     "category": "title-race",
     "sourceLabel": "Research verified-aggregated",
-    "note": "Imported from ilk10-research/questions/goals-vs-club/goals-vs-gs.md",
+    "note": "Draft only. Current source is starter-only games.csv and aggregates surname tokens, so YILMAZ/AKYUZ/BULUT/AKIN are not reliably individual players. Needs Transfermarkt or another player-level source before going live.",
     "answers": [
       {
         "value": "YILMAZ"
@@ -5297,7 +5297,7 @@
     "entityType": "player",
     "category": "title-race",
     "sourceLabel": "Research verified-aggregated",
-    "note": "Imported from ilk10-research/questions/goals-vs-club/goals-vs-ts.md",
+    "note": "Draft only. Current source is starter-only games.csv and aggregates surname tokens, so YILMAZ/TRAORE/SISMANOGLU are not reliably individual players. Needs Transfermarkt or another player-level source before going live.",
     "answers": [
       {
         "value": "YILMAZ"
@@ -5849,7 +5849,7 @@
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "Research verified-aggregated",
-    "note": "Imported from ilk10-research/questions/outlast-coach/bjk-outlast.md",
+    "note": "Draft only. Current source has surname-token aggregation and active/current-season instability; SAHIN/FERNANDES/YALCIN need player-level resolution before going live.",
     "answers": [
       {
         "value": "Sahin"
@@ -5897,7 +5897,7 @@
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "Research verified-aggregated",
-    "note": "Imported from ilk10-research/questions/outlast-coach/fb-outlast.md",
+    "note": "Draft only. Current source has surname-token aggregation and active/current-season instability; CETIN and some tied rows need player-level resolution before going live.",
     "answers": [
       {
         "value": "Cetin"
@@ -5945,7 +5945,7 @@
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "Research verified-aggregated",
-    "note": "Imported from ilk10-research/questions/outlast-coach/gs-outlast.md",
+    "note": "Draft only. Current source has surname-token aggregation and several suspicious resolved names (for example KAYA/AYHAN/ARSLAN/SARIOGLU). Needs player-level resolution before going live.",
     "answers": [
       {
         "value": "Sébastien Kaya"
@@ -5978,7 +5978,7 @@
         "value": "Unsal"
       }
     ],
-    "status": "live"
+    "status": "draft"
   },
   {
     "id": "verified-penalty-most-pen-scored-5y",
@@ -6030,7 +6030,7 @@
     "entityType": "player",
     "category": "club-overlap",
     "sourceLabel": "Research verified-aggregated",
-    "note": "Imported from ilk10-research/questions/season-records/double-digit-ga.md",
+    "note": "Retired for now. This is really a player-season question, but the game currently expects unique player answers; Burak Yılmaz and Alex de Souza repeat across seasons, so the current answer model is wrong.",
     "answers": [
       {
         "value": "Burak Yılmaz"
@@ -6063,7 +6063,7 @@
         "value": "31G + 12A = 43"
       }
     ],
-    "status": "draft"
+    "status": "retired"
   },
   {
     "id": "verified-season-records-most-own-goals",
