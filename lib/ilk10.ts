@@ -66,10 +66,12 @@ const ILK10_RECENTLY_PLAYED_QUESTION_IDS = new Set([
 ])
 
 const ILK10_RECENT_TOPIC_EXCLUDED_QUESTION_IDS = new Set([
+  "verified-seasonal-topscorers-2021-22",
   "verified-seasonal-topscorers-2022-23",
   "verified-seasonal-topscorers-2023-24",
   "verified-seasonal-topscorers-2024-25",
   "verified-seasonal-topscorers-2025-26",
+  "verified-seasonal-np-topscorers-2021-22",
   "verified-seasonal-np-topscorers-2022-23",
   "verified-seasonal-np-topscorers-2023-24",
   "verified-seasonal-np-topscorers-2024-25",

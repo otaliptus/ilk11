@@ -4660,7 +4660,7 @@
     "category": "title-race",
     "sourceLabel": "Research verified-aggregated",
     "sourceUrl": "https://tr.wikipedia.org/wiki/T%C3%BCrkiye_Kupas%C4%B1_kazanan_teknik_direkt%C3%B6rler_listesi",
-    "note": "Imported from ilk10-research/questions/coach-achievements/cups-2-clubs.md",
+    "note": "Draft only. Prompt/source mismatch: local research is about coaches who won Türkiye Kupası with multiple clubs, but the shipped prompt says most Turkish Cup winning coaches and pads the list with one-club winners. Also too close to recent Türkiye Kupası games.",
     "answers": [
       {
         "value": "Aykut Kocaman"
@@ -4693,7 +4693,7 @@
         "value": "Senol Gunes"
       }
     ],
-    "status": "live"
+    "status": "draft"
   },
   {
     "id": "verified-coach-achievements-longest-big3-tenures",
@@ -5086,7 +5086,7 @@
     "category": "europe",
     "sourceLabel": "Research verified",
     "sourceUrl": "https://www.statbunker.com/alltimestats/AllTimeAppearances?club_id=119&comp_code=UCL",
-    "note": "Imported from ilk10-research/questions/european/ucl-apps-at-tr-clubs.md",
+    "note": "Draft only. Source notes say the cutoff is tied and multiple players should be accepted, which the current exact-10 answer list does not encode safely.",
     "answers": [
       {
         "value": "Ergun Penbe"
@@ -5119,7 +5119,7 @@
         "value": "Selcuk Inan"
       }
     ],
-    "status": "live"
+    "status": "draft"
   },
   {
     "id": "verified-european-ucl-assists-at-tr-clubs",
@@ -5129,7 +5129,7 @@
     "category": "europe",
     "sourceLabel": "Research verified-aggregated",
     "sourceUrl": "https://m.statbunker.com/alltimestats/AllTimeCompetitionMostAssists?club_id=119&comp_code=UCL",
-    "note": "Imported from ilk10-research/questions/european/ucl-assists-at-tr-clubs.md",
+    "note": "Draft only. Source notes say this is a bad exact-10 İlk10 category because the cutoff is not unique.",
     "answers": [
       {
         "value": "Ricardo Quaresma"
@@ -5162,7 +5162,7 @@
         "value": "Hakan Unsal"
       }
     ],
-    "status": "live"
+    "status": "draft"
   },
   {
     "id": "verified-goals-vs-club-goals-vs-bjk",
@@ -5511,7 +5511,7 @@
     "entityType": "player",
     "category": "title-race",
     "sourceLabel": "Research verified-aggregated",
-    "note": "Imported from ilk10-research/questions/longevity/longest-single-club-stints.md",
+    "note": "Cleaned [AKMAN] placeholder to Ayhan Akman based on the Galatasaray 2001-2012 stint in local registry/research. Still based on starter-season data.",
     "answers": [
       {
         "value": "Volkan Demirel"
@@ -5529,7 +5529,10 @@
         "value": "İbrahim Üzülmez"
       },
       {
-        "value": "[AKMAN]"
+        "value": "Ayhan Akman",
+        "aliases": [
+          "AKMAN"
+        ]
       },
       {
         "value": "Efecan Karaca"
@@ -5553,7 +5556,7 @@
     "entityType": "player",
     "category": "club-overlap",
     "sourceLabel": "Research verified-aggregated",
-    "note": "Imported from ilk10-research/questions/multi-club/dual-fb-bjk.md",
+    "note": "Draft only. Current source is games.csv with manual cleanup and known surname false positives; needs player-level Transfermarkt/manual verification before going live.",
     "answers": [
       {
         "value": "Gökhan Gönül"
@@ -5586,7 +5589,7 @@
         "value": "Uğur Boral"
       }
     ],
-    "status": "live"
+    "status": "draft"
   },
   {
     "id": "verified-multi-club-dual-gs-bjk",
@@ -5595,7 +5598,7 @@
     "entityType": "player",
     "category": "club-overlap",
     "sourceLabel": "Research verified-aggregated",
-    "note": "Imported from ilk10-research/questions/multi-club/dual-gs-bjk.md",
+    "note": "Draft only. Current source is games.csv with manual cleanup and known surname false positives; needs player-level Transfermarkt/manual verification before going live.",
     "answers": [
       {
         "value": "Ayhan Akman"
@@ -5628,7 +5631,7 @@
         "value": "Dany Nounkeu"
       }
     ],
-    "status": "live"
+    "status": "draft"
   },
   {
     "id": "verified-multi-club-dual-gs-fb",
@@ -5807,7 +5810,7 @@
     "entityType": "player",
     "category": "all-time",
     "sourceLabel": "Research verified-aggregated",
-    "note": "Imported from ilk10-research/questions/never-big4/never-big4-topscorers.md",
+    "note": "Cleaned token-style names from local autocomplete/research: TITA -> Tita, BAJIC -> Riad Bajic. Still based on starter-only 2000+ data.",
     "answers": [
       {
         "value": "Cenk İşler"
@@ -5819,7 +5822,10 @@
         "value": "Zdravko Lazarov"
       },
       {
-        "value": "TITA"
+        "value": "Tita",
+        "aliases": [
+          "TITA"
+        ]
       },
       {
         "value": "Pablo Batalla"
@@ -5831,7 +5837,11 @@
         "value": "Adis Jahovic"
       },
       {
-        "value": "BAJIC"
+        "value": "Riad Bajic",
+        "aliases": [
+          "BAJIC",
+          "Riad Bajić"
+        ]
       },
       {
         "value": "Theofanis Gekas"
@@ -5988,7 +5998,7 @@
     "category": "season-stats",
     "sourceLabel": "Research verified-aggregated",
     "sourceUrl": "https://www.worldfootball.net/competition/co116/turkey-sueperlig/se39354/2021-2022/statistics-goals/",
-    "note": "Imported from ilk10-research/questions/penalty/most-pen-scored-5y.md",
+    "note": "Draft only. Source notes say the cutoff is a five-way tie and the 2025-26 component was ongoing, so this is not a clean exact-10 game.",
     "answers": [
       {
         "value": "Alexandru Maxim"
@@ -6021,7 +6031,7 @@
         "value": "Krzysztof Piatek"
       }
     ],
-    "status": "live"
+    "status": "draft"
   },
   {
     "id": "verified-season-records-double-digit-ga",
@@ -6588,7 +6598,7 @@
     "entityType": "player",
     "category": "club-overlap",
     "sourceLabel": "Research verified-aggregated",
-    "note": "Imported from ilk10-research/questions/teammate-of/teammates-atiba.md",
+    "note": "Draft only. Current source is starter-only games.csv and the research notes say Transfermarkt teammate data was not fetched; existing answers include unresolved/misresolved tokens.",
     "answers": [
       {
         "value": "Oğuzhan Özyakup"
@@ -6630,7 +6640,7 @@
         "value": "Zdenko Tosic"
       }
     ],
-    "status": "live"
+    "status": "draft"
   },
   {
     "id": "verified-teammate-of-teammates-quaresma",
@@ -6682,7 +6692,7 @@
     "entityType": "player",
     "category": "club-overlap",
     "sourceLabel": "Research verified-aggregated",
-    "note": "Imported from ilk10-research/questions/teammate-of/teammates-selcuk.md",
+    "note": "Draft only. Current source is starter-only games.csv and the research notes say Transfermarkt teammate data was not fetched; needs player-level verification before going live.",
     "answers": [
       {
         "value": "Fernando Muslera"
@@ -6724,7 +6734,7 @@
         ]
       }
     ],
-    "status": "live"
+    "status": "draft"
   },
   {
     "id": "verified-titles-most-runner-up-foreign",
@@ -7076,7 +7086,7 @@
     "category": "all-time",
     "sourceLabel": "Research verified-aggregated",
     "sourceUrl": "https://www.transfermarkt.com/galatasaray-istanbul/rekordabgaenge/verein/141",
-    "note": "Imported from ilk10-research/questions/transfers/gs-record-sales-profit.md",
+    "note": "Draft only. Research notes say Marcão profit is unknown/blocked, so this is not reliable enough for a ranked exact-10 profit question.",
     "answers": [
       {
         "value": "Sacha Boey"
@@ -7109,7 +7119,7 @@
         "value": "Marcão"
       }
     ],
-    "status": "live"
+    "status": "draft"
   },
   {
     "id": "verified-transfers-gs-record-signings",
