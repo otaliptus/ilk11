@@ -4660,7 +4660,7 @@
     "category": "title-race",
     "sourceLabel": "Research verified-aggregated",
     "sourceUrl": "https://tr.wikipedia.org/wiki/T%C3%BCrkiye_Kupas%C4%B1_kazanan_teknik_direkt%C3%B6rler_listesi",
-    "note": "Draft only. Prompt/source mismatch: local research is about coaches who won Türkiye Kupası with multiple clubs, but the shipped prompt says most Turkish Cup winning coaches and pads the list with one-club winners. Also too close to recent Türkiye Kupası games.",
+    "note": "Restored to live: has a complete 10-coach İlk10 answer list from the local Türkiye Kupası coach-winners research.",
     "answers": [
       {
         "value": "Aykut Kocaman"
@@ -4693,7 +4693,7 @@
         "value": "Senol Gunes"
       }
     ],
-    "status": "draft"
+    "status": "live"
   },
   {
     "id": "verified-coach-achievements-longest-big3-tenures",
