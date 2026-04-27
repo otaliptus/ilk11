@@ -5637,7 +5637,7 @@
     "entityType": "player",
     "category": "club-overlap",
     "sourceLabel": "Research verified-aggregated",
-    "note": "Imported from ilk10-research/questions/multi-club/dual-gs-fb.md",
+    "note": "Draft only. Current list is improved from the raw surname-token output, but the underlying games.csv source produced many false positives for GS-FB overlap. Needs player-level Transfermarkt/manual verification before going live.",
     "answers": [
       {
         "value": "Emre Belözoğlu"
@@ -5670,7 +5670,7 @@
         "value": "Colin Kazım-Richards"
       }
     ],
-    "status": "live"
+    "status": "draft"
   },
   {
     "id": "verified-multi-club-scored-fb-bjk",
@@ -5679,7 +5679,7 @@
     "entityType": "player",
     "category": "club-overlap",
     "sourceLabel": "Research verified-aggregated",
-    "note": "Imported from ilk10-research/questions/multi-club/scored-fb-bjk.md",
+    "note": "Draft only. Current source is starter-only games.csv with manual cleanup, but the list still has questionable player-level rows and recent/future transfer assumptions. Needs Transfermarkt/manual verification before going live.",
     "answers": [
       {
         "value": "Mert Nobre"
@@ -5712,7 +5712,7 @@
         "value": "Cengiz Ünder"
       }
     ],
-    "status": "live"
+    "status": "draft"
   },
   {
     "id": "verified-national-team-turkey-most-caps",
