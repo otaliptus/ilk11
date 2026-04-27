@@ -6,6 +6,7 @@ const MAX_LIVES = 5
 const NON_REPEATING_ROTATION_EPOCH = "2026-04-13"
 const VERIFIED_RESEARCH_ROLLOUT_DATE = "2026-04-22"
 const ILK10_STATUS_ROLLOUT_DATE = "2026-04-28"
+const ILK10_RECENT_PLAY_EXCLUSION_DATE = "2026-04-28"
 
 export const ILK10_DATE_OVERRIDES: Record<string, string> = {
   "2026-04-12": "super-lig-title-coaches",
@@ -41,6 +42,38 @@ const ILK10_POST_ROLLOUT_EXCLUDED_QUESTION_IDS = new Set([
   "fbref-2023-2024-assists",
   "fbref-range-2016-2022-goals",
   "fbref-2025-2026-goals",
+])
+
+const ILK10_RECENTLY_PLAYED_QUESTION_IDS = new Set([
+  "turkish-icons-total-goals",
+  "fenerbahce-most-points-dropped-since-2020",
+  "fbref-2025-2026-goals",
+  "fbref-2022-2023-assists",
+  "fbref-2025-2026-assists",
+  "fbref-2022-2023-goals",
+  "fbref-range-2011-2016-assists",
+  "burak-yilmaz-most-played-teammates",
+  "fbref-2024-2025-assists",
+  "fbref-2023-2024-goals",
+  "super-lig-title-coaches",
+  "fbref-2024-2025-goals",
+  "turkish-cup-winning-teams",
+  "fbref-range-2016-2022-goals",
+  "current-club-longest-serving-players",
+  "verified-transfers-bjk-record-sales",
+  "fbref-range-2006-2011-assists",
+  "fb-gs-derby-scorers-since-2000",
+])
+
+const ILK10_RECENT_TOPIC_EXCLUDED_QUESTION_IDS = new Set([
+  "verified-seasonal-topscorers-2022-23",
+  "verified-seasonal-topscorers-2023-24",
+  "verified-seasonal-topscorers-2024-25",
+  "verified-seasonal-topscorers-2025-26",
+  "verified-seasonal-np-topscorers-2022-23",
+  "verified-seasonal-np-topscorers-2023-24",
+  "verified-seasonal-np-topscorers-2024-25",
+  "verified-seasonal-np-topscorers-2025-26",
 ])
 
 const ILK10_LIVE_STAT_SUFFIXES = ["-assists", "-goals"]
@@ -121,6 +154,7 @@ export function getLiveIlk10QuestionsForDate(
   const includeResearch = dateKey >= VERIFIED_RESEARCH_ROLLOUT_DATE
   const excludeRecurringIds = dateKey >= VERIFIED_RESEARCH_ROLLOUT_DATE
   const enforceQuestionStatus = dateKey >= ILK10_STATUS_ROLLOUT_DATE
+  const excludeRecentlyPlayed = dateKey >= ILK10_RECENT_PLAY_EXCLUSION_DATE
 
   return questions.filter((question) => {
     if (enforceQuestionStatus && (question.status ?? "live") !== "live") {
@@ -140,6 +174,14 @@ export function getLiveIlk10QuestionsForDate(
     }
 
     if (excludeRecurringIds && ILK10_POST_ROLLOUT_EXCLUDED_QUESTION_IDS.has(question.id)) {
+      return false
+    }
+
+    if (
+      excludeRecentlyPlayed &&
+      (ILK10_RECENTLY_PLAYED_QUESTION_IDS.has(question.id) ||
+        ILK10_RECENT_TOPIC_EXCLUDED_QUESTION_IDS.has(question.id))
+    ) {
       return false
     }
 
