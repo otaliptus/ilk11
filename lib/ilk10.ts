@@ -8,12 +8,20 @@ const POST_HISTORY_ROTATION_EPOCH = "2026-04-28"
 const VERIFIED_RESEARCH_ROLLOUT_DATE = "2026-04-22"
 const ILK10_STATUS_ROLLOUT_DATE = "2026-04-28"
 const ILK10_PLAYED_HISTORY_ROLLOUT_DATE = "2026-04-28"
+const ILK10_FUTURE_QUESTION_ROLLOUT_DATE = "2026-04-29"
+
+const ILK10_FUTURE_QUESTION_IDS = new Set([
+  "verified-penalty-most-pen-scored-since-2000",
+  "verified-transfers-big4-record-domestic-arrivals",
+  "verified-transfers-big4-to-europe-top5-record-departures",
+])
 
 export const ILK10_DATE_OVERRIDES: Record<string, string> = {
   "2026-04-12": "super-lig-title-coaches",
   "2026-04-16": "fbref-range-2016-2022-goals",
   "2026-04-17": "turkish-cup-winning-teams",
   "2026-04-22": "current-club-longest-serving-players",
+  "2026-04-28": "fbref-range-2011-2016-goals",
 }
 
 export const ILK10_DATE_INSERTIONS: Record<string, string> = {
@@ -72,7 +80,7 @@ const ILK10_PLAYED_QUESTION_IDS = new Set([
 
 const ILK10_LIVE_STAT_SUFFIXES = ["-assists", "-goals"]
 
-type Ilk10CycleBucket = "manual" | "goals" | "assists" | "other"
+type Ilk10CycleBucket = "manual" | "goals" | "assists" | "transfers" | "staff" | "appearances" | "other"
 
 const CHARACTER_MAP: Record<string, string> = {
   C: "C",
@@ -149,9 +157,14 @@ export function getLiveIlk10QuestionsForDate(
   const excludeRecurringIds = dateKey >= VERIFIED_RESEARCH_ROLLOUT_DATE
   const enforceQuestionStatus = dateKey >= ILK10_STATUS_ROLLOUT_DATE
   const excludePlayedHistory = dateKey >= ILK10_PLAYED_HISTORY_ROLLOUT_DATE
+  const includeFutureQuestionIds = dateKey >= ILK10_FUTURE_QUESTION_ROLLOUT_DATE
 
   return questions.filter((question) => {
     if (enforceQuestionStatus && (question.status ?? "live") !== "live") {
+      return false
+    }
+
+    if (!includeFutureQuestionIds && ILK10_FUTURE_QUESTION_IDS.has(question.id)) {
       return false
     }
 
@@ -214,20 +227,33 @@ function buildQuestionOrder(questions: Ilk10Question[], rng: () => number): Ilk1
 }
 
 function getIlk10CycleBucket(question: Ilk10Question): Ilk10CycleBucket {
-  if (isResearchVerifiedQuestion(question)) {
-    return "manual"
-  }
+  const searchableText = `${question.id} ${question.shortLabel} ${question.prompt}`.toLocaleLowerCase("tr-TR")
 
-  if (ILK10_LIVE_QUESTION_IDS.has(question.id)) {
-    return "manual"
-  }
-
-  if (question.id.endsWith("-goals")) {
+  if (
+    question.id.endsWith("-goals") ||
+    /gol|topscorer|scorer|torschutzen|torschuetzen/.test(searchableText)
+  ) {
     return "goals"
   }
 
-  if (question.id.endsWith("-assists")) {
+  if (question.id.endsWith("-assists") || /asist|assist/.test(searchableText)) {
     return "assists"
+  }
+
+  if (/transfer|satış|satis|giden|gelen|pahalı|pahali|kârlı|karli/.test(searchableText)) {
+    return "transfers"
+  }
+
+  if (/hoca|coach|teknik direktör|teknik direktor|manager/.test(searchableText)) {
+    return "staff"
+  }
+
+  if (/maça çıkan|maca cikan|forma|caps|apps|appearance|süre|sure|serving|teammate/.test(searchableText)) {
+    return "appearances"
+  }
+
+  if (isResearchVerifiedQuestion(question) || ILK10_LIVE_QUESTION_IDS.has(question.id)) {
+    return "manual"
   }
 
   return "other"
@@ -269,6 +295,18 @@ function buildCycleQuestionOrder(questions: Ilk10Question[], cycleIndex: number)
       questions.filter((question) => getIlk10CycleBucket(question) === "assists"),
       rng
     ),
+    transfers: buildQuestionOrder(
+      questions.filter((question) => getIlk10CycleBucket(question) === "transfers"),
+      rng
+    ),
+    staff: buildQuestionOrder(
+      questions.filter((question) => getIlk10CycleBucket(question) === "staff"),
+      rng
+    ),
+    appearances: buildQuestionOrder(
+      questions.filter((question) => getIlk10CycleBucket(question) === "appearances"),
+      rng
+    ),
   }
 
   const fallbackQuestions = buildQuestionOrder(
@@ -276,15 +314,20 @@ function buildCycleQuestionOrder(questions: Ilk10Question[], cycleIndex: number)
     rng
   )
 
-  const pattern: Array<keyof typeof bucketQueues> = ["goals", "manual", "assists"]
+  const pattern: Array<keyof typeof bucketQueues> = [
+    "goals",
+    "transfers",
+    "assists",
+    "staff",
+    "appearances",
+    "manual",
+  ]
   const orderedQuestions: Ilk10Question[] = []
   let previousBucket: keyof typeof bucketQueues | null = null
   let patternCursor = 0
 
   while (
-    bucketQueues.manual.length > 0 ||
-    bucketQueues.goals.length > 0 ||
-    bucketQueues.assists.length > 0
+    pattern.some((candidateBucket) => bucketQueues[candidateBucket].length > 0)
   ) {
     let nextBucket: keyof typeof bucketQueues | null = null
 

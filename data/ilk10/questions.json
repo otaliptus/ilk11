@@ -5991,6 +5991,62 @@
     "status": "draft"
   },
   {
+    "id": "verified-penalty-most-pen-scored-since-2000",
+    "shortLabel": "2000'den Bu Yana En Çok Penaltı Golü Atan Futbolcular",
+    "prompt": "2000'den Bu Yana En Çok Penaltı Golü Atan Futbolcular",
+    "entityType": "player",
+    "category": "all-time",
+    "sourceLabel": "Research verified-aggregated",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/startseite/wettbewerb/TR1",
+    "note": "Imported from ilk10-research/supercool-candidates-deep-research-2026-04-28.md. Built from Transfermarkt match-report penalty-goal parsing for Süper Lig seasons from 2000 onward.",
+    "answers": [
+      {
+        "value": "Burak Yılmaz",
+        "scoreLabel": "32"
+      },
+      {
+        "value": "Alexandru Maxim",
+        "scoreLabel": "29"
+      },
+      {
+        "value": "Alex",
+        "aliases": [
+          "Alex de Souza"
+        ],
+        "scoreLabel": "26"
+      },
+      {
+        "value": "Roman Kratochvíl",
+        "scoreLabel": "24"
+      },
+      {
+        "value": "Necati Ateş",
+        "scoreLabel": "22"
+      },
+      {
+        "value": "Mbaye Diagne",
+        "scoreLabel": "21"
+      },
+      {
+        "value": "Emre Belözoğlu",
+        "scoreLabel": "20"
+      },
+      {
+        "value": "Zdravko Lazarov",
+        "scoreLabel": "19"
+      },
+      {
+        "value": "Cenk İşler",
+        "scoreLabel": "19"
+      },
+      {
+        "value": "Cenk Tosun",
+        "scoreLabel": "19"
+      }
+    ],
+    "status": "live"
+  },
+  {
     "id": "verified-penalty-most-pen-scored-5y",
     "shortLabel": "Son 5 Sezonda En Çok Penaltı Atan Futbolcular (Süper Lig)",
     "prompt": "Son 5 Sezonda En Çok Penaltı Atan Futbolcular (Süper Lig)",
@@ -6951,8 +7007,8 @@
   },
   {
     "id": "verified-transfers-fb-record-sales",
-    "shortLabel": "Fenerbahçe'nin en kârlı satışları",
-    "prompt": "Fenerbahçe'nin en kârlı satışları",
+    "shortLabel": "Fenerbahçe rekor satışları",
+    "prompt": "Fenerbahçe rekor satışları",
     "entityType": "player",
     "category": "all-time",
     "sourceLabel": "Research verified",
@@ -7037,8 +7093,8 @@
   },
   {
     "id": "verified-transfers-gs-record-sales",
-    "shortLabel": "Galatasaray'ın en kârlı satışları",
-    "prompt": "Galatasaray'ın en kârlı satışları",
+    "shortLabel": "Galatasaray rekor satışları",
+    "prompt": "Galatasaray rekor satışları",
     "entityType": "player",
     "category": "all-time",
     "sourceLabel": "Research verified",
@@ -7074,6 +7130,98 @@
       },
       {
         "value": "Burak Yılmaz"
+      }
+    ],
+    "status": "live"
+  },
+  {
+    "id": "verified-transfers-big4-record-domestic-arrivals",
+    "shortLabel": "Dört Büyüklerin En Pahalı Yerli Transferleri",
+    "prompt": "Dört Büyüklerin En Pahalı Yerli Transferleri",
+    "entityType": "player",
+    "category": "all-time",
+    "sourceLabel": "Research verified-aggregated",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/transferrekorde/wettbewerb/TR1",
+    "note": "Imported from ilk10-research/supercool-candidates-deep-research-2026-04-28.md. Scope: Turkish-nationality arrivals to Galatasaray, Fenerbahçe, Beşiktaş, or Trabzonspor, ranked by reported fee.",
+    "answers": [
+      {
+        "value": "Orkun Kökçü"
+      },
+      {
+        "value": "Uğurcan Çakır"
+      },
+      {
+        "value": "Kerem Aktürkoğlu"
+      },
+      {
+        "value": "Cengiz Ünder"
+      },
+      {
+        "value": "Mehmet Topuz"
+      },
+      {
+        "value": "Çağlar Söyüncü"
+      },
+      {
+        "value": "Alper Potuk"
+      },
+      {
+        "value": "İrfan Can Kahveci"
+      },
+      {
+        "value": "Ozan Tufan"
+      },
+      {
+        "value": "Burak Yılmaz"
+      }
+    ],
+    "status": "live"
+  },
+  {
+    "id": "verified-transfers-big4-to-europe-top5-record-departures",
+    "shortLabel": "Dört Büyüklerden Avrupa Top-5 Liglerine En Pahalı Gidenler",
+    "prompt": "Dört Büyüklerden Avrupa Top-5 Liglerine En Pahalı Gidenler",
+    "entityType": "player",
+    "category": "all-time",
+    "sourceLabel": "Research verified-aggregated",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/transferrekorde/wettbewerb/TR1/plus/1",
+    "note": "Imported from ilk10-research/supercool-candidates-deep-research-2026-04-28.md. Scope: departures from Galatasaray, Fenerbahçe, Beşiktaş, or Trabzonspor to England, Spain, Italy, Germany, or France top-flight clubs, ranked by reported fee.",
+    "answers": [
+      {
+        "value": "Ferdi Kadıoğlu"
+      },
+      {
+        "value": "Sacha Boey"
+      },
+      {
+        "value": "Arda Güler"
+      },
+      {
+        "value": "Elvir Baljic",
+        "aliases": [
+          "Elvir Baljić"
+        ]
+      },
+      {
+        "value": "Vedat Muriqi"
+      },
+      {
+        "value": "Min-jae Kim",
+        "aliases": [
+          "Kim Min-jae"
+        ]
+      },
+      {
+        "value": "Yusuf Yazıcı"
+      },
+      {
+        "value": "Eljif Elmas"
+      },
+      {
+        "value": "Badou Ndiaye"
+      },
+      {
+        "value": "Bruma"
       }
     ],
     "status": "live"
@@ -7828,7 +7976,7 @@
     "category": "title-race",
     "sourceLabel": "Research verified-aggregated",
     "sourceUrl": "https://www.transfermarkt.com/besiktas-jk/rekordabgaenge/verein/114",
-    "note": "Kârlı satış = satış fiyatı − alış fiyatı. Akademi ürünleri: alış fiyatı = €0. Alış fiyatları Wikipedia (Cenk Tosun, Demir Ege Tıknaz, Sosa, Sergen Yalçın) veya basın toplu kaynaklarından (Carew, Marcelo, Arroyo) derlendi.",
+    "note": "Draft for now. Kârlı satış = satış fiyatı − alış fiyatı. Akademi ürünleri: alış fiyatı = €0. Alış fiyatları Wikipedia (Cenk Tosun, Demir Ege Tıknaz, Sosa, Sergen Yalçın) veya basın toplu kaynaklarından (Carew, Marcelo, Arroyo) derlendi.",
     "answers": [
       {
         "value": "Cenk Tosun",
@@ -7881,7 +8029,7 @@
         "scoreLabel": "€3.5m"
       }
     ],
-    "status": "live"
+    "status": "draft"
   },
   {
     "id": "verified-club-legends-fb-15y-topscorers",
