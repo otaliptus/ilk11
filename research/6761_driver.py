@@ -62,3 +62,17 @@ fix("LocatorReplacementGrid.lean", [
     ("change total p ≤ min 2083 (32 * (total p / 32) + 127)",
      "change total p ≤ min 2083 (32 * (total p / 32) + 31)"),
 ])
+fix("LocatorAuxiliarySelection.lean", [
+    ("(S:LocatorSelection.SelectedPair u0 u1) (L:ℕ) (hL:L ≤ 40000) :\n    ∀ a:ConstraintKernel (K:=K) 17268720",
+     "(S:LocatorSelection.SelectedPair u0 u1) (L:ℕ) (hL:L ≤ 57385) :\n    ∀ a:ConstraintKernel (K:=K) 17268720"),
+    ("exact full_kernel_divisor_small (E:=K) (Lmax:=57385) hL\n    IRSProfile.domain u0 u1 (gcd S.QA S.QB) S.common_divides_Aux",
+     "exact full_kernel_divisor_small (E:=K) (Lmax:=40000) hL\n    IRSProfile.domain u0 u1 (gcd S.QA S.QB) S.common_divides_Aux"),
+])
+fix("LocatorFixedStage.lean", [
+    ("have hy:2 * (b + s + 3) - 2 ≤ 140:=by omega",
+     "have hy:2 * (b + s + 3) - 2 ≤ 142:=by omega"),
+    ("(1 + w * 140) * 15 + 72 * (29 * w)",
+     "(1 + w * 142) * 15 + 72 * (29 * w)"),
+    ("(1 + (w + 1) * 140) * 15 + 72 * (28 * (w + 1))",
+     "(1 + (w + 1) * 142) * 15 + 72 * (28 * (w + 1))"),
+])
