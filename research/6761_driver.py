@@ -57,4 +57,8 @@ fix("LocatorFixedConsumer.lean", [
 fix("LocatorReplacementGrid.lean", [
     ("have hy:71 - middle p ≤ 72 - ylo c:=by omega",
      "have hy:72 - middle p ≤ 72 - ylo c:=by omega"),
+    ("change middle p ≤ min 72 ((p.all - 1 + 1) + (middle p - p.all) + 3)",
+     "change middle p ≤ min 72 ((p.all - 1 + 1) + (middle p - p.all))"),
+    ("change total p ≤ min 2083 (32 * (total p / 32) + 127)",
+     "change total p ≤ min 2083 (32 * (total p / 32) + 31)"),
 ])
