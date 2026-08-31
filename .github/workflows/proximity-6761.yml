@@ -14,17 +14,16 @@ permissions:
   contents: read
 
 jobs:
-  lean:
+  generate:
     runs-on: ubuntu-24.04
-    timeout-minutes: 120
+    timeout-minutes: 10
     steps:
       - name: Checkout research harness
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
         with:
           fetch-depth: 1
           persist-credentials: false
-
-      - name: Fetch accepted 67.60 baseline and apply candidate
+      - name: Generate candidate source
         run: |
           cp research/6761_mutate.py research/6761_driver.py /tmp/
           git clone --filter=blob:none https://github.com/proximity-prize/proximity-prize.git /tmp/proximity
@@ -34,47 +33,55 @@ jobs:
           git diff --check
           git diff --binary > /tmp/candidate-6761.patch
           tar -C /tmp/proximity -czf /tmp/candidate-6761-source.tar.gz ProximityPrize/SubmissionLower
+      - name: Upload generated candidate
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        with:
+          name: proximity-generated-6761-${{ github.sha }}
+          path: |
+            /tmp/candidate-6761.patch
+            /tmp/candidate-6761-source.tar.gz
+          if-no-files-found: error
 
+  lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - name: Checkout research harness
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Fetch accepted 67.60 baseline and apply candidate
+        run: |
+          cp research/6761_mutate.py research/6761_driver.py /tmp/
+          git clone --filter=blob:none https://github.com/proximity-prize/proximity-prize.git /tmp/proximity
+          cd /tmp/proximity
+          git checkout 625f2c09c8ac826ba67c1f336b15348f87f52d4d
+          python3 /tmp/6761_driver.py /tmp/proximity
       - name: Install Lean toolchain
         run: |
           curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
-
       - name: Restore incremental project build
         uses: actions/cache@v4
         with:
           path: /tmp/proximity/.lake/build
           key: proximity-6761-lean4322-build-v1
-
       - name: Restore official Lean cache
         working-directory: /tmp/proximity
         run: lake exe cache get || true
-
       - name: Compile arithmetic certificates
         working-directory: /tmp/proximity
         run: |
           lake build ProximityPrize.SubmissionLower.LocatorArithmetic
           lake build ProximityPrize.SubmissionLower.LocatorScalarArithmetic
           lake build ProximityPrize.SubmissionLower.LocatorReplacementData
-
       - name: Compile exported solution
         working-directory: /tmp/proximity
         run: lake build ProximityPrize.SubmissionLower.Solution
-
       - name: Canonical build
         working-directory: /tmp/proximity
         run: lake build
-
       - name: Axiom audit
         working-directory: /tmp/proximity
         run: lake env lean scripts/check-axioms.lean
-
-      - name: Upload candidate evidence
-        if: always()
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
-        with:
-          name: proximity-candidate-6761-${{ github.sha }}
-          path: |
-            /tmp/candidate-6761.patch
-            /tmp/candidate-6761-source.tar.gz
-          if-no-files-found: warn
