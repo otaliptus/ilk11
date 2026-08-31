@@ -80,3 +80,14 @@ fix("LocatorFixedStage.lean", [
     ("(1 + (w + 1) * 140) * 15 + 72 * (28 * (w + 1))",
      "(1 + (w + 1) * 142) * 15 + 72 * (28 * (w + 1))"),
 ])
+fix("LocatorResidual.lean", [
+    ("globalCoefficientBox K weightedB w LB 31",
+     "globalCoefficientBox K weightedB w LB 30"),
+    ("RCN100.globalCoefficientBox K weightedB w LB 31",
+     "RCN100.globalCoefficientBox K weightedB w LB 30"),
+    ("weightedB w LB 31", "weightedB w LB 30"),
+    ("by change 1 ≤ 31; decide", "by change 1 ≤ 30; decide"),
+    ("by change 31 < 2130706433; decide", "by change 30 < 2130706433; decide"),
+    ("by change 31 ≤ 31; decide", "by change 30 ≤ 30; decide"),
+    ("by change 138 < 2130706433; decide", "by change 134 < 2130706433; decide"),
+])
