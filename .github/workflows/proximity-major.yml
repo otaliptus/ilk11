@@ -1,0 +1,42 @@
+name: Proximity lower major-jump research
+
+on:
+  push:
+    branches:
+      - research/proximity-major-lower
+  workflow_dispatch:
+
+concurrency:
+  group: proximity-lower-major-jump
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout research harness
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          persist-credentials: false
+      - name: Freeze accepted 67.61 baseline
+        run: |
+          git clone --filter=blob:none https://github.com/proximity-prize/proximity-prize.git /tmp/proximity
+          cd /tmp/proximity
+          git checkout 42364a74d210aafbb2b5f357c7fbd2173fdb097a
+          tar -czf /tmp/proximity-accepted-6761.tar.gz \
+            ProximityPrize/SubmissionLower \
+            ProximityPrize/Benchmark \
+            lakefile.toml lake-manifest.json lean-toolchain scripts
+          git rev-parse HEAD > /tmp/accepted-commit.txt
+      - name: Upload frozen baseline
+        uses: actions/upload-artifact@b7c566a772e6b6f58ed0dc250532a479d7789f
+        with:
+          name: proximity-accepted-6761-${{ github.sha }}
+          path: |
+            /tmp/proximity-accepted-6761.tar.gz
+            /tmp/accepted-commit.txt
+          if-no-files-found: error
