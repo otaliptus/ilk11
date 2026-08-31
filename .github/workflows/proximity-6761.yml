@@ -25,11 +25,12 @@ jobs:
           persist-credentials: false
       - name: Generate candidate source
         run: |
-          cp research/6761_mutate.py research/6761_driver.py /tmp/
+          cp research/6761_mutate.py research/6761_driver.py research/6761_post.py /tmp/
           git clone --filter=blob:none https://github.com/proximity-prize/proximity-prize.git /tmp/proximity
           cd /tmp/proximity
           git checkout 625f2c09c8ac826ba67c1f336b15348f87f52d4d
           python3 /tmp/6761_driver.py /tmp/proximity
+          python3 /tmp/6761_post.py /tmp/proximity
           git diff --check
           git diff --binary > /tmp/candidate-6761.patch
           tar -C /tmp/proximity -czf /tmp/candidate-6761-source.tar.gz ProximityPrize/SubmissionLower
@@ -53,11 +54,12 @@ jobs:
           persist-credentials: false
       - name: Fetch accepted 67.60 baseline and apply candidate
         run: |
-          cp research/6761_mutate.py research/6761_driver.py /tmp/
+          cp research/6761_mutate.py research/6761_driver.py research/6761_post.py /tmp/
           git clone --filter=blob:none https://github.com/proximity-prize/proximity-prize.git /tmp/proximity
           cd /tmp/proximity
           git checkout 625f2c09c8ac826ba67c1f336b15348f87f52d4d
           python3 /tmp/6761_driver.py /tmp/proximity
+          python3 /tmp/6761_post.py /tmp/proximity
       - name: Install Lean toolchain
         run: |
           curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
