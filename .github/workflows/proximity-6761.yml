@@ -6,6 +6,10 @@ on:
       - research/proximity-6761-ci
   workflow_dispatch:
 
+concurrency:
+  group: proximity-6761-research
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
