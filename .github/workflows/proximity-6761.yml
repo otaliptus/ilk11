@@ -35,6 +35,10 @@ jobs:
           curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
 
+      - name: Restore official Lean cache
+        working-directory: /tmp/proximity
+        run: lake exe cache get || true
+
       - name: Compile arithmetic certificates
         working-directory: /tmp/proximity
         run: |
