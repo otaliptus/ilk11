@@ -29,11 +29,18 @@ jobs:
           python3 /tmp/6761_driver.py /tmp/proximity
           git diff --check
           git diff --binary > /tmp/candidate-6761.patch
+          tar -C /tmp/proximity -czf /tmp/candidate-6761-source.tar.gz ProximityPrize/SubmissionLower
 
       - name: Install Lean toolchain
         run: |
           curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Restore incremental project build
+        uses: actions/cache@v4
+        with:
+          path: /tmp/proximity/.lake/build
+          key: proximity-6761-lean4322-build-v1
 
       - name: Restore official Lean cache
         working-directory: /tmp/proximity
@@ -58,10 +65,12 @@ jobs:
         working-directory: /tmp/proximity
         run: lake env lean scripts/check-axioms.lean
 
-      - name: Upload candidate patch
+      - name: Upload candidate evidence
         if: always()
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
         with:
           name: proximity-candidate-6761-${{ github.sha }}
-          path: /tmp/candidate-6761.patch
+          path: |
+            /tmp/candidate-6761.patch
+            /tmp/candidate-6761-source.tar.gz
           if-no-files-found: warn
