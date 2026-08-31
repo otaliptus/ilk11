@@ -38,13 +38,13 @@ jobs:
       - name: Compile arithmetic certificates
         working-directory: /tmp/proximity
         run: |
-          lake env lean ProximityPrize/SubmissionLower/LocatorArithmetic.lean
-          lake env lean ProximityPrize/SubmissionLower/LocatorScalarArithmetic.lean
-          lake env lean ProximityPrize/SubmissionLower/LocatorReplacementData.lean
+          lake build ProximityPrize.SubmissionLower.LocatorArithmetic
+          lake build ProximityPrize.SubmissionLower.LocatorScalarArithmetic
+          lake build ProximityPrize.SubmissionLower.LocatorReplacementData
 
       - name: Compile exported solution
         working-directory: /tmp/proximity
-        run: lake env lean ProximityPrize/SubmissionLower/Solution.lean
+        run: lake build ProximityPrize.SubmissionLower.Solution
 
       - name: Canonical build
         working-directory: /tmp/proximity
