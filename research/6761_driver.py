@@ -44,6 +44,10 @@ fix("LocatorCaps.lean", [
      "globalCoefficientBox K 17632272 131071 1 30"),
     ("17632272 131071 2085 30 97 17632272 1 31",
      "17632272 131071 2085 30 97 17632272 1 30"),
+    ("wt (contactWeights 131071) F ≤ 9816443",
+     "wt (contactWeights 131071) F ≤ 9815903"),
+    ("show 2031 - 2030 = 1 by decide",
+     "show 2085 - 2084 = 1 by decide"),
 ])
 fix("LocatorSelection.lean", [
     ("normalizedFactorSet_card_lt_field_of_mem_flagBox HB 17632272 2031 31",
