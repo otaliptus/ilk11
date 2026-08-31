@@ -54,6 +54,8 @@ fix("LocatorSelection.lean", [
      "normalizedFactorSet_card_lt_field_of_mem_flagBox HB 17632272 2085 30"),
     ("normalizedFactorSet_card_lt_field_of_mem_flagBox QA 17268720 40000 29",
      "normalizedFactorSet_card_lt_field_of_mem_flagBox QA 17268720 57385 29"),
+    ("exact ⟨ht, hs.trans (by decide), hc.trans_le (by decide)⟩",
+     "exact ⟨ht.trans (by decide), hs.trans (by decide), hc.trans_le (by decide)⟩"),
 ])
 fix("LocatorFixedConsumer.lean", [
     ("⟨15, 71, 2083,", "⟨15, 72, 2083,"),
