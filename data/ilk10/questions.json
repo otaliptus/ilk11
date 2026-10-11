@@ -392,38 +392,62 @@
     "answers": [
       {
         "value": "Zeki Rıza Sporel",
-        "scoreLabel": "27 gol"
+        "scoreLabel": "27 gol",
+        "aliases": [
+          "Zeki Riza",
+          "Sporel"
+        ]
       },
       {
         "value": "Alaattin Baydar",
-        "scoreLabel": "24 gol"
+        "scoreLabel": "24 gol",
+        "aliases": [
+          "Alaattin",
+          "Baydar"
+        ]
       },
       {
         "value": "Lefter Küçükandonyadis",
-        "scoreLabel": "20 gol"
+        "scoreLabel": "20 gol",
+        "aliases": [
+          "Lefter"
+        ]
       },
       {
         "value": "Metin Oktay",
-        "scoreLabel": "19 gol"
+        "scoreLabel": "19 gol",
+        "aliases": [
+          "Metin"
+        ]
       },
       {
         "value": "Hakan Şükür",
         "scoreLabel": "16 gol",
         "aliases": [
-          "Sukur"
+          "Sukur",
+          "Hakan"
         ]
       },
       {
         "value": "Naci Bastoncu",
-        "scoreLabel": "15 gol"
+        "scoreLabel": "15 gol",
+        "aliases": [
+          "Bastoncu"
+        ]
       },
       {
         "value": "Tanju Çolak",
-        "scoreLabel": "14 gol"
+        "scoreLabel": "14 gol",
+        "aliases": [
+          "Tanju"
+        ]
       },
       {
         "value": "Cemil Turan",
-        "scoreLabel": "14 gol"
+        "scoreLabel": "14 gol",
+        "aliases": [
+          "Cemil Turan"
+        ]
       },
       {
         "value": "Osman Arpacıoğlu",
@@ -432,7 +456,8 @@
           "Osman Arpacıoğlu",
           "Cemil Gürgen Erlertürk",
           "Aykut Kocaman",
-          "Emin Bülent Serdaroğlu"
+          "Emin Bülent Serdaroğlu",
+          "Osman Arpacioglu"
         ]
       },
       {
@@ -442,7 +467,9 @@
           "Osman Arpacıoğlu",
           "Cemil Gürgen Erlertürk",
           "Aykut Kocaman",
-          "Emin Bülent Serdaroğlu"
+          "Emin Bülent Serdaroğlu",
+          "Cemil Gurgen",
+          "Erlerturk"
         ]
       }
     ],
