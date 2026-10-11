@@ -469,6 +469,69 @@
     "status": "live"
   },
   {
+    "id": "verified-coach-achievements-most-titles-overall",
+    "shortLabel": "En Çok Kupa Kazanan Teknik Direktörler",
+    "prompt": "Türk Futbolunda En Çok Kupa Kazanan Teknik Direktörler (1959'dan Bu Yana)",
+    "entityType": "coach",
+    "category": "title-race",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Football_records_and_statistics_in_Turkey",
+    "note": "Draft. Total trophies (league, Turkish Cup, Super Cup, UEFA Europa League, UEFA Super Cup) from the Wikipedia records table (checked 2026-10-11). The 5-title group (Didi, Özkan Sümer, Branko Stanković) shares the last two slots via aliases.",
+    "answers": [
+      {
+        "value": "Fatih Terim",
+        "scoreLabel": "17 kupa"
+      },
+      {
+        "value": "Ahmet Suat Ozyazici",
+        "scoreLabel": "12 kupa"
+      },
+      {
+        "value": "Okan Buruk",
+        "scoreLabel": "7 kupa"
+      },
+      {
+        "value": "Mustafa Denizli",
+        "scoreLabel": "7 kupa"
+      },
+      {
+        "value": "Gordon Milne",
+        "scoreLabel": "7 kupa"
+      },
+      {
+        "value": "Gunduz Kilic",
+        "scoreLabel": "6 kupa"
+      },
+      {
+        "value": "Christoph Daum",
+        "scoreLabel": "6 kupa"
+      },
+      {
+        "value": "Şenol Güneş",
+        "scoreLabel": "6 kupa"
+      },
+      {
+        "value": "Didi",
+        "scoreLabel": "5 kupa",
+        "aliases": [
+          "Didi",
+          "Özkan Sümer",
+          "Branko Stanković"
+        ]
+      },
+      {
+        "value": "Ozkan Sumer",
+        "scoreLabel": "5 kupa",
+        "aliases": [
+          "Didi",
+          "Özkan Sümer",
+          "Branko Stanković"
+        ]
+      }
+    ],
+    "status": "draft"
+  },
+  {
     "id": "turkish-cup-winning-teams",
     "shortLabel": "Türkiye Kupası Şampiyonu Takımlar",
     "prompt": "En çok Türkiye Kupası kazanan takımlar",
@@ -543,6 +606,59 @@
       }
     ],
     "status": "live"
+  },
+  {
+    "id": "verified-club-legends-alltime-sl-most-points",
+    "shortLabel": "Süper Lig Tarihinin En Çok Puan Toplayan Takımları",
+    "prompt": "Süper Lig Tarihinin En Çok Puan Toplayan Takımları (1959'dan Bu Yana)",
+    "entityType": "team",
+    "category": "title-race",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Football_records_and_statistics_in_Turkey",
+    "note": "Draft. Wikipedia Süper Lig all-time table (3 points per win), including the start of the 2026-27 season — checked 2026-10-11. Ranked by total points.",
+    "answers": [
+      {
+        "value": "Fenerbahçe",
+        "scoreLabel": "4522 puan (69 sezon)"
+      },
+      {
+        "value": "Galatasaray",
+        "scoreLabel": "4491 puan (69 sezon)"
+      },
+      {
+        "value": "Beşiktaş",
+        "scoreLabel": "4287 puan (69 sezon)"
+      },
+      {
+        "value": "Trabzonspor",
+        "scoreLabel": "3114 puan (53 sezon)"
+      },
+      {
+        "value": "Bursaspor",
+        "scoreLabel": "2189 puan (50 sezon)"
+      },
+      {
+        "value": "Ankaragücü",
+        "scoreLabel": "2176 puan (54 sezon)"
+      },
+      {
+        "value": "Gençlerbirliği",
+        "scoreLabel": "2112 puan (50 sezon)"
+      },
+      {
+        "value": "Altay",
+        "scoreLabel": "1686 puan (42 sezon)"
+      },
+      {
+        "value": "Samsunspor",
+        "scoreLabel": "1373 puan (34 sezon)"
+      },
+      {
+        "value": "Gaziantepspor",
+        "scoreLabel": "1363 puan (31 sezon)"
+      }
+    ],
+    "status": "draft"
   },
   {
     "id": "fenerbahce-most-points-dropped-since-2020",
@@ -7037,6 +7153,74 @@
         "scoreLabel": "29 gol (2022-23)",
         "aliases": [
           "Valencia"
+        ]
+      }
+    ],
+    "status": "draft"
+  },
+  {
+    "id": "verified-season-records-best-goals-per-game",
+    "shortLabel": "Gol Krallığında En Yüksek Ortalama",
+    "prompt": "Süper Lig'de Gol Krallığını En Yüksek Gol Ortalamasıyla Kazananlar (En Az 20 Maç)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_S%C3%BCper_Lig_top_scorers",
+    "note": "Draft. Each player's best goals-per-game golden boot season (minimum 20 games) from the Wikipedia Süper Lig top scorers table (checked 2026-10-11). Ties at 0.91 are both included; 11th is Osimhen at 0.87.",
+    "answers": [
+      {
+        "value": "Metin Oktay",
+        "scoreLabel": "1.46 gol/maç (1962-63)"
+      },
+      {
+        "value": "Tanju Çolak",
+        "scoreLabel": "1.17 gol/maç (1992-93)"
+      },
+      {
+        "value": "Hakan Şükür",
+        "scoreLabel": "1.15 gol/maç (1996-97)",
+        "aliases": [
+          "Sukur"
+        ]
+      },
+      {
+        "value": "Aykut Kocaman",
+        "scoreLabel": "1.08 gol/maç (1994-95)"
+      },
+      {
+        "value": "Mbaye Diagne",
+        "scoreLabel": "1.03 gol/maç (2018-19)",
+        "aliases": [
+          "Diagne"
+        ]
+      },
+      {
+        "value": "Burak Yılmaz",
+        "scoreLabel": "0.97 gol/maç (2011-12)"
+      },
+      {
+        "value": "Enner Valencia",
+        "scoreLabel": "0.94 gol/maç (2022-23)",
+        "aliases": [
+          "Valencia"
+        ]
+      },
+      {
+        "value": "Fatih Tekke",
+        "scoreLabel": "0.91 gol/maç (2004-05)"
+      },
+      {
+        "value": "Serkan Aykut",
+        "scoreLabel": "0.91 gol/maç (1999-2000)",
+        "aliases": [
+          "Aykut"
+        ]
+      },
+      {
+        "value": "Bafétimbi Gomis",
+        "scoreLabel": "0.88 gol/maç (2017-18)",
+        "aliases": [
+          "Gomis"
         ]
       }
     ],
