@@ -54,6 +54,7 @@ scripts/lib/*
 !scripts/build-ilk11-daily-json.mjs
 !scripts/validate-ilk11-runtime.mjs
 !scripts/validate-ilk10.mjs
+!scripts/backfill-lineup-details.mjs
 !scripts/DATA-README.md
 public/data/daily/
 *.report.json

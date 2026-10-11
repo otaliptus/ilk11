@@ -159,3 +159,31 @@ The validator checks:
 - **exact duplicate answer sets across live questions are flagged** (these are
   effectively the same quiz shown on two different days)
 - near-duplicates (8+/10 shared answers) are listed for review
+
+### 9) Backfill lineup numbers/captains from Transfermarkt
+
+Some rows have missing or duplicated shirt numbers, or no captain flag. The
+backfill tool re-fetches exactly those matches from Transfermarkt (cached under
+the OS temp dir), aligns the scraped XI to the stored lineup by player name,
+and applies source-backed corrections:
+
+```bash
+node scripts/backfill-lineup-details.mjs --dry          # report only
+node scripts/backfill-lineup-details.mjs                # write fixes
+npm run data:build-pools && npm run data:validate:all   # rebuild + verify
+```
+
+Notes from the 2026-10 rescrape of all 494 affected matches:
+
+- The remaining missing captains and shirt numbers are **source-side gaps**:
+  Transfermarkt has no captain icon and no shirt number for those players
+  (the stored data matches the page exactly).
+- Duplicate shirt numbers (for example two Kocaelispor players with #5 in
+  2002) also exist on Transfermarkt itself and are kept as source data; the
+  validator keeps flagging them so they can be reviewed.
+- The tool reports `name mismatch` pairs where the stored display name differs
+  from Transfermarkt's (nicknames such as "Bombinha" vs "Elionar Bo."). These
+  are used to align the slot; stored names are intentionally not rewritten.
+- Matches where Transfermarkt renders one team as placeholders (for example
+  1143453) cannot be backfilled and are reported.
+

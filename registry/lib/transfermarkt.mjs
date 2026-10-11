@@ -54,6 +54,13 @@ function parseCaptainFlagFromMarkup(markup) {
   return /kapitaenicon-formation/i.test(String(markup ?? ""));
 }
 
+function parseShirtNumber(markup) {
+  const match = String(markup ?? "").match(/tm-shirt-number[^>]*>\s*(\d+)\s*</i);
+  if (!match) return null;
+  const value = Number(match[1]);
+  return Number.isInteger(value) && value > 0 ? value : null;
+}
+
 function extractFormationPlayers(matchHtml) {
   const players = [];
   const regex =
@@ -65,6 +72,7 @@ function extractFormationPlayers(matchHtml) {
     const left = parsePercentFromStyle(style, "left");
     if (!Number.isFinite(top) || !Number.isFinite(left)) continue;
 
+    const markup = match[2] ?? "";
     const href = match[3] ?? "";
     const displayName = titleCaseAscii(match[4]);
     const fullName = slugToFullName(href) ?? displayName;
@@ -74,6 +82,7 @@ function extractFormationPlayers(matchHtml) {
     players.push({
       top,
       left,
+      number: parseShirtNumber(markup),
       playerId: parsePlayerIdFromHref(href),
       displayName,
       fullName,
