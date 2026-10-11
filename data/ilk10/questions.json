@@ -381,6 +381,74 @@
     "status": "live"
   },
   {
+    "id": "verified-historical-intercontinental-derby-scorers",
+    "shortLabel": "Kıtalar Arası Derbi Golcüleri (Tüm Zamanlar)",
+    "prompt": "Galatasaray-Fenerbahçe Derbilerinin Tüm Zamanlar En Golcü Futbolcuları",
+    "entityType": "player",
+    "category": "derby",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://en.wikipedia.org/wiki/The_Intercontinental_Derby_(football)",
+    "note": "Draft. Wikipedia Intercontinental Derby top scorers table (checked 2026-10-11), all official derbies. Four players are tied at 12 goals and share the last two slots — all four are accepted via aliases.",
+    "answers": [
+      {
+        "value": "Zeki Rıza Sporel",
+        "scoreLabel": "27 gol"
+      },
+      {
+        "value": "Alaattin Baydar",
+        "scoreLabel": "24 gol"
+      },
+      {
+        "value": "Lefter Küçükandonyadis",
+        "scoreLabel": "20 gol"
+      },
+      {
+        "value": "Metin Oktay",
+        "scoreLabel": "19 gol"
+      },
+      {
+        "value": "Hakan Şükür",
+        "scoreLabel": "16 gol",
+        "aliases": [
+          "Sukur"
+        ]
+      },
+      {
+        "value": "Naci Bastoncu",
+        "scoreLabel": "15 gol"
+      },
+      {
+        "value": "Tanju Çolak",
+        "scoreLabel": "14 gol"
+      },
+      {
+        "value": "Cemil Turan",
+        "scoreLabel": "14 gol"
+      },
+      {
+        "value": "Osman Arpacıoğlu",
+        "scoreLabel": "12 gol",
+        "aliases": [
+          "Osman Arpacıoğlu",
+          "Cemil Gürgen Erlertürk",
+          "Aykut Kocaman",
+          "Emin Bülent Serdaroğlu"
+        ]
+      },
+      {
+        "value": "Cemil Gürgen Erlertürk",
+        "scoreLabel": "12 gol",
+        "aliases": [
+          "Osman Arpacıoğlu",
+          "Cemil Gürgen Erlertürk",
+          "Aykut Kocaman",
+          "Emin Bülent Serdaroğlu"
+        ]
+      }
+    ],
+    "status": "live"
+  },
+  {
     "id": "big-four-bench-travelers",
     "shortLabel": "Büyük 4 Teknik Direktörleri",
     "prompt": "Türk büyük 4'ünün en az 2'sini çalıştıran teknik direktörler",
@@ -529,7 +597,7 @@
         ]
       }
     ],
-    "status": "draft"
+    "status": "live"
   },
   {
     "id": "turkish-cup-winning-teams",
@@ -658,7 +726,7 @@
         "scoreLabel": "1363 puan (31 sezon)"
       }
     ],
-    "status": "draft"
+    "status": "live"
   },
   {
     "id": "fenerbahce-most-points-dropped-since-2020",
@@ -3803,20 +3871,20 @@
     "prompt": "2025-26 Süper Lig asist krallığı",
     "entityType": "player",
     "category": "season-stats",
-    "sourceLabel": "FBref 2025-2026 Super Lig leaderboard",
-    "sourceUrl": "https://fbref.com/en/comps/26/2025-2026/2025-2026-Super-Lig-Stats",
-    "note": "Transfermarkt assist table cross-check (checked 2026-04-21).",
+    "sourceLabel": "Transfermarkt",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/scorerliste/wettbewerb/TR1/saison_id/2025",
+    "note": "Verified against the final Transfermarkt 2025-26 scorer list (fetched 2026-10-11); the FBref list was wrong (it had Camara, Gürpüz, Touré). TM lists assists for its top-25 scorer list only.",
     "answers": [
+      {
+        "value": "Marco Asensio",
+        "aliases": [
+          "Asensio"
+        ]
+      },
       {
         "value": "Barış Alper Yılmaz",
         "aliases": [
           "Yilmaz"
-        ]
-      },
-      {
-        "value": "Drissa Camara",
-        "aliases": [
-          "Camara"
         ]
       },
       {
@@ -3826,27 +3894,33 @@
         ]
       },
       {
-        "value": "Vaclav Cerny",
-        "aliases": [
-          "Cerny"
-        ]
-      },
-      {
         "value": "Yunus Akgün",
         "aliases": [
           "Akgun"
         ]
       },
       {
-        "value": "Alexandru Maxim",
+        "value": "Orkun Kökçü",
         "aliases": [
-          "Maxim"
+          "Kokcu"
         ]
       },
       {
-        "value": "Goktan Gurpuz",
+        "value": "Florent Hadergjonaj",
         "aliases": [
-          "Gurpuz"
+          "Hadergjonaj"
+        ]
+      },
+      {
+        "value": "Qazim Laci",
+        "aliases": [
+          "Laci"
+        ]
+      },
+      {
+        "value": "Vaclav Cerny",
+        "aliases": [
+          "Cerny"
         ]
       },
       {
@@ -3856,19 +3930,13 @@
         ]
       },
       {
-        "value": "El Bilal Toure",
+        "value": "Kerem Aktürkoğlu",
         "aliases": [
-          "Toure"
-        ]
-      },
-      {
-        "value": "Marco Asensio",
-        "aliases": [
-          "Asensio"
+          "Akturkoglu"
         ]
       }
     ],
-    "status": "draft"
+    "status": "live"
   },
   {
     "id": "fbref-2025-2026-cards-red",
@@ -4106,119 +4174,69 @@
     "prompt": "2025-26 Süper Lig en çok maçı gol yemeden tamamlayan kaleciler",
     "entityType": "player",
     "category": "season-stats",
-    "sourceLabel": "FBref 2025-2026 Super Lig leaderboard",
-    "sourceUrl": "https://fbref.com/en/comps/26/2025-2026/2025-2026-Super-Lig-Stats",
-    "note": "Generated from stored FBref season leaderboard \"Clean Sheets\".",
+    "sourceLabel": "Transfermarkt",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/weisseweste/wettbewerb/TR1/saison_id/2025",
+    "note": "Verified against the final Transfermarkt 2025-26 clean sheets table (fetched 2026-10-11); the FBref-derived tail (Jovanović) was wrong — Onana is 10th.",
     "answers": [
       {
         "value": "Mateusz Lis",
-        "entityId": "player:tm-historical-345437-mateusz-lis",
-        "sourceIds": {
-          "fbref": "fd78b105",
-          "transfermarkt": "345437"
-        },
         "aliases": [
           "Lis"
         ]
       },
       {
-        "value": "Uğurcan Çakır",
-        "entityId": "player:tm-historical-292199-ugurcan-cakir",
-        "sourceIds": {
-          "fbref": "f63a8347",
-          "transfermarkt": "292199"
-        },
-        "aliases": [
-          "Cakir"
-        ]
-      },
-      {
         "value": "Muhammed Sengezer",
-        "entityId": "player:tm-historical-330871-muhammed-sengezer",
-        "sourceIds": {
-          "fbref": "fa71b998",
-          "transfermarkt": "330871"
-        },
         "aliases": [
           "Sengezer"
         ]
       },
       {
+        "value": "Uğurcan Çakır",
+        "aliases": [
+          "Cakir"
+        ]
+      },
+      {
         "value": "Okan Koçuk",
-        "entityId": "player:tm-historical-204189-okan-kocuk",
-        "sourceIds": {
-          "fbref": "7e9fd9b9",
-          "transfermarkt": "204189"
-        },
         "aliases": [
           "Kocuk"
         ]
       },
       {
+        "value": "Ederson"
+      },
+      {
+        "value": "Ersin Destanoğlu",
+        "aliases": [
+          "Destanoglu"
+        ]
+      },
+      {
         "value": "Andreas Gianniotis",
-        "entityId": "player:tm-historical-226802-andreas-gianniotis",
-        "sourceIds": {
-          "fbref": "8ae07c1c",
-          "transfermarkt": "226802"
-        },
         "aliases": [
           "Gianniotis"
         ]
       },
       {
         "value": "Ertugrul Taskiran",
-        "entityId": "player:tm-historical-91945-ertugrul-taskiran",
-        "sourceIds": {
-          "fbref": "cf8c553e",
-          "transfermarkt": "91945"
-        },
         "aliases": [
           "Taskiran"
         ]
       },
       {
-        "value": "Ersin Destanoğlu",
-        "entityId": "player:tm-historical-500091-ersin-destanoglu",
-        "sourceIds": {
-          "fbref": "52b3c895",
-          "transfermarkt": "500091"
-        },
-        "aliases": [
-          "Destanoglu"
-        ]
-      },
-      {
-        "value": "Ederson",
-        "entityId": "player:tm-historical-238223-ederson",
-        "sourceIds": {
-          "fbref": "3bb7b8b4",
-          "transfermarkt": "238223"
-        }
-      },
-      {
-        "value": "Aleksandar Jovanovic",
-        "entityId": "player:tm-256567-aleksandar-jovanovic",
-        "sourceIds": {
-          "fbref": "129dd8e7",
-          "transfermarkt": "256567"
-        },
-        "aliases": [
-          "Jovanovic"
-        ]
-      },
-      {
         "value": "Bilal Bayazit",
-        "entityId": "player:tm-historical-361032-bilal-bayazit",
-        "sourceIds": {
-          "fbref": "f0a63d14",
-          "transfermarkt": "361032"
-        },
         "aliases": [
           "Bayazit"
         ]
+      },
+      {
+        "value": "Andre Onana",
+        "aliases": [
+          "Onana"
+        ]
       }
     ],
-    "status": "draft"
+    "status": "live"
   },
   {
     "id": "fbref-2025-2026-gk-saves",
@@ -4228,7 +4246,7 @@
     "category": "season-stats",
     "sourceLabel": "FBref 2025-2026 Super Lig leaderboard",
     "sourceUrl": "https://fbref.com/en/comps/26/2025-2026/2025-2026-Super-Lig-Stats",
-    "note": "Generated from stored FBref season leaderboard \"Saves\".",
+    "note": "Generated from stored FBref season leaderboard \"Saves\". Kept as draft: FBref-only data and no accessible saves leaderboard (FBref blocked, TM has none).",
     "answers": [
       {
         "value": "Ivo Grbic",
@@ -4467,7 +4485,7 @@
     "category": "season-stats",
     "sourceLabel": "FBref 2025-2026 Super Lig leaderboard",
     "sourceUrl": "https://fbref.com/en/comps/26/2025-2026/2025-2026-Super-Lig-Stats",
-    "note": "Generated from stored FBref season leaderboard \"Minutes\".",
+    "note": "Generated from stored FBref season leaderboard \"Minutes\". Kept as draft: FBref-only data and no accessible minutes leaderboard (FBref blocked, TM has none).",
     "answers": [
       {
         "value": "Ivo Grbic",
@@ -4578,119 +4596,91 @@
     "prompt": "2025-26 Süper Lig'de en çok penaltı golü atan oyuncular",
     "entityType": "player",
     "category": "season-stats",
-    "sourceLabel": "FBref 2025-2026 Super Lig leaderboard",
-    "sourceUrl": "https://fbref.com/en/comps/26/2025-2026/2025-2026-Super-Lig-Stats",
-    "note": "Generated from stored FBref season leaderboard \"Penalty Kicks Made\".",
+    "sourceLabel": "Transfermarkt",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/elfmeterschuetzen/wettbewerb/TR1/saison_id/2025",
+    "note": "Verified against the final Transfermarkt 2025-26 penalty shooters table (fetched 2026-10-11). Eleven players are tied at 2 penalties for the last two slots — all are accepted via aliases.",
     "answers": [
       {
         "value": "Paul Onuachu",
-        "entityId": "player:tm-historical-272855-paul-onuachu",
-        "sourceIds": {
-          "fbref": "c06d1086",
-          "transfermarkt": "272855"
-        },
         "aliases": [
           "Onuachu"
         ]
       },
       {
-        "value": "Alexandru Maxim",
-        "entityId": "player:tm-historical-129513-alexandru-maxim",
-        "sourceIds": {
-          "fbref": "61fc9685",
-          "transfermarkt": "129513"
-        },
-        "aliases": [
-          "Maxim"
-        ]
-      },
-      {
-        "value": "Talisca",
-        "entityId": "player:tm-historical-258626-talisca",
-        "sourceIds": {
-          "fbref": "5c4f4e43",
-          "transfermarkt": "258626"
-        }
-      },
-      {
-        "value": "Qazim Laci",
-        "entityId": "player:tm-historical-290552-qazim-laci",
-        "sourceIds": {
-          "fbref": "eb0db257",
-          "transfermarkt": "290552"
-        },
-        "aliases": [
-          "Laci"
-        ]
-      },
-      {
-        "value": "Barış Alper Yılmaz",
-        "entityId": "player:tm-historical-541537-baris-alper-yilmaz",
-        "sourceIds": {
-          "fbref": "414b2ce4",
-          "transfermarkt": "541537"
-        },
-        "aliases": [
-          "Yilmaz"
-        ]
-      },
-      {
-        "value": "Florent Hadergjonaj",
-        "entityId": "player:tm-238809-florent-hadergjonaj",
-        "sourceIds": {
-          "fbref": "9aa186b2",
-          "transfermarkt": "238809"
-        },
-        "aliases": [
-          "Hadergjonaj"
-        ]
+        "value": "Talisca"
       },
       {
         "value": "Eldor Shomurodov",
-        "entityId": "player:tm-historical-358166-eldor-shomurodov",
-        "sourceIds": {
-          "fbref": "57469b2d",
-          "transfermarkt": "358166"
-        },
         "aliases": [
           "Shomurodov"
         ]
       },
       {
+        "value": "Alexandru Maxim",
+        "aliases": [
+          "Maxim"
+        ]
+      },
+      {
+        "value": "Barış Alper Yılmaz",
+        "aliases": [
+          "Yilmaz"
+        ]
+      },
+      {
+        "value": "Qazim Laci",
+        "aliases": [
+          "Laci"
+        ]
+      },
+      {
         "value": "Adrian Benedyczak",
-        "entityId": "player:tm-historical-454386-adrian-benedyczak",
-        "sourceIds": {
-          "fbref": "3f448184",
-          "transfermarkt": "454386"
-        },
         "aliases": [
           "Benedyczak"
         ]
       },
       {
-        "value": "Enis Bardhi",
-        "entityId": "player:tm-historical-245014-enis-bardhi",
-        "sourceIds": {
-          "fbref": "cac2537b",
-          "transfermarkt": "245014"
-        },
+        "value": "Florent Hadergjonaj",
         "aliases": [
-          "Bardhi"
+          "Hadergjonaj"
         ]
       },
       {
-        "value": "Bruno Petkovic",
-        "entityId": "player:tm-historical-256358-bruno-petkovic",
-        "sourceIds": {
-          "fbref": "24228180",
-          "transfermarkt": "256358"
-        },
+        "value": "Victor Osimhen",
         "aliases": [
-          "Petkovic"
+          "Victor Osimhen",
+          "Orkun Kökçü",
+          "Kristjan Asllani",
+          "Davie Selke",
+          "Umut Bozok",
+          "Ernest Muci",
+          "Enis Bardhi",
+          "Serdar Dursun",
+          "Bruno Petkovic",
+          "M'Baye Niang",
+          "Sam Larsson",
+          "Osimhen"
+        ]
+      },
+      {
+        "value": "Orkun Kökçü",
+        "aliases": [
+          "Victor Osimhen",
+          "Orkun Kökçü",
+          "Kristjan Asllani",
+          "Davie Selke",
+          "Umut Bozok",
+          "Ernest Muci",
+          "Enis Bardhi",
+          "Serdar Dursun",
+          "Bruno Petkovic",
+          "M'Baye Niang",
+          "Sam Larsson",
+          "Kokcu"
         ]
       }
     ],
-    "status": "draft"
+    "status": "live"
   },
   {
     "id": "fbref-2025-2026-shots-on-target",
@@ -5771,7 +5761,7 @@
         ]
       }
     ],
-    "status": "draft"
+    "status": "live"
   },
   {
     "id": "verified-club-legends-alltime-sl-topscorers",
@@ -7088,7 +7078,7 @@
         ]
       }
     ],
-    "status": "draft"
+    "status": "live"
   },
   {
     "id": "verified-season-records-single-season-goals",
@@ -7156,7 +7146,7 @@
         ]
       }
     ],
-    "status": "draft"
+    "status": "live"
   },
   {
     "id": "verified-season-records-best-goals-per-game",
@@ -7166,7 +7156,7 @@
     "category": "season-stats",
     "sourceLabel": "Research verified",
     "sourceUrl": "https://en.wikipedia.org/wiki/List_of_S%C3%BCper_Lig_top_scorers",
-    "note": "Draft. Each player's best goals-per-game golden boot season (minimum 20 games) from the Wikipedia Süper Lig top scorers table (checked 2026-10-11). Ties at 0.91 are both included; 11th is Osimhen at 0.87.",
+    "note": "Draft. Each player's best goals-per-game golden boot season (minimum 20 games) from the Wikipedia Süper Lig top scorers table (checked 2026-10-11). Ties at 0.91 are both included; 11th is Osimhen at 0.87. Retired: its top-10 set is identical to verified-season-records-single-season-goals (the highest single-season scorers are also the best goals-per-game seasons at any 15-20 game cutoff).",
     "answers": [
       {
         "value": "Metin Oktay",
@@ -7224,7 +7214,7 @@
         ]
       }
     ],
-    "status": "draft"
+    "status": "retired"
   },
   {
     "id": "verified-keeper-conceded-muslera-by-team",
@@ -8049,9 +8039,9 @@
     "prompt": "Son 5 Sezonda En Çok Penaltı Atan Futbolcular (Süper Lig)",
     "entityType": "player",
     "category": "season-stats",
-    "sourceLabel": "Research verified-aggregated",
-    "sourceUrl": "https://www.worldfootball.net/competition/co116/turkey-sueperlig/se39354/2021-2022/statistics-goals/",
-    "note": "Draft only. Source notes say the cutoff is a five-way tie and the 2025-26 component was ongoing, so this is not a clean exact-10 game.",
+    "sourceLabel": "Transfermarkt",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/elfmeterschuetzen/wettbewerb/TR1/saison_id/2025",
+    "note": "Verified by summing the Transfermarkt penalty shooter tables for the last five completed seasons (2021-22 through 2025-26; fetched 2026-10-11). Five players are tied at 9 penalties for the last four slots — all are accepted via aliases.",
     "answers": [
       {
         "value": "Alexandru Maxim",
@@ -8078,43 +8068,63 @@
         ]
       },
       {
-        "value": "Haris Hajradinovic",
-        "aliases": [
-          "Hajradinovic"
-        ]
-      },
-      {
-        "value": "Mame Thiam",
-        "aliases": [
-          "Thiam"
-        ]
-      },
-      {
-        "value": "Anastasios Bakasetas",
-        "aliases": [
-          "Bakasetas"
-        ]
-      },
-      {
-        "value": "Dušan Tadić",
-        "aliases": [
-          "Tadic"
-        ]
-      },
-      {
         "value": "Florent Hadergjonaj",
         "aliases": [
           "Hadergjonaj"
         ]
       },
       {
+        "value": "Haris Hajradinovic",
+        "aliases": [
+          "Hajradinovic"
+        ]
+      },
+      {
+        "value": "Anastasios Bakasetas",
+        "aliases": [
+          "Anastasios Bakasetas",
+          "Sokol Cikalleshi",
+          "Dusan Tadic",
+          "Krzysztof Piatek",
+          "Talisca",
+          "Bakasetas"
+        ]
+      },
+      {
+        "value": "Sokol Cikalleshi",
+        "aliases": [
+          "Anastasios Bakasetas",
+          "Sokol Cikalleshi",
+          "Dusan Tadic",
+          "Krzysztof Piatek",
+          "Talisca",
+          "Cikalleshi"
+        ]
+      },
+      {
+        "value": "Dušan Tadić",
+        "aliases": [
+          "Anastasios Bakasetas",
+          "Sokol Cikalleshi",
+          "Dusan Tadic",
+          "Krzysztof Piatek",
+          "Talisca",
+          "Tadic"
+        ]
+      },
+      {
         "value": "Krzysztof Piątek",
         "aliases": [
+          "Anastasios Bakasetas",
+          "Sokol Cikalleshi",
+          "Dusan Tadic",
+          "Krzysztof Piatek",
+          "Talisca",
           "Piatek"
         ]
       }
     ],
-    "status": "draft"
+    "status": "live"
   },
   {
     "id": "verified-season-records-double-digit-ga",
@@ -9469,7 +9479,7 @@
         ]
       }
     ],
-    "status": "draft"
+    "status": "live"
   },
   {
     "id": "verified-titles-most-titles-foreign",
@@ -10833,6 +10843,63 @@
       },
       {
         "value": "Mustafa Denizli"
+      }
+    ],
+    "status": "live"
+  },
+  {
+    "id": "verified-coach-lists-most-nt-matches",
+    "shortLabel": "Milli Takımı En Çok Maç Yöneten Teknik Direktörler",
+    "prompt": "A Milli Takımı En Çok Maç Yöneten Teknik Direktörler",
+    "entityType": "coach",
+    "category": "all-time",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Turkey_national_football_team_managers",
+    "note": "Draft. Wikipedia manager records table (as of 10 October 2026, checked 2026-10-11). Adnan Süvari and Mircea Lucescu are tied on 17 matches for the last slot — both accepted via aliases.",
+    "answers": [
+      {
+        "value": "Fatih Terim",
+        "scoreLabel": "136 maç"
+      },
+      {
+        "value": "Şenol Güneş",
+        "scoreLabel": "82 maç"
+      },
+      {
+        "value": "Coşkun Özarı",
+        "scoreLabel": "54 maç"
+      },
+      {
+        "value": "Vincenzo Montella",
+        "scoreLabel": "40 maç"
+      },
+      {
+        "value": "Mustafa Denizli",
+        "scoreLabel": "37 maç"
+      },
+      {
+        "value": "Sandro Puppo",
+        "scoreLabel": "32 maç"
+      },
+      {
+        "value": "Sepp Piontek",
+        "scoreLabel": "27 maç"
+      },
+      {
+        "value": "Stefan Kuntz",
+        "scoreLabel": "20 maç"
+      },
+      {
+        "value": "Abdullah Avcı",
+        "scoreLabel": "18 maç"
+      },
+      {
+        "value": "Adnan Süvari",
+        "scoreLabel": "17 maç",
+        "aliases": [
+          "Adnan Süvari",
+          "Mircea Lucescu"
+        ]
       }
     ],
     "status": "live"
