@@ -26,6 +26,11 @@ Fetches Super Lig fixtures + lineups from Transfermarkt and writes a season CSV:
 npm run data:fetch-season -- --season 2025 --out data/seasons/tr1-2025.csv
 ```
 
+Note: `fetch-season.mjs`, `merge-games.mjs` and `expand-dotted-names.mjs` are
+local maintainer tooling and are **not shipped** in this repository (they are
+covered by the `scripts/*` gitignore whitelist). The npm entries exist for
+machines that have them; cloning the repo alone is enough for everything below.
+
 Optional flags:
 
 - `--limit 20` (fetch only first N match reports)
@@ -46,6 +51,8 @@ This checks:
 - formation format
 - lineup size (`11`)
 - uppercase player names
+- warnings: duplicate shirt numbers, captain-count anomalies, duplicate
+  surnames within a lineup, and assists exceeding goals for the starting XI
 
 ### 3) Merge into canonical dataset (`data/games.csv`)
 
@@ -75,6 +82,14 @@ This writes:
 - `public/data/ilk11/easy.json`
 - `public/data/ilk11/hard.json`
 - `public/data/daily/YYYY-MM-DD.json` files for the next 400 days
+
+During the rebuild the script also normalizes the canonical rows:
+
+- `difficulty` is re-derived from the pool policy, so `data/games.csv`, the
+  public pool CSVs and the runtime JSON always agree (easy = one of the big
+  four, 2010 onward; everything else is hard).
+- `lineup_captains` keeps at most one captain flag per lineup (source data can
+  flag multiple players, which would render duplicate captain badges).
 
 Then validate final files:
 
@@ -121,3 +136,26 @@ This checks:
 - runtime JSON rows match the CSV-derived pools
 - daily payloads match the deterministic picker for the validation window
 - today's easy/hard source match ids are printed for a quick sanity check
+
+### 8) İlk 10 question bank
+
+`data/ilk10/questions.json` is the canonical question bank consumed by the app
+(and by `data/ilk10-questions.ts`). Edit the JSON directly and keep it in the
+shape enforced by the validator; the legacy pack files
+(`data/ilk10-fbref-season-questions.json`,
+`data/ilk10-research-verified-questions.json`) are kept for provenance only.
+
+```bash
+npm run data:build-ilk10   # normalize statuses in place (idempotent)
+npm run data:validate:ilk10
+```
+
+The validator checks:
+
+- every question has 10 unique non-empty answers and a valid status
+- ids are unique, prompts/labels/categories are present
+- design examples are not marked live
+- live questions without `sourceUrl` or `note` are flagged
+- **exact duplicate answer sets across live questions are flagged** (these are
+  effectively the same quiz shown on two different days)
+- near-duplicates (8+/10 shared answers) are listed for review

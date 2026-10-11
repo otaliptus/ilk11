@@ -100,10 +100,20 @@ for (const row of rows) {
     if (row.lineupNumbers.length !== 11) {
       errors.push(`${where} lineup_numbers has ${row.lineupNumbers.length} entries (expected 11)`);
     }
-    for (const number of row.lineupNumbers) {
+    const seenNumbers = new Map();
+    for (let index = 0; index < row.lineupNumbers.length; index += 1) {
+      const number = row.lineupNumbers[index];
       if (number === null) continue;
       if (!Number.isInteger(number) || number <= 0) {
         errors.push(`${where} lineup_numbers contains invalid value "${number}"`);
+        continue;
+      }
+      if (seenNumbers.has(number)) {
+        warnings.push(
+          `${where} duplicate shirt number ${number} (indices ${seenNumbers.get(number)} and ${index})`
+        );
+      } else {
+        seenNumbers.set(number, index);
       }
     }
   }
@@ -111,10 +121,18 @@ for (const row of rows) {
     if (row.lineupCaptains.length !== 11) {
       errors.push(`${where} lineup_captains has ${row.lineupCaptains.length} entries (expected 11)`);
     }
+    let captainCount = 0;
     for (const captainFlag of row.lineupCaptains) {
       if (!Number.isInteger(captainFlag) || (captainFlag !== 0 && captainFlag !== 1)) {
         errors.push(`${where} lineup_captains contains invalid value "${captainFlag}"`);
+      } else if (captainFlag === 1) {
+        captainCount += 1;
       }
+    }
+    if (captainCount === 0) {
+      warnings.push(`${where} no captain flag (expected 1)`);
+    } else if (captainCount > 1) {
+      warnings.push(`${where} ${captainCount} captain flags (expected 1)`);
     }
   }
   if (hasLineupGoals && Array.isArray(row.lineupGoals) && row.lineupGoals.length > 0) {
@@ -190,6 +208,31 @@ for (const row of rows) {
     }
   }
 
+  const surnameCounts = new Map();
+  for (const player of row.lineup) {
+    const surname = String(player).trim().toUpperCase();
+    if (!surname) continue;
+    surnameCounts.set(surname, (surnameCounts.get(surname) ?? 0) + 1);
+  }
+  for (const [surname, count] of surnameCounts) {
+    if (count > 1) {
+      warnings.push(`${where} ${count} players share the surname "${surname}"`);
+    }
+  }
+
+  if (
+    Array.isArray(row.lineupGoals) &&
+    row.lineupGoals.length > 0 &&
+    Array.isArray(row.lineupAssists) &&
+    row.lineupAssists.length > 0
+  ) {
+    const goalTotal = row.lineupGoals.reduce((sum, count) => sum + (Number.isInteger(count) ? count : 0), 0);
+    const assistTotal = row.lineupAssists.reduce((sum, count) => sum + (Number.isInteger(count) ? count : 0), 0);
+    if (assistTotal > goalTotal) {
+      warnings.push(`${where} assists (${assistTotal}) exceed goals (${goalTotal}) for the starting XI`);
+    }
+  }
+
   if (seenKeys.has(key)) {
     errors.push(`${where} duplicate game+team (first seen at line ${seenKeys.get(key)})`);
   } else {
@@ -220,8 +263,12 @@ console.log(`[validate-games] years=${yearSummary || "n/a"}`);
 
 if (warnings.length > 0) {
   console.log(`[validate-games] warnings=${warnings.length}`);
-  for (const warning of warnings) {
+  const warningLimit = 50;
+  for (const warning of warnings.slice(0, warningLimit)) {
     console.log(`  - ${warning}`);
+  }
+  if (warnings.length > warningLimit) {
+    console.log(`  - ... ${warnings.length - warningLimit} more`);
   }
 }
 

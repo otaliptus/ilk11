@@ -94,6 +94,7 @@ for (const file of seasonFiles) {
 }
 
 const allRows = [...merged.values()].sort(compareRowsByDateThenGame);
+let reclassifiedEasyRows = 0;
 const normalizedRows = allRows.map((row) => {
   const expectedLength = Array.isArray(row.lineup) && row.lineup.length > 0 ? row.lineup.length : 11;
   const normalizeCounts = (values) =>
@@ -106,16 +107,33 @@ const normalizedRows = allRows.map((row) => {
       const value = Number(values?.[index]);
       return Number.isInteger(value) && value > 0 ? value : null;
     });
-  const normalizeBinaryFlags = (values) =>
-    Array.from({ length: expectedLength }, (_, index) => {
+  // Keep at most one captain flag per lineup: source data can flag multiple
+  // players, which renders duplicate captain badges in the UI.
+  const normalizeCaptains = (values) => {
+    let captainSeen = false;
+    return Array.from({ length: expectedLength }, (_, index) => {
       const value = Number(values?.[index] ?? 0);
-      return value > 0 ? 1 : 0;
+      if (value > 0 && !captainSeen) {
+        captainSeen = true;
+        return 1;
+      }
+      return 0;
     });
+  };
+
+  // Keep the canonical difficulty aligned with the pool policy so that
+  // data/games.csv, the public pool CSVs and the runtime JSON always agree.
+  let difficulty = row.difficulty;
+  if (difficulty === "easy" && !isEligibleEasyRow(row)) {
+    difficulty = "hard";
+    reclassifiedEasyRows += 1;
+  }
 
   return {
     ...row,
+    difficulty,
     lineupNumbers: normalizeNumbers(row.lineupNumbers),
-    lineupCaptains: normalizeBinaryFlags(row.lineupCaptains),
+    lineupCaptains: normalizeCaptains(row.lineupCaptains),
     lineupGoals: normalizeCounts(row.lineupGoals),
     lineupAssists: normalizeCounts(row.lineupAssists),
     lineupCards: normalizeCounts(row.lineupCards),
@@ -126,25 +144,8 @@ const normalizedRows = allRows.map((row) => {
   };
 });
 
-const easyRows = [];
-const hardRows = [];
-let reclassifiedEasyRows = 0;
-
-for (const row of normalizedRows) {
-  if (row.difficulty === "easy") {
-    if (isEligibleEasyRow(row)) {
-      easyRows.push(row);
-    } else {
-      hardRows.push({ ...row, difficulty: "hard" });
-      reclassifiedEasyRows += 1;
-    }
-    continue;
-  }
-
-  if (row.difficulty === "hard") {
-    hardRows.push(row);
-  }
-}
+const easyRows = normalizedRows.filter((row) => row.difficulty === "easy");
+const hardRows = normalizedRows.filter((row) => row.difficulty === "hard");
 
 await writeGamesCsv(outDataPath, normalizedRows, {
   includeDifficulty: true,
