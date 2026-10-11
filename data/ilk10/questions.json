@@ -17,7 +17,10 @@
         "value": "Saffet Sancakli"
       },
       {
-        "value": "Elvir Bolic"
+        "value": "Elvir Bolic",
+        "aliases": [
+          "Bolic"
+        ]
       },
       {
         "value": "Bulent Uygun"
@@ -32,7 +35,10 @@
         "value": "Servet Cetin"
       },
       {
-        "value": "Emre Aşık"
+        "value": "Emre Aşık",
+        "aliases": [
+          "Asik"
+        ]
       },
       {
         "value": "Colin Kazim"
@@ -194,7 +200,10 @@
     "note": "Synced with the project's scraped all-time Super Lig scorers dataset.",
     "answers": [
       {
-        "value": "Hakan Şükür"
+        "value": "Hakan Şükür",
+        "aliases": [
+          "Sukur"
+        ]
       },
       {
         "value": "Tanju Çolak"
@@ -206,7 +215,10 @@
         "value": "Aykut Kocaman"
       },
       {
-        "value": "Serkan Aykut"
+        "value": "Serkan Aykut",
+        "aliases": [
+          "Aykut"
+        ]
       },
       {
         "value": "Burak Yılmaz"
@@ -215,13 +227,22 @@
         "value": "Feyyaz Ucar"
       },
       {
-        "value": "Umut Bulut"
+        "value": "Umut Bulut",
+        "aliases": [
+          "Bulut"
+        ]
       },
       {
-        "value": "Necati Ateş"
+        "value": "Necati Ateş",
+        "aliases": [
+          "Ates"
+        ]
       },
       {
-        "value": "Cenk İşler"
+        "value": "Cenk İşler",
+        "aliases": [
+          "Isler"
+        ]
       }
     ],
     "status": "live"
@@ -289,14 +310,16 @@
         "value": "Hakan Şükür",
         "scoreLabel": "6",
         "aliases": [
-          "Hakan Şükür"
+          "Hakan Şükür",
+          "Sukur"
         ]
       },
       {
         "value": "Ümit Karan",
         "scoreLabel": "5",
         "aliases": [
-          "Ümit Karan"
+          "Ümit Karan",
+          "Karan"
         ]
       },
       {
@@ -310,7 +333,8 @@
         "value": "Necati Ateş",
         "scoreLabel": "3",
         "aliases": [
-          "Necati Ateş"
+          "Necati Ateş",
+          "Ates"
         ]
       },
       {
@@ -339,7 +363,8 @@
         "value": "Serhat Akin",
         "scoreLabel": "3",
         "aliases": [
-          "Serhat Akın"
+          "Serhat Akın",
+          "Akin"
         ]
       },
       {
@@ -602,19 +627,31 @@
       },
       {
         "value": "Umut Bulut",
-        "scoreLabel": "159"
+        "scoreLabel": "159",
+        "aliases": [
+          "Bulut"
+        ]
       },
       {
         "value": "Fernando Muslera",
-        "scoreLabel": "126"
+        "scoreLabel": "126",
+        "aliases": [
+          "Muslera"
+        ]
       },
       {
         "value": "Semih Kaya",
-        "scoreLabel": "124"
+        "scoreLabel": "124",
+        "aliases": [
+          "Kaya"
+        ]
       },
       {
         "value": "Wesley Sneijder",
-        "scoreLabel": "102"
+        "scoreLabel": "102",
+        "aliases": [
+          "Sneijder"
+        ]
       },
       {
         "value": "Felipe Melo",
@@ -622,19 +659,31 @@
       },
       {
         "value": "Olcan Adin",
-        "scoreLabel": "98"
+        "scoreLabel": "98",
+        "aliases": [
+          "Adin"
+        ]
       },
       {
         "value": "Hakan Balta",
-        "scoreLabel": "97"
+        "scoreLabel": "97",
+        "aliases": [
+          "Balta"
+        ]
       },
       {
         "value": "Sabri Sarıoğlu",
-        "scoreLabel": "91"
+        "scoreLabel": "91",
+        "aliases": [
+          "Sarioglu"
+        ]
       },
       {
         "value": "Serkan Balci",
-        "scoreLabel": "88"
+        "scoreLabel": "88",
+        "aliases": [
+          "Balci"
+        ]
       }
     ],
     "status": "live"
@@ -649,24 +698,35 @@
     "note": "Manual top-10 list provided by owner on 2026-04-21. Re-verify at the start of each season.",
     "answers": [
       {
-        "value": "Necip Uysal"
+        "value": "Necip Uysal",
+        "aliases": [
+          "Uysal"
+        ]
       },
       {
-        "value": "Efecan Karaca"
+        "value": "Efecan Karaca",
+        "aliases": [
+          "Karaca"
+        ]
       },
       {
-        "value": "Volkan Babacan"
+        "value": "Volkan Babacan",
+        "aliases": [
+          "Babacan"
+        ]
       },
       {
         "value": "Ersin Destanoğlu",
         "aliases": [
-          "Ersin Destanoğlu"
+          "Ersin Destanoğlu",
+          "Destanoglu"
         ]
       },
       {
         "value": "Bahadir Ozturk",
         "aliases": [
-          "Bahadır Öztürk"
+          "Bahadır Öztürk",
+          "Ozturk"
         ]
       },
       {
@@ -675,7 +735,8 @@
       {
         "value": "Yunus Akgün",
         "aliases": [
-          "Yunus Akgün"
+          "Yunus Akgün",
+          "Akgun"
         ]
       },
       {
@@ -686,12 +747,16 @@
         ]
       },
       {
-        "value": "Nurettin Korkmaz"
+        "value": "Nurettin Korkmaz",
+        "aliases": [
+          "Korkmaz"
+        ]
       },
       {
         "value": "Bunyamin Balci",
         "aliases": [
-          "Bünyamin Balcı"
+          "Bünyamin Balcı",
+          "Balci"
         ]
       }
     ],
@@ -708,34 +773,61 @@
     "note": "Transfermarkt assist table cross-check (checked 2026-04-21). Assist list aligned to the Transfermarkt scrape used by this project (single-provider policy; scrape 2026-04-09).",
     "answers": [
       {
-        "value": "Kerem Aktürkoğlu"
+        "value": "Kerem Aktürkoğlu",
+        "aliases": [
+          "Akturkoglu"
+        ]
       },
       {
-        "value": "Fabio Borini"
+        "value": "Fabio Borini",
+        "aliases": [
+          "Borini"
+        ]
       },
       {
-        "value": "Mauro Icardi"
+        "value": "Mauro Icardi",
+        "aliases": [
+          "Icardi"
+        ]
       },
       {
-        "value": "Cenk Tosun"
+        "value": "Cenk Tosun",
+        "aliases": [
+          "Tosun"
+        ]
       },
       {
-        "value": "Younès Belhanda"
+        "value": "Younès Belhanda",
+        "aliases": [
+          "Belhanda"
+        ]
       },
       {
         "value": "Trezeguet"
       },
       {
-        "value": "Mbaye Diagne"
+        "value": "Mbaye Diagne",
+        "aliases": [
+          "Diagne"
+        ]
       },
       {
-        "value": "Mamadou Fall"
+        "value": "Mamadou Fall",
+        "aliases": [
+          "Fall"
+        ]
       },
       {
-        "value": "Max Gradel"
+        "value": "Max Gradel",
+        "aliases": [
+          "Gradel"
+        ]
       },
       {
-        "value": "Miguel Cardoso"
+        "value": "Miguel Cardoso",
+        "aliases": [
+          "Cardoso"
+        ]
       }
     ],
     "status": "live"
@@ -756,7 +848,10 @@
         "sourceIds": {
           "fbref": "bfe272bd",
           "transfermarkt": "54177"
-        }
+        },
+        "aliases": [
+          "Tekdemir"
+        ]
       },
       {
         "value": "Yaroslav Rakitskiy",
@@ -772,7 +867,10 @@
         "sourceIds": {
           "fbref": "5d9cff53",
           "transfermarkt": "199316"
-        }
+        },
+        "aliases": [
+          "Bardakci"
+        ]
       },
       {
         "value": "Irfan Kahveci",
@@ -788,7 +886,10 @@
         "sourceIds": {
           "fbref": "e204ec12",
           "transfermarkt": "118022"
-        }
+        },
+        "aliases": [
+          "Belhanda"
+        ]
       },
       {
         "value": "Umut Gunes",
@@ -796,7 +897,10 @@
         "sourceIds": {
           "fbref": "b40fec30",
           "transfermarkt": "422203"
-        }
+        },
+        "aliases": [
+          "Gunes"
+        ]
       },
       {
         "value": "Ebrima Colley",
@@ -804,7 +908,10 @@
         "sourceIds": {
           "fbref": "bf356094",
           "transfermarkt": "567217"
-        }
+        },
+        "aliases": [
+          "Colley"
+        ]
       },
       {
         "value": "Naci Unuvar",
@@ -812,7 +919,10 @@
         "sourceIds": {
           "fbref": "bf25cb29",
           "transfermarkt": "508639"
-        }
+        },
+        "aliases": [
+          "Unuvar"
+        ]
       },
       {
         "value": "Shoya Nakajima",
@@ -820,7 +930,10 @@
         "sourceIds": {
           "fbref": "be60b6f4",
           "transfermarkt": "188911"
-        }
+        },
+        "aliases": [
+          "Nakajima"
+        ]
       },
       {
         "value": "Onur Atasayar",
@@ -828,7 +941,10 @@
         "sourceIds": {
           "fbref": "bc0b091a",
           "transfermarkt": "287925"
-        }
+        },
+        "aliases": [
+          "Atasayar"
+        ]
       }
     ],
     "status": "retired"
@@ -849,7 +965,10 @@
         "sourceIds": {
           "fbref": "706bd23f",
           "transfermarkt": "188470"
-        }
+        },
+        "aliases": [
+          "Calvo"
+        ]
       },
       {
         "value": "Borja Sainz",
@@ -857,7 +976,10 @@
         "sourceIds": {
           "fbref": "1b40049a",
           "transfermarkt": "634461"
-        }
+        },
+        "aliases": [
+          "Sainz"
+        ]
       },
       {
         "value": "Otabek Shukurov",
@@ -865,7 +987,10 @@
         "sourceIds": {
           "fbref": "62032a56",
           "transfermarkt": "294525"
-        }
+        },
+        "aliases": [
+          "Shukurov"
+        ]
       },
       {
         "value": "Adil Demirbag",
@@ -873,7 +998,10 @@
         "sourceIds": {
           "fbref": "e43a256f",
           "transfermarkt": "354173"
-        }
+        },
+        "aliases": [
+          "Demirbag"
+        ]
       },
       {
         "value": "Papy Djilobodji",
@@ -881,7 +1009,10 @@
         "sourceIds": {
           "fbref": "083525e5",
           "transfermarkt": "136610"
-        }
+        },
+        "aliases": [
+          "Djilobodji"
+        ]
       },
       {
         "value": "Fernando",
@@ -905,7 +1036,10 @@
         "sourceIds": {
           "fbref": "8982de23",
           "transfermarkt": "189151"
-        }
+        },
+        "aliases": [
+          "Kitsiou"
+        ]
       },
       {
         "value": "Ramon Arias",
@@ -913,7 +1047,10 @@
         "sourceIds": {
           "fbref": "8b6d7b27",
           "transfermarkt": "131095"
-        }
+        },
+        "aliases": [
+          "Arias"
+        ]
       },
       {
         "value": "Valentin Eysseric",
@@ -921,7 +1058,10 @@
         "sourceIds": {
           "fbref": "ae82fa48",
           "transfermarkt": "126687"
-        }
+        },
+        "aliases": [
+          "Eysseric"
+        ]
       }
     ],
     "status": "retired"
@@ -942,7 +1082,10 @@
         "sourceIds": {
           "fbref": "a2abe631",
           "transfermarkt": "58088"
-        }
+        },
+        "aliases": [
+          "Muslera"
+        ]
       },
       {
         "value": "Uğurcan Çakır",
@@ -950,7 +1093,10 @@
         "sourceIds": {
           "fbref": "f63a8347",
           "transfermarkt": "292199"
-        }
+        },
+        "aliases": [
+          "Cakir"
+        ]
       },
       {
         "value": "Altay Bayındır",
@@ -958,7 +1104,10 @@
         "sourceIds": {
           "fbref": "072e68ed",
           "transfermarkt": "336077"
-        }
+        },
+        "aliases": [
+          "Bayindir"
+        ]
       },
       {
         "value": "Ertac Ozbir",
@@ -966,7 +1115,10 @@
         "sourceIds": {
           "fbref": "1234bedf",
           "transfermarkt": "159079"
-        }
+        },
+        "aliases": [
+          "Ozbir"
+        ]
       },
       {
         "value": "Volkan Babacan",
@@ -974,7 +1126,10 @@
         "sourceIds": {
           "fbref": "6e905b8d",
           "transfermarkt": "52261"
-        }
+        },
+        "aliases": [
+          "Babacan"
+        ]
       },
       {
         "value": "Ibrahim Sehic",
@@ -982,7 +1137,10 @@
         "sourceIds": {
           "fbref": "56bf1cc0",
           "transfermarkt": "46252"
-        }
+        },
+        "aliases": [
+          "Sehic"
+        ]
       },
       {
         "value": "Bilal Bayazit",
@@ -990,7 +1148,10 @@
         "sourceIds": {
           "fbref": "f0a63d14",
           "transfermarkt": "361032"
-        }
+        },
+        "aliases": [
+          "Bayazit"
+        ]
       },
       {
         "value": "Ali Sasal Vural",
@@ -998,7 +1159,10 @@
         "sourceIds": {
           "fbref": "cead8fc6",
           "transfermarkt": "157178"
-        }
+        },
+        "aliases": [
+          "Vural"
+        ]
       },
       {
         "value": "David Jensen",
@@ -1006,7 +1170,10 @@
         "sourceIds": {
           "fbref": "1739b660",
           "transfermarkt": "78819"
-        }
+        },
+        "aliases": [
+          "Jensen"
+        ]
       },
       {
         "value": "Mert Günok",
@@ -1014,7 +1181,10 @@
         "sourceIds": {
           "fbref": "b583aef5",
           "transfermarkt": "51894"
-        }
+        },
+        "aliases": [
+          "Gunok"
+        ]
       }
     ],
     "status": "live"
@@ -1035,7 +1205,10 @@
         "sourceIds": {
           "fbref": "1739b660",
           "transfermarkt": "78819"
-        }
+        },
+        "aliases": [
+          "Jensen"
+        ]
       },
       {
         "value": "Runar Alex Runarsson",
@@ -1043,7 +1216,10 @@
         "sourceIds": {
           "fbref": "8fa8f8d2",
           "transfermarkt": "205657"
-        }
+        },
+        "aliases": [
+          "Runarsson"
+        ]
       },
       {
         "value": "Ertac Ozbir",
@@ -1051,7 +1227,10 @@
         "sourceIds": {
           "fbref": "1234bedf",
           "transfermarkt": "159079"
-        }
+        },
+        "aliases": [
+          "Ozbir"
+        ]
       },
       {
         "value": "Bilal Bayazit",
@@ -1059,7 +1238,10 @@
         "sourceIds": {
           "fbref": "f0a63d14",
           "transfermarkt": "361032"
-        }
+        },
+        "aliases": [
+          "Bayazit"
+        ]
       },
       {
         "value": "Gunay Guvenc",
@@ -1067,7 +1249,10 @@
         "sourceIds": {
           "fbref": "04c20fef",
           "transfermarkt": "114422"
-        }
+        },
+        "aliases": [
+          "Guvenc"
+        ]
       },
       {
         "value": "Gokhan Akkan",
@@ -1075,7 +1260,10 @@
         "sourceIds": {
           "fbref": "3587cb86",
           "transfermarkt": "223025"
-        }
+        },
+        "aliases": [
+          "Akkan"
+        ]
       },
       {
         "value": "Uğurcan Çakır",
@@ -1083,7 +1271,10 @@
         "sourceIds": {
           "fbref": "f63a8347",
           "transfermarkt": "292199"
-        }
+        },
+        "aliases": [
+          "Cakir"
+        ]
       },
       {
         "value": "Fernando Muslera",
@@ -1091,7 +1282,10 @@
         "sourceIds": {
           "fbref": "a2abe631",
           "transfermarkt": "58088"
-        }
+        },
+        "aliases": [
+          "Muslera"
+        ]
       },
       {
         "value": "Erce Kardeşler",
@@ -1099,7 +1293,10 @@
         "sourceIds": {
           "fbref": "94b3ccdb",
           "transfermarkt": "291548"
-        }
+        },
+        "aliases": [
+          "Kardesler"
+        ]
       },
       {
         "value": "Ibrahim Sehic",
@@ -1107,7 +1304,10 @@
         "sourceIds": {
           "fbref": "56bf1cc0",
           "transfermarkt": "46252"
-        }
+        },
+        "aliases": [
+          "Sehic"
+        ]
       }
     ],
     "status": "live"
@@ -1123,34 +1323,64 @@
     "note": "Transfermarkt goal table cross-check (checked 2026-04-21). Retired: same answer set as verified-seasonal-topscorers-2022-23; the Transfermarkt-verified list is kept for that season.",
     "answers": [
       {
-        "value": "Enner Valencia"
+        "value": "Enner Valencia",
+        "aliases": [
+          "Valencia"
+        ]
       },
       {
-        "value": "Mbaye Diagne"
+        "value": "Mbaye Diagne",
+        "aliases": [
+          "Diagne"
+        ]
       },
       {
-        "value": "Mauro Icardi"
+        "value": "Mauro Icardi",
+        "aliases": [
+          "Icardi"
+        ]
       },
       {
-        "value": "Fabio Borini"
+        "value": "Fabio Borini",
+        "aliases": [
+          "Borini"
+        ]
       },
       {
-        "value": "Umut Nayir"
+        "value": "Umut Nayir",
+        "aliases": [
+          "Nayir"
+        ]
       },
       {
-        "value": "Cenk Tosun"
+        "value": "Cenk Tosun",
+        "aliases": [
+          "Tosun"
+        ]
       },
       {
-        "value": "Haji Wright"
+        "value": "Haji Wright",
+        "aliases": [
+          "Wright"
+        ]
       },
       {
-        "value": "Riad Bajic"
+        "value": "Riad Bajic",
+        "aliases": [
+          "Bajic"
+        ]
       },
       {
-        "value": "Vincent Aboubakar"
+        "value": "Vincent Aboubakar",
+        "aliases": [
+          "Aboubakar"
+        ]
       },
       {
-        "value": "Younès Belhanda"
+        "value": "Younès Belhanda",
+        "aliases": [
+          "Belhanda"
+        ]
       }
     ],
     "status": "retired"
@@ -1178,7 +1408,10 @@
         "sourceIds": {
           "fbref": "a2abe631",
           "transfermarkt": "58088"
-        }
+        },
+        "aliases": [
+          "Muslera"
+        ]
       },
       {
         "value": "Victor Nelsson",
@@ -1186,7 +1419,10 @@
         "sourceIds": {
           "fbref": "e53b5534",
           "transfermarkt": "422951"
-        }
+        },
+        "aliases": [
+          "Nelsson"
+        ]
       },
       {
         "value": "Mamadou Fall",
@@ -1194,7 +1430,10 @@
         "sourceIds": {
           "fbref": "1524bd4c",
           "transfermarkt": "289713"
-        }
+        },
+        "aliases": [
+          "Fall"
+        ]
       },
       {
         "value": "Samet Akaydin",
@@ -1202,7 +1441,10 @@
         "sourceIds": {
           "fbref": "7328bee5",
           "transfermarkt": "295024"
-        }
+        },
+        "aliases": [
+          "Akaydin"
+        ]
       },
       {
         "value": "Ertac Ozbir",
@@ -1210,7 +1452,10 @@
         "sourceIds": {
           "fbref": "1234bedf",
           "transfermarkt": "159079"
-        }
+        },
+        "aliases": [
+          "Ozbir"
+        ]
       },
       {
         "value": "David Jensen",
@@ -1218,7 +1463,10 @@
         "sourceIds": {
           "fbref": "1739b660",
           "transfermarkt": "78819"
-        }
+        },
+        "aliases": [
+          "Jensen"
+        ]
       },
       {
         "value": "Attila Szalai",
@@ -1226,7 +1474,10 @@
         "sourceIds": {
           "fbref": "50ff205b",
           "transfermarkt": "263380"
-        }
+        },
+        "aliases": [
+          "Szalai"
+        ]
       },
       {
         "value": "Ibrahim Dresevic",
@@ -1234,7 +1485,10 @@
         "sourceIds": {
           "fbref": "811ca2d3",
           "transfermarkt": "321135"
-        }
+        },
+        "aliases": [
+          "Dresevic"
+        ]
       },
       {
         "value": "Nihad Mujakic",
@@ -1242,7 +1496,10 @@
         "sourceIds": {
           "fbref": "8eff6286",
           "transfermarkt": "380919"
-        }
+        },
+        "aliases": [
+          "Mujakic"
+        ]
       }
     ],
     "status": "retired"
@@ -1263,7 +1520,10 @@
         "sourceIds": {
           "fbref": "fb485406",
           "transfermarkt": "139503"
-        }
+        },
+        "aliases": [
+          "Valencia"
+        ]
       },
       {
         "value": "Fabio Borini",
@@ -1271,7 +1531,10 @@
         "sourceIds": {
           "fbref": "ef5b337e",
           "transfermarkt": "96754"
-        }
+        },
+        "aliases": [
+          "Borini"
+        ]
       },
       {
         "value": "Mauro Icardi",
@@ -1279,7 +1542,10 @@
         "sourceIds": {
           "fbref": "43b78598",
           "transfermarkt": "68863"
-        }
+        },
+        "aliases": [
+          "Icardi"
+        ]
       },
       {
         "value": "Umut Nayir",
@@ -1287,7 +1553,10 @@
         "sourceIds": {
           "fbref": "fc4ab056",
           "transfermarkt": "248271"
-        }
+        },
+        "aliases": [
+          "Nayir"
+        ]
       },
       {
         "value": "Anastasios Bakasetas",
@@ -1295,7 +1564,10 @@
         "sourceIds": {
           "fbref": "dead55e5",
           "transfermarkt": "162571"
-        }
+        },
+        "aliases": [
+          "Bakasetas"
+        ]
       },
       {
         "value": "Antonio Mrsic",
@@ -1303,7 +1575,10 @@
         "sourceIds": {
           "fbref": "0ba0af80",
           "transfermarkt": "59483"
-        }
+        },
+        "aliases": [
+          "Mrsic"
+        ]
       },
       {
         "value": "Deniz Turuc",
@@ -1311,7 +1586,10 @@
         "sourceIds": {
           "fbref": "ed140063",
           "transfermarkt": "216662"
-        }
+        },
+        "aliases": [
+          "Turuc"
+        ]
       },
       {
         "value": "Max Gradel",
@@ -1319,7 +1597,10 @@
         "sourceIds": {
           "fbref": "c5a500ca",
           "transfermarkt": "28140"
-        }
+        },
+        "aliases": [
+          "Gradel"
+        ]
       },
       {
         "value": "Bernard Mensah",
@@ -1327,7 +1608,10 @@
         "sourceIds": {
           "fbref": "91947112",
           "transfermarkt": "324321"
-        }
+        },
+        "aliases": [
+          "Mensah"
+        ]
       },
       {
         "value": "Riad Bajic",
@@ -1335,7 +1619,10 @@
         "sourceIds": {
           "fbref": "49d399d5",
           "transfermarkt": "263267"
-        }
+        },
+        "aliases": [
+          "Bajic"
+        ]
       }
     ],
     "status": "live"
@@ -1356,7 +1643,10 @@
         "sourceIds": {
           "fbref": "fb485406",
           "transfermarkt": "139503"
-        }
+        },
+        "aliases": [
+          "Valencia"
+        ]
       },
       {
         "value": "Mauro Icardi",
@@ -1364,7 +1654,10 @@
         "sourceIds": {
           "fbref": "43b78598",
           "transfermarkt": "68863"
-        }
+        },
+        "aliases": [
+          "Icardi"
+        ]
       },
       {
         "value": "Mbaye Diagne",
@@ -1372,7 +1665,10 @@
         "sourceIds": {
           "fbref": "dda3969e",
           "transfermarkt": "271966"
-        }
+        },
+        "aliases": [
+          "Diagne"
+        ]
       },
       {
         "value": "Riad Bajic",
@@ -1380,7 +1676,10 @@
         "sourceIds": {
           "fbref": "49d399d5",
           "transfermarkt": "263267"
-        }
+        },
+        "aliases": [
+          "Bajic"
+        ]
       },
       {
         "value": "Trezeguet",
@@ -1396,7 +1695,10 @@
         "sourceIds": {
           "fbref": "89b2c8a9",
           "transfermarkt": "56416"
-        }
+        },
+        "aliases": [
+          "Mertens"
+        ]
       },
       {
         "value": "Cenk Tosun",
@@ -1404,7 +1706,10 @@
         "sourceIds": {
           "fbref": "9a104dee",
           "transfermarkt": "45671"
-        }
+        },
+        "aliases": [
+          "Tosun"
+        ]
       },
       {
         "value": "Younès Belhanda",
@@ -1412,7 +1717,10 @@
         "sourceIds": {
           "fbref": "e204ec12",
           "transfermarkt": "118022"
-        }
+        },
+        "aliases": [
+          "Belhanda"
+        ]
       },
       {
         "value": "Haji Wright",
@@ -1420,7 +1728,10 @@
         "sourceIds": {
           "fbref": "91cd37b7",
           "transfermarkt": "315291"
-        }
+        },
+        "aliases": [
+          "Wright"
+        ]
       },
       {
         "value": "Yusuf Sari",
@@ -1428,7 +1739,10 @@
         "sourceIds": {
           "fbref": "a2da58b1",
           "transfermarkt": "517376"
-        }
+        },
+        "aliases": [
+          "Sari"
+        ]
       }
     ],
     "status": "retired"
@@ -1444,34 +1758,64 @@
     "note": "Transfermarkt assist table cross-check (checked 2026-04-21). Assist list aligned to the Transfermarkt scrape used by this project (single-provider policy; scrape 2026-04-09).",
     "answers": [
       {
-        "value": "Dries Mertens"
+        "value": "Dries Mertens",
+        "aliases": [
+          "Mertens"
+        ]
       },
       {
-        "value": "Haris Hajradinovic"
+        "value": "Haris Hajradinovic",
+        "aliases": [
+          "Hajradinovic"
+        ]
       },
       {
-        "value": "Dušan Tadić"
+        "value": "Dušan Tadić",
+        "aliases": [
+          "Tadic"
+        ]
       },
       {
-        "value": "Sebastian Szymański"
+        "value": "Sebastian Szymański",
+        "aliases": [
+          "Szymanski"
+        ]
       },
       {
-        "value": "Edin Višća"
+        "value": "Edin Višća",
+        "aliases": [
+          "Visca"
+        ]
       },
       {
-        "value": "Deniz Turuc"
+        "value": "Deniz Turuc",
+        "aliases": [
+          "Turuc"
+        ]
       },
       {
-        "value": "Mauro Icardi"
+        "value": "Mauro Icardi",
+        "aliases": [
+          "Icardi"
+        ]
       },
       {
-        "value": "İrfan Can Kahveci"
+        "value": "İrfan Can Kahveci",
+        "aliases": [
+          "Kahveci"
+        ]
       },
       {
-        "value": "Mame Thiam"
+        "value": "Mame Thiam",
+        "aliases": [
+          "Thiam"
+        ]
       },
       {
-        "value": "Oguz Aydın"
+        "value": "Oguz Aydın",
+        "aliases": [
+          "Aydin"
+        ]
       }
     ],
     "status": "live"
@@ -1500,7 +1844,10 @@
         "sourceIds": {
           "fbref": "61fc9685",
           "transfermarkt": "129513"
-        }
+        },
+        "aliases": [
+          "Maxim"
+        ]
       },
       {
         "value": "Joao Figueiredo",
@@ -1508,7 +1855,10 @@
         "sourceIds": {
           "fbref": "804f159a",
           "transfermarkt": "439343"
-        }
+        },
+        "aliases": [
+          "Figueiredo"
+        ]
       },
       {
         "value": "Ertac Ozbir",
@@ -1516,7 +1866,10 @@
         "sourceIds": {
           "fbref": "1234bedf",
           "transfermarkt": "159079"
-        }
+        },
+        "aliases": [
+          "Ozbir"
+        ]
       },
       {
         "value": "Ryan Mendes",
@@ -1524,7 +1877,10 @@
         "sourceIds": {
           "fbref": "ba6e01ab",
           "transfermarkt": "111627"
-        }
+        },
+        "aliases": [
+          "Mendes"
+        ]
       },
       {
         "value": "İsmail Yüksek",
@@ -1532,7 +1888,10 @@
         "sourceIds": {
           "fbref": "6c5af908",
           "transfermarkt": "613725"
-        }
+        },
+        "aliases": [
+          "Yuksek"
+        ]
       },
       {
         "value": "Leroy Fer",
@@ -1540,7 +1899,10 @@
         "sourceIds": {
           "fbref": "3cefa66a",
           "transfermarkt": "63342"
-        }
+        },
+        "aliases": [
+          "Fer"
+        ]
       },
       {
         "value": "Federico Ceccherini",
@@ -1548,7 +1910,10 @@
         "sourceIds": {
           "fbref": "d9624b51",
           "transfermarkt": "163639"
-        }
+        },
+        "aliases": [
+          "Ceccherini"
+        ]
       },
       {
         "value": "Attila Mocsi",
@@ -1556,7 +1921,10 @@
         "sourceIds": {
           "fbref": "c9019400",
           "transfermarkt": "496996"
-        }
+        },
+        "aliases": [
+          "Mocsi"
+        ]
       },
       {
         "value": "Al-Musrati",
@@ -1593,7 +1961,10 @@
         "sourceIds": {
           "fbref": "03b6afa9",
           "transfermarkt": "358948"
-        }
+        },
+        "aliases": [
+          "Osayi-samuel"
+        ]
       },
       {
         "value": "Veysel Sari",
@@ -1601,7 +1972,10 @@
         "sourceIds": {
           "fbref": "494d18b6",
           "transfermarkt": "88374"
-        }
+        },
+        "aliases": [
+          "Sari"
+        ]
       },
       {
         "value": "Rey Manaj",
@@ -1609,7 +1983,10 @@
         "sourceIds": {
           "fbref": "7703afb6",
           "transfermarkt": "308278"
-        }
+        },
+        "aliases": [
+          "Manaj"
+        ]
       },
       {
         "value": "Richard",
@@ -1625,7 +2002,10 @@
         "sourceIds": {
           "fbref": "ed140063",
           "transfermarkt": "216662"
-        }
+        },
+        "aliases": [
+          "Turuc"
+        ]
       },
       {
         "value": "Welinton",
@@ -1641,7 +2021,10 @@
         "sourceIds": {
           "fbref": "5d52e1dc",
           "transfermarkt": "242040"
-        }
+        },
+        "aliases": [
+          "Loshaj"
+        ]
       },
       {
         "value": "Mehmet Yesil",
@@ -1649,7 +2032,10 @@
         "sourceIds": {
           "fbref": "98c2d5b2",
           "transfermarkt": "381689"
-        }
+        },
+        "aliases": [
+          "Yesil"
+        ]
       },
       {
         "value": "Ugur Ciftci",
@@ -1657,7 +2043,10 @@
         "sourceIds": {
           "fbref": "e111bf12",
           "transfermarkt": "172163"
-        }
+        },
+        "aliases": [
+          "Ciftci"
+        ]
       }
     ],
     "status": "retired"
@@ -1678,7 +2067,10 @@
         "sourceIds": {
           "fbref": "a2abe631",
           "transfermarkt": "58088"
-        }
+        },
+        "aliases": [
+          "Muslera"
+        ]
       },
       {
         "value": "Dominik Livakovic",
@@ -1686,7 +2078,10 @@
         "sourceIds": {
           "fbref": "58f077c0",
           "transfermarkt": "205927"
-        }
+        },
+        "aliases": [
+          "Livakovic"
+        ]
       },
       {
         "value": "Gokhan Akkan",
@@ -1694,7 +2089,10 @@
         "sourceIds": {
           "fbref": "3587cb86",
           "transfermarkt": "223025"
-        }
+        },
+        "aliases": [
+          "Akkan"
+        ]
       },
       {
         "value": "Uğurcan Çakır",
@@ -1702,7 +2100,10 @@
         "sourceIds": {
           "fbref": "f63a8347",
           "transfermarkt": "292199"
-        }
+        },
+        "aliases": [
+          "Cakir"
+        ]
       },
       {
         "value": "Mert Günok",
@@ -1710,7 +2111,10 @@
         "sourceIds": {
           "fbref": "b583aef5",
           "transfermarkt": "51894"
-        }
+        },
+        "aliases": [
+          "Gunok"
+        ]
       },
       {
         "value": "Ertugrul Taskiran",
@@ -1718,7 +2122,10 @@
         "sourceIds": {
           "fbref": "cf8c553e",
           "transfermarkt": "91945"
-        }
+        },
+        "aliases": [
+          "Taskiran"
+        ]
       },
       {
         "value": "Erce Kardeşler",
@@ -1726,7 +2133,10 @@
         "sourceIds": {
           "fbref": "94b3ccdb",
           "transfermarkt": "291548"
-        }
+        },
+        "aliases": [
+          "Kardesler"
+        ]
       },
       {
         "value": "Andreas Gianniotis",
@@ -1734,7 +2144,10 @@
         "sourceIds": {
           "fbref": "8ae07c1c",
           "transfermarkt": "226802"
-        }
+        },
+        "aliases": [
+          "Gianniotis"
+        ]
       },
       {
         "value": "Volkan Babacan",
@@ -1742,7 +2155,10 @@
         "sourceIds": {
           "fbref": "6e905b8d",
           "transfermarkt": "52261"
-        }
+        },
+        "aliases": [
+          "Babacan"
+        ]
       },
       {
         "value": "Florin Nita",
@@ -1750,7 +2166,10 @@
         "sourceIds": {
           "fbref": "a9a3b55d",
           "transfermarkt": "200475"
-        }
+        },
+        "aliases": [
+          "Nita"
+        ]
       }
     ],
     "status": "live"
@@ -1771,7 +2190,10 @@
         "sourceIds": {
           "fbref": "f0a63d14",
           "transfermarkt": "361032"
-        }
+        },
+        "aliases": [
+          "Bayazit"
+        ]
       },
       {
         "value": "Helton Leite",
@@ -1779,7 +2201,10 @@
         "sourceIds": {
           "fbref": "e8918589",
           "transfermarkt": "175383"
-        }
+        },
+        "aliases": [
+          "Leite"
+        ]
       },
       {
         "value": "Ali Sasal Vural",
@@ -1787,7 +2212,10 @@
         "sourceIds": {
           "fbref": "cead8fc6",
           "transfermarkt": "157178"
-        }
+        },
+        "aliases": [
+          "Vural"
+        ]
       },
       {
         "value": "Gokhan Akkan",
@@ -1795,7 +2223,10 @@
         "sourceIds": {
           "fbref": "3587cb86",
           "transfermarkt": "223025"
-        }
+        },
+        "aliases": [
+          "Akkan"
+        ]
       },
       {
         "value": "Florin Nita",
@@ -1803,7 +2234,10 @@
         "sourceIds": {
           "fbref": "a9a3b55d",
           "transfermarkt": "200475"
-        }
+        },
+        "aliases": [
+          "Nita"
+        ]
       },
       {
         "value": "Erce Kardeşler",
@@ -1811,7 +2245,10 @@
         "sourceIds": {
           "fbref": "94b3ccdb",
           "transfermarkt": "291548"
-        }
+        },
+        "aliases": [
+          "Kardesler"
+        ]
       },
       {
         "value": "Erdem Canpolat",
@@ -1819,7 +2256,10 @@
         "sourceIds": {
           "fbref": "1ec7078a",
           "transfermarkt": "521956"
-        }
+        },
+        "aliases": [
+          "Canpolat"
+        ]
       },
       {
         "value": "Uğurcan Çakır",
@@ -1827,7 +2267,10 @@
         "sourceIds": {
           "fbref": "f63a8347",
           "transfermarkt": "292199"
-        }
+        },
+        "aliases": [
+          "Cakir"
+        ]
       },
       {
         "value": "Ertugrul Taskiran",
@@ -1835,7 +2278,10 @@
         "sourceIds": {
           "fbref": "cf8c553e",
           "transfermarkt": "91945"
-        }
+        },
+        "aliases": [
+          "Taskiran"
+        ]
       },
       {
         "value": "Fernando Muslera",
@@ -1843,7 +2289,10 @@
         "sourceIds": {
           "fbref": "a2abe631",
           "transfermarkt": "58088"
-        }
+        },
+        "aliases": [
+          "Muslera"
+        ]
       }
     ],
     "status": "live"
@@ -1859,34 +2308,64 @@
     "note": "Transfermarkt goal table cross-check (checked 2026-04-21). Retired: same answer set as verified-seasonal-topscorers-2023-24; the Transfermarkt-verified list is kept for that season.",
     "answers": [
       {
-        "value": "Mauro Icardi"
+        "value": "Mauro Icardi",
+        "aliases": [
+          "Icardi"
+        ]
       },
       {
-        "value": "Edin Džeko"
+        "value": "Edin Džeko",
+        "aliases": [
+          "Dzeko"
+        ]
       },
       {
-        "value": "Rey Manaj"
+        "value": "Rey Manaj",
+        "aliases": [
+          "Manaj"
+        ]
       },
       {
-        "value": "Mame Thiam"
+        "value": "Mame Thiam",
+        "aliases": [
+          "Thiam"
+        ]
       },
       {
-        "value": "Krzysztof Piątek"
+        "value": "Krzysztof Piątek",
+        "aliases": [
+          "Piatek"
+        ]
       },
       {
-        "value": "Adam Buksa"
+        "value": "Adam Buksa",
+        "aliases": [
+          "Buksa"
+        ]
       },
       {
-        "value": "Paul Onuachu"
+        "value": "Paul Onuachu",
+        "aliases": [
+          "Onuachu"
+        ]
       },
       {
-        "value": "Nuno Da Costa"
+        "value": "Nuno Da Costa",
+        "aliases": [
+          "Da Costa"
+        ]
       },
       {
-        "value": "Aytaç Kara"
+        "value": "Aytaç Kara",
+        "aliases": [
+          "Kara"
+        ]
       },
       {
-        "value": "Denis Drăguș"
+        "value": "Denis Drăguș",
+        "aliases": [
+          "Dragus"
+        ]
       }
     ],
     "status": "retired"
@@ -1907,7 +2386,10 @@
         "sourceIds": {
           "fbref": "66c52a77",
           "transfermarkt": "369316"
-        }
+        },
+        "aliases": [
+          "Kadioglu"
+        ]
       },
       {
         "value": "Fernando Muslera",
@@ -1915,7 +2397,10 @@
         "sourceIds": {
           "fbref": "a2abe631",
           "transfermarkt": "58088"
-        }
+        },
+        "aliases": [
+          "Muslera"
+        ]
       },
       {
         "value": "Haris Hajradinovic",
@@ -1923,7 +2408,10 @@
         "sourceIds": {
           "fbref": "4e07366b",
           "transfermarkt": "215592"
-        }
+        },
+        "aliases": [
+          "Hajradinovic"
+        ]
       },
       {
         "value": "Guilherme Sitya",
@@ -1938,7 +2426,10 @@
         "sourceIds": {
           "fbref": "94c79a82",
           "transfermarkt": "159908"
-        }
+        },
+        "aliases": [
+          "Kara"
+        ]
       },
       {
         "value": "Okan Koçuk",
@@ -1946,7 +2437,10 @@
         "sourceIds": {
           "fbref": "7e9fd9b9",
           "transfermarkt": "204189"
-        }
+        },
+        "aliases": [
+          "Kocuk"
+        ]
       },
       {
         "value": "Soner Dikmen",
@@ -1954,7 +2448,10 @@
         "sourceIds": {
           "fbref": "9b00a9bd",
           "transfermarkt": "291750"
-        }
+        },
+        "aliases": [
+          "Dikmen"
+        ]
       },
       {
         "value": "Ugur Ciftci",
@@ -1962,7 +2459,10 @@
         "sourceIds": {
           "fbref": "e111bf12",
           "transfermarkt": "172163"
-        }
+        },
+        "aliases": [
+          "Ciftci"
+        ]
       },
       {
         "value": "Nihad Mujakic",
@@ -1970,7 +2470,10 @@
         "sourceIds": {
           "fbref": "8eff6286",
           "transfermarkt": "380919"
-        }
+        },
+        "aliases": [
+          "Mujakic"
+        ]
       },
       {
         "value": "Mame Baba Thiam",
@@ -1999,7 +2502,10 @@
         "sourceIds": {
           "fbref": "29306e58",
           "transfermarkt": "99047"
-        }
+        },
+        "aliases": [
+          "Cikalleshi"
+        ]
       },
       {
         "value": "Mauro Icardi",
@@ -2007,7 +2513,10 @@
         "sourceIds": {
           "fbref": "43b78598",
           "transfermarkt": "68863"
-        }
+        },
+        "aliases": [
+          "Icardi"
+        ]
       },
       {
         "value": "Dušan Tadić",
@@ -2015,7 +2524,10 @@
         "sourceIds": {
           "fbref": "2475dcc6",
           "transfermarkt": "36139"
-        }
+        },
+        "aliases": [
+          "Tadic"
+        ]
       },
       {
         "value": "Mame Baba Thiam",
@@ -2031,7 +2543,10 @@
         "sourceIds": {
           "fbref": "17f3620a",
           "transfermarkt": "327757"
-        }
+        },
+        "aliases": [
+          "Piatek"
+        ]
       },
       {
         "value": "M'Baye Niang",
@@ -2039,7 +2554,10 @@
         "sourceIds": {
           "fbref": "2054d037",
           "transfermarkt": "157501"
-        }
+        },
+        "aliases": [
+          "Niang"
+        ]
       },
       {
         "value": "Olivier Ntcham",
@@ -2047,7 +2565,10 @@
         "sourceIds": {
           "fbref": "6554bb97",
           "transfermarkt": "224088"
-        }
+        },
+        "aliases": [
+          "Ntcham"
+        ]
       },
       {
         "value": "Michy Batshuayi",
@@ -2055,7 +2576,10 @@
         "sourceIds": {
           "fbref": "2973d8ff",
           "transfermarkt": "179184"
-        }
+        },
+        "aliases": [
+          "Batshuayi"
+        ]
       },
       {
         "value": "Rey Manaj",
@@ -2063,7 +2587,10 @@
         "sourceIds": {
           "fbref": "7703afb6",
           "transfermarkt": "308278"
-        }
+        },
+        "aliases": [
+          "Manaj"
+        ]
       },
       {
         "value": "Adam Buksa",
@@ -2071,7 +2598,10 @@
         "sourceIds": {
           "fbref": "3b676989",
           "transfermarkt": "267160"
-        }
+        },
+        "aliases": [
+          "Buksa"
+        ]
       }
     ],
     "status": "live"
@@ -2092,7 +2622,10 @@
         "sourceIds": {
           "fbref": "3bb7f478",
           "transfermarkt": "28396"
-        }
+        },
+        "aliases": [
+          "Dzeko"
+        ]
       },
       {
         "value": "Mauro Icardi",
@@ -2100,7 +2633,10 @@
         "sourceIds": {
           "fbref": "43b78598",
           "transfermarkt": "68863"
-        }
+        },
+        "aliases": [
+          "Icardi"
+        ]
       },
       {
         "value": "Krzysztof Piątek",
@@ -2108,7 +2644,10 @@
         "sourceIds": {
           "fbref": "17f3620a",
           "transfermarkt": "327757"
-        }
+        },
+        "aliases": [
+          "Piatek"
+        ]
       },
       {
         "value": "Rey Manaj",
@@ -2116,7 +2655,10 @@
         "sourceIds": {
           "fbref": "7703afb6",
           "transfermarkt": "308278"
-        }
+        },
+        "aliases": [
+          "Manaj"
+        ]
       },
       {
         "value": "Denis Drăguș",
@@ -2124,7 +2666,10 @@
         "sourceIds": {
           "fbref": "0e490f6e",
           "transfermarkt": "405399"
-        }
+        },
+        "aliases": [
+          "Dragus"
+        ]
       },
       {
         "value": "Adam Buksa",
@@ -2132,7 +2677,10 @@
         "sourceIds": {
           "fbref": "3b676989",
           "transfermarkt": "267160"
-        }
+        },
+        "aliases": [
+          "Buksa"
+        ]
       },
       {
         "value": "Aytaç Kara",
@@ -2140,7 +2688,10 @@
         "sourceIds": {
           "fbref": "94c79a82",
           "transfermarkt": "159908"
-        }
+        },
+        "aliases": [
+          "Kara"
+        ]
       },
       {
         "value": "Dries Mertens",
@@ -2148,7 +2699,10 @@
         "sourceIds": {
           "fbref": "89b2c8a9",
           "transfermarkt": "56416"
-        }
+        },
+        "aliases": [
+          "Mertens"
+        ]
       },
       {
         "value": "Mame Baba Thiam",
@@ -2164,7 +2718,10 @@
         "sourceIds": {
           "fbref": "bb718263",
           "transfermarkt": "320748"
-        }
+        },
+        "aliases": [
+          "Szymanski"
+        ]
       }
     ],
     "status": "retired"
@@ -2180,34 +2737,61 @@
     "note": "Transfermarkt assist table cross-check (checked 2026-04-21). Assist list aligned to the Transfermarkt scrape used by this project (single-provider policy; scrape 2026-04-09).",
     "answers": [
       {
-        "value": "Dušan Tadić"
+        "value": "Dušan Tadić",
+        "aliases": [
+          "Tadic"
+        ]
       },
       {
-        "value": "Emre Kilinc"
+        "value": "Emre Kilinc",
+        "aliases": [
+          "Kilinc"
+        ]
       },
       {
-        "value": "Yunus Akgün"
+        "value": "Yunus Akgün",
+        "aliases": [
+          "Akgun"
+        ]
       },
       {
-        "value": "Dries Mertens"
+        "value": "Dries Mertens",
+        "aliases": [
+          "Mertens"
+        ]
       },
       {
-        "value": "Muhammed Cham"
+        "value": "Muhammed Cham",
+        "aliases": [
+          "Muhammed C."
+        ]
       },
       {
         "value": "Rômulo"
       },
       {
-        "value": "Mamadou Fall"
+        "value": "Mamadou Fall",
+        "aliases": [
+          "Fall"
+        ]
       },
       {
-        "value": "Haris Hajradinovic"
+        "value": "Haris Hajradinovic",
+        "aliases": [
+          "Hajradinovic"
+        ]
       },
       {
-        "value": "Miguel Cardoso"
+        "value": "Miguel Cardoso",
+        "aliases": [
+          "Cardoso"
+        ]
       },
       {
-        "value": "David Tijanic"
+        "value": "David Tijanic",
+        "aliases": [
+          "Tijanic"
+        ]
       }
     ],
     "status": "live"
@@ -2228,7 +2812,10 @@
         "sourceIds": {
           "fbref": "ebbd1336",
           "transfermarkt": "169511"
-        }
+        },
+        "aliases": [
+          "Radakovic"
+        ]
       },
       {
         "value": "Bruno Viana",
@@ -2244,7 +2831,10 @@
         "sourceIds": {
           "fbref": "01fed96a",
           "transfermarkt": "257785"
-        }
+        },
+        "aliases": [
+          "Sazdagi"
+        ]
       },
       {
         "value": "Joseph Larweh Attamah",
@@ -2260,7 +2850,10 @@
         "sourceIds": {
           "fbref": "5046b7d4",
           "transfermarkt": "170953"
-        }
+        },
+        "aliases": [
+          "Bahoken"
+        ]
       },
       {
         "value": "Tayyib Talha Sanuc",
@@ -2276,7 +2869,10 @@
         "sourceIds": {
           "fbref": "e111bf12",
           "transfermarkt": "172163"
-        }
+        },
+        "aliases": [
+          "Ciftci"
+        ]
       },
       {
         "value": "Murat Paluli",
@@ -2284,7 +2880,10 @@
         "sourceIds": {
           "fbref": "2f5b4f08",
           "transfermarkt": "288858"
-        }
+        },
+        "aliases": [
+          "Paluli"
+        ]
       },
       {
         "value": "Francisco Calvo",
@@ -2292,7 +2891,10 @@
         "sourceIds": {
           "fbref": "706bd23f",
           "transfermarkt": "188470"
-        }
+        },
+        "aliases": [
+          "Calvo"
+        ]
       },
       {
         "value": "Quentin Daubin",
@@ -2300,7 +2902,10 @@
         "sourceIds": {
           "fbref": "d51c34f0",
           "transfermarkt": "407624"
-        }
+        },
+        "aliases": [
+          "Daubin"
+        ]
       }
     ],
     "status": "retired"
@@ -2321,7 +2926,10 @@
         "sourceIds": {
           "fbref": "a70b0a9f",
           "transfermarkt": "836336"
-        }
+        },
+        "aliases": [
+          "Lima"
+        ]
       },
       {
         "value": "Richard",
@@ -2337,7 +2945,10 @@
         "sourceIds": {
           "fbref": "960acc0a",
           "transfermarkt": "211325"
-        }
+        },
+        "aliases": [
+          "Ndiaye"
+        ]
       },
       {
         "value": "Nicholas Opoku",
@@ -2345,7 +2956,10 @@
         "sourceIds": {
           "fbref": "b871bf55",
           "transfermarkt": "396516"
-        }
+        },
+        "aliases": [
+          "Opoku"
+        ]
       },
       {
         "value": "Rick van Drongelen",
@@ -2353,7 +2967,10 @@
         "sourceIds": {
           "fbref": "f0797d57",
           "transfermarkt": "354340"
-        }
+        },
+        "aliases": [
+          "Van Dronge."
+        ]
       },
       {
         "value": "Gokhan Sazdagi",
@@ -2361,7 +2978,10 @@
         "sourceIds": {
           "fbref": "01fed96a",
           "transfermarkt": "257785"
-        }
+        },
+        "aliases": [
+          "Sazdagi"
+        ]
       },
       {
         "value": "Mortadha Ben Ouanes",
@@ -2369,7 +2989,10 @@
         "sourceIds": {
           "fbref": "1798891a",
           "transfermarkt": "230921"
-        }
+        },
+        "aliases": [
+          "Ben Ouanes"
+        ]
       },
       {
         "value": "Thalisson Kelven",
@@ -2385,7 +3008,11 @@
         "sourceIds": {
           "fbref": "3ece036c",
           "transfermarkt": "554284"
-        }
+        },
+        "aliases": [
+          "Kacper Kozłowski",
+          "Kozlowski"
+        ]
       },
       {
         "value": "Recep Yilmaz",
@@ -2413,7 +3040,10 @@
         "sourceIds": {
           "fbref": "7e9fd9b9",
           "transfermarkt": "204189"
-        }
+        },
+        "aliases": [
+          "Kocuk"
+        ]
       },
       {
         "value": "Uğurcan Çakır",
@@ -2421,7 +3051,10 @@
         "sourceIds": {
           "fbref": "f63a8347",
           "transfermarkt": "292199"
-        }
+        },
+        "aliases": [
+          "Cakir"
+        ]
       },
       {
         "value": "Fernando Muslera",
@@ -2429,7 +3062,10 @@
         "sourceIds": {
           "fbref": "a2abe631",
           "transfermarkt": "58088"
-        }
+        },
+        "aliases": [
+          "Muslera"
+        ]
       },
       {
         "value": "Diogo Fesnard Sousa",
@@ -2445,7 +3081,10 @@
         "sourceIds": {
           "fbref": "b583aef5",
           "transfermarkt": "51894"
-        }
+        },
+        "aliases": [
+          "Gunok"
+        ]
       },
       {
         "value": "Berke Ozer",
@@ -2453,7 +3092,10 @@
         "sourceIds": {
           "fbref": "0743d0ec",
           "transfermarkt": "361256"
-        }
+        },
+        "aliases": [
+          "Ozer"
+        ]
       },
       {
         "value": "Muhammed Sengezer",
@@ -2461,7 +3103,10 @@
         "sourceIds": {
           "fbref": "fa71b998",
           "transfermarkt": "330871"
-        }
+        },
+        "aliases": [
+          "Sengezer"
+        ]
       },
       {
         "value": "Bilal Bayazit",
@@ -2469,7 +3114,10 @@
         "sourceIds": {
           "fbref": "f0a63d14",
           "transfermarkt": "361032"
-        }
+        },
+        "aliases": [
+          "Bayazit"
+        ]
       },
       {
         "value": "Ertugrul Taskiran",
@@ -2477,7 +3125,10 @@
         "sourceIds": {
           "fbref": "cf8c553e",
           "transfermarkt": "91945"
-        }
+        },
+        "aliases": [
+          "Taskiran"
+        ]
       },
       {
         "value": "Dominik Livakovic",
@@ -2485,7 +3136,10 @@
         "sourceIds": {
           "fbref": "58f077c0",
           "transfermarkt": "205927"
-        }
+        },
+        "aliases": [
+          "Livakovic"
+        ]
       }
     ],
     "status": "live"
@@ -2506,7 +3160,10 @@
         "sourceIds": {
           "fbref": "0743d0ec",
           "transfermarkt": "361256"
-        }
+        },
+        "aliases": [
+          "Ozer"
+        ]
       },
       {
         "value": "Uğurcan Çakır",
@@ -2514,7 +3171,10 @@
         "sourceIds": {
           "fbref": "f63a8347",
           "transfermarkt": "292199"
-        }
+        },
+        "aliases": [
+          "Cakir"
+        ]
       },
       {
         "value": "Ali Sasal Vural",
@@ -2522,7 +3182,10 @@
         "sourceIds": {
           "fbref": "cead8fc6",
           "transfermarkt": "157178"
-        }
+        },
+        "aliases": [
+          "Vural"
+        ]
       },
       {
         "value": "Ertugrul Taskiran",
@@ -2530,7 +3193,10 @@
         "sourceIds": {
           "fbref": "cf8c553e",
           "transfermarkt": "91945"
-        }
+        },
+        "aliases": [
+          "Taskiran"
+        ]
       },
       {
         "value": "Mert Günok",
@@ -2538,7 +3204,10 @@
         "sourceIds": {
           "fbref": "b583aef5",
           "transfermarkt": "51894"
-        }
+        },
+        "aliases": [
+          "Gunok"
+        ]
       },
       {
         "value": "Muhammed Sengezer",
@@ -2546,7 +3215,10 @@
         "sourceIds": {
           "fbref": "fa71b998",
           "transfermarkt": "330871"
-        }
+        },
+        "aliases": [
+          "Sengezer"
+        ]
       },
       {
         "value": "Okan Koçuk",
@@ -2554,7 +3226,10 @@
         "sourceIds": {
           "fbref": "7e9fd9b9",
           "transfermarkt": "204189"
-        }
+        },
+        "aliases": [
+          "Kocuk"
+        ]
       },
       {
         "value": "Diogo Fesnard Sousa",
@@ -2570,7 +3245,10 @@
         "sourceIds": {
           "fbref": "00b86f5e",
           "transfermarkt": "231712"
-        }
+        },
+        "aliases": [
+          "Piric"
+        ]
       },
       {
         "value": "Fernando Muslera",
@@ -2578,7 +3256,10 @@
         "sourceIds": {
           "fbref": "a2abe631",
           "transfermarkt": "58088"
-        }
+        },
+        "aliases": [
+          "Muslera"
+        ]
       }
     ],
     "status": "live"
@@ -2594,34 +3275,61 @@
     "note": "Transfermarkt goal table cross-check (checked 2026-04-21). Retired: same answer set as verified-seasonal-topscorers-2024-25; the Transfermarkt-verified list is kept for that season.",
     "answers": [
       {
-        "value": "Victor Osimhen"
+        "value": "Victor Osimhen",
+        "aliases": [
+          "Osimhen"
+        ]
       },
       {
-        "value": "Krzysztof Piątek"
+        "value": "Krzysztof Piątek",
+        "aliases": [
+          "Piatek"
+        ]
       },
       {
-        "value": "Youssef En-Nesyri"
+        "value": "Youssef En-Nesyri",
+        "aliases": [
+          "En-nesyri"
+        ]
       },
       {
-        "value": "Simon Banza"
+        "value": "Simon Banza",
+        "aliases": [
+          "Banza"
+        ]
       },
       {
-        "value": "Ali Sowe"
+        "value": "Ali Sowe",
+        "aliases": [
+          "Sowe"
+        ]
       },
       {
-        "value": "Ciro Immobile"
+        "value": "Ciro Immobile",
+        "aliases": [
+          "Immobile"
+        ]
       },
       {
-        "value": "Mame Thiam"
+        "value": "Mame Thiam",
+        "aliases": [
+          "Thiam"
+        ]
       },
       {
-        "value": "Edin Džeko"
+        "value": "Edin Džeko",
+        "aliases": [
+          "Dzeko"
+        ]
       },
       {
         "value": "Rômulo"
       },
       {
-        "value": "Nuno Da Costa"
+        "value": "Nuno Da Costa",
+        "aliases": [
+          "Da Costa"
+        ]
       }
     ],
     "status": "retired"
@@ -2642,7 +3350,10 @@
         "sourceIds": {
           "fbref": "7e9fd9b9",
           "transfermarkt": "204189"
-        }
+        },
+        "aliases": [
+          "Kocuk"
+        ]
       },
       {
         "value": "Rafa Silva",
@@ -2658,7 +3369,10 @@
         "sourceIds": {
           "fbref": "b583aef5",
           "transfermarkt": "51894"
-        }
+        },
+        "aliases": [
+          "Gunok"
+        ]
       },
       {
         "value": "Ertugrul Taskiran",
@@ -2666,7 +3380,10 @@
         "sourceIds": {
           "fbref": "cf8c553e",
           "transfermarkt": "91945"
-        }
+        },
+        "aliases": [
+          "Taskiran"
+        ]
       },
       {
         "value": "Muhammed Sengezer",
@@ -2674,7 +3391,10 @@
         "sourceIds": {
           "fbref": "fa71b998",
           "transfermarkt": "330871"
-        }
+        },
+        "aliases": [
+          "Sengezer"
+        ]
       },
       {
         "value": "Fernando Muslera",
@@ -2682,7 +3402,10 @@
         "sourceIds": {
           "fbref": "a2abe631",
           "transfermarkt": "58088"
-        }
+        },
+        "aliases": [
+          "Muslera"
+        ]
       },
       {
         "value": "Fidan Aliti",
@@ -2690,7 +3413,10 @@
         "sourceIds": {
           "fbref": "5c46e908",
           "transfermarkt": "182870"
-        }
+        },
+        "aliases": [
+          "Aliti"
+        ]
       },
       {
         "value": "Mamadou Fall",
@@ -2698,7 +3424,10 @@
         "sourceIds": {
           "fbref": "1524bd4c",
           "transfermarkt": "289713"
-        }
+        },
+        "aliases": [
+          "Fall"
+        ]
       },
       {
         "value": "Berke Ozer",
@@ -2706,7 +3435,10 @@
         "sourceIds": {
           "fbref": "0743d0ec",
           "transfermarkt": "361256"
-        }
+        },
+        "aliases": [
+          "Ozer"
+        ]
       },
       {
         "value": "Guilherme Sitya",
@@ -2734,7 +3466,10 @@
         "sourceIds": {
           "fbref": "4431aed2",
           "transfermarkt": "105521"
-        }
+        },
+        "aliases": [
+          "Immobile"
+        ]
       },
       {
         "value": "Haris Hajradinovic",
@@ -2742,7 +3477,10 @@
         "sourceIds": {
           "fbref": "4e07366b",
           "transfermarkt": "215592"
-        }
+        },
+        "aliases": [
+          "Hajradinovic"
+        ]
       },
       {
         "value": "Victor Osimhen",
@@ -2750,7 +3488,10 @@
         "sourceIds": {
           "fbref": "8c90fd7a",
           "transfermarkt": "401923"
-        }
+        },
+        "aliases": [
+          "Osimhen"
+        ]
       },
       {
         "value": "Krzysztof Piątek",
@@ -2758,7 +3499,10 @@
         "sourceIds": {
           "fbref": "17f3620a",
           "transfermarkt": "327757"
-        }
+        },
+        "aliases": [
+          "Piatek"
+        ]
       },
       {
         "value": "Rômulo",
@@ -2774,7 +3518,10 @@
         "sourceIds": {
           "fbref": "be47b750",
           "transfermarkt": "344869"
-        }
+        },
+        "aliases": [
+          "Banza"
+        ]
       },
       {
         "value": "Alexandru Maxim",
@@ -2782,7 +3529,10 @@
         "sourceIds": {
           "fbref": "61fc9685",
           "transfermarkt": "129513"
-        }
+        },
+        "aliases": [
+          "Maxim"
+        ]
       },
       {
         "value": "Talisca",
@@ -2798,7 +3548,10 @@
         "sourceIds": {
           "fbref": "9aa186b2",
           "transfermarkt": "238809"
-        }
+        },
+        "aliases": [
+          "Hadergjonaj"
+        ]
       },
       {
         "value": "George Puscas",
@@ -2806,7 +3559,10 @@
         "sourceIds": {
           "fbref": "c23c8e0d",
           "transfermarkt": "208690"
-        }
+        },
+        "aliases": [
+          "Puscas"
+        ]
       }
     ],
     "status": "live"
@@ -2827,7 +3583,10 @@
         "sourceIds": {
           "fbref": "8c90fd7a",
           "transfermarkt": "401923"
-        }
+        },
+        "aliases": [
+          "Osimhen"
+        ]
       },
       {
         "value": "Krzysztof Piątek",
@@ -2835,7 +3594,10 @@
         "sourceIds": {
           "fbref": "17f3620a",
           "transfermarkt": "327757"
-        }
+        },
+        "aliases": [
+          "Piatek"
+        ]
       },
       {
         "value": "Edin Džeko",
@@ -2843,7 +3605,10 @@
         "sourceIds": {
           "fbref": "3bb7f478",
           "transfermarkt": "28396"
-        }
+        },
+        "aliases": [
+          "Dzeko"
+        ]
       },
       {
         "value": "Youssef En-Nesyri",
@@ -2851,7 +3616,10 @@
         "sourceIds": {
           "fbref": "04e17fd5",
           "transfermarkt": "433049"
-        }
+        },
+        "aliases": [
+          "En-nesyri"
+        ]
       },
       {
         "value": "Rafa Silva",
@@ -2875,7 +3643,10 @@
         "sourceIds": {
           "fbref": "84e5adcd",
           "transfermarkt": "229817"
-        }
+        },
+        "aliases": [
+          "Sowe"
+        ]
       },
       {
         "value": "Mame Baba Thiam",
@@ -2891,7 +3662,10 @@
         "sourceIds": {
           "fbref": "be47b750",
           "transfermarkt": "344869"
-        }
+        },
+        "aliases": [
+          "Banza"
+        ]
       },
       {
         "value": "Nuno Da Costa",
@@ -2899,7 +3673,10 @@
         "sourceIds": {
           "fbref": "909222de",
           "transfermarkt": "306166"
-        }
+        },
+        "aliases": [
+          "Da Costa"
+        ]
       }
     ],
     "status": "retired"
@@ -2915,34 +3692,64 @@
     "note": "Transfermarkt assist table cross-check (checked 2026-04-21).",
     "answers": [
       {
-        "value": "Barış Alper Yılmaz"
+        "value": "Barış Alper Yılmaz",
+        "aliases": [
+          "Yilmaz"
+        ]
       },
       {
-        "value": "Drissa Camara"
+        "value": "Drissa Camara",
+        "aliases": [
+          "Camara"
+        ]
       },
       {
-        "value": "Oleksandr Zubkov"
+        "value": "Oleksandr Zubkov",
+        "aliases": [
+          "Zubkov"
+        ]
       },
       {
-        "value": "Vaclav Cerny"
+        "value": "Vaclav Cerny",
+        "aliases": [
+          "Cerny"
+        ]
       },
       {
-        "value": "Yunus Akgün"
+        "value": "Yunus Akgün",
+        "aliases": [
+          "Akgun"
+        ]
       },
       {
-        "value": "Alexandru Maxim"
+        "value": "Alexandru Maxim",
+        "aliases": [
+          "Maxim"
+        ]
       },
       {
-        "value": "Goktan Gurpuz"
+        "value": "Goktan Gurpuz",
+        "aliases": [
+          "Gurpuz"
+        ]
       },
       {
-        "value": "Dorgeles Nene"
+        "value": "Dorgeles Nene",
+        "aliases": [
+          "Nene"
+        ]
       },
       {
-        "value": "El Bilal Toure"
+        "value": "El Bilal Toure",
+        "aliases": [
+          "Toure"
+        ]
       },
       {
-        "value": "Marco Asensio"
+        "value": "Marco Asensio",
+        "aliases": [
+          "Asensio"
+        ]
       }
     ],
     "status": "draft"
@@ -2963,7 +3770,10 @@
         "sourceIds": {
           "fbref": "9bf914b4",
           "transfermarkt": "454567"
-        }
+        },
+        "aliases": [
+          "Kokcu"
+        ]
       },
       {
         "value": "Thalisson Kelven",
@@ -2987,7 +3797,10 @@
         "sourceIds": {
           "fbref": "6747869d",
           "transfermarkt": "402010"
-        }
+        },
+        "aliases": [
+          "Koita"
+        ]
       },
       {
         "value": "Festy Ebosele",
@@ -2995,7 +3808,10 @@
         "sourceIds": {
           "fbref": "dbfa4f16",
           "transfermarkt": "586756"
-        }
+        },
+        "aliases": [
+          "Ebosele"
+        ]
       },
       {
         "value": "Bedirhan Ozyurt",
@@ -3003,7 +3819,10 @@
         "sourceIds": {
           "fbref": "d6584270",
           "transfermarkt": "710051"
-        }
+        },
+        "aliases": [
+          "Ozyurt"
+        ]
       },
       {
         "value": "Enis Bardhi",
@@ -3011,7 +3830,10 @@
         "sourceIds": {
           "fbref": "cac2537b",
           "transfermarkt": "245014"
-        }
+        },
+        "aliases": [
+          "Bardhi"
+        ]
       },
       {
         "value": "Wagner Pina",
@@ -3019,7 +3841,10 @@
         "sourceIds": {
           "fbref": "9bf22b95",
           "transfermarkt": "1072017"
-        }
+        },
+        "aliases": [
+          "Pina"
+        ]
       },
       {
         "value": "Maestro",
@@ -3055,7 +3880,10 @@
         "sourceIds": {
           "fbref": "c77be0cf",
           "transfermarkt": "314965"
-        }
+        },
+        "aliases": [
+          "Pereira"
+        ]
       },
       {
         "value": "Malcom Bokele",
@@ -3063,7 +3891,10 @@
         "sourceIds": {
           "fbref": "51af19f7",
           "transfermarkt": "647787"
-        }
+        },
+        "aliases": [
+          "Bokele"
+        ]
       },
       {
         "value": "Fidan Aliti",
@@ -3071,7 +3902,10 @@
         "sourceIds": {
           "fbref": "5c46e908",
           "transfermarkt": "182870"
-        }
+        },
+        "aliases": [
+          "Aliti"
+        ]
       },
       {
         "value": "Ugurcan Yazgili",
@@ -3079,7 +3913,10 @@
         "sourceIds": {
           "fbref": "0caa0427",
           "transfermarkt": "295955"
-        }
+        },
+        "aliases": [
+          "Yazgili"
+        ]
       },
       {
         "value": "Jayden Oosterwolde",
@@ -3087,7 +3924,10 @@
         "sourceIds": {
           "fbref": "34abb664",
           "transfermarkt": "591361"
-        }
+        },
+        "aliases": [
+          "Oosterwolde"
+        ]
       },
       {
         "value": "Arda Kizildag",
@@ -3095,7 +3935,10 @@
         "sourceIds": {
           "fbref": "035379ae",
           "transfermarkt": "532905"
-        }
+        },
+        "aliases": [
+          "Kizildag"
+        ]
       },
       {
         "value": "Christ Inao Oulai",
@@ -3103,7 +3946,10 @@
         "sourceIds": {
           "fbref": "62709ee4",
           "transfermarkt": "1279526"
-        }
+        },
+        "aliases": [
+          "Inao Oulai"
+        ]
       },
       {
         "value": "Samet Akaydin",
@@ -3111,7 +3957,10 @@
         "sourceIds": {
           "fbref": "7328bee5",
           "transfermarkt": "295024"
-        }
+        },
+        "aliases": [
+          "Akaydin"
+        ]
       },
       {
         "value": "Ahmet Oguz",
@@ -3119,7 +3968,10 @@
         "sourceIds": {
           "fbref": "a84d1dc0",
           "transfermarkt": "291758"
-        }
+        },
+        "aliases": [
+          "Oguz"
+        ]
       },
       {
         "value": "Show",
@@ -3148,7 +4000,10 @@
         "sourceIds": {
           "fbref": "fd78b105",
           "transfermarkt": "345437"
-        }
+        },
+        "aliases": [
+          "Lis"
+        ]
       },
       {
         "value": "Uğurcan Çakır",
@@ -3156,7 +4011,10 @@
         "sourceIds": {
           "fbref": "f63a8347",
           "transfermarkt": "292199"
-        }
+        },
+        "aliases": [
+          "Cakir"
+        ]
       },
       {
         "value": "Muhammed Sengezer",
@@ -3164,7 +4022,10 @@
         "sourceIds": {
           "fbref": "fa71b998",
           "transfermarkt": "330871"
-        }
+        },
+        "aliases": [
+          "Sengezer"
+        ]
       },
       {
         "value": "Okan Koçuk",
@@ -3172,7 +4033,10 @@
         "sourceIds": {
           "fbref": "7e9fd9b9",
           "transfermarkt": "204189"
-        }
+        },
+        "aliases": [
+          "Kocuk"
+        ]
       },
       {
         "value": "Andreas Gianniotis",
@@ -3180,7 +4044,10 @@
         "sourceIds": {
           "fbref": "8ae07c1c",
           "transfermarkt": "226802"
-        }
+        },
+        "aliases": [
+          "Gianniotis"
+        ]
       },
       {
         "value": "Ertugrul Taskiran",
@@ -3188,7 +4055,10 @@
         "sourceIds": {
           "fbref": "cf8c553e",
           "transfermarkt": "91945"
-        }
+        },
+        "aliases": [
+          "Taskiran"
+        ]
       },
       {
         "value": "Ersin Destanoğlu",
@@ -3196,7 +4066,10 @@
         "sourceIds": {
           "fbref": "52b3c895",
           "transfermarkt": "500091"
-        }
+        },
+        "aliases": [
+          "Destanoglu"
+        ]
       },
       {
         "value": "Ederson",
@@ -3212,7 +4085,10 @@
         "sourceIds": {
           "fbref": "129dd8e7",
           "transfermarkt": "256567"
-        }
+        },
+        "aliases": [
+          "Jovanovic"
+        ]
       },
       {
         "value": "Bilal Bayazit",
@@ -3220,7 +4096,10 @@
         "sourceIds": {
           "fbref": "f0a63d14",
           "transfermarkt": "361032"
-        }
+        },
+        "aliases": [
+          "Bayazit"
+        ]
       }
     ],
     "status": "draft"
@@ -3241,7 +4120,10 @@
         "sourceIds": {
           "fbref": "3f034750",
           "transfermarkt": "226073"
-        }
+        },
+        "aliases": [
+          "Grbic"
+        ]
       },
       {
         "value": "Muhammed Sengezer",
@@ -3249,7 +4131,10 @@
         "sourceIds": {
           "fbref": "fa71b998",
           "transfermarkt": "330871"
-        }
+        },
+        "aliases": [
+          "Sengezer"
+        ]
       },
       {
         "value": "Bilal Bayazit",
@@ -3257,7 +4142,10 @@
         "sourceIds": {
           "fbref": "f0a63d14",
           "transfermarkt": "361032"
-        }
+        },
+        "aliases": [
+          "Bayazit"
+        ]
       },
       {
         "value": "Mateusz Lis",
@@ -3265,7 +4153,10 @@
         "sourceIds": {
           "fbref": "fd78b105",
           "transfermarkt": "345437"
-        }
+        },
+        "aliases": [
+          "Lis"
+        ]
       },
       {
         "value": "Andreas Gianniotis",
@@ -3273,7 +4164,10 @@
         "sourceIds": {
           "fbref": "8ae07c1c",
           "transfermarkt": "226802"
-        }
+        },
+        "aliases": [
+          "Gianniotis"
+        ]
       },
       {
         "value": "Uğurcan Çakır",
@@ -3281,7 +4175,10 @@
         "sourceIds": {
           "fbref": "f63a8347",
           "transfermarkt": "292199"
-        }
+        },
+        "aliases": [
+          "Cakir"
+        ]
       },
       {
         "value": "Andre Onana",
@@ -3289,7 +4186,10 @@
         "sourceIds": {
           "fbref": "e9c0c1b2",
           "transfermarkt": "234509"
-        }
+        },
+        "aliases": [
+          "Onana"
+        ]
       },
       {
         "value": "Yahia Fofana",
@@ -3297,7 +4197,10 @@
         "sourceIds": {
           "fbref": "9d420dad",
           "transfermarkt": "418651"
-        }
+        },
+        "aliases": [
+          "Fofana"
+        ]
       },
       {
         "value": "Ricardo Velho",
@@ -3305,7 +4208,10 @@
         "sourceIds": {
           "fbref": "23d16052",
           "transfermarkt": "527026"
-        }
+        },
+        "aliases": [
+          "Velho"
+        ]
       },
       {
         "value": "Julian Cuesta",
@@ -3313,7 +4219,10 @@
         "sourceIds": {
           "fbref": "c7b52b90",
           "transfermarkt": "176936"
-        }
+        },
+        "aliases": [
+          "Cuesta"
+        ]
       }
     ],
     "status": "draft"
@@ -3334,7 +4243,10 @@
         "sourceIds": {
           "fbref": "c06d1086",
           "transfermarkt": "272855"
-        }
+        },
+        "aliases": [
+          "Onuachu"
+        ]
       },
       {
         "value": "Eldor Shomurodov",
@@ -3342,7 +4254,10 @@
         "sourceIds": {
           "fbref": "57469b2d",
           "transfermarkt": "358166"
-        }
+        },
+        "aliases": [
+          "Shomurodov"
+        ]
       },
       {
         "value": "Talisca",
@@ -3355,7 +4270,8 @@
       {
         "value": "Mohamed Bayo",
         "aliases": [
-          "Mohamed Lamine Bayo"
+          "Mohamed Lamine Bayo",
+          "Bayo"
         ],
         "entityId": "player:tm-historical-594991-mohamed-bayo",
         "sourceIds": {
@@ -3369,7 +4285,10 @@
         "sourceIds": {
           "fbref": "43b78598",
           "transfermarkt": "68863"
-        }
+        },
+        "aliases": [
+          "Icardi"
+        ]
       },
       {
         "value": "Victor Osimhen",
@@ -3377,7 +4296,10 @@
         "sourceIds": {
           "fbref": "8c90fd7a",
           "transfermarkt": "401923"
-        }
+        },
+        "aliases": [
+          "Osimhen"
+        ]
       },
       {
         "value": "Felipe Augusto",
@@ -3385,7 +4307,10 @@
         "sourceIds": {
           "fbref": "1f9cbd0b",
           "transfermarkt": "834899"
-        }
+        },
+        "aliases": [
+          "Felipe Aug."
+        ]
       },
       {
         "value": "Marco Asensio",
@@ -3393,10 +4318,16 @@
         "sourceIds": {
           "fbref": "45af8a54",
           "transfermarkt": "296622"
-        }
+        },
+        "aliases": [
+          "Asensio"
+        ]
       },
       {
-        "value": "Dorgeles Nene"
+        "value": "Dorgeles Nene",
+        "aliases": [
+          "Nene"
+        ]
       },
       {
         "value": "Ernest Muci",
@@ -3404,7 +4335,10 @@
         "sourceIds": {
           "fbref": "1f1229a9",
           "transfermarkt": "583917"
-        }
+        },
+        "aliases": [
+          "Muci"
+        ]
       }
     ],
     "status": "retired"
@@ -3425,7 +4359,10 @@
         "sourceIds": {
           "fbref": "3f034750",
           "transfermarkt": "226073"
-        }
+        },
+        "aliases": [
+          "Grbic"
+        ]
       },
       {
         "value": "Andreas Gianniotis",
@@ -3433,7 +4370,10 @@
         "sourceIds": {
           "fbref": "8ae07c1c",
           "transfermarkt": "226802"
-        }
+        },
+        "aliases": [
+          "Gianniotis"
+        ]
       },
       {
         "value": "Mateusz Lis",
@@ -3441,7 +4381,10 @@
         "sourceIds": {
           "fbref": "fd78b105",
           "transfermarkt": "345437"
-        }
+        },
+        "aliases": [
+          "Lis"
+        ]
       },
       {
         "value": "Amine Cherni",
@@ -3472,7 +4415,10 @@
         "sourceIds": {
           "fbref": "fa71b998",
           "transfermarkt": "330871"
-        }
+        },
+        "aliases": [
+          "Sengezer"
+        ]
       },
       {
         "value": "Kenneth Paal",
@@ -3480,7 +4426,10 @@
         "sourceIds": {
           "fbref": "d8faef3e",
           "transfermarkt": "247596"
-        }
+        },
+        "aliases": [
+          "Paal"
+        ]
       },
       {
         "value": "Eldor Shomurodov",
@@ -3488,7 +4437,10 @@
         "sourceIds": {
           "fbref": "57469b2d",
           "transfermarkt": "358166"
-        }
+        },
+        "aliases": [
+          "Shomurodov"
+        ]
       },
       {
         "value": "Stefano Denswil",
@@ -3496,7 +4448,10 @@
         "sourceIds": {
           "fbref": "5832ebfe",
           "transfermarkt": "182923"
-        }
+        },
+        "aliases": [
+          "Denswil"
+        ]
       }
     ],
     "status": "draft"
@@ -3517,7 +4472,10 @@
         "sourceIds": {
           "fbref": "c06d1086",
           "transfermarkt": "272855"
-        }
+        },
+        "aliases": [
+          "Onuachu"
+        ]
       },
       {
         "value": "Alexandru Maxim",
@@ -3525,7 +4483,10 @@
         "sourceIds": {
           "fbref": "61fc9685",
           "transfermarkt": "129513"
-        }
+        },
+        "aliases": [
+          "Maxim"
+        ]
       },
       {
         "value": "Talisca",
@@ -3541,7 +4502,10 @@
         "sourceIds": {
           "fbref": "eb0db257",
           "transfermarkt": "290552"
-        }
+        },
+        "aliases": [
+          "Laci"
+        ]
       },
       {
         "value": "Barış Alper Yılmaz",
@@ -3549,7 +4513,10 @@
         "sourceIds": {
           "fbref": "414b2ce4",
           "transfermarkt": "541537"
-        }
+        },
+        "aliases": [
+          "Yilmaz"
+        ]
       },
       {
         "value": "Florent Hadergjonaj",
@@ -3557,7 +4524,10 @@
         "sourceIds": {
           "fbref": "9aa186b2",
           "transfermarkt": "238809"
-        }
+        },
+        "aliases": [
+          "Hadergjonaj"
+        ]
       },
       {
         "value": "Eldor Shomurodov",
@@ -3565,7 +4535,10 @@
         "sourceIds": {
           "fbref": "57469b2d",
           "transfermarkt": "358166"
-        }
+        },
+        "aliases": [
+          "Shomurodov"
+        ]
       },
       {
         "value": "Adrian Benedyczak",
@@ -3573,7 +4546,10 @@
         "sourceIds": {
           "fbref": "3f448184",
           "transfermarkt": "454386"
-        }
+        },
+        "aliases": [
+          "Benedyczak"
+        ]
       },
       {
         "value": "Enis Bardhi",
@@ -3581,7 +4557,10 @@
         "sourceIds": {
           "fbref": "cac2537b",
           "transfermarkt": "245014"
-        }
+        },
+        "aliases": [
+          "Bardhi"
+        ]
       },
       {
         "value": "Bruno Petkovic",
@@ -3589,7 +4568,10 @@
         "sourceIds": {
           "fbref": "24228180",
           "transfermarkt": "256358"
-        }
+        },
+        "aliases": [
+          "Petkovic"
+        ]
       }
     ],
     "status": "draft"
@@ -3610,7 +4592,10 @@
         "sourceIds": {
           "fbref": "57469b2d",
           "transfermarkt": "358166"
-        }
+        },
+        "aliases": [
+          "Shomurodov"
+        ]
       },
       {
         "value": "Paul Onuachu",
@@ -3618,7 +4603,10 @@
         "sourceIds": {
           "fbref": "c06d1086",
           "transfermarkt": "272855"
-        }
+        },
+        "aliases": [
+          "Onuachu"
+        ]
       },
       {
         "value": "Talisca",
@@ -3634,7 +4622,10 @@
         "sourceIds": {
           "fbref": "8c90fd7a",
           "transfermarkt": "401923"
-        }
+        },
+        "aliases": [
+          "Osimhen"
+        ]
       },
       {
         "value": "Felipe Augusto",
@@ -3642,7 +4633,10 @@
         "sourceIds": {
           "fbref": "1f9cbd0b",
           "transfermarkt": "834899"
-        }
+        },
+        "aliases": [
+          "Felipe Aug."
+        ]
       },
       {
         "value": "Orkun Kökçü",
@@ -3650,7 +4644,10 @@
         "sourceIds": {
           "fbref": "9bf914b4",
           "transfermarkt": "454567"
-        }
+        },
+        "aliases": [
+          "Kokcu"
+        ]
       },
       {
         "value": "Mohamed Lamine Bayo",
@@ -3666,7 +4663,10 @@
         "sourceIds": {
           "fbref": "1f1229a9",
           "transfermarkt": "583917"
-        }
+        },
+        "aliases": [
+          "Muci"
+        ]
       },
       {
         "value": "Marco Asensio",
@@ -3674,7 +4674,10 @@
         "sourceIds": {
           "fbref": "45af8a54",
           "transfermarkt": "296622"
-        }
+        },
+        "aliases": [
+          "Asensio"
+        ]
       },
       {
         "value": "Mauro Icardi",
@@ -3682,7 +4685,10 @@
         "sourceIds": {
           "fbref": "43b78598",
           "transfermarkt": "68863"
-        }
+        },
+        "aliases": [
+          "Icardi"
+        ]
       }
     ],
     "status": "retired"
@@ -3709,7 +4715,10 @@
         "entityId": "player:tm-6917-ibrahim-yattara",
         "sourceIds": {
           "transfermarkt": "6917"
-        }
+        },
+        "aliases": [
+          "Yattara"
+        ]
       },
       {
         "value": "Alex",
@@ -3723,14 +4732,20 @@
         "entityId": "player:tm-6102-hasan-sas",
         "sourceIds": {
           "transfermarkt": "6102"
-        }
+        },
+        "aliases": [
+          "Sas"
+        ]
       },
       {
         "value": "Tümer Metin",
         "entityId": "player:tm-6879-tumer-metin",
         "sourceIds": {
           "transfermarkt": "6879"
-        }
+        },
+        "aliases": [
+          "Metin"
+        ]
       },
       {
         "value": "Ali Tandogan",
@@ -3744,7 +4759,10 @@
         "entityId": "player:tm-6871-gokdeniz-karadeniz",
         "sourceIds": {
           "transfermarkt": "6871"
-        }
+        },
+        "aliases": [
+          "Karadeniz"
+        ]
       },
       {
         "value": "Sergen Yalçın",
@@ -3758,14 +4776,20 @@
         "entityId": "player:tm-14958-aleksandar-aleksandrov",
         "sourceIds": {
           "transfermarkt": "14958"
-        }
+        },
+        "aliases": [
+          "Aleksandrov"
+        ]
       },
       {
         "value": "Zdravko Lazarov",
         "entityId": "player:tm-10126-zdravko-lazarov",
         "sourceIds": {
           "transfermarkt": "10126"
-        }
+        },
+        "aliases": [
+          "Lazarov"
+        ]
       }
     ],
     "status": "live"
@@ -3792,35 +4816,50 @@
         "entityId": "player:tm-6949-necati-ates",
         "sourceIds": {
           "transfermarkt": "6949"
-        }
+        },
+        "aliases": [
+          "Ates"
+        ]
       },
       {
         "value": "Cenk İşler",
         "entityId": "player:tm-1294-cenk-isler",
         "sourceIds": {
           "transfermarkt": "1294"
-        }
+        },
+        "aliases": [
+          "Isler"
+        ]
       },
       {
         "value": "Okan Yılmaz",
         "entityId": "player:tm-6113-okan-yilmaz",
         "sourceIds": {
           "transfermarkt": "6113"
-        }
+        },
+        "aliases": [
+          "Yilmaz"
+        ]
       },
       {
         "value": "Serkan Aykut",
         "entityId": "player:tm-7142-serkan-aykut",
         "sourceIds": {
           "transfermarkt": "7142"
-        }
+        },
+        "aliases": [
+          "Aykut"
+        ]
       },
       {
         "value": "Zafer Biryol",
         "entityId": "player:tm-7388-zafer-biryol",
         "sourceIds": {
           "transfermarkt": "7388"
-        }
+        },
+        "aliases": [
+          "Biryol"
+        ]
       },
       {
         "value": "Ahmed Hassan",
@@ -3834,14 +4873,20 @@
         "entityId": "player:tm-10126-zdravko-lazarov",
         "sourceIds": {
           "transfermarkt": "10126"
-        }
+        },
+        "aliases": [
+          "Lazarov"
+        ]
       },
       {
         "value": "Souleymane Youla",
         "entityId": "player:tm-1081-souleymane-youla",
         "sourceIds": {
           "transfermarkt": "1081"
-        }
+        },
+        "aliases": [
+          "Youla"
+        ]
       },
       {
         "value": "Tuncay Şanlı",
@@ -3882,14 +4927,20 @@
         "entityId": "player:tm-3413-rodrigo-tello",
         "sourceIds": {
           "transfermarkt": "3413"
-        }
+        },
+        "aliases": [
+          "Tello"
+        ]
       },
       {
         "value": "Ceyhun Eris",
         "entityId": "player:tm-7064-ceyhun-eris",
         "sourceIds": {
           "transfermarkt": "7064"
-        }
+        },
+        "aliases": [
+          "Eris"
+        ]
       },
       {
         "value": "Selçuk İnan",
@@ -3903,28 +4954,40 @@
         "entityId": "player:tm-17140-mehmet-topuz",
         "sourceIds": {
           "transfermarkt": "17140"
-        }
+        },
+        "aliases": [
+          "Topuz"
+        ]
       },
       {
         "value": "Mehmet Yildiz",
         "entityId": "player:tm-33570-mehmet-yildiz",
         "sourceIds": {
           "transfermarkt": "33570"
-        }
+        },
+        "aliases": [
+          "Yildiz"
+        ]
       },
       {
         "value": "Gustavo Colman",
         "entityId": "player:tm-40500-gustavo-colman",
         "sourceIds": {
           "transfermarkt": "40500"
-        }
+        },
+        "aliases": [
+          "Colman"
+        ]
       },
       {
         "value": "Ibrahim Yattara",
         "entityId": "player:tm-6917-ibrahim-yattara",
         "sourceIds": {
           "transfermarkt": "6917"
-        }
+        },
+        "aliases": [
+          "Yattara"
+        ]
       },
       {
         "value": "Ali Tandogan",
@@ -3958,7 +5021,10 @@
         "entityId": "player:tm-10143-umut-bulut",
         "sourceIds": {
           "transfermarkt": "10143"
-        }
+        },
+        "aliases": [
+          "Bulut"
+        ]
       },
       {
         "value": "Bobo",
@@ -3972,49 +5038,70 @@
         "entityId": "player:tm-7394-gokhan-unal",
         "sourceIds": {
           "transfermarkt": "7394"
-        }
+        },
+        "aliases": [
+          "Unal"
+        ]
       },
       {
         "value": "Filip Holosko",
         "entityId": "player:tm-21245-filip-holosko",
         "sourceIds": {
           "transfermarkt": "21245"
-        }
+        },
+        "aliases": [
+          "Holosko"
+        ]
       },
       {
         "value": "Mehmet Yildiz",
         "entityId": "player:tm-33570-mehmet-yildiz",
         "sourceIds": {
           "transfermarkt": "33570"
-        }
+        },
+        "aliases": [
+          "Yildiz"
+        ]
       },
       {
         "value": "Necati Ateş",
         "entityId": "player:tm-6949-necati-ates",
         "sourceIds": {
           "transfermarkt": "6949"
-        }
+        },
+        "aliases": [
+          "Ates"
+        ]
       },
       {
         "value": "Semih Senturk",
         "entityId": "player:tm-7043-semih-senturk",
         "sourceIds": {
           "transfermarkt": "7043"
-        }
+        },
+        "aliases": [
+          "Senturk"
+        ]
       },
       {
         "value": "Milan Baroš",
         "entityId": "player:tm-3216-milan-baros",
         "sourceIds": {
           "transfermarkt": "3216"
-        }
+        },
+        "aliases": [
+          "Baros"
+        ]
       },
       {
         "value": "Ümit Karan",
         "entityId": "player:tm-3378-umit-karan",
         "sourceIds": {
           "transfermarkt": "3378"
-        }
+        },
+        "aliases": [
+          "Karan"
+        ]
       }
     ],
     "status": "live"
@@ -4048,7 +5135,10 @@
         "entityId": "player:tm-39333-caner-erkin",
         "sourceIds": {
           "transfermarkt": "39333"
-        }
+        },
+        "aliases": [
+          "Erkin"
+        ]
       },
       {
         "value": "Cicinho",
@@ -4069,21 +5159,30 @@
         "entityId": "player:tm-16791-manuel-fernandes",
         "sourceIds": {
           "transfermarkt": "16791"
-        }
+        },
+        "aliases": [
+          "Fernandes"
+        ]
       },
       {
         "value": "Yasin Oztekin",
         "entityId": "player:tm-31867-yasin-oztekin",
         "sourceIds": {
           "transfermarkt": "31867"
-        }
+        },
+        "aliases": [
+          "Oztekin"
+        ]
       },
       {
         "value": "Olcan Adin",
         "entityId": "player:tm-8491-olcan-adin",
         "sourceIds": {
           "transfermarkt": "8491"
-        }
+        },
+        "aliases": [
+          "Adin"
+        ]
       },
       {
         "value": "Olcay Sahan",
@@ -4097,7 +5196,10 @@
         "entityId": "player:tm-53556-erman-kilic",
         "sourceIds": {
           "transfermarkt": "53556"
-        }
+        },
+        "aliases": [
+          "Kilic"
+        ]
       }
     ],
     "status": "live"
@@ -4124,21 +5226,30 @@
         "entityId": "player:tm-46658-bogdan-stancu",
         "sourceIds": {
           "transfermarkt": "46658"
-        }
+        },
+        "aliases": [
+          "Stancu"
+        ]
       },
       {
         "value": "Pierre Webó",
         "entityId": "player:tm-16589-pierre-webo",
         "sourceIds": {
           "transfermarkt": "16589"
-        }
+        },
+        "aliases": [
+          "Webo"
+        ]
       },
       {
         "value": "Moussa Sow",
         "entityId": "player:tm-22382-moussa-sow",
         "sourceIds": {
           "transfermarkt": "22382"
-        }
+        },
+        "aliases": [
+          "Sow"
+        ]
       },
       {
         "value": "Theofanis Gekas",
@@ -4152,7 +5263,10 @@
         "entityId": "player:tm-73480-aatif-chahechouhe",
         "sourceIds": {
           "transfermarkt": "73480"
-        }
+        },
+        "aliases": [
+          "Chahechouhe"
+        ]
       },
       {
         "value": "Fernandão",
@@ -4166,14 +5280,20 @@
         "entityId": "player:tm-45671-cenk-tosun",
         "sourceIds": {
           "transfermarkt": "45671"
-        }
+        },
+        "aliases": [
+          "Tosun"
+        ]
       },
       {
         "value": "Oscar Scarione",
         "entityId": "player:tm-47011-oscar-scarione",
         "sourceIds": {
           "transfermarkt": "47011"
-        }
+        },
+        "aliases": [
+          "Scarione"
+        ]
       },
       {
         "value": "Selçuk İnan",
@@ -4200,70 +5320,100 @@
         "entityId": "player:tm-109217-edin-visca",
         "sourceIds": {
           "transfermarkt": "109217"
-        }
+        },
+        "aliases": [
+          "Visca"
+        ]
       },
       {
         "value": "Efecan Karaca",
         "entityId": "player:tm-50655-efecan-karaca",
         "sourceIds": {
           "transfermarkt": "50655"
-        }
+        },
+        "aliases": [
+          "Karaca"
+        ]
       },
       {
         "value": "Anthony Nwakaeme",
         "entityId": "player:tm-175988-anthony-nwakaeme",
         "sourceIds": {
           "transfermarkt": "175988"
-        }
+        },
+        "aliases": [
+          "Nwakaeme"
+        ]
       },
       {
         "value": "Caner Erkin",
         "entityId": "player:tm-39333-caner-erkin",
         "sourceIds": {
           "transfermarkt": "39333"
-        }
+        },
+        "aliases": [
+          "Erkin"
+        ]
       },
       {
         "value": "Ricardo Quaresma",
         "entityId": "player:tm-4188-ricardo-quaresma",
         "sourceIds": {
           "transfermarkt": "4188"
-        }
+        },
+        "aliases": [
+          "Quaresma"
+        ]
       },
       {
         "value": "Halil Akbunar",
         "entityId": "player:tm-212229-halil-akbunar",
         "sourceIds": {
           "transfermarkt": "212229"
-        }
+        },
+        "aliases": [
+          "Akbunar"
+        ]
       },
       {
         "value": "Soner Aydogdu",
         "entityId": "player:tm-85291-soner-aydogdu",
         "sourceIds": {
           "transfermarkt": "85291"
-        }
+        },
+        "aliases": [
+          "Aydogdu"
+        ]
       },
       {
         "value": "Atiba Hutchinson",
         "entityId": "player:tm-16101-atiba-hutchinson",
         "sourceIds": {
           "transfermarkt": "16101"
-        }
+        },
+        "aliases": [
+          "Hutchinson"
+        ]
       },
       {
         "value": "Sofiane Feghouli",
         "entityId": "player:tm-57162-sofiane-feghouli",
         "sourceIds": {
           "transfermarkt": "57162"
-        }
+        },
+        "aliases": [
+          "Feghouli"
+        ]
       },
       {
         "value": "Deniz Turuc",
         "entityId": "player:tm-216662-deniz-turuc",
         "sourceIds": {
           "transfermarkt": "216662"
-        }
+        },
+        "aliases": [
+          "Turuc"
+        ]
       }
     ],
     "status": "live"
@@ -4283,21 +5433,30 @@
         "entityId": "player:tm-109217-edin-visca",
         "sourceIds": {
           "transfermarkt": "109217"
-        }
+        },
+        "aliases": [
+          "Visca"
+        ]
       },
       {
         "value": "Adis Jahovic",
         "entityId": "player:tm-98536-adis-jahovic",
         "sourceIds": {
           "transfermarkt": "98536"
-        }
+        },
+        "aliases": [
+          "Jahovic"
+        ]
       },
       {
         "value": "Mbaye Diagne",
         "entityId": "player:tm-271966-mbaye-diagne",
         "sourceIds": {
           "transfermarkt": "271966"
-        }
+        },
+        "aliases": [
+          "Diagne"
+        ]
       },
       {
         "value": "Burak Yılmaz",
@@ -4311,14 +5470,20 @@
         "entityId": "player:tm-37934-hugo-rodallega",
         "sourceIds": {
           "transfermarkt": "37934"
-        }
+        },
+        "aliases": [
+          "Rodallega"
+        ]
       },
       {
         "value": "Mustapha Yatabare",
         "entityId": "player:tm-76386-mustapha-yatabare",
         "sourceIds": {
           "transfermarkt": "76386"
-        }
+        },
+        "aliases": [
+          "Yatabare"
+        ]
       },
       {
         "value": "Adem Buyuk",
@@ -4332,21 +5497,30 @@
         "entityId": "player:tm-33952-papiss-demba-cisse",
         "sourceIds": {
           "transfermarkt": "33952"
-        }
+        },
+        "aliases": [
+          "Cisse"
+        ]
       },
       {
         "value": "Anthony Nwakaeme",
         "entityId": "player:tm-175988-anthony-nwakaeme",
         "sourceIds": {
           "transfermarkt": "175988"
-        }
+        },
+        "aliases": [
+          "Nwakaeme"
+        ]
       },
       {
         "value": "Emre Akbaba",
         "entityId": "player:tm-278654-emre-akbaba",
         "sourceIds": {
           "transfermarkt": "278654"
-        }
+        },
+        "aliases": [
+          "Akbaba"
+        ]
       }
     ],
     "status": "live"
@@ -4362,28 +5536,46 @@
     "note": "Aligned to the Transfermarkt all-time appearance table; re-verified 2026-10-11. TM revised historical appearance counts since the April 2026 snapshot: Recep Çetin (428) re-enters the top 10 and Ömer Çatkıç (427) drops to 11th; Oğuz Çetin moves up to 6th.",
     "answers": [
       {
-        "value": "Umut Bulut"
+        "value": "Umut Bulut",
+        "aliases": [
+          "Bulut"
+        ]
       },
       {
-        "value": "Hakan Şükür"
+        "value": "Hakan Şükür",
+        "aliases": [
+          "Sukur"
+        ]
       },
       {
         "value": "Hami Mandıralı"
       },
       {
-        "value": "Mehmet Nas"
+        "value": "Mehmet Nas",
+        "aliases": [
+          "Nas"
+        ]
       },
       {
-        "value": "Veysel Sarı"
+        "value": "Veysel Sarı",
+        "aliases": [
+          "Sari"
+        ]
       },
       {
         "value": "Oğuz Çetin"
       },
       {
-        "value": "Fernando Muslera"
+        "value": "Fernando Muslera",
+        "aliases": [
+          "Muslera"
+        ]
       },
       {
-        "value": "Güray Vural"
+        "value": "Güray Vural",
+        "aliases": [
+          "Vural"
+        ]
       },
       {
         "value": "Recep Çetin"
@@ -4393,6 +5585,77 @@
       }
     ],
     "status": "live"
+  },
+  {
+    "id": "verified-club-legends-alltime-sl-most-minutes",
+    "shortLabel": "Süper Lig'de En Çok Dakika Oynayanlar",
+    "prompt": "Süper Lig Tarihinde En Çok Dakika Oynayan Futbolcular",
+    "entityType": "player",
+    "category": "all-time",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/rekordspieler/wettbewerb/TR1",
+    "note": "Draft. Verified against the Transfermarkt all-time record players table (fetched 2026-10-11). Same table as the all-time appearances question, but ranked by minutes — a different order.",
+    "answers": [
+      {
+        "value": "Hakan Şükür",
+        "scoreLabel": "39.902 dk",
+        "aliases": [
+          "Sukur"
+        ]
+      },
+      {
+        "value": "Oğuz Çetin",
+        "scoreLabel": "39.247 dk"
+      },
+      {
+        "value": "Umut Bulut",
+        "scoreLabel": "38.140 dk",
+        "aliases": [
+          "Bulut"
+        ]
+      },
+      {
+        "value": "Ömer Çatkıç",
+        "scoreLabel": "37.820 dk",
+        "aliases": [
+          "Catkic"
+        ]
+      },
+      {
+        "value": "Recep Çetin",
+        "scoreLabel": "36.759 dk"
+      },
+      {
+        "value": "Hami Mandıralı",
+        "scoreLabel": "36.510 dk"
+      },
+      {
+        "value": "Veysel Sarı",
+        "scoreLabel": "36.425 dk",
+        "aliases": [
+          "Sari"
+        ]
+      },
+      {
+        "value": "Gökhan Gönül",
+        "scoreLabel": "34.786 dk",
+        "aliases": [
+          "Gonul"
+        ]
+      },
+      {
+        "value": "Ogün Temizkanoğlu",
+        "scoreLabel": "34.309 dk"
+      },
+      {
+        "value": "Gökhan Keskin",
+        "scoreLabel": "34.272 dk",
+        "aliases": [
+          "Keskin"
+        ]
+      }
+    ],
+    "status": "draft"
   },
   {
     "id": "verified-club-legends-alltime-sl-topscorers",
@@ -4405,7 +5668,10 @@
     "note": "Aligned to Transfermarkt all-time top-scorer table (checked 2026-04-21). Retired: identical answer set (and order) to the pinned turkish-icons-total-goals question.",
     "answers": [
       {
-        "value": "Hakan Şükür"
+        "value": "Hakan Şükür",
+        "aliases": [
+          "Sukur"
+        ]
       },
       {
         "value": "Tanju Çolak"
@@ -4417,7 +5683,10 @@
         "value": "Aykut Kocaman"
       },
       {
-        "value": "Serkan Aykut"
+        "value": "Serkan Aykut",
+        "aliases": [
+          "Aykut"
+        ]
       },
       {
         "value": "Burak Yılmaz"
@@ -4426,13 +5695,22 @@
         "value": "Feyyaz Ucar"
       },
       {
-        "value": "Umut Bulut"
+        "value": "Umut Bulut",
+        "aliases": [
+          "Bulut"
+        ]
       },
       {
-        "value": "Necati Ateş"
+        "value": "Necati Ateş",
+        "aliases": [
+          "Ates"
+        ]
       },
       {
-        "value": "Cenk İşler"
+        "value": "Cenk İşler",
+        "aliases": [
+          "Isler"
+        ]
       }
     ],
     "status": "retired"
@@ -4448,34 +5726,61 @@
     "note": "Imported from ilk10-research/questions/club-legends/gs-15y-topscorers.md",
     "answers": [
       {
-        "value": "Mauro Icardi"
+        "value": "Mauro Icardi",
+        "aliases": [
+          "Icardi"
+        ]
       },
       {
         "value": "Burak Yılmaz"
       },
       {
-        "value": "Kerem Aktürkoğlu"
+        "value": "Kerem Aktürkoğlu",
+        "aliases": [
+          "Akturkoglu"
+        ]
       },
       {
-        "value": "Bafetimbi Gomis"
+        "value": "Bafétimbi Gomis",
+        "aliases": [
+          "Gomis"
+        ]
       },
       {
-        "value": "Victor Osimhen"
+        "value": "Victor Osimhen",
+        "aliases": [
+          "Osimhen"
+        ]
       },
       {
-        "value": "Wesley Sneijder"
+        "value": "Wesley Sneijder",
+        "aliases": [
+          "Sneijder"
+        ]
       },
       {
-        "value": "Mbaye Diagne"
+        "value": "Mbaye Diagne",
+        "aliases": [
+          "Diagne"
+        ]
       },
       {
-        "value": "Umut Bulut"
+        "value": "Umut Bulut",
+        "aliases": [
+          "Bulut"
+        ]
       },
       {
-        "value": "Dries Mertens"
+        "value": "Dries Mertens",
+        "aliases": [
+          "Mertens"
+        ]
       },
       {
-        "value": "Didier Drogba"
+        "value": "Didier Drogba",
+        "aliases": [
+          "Drogba"
+        ]
       }
     ],
     "status": "live"
@@ -4877,34 +6182,61 @@
     "note": "Imported from ilk10-research/questions/era-windows/assists-5y.md Snapshot: April 2026.",
     "answers": [
       {
-        "value": "Edin Višća"
+        "value": "Edin Višća",
+        "aliases": [
+          "Visca"
+        ]
       },
       {
-        "value": "Alexandru Maxim"
+        "value": "Alexandru Maxim",
+        "aliases": [
+          "Maxim"
+        ]
       },
       {
-        "value": "Max Gradel"
+        "value": "Max Gradel",
+        "aliases": [
+          "Gradel"
+        ]
       },
       {
-        "value": "Haris Hajradinovic"
+        "value": "Haris Hajradinovic",
+        "aliases": [
+          "Hajradinovic"
+        ]
       },
       {
         "value": "Guilherme"
       },
       {
-        "value": "Kerem Aktürkoğlu"
+        "value": "Kerem Aktürkoğlu",
+        "aliases": [
+          "Akturkoglu"
+        ]
       },
       {
-        "value": "Dries Mertens"
+        "value": "Dries Mertens",
+        "aliases": [
+          "Mertens"
+        ]
       },
       {
-        "value": "Miguel Cardoso"
+        "value": "Miguel Cardoso",
+        "aliases": [
+          "Cardoso"
+        ]
       },
       {
-        "value": "Aykut Akgün"
+        "value": "Aykut Akgün",
+        "aliases": [
+          "Akgun"
+        ]
       },
       {
-        "value": "Rachid Ghezzal"
+        "value": "Rachid Ghezzal",
+        "aliases": [
+          "Ghezzal"
+        ]
       }
     ],
     "status": "live"
@@ -4919,34 +6251,61 @@
     "note": "Imported from ilk10-research/questions/era-windows/clean-sheets-15y.md Snapshot: April 2026.",
     "answers": [
       {
-        "value": "Fernando Muslera"
+        "value": "Fernando Muslera",
+        "aliases": [
+          "Muslera"
+        ]
       },
       {
         "value": "Volkan Demirel"
       },
       {
-        "value": "Volkan Babacan"
+        "value": "Volkan Babacan",
+        "aliases": [
+          "Babacan"
+        ]
       },
       {
-        "value": "Uğurcan Çakır"
+        "value": "Uğurcan Çakır",
+        "aliases": [
+          "Cakir"
+        ]
       },
       {
-        "value": "Erkan Taşkıran"
+        "value": "Erkan Taşkıran",
+        "aliases": [
+          "Taskiran"
+        ]
       },
       {
-        "value": "Žydrunas Karčemarskas"
+        "value": "Žydrunas Karčemarskas",
+        "aliases": [
+          "Karcemarskas"
+        ]
       },
       {
-        "value": "Onur Kıvrak"
+        "value": "Onur Kıvrak",
+        "aliases": [
+          "Kivrak"
+        ]
       },
       {
-        "value": "Serkan Kırıntılı"
+        "value": "Serkan Kırıntılı",
+        "aliases": [
+          "Kirintili"
+        ]
       },
       {
-        "value": "Altay Bayındır"
+        "value": "Altay Bayındır",
+        "aliases": [
+          "Bayindir"
+        ]
       },
       {
-        "value": "Cenk Güvenç"
+        "value": "Cenk Güvenç",
+        "aliases": [
+          "Guvenc"
+        ]
       }
     ],
     "status": "live"
@@ -4964,31 +6323,55 @@
         "value": "Volkan Demirel"
       },
       {
-        "value": "Fernando Muslera"
+        "value": "Fernando Muslera",
+        "aliases": [
+          "Muslera"
+        ]
       },
       {
-        "value": "Ömer Catkıç"
+        "value": "Ömer Çatkıç",
+        "aliases": [
+          "Catkic"
+        ]
       },
       {
-        "value": "Serkan Kırıntılı"
+        "value": "Serkan Kırıntılı",
+        "aliases": [
+          "Kirintili"
+        ]
       },
       {
-        "value": "Volkan Babacan"
+        "value": "Volkan Babacan",
+        "aliases": [
+          "Babacan"
+        ]
       },
       {
         "value": "Ognjen Petković"
       },
       {
-        "value": "Uğurcan Çakır"
+        "value": "Uğurcan Çakır",
+        "aliases": [
+          "Cakir"
+        ]
       },
       {
-        "value": "Žydrunas Karčemarskas"
+        "value": "Žydrunas Karčemarskas",
+        "aliases": [
+          "Karcemarskas"
+        ]
       },
       {
-        "value": "Erkan Taşkıran"
+        "value": "Erkan Taşkıran",
+        "aliases": [
+          "Taskiran"
+        ]
       },
       {
-        "value": "Rüştü Reçber"
+        "value": "Rüştü Reçber",
+        "aliases": [
+          "Recber"
+        ]
       }
     ],
     "status": "live"
@@ -5003,34 +6386,64 @@
     "note": "Imported from ilk10-research/questions/era-windows/clean-sheets-5y.md Snapshot: April 2026.",
     "answers": [
       {
-        "value": "Uğurcan Çakır"
+        "value": "Uğurcan Çakır",
+        "aliases": [
+          "Cakir"
+        ]
       },
       {
-        "value": "Fernando Muslera"
+        "value": "Fernando Muslera",
+        "aliases": [
+          "Muslera"
+        ]
       },
       {
-        "value": "Erkan Taşkıran"
+        "value": "Erkan Taşkıran",
+        "aliases": [
+          "Taskiran"
+        ]
       },
       {
-        "value": "Volkan Babacan"
+        "value": "Volkan Babacan",
+        "aliases": [
+          "Babacan"
+        ]
       },
       {
-        "value": "Altay Bayındır"
+        "value": "Altay Bayındır",
+        "aliases": [
+          "Bayindir"
+        ]
       },
       {
-        "value": "Okan Koçuk"
+        "value": "Okan Koçuk",
+        "aliases": [
+          "Kocuk"
+        ]
       },
       {
-        "value": "Cenk Güvenç"
+        "value": "Cenk Güvenç",
+        "aliases": [
+          "Guvenc"
+        ]
       },
       {
-        "value": "Andreas Gianniotis"
+        "value": "Andreas Gianniotis",
+        "aliases": [
+          "Gianniotis"
+        ]
       },
       {
-        "value": "Mateusz Lis"
+        "value": "Mateusz Lis",
+        "aliases": [
+          "Lis"
+        ]
       },
       {
-        "value": "Erce Kardeşler"
+        "value": "Erce Kardeşler",
+        "aliases": [
+          "Kardesler"
+        ]
       }
     ],
     "status": "live"
@@ -5046,34 +6459,64 @@
     "note": "Imported from ilk10-research/questions/era-windows/topscorers-5y.md",
     "answers": [
       {
-        "value": "Mauro Icardi"
+        "value": "Mauro Icardi",
+        "aliases": [
+          "Icardi"
+        ]
       },
       {
-        "value": "Mame Thiam"
+        "value": "Mame Thiam",
+        "aliases": [
+          "Thiam"
+        ]
       },
       {
-        "value": "Michy Batshuayi"
+        "value": "Michy Batshuayi",
+        "aliases": [
+          "Batshuayi"
+        ]
       },
       {
-        "value": "Krzysztof Piątek"
+        "value": "Krzysztof Piątek",
+        "aliases": [
+          "Piatek"
+        ]
       },
       {
-        "value": "Victor Osimhen"
+        "value": "Victor Osimhen",
+        "aliases": [
+          "Osimhen"
+        ]
       },
       {
-        "value": "Paul Onuachu"
+        "value": "Paul Onuachu",
+        "aliases": [
+          "Onuachu"
+        ]
       },
       {
-        "value": "Edin Džeko"
+        "value": "Edin Džeko",
+        "aliases": [
+          "Dzeko"
+        ]
       },
       {
-        "value": "Kerem Aktürkoğlu"
+        "value": "Kerem Aktürkoğlu",
+        "aliases": [
+          "Akturkoglu"
+        ]
       },
       {
-        "value": "Ali Sowe"
+        "value": "Ali Sowe",
+        "aliases": [
+          "Sowe"
+        ]
       },
       {
-        "value": "Rey Manaj"
+        "value": "Rey Manaj",
+        "aliases": [
+          "Manaj"
+        ]
       }
     ],
     "status": "live"
@@ -5098,22 +6541,37 @@
         "value": "Bülent Korkmaz"
       },
       {
-        "value": "Hasan Sas"
+        "value": "Hasan Sas",
+        "aliases": [
+          "Sas"
+        ]
       },
       {
-        "value": "Fernando Muslera"
+        "value": "Fernando Muslera",
+        "aliases": [
+          "Muslera"
+        ]
       },
       {
-        "value": "Hakan Şükür"
+        "value": "Hakan Şükür",
+        "aliases": [
+          "Sukur"
+        ]
       },
       {
-        "value": "Hakan Ünsal"
+        "value": "Hakan Ünsal",
+        "aliases": [
+          "Unsal"
+        ]
       },
       {
         "value": "Suat Kaya"
       },
       {
-        "value": "Ümit Davala"
+        "value": "Ümit Davala",
+        "aliases": [
+          "Davala"
+        ]
       },
       {
         "value": "Selçuk İnan"
@@ -5132,34 +6590,58 @@
     "note": "Draft only. Source notes say this is a bad exact-10 İlk10 category because the cutoff is not unique.",
     "answers": [
       {
-        "value": "Ricardo Quaresma"
+        "value": "Ricardo Quaresma",
+        "aliases": [
+          "Quaresma"
+        ]
       },
       {
         "value": "Alex Souza"
       },
       {
-        "value": "Wesley Sneijder"
+        "value": "Wesley Sneijder",
+        "aliases": [
+          "Sneijder"
+        ]
       },
       {
-        "value": "Nordin Amrabat"
+        "value": "Nordin Amrabat",
+        "aliases": [
+          "Amrabat"
+        ]
       },
       {
         "value": "Selçuk İnan"
       },
       {
-        "value": "Didier Drogba"
+        "value": "Didier Drogba",
+        "aliases": [
+          "Drogba"
+        ]
       },
       {
-        "value": "Hamit Altintop"
+        "value": "Hamit Altintop",
+        "aliases": [
+          "Altintop"
+        ]
       },
       {
-        "value": "Aurélien Chedjou"
+        "value": "Aurélien Chedjou",
+        "aliases": [
+          "Chedjou"
+        ]
       },
       {
-        "value": "Emmanuel Eboue"
+        "value": "Emmanuel Eboue",
+        "aliases": [
+          "Eboue"
+        ]
       },
       {
-        "value": "Hakan Ünsal"
+        "value": "Hakan Ünsal",
+        "aliases": [
+          "Unsal"
+        ]
       }
     ],
     "status": "draft"
@@ -5180,10 +6662,16 @@
         "value": "AKIN"
       },
       {
-        "value": "Hugo Rodallega"
+        "value": "Hugo Rodallega",
+        "aliases": [
+          "Rodallega"
+        ]
       },
       {
-        "value": "Zafer Biryol"
+        "value": "Zafer Biryol",
+        "aliases": [
+          "Biryol"
+        ]
       },
       {
         "value": "DA COSTA"
@@ -5192,10 +6680,16 @@
         "value": "KARAN"
       },
       {
-        "value": "Milan Baroš"
+        "value": "Milan Baroš",
+        "aliases": [
+          "Baros"
+        ]
       },
       {
-        "value": "Mauro Icardi"
+        "value": "Mauro Icardi",
+        "aliases": [
+          "Icardi"
+        ]
       },
       {
         "value": "YILMAZ"
@@ -5264,22 +6758,34 @@
         "value": "Alex de Souza"
       },
       {
-        "value": "Emmanuel Adebayor"
+        "value": "Emmanuel Adebayor",
+        "aliases": [
+          "Adebayor"
+        ]
       },
       {
         "value": "Mert Nobre"
       },
       {
-        "value": "Filip Holosko"
+        "value": "Filip Holosko",
+        "aliases": [
+          "Holosko"
+        ]
       },
       {
         "value": "AKYUZ"
       },
       {
-        "value": "Pierre Webó"
+        "value": "Pierre Webó",
+        "aliases": [
+          "Webo"
+        ]
       },
       {
-        "value": "Taner Gülleri"
+        "value": "Taner Gülleri",
+        "aliases": [
+          "Gulleri"
+        ]
       },
       {
         "value": "BULUT"
@@ -5306,10 +6812,16 @@
         "value": "Mert Nobre"
       },
       {
-        "value": "Zafer Biryol"
+        "value": "Zafer Biryol",
+        "aliases": [
+          "Biryol"
+        ]
       },
       {
-        "value": "Edin Višća"
+        "value": "Edin Višća",
+        "aliases": [
+          "Visca"
+        ]
       },
       {
         "value": "Arda Turan"
@@ -5398,7 +6910,10 @@
         "value": "Aykut Kocaman"
       },
       {
-        "value": "Hakan Şükür"
+        "value": "Hakan Şükür",
+        "aliases": [
+          "Sukur"
+        ]
       },
       {
         "value": "Ertan Adatepe",
@@ -5441,7 +6956,8 @@
           "Selçuk Yula",
           "Okan Yılmaz",
           "Alex de Souza",
-          "Burak Yılmaz"
+          "Burak Yılmaz",
+          "Yilmaz"
         ]
       },
       {
@@ -5453,6 +6969,74 @@
           "Okan Yılmaz",
           "Alex de Souza",
           "Burak Yılmaz"
+        ]
+      }
+    ],
+    "status": "draft"
+  },
+  {
+    "id": "verified-season-records-single-season-goals",
+    "shortLabel": "Bir Sezonda En Çok Gol Atanlar",
+    "prompt": "Süper Lig'de Bir Sezonda En Çok Gol Atan Futbolcular (En İyi Sezonları)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_S%C3%BCper_Lig_top_scorers",
+    "note": "Draft. Each player's best goalscoring season from the Wikipedia Süper Lig top scorers table (checked 2026-10-11). Cutoff is clean at 29 goals; Feyyaz Uçar and Alex follow at 28.",
+    "answers": [
+      {
+        "value": "Tanju Çolak",
+        "scoreLabel": "39 gol (1987-88)"
+      },
+      {
+        "value": "Metin Oktay",
+        "scoreLabel": "38 gol (1962-63)"
+      },
+      {
+        "value": "Hakan Şükür",
+        "scoreLabel": "38 gol (1996-97)",
+        "aliases": [
+          "Sukur"
+        ]
+      },
+      {
+        "value": "Burak Yılmaz",
+        "scoreLabel": "33 gol (2011-12)"
+      },
+      {
+        "value": "Fatih Tekke",
+        "scoreLabel": "31 gol (2004-05)"
+      },
+      {
+        "value": "Serkan Aykut",
+        "scoreLabel": "30 gol (1999-2000)",
+        "aliases": [
+          "Aykut"
+        ]
+      },
+      {
+        "value": "Mbaye Diagne",
+        "scoreLabel": "30 gol (2018-19)",
+        "aliases": [
+          "Diagne"
+        ]
+      },
+      {
+        "value": "Aykut Kocaman",
+        "scoreLabel": "29 gol (1988-89)"
+      },
+      {
+        "value": "Bafétimbi Gomis",
+        "scoreLabel": "29 gol (2017-18)",
+        "aliases": [
+          "Gomis"
+        ]
+      },
+      {
+        "value": "Enner Valencia",
+        "scoreLabel": "29 gol (2022-23)",
+        "aliases": [
+          "Valencia"
         ]
       }
     ],
@@ -5557,13 +7141,22 @@
         "value": "Volkan Demirel"
       },
       {
-        "value": "Necip Uysal"
+        "value": "Necip Uysal",
+        "aliases": [
+          "Uysal"
+        ]
       },
       {
-        "value": "Sabri Sarıoğlu"
+        "value": "Sabri Sarıoğlu",
+        "aliases": [
+          "Sarioglu"
+        ]
       },
       {
-        "value": "Fernando Muslera"
+        "value": "Fernando Muslera",
+        "aliases": [
+          "Muslera"
+        ]
       },
       {
         "value": "İbrahim Üzülmez"
@@ -5575,16 +7168,28 @@
         ]
       },
       {
-        "value": "Efecan Karaca"
+        "value": "Efecan Karaca",
+        "aliases": [
+          "Karaca"
+        ]
       },
       {
-        "value": "Hakan Balta"
+        "value": "Hakan Balta",
+        "aliases": [
+          "Balta"
+        ]
       },
       {
-        "value": "Mahmut Tekdemir"
+        "value": "Mahmut Tekdemir",
+        "aliases": [
+          "Tekdemir"
+        ]
       },
       {
-        "value": "Oğuzhan Özyakup"
+        "value": "Oğuzhan Özyakup",
+        "aliases": [
+          "Ozyakup"
+        ]
       }
     ],
     "status": "live"
@@ -5599,13 +7204,22 @@
     "note": "Draft only. Current source is games.csv with manual cleanup and known surname false positives; needs player-level Transfermarkt/manual verification before going live.",
     "answers": [
       {
-        "value": "Gökhan Gönül"
+        "value": "Gökhan Gönül",
+        "aliases": [
+          "Gonul"
+        ]
       },
       {
-        "value": "Rüştü Reçber"
+        "value": "Rüştü Reçber",
+        "aliases": [
+          "Recber"
+        ]
       },
       {
-        "value": "Caner Erkin"
+        "value": "Caner Erkin",
+        "aliases": [
+          "Erkin"
+        ]
       },
       {
         "value": "Mehmet Aurélio"
@@ -5617,16 +7231,25 @@
         "value": "Josef de Souza"
       },
       {
-        "value": "Tümer Metin"
+        "value": "Tümer Metin",
+        "aliases": [
+          "Metin"
+        ]
       },
       {
-        "value": "Mert Günok"
+        "value": "Mert Günok",
+        "aliases": [
+          "Gunok"
+        ]
       },
       {
         "value": "Anderson Talisca"
       },
       {
-        "value": "Uğur Boral"
+        "value": "Uğur Boral",
+        "aliases": [
+          "Boral"
+        ]
       }
     ],
     "status": "draft"
@@ -5644,31 +7267,55 @@
         "value": "Ayhan Akman"
       },
       {
-        "value": "Ryan Babel"
+        "value": "Ryan Babel",
+        "aliases": [
+          "Babel"
+        ]
       },
       {
-        "value": "Gökhan Zan"
+        "value": "Gökhan Zan",
+        "aliases": [
+          "Zan"
+        ]
       },
       {
-        "value": "Emre Aşık"
+        "value": "Emre Aşık",
+        "aliases": [
+          "Asik"
+        ]
       },
       {
-        "value": "Caner Erkin"
+        "value": "Caner Erkin",
+        "aliases": [
+          "Erkin"
+        ]
       },
       {
         "value": "Okan Buruk"
       },
       {
-        "value": "Milot Rashica"
+        "value": "Milot Rashica",
+        "aliases": [
+          "Rashica"
+        ]
       },
       {
-        "value": "Leo Franco"
+        "value": "Leo Franco",
+        "aliases": [
+          "Franco"
+        ]
       },
       {
-        "value": "Michy Batshuayi"
+        "value": "Michy Batshuayi",
+        "aliases": [
+          "Batshuayi"
+        ]
       },
       {
-        "value": "Dany Nounkeu"
+        "value": "Dany Nounkeu",
+        "aliases": [
+          "Nounkeu"
+        ]
       }
     ],
     "status": "draft"
@@ -5686,31 +7333,52 @@
         "value": "Emre Belözoğlu"
       },
       {
-        "value": "Kerem Aktürkoğlu"
+        "value": "Kerem Aktürkoğlu",
+        "aliases": [
+          "Akturkoglu"
+        ]
       },
       {
-        "value": "Serdar Aziz"
+        "value": "Serdar Aziz",
+        "aliases": [
+          "Aziz"
+        ]
       },
       {
-        "value": "Caner Erkin"
+        "value": "Caner Erkin",
+        "aliases": [
+          "Erkin"
+        ]
       },
       {
         "value": "Stjepan Tomas"
       },
       {
-        "value": "Şener Özbayraklı"
+        "value": "Şener Özbayraklı",
+        "aliases": [
+          "Ozbayrakli"
+        ]
       },
       {
-        "value": "Haim Revivo"
+        "value": "Haim Revivo",
+        "aliases": [
+          "Revivo"
+        ]
       },
       {
         "value": "Fatih Akyel"
       },
       {
-        "value": "Tolga Ciğerci"
+        "value": "Tolga Ciğerci",
+        "aliases": [
+          "Cigerci"
+        ]
       },
       {
-        "value": "Colin Kazım-Richards"
+        "value": "Colin Kazım-Richards",
+        "aliases": [
+          "Kazim-rich."
+        ]
       }
     ],
     "status": "draft"
@@ -5731,16 +7399,28 @@
         "value": "Anderson Talisca"
       },
       {
-        "value": "Tümer Metin"
+        "value": "Tümer Metin",
+        "aliases": [
+          "Metin"
+        ]
       },
       {
-        "value": "Michy Batshuayi"
+        "value": "Michy Batshuayi",
+        "aliases": [
+          "Batshuayi"
+        ]
       },
       {
-        "value": "M'Baye Niang"
+        "value": "M'Baye Niang",
+        "aliases": [
+          "Niang"
+        ]
       },
       {
-        "value": "Gökhan Gönül"
+        "value": "Gökhan Gönül",
+        "aliases": [
+          "Gonul"
+        ]
       },
       {
         "value": "Mehmet Aurélio"
@@ -5749,10 +7429,16 @@
         "value": "Josef de Souza"
       },
       {
-        "value": "Caner Erkin"
+        "value": "Caner Erkin",
+        "aliases": [
+          "Erkin"
+        ]
       },
       {
-        "value": "Cengiz Ünder"
+        "value": "Cengiz Ünder",
+        "aliases": [
+          "Under"
+        ]
       }
     ],
     "status": "draft"
@@ -5768,10 +7454,16 @@
     "note": "Imported from ilk10-research/questions/national-team/turkey-most-caps.md",
     "answers": [
       {
-        "value": "Rüştü Reçber"
+        "value": "Rüştü Reçber",
+        "aliases": [
+          "Recber"
+        ]
       },
       {
-        "value": "Hakan Şükür"
+        "value": "Hakan Şükür",
+        "aliases": [
+          "Sukur"
+        ]
       },
       {
         "value": "Hakan Çalhanoğlu"
@@ -5792,10 +7484,16 @@
         "value": "Alpay Ozalan"
       },
       {
-        "value": "Hamit Altintop"
+        "value": "Hamit Altintop",
+        "aliases": [
+          "Altintop"
+        ]
       },
       {
-        "value": "Mehmet Topal"
+        "value": "Mehmet Topal",
+        "aliases": [
+          "Topal"
+        ]
       }
     ],
     "status": "live"
@@ -5811,7 +7509,10 @@
     "note": "Imported from ilk10-research/questions/national-team/turkey-top-scorers.md",
     "answers": [
       {
-        "value": "Hakan Şükür"
+        "value": "Hakan Şükür",
+        "aliases": [
+          "Sukur"
+        ]
       },
       {
         "value": "Burak Yılmaz"
@@ -5826,7 +7527,10 @@
         "value": "Lefter Küçükandonyadis"
       },
       {
-        "value": "Cenk Tosun"
+        "value": "Cenk Tosun",
+        "aliases": [
+          "Tosun"
+        ]
       },
       {
         "value": "Metin Oktay"
@@ -5835,7 +7539,10 @@
         "value": "Cemil Turan"
       },
       {
-        "value": "Nihat Kahveci"
+        "value": "Nihat Kahveci",
+        "aliases": [
+          "Kahveci"
+        ]
       },
       {
         "value": "Arda Turan"
@@ -5853,13 +7560,22 @@
     "note": "Cleaned token-style names from local autocomplete/research: TITA -> Tita, BAJIC -> Riad Bajic. Still based on starter-only 2000+ data. Snapshot: April 2026.",
     "answers": [
       {
-        "value": "Cenk İşler"
+        "value": "Cenk İşler",
+        "aliases": [
+          "Isler"
+        ]
       },
       {
-        "value": "Zafer Biryol"
+        "value": "Zafer Biryol",
+        "aliases": [
+          "Biryol"
+        ]
       },
       {
-        "value": "Zdravko Lazarov"
+        "value": "Zdravko Lazarov",
+        "aliases": [
+          "Lazarov"
+        ]
       },
       {
         "value": "Tita",
@@ -5874,7 +7590,10 @@
         "value": "Samuel Eto'o"
       },
       {
-        "value": "Adis Jahovic"
+        "value": "Adis Jahovic",
+        "aliases": [
+          "Jahovic"
+        ]
       },
       {
         "value": "Riad Bajic",
@@ -5887,7 +7606,10 @@
         "value": "Theofanis Gekas"
       },
       {
-        "value": "Hervé Tum"
+        "value": "Hervé Tum",
+        "aliases": [
+          "Tum"
+        ]
       }
     ],
     "status": "live"
@@ -5913,26 +7635,37 @@
       {
         "value": "Gökhan Töre",
         "aliases": [
-          "Fernandes"
+          "Fernandes",
+          "Tore"
         ]
       },
       {
         "value": "Serdar Kurtulus",
         "aliases": [
-          "Yalcin"
+          "Yalcin",
+          "Kurtulus"
         ]
       },
       {
-        "value": "Ersin Destanoğlu"
+        "value": "Ersin Destanoğlu",
+        "aliases": [
+          "Destanoglu"
+        ]
       },
       {
-        "value": "Mert Günok"
+        "value": "Mert Günok",
+        "aliases": [
+          "Gunok"
+        ]
       },
       {
         "value": "İlkay Üçan"
       },
       {
-        "value": "Cenk Tosun"
+        "value": "Cenk Tosun",
+        "aliases": [
+          "Tosun"
+        ]
       },
       {
         "value": "Ismail Toraman"
@@ -5953,7 +7686,10 @@
         "value": "Cetin"
       },
       {
-        "value": "Gökhan Gönül"
+        "value": "Gökhan Gönül",
+        "aliases": [
+          "Gonul"
+        ]
       },
       {
         "value": "Volkan Demirel"
@@ -5962,19 +7698,29 @@
         "value": "Emre Belözoğlu"
       },
       {
-        "value": "Caner Erkin"
+        "value": "Caner Erkin",
+        "aliases": [
+          "Erkin"
+        ]
       },
       {
         "value": "Hasan Ali Kaldırım",
         "aliases": [
-          "Tufan"
+          "Tufan",
+          "Kaldirim"
         ]
       },
       {
-        "value": "Altay Bayındır"
+        "value": "Altay Bayındır",
+        "aliases": [
+          "Bayindir"
+        ]
       },
       {
-        "value": "Ferdi Kadıoğlu"
+        "value": "Ferdi Kadıoğlu",
+        "aliases": [
+          "Kadioglu"
+        ]
       },
       {
         "value": "Ozan Tufan",
@@ -5983,7 +7729,10 @@
         ]
       },
       {
-        "value": "İrfan Can Kahveci"
+        "value": "İrfan Can Kahveci",
+        "aliases": [
+          "Kahveci"
+        ]
       }
     ],
     "status": "draft"
@@ -6019,7 +7768,10 @@
         "value": "Arda Turan"
       },
       {
-        "value": "Ahmet Çalık"
+        "value": "Ahmet Çalık",
+        "aliases": [
+          "Calik"
+        ]
       },
       {
         "value": "Serdar Balta"
@@ -6046,7 +7798,10 @@
       },
       {
         "value": "Alexandru Maxim",
-        "scoreLabel": "29"
+        "scoreLabel": "29",
+        "aliases": [
+          "Maxim"
+        ]
       },
       {
         "value": "Alex",
@@ -6057,15 +7812,24 @@
       },
       {
         "value": "Roman Kratochvíl",
-        "scoreLabel": "24"
+        "scoreLabel": "24",
+        "aliases": [
+          "Kratochvil"
+        ]
       },
       {
         "value": "Necati Ateş",
-        "scoreLabel": "22"
+        "scoreLabel": "22",
+        "aliases": [
+          "Ates"
+        ]
       },
       {
         "value": "Mbaye Diagne",
-        "scoreLabel": "21"
+        "scoreLabel": "21",
+        "aliases": [
+          "Diagne"
+        ]
       },
       {
         "value": "Emre Belözoğlu",
@@ -6073,15 +7837,24 @@
       },
       {
         "value": "Zdravko Lazarov",
-        "scoreLabel": "19"
+        "scoreLabel": "19",
+        "aliases": [
+          "Lazarov"
+        ]
       },
       {
         "value": "Cenk İşler",
-        "scoreLabel": "19"
+        "scoreLabel": "19",
+        "aliases": [
+          "Isler"
+        ]
       },
       {
         "value": "Cenk Tosun",
-        "scoreLabel": "19"
+        "scoreLabel": "19",
+        "aliases": [
+          "Tosun"
+        ]
       }
     ],
     "status": "live"
@@ -6097,34 +7870,64 @@
     "note": "Draft only. Source notes say the cutoff is a five-way tie and the 2025-26 component was ongoing, so this is not a clean exact-10 game.",
     "answers": [
       {
-        "value": "Alexandru Maxim"
+        "value": "Alexandru Maxim",
+        "aliases": [
+          "Maxim"
+        ]
       },
       {
-        "value": "Mauro Icardi"
+        "value": "Mauro Icardi",
+        "aliases": [
+          "Icardi"
+        ]
       },
       {
-        "value": "Enner Valencia"
+        "value": "Enner Valencia",
+        "aliases": [
+          "Valencia"
+        ]
       },
       {
-        "value": "Michy Batshuayi"
+        "value": "Michy Batshuayi",
+        "aliases": [
+          "Batshuayi"
+        ]
       },
       {
-        "value": "Haris Hajradinovic"
+        "value": "Haris Hajradinovic",
+        "aliases": [
+          "Hajradinovic"
+        ]
       },
       {
-        "value": "Mame Thiam"
+        "value": "Mame Thiam",
+        "aliases": [
+          "Thiam"
+        ]
       },
       {
-        "value": "Anastasios Bakasetas"
+        "value": "Anastasios Bakasetas",
+        "aliases": [
+          "Bakasetas"
+        ]
       },
       {
-        "value": "Dušan Tadić"
+        "value": "Dušan Tadić",
+        "aliases": [
+          "Tadic"
+        ]
       },
       {
-        "value": "Florent Hadergjonaj"
+        "value": "Florent Hadergjonaj",
+        "aliases": [
+          "Hadergjonaj"
+        ]
       },
       {
-        "value": "Krzysztof Piątek"
+        "value": "Krzysztof Piątek",
+        "aliases": [
+          "Piatek"
+        ]
       }
     ],
     "status": "draft"
@@ -6151,10 +7954,16 @@
         "value": "Julio Batalla"
       },
       {
-        "value": "Pierre van Hooijdonk"
+        "value": "Pierre van Hooijdonk",
+        "aliases": [
+          "Van Hooijd."
+        ]
       },
       {
-        "value": "Fabio Borini"
+        "value": "Fabio Borini",
+        "aliases": [
+          "Borini"
+        ]
       },
       {
         "value": "34G + 13A = 47"
@@ -6182,7 +7991,10 @@
     "note": "Imported from ilk10-research/questions/season-records/most-own-goals.md",
     "answers": [
       {
-        "value": "Gökmen Baris"
+        "value": "Gökmen Baris",
+        "aliases": [
+          "Baris"
+        ]
       },
       {
         "value": "Abdel-Zaher El Saqqa"
@@ -6191,25 +8003,46 @@
         "value": "Cihat Arslan"
       },
       {
-        "value": "Berkan Emir"
+        "value": "Berkan Emir",
+        "aliases": [
+          "Emir"
+        ]
       },
       {
-        "value": "Ercan Koloğlu"
+        "value": "Ercan Koloğlu",
+        "aliases": [
+          "Kologlu"
+        ]
       },
       {
-        "value": "Burak Özsaraç"
+        "value": "Burak Özsaraç",
+        "aliases": [
+          "Ozsarac"
+        ]
       },
       {
-        "value": "Kenan Arayıcı"
+        "value": "Kenan Arayıcı",
+        "aliases": [
+          "Arayici"
+        ]
       },
       {
-        "value": "Emre Aşık"
+        "value": "Emre Aşık",
+        "aliases": [
+          "Asik"
+        ]
       },
       {
-        "value": "Serdar Aziz"
+        "value": "Serdar Aziz",
+        "aliases": [
+          "Aziz"
+        ]
       },
       {
-        "value": "Steven Caulker"
+        "value": "Steven Caulker",
+        "aliases": [
+          "Caulker"
+        ]
       }
     ],
     "status": "retired"
@@ -6225,34 +8058,64 @@
     "note": "Imported from ilk10-research/questions/seasonal/np-topscorers-2021-22.md",
     "answers": [
       {
-        "value": "Ayoub El Kaabi"
+        "value": "Ayoub El Kaabi",
+        "aliases": [
+          "El Kaabi"
+        ]
       },
       {
-        "value": "Umut Bozok"
+        "value": "Umut Bozok",
+        "aliases": [
+          "Bozok"
+        ]
       },
       {
-        "value": "Andreas Cornelius"
+        "value": "Andreas Cornelius",
+        "aliases": [
+          "Cornelius"
+        ]
       },
       {
-        "value": "Mario Balotelli"
+        "value": "Mario Balotelli",
+        "aliases": [
+          "Balotelli"
+        ]
       },
       {
-        "value": "Aleksandar Pesic"
+        "value": "Aleksandar Pesic",
+        "aliases": [
+          "Pesic"
+        ]
       },
       {
-        "value": "Jackson Muleka"
+        "value": "Jackson Muleka",
+        "aliases": [
+          "Muleka"
+        ]
       },
       {
-        "value": "Stefano Okaka"
+        "value": "Stefano Okaka",
+        "aliases": [
+          "Okaka"
+        ]
       },
       {
-        "value": "Joel Pohjanpalo"
+        "value": "Joel Pohjanpalo",
+        "aliases": [
+          "Pohjanpalo"
+        ]
       },
       {
-        "value": "Serdar Dursun"
+        "value": "Serdar Dursun",
+        "aliases": [
+          "Dursun"
+        ]
       },
       {
-        "value": "Haji Wright"
+        "value": "Haji Wright",
+        "aliases": [
+          "Wright"
+        ]
       }
     ],
     "status": "live"
@@ -6268,34 +8131,61 @@
     "note": "Imported from ilk10-research/questions/seasonal/np-topscorers-2022-23.md",
     "answers": [
       {
-        "value": "Mbaye Diagne"
+        "value": "Mbaye Diagne",
+        "aliases": [
+          "Diagne"
+        ]
       },
       {
-        "value": "Enner Valencia"
+        "value": "Enner Valencia",
+        "aliases": [
+          "Valencia"
+        ]
       },
       {
-        "value": "Mauro Icardi"
+        "value": "Mauro Icardi",
+        "aliases": [
+          "Icardi"
+        ]
       },
       {
-        "value": "Fabio Borini"
+        "value": "Fabio Borini",
+        "aliases": [
+          "Borini"
+        ]
       },
       {
-        "value": "Haji Wright"
+        "value": "Haji Wright",
+        "aliases": [
+          "Wright"
+        ]
       },
       {
-        "value": "Umut Nayir"
+        "value": "Umut Nayir",
+        "aliases": [
+          "Nayir"
+        ]
       },
       {
-        "value": "Cenk Tosun"
+        "value": "Cenk Tosun",
+        "aliases": [
+          "Tosun"
+        ]
       },
       {
-        "value": "Ali Sowe"
+        "value": "Ali Sowe",
+        "aliases": [
+          "Sowe"
+        ]
       },
       {
         "value": "Rijad Bajić"
       },
       {
-        "value": "Vincent Aboubakar"
+        "value": "Vincent Aboubakar",
+        "aliases": [
+          "Aboubakar"
+        ]
       }
     ],
     "status": "live"
@@ -6311,34 +8201,64 @@
     "note": "Imported from ilk10-research/questions/seasonal/np-topscorers-2023-24.md Retired: same 10 names as verified-seasonal-topscorers-2023-24; served as a duplicate quiz.",
     "answers": [
       {
-        "value": "Mauro Icardi"
+        "value": "Mauro Icardi",
+        "aliases": [
+          "Icardi"
+        ]
       },
       {
-        "value": "Edin Džeko"
+        "value": "Edin Džeko",
+        "aliases": [
+          "Dzeko"
+        ]
       },
       {
-        "value": "Paul Onuachu"
+        "value": "Paul Onuachu",
+        "aliases": [
+          "Onuachu"
+        ]
       },
       {
-        "value": "Rey Manaj"
+        "value": "Rey Manaj",
+        "aliases": [
+          "Manaj"
+        ]
       },
       {
-        "value": "Nuno Da Costa"
+        "value": "Nuno Da Costa",
+        "aliases": [
+          "Da Costa"
+        ]
       },
       {
-        "value": "Krzysztof Piątek"
+        "value": "Krzysztof Piątek",
+        "aliases": [
+          "Piatek"
+        ]
       },
       {
-        "value": "Denis Drăguș"
+        "value": "Denis Drăguș",
+        "aliases": [
+          "Dragus"
+        ]
       },
       {
-        "value": "Mame Thiam"
+        "value": "Mame Thiam",
+        "aliases": [
+          "Thiam"
+        ]
       },
       {
-        "value": "Adam Buksa"
+        "value": "Adam Buksa",
+        "aliases": [
+          "Buksa"
+        ]
       },
       {
-        "value": "Aytaç Kara"
+        "value": "Aytaç Kara",
+        "aliases": [
+          "Kara"
+        ]
       }
     ],
     "status": "retired"
@@ -6354,34 +8274,61 @@
     "note": "Imported from ilk10-research/questions/seasonal/np-topscorers-2024-25.md",
     "answers": [
       {
-        "value": "Victor Osimhen"
+        "value": "Victor Osimhen",
+        "aliases": [
+          "Osimhen"
+        ]
       },
       {
-        "value": "Youssef En-Nesyri"
+        "value": "Youssef En-Nesyri",
+        "aliases": [
+          "En-nesyri"
+        ]
       },
       {
-        "value": "Ali Sowe"
+        "value": "Ali Sowe",
+        "aliases": [
+          "Sowe"
+        ]
       },
       {
-        "value": "Krzysztof Piątek"
+        "value": "Krzysztof Piątek",
+        "aliases": [
+          "Piatek"
+        ]
       },
       {
-        "value": "Simon Banza"
+        "value": "Simon Banza",
+        "aliases": [
+          "Banza"
+        ]
       },
       {
-        "value": "Mame Thiam"
+        "value": "Mame Thiam",
+        "aliases": [
+          "Thiam"
+        ]
       },
       {
-        "value": "Nuno Da Costa"
+        "value": "Nuno Da Costa",
+        "aliases": [
+          "Da Costa"
+        ]
       },
       {
         "value": "Rafa Silva"
       },
       {
-        "value": "Barış Alper Yılmaz"
+        "value": "Barış Alper Yılmaz",
+        "aliases": [
+          "Yilmaz"
+        ]
       },
       {
-        "value": "Edin Džeko"
+        "value": "Edin Džeko",
+        "aliases": [
+          "Dzeko"
+        ]
       }
     ],
     "status": "live"
@@ -6397,34 +8344,61 @@
     "note": "Imported from ilk10-research/questions/seasonal/np-topscorers-2025-26.md Retired: duplicate of the verified 2025-26 top scorers question; non-penalty split not independently verifiable from the available scrapes.",
     "answers": [
       {
-        "value": "Paul Onuachu"
+        "value": "Paul Onuachu",
+        "aliases": [
+          "Onuachu"
+        ]
       },
       {
-        "value": "Eldor Shomurodov"
+        "value": "Eldor Shomurodov",
+        "aliases": [
+          "Shomurodov"
+        ]
       },
       {
-        "value": "Mauro Icardi"
+        "value": "Mauro Icardi",
+        "aliases": [
+          "Icardi"
+        ]
       },
       {
-        "value": "Mohamed Bayo"
+        "value": "Mohamed Bayo",
+        "aliases": [
+          "Bayo"
+        ]
       },
       {
-        "value": "Felipe Augusto"
+        "value": "Felipe Augusto",
+        "aliases": [
+          "Felipe Aug."
+        ]
       },
       {
         "value": "Talisca"
       },
       {
-        "value": "Victor Osimhen"
+        "value": "Victor Osimhen",
+        "aliases": [
+          "Osimhen"
+        ]
       },
       {
-        "value": "Marco Asensio"
+        "value": "Marco Asensio",
+        "aliases": [
+          "Asensio"
+        ]
       },
       {
-        "value": "Dorgeles Nene"
+        "value": "Dorgeles Nene",
+        "aliases": [
+          "Nene"
+        ]
       },
       {
-        "value": "Ernest Muci"
+        "value": "Ernest Muci",
+        "aliases": [
+          "Muci"
+        ]
       }
     ],
     "status": "retired"
@@ -6440,34 +8414,64 @@
     "note": "Imported from ilk10-research/questions/seasonal/topscorers-2021-22.md",
     "answers": [
       {
-        "value": "Umut Bozok"
+        "value": "Umut Bozok",
+        "aliases": [
+          "Bozok"
+        ]
       },
       {
-        "value": "Mario Balotelli"
+        "value": "Mario Balotelli",
+        "aliases": [
+          "Balotelli"
+        ]
       },
       {
-        "value": "Ayoub El Kaabi"
+        "value": "Ayoub El Kaabi",
+        "aliases": [
+          "El Kaabi"
+        ]
       },
       {
-        "value": "Joel Pohjanpalo"
+        "value": "Joel Pohjanpalo",
+        "aliases": [
+          "Pohjanpalo"
+        ]
       },
       {
-        "value": "Andreas Cornelius"
+        "value": "Andreas Cornelius",
+        "aliases": [
+          "Cornelius"
+        ]
       },
       {
-        "value": "Serdar Dursun"
+        "value": "Serdar Dursun",
+        "aliases": [
+          "Dursun"
+        ]
       },
       {
-        "value": "Alexandru Maxim"
+        "value": "Alexandru Maxim",
+        "aliases": [
+          "Maxim"
+        ]
       },
       {
-        "value": "Michy Batshuayi"
+        "value": "Michy Batshuayi",
+        "aliases": [
+          "Batshuayi"
+        ]
       },
       {
-        "value": "Aleksandar Pesic"
+        "value": "Aleksandar Pesic",
+        "aliases": [
+          "Pesic"
+        ]
       },
       {
-        "value": "Haji Wright"
+        "value": "Haji Wright",
+        "aliases": [
+          "Wright"
+        ]
       }
     ],
     "status": "live"
@@ -6483,34 +8487,64 @@
     "note": "Imported from ilk10-research/questions/seasonal/topscorers-2022-23.md",
     "answers": [
       {
-        "value": "Enner Valencia"
+        "value": "Enner Valencia",
+        "aliases": [
+          "Valencia"
+        ]
       },
       {
-        "value": "Mbaye Diagne"
+        "value": "Mbaye Diagne",
+        "aliases": [
+          "Diagne"
+        ]
       },
       {
-        "value": "Mauro Icardi"
+        "value": "Mauro Icardi",
+        "aliases": [
+          "Icardi"
+        ]
       },
       {
-        "value": "Fabio Borini"
+        "value": "Fabio Borini",
+        "aliases": [
+          "Borini"
+        ]
       },
       {
-        "value": "Umut Nayir"
+        "value": "Umut Nayir",
+        "aliases": [
+          "Nayir"
+        ]
       },
       {
-        "value": "Cenk Tosun"
+        "value": "Cenk Tosun",
+        "aliases": [
+          "Tosun"
+        ]
       },
       {
-        "value": "Haji Wright"
+        "value": "Haji Wright",
+        "aliases": [
+          "Wright"
+        ]
       },
       {
-        "value": "Riad Bajic"
+        "value": "Riad Bajic",
+        "aliases": [
+          "Bajic"
+        ]
       },
       {
-        "value": "Vincent Aboubakar"
+        "value": "Vincent Aboubakar",
+        "aliases": [
+          "Aboubakar"
+        ]
       },
       {
-        "value": "Younès Belhanda"
+        "value": "Younès Belhanda",
+        "aliases": [
+          "Belhanda"
+        ]
       }
     ],
     "status": "live"
@@ -6526,34 +8560,64 @@
     "note": "Imported from ilk10-research/questions/seasonal/topscorers-2023-24.md",
     "answers": [
       {
-        "value": "Mauro Icardi"
+        "value": "Mauro Icardi",
+        "aliases": [
+          "Icardi"
+        ]
       },
       {
-        "value": "Edin Džeko"
+        "value": "Edin Džeko",
+        "aliases": [
+          "Dzeko"
+        ]
       },
       {
-        "value": "Rey Manaj"
+        "value": "Rey Manaj",
+        "aliases": [
+          "Manaj"
+        ]
       },
       {
-        "value": "Mame Thiam"
+        "value": "Mame Thiam",
+        "aliases": [
+          "Thiam"
+        ]
       },
       {
-        "value": "Krzysztof Piątek"
+        "value": "Krzysztof Piątek",
+        "aliases": [
+          "Piatek"
+        ]
       },
       {
-        "value": "Adam Buksa"
+        "value": "Adam Buksa",
+        "aliases": [
+          "Buksa"
+        ]
       },
       {
-        "value": "Paul Onuachu"
+        "value": "Paul Onuachu",
+        "aliases": [
+          "Onuachu"
+        ]
       },
       {
-        "value": "Nuno Da Costa"
+        "value": "Nuno Da Costa",
+        "aliases": [
+          "Da Costa"
+        ]
       },
       {
-        "value": "Aytaç Kara"
+        "value": "Aytaç Kara",
+        "aliases": [
+          "Kara"
+        ]
       },
       {
-        "value": "Denis Drăguș"
+        "value": "Denis Drăguș",
+        "aliases": [
+          "Dragus"
+        ]
       }
     ],
     "status": "live"
@@ -6569,34 +8633,61 @@
     "note": "Imported from ilk10-research/questions/seasonal/topscorers-2024-25.md",
     "answers": [
       {
-        "value": "Victor Osimhen"
+        "value": "Victor Osimhen",
+        "aliases": [
+          "Osimhen"
+        ]
       },
       {
-        "value": "Krzysztof Piątek"
+        "value": "Krzysztof Piątek",
+        "aliases": [
+          "Piatek"
+        ]
       },
       {
-        "value": "Youssef En-Nesyri"
+        "value": "Youssef En-Nesyri",
+        "aliases": [
+          "En-nesyri"
+        ]
       },
       {
-        "value": "Simon Banza"
+        "value": "Simon Banza",
+        "aliases": [
+          "Banza"
+        ]
       },
       {
-        "value": "Ali Sowe"
+        "value": "Ali Sowe",
+        "aliases": [
+          "Sowe"
+        ]
       },
       {
-        "value": "Ciro Immobile"
+        "value": "Ciro Immobile",
+        "aliases": [
+          "Immobile"
+        ]
       },
       {
-        "value": "Mame Thiam"
+        "value": "Mame Thiam",
+        "aliases": [
+          "Thiam"
+        ]
       },
       {
-        "value": "Edin Džeko"
+        "value": "Edin Džeko",
+        "aliases": [
+          "Dzeko"
+        ]
       },
       {
         "value": "Rômulo"
       },
       {
-        "value": "Nuno Da Costa"
+        "value": "Nuno Da Costa",
+        "aliases": [
+          "Da Costa"
+        ]
       }
     ],
     "status": "live"
@@ -6612,34 +8703,58 @@
     "note": "Verified against the final Transfermarkt 2025-26 scorer list (fetched 2026-10-11).",
     "answers": [
       {
-        "value": "Eldor Shomurodov"
+        "value": "Eldor Shomurodov",
+        "aliases": [
+          "Shomurodov"
+        ]
       },
       {
-        "value": "Paul Onuachu"
+        "value": "Paul Onuachu",
+        "aliases": [
+          "Onuachu"
+        ]
       },
       {
         "value": "Talisca"
       },
       {
-        "value": "Victor Osimhen"
+        "value": "Victor Osimhen",
+        "aliases": [
+          "Osimhen"
+        ]
       },
       {
-        "value": "Mohamed Bayo"
+        "value": "Mohamed Bayo",
+        "aliases": [
+          "Bayo"
+        ]
       },
       {
-        "value": "Mauro Icardi"
+        "value": "Mauro Icardi",
+        "aliases": [
+          "Icardi"
+        ]
       },
       {
-        "value": "Felipe Augusto"
+        "value": "Felipe Augusto",
+        "aliases": [
+          "Felipe Aug."
+        ]
       },
       {
-        "value": "Marco Asensio"
+        "value": "Marco Asensio",
+        "aliases": [
+          "Asensio"
+        ]
       },
       {
         "value": "Juan"
       },
       {
-        "value": "Ernest Muci"
+        "value": "Ernest Muci",
+        "aliases": [
+          "Muci"
+        ]
       }
     ],
     "status": "live"
@@ -6661,13 +8776,22 @@
         "value": "Gift Orban"
       },
       {
-        "value": "Victor Osimhen"
+        "value": "Victor Osimhen",
+        "aliases": [
+          "Osimhen"
+        ]
       },
       {
-        "value": "Vedat Muriqi"
+        "value": "Vedat Muriqi",
+        "aliases": [
+          "Muriqi"
+        ]
       },
       {
-        "value": "Eldor Shomurodov"
+        "value": "Eldor Shomurodov",
+        "aliases": [
+          "Shomurodov"
+        ]
       },
       {
         "value": "Dušan Vlahović"
@@ -6682,7 +8806,10 @@
         "value": "Jesús Ramírez"
       },
       {
-        "value": "Adrian Benedyczak"
+        "value": "Adrian Benedyczak",
+        "aliases": [
+          "Benedyczak"
+        ]
       }
     ],
     "status": "draft"
@@ -6701,16 +8828,25 @@
         "value": "Volkan Demirel"
       },
       {
-        "value": "Gökhan Gönül"
+        "value": "Gökhan Gönül",
+        "aliases": [
+          "Gonul"
+        ]
       },
       {
-        "value": "Diego Lugano"
+        "value": "Diego Lugano",
+        "aliases": [
+          "Lugano"
+        ]
       },
       {
         "value": "Mehmet Aurélio"
       },
       {
-        "value": "Önder Turacı"
+        "value": "Önder Turacı",
+        "aliases": [
+          "Turaci"
+        ]
       },
       {
         "value": "Selçuk Şahin"
@@ -6722,7 +8858,10 @@
         "value": "Tuncay Şanlı"
       },
       {
-        "value": "Mehmet Topuz"
+        "value": "Mehmet Topuz",
+        "aliases": [
+          "Topuz"
+        ]
       },
       {
         "value": "Emre Belözoğlu"
@@ -6740,27 +8879,41 @@
     "note": "Draft only. Current source is starter-only games.csv and the research notes say Transfermarkt teammate data was not fetched; existing answers include unresolved/misresolved tokens.",
     "answers": [
       {
-        "value": "Oğuzhan Özyakup"
+        "value": "Oğuzhan Özyakup",
+        "aliases": [
+          "Ozyakup"
+        ]
       },
       {
-        "value": "Domagoj Vida"
+        "value": "Domagoj Vida",
+        "aliases": [
+          "Vida"
+        ]
       },
       {
-        "value": "Gökhan Gönül"
+        "value": "Gökhan Gönül",
+        "aliases": [
+          "Gonul"
+        ]
       },
       {
         "value": "Duško Tošić",
         "aliases": [
-          "Sahan"
+          "Sahan",
+          "Tosic"
         ]
       },
       {
-        "value": "Ricardo Quaresma"
+        "value": "Ricardo Quaresma",
+        "aliases": [
+          "Quaresma"
+        ]
       },
       {
         "value": "Aziz Behich",
         "aliases": [
-          "Zengin"
+          "Zengin",
+          "Behich"
         ]
       },
       {
@@ -6792,31 +8945,52 @@
     "note": "Imported from ilk10-research/questions/teammate-of/teammates-quaresma.md",
     "answers": [
       {
-        "value": "Atiba Hutchinson"
+        "value": "Atiba Hutchinson",
+        "aliases": [
+          "Hutchinson"
+        ]
       },
       {
-        "value": "Oğuzhan Özyakup"
+        "value": "Oğuzhan Özyakup",
+        "aliases": [
+          "Ozyakup"
+        ]
       },
       {
         "value": "Adriano"
       },
       {
-        "value": "Gökhan Gönül"
+        "value": "Gökhan Gönül",
+        "aliases": [
+          "Gonul"
+        ]
       },
       {
         "value": "Fabri"
       },
       {
-        "value": "Duško Tošić"
+        "value": "Duško Tošić",
+        "aliases": [
+          "Tosic"
+        ]
       },
       {
-        "value": "İsmail Köybaşı"
+        "value": "İsmail Köybaşı",
+        "aliases": [
+          "Koybasi"
+        ]
       },
       {
-        "value": "Ryan Babel"
+        "value": "Ryan Babel",
+        "aliases": [
+          "Babel"
+        ]
       },
       {
-        "value": "Necip Uysal"
+        "value": "Necip Uysal",
+        "aliases": [
+          "Uysal"
+        ]
       },
       {
         "value": "Anderson Talisca"
@@ -6834,7 +9008,10 @@
     "note": "Draft only. Current source is starter-only games.csv and the research notes say Transfermarkt teammate data was not fetched; needs player-level verification before going live.",
     "answers": [
       {
-        "value": "Fernando Muslera"
+        "value": "Fernando Muslera",
+        "aliases": [
+          "Muslera"
+        ]
       },
       {
         "value": "Serdar Balta"
@@ -6843,7 +9020,10 @@
         "value": "Burak Yılmaz"
       },
       {
-        "value": "Umut Bulut"
+        "value": "Umut Bulut",
+        "aliases": [
+          "Bulut"
+        ]
       },
       {
         "value": "Sébastien Kaya"
@@ -6851,11 +9031,15 @@
       {
         "value": "Hakan Balta",
         "aliases": [
-          "Korkmaz"
+          "Korkmaz",
+          "Balta"
         ]
       },
       {
-        "value": "Wesley Sneijder"
+        "value": "Wesley Sneijder",
+        "aliases": [
+          "Sneijder"
+        ]
       },
       {
         "value": "Yusuf Sarıoğlu",
@@ -6869,7 +9053,8 @@
       {
         "value": "Izet Hajrović",
         "aliases": [
-          "Colman"
+          "Colman",
+          "Hajrovic"
         ]
       }
     ],
@@ -6885,34 +9070,55 @@
     "note": "Imported from ilk10-research/questions/titles/most-runner-up-foreign.md Snapshot: April 2026.",
     "answers": [
       {
-        "value": "Fernando Muslera"
+        "value": "Fernando Muslera",
+        "aliases": [
+          "Muslera"
+        ]
       },
       {
-        "value": "Faryd Mondragón"
+        "value": "Faryd Mondragón",
+        "aliases": [
+          "Mondragon"
+        ]
       },
       {
         "value": "Alex de Souza"
       },
       {
-        "value": "Rigobert Song"
+        "value": "Rigobert Song",
+        "aliases": [
+          "Song"
+        ]
       },
       {
-        "value": "Ibrahim Yattara"
+        "value": "Ibrahim Yattara",
+        "aliases": [
+          "Yattara"
+        ]
       },
       {
-        "value": "Aurélien Chedjou"
+        "value": "Aurélien Chedjou",
+        "aliases": [
+          "Chedjou"
+        ]
       },
       {
         "value": "Talisca"
       },
       {
-        "value": "Sebastian Szymański"
+        "value": "Sebastian Szymański",
+        "aliases": [
+          "Szymanski"
+        ]
       },
       {
         "value": "Felipe Melo"
       },
       {
-        "value": "Wesley Sneijder"
+        "value": "Wesley Sneijder",
+        "aliases": [
+          "Sneijder"
+        ]
       }
     ],
     "status": "live"
@@ -6933,31 +9139,153 @@
         "value": "Selçuk İnan"
       },
       {
-        "value": "İrfan Can Kahveci"
+        "value": "İrfan Can Kahveci",
+        "aliases": [
+          "Kahveci"
+        ]
       },
       {
-        "value": "Sabri Sarıoğlu"
+        "value": "Sabri Sarıoğlu",
+        "aliases": [
+          "Sarioglu"
+        ]
       },
       {
         "value": "Bülent Korkmaz"
       },
       {
-        "value": "Gökhan Gönül"
+        "value": "Gökhan Gönül",
+        "aliases": [
+          "Gonul"
+        ]
       },
       {
         "value": "Hakan Şaş"
       },
       {
-        "value": "Ümit Karan"
+        "value": "Ümit Karan",
+        "aliases": [
+          "Karan"
+        ]
       },
       {
-        "value": "Umut Bulut"
+        "value": "Umut Bulut",
+        "aliases": [
+          "Bulut"
+        ]
       },
       {
         "value": "Volkan Demirel"
       }
     ],
     "status": "live"
+  },
+  {
+    "id": "verified-titles-most-player-championships",
+    "shortLabel": "En Çok Şampiyonluk Kazanan Futbolcular",
+    "prompt": "Süper Lig'de En Çok Şampiyonluk Kazanan Futbolcular",
+    "entityType": "player",
+    "category": "title-race",
+    "sourceLabel": "Research verified",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Football_records_and_statistics_in_Turkey",
+    "note": "Draft. Titles through the 2025-26 season (Wikipedia records table, checked 2026-10-11). Ten players are tied at 6 titles and share the last four slots — all ten are accepted via aliases.",
+    "answers": [
+      {
+        "value": "Bülent Korkmaz",
+        "scoreLabel": "8 şampiyonluk"
+      },
+      {
+        "value": "Suat Kaya",
+        "scoreLabel": "8 şampiyonluk"
+      },
+      {
+        "value": "Hakan Şükür",
+        "scoreLabel": "8 şampiyonluk",
+        "aliases": [
+          "Sukur"
+        ]
+      },
+      {
+        "value": "Fernando Muslera",
+        "scoreLabel": "8 şampiyonluk",
+        "aliases": [
+          "Muslera"
+        ]
+      },
+      {
+        "value": "Arif Erdem",
+        "scoreLabel": "7 şampiyonluk"
+      },
+      {
+        "value": "Okan Buruk",
+        "scoreLabel": "7 şampiyonluk"
+      },
+      {
+        "value": "Uğur Köken",
+        "scoreLabel": "6 şampiyonluk",
+        "aliases": [
+          "Uğur Köken",
+          "Şenol Güneş",
+          "Necati Özçağlayan",
+          "Güngör Şahinkaya",
+          "Turgay Semercioğlu",
+          "Rıza Çalımbay",
+          "Tugay Kerimoğlu",
+          "Ergün Penbe",
+          "Emre Belözoğlu",
+          "Sabri Sarıoğlu"
+        ]
+      },
+      {
+        "value": "Şenol Güneş",
+        "scoreLabel": "6 şampiyonluk",
+        "aliases": [
+          "Uğur Köken",
+          "Şenol Güneş",
+          "Necati Özçağlayan",
+          "Güngör Şahinkaya",
+          "Turgay Semercioğlu",
+          "Rıza Çalımbay",
+          "Tugay Kerimoğlu",
+          "Ergün Penbe",
+          "Emre Belözoğlu",
+          "Sabri Sarıoğlu"
+        ]
+      },
+      {
+        "value": "Necati Özçağlayan",
+        "scoreLabel": "6 şampiyonluk",
+        "aliases": [
+          "Uğur Köken",
+          "Şenol Güneş",
+          "Necati Özçağlayan",
+          "Güngör Şahinkaya",
+          "Turgay Semercioğlu",
+          "Rıza Çalımbay",
+          "Tugay Kerimoğlu",
+          "Ergün Penbe",
+          "Emre Belözoğlu",
+          "Sabri Sarıoğlu"
+        ]
+      },
+      {
+        "value": "Güngör Şahinkaya",
+        "scoreLabel": "6 şampiyonluk",
+        "aliases": [
+          "Uğur Köken",
+          "Şenol Güneş",
+          "Necati Özçağlayan",
+          "Güngör Şahinkaya",
+          "Turgay Semercioğlu",
+          "Rıza Çalımbay",
+          "Tugay Kerimoğlu",
+          "Ergün Penbe",
+          "Emre Belözoğlu",
+          "Sabri Sarıoğlu"
+        ]
+      }
+    ],
+    "status": "draft"
   },
   {
     "id": "verified-titles-most-titles-foreign",
@@ -6970,10 +9298,16 @@
     "note": "Imported from ilk10-research/questions/titles/most-titles-foreign.md",
     "answers": [
       {
-        "value": "Fernando Muslera"
+        "value": "Fernando Muslera",
+        "aliases": [
+          "Muslera"
+        ]
       },
       {
-        "value": "Gheorghe Popescu"
+        "value": "Gheorghe Popescu",
+        "aliases": [
+          "Popescu"
+        ]
       },
       {
         "value": "Felipe Melo"
@@ -6982,22 +9316,37 @@
         "value": "Alex de Souza"
       },
       {
-        "value": "Atiba Hutchinson"
+        "value": "Atiba Hutchinson",
+        "aliases": [
+          "Hutchinson"
+        ]
       },
       {
-        "value": "Mauro Icardi"
+        "value": "Mauro Icardi",
+        "aliases": [
+          "Icardi"
+        ]
       },
       {
-        "value": "Dries Mertens"
+        "value": "Dries Mertens",
+        "aliases": [
+          "Mertens"
+        ]
       },
       {
-        "value": "Wesley Sneijder"
+        "value": "Wesley Sneijder",
+        "aliases": [
+          "Sneijder"
+        ]
       },
       {
         "value": "Roberto Carlos"
       },
       {
-        "value": "Ricardo Quaresma"
+        "value": "Ricardo Quaresma",
+        "aliases": [
+          "Quaresma"
+        ]
       }
     ],
     "status": "live"
@@ -7013,25 +9362,43 @@
     "note": "Imported from ilk10-research/questions/transfers/bjk-record-sales.md",
     "answers": [
       {
-        "value": "Cenk Tosun"
+        "value": "Cenk Tosun",
+        "aliases": [
+          "Tosun"
+        ]
       },
       {
-        "value": "Tammy Abraham"
+        "value": "Tammy Abraham",
+        "aliases": [
+          "Abraham"
+        ]
       },
       {
-        "value": "Gedson Fernandes"
+        "value": "Gedson Fernandes",
+        "aliases": [
+          "Fernandes"
+        ]
       },
       {
         "value": "Demba Ba"
       },
       {
-        "value": "Keny Arroyo"
+        "value": "Keny Arroyo",
+        "aliases": [
+          "Arroyo"
+        ]
       },
       {
-        "value": "John Carew"
+        "value": "John Carew",
+        "aliases": [
+          "Carew"
+        ]
       },
       {
-        "value": "José Sosa"
+        "value": "José Sosa",
+        "aliases": [
+          "Sosa"
+        ]
       },
       {
         "value": "Marcelo"
@@ -7040,7 +9407,10 @@
         "value": "Sergen Yalçın"
       },
       {
-        "value": "Demir Ege Tıknaz"
+        "value": "Demir Ege Tıknaz",
+        "aliases": [
+          "Tiknaz"
+        ]
       }
     ],
     "status": "live"
@@ -7056,34 +9426,61 @@
     "note": "Imported from ilk10-research/questions/transfers/bjk-record-signings.md",
     "answers": [
       {
-        "value": "Orkun Kökçü"
+        "value": "Orkun Kökçü",
+        "aliases": [
+          "Kokcu"
+        ]
       },
       {
-        "value": "Emmanuel Agbadou"
+        "value": "Emmanuel Agbadou",
+        "aliases": [
+          "Agbadou"
+        ]
       },
       {
-        "value": "Gedson Fernandes"
+        "value": "Gedson Fernandes",
+        "aliases": [
+          "Fernandes"
+        ]
       },
       {
-        "value": "Tammy Abraham"
+        "value": "Tammy Abraham",
+        "aliases": [
+          "Abraham"
+        ]
       },
       {
         "value": "Hyeon-gyu Oh"
       },
       {
-        "value": "Moatasem Al-Musrati"
+        "value": "Moatasem Al-Musrati",
+        "aliases": [
+          "Al-musrati"
+        ]
       },
       {
-        "value": "Ernest Muci"
+        "value": "Ernest Muci",
+        "aliases": [
+          "Muci"
+        ]
       },
       {
-        "value": "Wilfred Ndidi"
+        "value": "Wilfred Ndidi",
+        "aliases": [
+          "Ndidi"
+        ]
       },
       {
-        "value": "Rodrigo Tabata"
+        "value": "Rodrigo Tabata",
+        "aliases": [
+          "Tabata"
+        ]
       },
       {
-        "value": "Ricardo Quaresma"
+        "value": "Ricardo Quaresma",
+        "aliases": [
+          "Quaresma"
+        ]
       }
     ],
     "status": "live"
@@ -7099,34 +9496,61 @@
     "note": "Imported from ilk10-research/questions/transfers/fb-record-sales.md",
     "answers": [
       {
-        "value": "Ferdi Kadıoğlu"
+        "value": "Ferdi Kadıoğlu",
+        "aliases": [
+          "Kadioglu"
+        ]
       },
       {
-        "value": "Arda Güler"
+        "value": "Arda Güler",
+        "aliases": [
+          "Guler"
+        ]
       },
       {
-        "value": "Yusuf Akçiçek"
+        "value": "Yusuf Akçiçek",
+        "aliases": [
+          "Akcicek"
+        ]
       },
       {
-        "value": "Vedat Muriqi"
+        "value": "Vedat Muriqi",
+        "aliases": [
+          "Muriqi"
+        ]
       },
       {
         "value": "Elvir Baljic"
       },
       {
-        "value": "Min-jae Kim"
+        "value": "Min-jae Kim",
+        "aliases": [
+          "Kim"
+        ]
       },
       {
-        "value": "Eljif Elmas"
+        "value": "Eljif Elmas",
+        "aliases": [
+          "Elmas"
+        ]
       },
       {
-        "value": "Moussa Sow"
+        "value": "Moussa Sow",
+        "aliases": [
+          "Sow"
+        ]
       },
       {
-        "value": "Youssef En-Nesyri"
+        "value": "Youssef En-Nesyri",
+        "aliases": [
+          "En-nesyri"
+        ]
       },
       {
-        "value": "Simon Kjaer"
+        "value": "Simon Kjaer",
+        "aliases": [
+          "Kjaer"
+        ]
       }
     ],
     "status": "live"
@@ -7142,31 +9566,55 @@
     "note": "Imported from ilk10-research/questions/transfers/fb-record-signings.md",
     "answers": [
       {
-        "value": "Mattéo Guendouzi"
+        "value": "Mattéo Guendouzi",
+        "aliases": [
+          "Guendouzi"
+        ]
       },
       {
-        "value": "Kerem Aktürkoğlu"
+        "value": "Kerem Aktürkoğlu",
+        "aliases": [
+          "Akturkoglu"
+        ]
       },
       {
-        "value": "Youssef En-Nesyri"
+        "value": "Youssef En-Nesyri",
+        "aliases": [
+          "En-nesyri"
+        ]
       },
       {
         "value": "Sidiki Chérif"
       },
       {
-        "value": "Dorgeles Nene"
+        "value": "Dorgeles Nene",
+        "aliases": [
+          "Nene"
+        ]
       },
       {
-        "value": "Cengiz Ünder"
+        "value": "Cengiz Ünder",
+        "aliases": [
+          "Under"
+        ]
       },
       {
-        "value": "Dani Güiza"
+        "value": "Dani Güiza",
+        "aliases": [
+          "Guiza"
+        ]
       },
       {
-        "value": "Emmanuel Emenike"
+        "value": "Emmanuel Emenike",
+        "aliases": [
+          "Emenike"
+        ]
       },
       {
-        "value": "Sofyan Amrabat"
+        "value": "Sofyan Amrabat",
+        "aliases": [
+          "Amrabat"
+        ]
       },
       {
         "value": "Diego Carlos"
@@ -7185,16 +9633,25 @@
     "note": "Imported from ilk10-research/questions/transfers/gs-record-sales.md",
     "answers": [
       {
-        "value": "Sacha Boey"
+        "value": "Sacha Boey",
+        "aliases": [
+          "Boey"
+        ]
       },
       {
-        "value": "Badou Ndiaye"
+        "value": "Badou Ndiaye",
+        "aliases": [
+          "Ndiaye"
+        ]
       },
       {
         "value": "Bruma"
       },
       {
-        "value": "Kerem Aktürkoğlu"
+        "value": "Kerem Aktürkoğlu",
+        "aliases": [
+          "Akturkoglu"
+        ]
       },
       {
         "value": "Arda Turan"
@@ -7203,13 +9660,22 @@
         "value": "Marcão"
       },
       {
-        "value": "Ozan Kabak"
+        "value": "Ozan Kabak",
+        "aliases": [
+          "Kabak"
+        ]
       },
       {
-        "value": "Garry Rodrigues"
+        "value": "Garry Rodrigues",
+        "aliases": [
+          "Rodrigues"
+        ]
       },
       {
-        "value": "Abdul Kader Keita"
+        "value": "Abdul Kader Keita",
+        "aliases": [
+          "Keita"
+        ]
       },
       {
         "value": "Burak Yılmaz"
@@ -7228,31 +9694,58 @@
     "note": "Imported from ilk10-research/supercool-candidates-deep-research-2026-04-28.md. Scope: Turkish-nationality arrivals to Galatasaray, Fenerbahçe, Beşiktaş, or Trabzonspor, ranked by reported fee.",
     "answers": [
       {
-        "value": "Orkun Kökçü"
+        "value": "Orkun Kökçü",
+        "aliases": [
+          "Kokcu"
+        ]
       },
       {
-        "value": "Uğurcan Çakır"
+        "value": "Uğurcan Çakır",
+        "aliases": [
+          "Cakir"
+        ]
       },
       {
-        "value": "Kerem Aktürkoğlu"
+        "value": "Kerem Aktürkoğlu",
+        "aliases": [
+          "Akturkoglu"
+        ]
       },
       {
-        "value": "Cengiz Ünder"
+        "value": "Cengiz Ünder",
+        "aliases": [
+          "Under"
+        ]
       },
       {
-        "value": "Mehmet Topuz"
+        "value": "Mehmet Topuz",
+        "aliases": [
+          "Topuz"
+        ]
       },
       {
-        "value": "Çağlar Söyüncü"
+        "value": "Çağlar Söyüncü",
+        "aliases": [
+          "Soyuncu"
+        ]
       },
       {
-        "value": "Alper Potuk"
+        "value": "Alper Potuk",
+        "aliases": [
+          "Potuk"
+        ]
       },
       {
-        "value": "İrfan Can Kahveci"
+        "value": "İrfan Can Kahveci",
+        "aliases": [
+          "Kahveci"
+        ]
       },
       {
-        "value": "Ozan Tufan"
+        "value": "Ozan Tufan",
+        "aliases": [
+          "Tufan"
+        ]
       },
       {
         "value": "Burak Yılmaz"
@@ -7271,13 +9764,22 @@
     "note": "Imported from ilk10-research/supercool-candidates-deep-research-2026-04-28.md. Scope: departures from Galatasaray, Fenerbahçe, Beşiktaş, or Trabzonspor to England, Spain, Italy, Germany, or France top-flight clubs, ranked by reported fee.",
     "answers": [
       {
-        "value": "Ferdi Kadıoğlu"
+        "value": "Ferdi Kadıoğlu",
+        "aliases": [
+          "Kadioglu"
+        ]
       },
       {
-        "value": "Sacha Boey"
+        "value": "Sacha Boey",
+        "aliases": [
+          "Boey"
+        ]
       },
       {
-        "value": "Arda Güler"
+        "value": "Arda Güler",
+        "aliases": [
+          "Guler"
+        ]
       },
       {
         "value": "Elvir Baljic",
@@ -7286,22 +9788,35 @@
         ]
       },
       {
-        "value": "Vedat Muriqi"
+        "value": "Vedat Muriqi",
+        "aliases": [
+          "Muriqi"
+        ]
       },
       {
         "value": "Min-jae Kim",
         "aliases": [
-          "Kim Min-jae"
+          "Kim Min-jae",
+          "Kim"
         ]
       },
       {
-        "value": "Yusuf Yazıcı"
+        "value": "Yusuf Yazıcı",
+        "aliases": [
+          "Yazici"
+        ]
       },
       {
-        "value": "Eljif Elmas"
+        "value": "Eljif Elmas",
+        "aliases": [
+          "Elmas"
+        ]
       },
       {
-        "value": "Badou Ndiaye"
+        "value": "Badou Ndiaye",
+        "aliases": [
+          "Ndiaye"
+        ]
       },
       {
         "value": "Bruma"
@@ -7320,22 +9835,37 @@
     "note": "Draft only. Research notes say Marcão profit is unknown/blocked, so this is not reliable enough for a ranked exact-10 profit question. Retired: same answer set as the live Galatasaray record-sales question; profit variant was flagged unreliable in research notes.",
     "answers": [
       {
-        "value": "Sacha Boey"
+        "value": "Sacha Boey",
+        "aliases": [
+          "Boey"
+        ]
       },
       {
-        "value": "Kerem Aktürkoğlu"
+        "value": "Kerem Aktürkoğlu",
+        "aliases": [
+          "Akturkoglu"
+        ]
       },
       {
         "value": "Arda Turan"
       },
       {
-        "value": "Ozan Kabak"
+        "value": "Ozan Kabak",
+        "aliases": [
+          "Kabak"
+        ]
       },
       {
-        "value": "Badou Ndiaye"
+        "value": "Badou Ndiaye",
+        "aliases": [
+          "Ndiaye"
+        ]
       },
       {
-        "value": "Garry Rodrigues"
+        "value": "Garry Rodrigues",
+        "aliases": [
+          "Rodrigues"
+        ]
       },
       {
         "value": "Bruma"
@@ -7344,7 +9874,10 @@
         "value": "Burak Yılmaz"
       },
       {
-        "value": "Abdul Kader Keita"
+        "value": "Abdul Kader Keita",
+        "aliases": [
+          "Keita"
+        ]
       },
       {
         "value": "Marcão"
@@ -7363,34 +9896,58 @@
     "note": "Imported from ilk10-research/questions/transfers/gs-record-signings.md",
     "answers": [
       {
-        "value": "Victor Osimhen"
+        "value": "Victor Osimhen",
+        "aliases": [
+          "Osimhen"
+        ]
       },
       {
-        "value": "Wilfried Singo"
+        "value": "Wilfried Singo",
+        "aliases": [
+          "Singo"
+        ]
       },
       {
-        "value": "Uğurcan Çakır"
+        "value": "Uğurcan Çakır",
+        "aliases": [
+          "Cakir"
+        ]
       },
       {
-        "value": "Gabriel Sara"
+        "value": "Gabriel Sara",
+        "aliases": [
+          "Sara"
+        ]
       },
       {
         "value": "Jardel"
       },
       {
-        "value": "Nicolò Zaniolo"
+        "value": "Nicolò Zaniolo",
+        "aliases": [
+          "Zaniolo"
+        ]
       },
       {
-        "value": "Mbaye Diagne"
+        "value": "Mbaye Diagne",
+        "aliases": [
+          "Diagne"
+        ]
       },
       {
         "value": "Bruma"
       },
       {
-        "value": "Mauro Icardi"
+        "value": "Mauro Icardi",
+        "aliases": [
+          "Icardi"
+        ]
       },
       {
-        "value": "Younès Belhanda"
+        "value": "Younès Belhanda",
+        "aliases": [
+          "Belhanda"
+        ]
       }
     ],
     "status": "live"
@@ -7406,34 +9963,64 @@
     "note": "Imported from ilk10-research/questions/transfers/transfers-summer-2021.md",
     "answers": [
       {
-        "value": "Victor Nelsson"
+        "value": "Victor Nelsson",
+        "aliases": [
+          "Nelsson"
+        ]
       },
       {
-        "value": "Alexandru Cicâldău"
+        "value": "Alexandru Cicâldău",
+        "aliases": [
+          "Cicaldau"
+        ]
       },
       {
-        "value": "Ally Samatta"
+        "value": "Ally Samatta",
+        "aliases": [
+          "Samatta"
+        ]
       },
       {
-        "value": "Sacha Boey"
+        "value": "Sacha Boey",
+        "aliases": [
+          "Boey"
+        ]
       },
       {
-        "value": "Andreas Cornelius"
+        "value": "Andreas Cornelius",
+        "aliases": [
+          "Cornelius"
+        ]
       },
       {
-        "value": "Mergim Berisha"
+        "value": "Mergim Berisha",
+        "aliases": [
+          "Berisha"
+        ]
       },
       {
-        "value": "Aaron Boupendza"
+        "value": "Aaron Boupendza",
+        "aliases": [
+          "Boupendza"
+        ]
       },
       {
-        "value": "Olimpiu Moruțan"
+        "value": "Olimpiu Moruțan",
+        "aliases": [
+          "Morutan"
+        ]
       },
       {
-        "value": "Berkan Kutlu"
+        "value": "Berkan Kutlu",
+        "aliases": [
+          "Kutlu"
+        ]
       },
       {
-        "value": "Doğan Alemdar"
+        "value": "Doğan Alemdar",
+        "aliases": [
+          "Alemdar"
+        ]
       }
     ],
     "status": "live"
@@ -7449,34 +10036,61 @@
     "note": "Imported from ilk10-research/questions/transfers/transfers-summer-2025.md",
     "answers": [
       {
-        "value": "Victor Osimhen"
+        "value": "Victor Osimhen",
+        "aliases": [
+          "Osimhen"
+        ]
       },
       {
-        "value": "Wilfried Singo"
+        "value": "Wilfried Singo",
+        "aliases": [
+          "Singo"
+        ]
       },
       {
-        "value": "Mattéo Guendouzi"
+        "value": "Mattéo Guendouzi",
+        "aliases": [
+          "Guendouzi"
+        ]
       },
       {
-        "value": "Uğurcan Çakır"
+        "value": "Uğurcan Çakır",
+        "aliases": [
+          "Cakir"
+        ]
       },
       {
-        "value": "Kerem Aktürkoğlu"
+        "value": "Kerem Aktürkoğlu",
+        "aliases": [
+          "Akturkoglu"
+        ]
       },
       {
-        "value": "Emmanuel Agbadou"
+        "value": "Emmanuel Agbadou",
+        "aliases": [
+          "Agbadou"
+        ]
       },
       {
-        "value": "Dorgeles Nene"
+        "value": "Dorgeles Nene",
+        "aliases": [
+          "Nene"
+        ]
       },
       {
-        "value": "Tammy Abraham"
+        "value": "Tammy Abraham",
+        "aliases": [
+          "Abraham"
+        ]
       },
       {
         "value": "Hyeon-gyu Oh"
       },
       {
-        "value": "Sofyan Amrabat"
+        "value": "Sofyan Amrabat",
+        "aliases": [
+          "Amrabat"
+        ]
       }
     ],
     "status": "live"
@@ -7492,34 +10106,64 @@
     "note": "Imported from ilk10-research/questions/under-coach/apps-under-kartal.md",
     "answers": [
       {
-        "value": "Ferdi Kadıoğlu"
+        "value": "Ferdi Kadıoğlu",
+        "aliases": [
+          "Kadioglu"
+        ]
       },
       {
-        "value": "İrfan Can Kahveci"
+        "value": "İrfan Can Kahveci",
+        "aliases": [
+          "Kahveci"
+        ]
       },
       {
-        "value": "Bright Osayi-Samuel"
+        "value": "Bright Osayi-Samuel",
+        "aliases": [
+          "Osayi-samuel"
+        ]
       },
       {
-        "value": "İlhan Parlak"
+        "value": "İlhan Parlak",
+        "aliases": [
+          "Parlak"
+        ]
       },
       {
-        "value": "Dušan Tadić"
+        "value": "Dušan Tadić",
+        "aliases": [
+          "Tadic"
+        ]
       },
       {
-        "value": "Sebastian Szymański"
+        "value": "Sebastian Szymański",
+        "aliases": [
+          "Szymanski"
+        ]
       },
       {
-        "value": "Anton Putilo"
+        "value": "Anton Putilo",
+        "aliases": [
+          "Putilo"
+        ]
       },
       {
-        "value": "İsmail Yüksek"
+        "value": "İsmail Yüksek",
+        "aliases": [
+          "Yuksek"
+        ]
       },
       {
-        "value": "Serdar Dursun"
+        "value": "Serdar Dursun",
+        "aliases": [
+          "Dursun"
+        ]
       },
       {
-        "value": "Erdem Özgenç"
+        "value": "Erdem Özgenç",
+        "aliases": [
+          "Ozgenc"
+        ]
       }
     ],
     "status": "live"
@@ -7535,7 +10179,10 @@
     "note": "Imported from ilk10-research/questions/under-coach/apps-under-terim.md",
     "answers": [
       {
-        "value": "Hakan Şükür"
+        "value": "Hakan Şükür",
+        "aliases": [
+          "Sukur"
+        ]
       },
       {
         "value": "Ergün Penbe"
@@ -7547,16 +10194,25 @@
         "value": "Bülent Korkmaz"
       },
       {
-        "value": "Fernando Muslera"
+        "value": "Fernando Muslera",
+        "aliases": [
+          "Muslera"
+        ]
       },
       {
-        "value": "Hakan Ünsal"
+        "value": "Hakan Ünsal",
+        "aliases": [
+          "Unsal"
+        ]
       },
       {
         "value": "Selçuk İnan"
       },
       {
-        "value": "Ümit Davala"
+        "value": "Ümit Davala",
+        "aliases": [
+          "Davala"
+        ]
       },
       {
         "value": "Tugay Kerimoğlu"
@@ -7578,34 +10234,61 @@
     "note": "Imported from ilk10-research/questions/under-coach/goals-under-avci.md",
     "answers": [
       {
-        "value": "Edin Višća"
+        "value": "Edin Višća",
+        "aliases": [
+          "Visca"
+        ]
       },
       {
-        "value": "Anastasios Bakasetas"
+        "value": "Anastasios Bakasetas",
+        "aliases": [
+          "Bakasetas"
+        ]
       },
       {
-        "value": "İbrahim Akın"
+        "value": "İbrahim Akın",
+        "aliases": [
+          "Akin"
+        ]
       },
       {
-        "value": "Márcio Mossoró"
+        "value": "Márcio Mossoró",
+        "aliases": [
+          "Marcio Mos."
+        ]
       },
       {
         "value": "Emre Belözoğlu"
       },
       {
-        "value": "Doka Madureira"
+        "value": "Doka Madureira",
+        "aliases": [
+          "Doka Madur."
+        ]
       },
       {
-        "value": "Alexandru Epureanu"
+        "value": "Alexandru Epureanu",
+        "aliases": [
+          "Epureanu"
+        ]
       },
       {
-        "value": "Efe İnanç"
+        "value": "Efe İnanç",
+        "aliases": [
+          "Inanc"
+        ]
       },
       {
-        "value": "Yalçın Ayhan"
+        "value": "Yalçın Ayhan",
+        "aliases": [
+          "Ayhan"
+        ]
       },
       {
-        "value": "Mahmut Tekdemir"
+        "value": "Mahmut Tekdemir",
+        "aliases": [
+          "Tekdemir"
+        ]
       }
     ],
     "status": "live"
@@ -7621,34 +10304,61 @@
     "note": "Imported from ilk10-research/questions/under-coach/goals-under-buruk.md",
     "answers": [
       {
-        "value": "Mauro Icardi"
+        "value": "Mauro Icardi",
+        "aliases": [
+          "Icardi"
+        ]
       },
       {
-        "value": "Victor Osimhen"
+        "value": "Victor Osimhen",
+        "aliases": [
+          "Osimhen"
+        ]
       },
       {
-        "value": "Barış Alper Yılmaz"
+        "value": "Barış Alper Yılmaz",
+        "aliases": [
+          "Yilmaz"
+        ]
       },
       {
-        "value": "Kerem Aktürkoğlu"
+        "value": "Kerem Aktürkoğlu",
+        "aliases": [
+          "Akturkoglu"
+        ]
       },
       {
-        "value": "Dries Mertens"
+        "value": "Dries Mertens",
+        "aliases": [
+          "Mertens"
+        ]
       },
       {
-        "value": "Edin Višća"
+        "value": "Edin Višća",
+        "aliases": [
+          "Visca"
+        ]
       },
       {
-        "value": "Yunus Akgün"
+        "value": "Yunus Akgün",
+        "aliases": [
+          "Akgun"
+        ]
       },
       {
         "value": "Demba Ba"
       },
       {
-        "value": "Abdülkerim Bardakcı"
+        "value": "Abdülkerim Bardakcı",
+        "aliases": [
+          "Bardakci"
+        ]
       },
       {
-        "value": "Enzo Crivelli"
+        "value": "Enzo Crivelli",
+        "aliases": [
+          "Crivelli"
+        ]
       }
     ],
     "status": "live"
@@ -7667,7 +10377,10 @@
         "value": "Hami Mandıralı"
       },
       {
-        "value": "Cenk Tosun"
+        "value": "Cenk Tosun",
+        "aliases": [
+          "Tosun"
+        ]
       },
       {
         "value": "Burak Yılmaz"
@@ -7679,10 +10392,16 @@
         "value": "Ünal Karaman"
       },
       {
-        "value": "Ricardo Quaresma"
+        "value": "Ricardo Quaresma",
+        "aliases": [
+          "Quaresma"
+        ]
       },
       {
-        "value": "Oğuzhan Özyakup"
+        "value": "Oğuzhan Özyakup",
+        "aliases": [
+          "Ozyakup"
+        ]
       },
       {
         "value": "Tolunay Kafkas"
@@ -7691,7 +10410,10 @@
         "value": "Ogün Temizkanoğlu"
       },
       {
-        "value": "Atiba Hutchinson"
+        "value": "Atiba Hutchinson",
+        "aliases": [
+          "Hutchinson"
+        ]
       }
     ],
     "status": "live"
@@ -7707,34 +10429,64 @@
     "note": "Imported from ilk10-research/questions/under-coach/goals-under-kartal.md",
     "answers": [
       {
-        "value": "Edin Džeko"
+        "value": "Edin Džeko",
+        "aliases": [
+          "Dzeko"
+        ]
       },
       {
-        "value": "İrfan Can Kahveci"
+        "value": "İrfan Can Kahveci",
+        "aliases": [
+          "Kahveci"
+        ]
       },
       {
-        "value": "Serdar Dursun"
+        "value": "Serdar Dursun",
+        "aliases": [
+          "Dursun"
+        ]
       },
       {
-        "value": "Dušan Tadić"
+        "value": "Dušan Tadić",
+        "aliases": [
+          "Tadic"
+        ]
       },
       {
-        "value": "Moussa Sow"
+        "value": "Moussa Sow",
+        "aliases": [
+          "Sow"
+        ]
       },
       {
-        "value": "Sebastian Szymański"
+        "value": "Sebastian Szymański",
+        "aliases": [
+          "Szymanski"
+        ]
       },
       {
-        "value": "İlhan Parlak"
+        "value": "İlhan Parlak",
+        "aliases": [
+          "Parlak"
+        ]
       },
       {
-        "value": "Dirk Kuyt"
+        "value": "Dirk Kuyt",
+        "aliases": [
+          "Kuyt"
+        ]
       },
       {
-        "value": "Alihan Kubalas"
+        "value": "Alihan Kubalas",
+        "aliases": [
+          "Kubalas"
+        ]
       },
       {
-        "value": "Anton Putilo"
+        "value": "Anton Putilo",
+        "aliases": [
+          "Putilo"
+        ]
       }
     ],
     "status": "live"
@@ -7753,16 +10505,25 @@
         "value": "Alex de Souza"
       },
       {
-        "value": "Riad Bajic"
+        "value": "Riad Bajic",
+        "aliases": [
+          "Bajic"
+        ]
       },
       {
         "value": "Cristian"
       },
       {
-        "value": "Ömer Ali Şahiner"
+        "value": "Ömer Ali Şahiner",
+        "aliases": [
+          "Sahiner"
+        ]
       },
       {
-        "value": "Jagos Vukovic"
+        "value": "Jagos Vukovic",
+        "aliases": [
+          "Vukovic"
+        ]
       },
       {
         "value": "Selçuk Şahin"
@@ -7771,13 +10532,22 @@
         "value": "Özer Hurmacı"
       },
       {
-        "value": "Gökhan Gönül"
+        "value": "Gökhan Gönül",
+        "aliases": [
+          "Gonul"
+        ]
       },
       {
-        "value": "Caner Erkin"
+        "value": "Caner Erkin",
+        "aliases": [
+          "Erkin"
+        ]
       },
       {
-        "value": "Alioum Saidou"
+        "value": "Alioum Saidou",
+        "aliases": [
+          "Saidou"
+        ]
       }
     ],
     "status": "live"
@@ -7793,7 +10563,10 @@
     "note": "Imported from ilk10-research/questions/under-coach/goals-under-terim.md",
     "answers": [
       {
-        "value": "Hakan Şükür"
+        "value": "Hakan Şükür",
+        "aliases": [
+          "Sukur"
+        ]
       },
       {
         "value": "Arif Erdem"
@@ -7805,22 +10578,34 @@
         "value": "Okan Buruk"
       },
       {
-        "value": "Sofiane Feghouli"
+        "value": "Sofiane Feghouli",
+        "aliases": [
+          "Feghouli"
+        ]
       },
       {
         "value": "Selçuk İnan"
       },
       {
-        "value": "Younès Belhanda"
+        "value": "Younès Belhanda",
+        "aliases": [
+          "Belhanda"
+        ]
       },
       {
-        "value": "Ümit Davala"
+        "value": "Ümit Davala",
+        "aliases": [
+          "Davala"
+        ]
       },
       {
         "value": "Tugay Kerimoğlu"
       },
       {
-        "value": "Hakan Ünsal"
+        "value": "Hakan Ünsal",
+        "aliases": [
+          "Unsal"
+        ]
       }
     ],
     "status": "live"
@@ -8063,7 +10848,10 @@
     "answers": [
       {
         "value": "Cenk Tosun",
-        "scoreLabel": "€22m"
+        "scoreLabel": "€22m",
+        "aliases": [
+          "Tosun"
+        ]
       },
       {
         "value": "Sergen Yalçın",
@@ -8080,12 +10868,16 @@
         "value": "Demir Ege Tıknaz",
         "scoreLabel": "€7m",
         "aliases": [
-          "Demir Ege Tiknaz"
+          "Demir Ege Tiknaz",
+          "Tiknaz"
         ]
       },
       {
         "value": "Tammy Abraham",
-        "scoreLabel": "€6m"
+        "scoreLabel": "€6m",
+        "aliases": [
+          "Abraham"
+        ]
       },
       {
         "value": "Marcelo",
@@ -8094,22 +10886,32 @@
       },
       {
         "value": "Gedson Fernandes",
-        "scoreLabel": "€4.78m"
+        "scoreLabel": "€4.78m",
+        "aliases": [
+          "Fernandes"
+        ]
       },
       {
         "value": "José Sosa",
         "scoreLabel": "€4.1m",
         "aliases": [
-          "Jose Sosa"
+          "Jose Sosa",
+          "Sosa"
         ]
       },
       {
         "value": "John Carew",
-        "scoreLabel": "€4.1m"
+        "scoreLabel": "€4.1m",
+        "aliases": [
+          "Carew"
+        ]
       },
       {
         "value": "Keny Arroyo",
-        "scoreLabel": "€3.5m"
+        "scoreLabel": "€3.5m",
+        "aliases": [
+          "Arroyo"
+        ]
       }
     ],
     "status": "retired"
@@ -8126,17 +10928,24 @@
     "answers": [
       {
         "value": "Moussa Sow",
-        "scoreLabel": "64"
+        "scoreLabel": "64",
+        "aliases": [
+          "Sow"
+        ]
       },
       {
         "value": "Enner Valencia",
-        "scoreLabel": "48"
+        "scoreLabel": "48",
+        "aliases": [
+          "Valencia"
+        ]
       },
       {
         "value": "Edin Džeko",
         "scoreLabel": "35",
         "aliases": [
-          "Edin Dzeko"
+          "Edin Dzeko",
+          "Dzeko"
         ]
       },
       {
@@ -8149,7 +10958,10 @@
       },
       {
         "value": "Dirk Kuyt",
-        "scoreLabel": "26"
+        "scoreLabel": "26",
+        "aliases": [
+          "Kuyt"
+        ]
       },
       {
         "value": "Fernandão",
@@ -8160,11 +10972,17 @@
       },
       {
         "value": "Robin van Persie",
-        "scoreLabel": "25"
+        "scoreLabel": "25",
+        "aliases": [
+          "Van Persie"
+        ]
       },
       {
         "value": "Michy Batshuayi",
-        "scoreLabel": "24"
+        "scoreLabel": "24",
+        "aliases": [
+          "Batshuayi"
+        ]
       },
       {
         "value": "Anderson Talisca",
@@ -8197,11 +11015,17 @@
     "answers": [
       {
         "value": "Cenk Tosun",
-        "scoreLabel": "65"
+        "scoreLabel": "65",
+        "aliases": [
+          "Tosun"
+        ]
       },
       {
         "value": "Vincent Aboubakar",
-        "scoreLabel": "45"
+        "scoreLabel": "45",
+        "aliases": [
+          "Aboubakar"
+        ]
       },
       {
         "value": "Hugo Almeida",
@@ -8209,13 +11033,17 @@
       },
       {
         "value": "Cyle Larin",
-        "scoreLabel": "31"
+        "scoreLabel": "31",
+        "aliases": [
+          "Larin"
+        ]
       },
       {
         "value": "Oğuzhan Özyakup",
         "scoreLabel": "29",
         "aliases": [
-          "Oguzhan Ozyakup"
+          "Oguzhan Ozyakup",
+          "Ozyakup"
         ]
       },
       {
@@ -8229,7 +11057,8 @@
         "value": "Mario Gómez",
         "scoreLabel": "26",
         "aliases": [
-          "Mario Gomez"
+          "Mario Gomez",
+          "Gomez"
         ]
       },
       {
@@ -8241,11 +11070,17 @@
       },
       {
         "value": "Mustafa Pektemek",
-        "scoreLabel": "23"
+        "scoreLabel": "23",
+        "aliases": [
+          "Pektemek"
+        ]
       },
       {
         "value": "Ryan Babel",
-        "scoreLabel": "22"
+        "scoreLabel": "22",
+        "aliases": [
+          "Babel"
+        ]
       }
     ],
     "status": "live"
@@ -8271,7 +11106,8 @@
         "value": "Hakan Şükür",
         "scoreLabel": "8",
         "aliases": [
-          "Hakan Sukur"
+          "Hakan Sukur",
+          "Sukur"
         ]
       },
       {
@@ -8321,7 +11157,8 @@
         "scoreLabel": "6",
         "aliases": [
           "Sabri Sarioglu",
-          "Sabri"
+          "Sabri",
+          "Sarioglu"
         ]
       }
     ],
