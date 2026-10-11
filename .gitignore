@@ -53,6 +53,7 @@ scripts/lib/*
 !scripts/build-ilk11-runtime-json.mjs
 !scripts/build-ilk11-daily-json.mjs
 !scripts/validate-ilk11-runtime.mjs
+!scripts/validate-ilk10.mjs
 !scripts/DATA-README.md
 public/data/daily/
 *.report.json

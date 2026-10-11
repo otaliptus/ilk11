@@ -1,79 +1,69 @@
 #!/usr/bin/env node
 
 import fs from "node:fs/promises";
-import { createRequire } from "node:module";
-import path from "node:path";
-import vm from "node:vm";
-import ts from "typescript";
 
-const rootDir = process.cwd();
-const sourcePath = path.join(rootDir, "data/ilk10-questions.ts");
-const outputPath = path.join(rootDir, "data/ilk10/questions.json");
-const require = createRequire(import.meta.url);
+// `data/ilk10/questions.json` is the canonical bank consumed by the app.
+// This script normalizes it in place: it fills in default statuses and
+// re-serializes with stable formatting. Run `validate-ilk10.mjs` for checks.
 
-function readJsonModule(relativePath) {
-  const payload = JSON.parse(awaitableReadFileSync(path.join(rootDir, relativePath)));
-  payload.__esModule = true;
-  payload.default = payload;
-  return payload;
+function getOption(name, fallback = null) {
+  const args = process.argv.slice(2);
+  const idx = args.indexOf(name);
+  if (idx === -1) return fallback;
+  const value = args[idx + 1];
+  if (!value || value.startsWith("--")) return "true";
+  return value;
 }
 
-function awaitableReadFileSync(filePath) {
-  return require("node:fs").readFileSync(filePath, "utf8");
-}
-
-function loadCurrentQuestions() {
-  const source = awaitableReadFileSync(sourcePath);
-  const transpiled = ts.transpileModule(source, {
-    compilerOptions: {
-      module: ts.ModuleKind.CommonJS,
-      target: ts.ScriptTarget.ES2020,
-      esModuleInterop: true,
-      resolveJsonModule: true,
-    },
-  }).outputText;
-
-  const module = { exports: {} };
-  const localRequire = (specifier) => {
-    if (specifier === "@/data/ilk10-fbref-season-questions.json") {
-      return readJsonModule("data/ilk10-fbref-season-questions.json");
-    }
-    if (specifier === "@/data/ilk10-research-verified-questions.json") {
-      return readJsonModule("data/ilk10-research-verified-questions.json");
-    }
-    if (specifier === "@/types/ilk10") {
-      return {};
-    }
-    return require(specifier);
-  };
-
-  vm.runInNewContext(
-    transpiled,
-    { require: localRequire, module, exports: module.exports, console },
-    { filename: sourcePath }
+if (process.argv.includes("--help")) {
+  console.log(
+    [
+      "Usage:",
+      "  node scripts/build-ilk10-canonical-json.mjs [--file <path>]",
+      "",
+      "Normalizes data/ilk10/questions.json (status defaults) and writes it back.",
+    ].join("\n")
   );
-
-  return module.exports.ILK10_QUESTIONS;
+  process.exit(0);
 }
 
-function normalizeQuestion(question) {
-  const status = question.status ?? (question.designExample ? "draft" : "live");
+const filePath = getOption("--file", "data/ilk10/questions.json");
+
+let questions;
+try {
+  questions = JSON.parse(await fs.readFile(filePath, "utf8"));
+} catch (error) {
+  console.error(`[build-ilk10-canonical-json] failed to read ${filePath}: ${error.message}`);
+  process.exit(1);
+}
+
+if (!Array.isArray(questions)) {
+  console.error(`[build-ilk10-canonical-json] ${filePath} is not a JSON array`);
+  process.exit(1);
+}
+
+let normalizedStatuses = 0;
+const normalized = questions.map((question) => {
+  if (!question || typeof question !== "object") return question;
+  if (typeof question.status === "string") return question;
+  normalizedStatuses += 1;
   return {
     ...question,
-    status,
+    status: question.designExample ? "draft" : "live",
   };
-}
+});
 
-const questions = loadCurrentQuestions().map(normalizeQuestion);
+await fs.writeFile(filePath, `${JSON.stringify(normalized, null, 2)}\n`, "utf8");
 
-await fs.mkdir(path.dirname(outputPath), { recursive: true });
-await fs.writeFile(outputPath, `${JSON.stringify(questions, null, 2)}\n`, "utf8");
-
-const statusCounts = questions.reduce((counts, question) => {
-  counts[question.status] = (counts[question.status] ?? 0) + 1;
+const statusCounts = normalized.reduce((counts, question) => {
+  const status = question && typeof question.status === "string" ? question.status : "live";
+  counts[status] = (counts[status] ?? 0) + 1;
   return counts;
 }, {});
 
 console.log(
-  `[build-ilk10-canonical-json] questions=${questions.length} live=${statusCounts.live ?? 0} draft=${statusCounts.draft ?? 0} retired=${statusCounts.retired ?? 0} wrote=${outputPath}`
+  `[build-ilk10-canonical-json] questions=${normalized.length} live=${statusCounts.live ?? 0} draft=${statusCounts.draft ?? 0} retired=${statusCounts.retired ?? 0}`
+);
+console.log(
+  `[build-ilk10-canonical-json] statuses_filled=${normalizedStatuses} wrote=${filePath}`
 );

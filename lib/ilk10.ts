@@ -107,6 +107,16 @@ const CHARACTER_MAP: Record<string, string> = {
   ş: "S",
   Ü: "U",
   ü: "U",
+  // Letters NFD does not decompose; map them so ASCII typing still matches.
+  Æ: "AE",
+  æ: "AE",
+  Ø: "O",
+  ø: "O",
+  Ł: "L",
+  ł: "L",
+  Đ: "D",
+  đ: "D",
+  ß: "SS",
 }
 
 function normalizeCharacters(input: string): string {

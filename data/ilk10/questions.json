@@ -11,7 +11,7 @@
     "designExample": true,
     "answers": [
       {
-        "value": "Tanju Colak"
+        "value": "Tanju Çolak"
       },
       {
         "value": "Saffet Sancakli"
@@ -32,7 +32,7 @@
         "value": "Servet Cetin"
       },
       {
-        "value": "Emre Asik"
+        "value": "Emre Aşık"
       },
       {
         "value": "Colin Kazim"
@@ -51,7 +51,7 @@
     "category": "title-race",
     "sourceLabel": "Wikipedia: Football records and statistics in Turkey",
     "sourceUrl": "https://en.wikipedia.org/wiki/Football_records_and_statistics_in_Turkey",
-    "note": "Ordered to match the current 'Most championships by manager' table for the Super Lig. Any coach tied on the 2-title cutoff is accepted as a correct guess for the final slots.",
+    "note": "Ordered to match the current 'Most championships by manager' table for the Super Lig. Any coach tied on the 2-title cutoff is accepted as a correct guess for the final slots. Reflects championships through the 2025-26 season.",
     "answers": [
       {
         "value": "Fatih Terim"
@@ -145,22 +145,22 @@
     "entityType": "team",
     "category": "europe",
     "sourceLabel": "Hand-curated beta question pack",
-    "note": "Curatorial ordering based on on-pitch impact and overall European visibility.",
+    "note": "Curatorial ordering based on on-pitch impact and overall European visibility. Snapshot: April 2026.",
     "answers": [
       {
         "value": "Galatasaray"
       },
       {
-        "value": "Fenerbahce"
+        "value": "Fenerbahçe"
       },
       {
-        "value": "Besiktas"
+        "value": "Beşiktaş"
       },
       {
         "value": "Trabzonspor"
       },
       {
-        "value": "Istanbul Basaksehir",
+        "value": "İstanbul Başakşehir",
         "aliases": [
           "Basaksehir"
         ]
@@ -194,13 +194,13 @@
     "note": "Synced with the project's scraped all-time Super Lig scorers dataset.",
     "answers": [
       {
-        "value": "Hakan Sukur"
+        "value": "Hakan Şükür"
       },
       {
-        "value": "Tanju Colak"
+        "value": "Tanju Çolak"
       },
       {
-        "value": "Hami Mandirali"
+        "value": "Hami Mandıralı"
       },
       {
         "value": "Aykut Kocaman"
@@ -209,7 +209,7 @@
         "value": "Serkan Aykut"
       },
       {
-        "value": "Burak Yilmaz"
+        "value": "Burak Yılmaz"
       },
       {
         "value": "Feyyaz Ucar"
@@ -218,10 +218,10 @@
         "value": "Umut Bulut"
       },
       {
-        "value": "Necati Ates"
+        "value": "Necati Ateş"
       },
       {
-        "value": "Cenk Isler"
+        "value": "Cenk İşler"
       }
     ],
     "status": "live"
@@ -286,14 +286,14 @@
         ]
       },
       {
-        "value": "Hakan Sukur",
+        "value": "Hakan Şükür",
         "scoreLabel": "6",
         "aliases": [
           "Hakan Şükür"
         ]
       },
       {
-        "value": "Umit Karan",
+        "value": "Ümit Karan",
         "scoreLabel": "5",
         "aliases": [
           "Ümit Karan"
@@ -307,7 +307,7 @@
         ]
       },
       {
-        "value": "Necati Ates",
+        "value": "Necati Ateş",
         "scoreLabel": "3",
         "aliases": [
           "Necati Ateş"
@@ -329,7 +329,7 @@
         ]
       },
       {
-        "value": "Selcuk Inan",
+        "value": "Selçuk İnan",
         "scoreLabel": "3",
         "aliases": [
           "Selçuk İnan"
@@ -362,7 +362,7 @@
     "entityType": "coach",
     "category": "club-overlap",
     "sourceLabel": "Transfermarkt historical coach registry",
-    "note": "Generated from the historical Transfermarkt coach registry. Ordered by number of big-four clubs coached, then by total spell count in the registry.",
+    "note": "Generated from the historical Transfermarkt coach registry. Ordered by number of big-four clubs coached, then by total spell count in the registry. Snapshot: April 2026.",
     "answers": [
       {
         "value": "Mustafa Denizli"
@@ -371,7 +371,7 @@
         "value": "Samet Aybaba"
       },
       {
-        "value": "Riza Calimbay"
+        "value": "Rıza Çalımbay"
       },
       {
         "value": "Metin Turel"
@@ -380,13 +380,13 @@
         "value": "Ersun Yanal"
       },
       {
-        "value": "Senol Gunes"
+        "value": "Şenol Güneş"
       },
       {
         "value": "Ozkan Sumer"
       },
       {
-        "value": "Abdullah Avci"
+        "value": "Abdullah Avcı"
       },
       {
         "value": "Christoph Daum"
@@ -405,7 +405,7 @@
     "category": "title-race",
     "sourceLabel": "Transfermarkt: TFF Super Kupa records",
     "sourceUrl": "https://www.transfermarkt.com/tff-super-kupa/erfolge/pokalwettbewerb/TRS",
-    "note": "Ordered to match the current Transfermarkt 'Victory coaches' table, where the cutoff falls cleanly at 2 titles.",
+    "note": "Ordered to match the current Transfermarkt 'Victory coaches' table, where the cutoff falls cleanly at 2 titles. Reflects titles through the 2025-26 season.",
     "answers": [
       {
         "value": "Ahmet Suat Ozyazici",
@@ -417,10 +417,10 @@
         "value": "Fatih Terim"
       },
       {
-        "value": "Abdullah Avci"
+        "value": "Abdullah Avcı"
       },
       {
-        "value": "Senol Gunes"
+        "value": "Şenol Güneş"
       },
       {
         "value": "Christoph Daum"
@@ -451,7 +451,7 @@
     "category": "title-race",
     "sourceLabel": "Wikipedia: Türkiye Kupası",
     "sourceUrl": "https://tr.wikipedia.org/wiki/T%C3%BCrkiye_Kupas%C4%B1",
-    "note": "Ordered by total Türkiye Kupası titles. The 10th slot accepts any one-title club from the source table.",
+    "note": "Ordered by total Türkiye Kupası titles. The 10th slot accepts any one-title club from the source table. Includes titles through the 2025-26 season.",
     "answers": [
       {
         "value": "Galatasaray",
@@ -461,7 +461,7 @@
         ]
       },
       {
-        "value": "Besiktas",
+        "value": "Beşiktaş",
         "scoreLabel": "11",
         "aliases": [
           "Besiktas JK"
@@ -472,7 +472,7 @@
         "scoreLabel": "9"
       },
       {
-        "value": "Fenerbahce",
+        "value": "Fenerbahçe",
         "scoreLabel": "7",
         "aliases": [
           "Fenerbahce SK"
@@ -483,14 +483,14 @@
         "scoreLabel": "2"
       },
       {
-        "value": "Genclerbirligi",
+        "value": "Gençlerbirliği",
         "scoreLabel": "2",
         "aliases": [
           "Genclerbirligi SK"
         ]
       },
       {
-        "value": "Ankaragucu",
+        "value": "Ankaragücü",
         "scoreLabel": "2"
       },
       {
@@ -527,10 +527,10 @@
     "category": "title-race",
     "sourceLabel": "Transfermarkt: Fenerbahce bilanz vs clubs",
     "sourceUrl": "https://www.transfermarkt.com/fenerbahce/bilanz/verein/36/plus/0?saison_id=2020&wettbewerb_id=TR1",
-    "note": "Ordered by dropped points since the 2020-21 Super Lig season, computed as 3 * matches - points won by Fenerbahce. The 10th slot accepts both Karagümrük and Adana Demirspor because they are tied on 7 dropped points.",
+    "note": "Ordered by dropped points since the 2020-21 Super Lig season, computed as 3 * matches - points won by Fenerbahce. The 10th slot accepts both Karagümrük and Adana Demirspor because they are tied on 7 dropped points. Computed through the 2025-26 season (snapshot April 2026).",
     "answers": [
       {
-        "value": "Besiktas",
+        "value": "Beşiktaş",
         "scoreLabel": "20",
         "aliases": [
           "Besiktas JK"
@@ -564,7 +564,7 @@
         "scoreLabel": "9"
       },
       {
-        "value": "Istanbul Basaksehir",
+        "value": "İstanbul Başakşehir",
         "scoreLabel": "8",
         "aliases": [
           "Basaksehir"
@@ -594,10 +594,10 @@
     "entityType": "player",
     "category": "club-overlap",
     "sourceLabel": "Transfermarkt: Burak Yılmaz teammates",
-    "note": "Ordered from the top-10 teammate table provided for Burak Yılmaz. Only the final top-10 rows are used.",
+    "note": "Ordered from the top-10 teammate table provided for Burak Yılmaz. Only the final top-10 rows are used. Snapshot: April 2026.",
     "answers": [
       {
-        "value": "Selcuk Inan",
+        "value": "Selçuk İnan",
         "scoreLabel": "244"
       },
       {
@@ -629,7 +629,7 @@
         "scoreLabel": "97"
       },
       {
-        "value": "Sabri Sarioglu",
+        "value": "Sabri Sarıoğlu",
         "scoreLabel": "91"
       },
       {
@@ -646,7 +646,7 @@
     "entityType": "player",
     "category": "all-time",
     "sourceLabel": "User curated",
-    "note": "Manual top-10 list provided by owner on 2026-04-21.",
+    "note": "Manual top-10 list provided by owner on 2026-04-21. Re-verify at the start of each season.",
     "answers": [
       {
         "value": "Necip Uysal"
@@ -658,7 +658,7 @@
         "value": "Volkan Babacan"
       },
       {
-        "value": "Ersin Destanoglu",
+        "value": "Ersin Destanoğlu",
         "aliases": [
           "Ersin Destanoğlu"
         ]
@@ -673,7 +673,7 @@
         "value": "Mustafa Burak Bozan"
       },
       {
-        "value": "Yunus Akgun",
+        "value": "Yunus Akgün",
         "aliases": [
           "Yunus Akgün"
         ]
@@ -703,39 +703,39 @@
     "prompt": "2022-23 Süper Lig asist krallığı",
     "entityType": "player",
     "category": "season-stats",
-    "sourceLabel": "FBref 2022-2023 Super Lig leaderboard",
-    "sourceUrl": "https://fbref.com/en/comps/26/2022-2023/2022-2023-Super-Lig-Stats",
-    "note": "Transfermarkt assist table cross-check (checked 2026-04-21).",
+    "sourceLabel": "Transfermarkt",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/scorerliste/wettbewerb/TR1/saison_id/2022",
+    "note": "Transfermarkt assist table cross-check (checked 2026-04-21). Assist list aligned to the Transfermarkt scrape used by this project (single-provider policy; scrape 2026-04-09).",
     "answers": [
       {
-        "value": "Kerem Akturkoglu"
+        "value": "Kerem Aktürkoğlu"
       },
       {
         "value": "Fabio Borini"
       },
       {
-        "value": "Guilherme"
-      },
-      {
-        "value": "Salih Ucan"
-      },
-      {
-        "value": "Caner Erkin"
-      },
-      {
         "value": "Mauro Icardi"
       },
       {
-        "value": "Furkan Soyalp"
+        "value": "Cenk Tosun"
       },
       {
-        "value": "Milot Rashica"
-      },
-      {
-        "value": "Ebrima Colley"
+        "value": "Younès Belhanda"
       },
       {
         "value": "Trezeguet"
+      },
+      {
+        "value": "Mbaye Diagne"
+      },
+      {
+        "value": "Mamadou Fall"
+      },
+      {
+        "value": "Max Gradel"
+      },
+      {
+        "value": "Miguel Cardoso"
       }
     ],
     "status": "live"
@@ -767,7 +767,7 @@
         }
       },
       {
-        "value": "Abdulkerim Bardakci",
+        "value": "Abdülkerim Bardakcı",
         "entityId": "player:tm-historical-199316-abdulkerim-bardakci",
         "sourceIds": {
           "fbref": "5d9cff53",
@@ -783,7 +783,7 @@
         }
       },
       {
-        "value": "Younes Belhanda",
+        "value": "Younès Belhanda",
         "entityId": "player:tm-historical-118022-younes-belhanda",
         "sourceIds": {
           "fbref": "e204ec12",
@@ -945,7 +945,7 @@
         }
       },
       {
-        "value": "Ugurcan Cakir",
+        "value": "Uğurcan Çakır",
         "entityId": "player:tm-historical-292199-ugurcan-cakir",
         "sourceIds": {
           "fbref": "f63a8347",
@@ -953,7 +953,7 @@
         }
       },
       {
-        "value": "Altay Bayindir",
+        "value": "Altay Bayındır",
         "entityId": "player:tm-historical-336077-altay-bayindir",
         "sourceIds": {
           "fbref": "072e68ed",
@@ -1009,7 +1009,7 @@
         }
       },
       {
-        "value": "Mert Gunok",
+        "value": "Mert Günok",
         "entityId": "player:tm-historical-51894-mert-gunok",
         "sourceIds": {
           "fbref": "b583aef5",
@@ -1078,7 +1078,7 @@
         }
       },
       {
-        "value": "Ugurcan Cakir",
+        "value": "Uğurcan Çakır",
         "entityId": "player:tm-historical-292199-ugurcan-cakir",
         "sourceIds": {
           "fbref": "f63a8347",
@@ -1094,7 +1094,7 @@
         }
       },
       {
-        "value": "Erce Kardesler",
+        "value": "Erce Kardeşler",
         "entityId": "player:tm-historical-291548-erce-kardesler",
         "sourceIds": {
           "fbref": "94b3ccdb",
@@ -1120,7 +1120,7 @@
     "category": "season-stats",
     "sourceLabel": "FBref 2022-2023 Super Lig leaderboard",
     "sourceUrl": "https://fbref.com/en/comps/26/2022-2023/2022-2023-Super-Lig-Stats",
-    "note": "Transfermarkt goal table cross-check (checked 2026-04-21).",
+    "note": "Transfermarkt goal table cross-check (checked 2026-04-21). Retired: same answer set as verified-seasonal-topscorers-2022-23; the Transfermarkt-verified list is kept for that season.",
     "answers": [
       {
         "value": "Enner Valencia"
@@ -1150,10 +1150,10 @@
         "value": "Vincent Aboubakar"
       },
       {
-        "value": "Younes Belhanda"
+        "value": "Younès Belhanda"
       }
     ],
-    "status": "live"
+    "status": "retired"
   },
   {
     "id": "fbref-2022-2023-minutes",
@@ -1407,7 +1407,7 @@
         }
       },
       {
-        "value": "Younes Belhanda",
+        "value": "Younès Belhanda",
         "entityId": "player:tm-historical-118022-younes-belhanda",
         "sourceIds": {
           "fbref": "e204ec12",
@@ -1439,9 +1439,9 @@
     "prompt": "2023-24 Süper Lig asist krallığı",
     "entityType": "player",
     "category": "season-stats",
-    "sourceLabel": "FBref 2023-2024 Super Lig leaderboard",
-    "sourceUrl": "https://fbref.com/en/comps/26/2023-2024/2023-2024-Super-Lig-Stats",
-    "note": "Transfermarkt assist table cross-check (checked 2026-04-21).",
+    "sourceLabel": "Transfermarkt",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/scorerliste/wettbewerb/TR1/saison_id/2023",
+    "note": "Transfermarkt assist table cross-check (checked 2026-04-21). Assist list aligned to the Transfermarkt scrape used by this project (single-provider policy; scrape 2026-04-09).",
     "answers": [
       {
         "value": "Dries Mertens"
@@ -1450,28 +1450,28 @@
         "value": "Haris Hajradinovic"
       },
       {
-        "value": "Dusan Tadic"
+        "value": "Dušan Tadić"
+      },
+      {
+        "value": "Sebastian Szymański"
+      },
+      {
+        "value": "Edin Višća"
       },
       {
         "value": "Deniz Turuc"
       },
       {
-        "value": "Edin Visca"
-      },
-      {
-        "value": "Sebastian Szymanski"
-      },
-      {
-        "value": "Ramzi Safuri"
-      },
-      {
-        "value": "Irfan Can Kahveci"
-      },
-      {
         "value": "Mauro Icardi"
       },
       {
-        "value": "Alexandru Maxim"
+        "value": "İrfan Can Kahveci"
+      },
+      {
+        "value": "Mame Thiam"
+      },
+      {
+        "value": "Oguz Aydın"
       }
     ],
     "status": "live"
@@ -1527,7 +1527,7 @@
         }
       },
       {
-        "value": "Ismail Yuksek",
+        "value": "İsmail Yüksek",
         "entityId": "player:tm-historical-613725-ismail-yuksek",
         "sourceIds": {
           "fbref": "6c5af908",
@@ -1697,7 +1697,7 @@
         }
       },
       {
-        "value": "Ugurcan Cakir",
+        "value": "Uğurcan Çakır",
         "entityId": "player:tm-historical-292199-ugurcan-cakir",
         "sourceIds": {
           "fbref": "f63a8347",
@@ -1705,7 +1705,7 @@
         }
       },
       {
-        "value": "Mert Gunok",
+        "value": "Mert Günok",
         "entityId": "player:tm-historical-51894-mert-gunok",
         "sourceIds": {
           "fbref": "b583aef5",
@@ -1721,7 +1721,7 @@
         }
       },
       {
-        "value": "Erce Kardesler",
+        "value": "Erce Kardeşler",
         "entityId": "player:tm-historical-291548-erce-kardesler",
         "sourceIds": {
           "fbref": "94b3ccdb",
@@ -1806,7 +1806,7 @@
         }
       },
       {
-        "value": "Erce Kardesler",
+        "value": "Erce Kardeşler",
         "entityId": "player:tm-historical-291548-erce-kardesler",
         "sourceIds": {
           "fbref": "94b3ccdb",
@@ -1822,7 +1822,7 @@
         }
       },
       {
-        "value": "Ugurcan Cakir",
+        "value": "Uğurcan Çakır",
         "entityId": "player:tm-historical-292199-ugurcan-cakir",
         "sourceIds": {
           "fbref": "f63a8347",
@@ -1856,13 +1856,13 @@
     "category": "season-stats",
     "sourceLabel": "FBref 2023-2024 Super Lig leaderboard",
     "sourceUrl": "https://fbref.com/en/comps/26/2023-2024/2023-2024-Super-Lig-Stats",
-    "note": "Transfermarkt goal table cross-check (checked 2026-04-21).",
+    "note": "Transfermarkt goal table cross-check (checked 2026-04-21). Retired: same answer set as verified-seasonal-topscorers-2023-24; the Transfermarkt-verified list is kept for that season.",
     "answers": [
       {
         "value": "Mauro Icardi"
       },
       {
-        "value": "Edin Dzeko"
+        "value": "Edin Džeko"
       },
       {
         "value": "Rey Manaj"
@@ -1871,7 +1871,7 @@
         "value": "Mame Thiam"
       },
       {
-        "value": "Krzysztof Piatek"
+        "value": "Krzysztof Piątek"
       },
       {
         "value": "Adam Buksa"
@@ -1883,13 +1883,13 @@
         "value": "Nuno Da Costa"
       },
       {
-        "value": "Aytac Kara"
+        "value": "Aytaç Kara"
       },
       {
-        "value": "Denis Dragus"
+        "value": "Denis Drăguș"
       }
     ],
-    "status": "live"
+    "status": "retired"
   },
   {
     "id": "fbref-2023-2024-minutes",
@@ -1902,7 +1902,7 @@
     "note": "Generated from stored FBref season leaderboard \"Minutes\".",
     "answers": [
       {
-        "value": "Ferdi Kadioglu",
+        "value": "Ferdi Kadıoğlu",
         "entityId": "player:tm-historical-369316-ferdi-kadioglu",
         "sourceIds": {
           "fbref": "66c52a77",
@@ -1933,7 +1933,7 @@
         }
       },
       {
-        "value": "Aytac Kara",
+        "value": "Aytaç Kara",
         "entityId": "player:tm-historical-159908-aytac-kara",
         "sourceIds": {
           "fbref": "94c79a82",
@@ -1941,7 +1941,7 @@
         }
       },
       {
-        "value": "Okan Kocuk",
+        "value": "Okan Koçuk",
         "entityId": "player:tm-historical-204189-okan-kocuk",
         "sourceIds": {
           "fbref": "7e9fd9b9",
@@ -2010,7 +2010,7 @@
         }
       },
       {
-        "value": "Dusan Tadic",
+        "value": "Dušan Tadić",
         "entityId": "player:tm-historical-36139-dusan-tadic",
         "sourceIds": {
           "fbref": "2475dcc6",
@@ -2026,7 +2026,7 @@
         }
       },
       {
-        "value": "Krzysztof Piatek",
+        "value": "Krzysztof Piątek",
         "entityId": "player:tm-historical-327757-krzysztof-piatek",
         "sourceIds": {
           "fbref": "17f3620a",
@@ -2087,7 +2087,7 @@
     "note": "Generated from stored FBref season leaderboard \"Shots on Target\".",
     "answers": [
       {
-        "value": "Edin Dzeko",
+        "value": "Edin Džeko",
         "entityId": "player:tm-28396-edin-dzeko",
         "sourceIds": {
           "fbref": "3bb7f478",
@@ -2103,7 +2103,7 @@
         }
       },
       {
-        "value": "Krzysztof Piatek",
+        "value": "Krzysztof Piątek",
         "entityId": "player:tm-historical-327757-krzysztof-piatek",
         "sourceIds": {
           "fbref": "17f3620a",
@@ -2119,7 +2119,7 @@
         }
       },
       {
-        "value": "Denis Dragus",
+        "value": "Denis Drăguș",
         "entityId": "player:tm-historical-405399-denis-dragus",
         "sourceIds": {
           "fbref": "0e490f6e",
@@ -2135,7 +2135,7 @@
         }
       },
       {
-        "value": "Aytac Kara",
+        "value": "Aytaç Kara",
         "entityId": "player:tm-historical-159908-aytac-kara",
         "sourceIds": {
           "fbref": "94c79a82",
@@ -2159,7 +2159,7 @@
         }
       },
       {
-        "value": "Sebastian Szymanski",
+        "value": "Sebastian Szymański",
         "entityId": "player:tm-historical-320748-sebastian-szymanski",
         "sourceIds": {
           "fbref": "bb718263",
@@ -2175,39 +2175,39 @@
     "prompt": "2024-25 Süper Lig asist krallığı",
     "entityType": "player",
     "category": "season-stats",
-    "sourceLabel": "FBref 2024-2025 Super Lig leaderboard",
-    "sourceUrl": "https://fbref.com/en/comps/26/2024-2025/2024-2025-Super-Lig-Stats",
-    "note": "Transfermarkt assist table cross-check (checked 2026-04-21).",
+    "sourceLabel": "Transfermarkt",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/scorerliste/wettbewerb/TR1/saison_id/2024",
+    "note": "Transfermarkt assist table cross-check (checked 2026-04-21). Assist list aligned to the Transfermarkt scrape used by this project (single-provider policy; scrape 2026-04-09).",
     "answers": [
       {
-        "value": "Dusan Tadic"
+        "value": "Dušan Tadić"
       },
       {
         "value": "Emre Kilinc"
       },
       {
-        "value": "Yunus Akgun"
+        "value": "Yunus Akgün"
       },
       {
-        "value": "Claudio Winck"
-      },
-      {
-        "value": "David Tijanic"
+        "value": "Dries Mertens"
       },
       {
         "value": "Muhammed Cham"
       },
       {
-        "value": "Romulo"
+        "value": "Rômulo"
       },
       {
-        "value": "Gorkem Saglam"
+        "value": "Mamadou Fall"
       },
       {
-        "value": "Gabriel Sara"
+        "value": "Haris Hajradinovic"
       },
       {
         "value": "Miguel Cardoso"
+      },
+      {
+        "value": "David Tijanic"
       }
     ],
     "status": "live"
@@ -2408,7 +2408,7 @@
     "note": "Generated from stored FBref season leaderboard \"Clean Sheets\".",
     "answers": [
       {
-        "value": "Okan Kocuk",
+        "value": "Okan Koçuk",
         "entityId": "player:tm-historical-204189-okan-kocuk",
         "sourceIds": {
           "fbref": "7e9fd9b9",
@@ -2416,7 +2416,7 @@
         }
       },
       {
-        "value": "Ugurcan Cakir",
+        "value": "Uğurcan Çakır",
         "entityId": "player:tm-historical-292199-ugurcan-cakir",
         "sourceIds": {
           "fbref": "f63a8347",
@@ -2440,7 +2440,7 @@
         }
       },
       {
-        "value": "Mert Gunok",
+        "value": "Mert Günok",
         "entityId": "player:tm-historical-51894-mert-gunok",
         "sourceIds": {
           "fbref": "b583aef5",
@@ -2509,7 +2509,7 @@
         }
       },
       {
-        "value": "Ugurcan Cakir",
+        "value": "Uğurcan Çakır",
         "entityId": "player:tm-historical-292199-ugurcan-cakir",
         "sourceIds": {
           "fbref": "f63a8347",
@@ -2533,7 +2533,7 @@
         }
       },
       {
-        "value": "Mert Gunok",
+        "value": "Mert Günok",
         "entityId": "player:tm-historical-51894-mert-gunok",
         "sourceIds": {
           "fbref": "b583aef5",
@@ -2549,7 +2549,7 @@
         }
       },
       {
-        "value": "Okan Kocuk",
+        "value": "Okan Koçuk",
         "entityId": "player:tm-historical-204189-okan-kocuk",
         "sourceIds": {
           "fbref": "7e9fd9b9",
@@ -2591,13 +2591,13 @@
     "category": "season-stats",
     "sourceLabel": "FBref 2024-2025 Super Lig leaderboard",
     "sourceUrl": "https://fbref.com/en/comps/26/2024-2025/2024-2025-Super-Lig-Stats",
-    "note": "Transfermarkt goal table cross-check (checked 2026-04-21).",
+    "note": "Transfermarkt goal table cross-check (checked 2026-04-21). Retired: same answer set as verified-seasonal-topscorers-2024-25; the Transfermarkt-verified list is kept for that season.",
     "answers": [
       {
         "value": "Victor Osimhen"
       },
       {
-        "value": "Krzysztof Piatek"
+        "value": "Krzysztof Piątek"
       },
       {
         "value": "Youssef En-Nesyri"
@@ -2615,16 +2615,16 @@
         "value": "Mame Thiam"
       },
       {
-        "value": "Edin Dzeko"
+        "value": "Edin Džeko"
       },
       {
-        "value": "Romulo"
+        "value": "Rômulo"
       },
       {
         "value": "Nuno Da Costa"
       }
     ],
-    "status": "live"
+    "status": "retired"
   },
   {
     "id": "fbref-2024-2025-minutes",
@@ -2637,7 +2637,7 @@
     "note": "Generated from stored FBref season leaderboard \"Minutes\".",
     "answers": [
       {
-        "value": "Okan Kocuk",
+        "value": "Okan Koçuk",
         "entityId": "player:tm-historical-204189-okan-kocuk",
         "sourceIds": {
           "fbref": "7e9fd9b9",
@@ -2653,7 +2653,7 @@
         }
       },
       {
-        "value": "Mert Gunok",
+        "value": "Mert Günok",
         "entityId": "player:tm-historical-51894-mert-gunok",
         "sourceIds": {
           "fbref": "b583aef5",
@@ -2753,7 +2753,7 @@
         }
       },
       {
-        "value": "Krzysztof Piatek",
+        "value": "Krzysztof Piątek",
         "entityId": "player:tm-historical-327757-krzysztof-piatek",
         "sourceIds": {
           "fbref": "17f3620a",
@@ -2761,7 +2761,7 @@
         }
       },
       {
-        "value": "Romulo",
+        "value": "Rômulo",
         "entityId": "player:tm-historical-957874-romulo",
         "sourceIds": {
           "fbref": "03dd053e",
@@ -2830,7 +2830,7 @@
         }
       },
       {
-        "value": "Krzysztof Piatek",
+        "value": "Krzysztof Piątek",
         "entityId": "player:tm-historical-327757-krzysztof-piatek",
         "sourceIds": {
           "fbref": "17f3620a",
@@ -2838,7 +2838,7 @@
         }
       },
       {
-        "value": "Edin Dzeko",
+        "value": "Edin Džeko",
         "entityId": "player:tm-28396-edin-dzeko",
         "sourceIds": {
           "fbref": "3bb7f478",
@@ -2862,7 +2862,7 @@
         }
       },
       {
-        "value": "Romulo",
+        "value": "Rômulo",
         "entityId": "player:tm-historical-957874-romulo",
         "sourceIds": {
           "fbref": "03dd053e",
@@ -2894,7 +2894,7 @@
         }
       },
       {
-        "value": "Nuno da Costa",
+        "value": "Nuno Da Costa",
         "entityId": "player:tm-historical-306166-nuno-da-costa",
         "sourceIds": {
           "fbref": "909222de",
@@ -2915,7 +2915,7 @@
     "note": "Transfermarkt assist table cross-check (checked 2026-04-21).",
     "answers": [
       {
-        "value": "Baris Alper Yilmaz"
+        "value": "Barış Alper Yılmaz"
       },
       {
         "value": "Drissa Camara"
@@ -2927,7 +2927,7 @@
         "value": "Vaclav Cerny"
       },
       {
-        "value": "Yunus Akgun"
+        "value": "Yunus Akgün"
       },
       {
         "value": "Alexandru Maxim"
@@ -2958,7 +2958,7 @@
     "note": "Generated from stored FBref season leaderboard \"Red Cards\".",
     "answers": [
       {
-        "value": "Orkun Kokcu",
+        "value": "Orkun Kökçü",
         "entityId": "player:tm-454567-orkun-kokcu",
         "sourceIds": {
           "fbref": "9bf914b4",
@@ -3151,7 +3151,7 @@
         }
       },
       {
-        "value": "Ugurcan Cakir",
+        "value": "Uğurcan Çakır",
         "entityId": "player:tm-historical-292199-ugurcan-cakir",
         "sourceIds": {
           "fbref": "f63a8347",
@@ -3167,7 +3167,7 @@
         }
       },
       {
-        "value": "Okan Kocuk",
+        "value": "Okan Koçuk",
         "entityId": "player:tm-historical-204189-okan-kocuk",
         "sourceIds": {
           "fbref": "7e9fd9b9",
@@ -3191,7 +3191,7 @@
         }
       },
       {
-        "value": "Ersin Destanoglu",
+        "value": "Ersin Destanoğlu",
         "entityId": "player:tm-historical-500091-ersin-destanoglu",
         "sourceIds": {
           "fbref": "52b3c895",
@@ -3276,7 +3276,7 @@
         }
       },
       {
-        "value": "Ugurcan Cakir",
+        "value": "Uğurcan Çakır",
         "entityId": "player:tm-historical-292199-ugurcan-cakir",
         "sourceIds": {
           "fbref": "f63a8347",
@@ -3326,7 +3326,7 @@
     "category": "season-stats",
     "sourceLabel": "FBref 2025-2026 Super Lig leaderboard",
     "sourceUrl": "https://fbref.com/en/comps/26/2025-2026/2025-2026-Super-Lig-Stats",
-    "note": "25/26 sezonu için şu ana kadarki güncel gol krallığı sıralaması.",
+    "note": "25/26 sezonu için şu ana kadarki güncel gol krallığı sıralaması. Retired: duplicate of the verified 2025-26 top scorers question; use the Transfermarkt-verified version.",
     "answers": [
       {
         "value": "Paul Onuachu",
@@ -3407,7 +3407,7 @@
         }
       }
     ],
-    "status": "draft"
+    "status": "retired"
   },
   {
     "id": "fbref-2025-2026-minutes",
@@ -3544,7 +3544,7 @@
         }
       },
       {
-        "value": "Baris Alper Yilmaz",
+        "value": "Barış Alper Yılmaz",
         "entityId": "player:tm-historical-541537-baris-alper-yilmaz",
         "sourceIds": {
           "fbref": "414b2ce4",
@@ -3645,7 +3645,7 @@
         }
       },
       {
-        "value": "Orkun Kokcu",
+        "value": "Orkun Kökçü",
         "entityId": "player:tm-454567-orkun-kokcu",
         "sourceIds": {
           "fbref": "9bf914b4",
@@ -3726,7 +3726,7 @@
         }
       },
       {
-        "value": "Tumer Metin",
+        "value": "Tümer Metin",
         "entityId": "player:tm-6879-tumer-metin",
         "sourceIds": {
           "transfermarkt": "6879"
@@ -3747,7 +3747,7 @@
         }
       },
       {
-        "value": "Sergen Yalcin",
+        "value": "Sergen Yalçın",
         "entityId": "player:tm-6904-sergen-yalcin",
         "sourceIds": {
           "transfermarkt": "6904"
@@ -3788,21 +3788,21 @@
         }
       },
       {
-        "value": "Necati Ates",
+        "value": "Necati Ateş",
         "entityId": "player:tm-6949-necati-ates",
         "sourceIds": {
           "transfermarkt": "6949"
         }
       },
       {
-        "value": "Cenk Isler",
+        "value": "Cenk İşler",
         "entityId": "player:tm-1294-cenk-isler",
         "sourceIds": {
           "transfermarkt": "1294"
         }
       },
       {
-        "value": "Okan Yilmaz",
+        "value": "Okan Yılmaz",
         "entityId": "player:tm-6113-okan-yilmaz",
         "sourceIds": {
           "transfermarkt": "6113"
@@ -3844,7 +3844,7 @@
         }
       },
       {
-        "value": "Tuncay Sanli",
+        "value": "Tuncay Şanlı",
         "entityId": "player:tm-6934-tuncay-sanli",
         "sourceIds": {
           "transfermarkt": "6934"
@@ -3892,7 +3892,7 @@
         }
       },
       {
-        "value": "Selcuk Inan",
+        "value": "Selçuk İnan",
         "entityId": "player:tm-35026-selcuk-inan",
         "sourceIds": {
           "transfermarkt": "35026"
@@ -3989,7 +3989,7 @@
         }
       },
       {
-        "value": "Necati Ates",
+        "value": "Necati Ateş",
         "entityId": "player:tm-6949-necati-ates",
         "sourceIds": {
           "transfermarkt": "6949"
@@ -4003,14 +4003,14 @@
         }
       },
       {
-        "value": "Milan Baros",
+        "value": "Milan Baroš",
         "entityId": "player:tm-3216-milan-baros",
         "sourceIds": {
           "transfermarkt": "3216"
         }
       },
       {
-        "value": "Umit Karan",
+        "value": "Ümit Karan",
         "entityId": "player:tm-3378-umit-karan",
         "sourceIds": {
           "transfermarkt": "3378"
@@ -4030,7 +4030,7 @@
     "note": "Aggregated exactly from full Transfermarkt season tables from 2011-2012 through 2015-2016.",
     "answers": [
       {
-        "value": "Selcuk Inan",
+        "value": "Selçuk İnan",
         "entityId": "player:tm-35026-selcuk-inan",
         "sourceIds": {
           "transfermarkt": "35026"
@@ -4113,7 +4113,7 @@
     "note": "Aggregated exactly from full Transfermarkt season tables from 2011-2012 through 2015-2016.",
     "answers": [
       {
-        "value": "Burak Yilmaz",
+        "value": "Burak Yılmaz",
         "entityId": "player:tm-34987-burak-yilmaz",
         "sourceIds": {
           "transfermarkt": "34987"
@@ -4127,7 +4127,7 @@
         }
       },
       {
-        "value": "Pierre Webo",
+        "value": "Pierre Webó",
         "entityId": "player:tm-16589-pierre-webo",
         "sourceIds": {
           "transfermarkt": "16589"
@@ -4155,7 +4155,7 @@
         }
       },
       {
-        "value": "Fernandao",
+        "value": "Fernandão",
         "entityId": "player:tm-83886-fernandao",
         "sourceIds": {
           "transfermarkt": "83886"
@@ -4176,7 +4176,7 @@
         }
       },
       {
-        "value": "Selcuk Inan",
+        "value": "Selçuk İnan",
         "entityId": "player:tm-35026-selcuk-inan",
         "sourceIds": {
           "transfermarkt": "35026"
@@ -4196,7 +4196,7 @@
     "note": "Aggregated exactly from full Transfermarkt season tables from 2016-2017 through 2021-2022.",
     "answers": [
       {
-        "value": "Edin Visca",
+        "value": "Edin Višća",
         "entityId": "player:tm-109217-edin-visca",
         "sourceIds": {
           "transfermarkt": "109217"
@@ -4279,7 +4279,7 @@
     "note": "Aggregated exactly from full Transfermarkt season tables from 2016-2017 through 2021-2022.",
     "answers": [
       {
-        "value": "Edin Visca",
+        "value": "Edin Višća",
         "entityId": "player:tm-109217-edin-visca",
         "sourceIds": {
           "transfermarkt": "109217"
@@ -4300,7 +4300,7 @@
         }
       },
       {
-        "value": "Burak Yilmaz",
+        "value": "Burak Yılmaz",
         "entityId": "player:tm-34987-burak-yilmaz",
         "sourceIds": {
           "transfermarkt": "34987"
@@ -4365,10 +4365,10 @@
         "value": "Umut Bulut"
       },
       {
-        "value": "Hakan Sukur"
+        "value": "Hakan Şükür"
       },
       {
-        "value": "Hami Mandirali"
+        "value": "Hami Mandıralı"
       },
       {
         "value": "Mehmet Nas"
@@ -4383,13 +4383,13 @@
         "value": "Guray Vural"
       },
       {
-        "value": "Bulent Korkmaz"
+        "value": "Bülent Korkmaz"
       },
       {
-        "value": "Omer Catkic"
+        "value": "Ömer Catkıç"
       },
       {
-        "value": "Oguz Cetin"
+        "value": "Oğuz Çetin"
       }
     ],
     "status": "live"
@@ -4402,16 +4402,16 @@
     "category": "title-race",
     "sourceLabel": "Research verified",
     "sourceUrl": "https://www.transfermarkt.com/super-lig/ewigetorschuetzen/wettbewerb/TR1",
-    "note": "Aligned to Transfermarkt all-time top-scorer table (checked 2026-04-21).",
+    "note": "Aligned to Transfermarkt all-time top-scorer table (checked 2026-04-21). Retired: identical answer set (and order) to the pinned turkish-icons-total-goals question.",
     "answers": [
       {
-        "value": "Hakan Sukur"
+        "value": "Hakan Şükür"
       },
       {
-        "value": "Tanju Colak"
+        "value": "Tanju Çolak"
       },
       {
-        "value": "Hami Mandirali"
+        "value": "Hami Mandıralı"
       },
       {
         "value": "Aykut Kocaman"
@@ -4420,7 +4420,7 @@
         "value": "Serkan Aykut"
       },
       {
-        "value": "Burak Yilmaz"
+        "value": "Burak Yılmaz"
       },
       {
         "value": "Feyyaz Ucar"
@@ -4429,13 +4429,13 @@
         "value": "Umut Bulut"
       },
       {
-        "value": "Necati Ates"
+        "value": "Necati Ateş"
       },
       {
-        "value": "Cenk Isler"
+        "value": "Cenk İşler"
       }
     ],
-    "status": "live"
+    "status": "retired"
   },
   {
     "id": "verified-club-legends-gs-15y-topscorers",
@@ -4451,10 +4451,10 @@
         "value": "Mauro Icardi"
       },
       {
-        "value": "Burak Yilmaz"
+        "value": "Burak Yılmaz"
       },
       {
-        "value": "Kerem Akturkoglu"
+        "value": "Kerem Aktürkoğlu"
       },
       {
         "value": "Bafetimbi Gomis"
@@ -4690,7 +4690,7 @@
         "value": "Gordon Milne"
       },
       {
-        "value": "Senol Gunes"
+        "value": "Şenol Güneş"
       }
     ],
     "status": "live"
@@ -4874,10 +4874,10 @@
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "Research verified-aggregated",
-    "note": "Imported from ilk10-research/questions/era-windows/assists-5y.md",
+    "note": "Imported from ilk10-research/questions/era-windows/assists-5y.md Snapshot: April 2026.",
     "answers": [
       {
-        "value": "Edin Visca"
+        "value": "Edin Višća"
       },
       {
         "value": "Alexandru Maxim"
@@ -4916,7 +4916,7 @@
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "Research verified-aggregated",
-    "note": "Imported from ilk10-research/questions/era-windows/clean-sheets-15y.md",
+    "note": "Imported from ilk10-research/questions/era-windows/clean-sheets-15y.md Snapshot: April 2026.",
     "answers": [
       {
         "value": "Fernando Muslera"
@@ -4958,7 +4958,7 @@
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "Research verified-aggregated",
-    "note": "Imported from ilk10-research/questions/era-windows/clean-sheets-25y.md",
+    "note": "Imported from ilk10-research/questions/era-windows/clean-sheets-25y.md Snapshot: April 2026.",
     "answers": [
       {
         "value": "Volkan Demirel"
@@ -5000,7 +5000,7 @@
     "entityType": "player",
     "category": "season-stats",
     "sourceLabel": "Research verified-aggregated",
-    "note": "Imported from ilk10-research/questions/era-windows/clean-sheets-5y.md",
+    "note": "Imported from ilk10-research/questions/era-windows/clean-sheets-5y.md Snapshot: April 2026.",
     "answers": [
       {
         "value": "Uğurcan Çakır"
@@ -5089,13 +5089,13 @@
     "note": "Draft only. Source notes say the cutoff is tied and multiple players should be accepted, which the current exact-10 answer list does not encode safely.",
     "answers": [
       {
-        "value": "Ergun Penbe"
+        "value": "Ergün Penbe"
       },
       {
         "value": "Arif Erdem"
       },
       {
-        "value": "Bulent Korkmaz"
+        "value": "Bülent Korkmaz"
       },
       {
         "value": "Hasan Sas"
@@ -5104,19 +5104,19 @@
         "value": "Fernando Muslera"
       },
       {
-        "value": "Hakan Sukur"
+        "value": "Hakan Şükür"
       },
       {
-        "value": "Hakan Unsal"
+        "value": "Hakan Ünsal"
       },
       {
         "value": "Suat Kaya"
       },
       {
-        "value": "Umit Davala"
+        "value": "Ümit Davala"
       },
       {
-        "value": "Selcuk Inan"
+        "value": "Selçuk İnan"
       }
     ],
     "status": "draft"
@@ -5144,7 +5144,7 @@
         "value": "Nordin Amrabat"
       },
       {
-        "value": "Selcuk Inan"
+        "value": "Selçuk İnan"
       },
       {
         "value": "Didier Drogba"
@@ -5153,13 +5153,13 @@
         "value": "Hamit Altintop"
       },
       {
-        "value": "Aurelien Chedjou"
+        "value": "Aurélien Chedjou"
       },
       {
         "value": "Emmanuel Eboue"
       },
       {
-        "value": "Hakan Unsal"
+        "value": "Hakan Ünsal"
       }
     ],
     "status": "draft"
@@ -5276,7 +5276,7 @@
         "value": "AKYUZ"
       },
       {
-        "value": "Pierre Webo"
+        "value": "Pierre Webó"
       },
       {
         "value": "Taner Gülleri"
@@ -5511,7 +5511,7 @@
     "entityType": "player",
     "category": "title-race",
     "sourceLabel": "Research verified-aggregated",
-    "note": "Cleaned [AKMAN] placeholder to Ayhan Akman based on the Galatasaray 2001-2012 stint in local registry/research. Still based on starter-season data.",
+    "note": "Cleaned [AKMAN] placeholder to Ayhan Akman based on the Galatasaray 2001-2012 stint in local registry/research. Still based on starter-season data. Snapshot: April 2026.",
     "answers": [
       {
         "value": "Volkan Demirel"
@@ -5728,25 +5728,25 @@
     "note": "Imported from ilk10-research/questions/national-team/turkey-most-caps.md",
     "answers": [
       {
-        "value": "Rustu Recber"
+        "value": "Rüştü Reçber"
       },
       {
-        "value": "Hakan Sukur"
+        "value": "Hakan Şükür"
       },
       {
         "value": "Hakan Çalhanoğlu"
       },
       {
-        "value": "Bulent Korkmaz"
+        "value": "Bülent Korkmaz"
       },
       {
-        "value": "Emre Belozoglu"
+        "value": "Emre Belözoğlu"
       },
       {
         "value": "Arda Turan"
       },
       {
-        "value": "Tugay Kerimoglu"
+        "value": "Tugay Kerimoğlu"
       },
       {
         "value": "Alpay Ozalan"
@@ -5771,13 +5771,13 @@
     "note": "Imported from ilk10-research/questions/national-team/turkey-top-scorers.md",
     "answers": [
       {
-        "value": "Hakan Sukur"
+        "value": "Hakan Şükür"
       },
       {
-        "value": "Burak Yilmaz"
+        "value": "Burak Yılmaz"
       },
       {
-        "value": "Tuncay Sanli"
+        "value": "Tuncay Şanlı"
       },
       {
         "value": "Hakan Çalhanoğlu"
@@ -5810,7 +5810,7 @@
     "entityType": "player",
     "category": "all-time",
     "sourceLabel": "Research verified-aggregated",
-    "note": "Cleaned token-style names from local autocomplete/research: TITA -> Tita, BAJIC -> Riad Bajic. Still based on starter-only 2000+ data.",
+    "note": "Cleaned token-style names from local autocomplete/research: TITA -> Tita, BAJIC -> Riad Bajic. Still based on starter-only 2000+ data. Snapshot: April 2026.",
     "answers": [
       {
         "value": "Cenk İşler"
@@ -5943,7 +5943,7 @@
         ]
       },
       {
-        "value": "Irfan Can Kahveci"
+        "value": "İrfan Can Kahveci"
       }
     ],
     "status": "draft"
@@ -5961,7 +5961,7 @@
         "value": "Sébastien Kaya"
       },
       {
-        "value": "Selcuk İnan"
+        "value": "Selçuk İnan"
       },
       {
         "value": "Burak Yılmaz"
@@ -6078,13 +6078,13 @@
         "value": "Anastasios Bakasetas"
       },
       {
-        "value": "Dusan Tadic"
+        "value": "Dušan Tadić"
       },
       {
         "value": "Florent Hadergjonaj"
       },
       {
-        "value": "Krzysztof Piatek"
+        "value": "Krzysztof Piątek"
       }
     ],
     "status": "draft"
@@ -6268,7 +6268,7 @@
     "category": "season-stats",
     "sourceLabel": "Research verified",
     "sourceUrl": "https://www.worldfootball.net/competition/co116/turkey-sueperlig/se54197/2023-2024/statistics-goals/",
-    "note": "Imported from ilk10-research/questions/seasonal/np-topscorers-2023-24.md",
+    "note": "Imported from ilk10-research/questions/seasonal/np-topscorers-2023-24.md Retired: same 10 names as verified-seasonal-topscorers-2023-24; served as a duplicate quiz.",
     "answers": [
       {
         "value": "Mauro Icardi"
@@ -6301,7 +6301,7 @@
         "value": "Aytaç Kara"
       }
     ],
-    "status": "live"
+    "status": "retired"
   },
   {
     "id": "verified-seasonal-np-topscorers-2024-25",
@@ -6354,7 +6354,7 @@
     "category": "season-stats",
     "sourceLabel": "Research verified",
     "sourceUrl": "https://www.transfermarkt.com/super-lig/torschuetzenliste/wettbewerb/TR1/saison_id/2025",
-    "note": "Imported from ilk10-research/questions/seasonal/np-topscorers-2025-26.md",
+    "note": "Imported from ilk10-research/questions/seasonal/np-topscorers-2025-26.md Retired: duplicate of the verified 2025-26 top scorers question; non-penalty split not independently verifiable from the available scrapes.",
     "answers": [
       {
         "value": "Paul Onuachu"
@@ -6387,7 +6387,7 @@
         "value": "Ernest Muci"
       }
     ],
-    "status": "draft"
+    "status": "retired"
   },
   {
     "id": "verified-seasonal-topscorers-2021-22",
@@ -6569,25 +6569,25 @@
     "category": "season-stats",
     "sourceLabel": "Research verified",
     "sourceUrl": "https://www.transfermarkt.com/super-lig/torschuetzenliste/wettbewerb/TR1/saison_id/2025",
-    "note": "Imported from ilk10-research/questions/seasonal/topscorers-2025-26.md",
+    "note": "Verified against the final Transfermarkt 2025-26 scorer list (fetched 2026-10-11).",
     "answers": [
       {
-        "value": "Paul Onuachu"
+        "value": "Eldor Shomurodov"
       },
       {
-        "value": "Eldor Shomurodov"
+        "value": "Paul Onuachu"
       },
       {
         "value": "Talisca"
       },
       {
-        "value": "Mauro Icardi"
+        "value": "Victor Osimhen"
       },
       {
         "value": "Mohamed Bayo"
       },
       {
-        "value": "Victor Osimhen"
+        "value": "Mauro Icardi"
       },
       {
         "value": "Felipe Augusto"
@@ -6596,10 +6596,53 @@
         "value": "Marco Asensio"
       },
       {
-        "value": "Dorgeles Nene"
+        "value": "Juan"
       },
       {
         "value": "Ernest Muci"
+      }
+    ],
+    "status": "live"
+  },
+  {
+    "id": "verified-seasonal-topscorers-2026-27",
+    "shortLabel": "2026-27 Gol Krallığı (devam eden sezon)",
+    "prompt": "2026-27 Süper Lig gol krallığı (devam eden sezon)",
+    "entityType": "player",
+    "category": "season-stats",
+    "sourceLabel": "Research verified (Transfermarkt 2026-27, in progress)",
+    "sourceUrl": "https://www.transfermarkt.com/super-lig/torschuetzenliste/wettbewerb/TR1/saison_id/2026",
+    "note": "Draft snapshot: 2026-10-11. Season still in progress; ties at 4 goals (Dia Saba, Juan) can still enter the top 10. Promote to live after the season ends.",
+    "answers": [
+      {
+        "value": "Mohamed Salah"
+      },
+      {
+        "value": "Gift Orban"
+      },
+      {
+        "value": "Victor Osimhen"
+      },
+      {
+        "value": "Vedat Muriqi"
+      },
+      {
+        "value": "Eldor Shomurodov"
+      },
+      {
+        "value": "Dušan Vlahović"
+      },
+      {
+        "value": "Alexandros Kyziridis"
+      },
+      {
+        "value": "Mason Greenwood"
+      },
+      {
+        "value": "Jesús Ramírez"
+      },
+      {
+        "value": "Adrian Benedyczak"
       }
     ],
     "status": "draft"
@@ -6666,7 +6709,7 @@
         "value": "Gökhan Gönül"
       },
       {
-        "value": "Dusko Tosic",
+        "value": "Duško Tošić",
         "aliases": [
           "Sahan"
         ]
@@ -6775,7 +6818,7 @@
         "value": "Wesley Sneijder"
       },
       {
-        "value": "Yusuf Sarioğlu",
+        "value": "Yusuf Sarıoğlu",
         "aliases": [
           "Sarioglu"
         ]
@@ -6799,7 +6842,7 @@
     "entityType": "player",
     "category": "title-race",
     "sourceLabel": "Research verified-aggregated",
-    "note": "Imported from ilk10-research/questions/titles/most-runner-up-foreign.md",
+    "note": "Imported from ilk10-research/questions/titles/most-runner-up-foreign.md Snapshot: April 2026.",
     "answers": [
       {
         "value": "Fernando Muslera"
@@ -6841,7 +6884,7 @@
     "entityType": "player",
     "category": "title-race",
     "sourceLabel": "Research verified-aggregated",
-    "note": "Imported from ilk10-research/questions/titles/most-runner-up-turkish.md",
+    "note": "Imported from ilk10-research/questions/titles/most-runner-up-turkish.md Snapshot: April 2026.",
     "answers": [
       {
         "value": "Burak Yılmaz"
@@ -7234,7 +7277,7 @@
     "category": "all-time",
     "sourceLabel": "Research verified-aggregated",
     "sourceUrl": "https://www.transfermarkt.com/galatasaray-istanbul/rekordabgaenge/verein/141",
-    "note": "Draft only. Research notes say Marcão profit is unknown/blocked, so this is not reliable enough for a ranked exact-10 profit question.",
+    "note": "Draft only. Research notes say Marcão profit is unknown/blocked, so this is not reliable enough for a ranked exact-10 profit question. Retired: same answer set as the live Galatasaray record-sales question; profit variant was flagged unreliable in research notes.",
     "answers": [
       {
         "value": "Sacha Boey"
@@ -7267,7 +7310,7 @@
         "value": "Marcão"
       }
     ],
-    "status": "draft"
+    "status": "retired"
   },
   {
     "id": "verified-transfers-gs-record-signings",
@@ -7495,7 +7538,7 @@
     "note": "Imported from ilk10-research/questions/under-coach/goals-under-avci.md",
     "answers": [
       {
-        "value": "Edin Visca"
+        "value": "Edin Višća"
       },
       {
         "value": "Anastasios Bakasetas"
@@ -7553,7 +7596,7 @@
         "value": "Dries Mertens"
       },
       {
-        "value": "Edin Visca"
+        "value": "Edin Višća"
       },
       {
         "value": "Yunus Akgün"
@@ -7976,7 +8019,7 @@
     "category": "title-race",
     "sourceLabel": "Research verified-aggregated",
     "sourceUrl": "https://www.transfermarkt.com/besiktas-jk/rekordabgaenge/verein/114",
-    "note": "Draft for now. Kârlı satış = satış fiyatı − alış fiyatı. Akademi ürünleri: alış fiyatı = €0. Alış fiyatları Wikipedia (Cenk Tosun, Demir Ege Tıknaz, Sosa, Sergen Yalçın) veya basın toplu kaynaklarından (Carew, Marcelo, Arroyo) derlendi.",
+    "note": "Draft for now. Kârlı satış = satış fiyatı − alış fiyatı. Akademi ürünleri: alış fiyatı = €0. Alış fiyatları Wikipedia (Cenk Tosun, Demir Ege Tıknaz, Sosa, Sergen Yalçın) veya basın toplu kaynaklarından (Carew, Marcelo, Arroyo) derlendi. Retired: same answer set as the live Besiktas record-sales question.",
     "answers": [
       {
         "value": "Cenk Tosun",
@@ -8029,7 +8072,7 @@
         "scoreLabel": "€3.5m"
       }
     ],
-    "status": "draft"
+    "status": "retired"
   },
   {
     "id": "verified-club-legends-fb-15y-topscorers",
