@@ -51,16 +51,16 @@
     "category": "title-race",
     "sourceLabel": "Wikipedia: Football records and statistics in Turkey",
     "sourceUrl": "https://en.wikipedia.org/wiki/Football_records_and_statistics_in_Turkey",
-    "note": "Ordered to match the current 'Most championships by manager' table for the Super Lig. Any coach tied on the 2-title cutoff is accepted as a correct guess for the final slots. Reflects championships through the 2025-26 season.",
+    "note": "Ordered by title count to match the current 'Most championships by manager' table for the Super Lig. Any coach tied on the 2-title cutoff is accepted as a correct guess for the final slots. Reflects championships through the 2025-26 season.",
     "answers": [
       {
         "value": "Fatih Terim"
       },
       {
-        "value": "Ahmet Suat Ozyazici"
+        "value": "Okan Buruk"
       },
       {
-        "value": "Okan Buruk"
+        "value": "Ahmet Suat Ozyazici"
       },
       {
         "value": "Gordon Milne"
@@ -4359,7 +4359,7 @@
     "category": "title-race",
     "sourceLabel": "Research verified",
     "sourceUrl": "https://www.transfermarkt.com/super-lig/rekordspieler/wettbewerb/TR1",
-    "note": "Aligned to Transfermarkt all-time appearance table (checked 2026-04-21).",
+    "note": "Aligned to the Transfermarkt all-time appearance table; re-verified 2026-10-11. TM revised historical appearance counts since the April 2026 snapshot: Recep Çetin (428) re-enters the top 10 and Ömer Çatkıç (427) drops to 11th; Oğuz Çetin moves up to 6th.",
     "answers": [
       {
         "value": "Umut Bulut"
@@ -4374,22 +4374,22 @@
         "value": "Mehmet Nas"
       },
       {
-        "value": "Veysel Sari"
+        "value": "Veysel Sarı"
+      },
+      {
+        "value": "Oğuz Çetin"
       },
       {
         "value": "Fernando Muslera"
       },
       {
-        "value": "Guray Vural"
+        "value": "Güray Vural"
+      },
+      {
+        "value": "Recep Çetin"
       },
       {
         "value": "Bülent Korkmaz"
-      },
-      {
-        "value": "Ömer Catkıç"
-      },
-      {
-        "value": "Oğuz Çetin"
       }
     ],
     "status": "live"
@@ -5383,7 +5383,7 @@
     "category": "season-stats",
     "sourceLabel": "Research verified",
     "sourceUrl": "https://www.tff.org/default.aspx?pageID=545",
-    "note": "Imported from ilk10-research/questions/historical/golden-boot-archive.md",
+    "note": "Draft re-verified 2026-10-11 against the Wikipedia Süper Lig top scorers table: Metin Oktay 6 golden boots, Tanju Çolak 5, Cemil Turan / Aykut Kocaman / Hakan Şükür 3 each. Six players are tied at 2 (Ertan Adatepe, Fethi Heper, Selçuk Yula, Okan Yılmaz, Alex, Burak Yılmaz) and share the remaining five slots — all six are accepted via aliases. Promote after final review.",
     "answers": [
       {
         "value": "Metin Oktay"
@@ -5392,28 +5392,68 @@
         "value": "Tanju Çolak"
       },
       {
-        "value": "Hakan Şükür"
+        "value": "Cemil Turan"
       },
       {
         "value": "Aykut Kocaman"
       },
       {
-        "value": "Alex de Souza"
+        "value": "Hakan Şükür"
       },
       {
-        "value": "Cemil Turan"
+        "value": "Ertan Adatepe",
+        "aliases": [
+          "Ertan Adatepe",
+          "Fethi Heper",
+          "Selçuk Yula",
+          "Okan Yılmaz",
+          "Alex de Souza",
+          "Burak Yılmaz"
+        ]
       },
       {
-        "value": "Ertan Adatepe"
+        "value": "Fethi Heper",
+        "aliases": [
+          "Ertan Adatepe",
+          "Fethi Heper",
+          "Selçuk Yula",
+          "Okan Yılmaz",
+          "Alex de Souza",
+          "Burak Yılmaz"
+        ]
       },
       {
-        "value": "Fethi Heper"
+        "value": "Selçuk Yula",
+        "aliases": [
+          "Ertan Adatepe",
+          "Fethi Heper",
+          "Selçuk Yula",
+          "Okan Yılmaz",
+          "Alex de Souza",
+          "Burak Yılmaz"
+        ]
       },
       {
-        "value": "Okan Yılmaz"
+        "value": "Okan Yılmaz",
+        "aliases": [
+          "Ertan Adatepe",
+          "Fethi Heper",
+          "Selçuk Yula",
+          "Okan Yılmaz",
+          "Alex de Souza",
+          "Burak Yılmaz"
+        ]
       },
       {
-        "value": "Selçuk Yula"
+        "value": "Alex de Souza",
+        "aliases": [
+          "Ertan Adatepe",
+          "Fethi Heper",
+          "Selçuk Yula",
+          "Okan Yılmaz",
+          "Alex de Souza",
+          "Burak Yılmaz"
+        ]
       }
     ],
     "status": "draft"
