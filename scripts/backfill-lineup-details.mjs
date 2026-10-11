@@ -7,6 +7,15 @@ import { setTimeout as sleep } from "node:timers/promises";
 
 import { fetchTransfermarktMatchHtml, parseMatchStarters } from "../registry/lib/transfermarkt.mjs";
 import { readGamesCsv, writeGamesCsv } from "./lib/games-csv.mjs";
+import {
+  alignPlayers,
+  flagsToString,
+  hasNumberAnomaly,
+  numbersToString,
+  parseInts as ints,
+  parseFlags as flags,
+  teamMatches,
+} from "./lib/lineup-align.mjs";
 
 // Backfills two details on existing lineup data from Transfermarkt match pages:
 //   - lineup_numbers: fills nulls and re-syncs rows that contain duplicate numbers
@@ -50,137 +59,6 @@ const delayMs = Number(getOption("--delay-ms", "150"));
 
 const seasonsDir = path.join(process.cwd(), "data/seasons");
 
-function norm(value) {
-  return String(value ?? "")
-    .normalize("NFKD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toUpperCase()
-    .replace(/[^A-Z0-9]/g, "");
-}
-
-function isNameMatch(csvNorm, tmNorm) {
-  if (!csvNorm || !tmNorm) return false;
-  if (csvNorm === tmNorm) return true;
-  // Transfermarkt truncates long display names (e.g. "Soylemezgi.")
-  if (tmNorm.length >= 5 && csvNorm.startsWith(tmNorm)) return true;
-  if (csvNorm.length >= 6 && tmNorm.endsWith(csvNorm)) return true;
-  if (csvNorm.length >= 6 && tmNorm.includes(csvNorm)) return true;
-  if (tmNorm.length >= 6 && csvNorm.includes(tmNorm)) return true;
-  // TM sometimes keeps a leading nickname ("Beto Cacho.", "Jaja Coelho")
-  if (csvNorm.length >= 4 && tmNorm.startsWith(csvNorm)) return true;
-  if (csvNorm.length >= 4 && tmNorm.endsWith(csvNorm)) return true;
-  return false;
-}
-
-// All unique-ish assignments of the 11 csv names to the 11 Transfermarkt
-// players (capped). Rows where every solution produces the same numbers and
-// captain flags are safe to update.
-function alignPlayers(csvNames, tmPlayers, csvNumbers) {
-  const csvNorms = csvNames.map(norm);
-  const tmNorms = tmPlayers.map((player) => norm(player.displayName));
-
-  const candidateLists = csvNorms.map((csvNorm) =>
-    tmNorms.map((tmNorm, index) => (isNameMatch(csvNorm, tmNorm) ? index : -1)).filter((index) => index >= 0)
-  );
-
-  const nameMismatch = [];
-  const emptyCsvPositions = candidateLists.map((list, index) => (list.length === 0 ? index : -1)).filter((i) => i >= 0);
-  const claimedTm = new Set(candidateLists.flat());
-  const emptyTmPositions = tmNorms.map((_, index) => (claimedTm.has(index) ? -1 : index)).filter((i) => i >= 0);
-
-  // Stale name for the same slot: pair the single leftover CSV slot with the
-  // single leftover TM player when their shirt numbers agree.
-  if (emptyCsvPositions.length === 1 && emptyTmPositions.length === 1) {
-    const csvIndex = emptyCsvPositions[0];
-    const tmIndex = emptyTmPositions[0];
-    if (csvNumbers[csvIndex] === null || csvNumbers[csvIndex] === tmPlayers[tmIndex].number) {
-      candidateLists[csvIndex] = [tmIndex];
-      nameMismatch.push({
-        csv: csvNames[csvIndex],
-        tm: tmPlayers[tmIndex].displayName,
-        number: tmPlayers[tmIndex].number,
-      });
-    }
-  }
-
-  if (candidateLists.some((candidates) => candidates.length === 0)) {
-    return { error: "unmatched names", details: csvNames.filter((_, i) => candidateLists[i].length === 0) };
-  }
-
-  const used = new Array(tmPlayers.length).fill(false);
-  const assignment = new Array(csvNames.length).fill(-1);
-  const solutions = [];
-  const maxSolutions = 200;
-
-  function search(position) {
-    if (solutions.length >= maxSolutions) return;
-    if (position === csvNames.length) {
-      solutions.push([...assignment]);
-      return;
-    }
-    for (const tmIndex of candidateLists[position]) {
-      if (used[tmIndex]) continue;
-      used[tmIndex] = true;
-      assignment[position] = tmIndex;
-      search(position + 1);
-      used[tmIndex] = false;
-      if (solutions.length >= maxSolutions) return;
-    }
-  }
-
-  search(0);
-  if (solutions.length === 0) return { error: "no assignment" };
-  return { solutions, nameMismatch };
-}
-
-function ints(value, length = 11) {
-  const parsed = Array.isArray(value)
-    ? value
-    : String(value ?? "")
-        .split(";")
-        .map((token) => token.trim());
-  return Array.from({ length }, (_, index) => {
-    const token = parsed[index];
-    if (token === undefined || token === null || token === "") return null;
-    const number = Number(token);
-    return Number.isInteger(number) && number > 0 ? number : null;
-  });
-}
-
-function flags(value, length = 11) {
-  const parsed = Array.isArray(value)
-    ? value
-    : String(value ?? "")
-        .split(";")
-        .map((token) => token.trim());
-  return Array.from({ length }, (_, index) => (Number(parsed[index]) === 1 ? 1 : 0));
-}
-
-function numbersToString(numbers) {
-  return numbers.map((number) => (number === null ? "" : String(number))).join(";");
-}
-
-function flagsToString(flagsList) {
-  return flagsList.map((flag) => (flag ? "1" : "0")).join(";");
-}
-
-function hasNumberAnomaly(numbers) {
-  const present = numbers.filter((number) => number !== null);
-  return numbers.includes(null) || present.length !== new Set(present).size;
-}
-
-function teamMatches(tmTeam, csvTeam) {
-  const a = norm(tmTeam);
-  const b = norm(csvTeam);
-  if (!a || !b) return false;
-  if (a === b || a.includes(b) || b.includes(a)) return true;
-  // Fallback for long city/club prefixes (e.g. "Mke Ankaragucu"): require a
-  // long common prefix so sibling clubs ("Ankaraspor" vs "Ankaragucu") never
-  // match by accident.
-  let common = 0;
-  while (common < a.length && common < b.length && a[common] === b[common]) common += 1;
-  return common >= 8;
-}
 
 // --- load season files and find rows that need a backfill ---
 const seasonFiles = (await fs.readdir(seasonsDir))
@@ -265,7 +143,11 @@ async function processMatch(matchId) {
     const oldNumbers = ints(row.lineupNumbers);
     const oldFlags = flags(row.lineupCaptains);
 
-    const alignment = alignPlayers(csvNames, tmPlayers, oldNumbers);
+    const alignment = alignPlayers(
+      csvNames,
+      tmPlayers.map((player) => ({ name: player.displayName, number: player.number, isCaptain: player.isCaptain })),
+      oldNumbers
+    );
     if (alignment.error) {
       const detail = alignment.details ? ` (${alignment.details.join(", ")})` : "";
       report.ambiguous.push({ matchId, team: row.team, reason: alignment.error + detail });
@@ -365,7 +247,7 @@ console.log(`[backfill] rows_processed=${report.rowsProcessed} rows_changed=${re
 console.log(`[backfill] numbers_changed=${report.numbersChanged} captains_set=${report.captainSet} captain_no_source=${report.captainSkipped}`);
 console.log(`[backfill] ambiguous_alignments=${report.ambiguous.length} unmatched=${report.unmatched.length} name_mismatch_pairs=${report.nameMismatches.length}`);
 for (const mismatch of report.nameMismatches.slice(0, 20)) {
-  console.log(`  ~ ${mismatch.matchId} ${mismatch.team}: csv "${mismatch.csv}" vs tm "${mismatch.tm}" (#${mismatch.number})`);
+  console.log(`  ~ ${mismatch.matchId} ${mismatch.team}: csv "${mismatch.csv}" vs source "${mismatch.source}" (#${mismatch.number})`);
 }
 if (report.nameMismatches.length > 20) {
   console.log(`  ~ ... ${report.nameMismatches.length - 20} more`);

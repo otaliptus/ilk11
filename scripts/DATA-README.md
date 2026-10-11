@@ -160,30 +160,43 @@ The validator checks:
   effectively the same quiz shown on two different days)
 - near-duplicates (8+/10 shared answers) are listed for review
 
-### 9) Backfill lineup numbers/captains from Transfermarkt
+### 9) Backfill lineup numbers/captains from external sources
 
-Some rows have missing or duplicated shirt numbers, or no captain flag. The
-backfill tool re-fetches exactly those matches from Transfermarkt (cached under
-the OS temp dir), aligns the scraped XI to the stored lineup by player name,
-and applies source-backed corrections:
+Some rows have missing or duplicated shirt numbers, or no captain flag. Two
+backfill tools re-fetch exactly those matches from external sources, align the
+scraped XI to the stored lineup by player name (shared helpers in
+`scripts/lib/lineup-align.mjs`) and apply source-backed corrections:
 
 ```bash
+# Transfermarkt: fills numbers and sets captains where TM marks one
 node scripts/backfill-lineup-details.mjs --dry          # report only
 node scripts/backfill-lineup-details.mjs                # write fixes
+
+# TFF (tff.org): fills numbers where Transfermarkt has none and resolves
+# duplicate numbers; also covers rows without a TM match id
+node scripts/backfill-lineup-numbers-tff.mjs --dry
+node scripts/backfill-lineup-numbers-tff.mjs
+
 npm run data:build-pools && npm run data:validate:all   # rebuild + verify
 ```
 
-Notes from the 2026-10 rescrape of all 494 affected matches:
+Notes from the 2026-10 rescrape (TM: 494 matches, TFF: 110 rows):
 
-- The remaining missing captains and shirt numbers are **source-side gaps**:
-  Transfermarkt has no captain icon and no shirt number for those players
-  (the stored data matches the page exactly).
-- Duplicate shirt numbers (for example two Kocaelispor players with #5 in
-  2002) also exist on Transfermarkt itself and are kept as source data; the
-  validator keeps flagging them so they can be reviewed.
-- The tool reports `name mismatch` pairs where the stored display name differs
-  from Transfermarkt's (nicknames such as "Bombinha" vs "Elionar Bo."). These
-  are used to align the slot; stored names are intentionally not rewritten.
-- Matches where Transfermarkt renders one team as placeholders (for example
-  1143453) cannot be backfilled and are reported.
+- Transfermarkt has **no captain icon** and **no shirt number** for many
+  historical rows; its duplicate numbers (two Kocaelispor #5s in 2002) exist
+  on TM itself. TFF match reports carry shirt numbers (and cover rows without
+  a TM id), so the TFF tool filled 402 number cells and resolved 26 duplicate
+  cells across seasons 2000-2012. Where both sources have a number they agree
+  100% of the time (`cross_source_differences=0`), which validates both.
+- **Captains cannot be recovered from accessible sources**: TM has no icons,
+  TFF match pages have no captain marker, and worldfootball.net / FBref /
+  mackolik / SofaScore block automated access from this environment. The
+  remaining ~600 rows keep no captain flag and stay flagged by the validator.
+- Three rows stay ambiguous because two same-surname players (two ÖZERs with
+  no stored numbers, two TEBERs both stored as #15, one Ankaragücü pair)
+  cannot be told apart from names alone; they are reported by the tool.
+- Both tools report `name mismatch` pairs where the stored display name
+  differs from the source (nicknames such as "BOMBINHA" vs "Elionar Bo.",
+  or lineup discrepancies like "RICHARD KINGSON" vs "FARUK GÜRSOY"); the slot
+  is matched by shirt number and the pairs are reported for review.
 

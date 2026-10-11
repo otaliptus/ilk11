@@ -55,6 +55,8 @@ scripts/lib/*
 !scripts/validate-ilk11-runtime.mjs
 !scripts/validate-ilk10.mjs
 !scripts/backfill-lineup-details.mjs
+!scripts/backfill-lineup-numbers-tff.mjs
+!scripts/lib/lineup-align.mjs
 !scripts/DATA-README.md
 public/data/daily/
 *.report.json
